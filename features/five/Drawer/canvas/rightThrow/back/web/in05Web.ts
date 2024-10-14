@@ -22,6 +22,7 @@ export const in05Web = (ctx: CanvasRenderingContext2D, webColor: string, laceCol
 
   // stitchここから
   ctx.beginPath()
+  ctx.lineWidth = 1.3
   ctx.strokeStyle = stitchColor
   ctx.setLineDash([3, 3])
   // 横向き＿上

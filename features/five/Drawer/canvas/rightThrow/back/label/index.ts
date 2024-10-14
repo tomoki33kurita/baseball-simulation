@@ -57,7 +57,7 @@ const labelBaseLeather = (ctx: CanvasRenderingContext2D, leatherColor: string, s
 
   // stitch
   ctx.strokeStyle = stitchColor
-  ctx.lineWidth = 1.2
+  ctx.lineWidth = 1.3
   ctx.beginPath()
   ctx.setLineDash([3, 3])
   // 手口

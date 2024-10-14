@@ -31,7 +31,7 @@ export const in04Web = (ctx: CanvasRenderingContext2D, webColor: string, laceCol
   topSidePartOfWeb(ctx, webColor, laceColor, stitchColor)
 
   // stitchここから
-  ctx.lineWidth = 1.2
+  ctx.lineWidth = 1.3
   ctx.strokeStyle = stitchColor
   ctx.beginPath()
   ctx.setLineDash([3, 3])

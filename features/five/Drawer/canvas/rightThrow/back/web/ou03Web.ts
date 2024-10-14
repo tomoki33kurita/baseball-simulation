@@ -44,6 +44,7 @@ const verticalPartOfFenceWeb = (ctx: CanvasRenderingContext2D, webColor: string,
 
   // stitchここから
   ctx.beginPath()
+  ctx.lineWidth = 1.3
   ctx.strokeStyle = stitchColor
   ctx.setLineDash([3, 3])
 
@@ -84,6 +85,7 @@ const onCatchFaceParts = (ctx: CanvasRenderingContext2D, webColor: string, stitc
 
   // stitchここから
   ctx.beginPath()
+  ctx.lineWidth = 1.3
   ctx.strokeStyle = stitchColor
   ctx.setLineDash([3, 3])
   ctx.moveTo(471, 274) // 左上

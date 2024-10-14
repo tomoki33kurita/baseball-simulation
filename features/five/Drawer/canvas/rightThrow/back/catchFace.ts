@@ -17,7 +17,7 @@ export const palm = (ctx: CanvasRenderingContext2D, palmColor: string, stitchCol
   ctx.closePath()
 
   // ステッチここから
-  ctx.lineWidth = 1.1
+  ctx.lineWidth = 1.3
   ctx.strokeStyle = stitchColor
   ctx.beginPath()
   ctx.setLineDash([3, 3])

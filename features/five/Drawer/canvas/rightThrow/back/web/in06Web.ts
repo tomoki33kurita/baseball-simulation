@@ -100,6 +100,7 @@ export const in06Web = (ctx: CanvasRenderingContext2D, laceColor: string, stitch
 
   // stitchここから
   ctx.beginPath()
+  ctx.lineWidth = 1.3
   ctx.strokeStyle = stitchColor
   ctx.setLineDash([3, 3])
   // 外側

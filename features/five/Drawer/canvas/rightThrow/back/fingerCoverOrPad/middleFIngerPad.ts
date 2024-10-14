@@ -24,7 +24,7 @@ export const middleFingerPad = (
   ctx.closePath()
 
   // stitchここから
-  ctx.lineWidth = 1.2
+  ctx.lineWidth = 1.3
   ctx.strokeStyle = stitchColor
   ctx.beginPath()
   ctx.setLineDash([3, 3])

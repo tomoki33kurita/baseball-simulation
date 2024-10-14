@@ -14,6 +14,7 @@ export const verticalPartsOfWeb = (ctx: CanvasRenderingContext2D, webColor: stri
 
   // stitchここから
   ctx.beginPath()
+  ctx.lineWidth = 1.3
   ctx.strokeStyle = stitchColor
   ctx.setLineDash([3, 3])
   // 左＿外
@@ -50,6 +51,7 @@ export const verticalPartsOfWebWithCenterStitch = (ctx: CanvasRenderingContext2D
 
   // stitchここから
   ctx.beginPath()
+  ctx.lineWidth = 1.3
   ctx.strokeStyle = stitchColor
   ctx.setLineDash([3, 3])
   // 左＿外

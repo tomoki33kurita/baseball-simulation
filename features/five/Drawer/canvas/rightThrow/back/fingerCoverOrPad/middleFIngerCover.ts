@@ -25,7 +25,7 @@ export const middleFingerCover = (
   ctx.stroke()
   ctx.closePath()
 
-  ctx.lineWidth = 1.2
+  ctx.lineWidth = 1.3
   ctx.strokeStyle = stitchColor
   ctx.beginPath()
   ctx.setLineDash([3, 3])

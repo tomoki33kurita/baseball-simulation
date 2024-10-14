@@ -29,7 +29,7 @@ export const in05Web = (ctx: CanvasRenderingContext2D, webColor: string, laceCol
   hWebCrossUpperLeft2(ctx, laceColor, -3, 3) // クロス部分の左
 
   // stitchここから
-  ctx.lineWidth = 1.5
+  ctx.lineWidth = 1.3
   ctx.strokeStyle = stitchColor
   ctx.beginPath()
   ctx.setLineDash([3, 3])

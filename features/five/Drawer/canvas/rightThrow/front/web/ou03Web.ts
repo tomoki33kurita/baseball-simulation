@@ -35,7 +35,7 @@ const verticalPartsOfWebWithBinding = (ctx: CanvasRenderingContext2D, webColor: 
   // ヘリ革ここまで
 
   // stitchここから
-  ctx.lineWidth = 1.1
+  ctx.lineWidth = 1.3
   ctx.strokeStyle = stitchColor
   ctx.beginPath()
   ctx.setLineDash([3, 3])
@@ -89,7 +89,7 @@ const verticalPartOfVWeb = (ctx: CanvasRenderingContext2D, webColor: string, sti
   ctx.stroke()
   ctx.closePath()
 
-  ctx.lineWidth = 1.2
+  ctx.lineWidth = 1.3
   ctx.strokeStyle = stitchColor
   ctx.beginPath()
   ctx.setLineDash([3, 3])

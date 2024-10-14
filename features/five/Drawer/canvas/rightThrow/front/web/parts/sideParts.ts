@@ -17,6 +17,7 @@ export const topSidePartOfWeb = (ctx: CanvasRenderingContext2D, webColor: string
 
   // stitchここから
   ctx.beginPath()
+  ctx.lineWidth = 1.3
   ctx.strokeStyle = stitchColor
   ctx.setLineDash([3, 3])
   ctx.moveTo(337, 87) // 右上
@@ -59,6 +60,7 @@ export const middleSidePartOfWeb = (ctx: CanvasRenderingContext2D, webColor: str
   ctx.closePath()
   // stitchここから
   ctx.beginPath()
+  ctx.lineWidth = 1.3
   ctx.strokeStyle = stitchColor
   ctx.setLineDash([3, 3])
   ctx.moveTo(357 + x, 164 + y) // 右上
@@ -101,6 +103,7 @@ export const middleSidePartOfDoubleWeb = (ctx: CanvasRenderingContext2D, webColo
 
   // stitchここから
   ctx.beginPath()
+  ctx.lineWidth = 1.3
   ctx.strokeStyle = stitchColor
   ctx.setLineDash([3, 3])
   // 1段目

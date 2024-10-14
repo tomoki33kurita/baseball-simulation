@@ -14,7 +14,7 @@ export const bindingOfWrist = (ctx: CanvasRenderingContext2D, leatherColor: stri
   ctx.stroke()
   ctx.closePath()
 
-  ctx.lineWidth = 1.1
+  ctx.lineWidth = 1.3
   ctx.strokeStyle = stitchColor
   ctx.beginPath()
   ctx.setLineDash([3, 3])

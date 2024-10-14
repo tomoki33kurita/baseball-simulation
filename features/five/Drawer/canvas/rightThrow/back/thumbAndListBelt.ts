@@ -17,7 +17,7 @@ export const thumbAndListBelt = (ctx: CanvasRenderingContext2D, leatherColor: st
   ctx.closePath()
 
   // stitch
-  ctx.lineWidth = 1.2
+  ctx.lineWidth = 1.3
   ctx.strokeStyle = stitchColor
   ctx.beginPath()
   ctx.setLineDash([3, 3])

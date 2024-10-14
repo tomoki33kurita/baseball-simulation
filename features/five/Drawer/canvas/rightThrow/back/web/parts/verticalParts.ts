@@ -16,6 +16,7 @@ export const verticalPartOfWeb = (ctx: CanvasRenderingContext2D, webColor: strin
 
   // stitchここから
   ctx.beginPath()
+  ctx.lineWidth = 1.3
   ctx.strokeStyle = stitchColor
   ctx.setLineDash([3, 3])
 
@@ -53,6 +54,7 @@ export const verticalPartOfWeb2 = (ctx: CanvasRenderingContext2D, webColor: stri
 
   // stitchここから
   ctx.beginPath()
+  ctx.lineWidth = 1.3
   ctx.strokeStyle = stitchColor
   ctx.setLineDash([3, 3])
 
@@ -90,6 +92,7 @@ export const verticalPartOfWebWithLace = (ctx: CanvasRenderingContext2D, webColo
 
   // stitchここから
   ctx.beginPath()
+  ctx.lineWidth = 1.3
   ctx.strokeStyle = stitchColor
   ctx.setLineDash([3, 3])
   // 縦向き＿左＿外側

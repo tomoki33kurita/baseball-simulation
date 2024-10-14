@@ -71,8 +71,8 @@ export const bindings = (
   ctx.stroke()
   ctx.closePath() // 土手紐＿ヘリ革周り
 
-  ctx.lineWidth = 1.2
   ctx.strokeStyle = stitchColor
+  ctx.lineWidth = 1.3
   ctx.beginPath()
   ctx.setLineDash([3, 3])
 

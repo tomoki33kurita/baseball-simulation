@@ -32,6 +32,7 @@ export const p03Web = (ctx: CanvasRenderingContext2D, webColor: string, laceColo
 
   // stitchここから
   ctx.beginPath()
+  ctx.lineWidth = 1.3
   ctx.strokeStyle = stitchColor
   ctx.setLineDash([3, 3])
   // 外側_外

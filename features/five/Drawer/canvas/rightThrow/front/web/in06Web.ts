@@ -67,6 +67,7 @@ export const in06Web = (ctx: CanvasRenderingContext2D, webColor: string, laceCol
 
   // stitchここから
   ctx.beginPath()
+  ctx.lineWidth = 1.3
   ctx.strokeStyle = stitchColor
   ctx.setLineDash([3, 3])
   // バスケットの周り

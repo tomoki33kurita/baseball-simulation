@@ -14,7 +14,7 @@ export const indexFingerPad = (ctx: CanvasRenderingContext2D, fingerPadColor: st
   ctx.closePath()
 
   // stitchここから
-  ctx.lineWidth = 1.2
+  ctx.lineWidth = 1.3
   ctx.strokeStyle = stitchColor
   ctx.beginPath()
   ctx.setLineDash([3, 3])
