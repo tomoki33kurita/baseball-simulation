@@ -4,11 +4,11 @@ import { Box } from '@mui/material'
 import BaseSetter from './BaseSetter'
 import ColorSetter from './ColorSetter'
 import EmbroiderySetter from './EmbroiderySetter'
-import { SettingTabs } from '@/features/SettingFrame/SettingTabs'
-import { SettingButtons } from '@/features/SettingFrame/SettingButtons'
 import { SimulationConfirmDialog } from '@/features/Confirm/SimulationConfirmDialog'
 import { Position, State } from '../types'
 import { ConfirmContents } from '../ConfirmContents'
+import { SettingTabs } from '@/components/SettingFrame/SettingTabs'
+import { SettingButtons } from '@/components/SettingFrame/SettingButtons'
 
 type Props = {
   state: State

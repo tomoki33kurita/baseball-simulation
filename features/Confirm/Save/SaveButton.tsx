@@ -1,11 +1,9 @@
 import React, { useState } from 'react'
-// import { genFrontImgFromCanvas } from 'src/features/generatePdf/helper/generateImages/front'
-// import { genBackImgFromCanvas } from 'src/features/generatePdf/helper/generateImages/back'
 import axios from 'axios'
-import { useConfirm } from '@/features/SettingFrame/hooks/useConfirm'
 import { Brand, Position, State } from '@/features/five/types'
 import { SAVE_SIMULATION_PATH } from './constants'
 import { ConfirmDialog } from '../ConfirmDialog'
+import { useConfirm } from '@/components/SettingFrame/hooks/useConfirm'
 
 export const brandNameResolver = (brand: Brand) => {
   switch (brand) {

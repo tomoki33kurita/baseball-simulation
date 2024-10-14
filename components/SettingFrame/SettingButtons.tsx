@@ -1,8 +1,8 @@
 import React from 'react'
 import { Box, Button } from '@mui/material'
 import { useRouter } from 'next/navigation'
-import { useConfirm } from './hooks/useConfirm'
-import { ConfirmDialog } from '../Confirm/ConfirmDialog'
+import { useConfirm } from '../SettingFrame/hooks/useConfirm'
+import { ConfirmDialog } from '@/features/Confirm/ConfirmDialog'
 
 type Props = {
   toTopPath: string

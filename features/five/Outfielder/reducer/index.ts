@@ -39,7 +39,6 @@ import {
   SET_LABEL_STAND,
   SET_FINGER_GUARD_COLOR
 } from '../../Constants/action'
-import { NullableActionDispatch, State } from '../../types'
 
 const initialPersonalState = {
   userName: '',

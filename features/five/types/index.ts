@@ -101,7 +101,7 @@ export type State = {
 type Nullable<T> = {
   [P in keyof T]: T[P] | null
 }
-export type NullableAction = { type: string } & Nullable<State>
+type NullableAction = { type: string } & Nullable<State>
 
 export type NullableActionDispatch = (value: NullableAction) => void
 
