@@ -1,10 +1,10 @@
-import { positionChecker } from '@/app/util/logic'
+import { positionChecker } from '@/util/logic'
 import { beltBackStyleDrawer, beltBackStyleDrawerForBasic } from './beltBackStyleDrawer'
 import { outfielderDefaultBackLace } from '../lace/outfielderDefaultBackLace'
-import { State } from '@/features/five/types'
-import { getOrderType } from '@/features/five/Setters/logic'
+import { FiveState } from '@/features/five/types'
+import { getOrderType } from '@/features/five/Components/Setters/logic'
 
-export const backStyleOfGloveBackDrawer = (ctx: CanvasRenderingContext2D, state: State): void => {
+export const backStyleOfGloveBackDrawer = (ctx: CanvasRenderingContext2D, state: FiveState): void => {
   const needPalmWrap = !state.baseModel?.isUBack || false
   const { isBasicOrder, isBasicWithEmbroideryOrder } = getOrderType(state.orderType)
   const laceColor = isBasicOrder || isBasicWithEmbroideryOrder ? state.baseModel.basicColors.lace.color : state.lace.color

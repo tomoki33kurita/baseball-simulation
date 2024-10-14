@@ -1,8 +1,8 @@
-import { generateLiningsGradient } from "@/app/util/canvas"
+import { generateLiningsGradient } from '@/util/canvas'
 
 export const lining = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = "#fff"
+  ctx.strokeStyle = '#fff'
   ctx.fillStyle = color
   ctx.beginPath()
   ctx.moveTo(280, 490) // 左下

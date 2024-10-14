@@ -1,6 +1,6 @@
 import React from 'react'
 import { AppBar, Tabs, Tab } from '@mui/material'
-import { tabStyle, a11yProps } from '@/app/util/drawer/tab'
+import { tabStyle, a11yProps } from '@/util/drawer/tab'
 
 type Props = {
   selectedIndex: number

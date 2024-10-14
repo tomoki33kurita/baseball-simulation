@@ -1,4 +1,4 @@
-import { BaseItem, Position } from '@/features/five/types'
+import { BaseItem, Position } from '@/types'
 import { thumbInner, thumbInner2 } from '../thumnInner'
 import { littleInner } from '../littleInner'
 import { sideBank, sideBank2 } from './bank'

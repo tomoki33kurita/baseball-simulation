@@ -1,4 +1,4 @@
-import { Embroidery } from '@/features/five/types'
+import { Embroidery } from '@/types'
 
 export const liningEmbroidery = (ctx: CanvasRenderingContext2D, embroidery: Embroidery, x: number, y: number, fontSizeValue?: string): void => {
   fontFamilySetter(ctx, embroidery.typeFace.value)

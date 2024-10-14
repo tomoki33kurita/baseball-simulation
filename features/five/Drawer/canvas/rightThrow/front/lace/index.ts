@@ -1,4 +1,4 @@
-import { BaseItem, State } from '@/features/five/types'
+import { FiveState } from '@/features/five/types'
 import { bankLace } from './bank'
 import { indexTop, indexTopOver } from './connectIndexToWeb'
 import { thumbTop, thumbTopOver, thumbWrapBack } from './connectThumbToWeb'
@@ -6,7 +6,7 @@ import { connectIndexToMiddle, connectMiddleToRing, connectRingToLittle } from '
 import { knotDownward, knotUpward } from './knotSingle'
 import { littleUpper } from './littleUpper'
 
-export const lace = (ctx: CanvasRenderingContext2D, laceColor: string, state: State): void => {
+export const lace = (ctx: CanvasRenderingContext2D, laceColor: string, state: FiveState): void => {
   // 土手レース
   bankLace(ctx, laceColor, state.materialPack, state.baseModel.position)
   thumbWrapBack(ctx, laceColor, -215, 20, -30) // 先端側の折り返し

@@ -1,4 +1,4 @@
-import { BaseModel } from '@/features/five/types'
+import { BaseModel } from '@/types'
 import React from 'react'
 
 export const useConfirm = () => {

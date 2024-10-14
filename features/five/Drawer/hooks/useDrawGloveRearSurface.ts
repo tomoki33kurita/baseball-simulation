@@ -1,9 +1,9 @@
 import { useEffect } from 'react'
-import { getCtx } from '@/app/util/canvas/ctx'
+import { getCtx } from '@/util/canvas/ctx'
 import { drawRearSurface } from '../canvas/drawRearSurface'
-import { State } from '../../types'
+import { FiveState } from '../../types'
 
-export const useDrawGloveRearSurface = (id: string, state: State) => {
+export const useDrawGloveRearSurface = (id: string, state: FiveState) => {
   useEffect(() => {
     const ctx = getCtx(id) // useEventEffect使って見える
     if (state.baseModel.productNumber === '') return

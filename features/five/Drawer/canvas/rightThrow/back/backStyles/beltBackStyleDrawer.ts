@@ -7,14 +7,14 @@ import { palm } from '../catchFace'
 import { bindingOfBeltBackStyle } from '../edge/edgeOfBeltBackstyle'
 import { bindingOfWrist } from '../edge/edgeOfWrist'
 import { middleFingerPad } from '../fingerCoverOrPad/middleFIngerPad'
-import { State } from '@/features/five/types'
+import { FiveState } from '@/features/five/types'
 import { middleFingerLeft, middleFingerRight } from '../middleFinger'
 import { ringFingerLeft, ringFingerRight } from '../ringFinger'
 import { weltingOfNormal } from '../welting/normal'
-import { getOrderType } from '@/features/five/Setters/logic'
+import { getOrderType } from '@/features/five/Components/Setters/logic'
 
 // 通常ベルトモデル
-export const beltBackStyleDrawer = (ctx: CanvasRenderingContext2D, state: State, needPalmWrap: boolean): void => {
+export const beltBackStyleDrawer = (ctx: CanvasRenderingContext2D, state: FiveState, needPalmWrap: boolean): void => {
   const { isBasicOrder, isBasicWithEmbroideryOrder } = getOrderType(state.orderType)
   if (isBasicOrder || isBasicWithEmbroideryOrder) return
 
@@ -42,7 +42,7 @@ export const beltBackStyleDrawer = (ctx: CanvasRenderingContext2D, state: State,
   fingerCrotch(ctx, state.palm.color, state.welting.color, state.baseModel.isFingerCrotch) // 指股
 }
 
-export const beltBackStyleDrawerForBasic = (ctx: CanvasRenderingContext2D, state: State, needPalmWrap: boolean): void => {
+export const beltBackStyleDrawerForBasic = (ctx: CanvasRenderingContext2D, state: FiveState, needPalmWrap: boolean): void => {
   const isIndexFingerPad = ['indexPad'].includes(state.fingerGuard.value)
   const isMiddleFingerPad = ['middlePad'].includes(state.fingerGuard.value)
   const basicColor = state.baseModel.basicColors.leather.color

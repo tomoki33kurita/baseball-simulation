@@ -1,9 +1,9 @@
 'use client'
 
 import { useReducer } from 'react'
-import { initialState, reducer } from '@/features/five/Pitcher/reducer'
+import { initialState, reducer } from '@/features/five/reducer/pitcher'
 import { fiveTheme } from '@/styles/themes/five'
-import { PageTemplates } from '@/features/PageTemplates'
+import { PageTemplates } from '@/features/five/Components/PageTemplates'
 import { useDrawGloveRearSurface } from '@/features/five/Drawer/hooks/useDrawGloveRearSurface'
 import { useDrawGlovePalmSurface } from '@/features/five/Drawer/hooks/useDrawGlovePalmSurface'
 

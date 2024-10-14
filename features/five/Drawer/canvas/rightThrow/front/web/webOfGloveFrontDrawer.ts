@@ -1,4 +1,4 @@
-import { State } from '@/features/five/types'
+import { FiveState } from '@/features/five/types'
 import { p01Web } from './p01Web'
 import { p02Web } from './p02Web'
 import { p03Web } from './p03Web'
@@ -18,11 +18,11 @@ import { ou03Web } from './ou03Web'
 
 import { underWeb, underWebReinforcement } from '../lace/underWeb'
 import { indexWrapBack } from '../lace/connectIndexToWeb'
-import { webDrawUtil } from '@/app/util/canvas'
+import { webDrawUtil } from '@/util/canvas'
 
 export const webOfGloveFrontDrawer = (
   ctx: CanvasRenderingContext2D,
-  state: State,
+  state: FiveState,
   webColor: string,
   laceColor: string,
   stitchColor: string

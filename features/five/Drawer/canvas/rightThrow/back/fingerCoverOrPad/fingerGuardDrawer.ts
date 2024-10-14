@@ -1,9 +1,9 @@
-import { State } from '@/features/five/types'
+import { FiveState } from '@/features/five/types'
 import { indexFingerCover } from './indexFingerCover'
 import { middleFingerCover } from './middleFIngerCover'
-import { getOrderType } from '@/features/five/Setters/logic'
+import { getOrderType } from '@/features/five/Components/Setters/logic'
 
-export const fingerGuardDrawer = (ctx: CanvasRenderingContext2D, state: State): void => {
+export const fingerGuardDrawer = (ctx: CanvasRenderingContext2D, state: FiveState): void => {
   const isIndexFingerCover =
     state.fingerGuard.value == 'indexCover' || (state.fingerGuard.value === 'unselected' && state.baseModel.position === 'pitcher')
   const isMiddleFingerCover = state.fingerGuard.value === 'middleCover'

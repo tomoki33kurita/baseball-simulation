@@ -1,7 +1,7 @@
 import { indexToMiddle, middleToRing } from './fingerToFinger'
 import { fingerTop, littleTop } from './fingerTop'
-import { webKnots } from '@/app/util/canvas/lace/webKnots'
-import { webKnotDownward, webKnotUpward } from '@/app/util/canvas/lace/webKnotSingle'
+import { webKnots } from '@/util/canvas/lace/webKnots'
+import { webKnotDownward, webKnotUpward } from '@/util/canvas/lace/webKnotSingle'
 
 export const lace = (ctx: CanvasRenderingContext2D, color: string): void => {
   webKnots(ctx, color, 70, -910, 75, 0.8) // 親指の結び目

@@ -1,16 +1,16 @@
+import { getOrderType } from '@/features/five/Components/Setters/logic'
 import { FIVE_LABEL_COLORS } from '@/features/five/Constants/color'
-import { getOrderType } from '@/features/five/Setters/logic'
-import { State } from '@/features/five/types'
+import { FiveState } from '@/features/five/types'
 
-export const fiveLabel = (ctx: CanvasRenderingContext2D, state: State, x: number, y: number, rotate: number, scaleSize: number): void => {
+export const fiveLabel = (ctx: CanvasRenderingContext2D, state: FiveState, x: number, y: number, rotate: number, scaleSize: number): void => {
   ctx.save()
   ctx.rotate((rotate * Math.PI) / 180)
   ctx.scale(scaleSize, scaleSize)
 
-  const labelValue = state.fiveLabel.value
-  const label = FIVE_LABEL_COLORS.find((o) => o.value === labelValue) || { core: '#eeeeee', binding: '#eeeeee', secondary: '#eeeeee' }
-
   const { isBasicOrder, isBasicWithEmbroideryOrder } = getOrderType(state.orderType)
+  const isBasic = isBasicOrder || isBasicWithEmbroideryOrder
+  const labelValue = isBasic ? state.baseModel.basicColors.fiveLabel.value : state.fiveLabel.value
+  const label = FIVE_LABEL_COLORS.find((o) => o.value === labelValue) || { core: '#eeeeee', binding: '#eeeeee', secondary: '#eeeeee' }
 
   if (isBasicOrder || isBasicWithEmbroideryOrder) {
     labelBaseLeather(ctx, state.baseModel.basicColors.leather.color, state.baseModel.basicColors.stitch.color, x, y)

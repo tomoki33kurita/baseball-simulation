@@ -1,4 +1,4 @@
-import { State } from '@/features/five/types'
+import { FiveState } from '@/features/five/types'
 
 // Fレックス
 export const flexEngraving = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number, rotate: number, scaleSize: number): void => {

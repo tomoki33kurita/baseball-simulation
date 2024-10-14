@@ -1,17 +1,18 @@
-import { BaseModel } from '../types'
+import { FiveBaseModel } from '../types'
 
 const imageBaseUrl = '/five/baseModels'
 const gloveImageWidth = 240
 const gloveImageHeight = 200
 const basicColors = {
   leather: { label: 'ブラック', value: 'black', color: '#1E1E1E' },
-  stitch: { label: 'グリーン', value: 'green', color: '#022b02' },
-  lace: { label: 'ブラック', value: 'black', color: '#1E1E1E' },
+  stitch: { label: 'ファイブグリーン', value: 'fiveGreen', color: '#42A670' },
+  lace: { label: 'タン', value: 'tan', color: '#C19445' },
   binding: { label: 'ブラック', value: 'black', color: '#1E1E1E' },
-  welting: { label: '切りハミ(ホワイト)', value: 'kirihamiWhite', color: '#fff' }
+  welting: { label: '切りハミ(ホワイト)', value: 'kirihamiWhite', color: '#fff' },
+  fiveLabel: { label: 'No.01', value: '1' }
 }
 
-export const models: BaseModel[] = [
+export const models: FiveBaseModel[] = [
   {
     productNumber: 'F101',
     position: 'pitcher',
@@ -25,7 +26,10 @@ export const models: BaseModel[] = [
     isUBack: false,
     brand: 'five',
     bankLaceDirection: 'sequentialRoll',
-    basicColors,
+    basicColors: {
+      ...basicColors,
+      lace: { label: 'ブラック', value: 'black', color: '#1E1E1E' }
+    },
     image: {
       url: `${imageBaseUrl}/f101.jpg`,
       width: gloveImageWidth,
