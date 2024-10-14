@@ -1,5 +1,5 @@
-import { State } from '@/features/five/types'
-import { webDrawUtil } from '@/app/util/canvas'
+import { FiveState } from '@/features/five/types'
+import { webDrawUtil } from '@/util/canvas'
 // import { reinforcementCrossLace } from '../lace/crossLace'
 
 import { p01Web } from './p01Web'
@@ -18,7 +18,13 @@ import { ou01Web } from './ou01Web'
 import { ou02Web } from './ou02Web'
 import { ou03Web } from './ou03Web'
 
-export const webOfGloveBackDrawer = (ctx: CanvasRenderingContext2D, state: State, webColor: string, laceColor: string, stitchColor: string): void => {
+export const webOfGloveBackDrawer = (
+  ctx: CanvasRenderingContext2D,
+  state: FiveState,
+  webColor: string,
+  laceColor: string,
+  stitchColor: string
+): void => {
   const { webMatcher } = webDrawUtil(state)
   // if (state.baseModel.productNumber !== 'U300') reinforcementCrossLace(ctx, laceColor, 0, 0, 1, 1)
   if (webMatcher(['p01'])) p01Web(ctx, webColor, laceColor, stitchColor)

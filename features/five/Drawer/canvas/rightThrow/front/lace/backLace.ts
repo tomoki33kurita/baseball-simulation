@@ -1,4 +1,4 @@
-import { Position } from '@/features/five/types'
+import { Position } from '@/types'
 import { outfielderDefaultBackLaceForFront } from './outfielderDefaultBackLace'
 
 export const straightBackLace = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number, numerator: number): void => {

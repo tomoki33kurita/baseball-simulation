@@ -1,4 +1,4 @@
-import { ColorItem } from '@/features/five/types'
+import { ColorItem } from '@/types'
 
 // 捕球面の刻印
 export const fiveEngravedOfPalm = (ctx: CanvasRenderingContext2D, palm: ColorItem, x: number, y: number): void => {

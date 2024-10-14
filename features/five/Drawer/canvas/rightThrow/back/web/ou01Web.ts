@@ -1,4 +1,4 @@
-import { webKnots } from '@/app/util/canvas/lace/webKnots'
+import { webKnots } from '@/util/canvas/lace/webKnots'
 import { topSidePartOfWeb } from './parts/sideParts'
 import { verticalPartOfWeb } from './parts/verticalParts'
 

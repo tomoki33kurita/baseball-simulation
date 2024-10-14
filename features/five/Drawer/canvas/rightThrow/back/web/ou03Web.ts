@@ -1,4 +1,4 @@
-import { webKnots } from '@/app/util/canvas/lace/webKnots'
+import { webKnots } from '@/util/canvas/lace/webKnots'
 import { middleSidePartOfWeb, topSidePartOfWeb } from './parts/sideParts'
 
 export const ou03Web = (ctx: CanvasRenderingContext2D, webColor: string, laceColor: string, stitchColor: string): void => {

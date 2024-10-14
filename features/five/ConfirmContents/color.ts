@@ -1,4 +1,5 @@
-import { ColorItem, State } from '../types'
+import { FiveState } from '../types'
+import { ColorItem } from '@/types'
 
 const genGloveColorCell = (head: string, item: ColorItem, partsKey: string) => ({
   head,
@@ -8,7 +9,7 @@ const genGloveColorCell = (head: string, item: ColorItem, partsKey: string) => (
   partsKey
 })
 
-// const variablePartsGenerator = (state: State, position: Position) => {
+// const variablePartsGenerator = (state: FiveState, position: Position) => {
 //   switch (position) {
 //     case 'pitcher':
 //     default:
@@ -37,7 +38,7 @@ const genGloveColorCell = (head: string, item: ColorItem, partsKey: string) => (
 //   }
 // }
 
-export const getColorCells = (state: State) => {
+export const getColorCells = (state: FiveState) => {
   const needFingerCoverOrPad = state.fingerGuard.value !== 'none'
 
   switch (state.orderType.value) {

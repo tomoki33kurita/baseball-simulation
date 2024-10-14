@@ -1,4 +1,4 @@
-import { webKnots } from '@/app/util/canvas/lace/webKnots'
+import { webKnots } from '@/util/canvas/lace/webKnots'
 import { webToCatchFaceConnect } from '../lace/webToCatchFaceConnect'
 import { webTops } from '../lace/webTop'
 import { connectWebToIndex, connectWebToIndexTop, connectWebToThumb, connectWebToThumbTop } from '../lace/connectWebAndFinger'

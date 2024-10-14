@@ -1,5 +1,5 @@
 import React from 'react'
-import { BaseModel, State } from '../../../../types'
+import { BaseModel, FiveState } from '../../../../types'
 // import { unselectedColorState, unselectedState } from 'src/features/brands/reducer'
 import { unselectedColorState, unselectedState } from '../../../brands/reducer'
 import { initialEmbroideryState } from '../../reducer'
@@ -17,7 +17,7 @@ import {
 } from '../constants/bases'
 //
 
-const mockState: State = {
+const mockState: FiveState = {
   all: unselectedColorState,
   backLace: unselectedState,
   bankLaceDirection: unselectedState,

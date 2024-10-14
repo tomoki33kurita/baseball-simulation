@@ -1,5 +1,4 @@
-import { BankLaceDirection, Position } from '@/features/five/types'
-import { positionChecker } from '@/app/util/logic'
+import { BankLaceDirection } from '@/types'
 import {
   onBindingTojiCenter,
   onBindingTojiCenter2,

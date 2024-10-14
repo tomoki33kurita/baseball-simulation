@@ -13,7 +13,7 @@ import {
   SET_FIVE_LABEL,
   SET_F_LEX_ENGRAVING
 } from '../../Constants/action'
-import { objectsFilter } from '@/app/util/logic'
+import { objectsFilter } from '@/util/logic'
 import { ResponseDispatch } from '../../types'
 import { BINDINGS, FIVE_LABELS, LACES, MOUTON_COLORS, STITCHES, WELTINGS } from '../../Constants/color'
 import React from 'react'

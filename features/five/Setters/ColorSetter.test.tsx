@@ -1,5 +1,6 @@
 import { initialEmbroideryState, unselectedColorState, unselectedState } from 'src/features/brands/reducer'
-import { Position, State } from '@/features/five/types'
+import { FiveState } from '@/features/five/types'
+import { Position } from '@/types'
 import { render } from '@testing-library/react'
 import ColorSetter from './ColorSetter'
 import 'src/locales/ja'
@@ -14,7 +15,7 @@ import {
   MOUTON_BUTTON_OPTION
 } from '../Constants/color'
 
-const mockState: State = {
+const mockState: FiveState = {
   all: unselectedColorState,
   backLace: unselectedState,
   bankLaceDirection: unselectedState,

@@ -4,14 +4,15 @@ import { Box } from '@mui/material'
 import BaseSetter from './BaseSetter'
 import ColorSetter from './ColorSetter'
 import EmbroiderySetter from './EmbroiderySetter'
-import { SimulationConfirmDialog } from '@/features/Confirm/SimulationConfirmDialog'
-import { Position, State } from '../types'
+import { SimulationConfirmDialog } from '@/components/SimulationConfirmDialog'
+import { FiveState } from '../types'
+import { Position } from '@/types'
 import { ConfirmContents } from '../ConfirmContents'
 import { SettingTabs } from '@/components/SettingFrame/SettingTabs'
 import { SettingButtons } from '@/components/SettingFrame/SettingButtons'
 
 type Props = {
-  state: State
+  state: FiveState
   position: Position
   dispatch: React.Dispatch<unknown>
 }

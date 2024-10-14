@@ -1,28 +1,5 @@
+import { BaseItem, BaseItemWithPrice, BaseModel, ChoiceItem, ColorItem, Embroidery, Personal, Position } from '@/types'
 import { BINDINGS, LACES, LEATHER_COLORS, STITCHES, WELTINGS } from '../Constants/color'
-
-export type ChoiceItem = {
-  label: string
-  value: string
-}
-
-export type BaseItem = {
-  value: string
-  label: string
-}
-
-export type BaseItemWithPrice = {
-  value: string
-  label: string
-  price: number
-}
-
-export type ColorItem = {
-  value: string
-  label: string
-  color: string
-  price?: number
-  order?: number
-}
 
 export type EmbroideryItems = {
   typeFace: ChoiceItem[]
@@ -34,7 +11,7 @@ export type EmbroideryItems = {
 export type PartsItem = {
   label: string
   value: Exclude<
-    keyof State,
+    keyof FiveState,
     | 'baseModel'
     | 'dominantArm'
     | 'fingerGuard'
@@ -58,8 +35,8 @@ export type LeatherColorsByParts = Record<PartsKey, typeof LEATHER_COLORS | type
 
 export type DrawerIndex = 0 | 1
 
-export type State = {
-  baseModel: BaseModel
+export type FiveState = {
+  baseModel: FiveBaseModel
   dominantArm: BaseItem
   fingerGuard: BaseItem
   orderType: BaseItemWithPrice
@@ -98,34 +75,9 @@ export type State = {
   labelStand: ColorItem
 }
 
-type Nullable<T> = {
-  [P in keyof T]: T[P] | null
-}
-type NullableAction = { type: string } & Nullable<State>
-
-export type NullableActionDispatch = (value: NullableAction) => void
-
 export type ResponseDispatch = (selected: string) => void
 
-export type Position = 'pitcher' | 'infielder' | 'outfielder'
-
-export type EmbroideryKey = 'typeFace' | 'position' | 'color' | 'shadowColor' | 'edgeColor' | 'pointColor' | 'content'
-
-export type BankLaceDirection = 'sequentialRoll' | 'reverseRoll'
-
-export type BaseModel = {
-  productNumber: string
-  position: Position
-  size: {
-    value: number
-    unit: string
-  }
-  webParts: string
-  description: string
-  isFingerCrotch: boolean
-  isUBack: boolean
-  brand: string
-  bankLaceDirection: BankLaceDirection
+export type FiveBaseModel = {
   basicColors: {
     leather: ColorItem
     lace: ColorItem
@@ -133,25 +85,6 @@ export type BaseModel = {
     binding: ColorItem
     welting: ColorItem
   }
-  image: {
-    url: string
-    width: number
-    height: number
-  }
-}
+} & BaseModel
 
 export type CanStepFurther = any
-
-export type Personal = any
-
-export type Embroidery = {
-  id: number
-  typeFace: ChoiceItem
-  position: ChoiceItem
-  content: string
-  color: ColorItem
-  shadowColor: ColorItem
-  edgeColor: ColorItem
-}
-
-export type Brand = 'five' | 'genuine'

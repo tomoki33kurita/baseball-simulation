@@ -1,8 +1,8 @@
-import SelectCard from '@/components/SelectCard'
-import { Position, State } from '../types'
-import TabPanel from '@/components/TabPanel'
-import { SelectCardWithImage } from '@/components/SelectCardWithImage'
-import { originDispatcher } from '@/app/util/logic'
+import { SelectCard } from '@/components/Setters/SelectCard'
+import { FiveState } from '../types'
+import { Position } from '@/types'
+import { TabPanel } from '@/components/TabPanel'
+import { SelectCardWithImage } from '@/components/Setters/SelectCardWithImage'
 import { dispatcher } from './dispatcher'
 import { getColorOptionsByParts, getSelectableParts, getComponentParts, getOrderType } from './logic'
 import {
@@ -23,9 +23,10 @@ import {
 } from '../Constants/color'
 import { DISPATCHER } from '../Constants/action'
 import { Box } from '@mui/material'
+import { originDispatcher } from '@/util/logic'
 
 type Props = {
-  state: State
+  state: FiveState
   selectedIndex: number
   position: Position
   dispatch: React.Dispatch<unknown>

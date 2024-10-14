@@ -1,5 +1,5 @@
 import { getFLexEngraving, getOrderType } from '../../Setters/logic'
-import { State } from '../../types'
+import { FiveState } from '../../types'
 import { canvasResetter } from './canvasResetter'
 import { backStyleOfGloveBackDrawer } from './rightThrow/back/backStyles'
 import { fingerGuardDrawer } from './rightThrow/back/fingerCoverOrPad/fingerGuardDrawer'
@@ -12,7 +12,7 @@ import { laceOfWristBeltCrossDrawer } from './rightThrow/back/lace/laceOfWristBe
 import { lining } from './rightThrow/back/lining'
 import { webOfGloveBackDrawer } from './rightThrow/back/web/webOfGloveBackDrawer'
 
-export const drawRearSurface = (ctx: CanvasRenderingContext2D | null, state: State): void => {
+export const drawRearSurface = (ctx: CanvasRenderingContext2D | null, state: FiveState): void => {
   if (!ctx) return
 
   const { isBasicOrder, isBasicWithEmbroideryOrder } = getOrderType(state.orderType)

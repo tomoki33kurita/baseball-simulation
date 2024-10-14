@@ -1,5 +1,5 @@
 import React from 'react'
-import { Position, State } from '../types'
+import { FiveState } from '../types'
 import {
   DOMINANT_ARM_BUTTON_OPTION,
   DOMINANT_ARMS,
@@ -14,14 +14,15 @@ import {
   WEB_PARTS,
   FINGER_GUARDS
 } from '../Constants/base'
-import SelectCard from '@/components/SelectCard'
-import { SelectCardWithImage } from '@/components/SelectCardWithImage'
-import TabPanel from '@/components/TabPanel'
+import { SelectCard } from '@/components/Setters/SelectCard'
+import { SelectCardWithImage } from '@/components/Setters/SelectCardWithImage'
+import { TabPanel } from '@/components/TabPanel'
 import { dispatcher } from './dispatcher'
 import { getOrderType } from './logic'
+import { Position } from '@/types'
 
 type Props = {
-  state: State
+  state: FiveState
   selectedIndex: number
   position: Position
   dispatch: React.Dispatch<unknown>

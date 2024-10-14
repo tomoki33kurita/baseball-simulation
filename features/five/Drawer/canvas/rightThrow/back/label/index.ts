@@ -1,8 +1,8 @@
 import { FIVE_LABEL_COLORS } from '@/features/five/Constants/color'
 import { getOrderType } from '@/features/five/Setters/logic'
-import { State } from '@/features/five/types'
+import { FiveState } from '@/features/five/types'
 
-export const fiveLabel = (ctx: CanvasRenderingContext2D, state: State, x: number, y: number, rotate: number, scaleSize: number): void => {
+export const fiveLabel = (ctx: CanvasRenderingContext2D, state: FiveState, x: number, y: number, rotate: number, scaleSize: number): void => {
   ctx.save()
   ctx.rotate((rotate * Math.PI) / 180)
   ctx.scale(scaleSize, scaleSize)

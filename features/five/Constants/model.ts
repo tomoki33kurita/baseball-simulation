@@ -1,4 +1,4 @@
-import { BaseModel } from '../types'
+import { FiveBaseModel } from '../types'
 
 const imageBaseUrl = '/five/baseModels'
 const gloveImageWidth = 240
@@ -11,7 +11,7 @@ const basicColors = {
   welting: { label: '切りハミ(ホワイト)', value: 'kirihamiWhite', color: '#fff' }
 }
 
-export const models: BaseModel[] = [
+export const models: FiveBaseModel[] = [
   {
     productNumber: 'F101',
     position: 'pitcher',

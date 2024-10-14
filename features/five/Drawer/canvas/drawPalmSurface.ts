@@ -1,4 +1,4 @@
-import { State } from '@/features/five/types'
+import { FiveState } from '@/features/five/types'
 import { canvasResetter } from './canvasResetter'
 import { listLining } from './rightThrow/front/listLining'
 import { thumbBackOut, thumbBackWebSide } from './rightThrow/front/back/thumbFinger'
@@ -15,7 +15,7 @@ import { backLaceDrawerOfFront } from './rightThrow/front/lace/backLace'
 import { fiveEngravedOfPalm } from './rightThrow/front/engraving'
 import { getOrderType } from '../../Setters/logic'
 
-export const drawPalmSurface = (ctx: CanvasRenderingContext2D | null, state: State): void => {
+export const drawPalmSurface = (ctx: CanvasRenderingContext2D | null, state: FiveState): void => {
   if (!ctx) return
 
   const { isBasicOrder, isBasicWithEmbroideryOrder } = getOrderType(state.orderType)

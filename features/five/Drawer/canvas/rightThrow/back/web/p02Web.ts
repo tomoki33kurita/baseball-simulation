@@ -1,4 +1,4 @@
-import { webKnots } from '@/app/util/canvas/lace/webKnots'
+import { webKnots } from '@/util/canvas/lace/webKnots'
 import { jointOfCatchFace, jointOfIndexFinger, jointOfThumbFinger2 } from './parts/earJointParts'
 import { topSidePartOfWebForPitcher } from './parts/sideParts'
 

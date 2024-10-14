@@ -1,12 +1,12 @@
 import React from 'react'
 import { Box, Accordion, AccordionDetails, Card } from '@mui/material'
-import { State } from '../types'
-import TabPanel from '@/components/TabPanel'
-import SelectCard from '@/components/SelectCard'
-import { EmbroideryFormUpDown } from '@/features/Embroidery/EmbroideryFormUpDown'
+import { FiveState } from '../types'
+import { TabPanel } from '@/components/TabPanel'
+import { SelectCard } from '@/components/Setters/SelectCard'
+import { EmbroideryFormUpDown } from '@/components/Setters/Embroidery/EmbroideryFormUpDown'
 import { EMBROIDERY_COLORS, TYPE_FACES } from '../Constants/embroidery'
-import { EmbroideryAccordionSummary } from '@/features/Embroidery/EmbroideryAccordionSummary'
-import { EmbroideryContent } from '@/features/Embroidery/EmbroideryContent'
+import { EmbroideryAccordionSummary } from '@/components/Setters/Embroidery/EmbroideryAccordionSummary'
+import { EmbroideryContent } from '@/components/Setters/Embroidery/EmbroideryContent'
 import {
   characterCheckHelper,
   embroideryFlagGenerator,
@@ -19,7 +19,7 @@ import {
 import Image from 'next/image'
 
 type Props = {
-  state: State
+  state: FiveState
   selectedIndex: number
   dispatch: React.Dispatch<unknown>
 }

@@ -1,5 +1,5 @@
 import { listCross } from './listCross'
-import { webKnots } from '@/app/util/canvas/lace/webKnots'
+import { webKnots } from '@/util/canvas/lace/webKnots'
 
 export const laceOfWristBeltCrossDrawer = (ctx: CanvasRenderingContext2D, color: string): void => {
   listCross(ctx, color) // 手口左のクロス部分

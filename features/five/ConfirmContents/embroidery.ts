@@ -1,4 +1,4 @@
-import { Embroidery } from '../types'
+import { Embroidery } from '@/types'
 
 export const genEmbroideryCells = (embroidery: Embroidery, isCustom: boolean): { head: string; label: string; value: string; color?: string }[] =>
   [

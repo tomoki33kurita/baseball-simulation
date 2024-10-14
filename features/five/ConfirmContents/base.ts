@@ -1,7 +1,8 @@
-import { BaseItem, State } from '../types'
+import { BaseItem } from '@/types'
+import { FiveState } from '../types'
 
 export const getBaseCells = (
-  state: State
+  state: FiveState
 ): {
   head: string
   label: string
