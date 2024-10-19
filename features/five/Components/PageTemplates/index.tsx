@@ -7,10 +7,10 @@ import { BaseModelSelector } from '@/components/BaseModelSelector'
 import { ThemeProvider } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 import { DrawerIndex, FiveState } from '@/features/five/types'
+import { Setters } from '../Setters'
 import { SurfaceDrawers } from '@/components/Drawers'
 import { Position } from '@/types'
 import { models } from '@/features/five/Constants/model'
-import { Setters } from '../Setters'
 
 type Props = {
   state: FiveState

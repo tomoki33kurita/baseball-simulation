@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
-import { BACK_PARTS, LEATHER_COLORS_BY_PARTS, PALM_PARTS } from '../../../Constants/color'
-import { EMBROIDERY_POSITIONS, EMBROIDERY_ITEMS, SHADOW_EDGE_COLORS, TYPE_FACES } from '../../../Constants/embroidery'
-import { DrawerIndex, PartsItem, PartsKey, FiveState } from '../../../types'
 import { useDebounce } from 'use-debounce'
-import { SET_EMBROIDERIES } from '../../../Constants/action'
-import { isHalfWidthCharChecker } from '../../../Drawer/canvas/back/useCanvasEmbroideries'
 import { BaseItem, Embroidery, EmbroideryKey } from '@/types'
+import { DrawerIndex, PartsItem, PartsKey, FiveState } from '@/features/five/types'
+import { BACK_PARTS, LEATHER_COLORS_BY_PARTS, PALM_PARTS } from '@/features/five/Constants/color'
+import { SET_EMBROIDERIES } from '@/features/five/Constants/action'
+import { EMBROIDERY_POSITIONS, EMBROIDERY_ITEMS, SHADOW_EDGE_COLORS, TYPE_FACES } from '@/features/five/Constants/embroidery'
+import { isHalfWidthCharChecker } from '@/features/five/Drawer/canvas/back/useCanvasEmbroideries'
 
 export const getComponentParts = (state: FiveState) => {
   const {

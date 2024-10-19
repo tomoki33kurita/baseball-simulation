@@ -1,5 +1,7 @@
 import React from 'react'
 import { ORDER_TYPES, MATERIAL_PACKS, WEB_PARTS, F_LEX_ENGRAVINGS, DOMINANT_ARMS, FINGER_GUARDS } from '../../../Constants/base'
+import { objectsFilter } from '@/util/logic'
+import { ResponseDispatch } from '@/features/five/types'
 import {
   SET_DOMINANT_ARM,
   SET_FINGER_GUARD,
@@ -13,10 +15,8 @@ import {
   SET_STITCH_COLOR,
   SET_FIVE_LABEL,
   SET_F_LEX_ENGRAVING
-} from '../../../Constants/action'
-import { BINDINGS, FIVE_LABELS, LACES, MOUTON_COLORS, STITCHES, WELTINGS } from '../../../Constants/color'
-import { objectsFilter } from '@/util/logic'
-import { ResponseDispatch } from '../../../types'
+} from '@/features/five/Constants/action'
+import { BINDINGS, FIVE_LABELS, LACES, MOUTON_COLORS, STITCHES, WELTINGS } from '@/features/five/Constants/color'
 
 // ここはブランドのドメイン
 const dispatchBaseStore = {

@@ -1,11 +1,11 @@
-import { CanStepFurther, FiveState } from '@/features/five/types'
-import { Embroidery, Personal } from '@/types'
 import { useState } from 'react'
 import { UseFormWatch } from 'react-hook-form'
-import { getBaseCells } from '../Components/ConfirmContents/base'
-import { getColorCells } from '../Components/ConfirmContents/color'
-import { getOrderType } from '../Components/Setters/logic'
-import { genEmbroideryCells } from '../Components/ConfirmContents/embroidery'
+import { Embroidery, Personal } from '@/types'
+import { CanStepFurther, FiveState } from '@/features/five/types'
+import { getBaseCells } from '@/features/five/Components/ConfirmContents/base'
+import { getColorCells } from '@/features/five/Components/ConfirmContents/color'
+import { getOrderType } from '@/features/five/Components/Setters/logic'
+import { genEmbroideryCells } from '@/features/five/Components/ConfirmContents/embroidery'
 
 type CompareEmailWatch = UseFormWatch<{
   mailAddress: string
@@ -27,10 +27,8 @@ export const useCanStepFurther = (state: FiveState, isCopied: boolean, watch: Co
   const baseSettings = getBaseCells(state)
   const colorSettings = getColorCells(state)
   const existEmbroidery = state.embroideries.filter((e: Embroidery) => e.content.trim().length > 0).length > 0
-  // これFIVE固有の処理なので、FIVEのロジックに移動したい
   const { isCustomOrder } = getOrderType(state.orderType)
   const embroiderySettings = existEmbroidery ? state.embroideries.map((e: Embroidery) => genEmbroideryCells(e, isCustomOrder)).flat() : []
-  // これFIVE固有の処理なので、FIVEのロジックに移動したい
   const existInvalidPersonal = isInvalidPersonalData(state.personal)
 
   const existUnselectedState = [...baseSettings, ...colorSettings, ...embroiderySettings].some((y) => y.value === 'unselected')

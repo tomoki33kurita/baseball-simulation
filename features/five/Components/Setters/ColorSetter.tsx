@@ -1,5 +1,5 @@
 import { SelectCard } from '@/components/Setters/SelectCard'
-import { FiveState } from '../../types'
+import { FiveState } from '@/features/five/types'
 import { Position } from '@/types'
 import { TabPanel } from '@/components/TabPanel'
 import { SelectCardWithImage } from '@/components/Setters/SelectCardWithImage'

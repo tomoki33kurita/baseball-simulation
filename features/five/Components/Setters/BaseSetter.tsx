@@ -1,5 +1,6 @@
 import React from 'react'
-import { FiveState } from '../../types'
+import { FiveState } from '@/features/five/types'
+import { Position } from '@/types'
 import {
   DOMINANT_ARM_BUTTON_OPTION,
   DOMINANT_ARMS,
@@ -13,13 +14,12 @@ import {
   WEB_PARTS_BUTTON_OPTION,
   WEB_PARTS,
   FINGER_GUARDS
-} from '../../Constants/base'
+} from '@/features/five/Constants/base'
 import { SelectCard } from '@/components/Setters/SelectCard'
 import { SelectCardWithImage } from '@/components/Setters/SelectCardWithImage'
 import { TabPanel } from '@/components/TabPanel'
 import { dispatcher } from './dispatcher'
 import { getOrderType } from './logic'
-import { Position } from '@/types'
 
 type Props = {
   state: FiveState

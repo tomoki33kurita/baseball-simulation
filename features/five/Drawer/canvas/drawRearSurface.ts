@@ -1,4 +1,4 @@
-import { getFLexEngraving, getOrderType } from '../../Components/Setters/logic'
+import { getFLexEngraving, getOrderType } from '@/features/five/Components/Setters/logic'
 import { FiveState } from '../../types'
 import { canvasResetter } from './canvasResetter'
 import { backStyleOfGloveBackDrawer } from './rightThrow/back/backStyles'

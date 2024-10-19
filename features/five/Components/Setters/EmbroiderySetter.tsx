@@ -1,10 +1,10 @@
 import React from 'react'
 import { Box, Accordion, AccordionDetails, Card } from '@mui/material'
-import { FiveState } from '../../types'
+import { FiveState } from '@/features/five/types'
 import { TabPanel } from '@/components/TabPanel'
 import { SelectCard } from '@/components/Setters/SelectCard'
 import { EmbroideryFormUpDown } from '@/components/Setters/Embroidery/EmbroideryFormUpDown'
-import { EMBROIDERY_COLORS, TYPE_FACES } from '../../Constants/embroidery'
+import { EMBROIDERY_COLORS, TYPE_FACES } from '@/features/five/Constants/embroidery'
 import { EmbroideryAccordionSummary } from '@/components/Setters/Embroidery/EmbroideryAccordionSummary'
 import { EmbroideryContent } from '@/components/Setters/Embroidery/EmbroideryContent'
 import {

@@ -1,5 +1,5 @@
 import { ColorItem } from '@/types'
-import { FiveState } from '../../types'
+import { FiveState } from '@/features/five/types'
 
 const genGloveColorCell = (head: string, item: ColorItem, partsKey: string) => ({
   head,

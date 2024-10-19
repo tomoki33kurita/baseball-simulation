@@ -1,6 +1,6 @@
-import { getOrderType } from '@/features/five/Components/Setters/logic'
 import { FIVE_LABEL_COLORS } from '@/features/five/Constants/color'
 import { FiveState } from '@/features/five/types'
+import { getOrderType } from '@/features/five/Components/Setters/logic'
 
 export const fiveLabel = (ctx: CanvasRenderingContext2D, state: FiveState, x: number, y: number, rotate: number, scaleSize: number): void => {
   ctx.save()

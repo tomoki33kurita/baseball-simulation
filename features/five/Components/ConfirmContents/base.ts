@@ -1,5 +1,5 @@
 import { BaseItem } from '@/types'
-import { FiveState } from '../../types'
+import { FiveState } from '@/features/five/types'
 
 export const getBaseCells = (
   state: FiveState
