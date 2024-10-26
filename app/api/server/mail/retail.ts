@@ -1,31 +1,12 @@
-import type { NextApiRequest } from 'next'
 import nodemailer from 'nodemailer'
-// type RequestData = {
-//   body: {
-//     subject: string
-//     email: string
-//     message: string
-//   }
-// }
+import { NextResponse } from 'next/server'
 
-export const config = {
-  api: {
-    bodyParser: {
-      sizeLimit: '5mb'
-    }
-  }
-}
-const htmlH3Style = `style="margin-bottom:0"`
-const defaultFontSize = `style="font-size:11px;"`
-const flexMarginLeft = `style="margin-left:8px;"`
-
-const sendOrderEmail = async (req: NextApiRequest, res: any) => {
+export async function POST(req: Request) {
   try {
-    const data = req.body.body // TODO: 構造変えたい
+    const data = await req.json()
+    const receiverEmailAddress = data.email
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: process.env.SMTP_PORT,
-      secure: process.env.SMTP_SECURE,
+      service: 'gmail',
       auth: {
         user: process.env.SMTP_AUTH_USER,
         pass: process.env.SMTP_AUTH_PASS
@@ -33,234 +14,80 @@ const sendOrderEmail = async (req: NextApiRequest, res: any) => {
     })
     const info = await transporter.sendMail({
       from: process.env.SMTP_AUTH_USER,
-      to: data.agencyEmail,
-      cc: data.retailEmail,
+      to: receiverEmailAddress,
       bcc: process.env.SMTP_AUTH_USER,
-      subject: `${data.subject} / ${data.savedId}`,
+      subject: data.subject,
       attachments: [
         {
-          filename: 'simulation-front.png',
-          path: data.imageUrlFront,
-          cid: 'frontImage'
+          filename: 'simulation-palm.png',
+          path: data.imageUrlPalm,
+          cid: 'palmImage'
         },
         {
-          filename: 'simulation-back.png',
-          path: data.imageUrlBack,
-          cid: 'backImage'
-        },
-        {
-          filename: 'order-simulation.pdf',
-          cid: 'pdf-item',
-          encoding: 'base64',
-          content: data.pdfBase64
+          filename: 'simulation-rear.png',
+          path: data.imageUrlRear,
+          cid: 'rearImage'
         }
       ],
-
-      html: mailTextGenerator(data)
+      html: mailTextGenerator(data.locale, data.savedId)
     })
-    console.log('Mail order data sent: ', info.messageId)
-    return res.status(200).end()
+    //   <div style="margin-bottom:8px">
+    //   <div>シミュレーションIDからオーダー発注が可能な店舗一覧はこちら</div>
+    // </div>
+
+    console.log('Saved data sent: ', info.messageId)
+    return NextResponse.json(
+      {
+        success: true
+      },
+      {
+        status: 200
+      }
+    )
   } catch (err) {
     console.log(err)
-    res.status(500).send()
+    return NextResponse.json(
+      {
+        success: false
+      },
+      {
+        status: 500
+      }
+    )
   }
 }
 
-const mailTextGenerator = (data: any) => {
-  switch (data.locale) {
+const mailTextGenerator = (locale = 'ja', savedId: string) => {
+  switch (locale) {
     default:
-      //case 'ja':
-      return `<html>
-      <head></head>
-      <body>
-        <div style="margin-bottom:8px; display:flex">
-          <div ${defaultFontSize}>発注元：${data.retailName}(${data.retailEmail})</div>
-          <div style="margin-left:16px;font-size:11px;" >保存ID：${data.savedId}</div>
-        </div>
-        <div style="display:flex">
-          <img width=300 src="cid:backImage"/>
-          <img width=300 src="cid:frontImage"/>
-        </div>
-
-        <div style="display:flex;width:600px;justify-content:space-between;">
-          <div>
-            <div>
-              <h4 ${htmlH3Style}>基本設定</h4>
-              ${data.baseSettings.map((x, i) => `<div ${defaultFontSize}>(${i + 1}) ${x.head}：${x.label}</div>`).join('')}
-            </div>
-            <div>
-              <div>
-                <h4 ${htmlH3Style}>お客様情報</h4>
-                <div ${defaultFontSize}>お名前：${data.orderer.name}</div>
-                <div ${defaultFontSize}>お名前(カナ)：${data.orderer.kana}</div>
-                <div ${defaultFontSize}>Email：${data.orderer.mailAddress}</div>
-                <div ${defaultFontSize}>電話番号：${data.orderer.phoneNumber}</div>
-                <div ${defaultFontSize}>リーグ：${data.orderer.league}</div>
-                <div ${defaultFontSize}>ポジション：${data.orderer.position}</div>
-                <div ${defaultFontSize}>備考：${data.orderer.remarks}</div>
-              </div>
-            </div>
+      return `
+      <html>
+        <head></head>
+        <body>
+          <div style="margin-bottom:8px">
+            <div>ATOMSオーダーシミュレーションをご利用頂きありがとうございます。</div>
+          </div>
+      
+          <div style="display:flex; margin-bottom:8px">
+            <img width=300 src="cid:frontImage"/>
+            <img width=300 src="cid:backImage"/>
           </div>
 
-          <div ${flexMarginLeft}>
-            <div>
-              <h4 ${htmlH3Style}>カラー設定1</h4>
-              ${data.colorSettings1.map((x, i) => `<div ${defaultFontSize}>(${i + 1}) ${x.head}：${x.label}</div>`).join('')}
-            </div>
-            <div>
-              <h4 ${htmlH3Style}>カラー設定2</h4>
-              ${data.colorSettings2.map((x, i) => `<div ${defaultFontSize}>(${i + 1}) ${x.head}：${x.label}</div>`).join('')}
-            </div>
+          <div style="margin-bottom:8px">
+            <div>シミュレーションのIDが発行されました。ご注文の際にシミュレーションIDが必要となりますので、大切に保管してください。</div>
+            <div>※3ヶ月が経過しますと、IDが期限切れとなる可能性があります。予めご了承ください。</div>
+            <br>
+            <br>
+            <div style="font-weight:bold; color:blue">保存ID：${savedId}</div>
           </div>
 
-          <div ${flexMarginLeft}>
-            ${
-              data.embroideries.length > 0
-                ? data.embroideries
-                    .map(
-                      (embroidery, i) =>
-                        `<h4 ${htmlH3Style}>刺繍設定${i + 1}</h4>
-                      ${embroidery.map((e, j) => `<div ${defaultFontSize}>(${j + 1}) ${e.head}：${e.label || '--'}</div>`).join('')}`
-                    )
-                    .join('')
-                : `
-              <h4 ${htmlH3Style}>刺繍設定</h4>
-              <div ${defaultFontSize}>刺繍指定なし</div>
-              `
-            } 
+          <div style="margin-bottom:8px">
+            <div>高校野球等、各種連盟でのグラブ・ミットの使用規則はご自身でご確認ください。</div>
+            <div>誤って使用規則に反するグラブをご発注された場合、返品・交換等はオーダー発注の特性上受けかねます。</div>
+            <div>ご確認の上、ご発注をよろしくお願いします。</div>
           </div>
-
-        </div>
-      </body>
-    </html>`
-    // case 'en':
-    //   return `<html>
-    //   <head></head>
-    //   <body>
-    //     <div style="margin-bottom:8px; display:flex">
-    //       <div ${defaultFontSize}>Ordering by：${data.retailEmail}</div>
-    //       <div style="margin-left:16px;font-size:11px;" >Saved ID：${data.savedId}</div>
-    //     </div>
-
-    //     <div style="display:flex">
-    //       <img width=300 src="cid:backImage"/>
-    //       <img width=300 src="cid:frontImage"/>
-    //     </div>
-
-    //     <div style="display:flex;width:600px;justify-content:space-between;">
-    //       <div>
-    //         <div>
-    //           <h4 ${htmlH3Style}>Base Settings</h4>
-    //           ${data.baseSettings.map((x, i) => `<div ${defaultFontSize}>(${i + 1}) ${x.head}：${x.label}</div>`).join('')}
-    //         </div>
-    //         <div>
-    //           <div>
-    //             <h4 ${htmlH3Style}>Customer Information</h4>
-    //             <div ${defaultFontSize}>Name：${data.orderer.name}</div>
-    //             <div ${defaultFontSize}>Email Address：${data.orderer.mailAddress}</div>
-    //             <div ${defaultFontSize}>TEL：${data.orderer.phoneNumber}</div>
-    //             <div ${defaultFontSize}>League：${data.orderer.league}</div>
-    //             <div ${defaultFontSize}>Position：${data.orderer.position}</div>
-    //             <div ${defaultFontSize}>Remark：${data.orderer.remarks}</div>
-    //           </div>
-    //         </div>
-    //       </div>
-
-    //       <div ${flexMarginLeft}>
-    //         <div>
-    //           <h4 ${htmlH3Style}>Color Settings 1</h4>
-    //           ${data.colorSettings1.map((x, i) => `<div ${defaultFontSize}>(${i + 1}) ${x.head}：${x.label}</div>`).join('')}
-    //         </div>
-    //         <div>
-    //           <h4 ${htmlH3Style}>Color Settings 2</h4>
-    //           ${data.colorSettings2.map((x, i) => `<div ${defaultFontSize}>(${i + 1}) ${x.head}：${x.label}</div>`).join('')}
-    //         </div>
-    //       </div>
-
-    //       <div ${flexMarginLeft}>
-    //         ${
-    //           data.embroideries.length > 0
-    //             ? data.embroideries
-    //                 .map(
-    //                   (embroidery, i) =>
-    //                     `<h4 ${htmlH3Style}>Embroidery Settings ${i + 1}</h4>
-    //                   ${embroidery.map((e, j) => `<div ${defaultFontSize}>(${j + 1}) ${e.head}${e.label || '--'}</div>`).join('')}`
-    //                 )
-    //                 .join('')
-    //             : `
-    //           <h4 ${htmlH3Style}>Embroidery Setting</h4>
-    //           <div ${defaultFontSize}>No embroidery</div>
-    //           `
-    //         }
-    //       </div>
-
-    //     </div>
-    //   </body>
-    // </html>`
-    // case 'ko':
-    //   return `<html>
-    //   <head></head>
-    //   <body>
-    //     <div style="margin-bottom:8px; display:flex">
-    //       <div ${defaultFontSize}>발주원：${data.retailEmail}</div>
-    //       <div style="margin-left:16px;font-size:11px;" >보존ID：${data.savedId}</div>
-    //     </div>
-
-    //     <div style="display:flex">
-    //       <img width=300 src="cid:backImage"/>
-    //       <img width=300 src="cid:frontImage"/>
-    //     </div>
-
-    //     <div style="display:flex;width:600px;justify-content:space-between;">
-    //       <div>
-    //         <div>
-    //           <h4 ${htmlH3Style}>기본항목</h4>
-    //           ${data.baseSettings.map((x, i) => `<div ${defaultFontSize}>(${i + 1}) ${x.head}：${x.label}</div>`).join('')}
-    //         </div>
-    //         <div>
-    //           <div>
-    //             <h4 ${htmlH3Style}>고객 정보</h4>
-    //             <div ${defaultFontSize}>성함：${data.orderer.name}</div>
-    //             <div ${defaultFontSize}>Email：${data.orderer.mailAddress}</div>
-    //             <div ${defaultFontSize}>전화：${data.orderer.phoneNumber}</div>
-    //             <div ${defaultFontSize}>리그：${data.orderer.league}</div>
-    //             <div ${defaultFontSize}>수비 위치：${data.orderer.position}</div>
-    //             <div ${defaultFontSize}>비고란：${data.orderer.remarks}</div>
-    //           </div>
-    //         </div>
-    //       </div>
-
-    //       <div ${flexMarginLeft}>
-    //         <div>
-    //           <h4 ${htmlH3Style}>컬러 설정1</h4>
-    //           ${data.colorSettings1.map((x, i) => `<div ${defaultFontSize}>(${i + 1}) ${x.head}：${x.label}</div>`).join('')}
-    //         </div>
-    //         <div>
-    //           <h4 ${htmlH3Style}>컬러 설정2</h4>
-    //           ${data.colorSettings2.map((x, i) => `<div ${defaultFontSize}>(${i + 1}) ${x.head}：${x.label}</div>`).join('')}
-    //         </div>
-    //       </div>
-
-    //       <div ${flexMarginLeft}>
-    //         ${
-    //           data.embroideries.length > 0
-    //             ? data.embroideries
-    //                 .map(
-    //                   (embroidery, i) =>
-    //                     `<h4 ${htmlH3Style}>자수 설정${i + 1}</h4>
-    //                   ${embroidery.map((e, j) => `<div ${defaultFontSize}>(${j + 1}) ${e.head}${e.label || '--'}</div>`).join('')}`
-    //                 )
-    //                 .join('')
-    //             : `
-    //           <h4 ${htmlH3Style}>자수 설정</h4>
-    //           <div ${defaultFontSize}>자수 설정 없음</div>
-    //           `
-    //         }
-    //       </div>
-
-    //     </div>
-    //   </body>
-    // </html>`
+          </body>
+      </html>
+      `
   }
 }
-export default sendOrderEmail

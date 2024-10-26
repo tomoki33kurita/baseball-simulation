@@ -27,6 +27,16 @@ const Brands = () => {
             外野手用
           </Button>
         </Box>
+        <Box m={2}>
+          <Button disabled size={'large'} variant={'outlined'} href={'/five/outfielder'} style={{ color, border }}>
+            一塁手用
+          </Button>
+        </Box>
+        <Box m={2}>
+          <Button disabled size={'large'} variant={'outlined'} href={'/five/outfielder'} style={{ color, border }}>
+            捕手用
+          </Button>
+        </Box>
       </Box>
     </Box>
   )

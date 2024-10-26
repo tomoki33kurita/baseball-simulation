@@ -8,7 +8,8 @@ export const LEATHER_COLORS = [
   { label: 'イエロー', value: 'yellow', color: '#C2B64A' },
   { label: 'オレンジ', value: 'orange', color: '#D5803D' },
   { label: 'レッドオレンジ', value: 'redOrange', color: '#CE2A2B' },
-  { label: 'ネイビー', value: 'navy', color: '#2B2F52' },
+  // { label: 'ネイビー', value: 'navy', color: '#2B2F52' },
+  { label: 'ネイビー', value: 'navy', color: '#151830' },
   { label: 'ブルー', value: 'blue', color: '#253F86' },
   { label: 'グリーン', value: 'green', color: '#2A4029' },
   { label: 'グレー', value: 'gray', color: '#646464' }

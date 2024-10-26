@@ -44,7 +44,7 @@ export const ConsumerForm: React.FC<Props> = ({ position, isDisabled, dispatch, 
   const personal = useDebounce(personalData, 500)
   React.useEffect(() => {
     dispatch({ type: SET_PERSONAL, personal: personal[0] })
-  }, [personal[0]])
+  }, [personal, dispatch])
 
   const positionOptions = POSITION_OPTIONS.filter((option) => option.attribute === position).map((option) => ({
     label: option.label,

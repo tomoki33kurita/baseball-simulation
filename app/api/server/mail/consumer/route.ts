@@ -1,23 +1,12 @@
 import nodemailer from 'nodemailer'
-type RequestData = {
-  body: {
-    subject: string
-    email: string
-    savedId: string
-    imageUrlFront: string
-    imageUrlBack: string
-    locale: 'ja' | 'en'
-  }
-}
+import { NextResponse } from 'next/server'
 
-const sendSimulationMail = async (req: RequestData, res: any) => {
+export async function POST(req: Request) {
   try {
-    const data = req.body
+    const data = await req.json()
     const receiverEmailAddress = data.email
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: process.env.SMTP_PORT,
-      secure: process.env.SMTP_SECURE,
+      service: 'gmail',
       auth: {
         user: process.env.SMTP_AUTH_USER,
         pass: process.env.SMTP_AUTH_PASS
@@ -30,14 +19,14 @@ const sendSimulationMail = async (req: RequestData, res: any) => {
       subject: data.subject,
       attachments: [
         {
-          filename: 'simulation-front.png',
-          path: data.imageUrlFront,
-          cid: 'frontImage'
+          filename: 'simulation-rear.png',
+          path: data.imageUrlRear,
+          cid: 'rearImage'
         },
         {
-          filename: 'simulation-back.png',
-          path: data.imageUrlBack,
-          cid: 'backImage'
+          filename: 'simulation-palm.png',
+          path: data.imageUrlPalm,
+          cid: 'palmImage'
         }
       ],
       html: mailTextGenerator(data.locale, data.savedId)
@@ -47,10 +36,24 @@ const sendSimulationMail = async (req: RequestData, res: any) => {
     // </div>
 
     console.log('Saved data sent: ', info.messageId)
-    return res.status(200).end()
+    return NextResponse.json(
+      {
+        success: true
+      },
+      {
+        status: 200
+      }
+    )
   } catch (err) {
     console.log(err)
-    res.status(500).send()
+    return NextResponse.json(
+      {
+        success: false
+      },
+      {
+        status: 500
+      }
+    )
   }
 }
 
@@ -88,5 +91,3 @@ const mailTextGenerator = (locale = 'ja', savedId: string) => {
       `
   }
 }
-
-export default sendSimulationMail
