@@ -1,4 +1,4 @@
-import { forwardRef, useState } from 'react'
+import { forwardRef } from 'react'
 import { Alert as MuiAlert, AlertProps, Box, Button } from '@mui/material'
 import { useForm } from 'react-hook-form'
 import { FiveState } from '@/features/five/types'
@@ -13,18 +13,9 @@ import { useDrawGloveRearSurface } from '@/features/five/Drawer/hooks/useDrawGlo
 
 import { agencies } from '@/app/api/server/order/agency'
 import { useSendOrder } from '../hooks/useSendOrder'
+import { initialPersonal } from '../Constants/personal'
 
 const agencyFilter = (brand: Brand) => () => agencies.filter((a) => a.brands && a.brands.includes(brand))
-
-const initialPersonal: Personal = {
-  userName: '',
-  userNameKana: '',
-  mailAddress: '',
-  phoneNumber: '',
-  league: '',
-  position: '',
-  remarks: ''
-}
 
 const Alert = forwardRef<HTMLDivElement, AlertProps>(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />

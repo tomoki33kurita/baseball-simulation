@@ -1,3 +1,4 @@
+'use client'
 import { Box, AppBar, Toolbar } from '@mui/material'
 import { FC, useState } from 'react'
 import { Brand, SavedData } from '@/types'
