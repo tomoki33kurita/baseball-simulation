@@ -1,6 +1,6 @@
 import { Embroidery } from '@/types'
 
-export const genEmbroideryCells = (embroidery: Embroidery, isCustom: boolean): { head: string; label: string; value: string; color?: string }[] =>
+export const getFiveEmbroideryCells = (embroidery: Embroidery, isCustom: boolean): { head: string; label: string; value: string; color?: string }[] =>
   [
     {
       head: '書体',

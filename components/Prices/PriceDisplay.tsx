@@ -2,17 +2,17 @@ import React from 'react'
 import { Box } from '@mui/material'
 
 type Props = {
-  priceLabel: string
-  priceValue: number
+  label: string
+  amount: number
 }
 
-export const PriceDisplay: React.FC<Props> = ({ priceLabel, priceValue }) => {
-  const price = (priceValue || 0)?.toLocaleString()
+export const PriceDisplay: React.FC<Props> = ({ label, amount }) => {
+  const price = amount.toLocaleString()
   const priceWithUnit = `${price}円`
   // const priceWithUnit = `${price}円`
   return (
     <Box>
-      {priceLabel}
+      {label}
       {priceWithUnit}
     </Box>
   )

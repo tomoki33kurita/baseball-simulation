@@ -5,7 +5,7 @@ import { CanStepFurther, FiveState } from '@/features/five/types'
 import { getBaseCells } from '@/features/five/Components/ConfirmContents/base'
 import { getColorCells } from '@/features/five/Components/ConfirmContents/color'
 import { getOrderType } from '@/features/five/Components/Setters/logic'
-import { genEmbroideryCells } from '@/features/five/Components/ConfirmContents/embroidery'
+import { getFiveEmbroideryCells } from '@/features/five/Components/ConfirmContents/embroidery'
 
 type CompareEmailWatch = UseFormWatch<{
   mailAddress: string
@@ -28,7 +28,7 @@ export const useCanStepFurther = (state: FiveState, isCopied: boolean, watch: Co
   const colorSettings = getColorCells(state)
   const existEmbroidery = state.embroideries.filter((e: Embroidery) => e.content.trim().length > 0).length > 0
   const { isCustomOrder } = getOrderType(state.orderType)
-  const embroiderySettings = existEmbroidery ? state.embroideries.map((e: Embroidery) => genEmbroideryCells(e, isCustomOrder)).flat() : []
+  const embroiderySettings = existEmbroidery ? state.embroideries.map((e: Embroidery) => getFiveEmbroideryCells(e, isCustomOrder)).flat() : []
   const existInvalidPersonal = isInvalidPersonalData(state.personal)
 
   const existUnselectedState = [...baseSettings, ...colorSettings, ...embroiderySettings].some((y) => y.value === 'unselected')

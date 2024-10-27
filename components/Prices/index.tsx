@@ -2,23 +2,24 @@ import React from 'react'
 import { Box } from '@mui/material'
 import { FiveState } from '@/features/five/types'
 import { PriceDisplay } from './PriceDisplay'
-import { calculatorOfEmbroideryCost, calculatorOfOptionCost } from '@/util/cost'
+import { calculateBaseCost, calculateEmbroideryCost, calculateOptionCost } from '@/features/Cost'
 
 type Props = {
-  basePrice: number
   state: FiveState
 }
-export const Prices: React.FC<Props> = ({ basePrice, state }) => {
-  const optionPrice = calculatorOfOptionCost(state)
-  const embroideryPrice = calculatorOfEmbroideryCost(state)
+export const Prices: React.FC<Props> = ({ state }) => {
+  const brand = state.baseModel.brand
+  const basePrice = calculateBaseCost(brand, state)
+  const optionPrice = calculateOptionCost(brand, state)
+  const embroideryPrice = calculateEmbroideryCost(brand, state)
   const totalPrice = basePrice + embroideryPrice + (optionPrice || 0)
 
   return (
     <Box border={'solid 1px #eee'} p={1} my={1}>
-      <PriceDisplay priceLabel={'基本金額'} priceValue={basePrice} />
-      <PriceDisplay priceLabel={'オプション金額'} priceValue={optionPrice} />
-      <PriceDisplay priceLabel={'刺繍金額'} priceValue={embroideryPrice} />
-      <PriceDisplay priceLabel={'合計金額'} priceValue={totalPrice} />
+      <PriceDisplay label={'基本金額'} amount={basePrice} />
+      <PriceDisplay label={'オプション金額'} amount={optionPrice} />
+      <PriceDisplay label={'刺繍金額'} amount={embroideryPrice} />
+      <PriceDisplay label={'合計金額'} amount={totalPrice} />
     </Box>
   )
 }

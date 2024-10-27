@@ -2,7 +2,7 @@ import React from 'react'
 import { Box } from '@mui/material'
 import { FiveState } from '@/features/five/types'
 import { ItemCell } from '@/components/SimulationContent/ItemCell'
-import { genEmbroideryCells } from '@/features/five/Components/ConfirmContents/embroidery'
+import { getEmbroideryCells } from '@/features/five/Components/ConfirmContents/embroidery'
 import { getOrderType } from '@/features/five/Components/Setters/logic'
 
 const cellColor = (cellValue: string) => (cellValue === 'unselected' ? 'red' : '#383838')
@@ -27,7 +27,7 @@ export const Embroideries: React.FC<Props> = ({ state, previousIndex }) => {
           {embroideries
             .filter((e) => e.content.trim().length > 0)
             .map((e, index) => {
-              const embroideryCells = genEmbroideryCells(e, isCustomOrder)
+              const embroideryCells = getEmbroideryCells(e, isCustomOrder)
               return (
                 <React.Fragment key={`${e.content}_${index}`}>
                   <Box mb={2}>

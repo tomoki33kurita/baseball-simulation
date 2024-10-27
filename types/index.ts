@@ -1,3 +1,5 @@
+import { FiveState } from '@/features/five/types'
+
 export type ChoiceItem = {
   label: string
   value: string
@@ -21,8 +23,17 @@ export type ColorItem = {
   order?: number
 }
 export type Brand = 'five' | 'genuine'
-export type Position = 'pitcher' | 'infielder' | 'outfielder'
-export type Personal = any
+export type Position = 'pitcher' | 'infielder' | 'outfielder' | 'catcher' | 'first-baseman'
+export type Personal = {
+  userName: string
+  userNameKana: string
+  phoneNumber: string
+  mailAddress: string
+  league: string
+  position: string | string[]
+  remarks: string
+}
+
 export type Embroidery = {
   id: number
   typeFace: ChoiceItem
@@ -53,4 +64,43 @@ export type BaseModel = {
     width: number
     height: number
   }
+}
+
+export type SavedData<T> = {
+  savedId: string
+  state: T
+  createdAt: {
+    nanoseconds: number
+    secondes: number
+  }
+}
+
+export type Agency = {
+  name: string
+  email: string
+  brands?: Brand[]
+}
+
+export type DocumentContent = {
+  text: string
+  fontSize: number
+  alignment?: undefined | string
+}
+export type DocumentContentGenerator = (head: string, content: string, alignment?: string, color?: string) => DocumentContent[]
+
+export type TwoDimensional = {
+  text: string
+  fontSize: number
+  alignment: string
+}
+
+export type State = FiveState
+
+export type RetailShop = {
+  email: string
+  selectableBrands: {
+    value: string
+    label: string
+  }[]
+  name: string
 }
