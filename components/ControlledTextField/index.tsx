@@ -2,8 +2,8 @@ import { TextField } from '@mui/material'
 import { Control, Controller, FieldValues, UseFormRegister } from 'react-hook-form'
 
 type Props = {
-  control: Control<FieldValues, any>
-  register: UseFormRegister<FieldValues>
+  control: Control<any, any>
+  register: UseFormRegister<any>
   name: 'email' | 'password' | 'documentId' // ドメイン情報だけど選択肢が少ないのでここで定義
   label: string
   disabled?: boolean

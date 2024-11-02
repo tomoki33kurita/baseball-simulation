@@ -11,7 +11,6 @@ export const useConfirm = () => {
   }
   return {
     isConfirmOpen,
-    setIsConfirmOpen,
     handleConfirmOpen,
     handleConfirmClose
   }

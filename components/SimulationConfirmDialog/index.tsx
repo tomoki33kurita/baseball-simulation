@@ -42,7 +42,7 @@ export const SimulationConfirmDialog: React.FC<Props> = ({ state, position, isDi
     setCopied(false)
   }
   const handleExecute = () => {
-    handleDialogClose()
+    handleConfirmClose()
     handleSave(state)
   }
 
@@ -69,7 +69,7 @@ export const SimulationConfirmDialog: React.FC<Props> = ({ state, position, isDi
             dialogMessage={'データを保存し、メールアドレス先に保存IDを送付します。'}
             color={'primary'}
             variant={'contained'}
-            disabled={!canSave || isSaving}
+            // disabled={!canSave || isSaving}
             handleOkButton={handleConfirmOpen}
             handleCancelButton={handleConfirmClose}
             handleExecuteButton={handleExecute}

@@ -1,7 +1,8 @@
 import { auth } from '@/app/api/server/firebase'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
+// useAuth と命名が似ていて微妙
 export const useLoadAuth = () => {
   const [email, setEmail] = useState<string>('')
   const router = useRouter()

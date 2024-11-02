@@ -1,5 +1,5 @@
 'use client'
-import { Box, AppBar, Toolbar } from '@mui/material'
+import { Box, AppBar, Toolbar, ThemeProvider } from '@mui/material'
 import { FC, useState } from 'react'
 import { Brand, SavedData } from '@/types'
 import { FiveState } from '../five/types'
@@ -11,6 +11,7 @@ import { auth } from '@/app/api/server/firebase'
 import { useLoadAuth } from './hooks/useLoadAuth'
 import { RetailContext } from './hooks/useRetailContext'
 import { useRetailInformation } from './hooks/useRetailInformation'
+import { commonTheme } from '@/styles/themes'
 
 const toSignIn = () => location.replace('/signIn')
 const failedLogOut = (err: any) => console.log('ログアウトに失敗しました', err)
@@ -18,14 +19,17 @@ const failedLogOut = (err: any) => console.log('ログアウトに失敗しま�
 const Retail: FC = () => {
   const [brand, setBrand] = useState<Brand | null>(null)
   const [response, setResponse] = useState<SavedData<FiveState> | null>(null)
-  const { email, handleToTop } = useLoadAuth()
+  const email = 'hoge'
+  const handleToTop = () => location.replace('/')
+  // const { email, handleToTop } = useLoadAuth()
   const handleSignOut = async () => await auth.signOut().then(toSignIn).catch(failedLogOut)
   const { isSelectableBrand, retailName } = useRetailInformation(email, brand)
-  const disabled = !isSelectableBrand
+  const disabled = false //!isSelectableBrand
 
   return (
-    <RetailContext.Provider value={{ email }}>
-      <Auth>
+    <ThemeProvider theme={commonTheme}>
+      <RetailContext.Provider value={{ email }}>
+        {/* <Auth> */}
         <Box>
           <AppBar>
             <Toolbar style={{ display: 'flex', justifyContent: 'end' }}>
@@ -33,10 +37,11 @@ const Retail: FC = () => {
             </Toolbar>
           </AppBar>
           <SearchForm {...{ disabled, setResponse, setBrand }} />
-          <SearchResult {...{ response, email }} />
+          {response !== null && <SearchResult {...{ response, email }} />}
         </Box>
-      </Auth>
-    </RetailContext.Provider>
+        {/* </Auth> */}
+      </RetailContext.Provider>
+    </ThemeProvider>
   )
 }
 

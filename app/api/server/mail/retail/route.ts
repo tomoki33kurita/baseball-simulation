@@ -12,6 +12,7 @@ export async function POST(req: Request) {
         pass: process.env.SMTP_AUTH_PASS
       }
     })
+    console.log({ data })
     const info = await transporter.sendMail({
       from: process.env.SMTP_AUTH_USER,
       to: receiverEmailAddress,
@@ -101,14 +102,26 @@ const mailTextGenerator = (data: any) => {
             </div>
   
             <div ${flexMarginLeft}>
-              <div>
-                <h4 ${htmlH3Style}>カラー設定1</h4>
-                ${data.colorSettings1.map((x: any, i: number) => `<div ${defaultFontSize}>(${i + 1}) ${x.head}：${x.label}</div>`).join('')}
-              </div>
-              <div>
-                <h4 ${htmlH3Style}>カラー設定2</h4>
-                ${data.colorSettings2.map((x: any, i: number) => `<div ${defaultFontSize}>(${i + 1}) ${x.head}：${x.label}</div>`).join('')}
-              </div>
+              ${
+                data.colorSettings1.length > 0
+                  ? `
+                <div>
+                  <h4 ${htmlH3Style}>カラー設定1</h4>
+                  ${data.colorSettings1.map((x: any, i: number) => `<div ${defaultFontSize}>(${i + 1}) ${x.head}：${x.label}</div>`).join('')}
+                </div>
+                `
+                  : ``
+              }
+              ${
+                data.colorSettings2.length > 0
+                  ? `
+                <div>
+                  <h4 ${htmlH3Style}>カラー設定2</h4>
+                  ${data.colorSettings2.map((x: any, i: number) => `<div ${defaultFontSize}>(${i + 1}) ${x.head}：${x.label}</div>`).join('')}
+                </div>
+                `
+                  : ``
+              }
             </div>
   
             <div ${flexMarginLeft}>

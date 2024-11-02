@@ -27,7 +27,7 @@ export const useSaveSimulation = (email: string, setSavedId: React.Dispatch<Reac
     const brand = state.baseModel.brand
     setIsSaving(true)
     try {
-      const response = await axios.post(SAVE_SIMULATION_PATH, { state })
+      const response = await axios.post(SAVE_SIMULATION_PATH, state)
       if (response.data.success) {
         const savedId = response.data.id
         const subject = getSubject(savedId, brand)

@@ -59,7 +59,8 @@ export const colorSettings = (state: FiveState): any => {
     }, [])
     .filter((x) => x.length)
 
-  const remaining2 = colorCells2.length % 3 // 配列要素数合計を3の倍数で割った時の余り
+  // FIVEの場合、orderTypeによって、colorCells2の要素数が0になることがあるため、その場合は空の配列を返す
+  const remaining2 = colorCells2.length === 0 ? 0 : colorCells2.length % 3 // 配列要素数合計を3の倍数で割った時の余り
   const formattedBaseCells2: {
     head: string
     label: string
@@ -67,18 +68,20 @@ export const colorSettings = (state: FiveState): any => {
     value?: string
     partsKey?: string
   }[] = remaining2 === 2 ? [...colorCells2, DUMMY] : remaining2 === 1 ? [...colorCells2, DUMMY, DUMMY] : colorCells2
-  // console.log({ colorCells2 })
 
-  const twoDimensionalArray2 = formattedBaseCells2
-    .reduce((a: TwoDimensional[][][], _, i) => {
-      const item = [...formattedBaseCells2].splice(i * 3, 3).map((x) => [
-        { text: x.head, fontSize: 8, alignment: 'left' },
-        { text: x.label, fontSize: 10, alignment: 'right' /*color: '#323232'*/ }
-      ])
-      a.push(item)
-      return a
-    }, [])
-    .filter((x) => x.length)
+  const twoDimensionalArray2 =
+    formattedBaseCells2.length > 0
+      ? formattedBaseCells2
+          .reduce((a: TwoDimensional[][][], _, i) => {
+            const item = [...formattedBaseCells2].splice(i * 3, 3).map((x) => [
+              { text: x.head, fontSize: 8, alignment: 'left' },
+              { text: x.label, fontSize: 10, alignment: 'right' /*color: '#323232'*/ }
+            ])
+            a.push(item)
+            return a
+          }, [])
+          .filter((x) => x.length)
+      : []
   return [
     {
       text: 'カラー設定1',
@@ -96,7 +99,7 @@ export const colorSettings = (state: FiveState): any => {
       style: { fontSize: 11 },
       margin: [0, 8, 0, 4]
     },
-    {
+    twoDimensionalArray2.length > 0 && {
       table: {
         widths: ['33%', '33%', '33%'],
         body: twoDimensionalArray2 // genColorSettingByBrand(state, brand, position, genCellContent)

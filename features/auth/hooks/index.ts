@@ -1,5 +1,5 @@
 import { auth } from '@/app/api/server/firebase'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
 export const useAuth = (): { isAuthSuccess: boolean } => {
@@ -8,7 +8,7 @@ export const useAuth = (): { isAuthSuccess: boolean } => {
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       if (!user) {
-        router.replace(`/signIn?redirect=${router.asPath}`)
+        router.replace(`/signIn?redirect=retail`)
         return
       }
       setIsAuthSuccess(true)

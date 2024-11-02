@@ -27,7 +27,7 @@ type Props = {
 }
 
 export const SearchResult: React.FC<Props> = ({ response, email }) => {
-  const personal = response !== null ? response.state.personal : initialPersonal
+  const personal = response?.state.personal ? response.state.personal : initialPersonal
   const { league, position } = personal
   const state = response?.state ?? ({} as FiveState)
   const { register } = useForm({
@@ -47,6 +47,7 @@ export const SearchResult: React.FC<Props> = ({ response, email }) => {
   const palmSurfaceId = 'palmSurfaceOnDialog'
   useDrawGlovePalmSurface(palmSurfaceId, state)
 
+  console.log({ state })
   const { isSendMail, isFailedMail, isProgress, handleOrderMail, onCloseAlert } = useSendOrder()
   if (!response) return null
   return (
