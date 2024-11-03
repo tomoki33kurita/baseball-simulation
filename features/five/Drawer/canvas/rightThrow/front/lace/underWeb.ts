@@ -16,64 +16,6 @@ export const underWeb = (ctx: CanvasRenderingContext2D, color: string, x: number
   ctx.closePath()
 }
 
-export const underWebReinforcement = (ctx: CanvasRenderingContext2D, color: string) => {
-  ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
-  ctx.fillStyle = color
-
-  // 右上＿下地
-  ctx.beginPath()
-  ctx.moveTo(370, 239) // 左上
-  ctx.quadraticCurveTo(363, 272, 374, 276) // 左下
-  ctx.quadraticCurveTo(379, 272, 379, 272) // 右下
-  ctx.quadraticCurveTo(375, 266, 374, 246) // 右上
-  ctx.quadraticCurveTo(370, 239, 370, 239) // 左上
-  // ctx.quadraticCurveTo() // 右上
-  ctx.fill()
-  ctx.moveTo(374, 246) // 右上
-  ctx.quadraticCurveTo(368, 256, 379, 276) // 右下
-  ctx.stroke()
-  ctx.closePath()
-
-  // 右上＿上地
-  ctx.beginPath()
-  ctx.moveTo(354, 285) // 左下
-  ctx.quadraticCurveTo(364, 272, 385, 262) // 右下
-  ctx.quadraticCurveTo(390, 257, 384, 253) // 右上
-  ctx.quadraticCurveTo(366, 259, 360, 268) // 左上
-  ctx.quadraticCurveTo(354, 285, 354, 285) // 左下
-  ctx.fill()
-  ctx.moveTo(358, 279) // 左下
-  ctx.quadraticCurveTo(364, 267, 387, 259) // 右下
-  ctx.stroke()
-  ctx.closePath()
-
-  // 左＿下地
-  ctx.beginPath()
-  ctx.moveTo(299, 367) // 左下
-  ctx.quadraticCurveTo(314, 374, 314, 374) // 右下
-  ctx.quadraticCurveTo(318, 366, 318, 368) // 右上
-  ctx.quadraticCurveTo(309, 360, 296, 363) // 左上
-  ctx.fill()
-  ctx.moveTo(297, 367) // 左下
-  ctx.quadraticCurveTo(305, 365, 316, 374) // 右下
-  ctx.stroke()
-  ctx.closePath()
-
-  // // 右上＿上地
-  //   ctx.beginPath()
-  //   ctx.moveTo(354, 285) // 左下
-  //   ctx.quadraticCurveTo(364, 272, 385, 262) // 右下
-  //   ctx.quadraticCurveTo(390, 257, 384, 253) // 右上
-  //   ctx.quadraticCurveTo(366, 259, 360, 268) // 左上
-  //   ctx.quadraticCurveTo(354, 285, 354, 285) // 左下
-  //   ctx.fill()
-  //   ctx.moveTo(358, 279) // 左下
-  //   ctx.quadraticCurveTo(364, 267, 387, 259) // 右下
-  //   ctx.stroke()
-  //   ctx.closePath()
-}
-
 export const underWebForNetWeb1 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number): void => {
   ctx.lineWidth = 0.8
   ctx.strokeStyle = '#383838'

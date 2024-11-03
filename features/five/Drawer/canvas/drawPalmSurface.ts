@@ -50,7 +50,7 @@ export const drawPalmSurface = (ctx: CanvasRenderingContext2D | null, state: Fiv
     ringBackLittleSide(ctx, basicColor) // 薬指背面＿小指側
     littleBackRingSide(ctx, basicColor) // 小指背面＿薬指側
     littleBackOut(ctx, basicColor) // 小指背面＿外側
-    welting(ctx, basicWeltingColor) // ハミダシ
+    welting(ctx, basicWeltingColor, baseModel.isFingerCrotch, basicColor) // ハミダシ
     bindings(ctx, basicBindingColor, basicLaceColor, basicStitchColor, baseModel.bankLaceDirection) // ヘリ革
     rightLaceOfNetWebDrawer(ctx, basicLaceColor) // ネットウェブのみの革紐
     lace(ctx, basicLaceColor, state) // 革紐
@@ -74,7 +74,7 @@ export const drawPalmSurface = (ctx: CanvasRenderingContext2D | null, state: Fiv
   ringBackLittleSide(ctx, state.ringLittle.color) // 薬指背面＿小指側
   littleBackRingSide(ctx, state.littleRing.color) // 小指背面＿薬指側
   littleBackOut(ctx, state.littleOut.color) // 小指背面＿外側
-  welting(ctx, state.welting.color) // ハミダシ
+  welting(ctx, state.welting.color, baseModel.isFingerCrotch, palmState.color) // ハミダシ
   bindings(ctx, state.binding.color, laceColor, stitchColor, baseModel.bankLaceDirection) // ヘリ革
   rightLaceOfNetWebDrawer(ctx, laceColor) // ネットウェブのみの革紐
   lace(ctx, laceColor, state) // 革紐

@@ -1,7 +1,7 @@
-export const welting = (ctx: CanvasRenderingContext2D, color: string): void => {
+export const welting = (ctx: CanvasRenderingContext2D, weltingColor: string, isFingerCrotch: boolean, leatherColor: string): void => {
   ctx.lineWidth = 1.0
   ctx.strokeStyle = '#383838'
-  ctx.fillStyle = color
+  ctx.fillStyle = weltingColor
 
   // 親指＿横方向
   ctx.beginPath()
@@ -34,7 +34,7 @@ export const welting = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.quadraticCurveTo(347, 76, 363, 50) //
   ctx.quadraticCurveTo(373, 37, 394, 39) // 頂点
   ctx.quadraticCurveTo(430, 44, 443, 69) //
-  ctx.quadraticCurveTo(448, 89, 448, 89) // 人差し指＿中指＿溝
+  // ctx.quadraticCurveTo(448, 89, 448, 89) // 人差し指＿中指＿溝
   ctx.quadraticCurveTo(450, 124, 464, 246) // 人差し指＿中指＿溝
   ctx.quadraticCurveTo(476, 232, 483, 178) //
   ctx.quadraticCurveTo(485, 160, 485, 160) //
@@ -122,4 +122,17 @@ export const welting = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.fill()
   ctx.stroke()
   ctx.closePath()
+
+  // 指股があるならば、捕球面が覆い被さる == ハミダシを途切れさせる
+  if (isFingerCrotch) {
+    ctx.fillStyle = leatherColor
+    ctx.beginPath()
+    ctx.moveTo(453, 243) // 左上
+    ctx.quadraticCurveTo(452, 259, 452, 259) // 左下
+    ctx.quadraticCurveTo(477, 252, 477, 252) // 右下
+    ctx.quadraticCurveTo(476, 244, 476, 244) // 右上
+    ctx.quadraticCurveTo(453, 243, 453, 243) // 左上
+    ctx.fill()
+    ctx.closePath()
+  }
 }

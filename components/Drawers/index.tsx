@@ -17,11 +17,11 @@ type Props = {
 export const SurfaceDrawers: FC<Props> = ({ rearSurfaceId, palmSurfaceId, drawerIndex, handleDrawerIndex }) => {
   return (
     <Box>
-      <TabPanel selectedIndex={drawerIndex} index={0}>
+      <TabPanel selectedIndex={drawerIndex} index={1}>
         <RearSurface rearSurfaceId={rearSurfaceId} />
       </TabPanel>
-      <TabPanel selectedIndex={drawerIndex} index={1}>
-        <PalmSurface palmSurfaceId={palmSurfaceId} />
+      <TabPanel selectedIndex={drawerIndex} index={0}>
+        <PalmSurface palmSurfaceId={palmSurfaceId} devFlg />
       </TabPanel>
       <AppBar position="static">
         <Tabs value={drawerIndex} onChange={handleDrawerIndex} aria-label="figure-tab-wrapper" centered>

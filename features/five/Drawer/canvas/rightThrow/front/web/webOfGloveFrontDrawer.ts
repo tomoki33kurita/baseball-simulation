@@ -16,7 +16,7 @@ import { ou01Web } from './ou01Web'
 import { ou02Web } from './ou02Web'
 import { ou03Web } from './ou03Web'
 
-import { underWeb, underWebReinforcement } from '../lace/underWeb'
+import { underWeb } from '../lace/underWeb'
 import { indexWrapBack } from '../lace/connectIndexToWeb'
 import { webDrawUtil } from '@/util/canvas'
 
@@ -48,7 +48,6 @@ export const webOfGloveFrontDrawer = (
 }
 
 export const rightLaceOfNetWebDrawer = (ctx: CanvasRenderingContext2D, laceColor: string): void => {
-  underWebReinforcement(ctx, laceColor)
   underWeb(ctx, laceColor, 10, 0) // ウェブ下＿右
   underWeb(ctx, laceColor, -32, 64) // ウェブ下＿左
   indexWrapBack(ctx, laceColor, -10, -100) // 上
