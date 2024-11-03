@@ -18,7 +18,7 @@ export const SurfaceDrawers: FC<Props> = ({ rearSurfaceId, palmSurfaceId, drawer
   return (
     <Box>
       <TabPanel selectedIndex={drawerIndex} index={1}>
-        <RearSurface rearSurfaceId={rearSurfaceId} />
+        <RearSurface rearSurfaceId={rearSurfaceId} devFlg />
       </TabPanel>
       <TabPanel selectedIndex={drawerIndex} index={0}>
         <PalmSurface palmSurfaceId={palmSurfaceId} devFlg />

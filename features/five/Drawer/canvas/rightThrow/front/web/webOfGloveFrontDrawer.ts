@@ -53,3 +53,36 @@ export const rightLaceOfNetWebDrawer = (ctx: CanvasRenderingContext2D, laceColor
   indexWrapBack(ctx, laceColor, -10, -100) // 上
   indexWrapBack(ctx, laceColor, 0, 0) // 下
 }
+
+// const standardLine = (ctx: CanvasRenderingContext2D): void => {
+//   // 基準線
+//   ctx.strokeStyle = 'blue'
+//   ctx.beginPath()
+//   // x方向
+//   ctx.moveTo(268, 314)
+//   ctx.quadraticCurveTo(303, 232, 363, 185)
+//   // y方向
+//   ctx.moveTo(280, 174)
+//   ctx.quadraticCurveTo(339, 311, 339, 311)
+
+//   ctx.stroke()
+//   ctx.strokeStyle = '#383838'
+//   ctx.closePath()
+// }
+
+// stitchここから
+// ctx.beginPath()
+// ctx.lineWidth = 1.3
+// ctx.strokeStyle = stitchColor
+// ctx.setLineDash([3, 3])
+// // ctx.moveTo() // 左端
+// // ctx.quadraticCurveTo()
+
+// // 上部
+// ctx.moveTo(233, 261) // 左上
+// ctx.quadraticCurveTo(270, 159, 355, 112) // 右上
+
+// ctx.stroke()
+// ctx.setLineDash([])
+// ctx.closePath()
+// ctx.strokeStyle = '#383838'
