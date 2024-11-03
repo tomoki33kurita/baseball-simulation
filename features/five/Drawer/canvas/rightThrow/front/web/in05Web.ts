@@ -54,10 +54,30 @@ export const in05Web = (ctx: CanvasRenderingContext2D, webColor: string, laceCol
   ctx.quadraticCurveTo(352, 174, 353, 174) // 左下
 
   // 中央の四角_下辺
-  ctx.moveTo(256, 297) // 右上
-  ctx.quadraticCurveTo(277, 233, 355, 168) // 左下
-  ctx.moveTo(258, 300) // 右上
-  ctx.quadraticCurveTo(280, 240, 355, 172) // 左下
+  ctx.moveTo(357, 165) // 右上
+  ctx.quadraticCurveTo(316, 200, 296, 251) // 左下
+  ctx.quadraticCurveTo(277, 260, 259, 288) // 左
+  ctx.moveTo(353, 174) // 右上
+  ctx.quadraticCurveTo(318, 202, 298, 253) // 中央下
+  ctx.quadraticCurveTo(274, 264, 257, 295) // 左
+
+  // 中央デザイン
+  ctx.moveTo(320, 140) // 右上
+  ctx.quadraticCurveTo(318, 166, 318, 166) //
+  ctx.quadraticCurveTo(332, 155, 332, 155) //
+  ctx.quadraticCurveTo(290, 236, 290, 236) //
+  ctx.quadraticCurveTo(247, 273, 247, 273) //
+  ctx.quadraticCurveTo(260, 247, 260, 247) //
+  ctx.quadraticCurveTo(243, 251, 243, 251) //
+
+  ctx.moveTo(316, 140) // 右上
+  ctx.quadraticCurveTo(314, 172, 314, 172) //
+  ctx.quadraticCurveTo(320, 170, 320, 170) //
+  ctx.quadraticCurveTo(285, 231, 285, 231)
+  ctx.quadraticCurveTo(261, 254, 261, 254)
+  ctx.quadraticCurveTo(268, 240, 268, 240)
+  ctx.quadraticCurveTo(247, 245, 247, 245)
+  // ctx.quadraticCurveTo()
 
   // 一番したの横ライン
   ctx.moveTo(266, 308) // 左上

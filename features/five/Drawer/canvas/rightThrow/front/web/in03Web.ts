@@ -34,11 +34,14 @@ export const in03Web = (ctx: CanvasRenderingContext2D, webColor: string, laceCol
   ctx.lineWidth = 1.3
   ctx.setLineDash([3, 3])
   // // 縦＿左
-  ctx.moveTo(254, 210) // 上
-  ctx.quadraticCurveTo(275, 251, 275, 251) // 下
-  // // 縦＿右
-  ctx.moveTo(266, 189) // 上
-  ctx.quadraticCurveTo(287, 234, 287, 234) // 下
+  ctx.moveTo(266, 191) // 上
+  ctx.quadraticCurveTo(289, 222, 289, 222)
+  ctx.quadraticCurveTo(265, 224, 265, 224)
+  ctx.quadraticCurveTo(283, 242, 283, 242)
+  ctx.moveTo(261, 199) // 上
+  ctx.quadraticCurveTo(273, 215, 273, 215)
+  ctx.quadraticCurveTo(251, 217, 251, 217)
+  ctx.quadraticCurveTo(276, 249, 276, 249)
   ctx.stroke()
   ctx.setLineDash([])
   ctx.closePath()

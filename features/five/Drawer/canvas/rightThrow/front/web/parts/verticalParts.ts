@@ -55,17 +55,23 @@ export const verticalPartsOfWebWithCenterStitch = (ctx: CanvasRenderingContext2D
   ctx.strokeStyle = stitchColor
   ctx.setLineDash([3, 3])
   // 左＿外
-  ctx.moveTo(266, 191) // 上
-  ctx.quadraticCurveTo(289, 270, 323, 332) // 下
-  // 左上＿内
-  ctx.moveTo(269, 188) // 上
-  ctx.quadraticCurveTo(294, 275, 326, 329) // 下
-  // 右上＿外
-  ctx.moveTo(276, 177) // 上
-  ctx.quadraticCurveTo(297, 260, 334, 322) // 下
-  // 右上＿内
-  ctx.moveTo(273, 180) // 上
-  ctx.quadraticCurveTo(292, 258, 330, 324) // 下
+  ctx.moveTo(276, 178) // 上
+  ctx.quadraticCurveTo(297, 219, 297, 219) //
+  ctx.quadraticCurveTo(281, 213, 281, 213) //
+  ctx.quadraticCurveTo(303, 257, 321, 282) //
+  ctx.quadraticCurveTo(306, 278, 306, 278) //
+  ctx.quadraticCurveTo(333, 312, 333, 312) //
+  ctx.quadraticCurveTo(332, 322, 332, 322) //
+  ctx.quadraticCurveTo(296, 273, 296, 273) //
+  ctx.quadraticCurveTo(307, 272, 307, 272) //
+  ctx.quadraticCurveTo(269, 203, 269, 203) //
+  ctx.quadraticCurveTo(284, 207, 284, 207) //
+  ctx.quadraticCurveTo(272, 184, 272, 184) //
+  // ctx.quadraticCurveTo() //
+
+  // // 左上＿内
+  // ctx.moveTo() // 上
+  // ctx.quadraticCurveTo() // 下
   ctx.stroke()
   ctx.setLineDash([])
   ctx.closePath()

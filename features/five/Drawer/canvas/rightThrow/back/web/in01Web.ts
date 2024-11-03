@@ -1,5 +1,4 @@
 import { webKnots } from '@/util/canvas/lace/webKnots'
-import { crossLace } from '../lace/crossLace'
 import { middleSidePartOfWeb, topSidePartOfWeb } from './parts/sideParts'
 import { verticalPartOfWeb2 } from './parts/verticalParts'
 
@@ -14,6 +13,5 @@ export const in01Web = (ctx: CanvasRenderingContext2D, webColor: string, laceCol
   // 縦パーツ
   verticalPartOfWeb2(ctx, webColor, laceColor, stitchColor)
   // laceここから
-  crossLace(ctx, laceColor, 0, 0, 1, 1)
   webKnots(ctx, laceColor, -135, 145) // 捕球面上のウェブ結び目
 }

@@ -26,18 +26,18 @@ export const in03Web = (ctx: CanvasRenderingContext2D, webColor: string, laceCol
   ctx.lineWidth = 1.3
   ctx.strokeStyle = stitchColor
   ctx.setLineDash([3, 3])
-  // // 縦向き＿左＿外側
-  ctx.moveTo(629, 123) // 上
-  ctx.quadraticCurveTo(611, 177, 576, 220) // 下
-  // // 縦向き＿左＿内側
-  ctx.moveTo(632, 127) // 上
-  ctx.quadraticCurveTo(615, 179, 579, 224) // 下
-  // // 縦向き＿右＿内側
-  ctx.moveTo(665, 178) // 上
-  ctx.quadraticCurveTo(641, 239, 605, 267) // 下
-  // // 縦向き＿右＿外側
-  ctx.moveTo(668, 183) // 上
-  ctx.quadraticCurveTo(647, 239, 607, 272) // 下
+  // 左
+  ctx.moveTo(645, 137)
+  ctx.quadraticCurveTo(624, 183, 604, 204)
+  ctx.quadraticCurveTo(628, 204, 628, 204)
+  ctx.quadraticCurveTo(590, 243, 590, 243)
+  // 右
+  ctx.moveTo(651, 149)
+  ctx.quadraticCurveTo(642, 173, 625, 193)
+  ctx.quadraticCurveTo(647, 191, 647, 191)
+  ctx.quadraticCurveTo(624, 224, 595, 252)
+  // ctx.quadraticCurveTo()
+
   ctx.stroke()
   ctx.setLineDash([])
   ctx.strokeStyle = laceColor

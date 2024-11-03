@@ -17,10 +17,10 @@ type Props = {
 export const SurfaceDrawers: FC<Props> = ({ rearSurfaceId, palmSurfaceId, drawerIndex, handleDrawerIndex }) => {
   return (
     <Box>
-      <TabPanel selectedIndex={drawerIndex} index={1}>
+      <TabPanel selectedIndex={drawerIndex} index={0}>
         <RearSurface rearSurfaceId={rearSurfaceId} devFlg />
       </TabPanel>
-      <TabPanel selectedIndex={drawerIndex} index={0}>
+      <TabPanel selectedIndex={drawerIndex} index={1}>
         <PalmSurface palmSurfaceId={palmSurfaceId} devFlg />
       </TabPanel>
       <AppBar position="static">
