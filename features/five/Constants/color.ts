@@ -28,7 +28,7 @@ export const WELTINGS = [
   { label: '玉ハミ(レッドオレンジ)', value: 'redOrange', color: '#CE2A2B' },
   { label: '玉ハミ(ネイビー)', value: 'navy', color: '#2B2F52' },
   { label: '玉ハミ(ブルー)', value: 'blue', color: '#253F86' },
-  { label: '玉ハミ(グリーン)', value: 'green', color: '#2A4029' },
+  { label: '玉ハミ(グリーン)', value: 'green', color: '#164e13' },
   { label: '玉ハミ(グレー)', value: 'gray', color: '#646464' }
 ]
 

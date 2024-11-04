@@ -1,5 +1,4 @@
 import { Position } from '@/types'
-import { outfielderDefaultBackLaceForFront } from './outfielderDefaultBackLace'
 
 export const straightBackLace = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number, numerator: number): void => {
   ctx.strokeStyle = '#383838'
@@ -79,8 +78,7 @@ export const crossBackLace = (ctx: CanvasRenderingContext2D, laceColor: string, 
 export const backLaceDrawerOfFront = (ctx: CanvasRenderingContext2D, laceColor: string, position: Position): void => {
   switch (position) {
     case 'outfielder':
-      crossBackLace(ctx, laceColor, 5, -15, 1)
-      outfielderDefaultBackLaceForFront(ctx, laceColor, 0, 20, 0)
+      crossBackLace(ctx, laceColor, 5, 0, 1)
       return
     default:
       return

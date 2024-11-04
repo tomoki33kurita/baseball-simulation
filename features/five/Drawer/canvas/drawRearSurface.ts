@@ -35,12 +35,12 @@ export const drawRearSurface = (ctx: CanvasRenderingContext2D | null, state: Fiv
     const stitchColor = basicColors.stitch.color
     lining(ctx, basicColor) // 裏革
     backStyleOfGloveBackDrawer(ctx, state) // バックスタイルの描画(ハミダシ,親指刺繍含)
-    fingerGuardDrawer(ctx, state) //✅  // 指カバー・パッド
+    fingerGuardDrawer(ctx, state) // 指カバー・パッド
     thumbHook(ctx, basicColor, 110, -310, 15) // 先端  // 親指掛け紐_上
     webOfGloveBackDrawer(ctx, state, webColor, laceColor, stitchColor)
     lace(ctx, basicLaceColor) // 革紐
     laceOfWristBeltCrossDrawer(ctx, basicLaceColor)
-    fiveLabel(ctx, state, 20, 38, 0, 0.95) // ✅ // ラベル描画
+    fiveLabel(ctx, state, 20, 38, 0, 0.95) // ラベル描画
     isFLexEngraving && flexEngraving(ctx, '#ccc', 1200, 1300, 0, 0.3) // Fレックスの刻印
     littleHook(ctx, basicColor, 25, 240, -10, 0.7) // 小指掛け紐
     thumbHook(ctx, basicColor, -14, 30, 0)

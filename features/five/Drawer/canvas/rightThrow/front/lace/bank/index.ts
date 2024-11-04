@@ -5,14 +5,14 @@ import { sideBank, sideBank2 } from './bank'
 import { thumbUpper, thumbUpper2 } from '../thumbUpper'
 import { toji } from '../toji'
 
-export const bankLace = (ctx: CanvasRenderingContext2D, color: string, materialPack: BaseItem, position: Position): void => {
+export const bankLace = (ctx: CanvasRenderingContext2D, color: string, materialPack: BaseItem, position: Position, productNumber: string): void => {
   // ヨコトジ系の革紐
-  sideMaterialPack(ctx, color, materialPack, position)
+  sideMaterialPack(ctx, color, materialPack, position, productNumber)
   // タテトジの革紐
   verticalMaterialPack(ctx, color, materialPack)
 }
 
-const sideMaterialPack = (ctx: CanvasRenderingContext2D, color: string, materialPack: BaseItem, position: Position): void => {
+const sideMaterialPack = (ctx: CanvasRenderingContext2D, color: string, materialPack: BaseItem, position: Position, productNumber: string): void => {
   if (position !== 'outfielder') {
     thumbInner(ctx, color, 0, 0) // 一番先端
     thumbInner(ctx, color, 22, 40) // 中間
@@ -66,11 +66,10 @@ const sideMaterialPack = (ctx: CanvasRenderingContext2D, color: string, material
     ctx.fill()
     ctx.closePath()
   }
-
   // 通常のダブルヒンジ
-  if (['sideDouble', 'sideSingle', 'sideDoubleNoLace', undefined, 'unselected'].includes(materialPack?.value)) {
+  if (['sideDouble', 'sideSingle', 'sideDoubleNoLace', undefined, 'unselected'].includes(materialPack.value)) {
     thumbUpper(ctx, color, 0, 0) // 親指-土手芯の上部の革紐
-    thumbUpper(ctx, color, -92, 160, -20) // 親指-土手芯の上部の革紐2
+    if (productNumber === 'F601') thumbUpper(ctx, color, -92, 160, -20) // 親指-土手芯の上部の革紐2
     thumbUpper(ctx, color, -5, 154, -15) // 親指-土手芯の上部の革紐3
     thumbUpper(ctx, color, 80, 139, -10) // 親指-土手芯の上部の革紐3
     toji(ctx, color, -20, 35) // 土手側

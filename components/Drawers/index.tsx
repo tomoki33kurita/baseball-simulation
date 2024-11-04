@@ -16,7 +16,7 @@ type Props = {
 
 export const SurfaceDrawers: FC<Props> = ({ rearSurfaceId, palmSurfaceId, drawerIndex, handleDrawerIndex }) => {
   return (
-    <Box>
+    <Box position={'sticky'} top={0}>
       <TabPanel selectedIndex={drawerIndex} index={0}>
         <RearSurface rearSurfaceId={rearSurfaceId} devFlg />
       </TabPanel>
