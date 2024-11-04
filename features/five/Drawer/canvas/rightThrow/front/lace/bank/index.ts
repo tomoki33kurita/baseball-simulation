@@ -68,11 +68,19 @@ const sideMaterialPack = (ctx: CanvasRenderingContext2D, color: string, material
   }
   // 通常のダブルヒンジ
   if (['sideDouble', 'sideSingle', 'sideDoubleNoLace', undefined, 'unselected'].includes(materialPack.value)) {
-    thumbUpper(ctx, color, 0, 0) // 親指-土手芯の上部の革紐
-    if (productNumber === 'F601') thumbUpper(ctx, color, -92, 160, -20) // 親指-土手芯の上部の革紐2
-    thumbUpper(ctx, color, -5, 154, -15) // 親指-土手芯の上部の革紐3
-    thumbUpper(ctx, color, 80, 139, -10) // 親指-土手芯の上部の革紐3
-    toji(ctx, color, -20, 35) // 土手側
+    if (productNumber === 'F501') {
+      thumbUpper(ctx, color, 0, 0) // 親指-土手芯の上部の革紐
+      thumbUpper(ctx, color, -15, 158, -15) // 親指-土手芯の上部の革紐3
+      thumbUpper(ctx, color, 120, 104, -5) // 親指-土手芯の上部の革紐3
+      toji(ctx, color, -30, 45) // 土手側
+      toji(ctx, color, -12, 25) // 土手側
+    } else {
+      thumbUpper(ctx, color, 0, 0) // 親指-土手芯の上部の革紐
+      if (productNumber === 'F601') thumbUpper(ctx, color, -92, 160, -20) // 親指-土手芯の上部の革紐2
+      thumbUpper(ctx, color, -5, 154, -15) // 親指-土手芯の上部の革紐3
+      thumbUpper(ctx, color, 80, 139, -10) // 親指-土手芯の上部の革紐3
+      toji(ctx, color, -20, 35) // 土手側
+    }
     toji(ctx, color, 0, 0) // 小指側末
     toji(ctx, color, 115, -280, 22) //小指側中間
     toji(ctx, color, 122, -467, 35) //小指側先端
