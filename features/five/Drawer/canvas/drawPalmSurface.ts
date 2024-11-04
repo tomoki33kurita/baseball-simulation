@@ -52,7 +52,7 @@ export const drawPalmSurface = (ctx: CanvasRenderingContext2D | null, state: Fiv
     littleBackOut(ctx, basicColor) // 小指背面＿外側
     welting(ctx, basicWeltingColor, baseModel.isFingerCrotch, basicColor) // ハミダシ
     bindings(ctx, basicBindingColor, basicLaceColor, basicStitchColor, baseModel.bankLaceDirection) // ヘリ革
-    rightLaceOfNetWebDrawer(ctx, basicLaceColor) // ネットウェブのみの革紐
+    rightLaceOfNetWebDrawer(ctx, basicLaceColor, state) // ネットウェブのみの革紐
     lace(ctx, basicLaceColor, state) // 革紐
     fiveEngravedOfPalm(ctx, baseModel.basicColors.leather, 0, 0) // メーカー捕球面の刻印
     return
@@ -76,7 +76,7 @@ export const drawPalmSurface = (ctx: CanvasRenderingContext2D | null, state: Fiv
   littleBackOut(ctx, state.littleOut.color) // 小指背面＿外側
   welting(ctx, state.welting.color, baseModel.isFingerCrotch, palmState.color) // ハミダシ
   bindings(ctx, state.binding.color, laceColor, stitchColor, baseModel.bankLaceDirection) // ヘリ革
-  rightLaceOfNetWebDrawer(ctx, laceColor) // ネットウェブのみの革紐
+  rightLaceOfNetWebDrawer(ctx, laceColor, state) // ネットウェブのみの革紐
   lace(ctx, laceColor, state) // 革紐
   fiveEngravedOfPalm(ctx, palmState, 0, 0) // メーカー捕球面の刻印
 }

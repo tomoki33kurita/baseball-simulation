@@ -8,7 +8,7 @@ import { littleUpper } from './littleUpper'
 
 export const lace = (ctx: CanvasRenderingContext2D, laceColor: string, state: FiveState): void => {
   // 土手レース
-  bankLace(ctx, laceColor, state.materialPack, state.baseModel.position)
+  bankLace(ctx, laceColor, state.materialPack, state.baseModel.position, state.baseModel.productNumber)
   thumbWrapBack(ctx, laceColor, -215, 20, -30) // 先端側の折り返し
   thumbWrapBack(ctx, laceColor, 0, 0) // 根元側の折り返し
   thumbWrapBack(ctx, laceColor, -50, 80, -10) // 根元側の折り返しの下

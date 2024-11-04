@@ -60,8 +60,8 @@ export const verticalPartsOfWebWithCenterStitch = (ctx: CanvasRenderingContext2D
   ctx.quadraticCurveTo(281, 213, 281, 213) //
   ctx.quadraticCurveTo(303, 257, 321, 282) //
   ctx.quadraticCurveTo(306, 278, 306, 278) //
-  ctx.quadraticCurveTo(333, 312, 333, 312) //
-  ctx.quadraticCurveTo(332, 322, 332, 322) //
+  ctx.quadraticCurveTo(327, 325, 327, 325) //
+  ctx.quadraticCurveTo(325, 334, 325, 334) //
   ctx.quadraticCurveTo(296, 273, 296, 273) //
   ctx.quadraticCurveTo(307, 272, 307, 272) //
   ctx.quadraticCurveTo(269, 203, 269, 203) //
