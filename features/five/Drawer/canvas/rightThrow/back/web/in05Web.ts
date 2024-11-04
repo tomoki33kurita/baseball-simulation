@@ -85,6 +85,7 @@ export const in05Web = (ctx: CanvasRenderingContext2D, webColor: string, laceCol
   // laceここから
   // 左上
   ctx.fillStyle = laceColor
+  ctx.lineWidth = 0.8
   ctx.beginPath()
   ctx.moveTo(577, 100) // 左上
   ctx.quadraticCurveTo(589, 131, 602, 168) //左下

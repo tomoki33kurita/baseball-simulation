@@ -11,7 +11,7 @@ export const TYPE_FACES = [
 export const EMBROIDERY_POSITIONS = [
   { label: '親指部', value: 'thumbFinger' },
   { label: '小指部', value: 'childFinger' },
-  { label: '裏革部分(1段目)', value: 'leatherLiningFirst' },
+  { label: '平裏', value: 'leatherLiningFirst' },
   // { label: '裏革部分(2段目)', value: 'leatherLiningSecond' }
   { label: 'バンド部', value: 'band' }
 ]
