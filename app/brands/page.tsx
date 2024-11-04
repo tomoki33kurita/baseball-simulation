@@ -9,7 +9,7 @@ const Brands = () => {
     <ThemeProvider theme={commonTheme}>
       <Box display={'flex'} justifyContent={'center'}>
         <Box>
-          <Box>シミュレーションしたいブランドを選んでね</Box>
+          {/* <Box>シミュレーションしたいブランドを選んでね</Box> */}
           <Box m={2}>
             <Button size={'large'} variant={'outlined'} color={'primary'} href={'/five'}>
               FIVE

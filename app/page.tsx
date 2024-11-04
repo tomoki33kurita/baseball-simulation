@@ -10,8 +10,8 @@ const Home = () => {
     <ThemeProvider theme={commonTheme}>
       <Box display={'flex'} justifyContent={'center'}>
         <Box>
-          <Box>これから始まるシミュレーションシステム</Box>
-          <Box>この配下にブランドが集まるイメージ</Box>
+          {/* <Box>これから始まるシミュレーションシステム</Box>
+          <Box>この配下にブランドが集まるイメージ</Box> */}
           <Box m={2}>
             <Button size={'large'} variant={'outlined'} color={'primary'} href={'/brands'}>
               シミュレーションを開始
