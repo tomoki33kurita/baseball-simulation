@@ -16,10 +16,10 @@ const Brands = () => {
   return (
     <Box display={'flex'} justifyContent={'center'} mt={8}>
       <Box>
-        <Box>
+        <Box mb={4}>
           <Image src={'/five/top/heading.jpg'} alt={''} width={imageWidth} height={imageHeight} style={{ borderRadius: '8px', objectFit: 'cover' }} />
         </Box>
-        <Grid container>
+        <Grid container justifyContent={'center'}>
           <Grid item width={isMobile ? '100%' : 'unset'}>
             <Box m={2}>
               <Button size={'large'} variant={'outlined'} href={'/five/pitcher'} style={{ color, border }} fullWidth={isMobile}>
@@ -54,7 +54,7 @@ const Brands = () => {
                 捕手用
               </Button>
             </Box>
-          </Grid>{' '}
+          </Grid>
         </Grid>
       </Box>
     </Box>
