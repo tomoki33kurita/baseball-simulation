@@ -17,14 +17,13 @@ type Props = {
 
 export const BaseModelSelector: React.FC<Props> = ({ models, position, dispatch }) => {
   const [isDialogOpen, setIsDialogOpen] = React.useState<boolean>(true)
-  const { isConfirmOpen, setIsConfirmOpen, handleConfirmOpen, handleConfirmClose } = useConfirm()
+  const { isConfirmOpen, handleConfirmOpen, handleConfirmClose } = useConfirm()
   const { selectedModel, handleBaseModel } = useSelectBaseModel()
   const message = startConfirmMessageGenerator(selectedModel)
 
   const handleStartSimulation = () => {
     dispatch({ type: SET_BASE_MODEL, baseModel: selectedModel })
     setIsDialogOpen(false)
-    setIsConfirmOpen(false)
   }
   const modelFilter = positionFilterLogic(position)
   return (

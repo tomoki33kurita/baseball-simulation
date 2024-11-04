@@ -1,6 +1,5 @@
 import React from 'react'
 import { Box, Button } from '@mui/material'
-import { useRouter } from 'next/navigation'
 import { useConfirm } from '../SettingFrame/hooks/useConfirm'
 import { ConfirmDialog } from '@/components/ConfirmDialog'
 
@@ -10,28 +9,28 @@ type Props = {
 }
 
 export const SettingButtons: React.FC<Props> = ({ toTopPath, handleDialogOpen }) => {
-  const router = useRouter()
   const {
     isConfirmOpen: isConfirmOpenToTop,
-    setIsConfirmOpen: setIsConfirmOpenToTop,
+    // setIsConfirmOpen: setIsConfirmOpenToTop,
     handleConfirmOpen: handleConfirmOpenToTop,
     handleConfirmClose: handleConfirmCloseToTop
   } = useConfirm()
   const {
     isConfirmOpen: isConfirmOpenReset,
-    setIsConfirmOpen: setIsConfirmOpenReset,
+    // setIsConfirmOpen: setIsConfirmOpenReset,
     handleConfirmOpen: handleConfirmOpenReset,
     handleConfirmClose: handleConfirmCloseReset
   } = useConfirm()
 
   const handleLinkToTop = () => {
-    router.push(toTopPath)
-    setIsConfirmOpenToTop(false)
+    // router.push(toTopPath)
+    location.href = toTopPath
+    // setIsConfirmOpenToTop(false)
   }
 
   const handleReset = () => {
     location.reload()
-    setIsConfirmOpenReset(false)
+    // setIsConfirmOpenReset(false)
   }
   return (
     <Box display="flex" justifyContent="space-around" my={2}>

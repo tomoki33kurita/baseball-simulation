@@ -12,6 +12,7 @@ export const in04Web = (ctx: CanvasRenderingContext2D, webColor: string, laceCol
   hWebCrossUpperLeft2(ctx, laceColor, 0, 0) // クロス部分の左
   hWebCrossUpperLeft2(ctx, laceColor, -3, 3) // クロス部分の左
   // ウェブ縦
+  ctx.fillStyle = webColor
   ctx.beginPath()
   ctx.moveTo(237, 242) // 左＿上
   ctx.quadraticCurveTo(265, 269, 265, 269) // 左＿下
