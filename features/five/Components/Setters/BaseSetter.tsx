@@ -38,7 +38,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
     webParts: dispatcher('webParts', dispatch),
     fLexEngraving: dispatcher('fLexEngraving', dispatch)
   }
-  const { isCustomOrder, isSelectedOrderType, isNotSelectedOrderType } = getOrderType(orderType)
+  const { isCustomOrder, isColorSelectOrder, isSelectedOrderType, isNotSelectedOrderType } = getOrderType(orderType)
   return (
     <TabPanel selectedIndex={selectedIndex} index={0}>
       <SelectCard
@@ -96,7 +96,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
             summary={'バンド部F・レックス刻印'} // fLexEngraving
             selectedLabel={fLexEngraving.label}
             objects={F_LEX_ENGRAVINGS}
-            isDisplay={isCustomOrder}
+            isDisplay={isCustomOrder || isColorSelectOrder}
             isError={fLexEngraving.value === 'unselected'}
             defaultExpanded={fLexEngraving.value === 'unselected'}
             className={WELTING_CUT_BUTTON_OPTION}

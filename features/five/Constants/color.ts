@@ -2,9 +2,9 @@ import { LeatherColorsByParts, PartsItem } from '../types'
 
 export const LEATHER_COLORS = [
   { label: 'ブラック', value: 'black', color: '#1E1E1E' },
-  { label: 'ダークブラウン', value: 'darkBrown', color: '#652821' },
-  { label: 'タン', value: 'tan', color: '#C19445' },
-  { label: 'キャメル', value: 'camel', color: '#F7D7A8' },
+  { label: 'ダークブラウン', value: 'darkBrown', color: '#4A3826' },
+  { label: 'タン', value: 'tan', color: '#b08030' },
+  { label: 'キャメル', value: 'camel', color: '#f0dbc0' },
   { label: 'イエロー', value: 'yellow', color: '#C2B64A' },
   { label: 'オレンジ', value: 'orange', color: '#D5803D' },
   { label: 'レッドオレンジ', value: 'redOrange', color: '#CE2A2B' },
@@ -20,13 +20,13 @@ export const LININGS = [SOFT_LEATHER_BLACK, ...LEATHER_COLORS]
 export const WELTINGS = [
   { label: '切りハミ(ホワイト)', value: 'kirihamiWhite', color: '#fff' },
   { label: '玉ハミ(ブラック)', value: 'black', color: '#1E1E1E' },
-  { label: '玉ハミ(ダークブラウン)', value: 'darkBrown', color: '#652821' },
-  { label: '玉ハミ(タン)', value: 'tan', color: '#C19445' },
-  { label: '玉ハミ(キャメル)', value: 'camel', color: '#F7D7A8' },
+  { label: '玉ハミ(ダークブラウン)', value: 'darkBrown', color: '#4A3826' },
+  { label: '玉ハミ(タン)', value: 'tan', color: '#b08030' },
+  { label: '玉ハミ(キャメル)', value: 'camel', color: '#f0dbc0' },
   { label: '玉ハミ(イエロー)', value: 'yellow', color: '#C2B64A' },
   { label: '玉ハミ(オレンジ)', value: 'orange', color: '#D5803D' },
   { label: '玉ハミ(レッドオレンジ)', value: 'redOrange', color: '#CE2A2B' },
-  { label: '玉ハミ(ネイビー)', value: 'navy', color: '#2B2F52' },
+  { label: '玉ハミ(ネイビー)', value: 'navy', color: '#151830' },
   { label: '玉ハミ(ブルー)', value: 'blue', color: '#253F86' },
   { label: '玉ハミ(グリーン)', value: 'green', color: '#164e13' },
   { label: '玉ハミ(グレー)', value: 'gray', color: '#646464' }
@@ -34,13 +34,13 @@ export const WELTINGS = [
 
 export const BINDINGS = [
   { label: 'ブラック', value: 'black', color: '#1E1E1E' },
-  { label: 'ダークブラウン', value: 'darkBrown', color: '#652821' },
-  { label: 'タン', value: 'tan', color: '#C19445' },
-  { label: 'キャメル', value: 'camel', color: '#F7D7A8' },
+  { label: 'ダークブラウン', value: 'darkBrown', color: '#4A3826' },
+  { label: 'タン', value: 'tan', color: '#b08030' },
+  { label: 'キャメル', value: 'camel', color: '#f0dbc0' },
   { label: 'イエロー', value: 'yellow', color: '#C2B64A' },
   { label: 'オレンジ', value: 'orange', color: '#D5803D' },
   { label: 'レッドオレンジ', value: 'redOrange', color: '#CE2A2B' },
-  { label: 'ネイビー', value: 'navy', color: '#2B2F52' },
+  { label: 'ネイビー', value: 'navy', color: '#151830' },
   { label: 'ブルー', value: 'blue', color: '#253F86' },
   { label: 'グリーン', value: 'green', color: '#2A4029' },
   { label: 'グレー', value: 'gray', color: '#646464' }
@@ -48,13 +48,13 @@ export const BINDINGS = [
 
 export const LACES = [
   { label: 'ブラック', value: 'black', color: '#1E1E1E' },
-  { label: 'ダークブラウン', value: 'darkBrown', color: '#652821' },
-  { label: 'タン', value: 'tan', color: '#C19445' },
-  { label: 'キャメル', value: 'camel', color: '#F7D7A8' },
+  { label: 'ダークブラウン', value: 'darkBrown', color: '#4A3826' },
+  { label: 'タン', value: 'tan', color: '#b08030' },
+  { label: 'キャメル', value: 'camel', color: '#f0dbc0' },
   { label: 'イエロー', value: 'yellow', color: '#C2B64A' },
   { label: 'オレンジ', value: 'orange', color: '#D5803D' },
   { label: 'レッドオレンジ', value: 'redOrange', color: '#CE2A2B' },
-  { label: 'ネイビー', value: 'navy', color: '#2B2F52' },
+  { label: 'ネイビー', value: 'navy', color: '#151830' },
   { label: 'ブルー', value: 'blue', color: '#253F86' },
   { label: 'グリーン', value: 'green', color: '#2A4029' },
   { label: 'グレー', value: 'gray', color: '#646464' }
