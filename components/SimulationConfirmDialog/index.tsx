@@ -9,7 +9,6 @@ import { FiveState } from '@/features/five/types'
 import { ConfirmDialog } from '../ConfirmDialog'
 import { useConfirm } from '../SettingFrame/hooks/useConfirm'
 import { useSaveSimulation } from './hooks'
-;``
 const watchFormDefaultValue = {
   defaultValues: {
     mailAddress: '',

@@ -37,14 +37,6 @@ export const SET_RING_LITTLE_COLOR = 'ringLittle'
 export const SET_LITTLE_RING_COLOR = 'littleRing'
 export const SET_LITTLE_OUT_COLOR = 'littleOut'
 
-// EMBROIDERY
-export const SET_EMBROIDERIES = 'setEmbroideries'
-export const ADD_EMBROIDERY = 'addEmbroidery'
-export const REMOVE_EMBROIDERY = 'RemoveEmbroidery'
-// ALL
-export const SET_PERSONAL = 'setPersonal'
-export const SET_DRAWER_INDEX = 'setDrawerIndex'
-
 // これはカラーだけに関するconstantsなので、別ファイルにあるべき
 export const DISPATCHER = {
   dominantArm: SET_DOMINANT_ARM,

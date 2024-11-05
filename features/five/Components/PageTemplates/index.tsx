@@ -2,7 +2,6 @@
 
 import { Box, Grid, Theme } from '@mui/material'
 import { Dispatch, FC } from 'react'
-import { SET_DRAWER_INDEX } from '@/features/five/Constants/action'
 import { BaseModelSelector } from '@/components/BaseModelSelector'
 import { ThemeProvider } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
@@ -11,6 +10,7 @@ import { Setters } from '../Setters'
 import { SurfaceDrawers } from '@/components/Drawers'
 import { Position } from '@/types'
 import { models } from '@/features/five/Constants/model'
+import { SET_DRAWER_INDEX } from '@/Constants'
 
 type Props = {
   state: FiveState

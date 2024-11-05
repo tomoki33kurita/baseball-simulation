@@ -1,3 +1,4 @@
+import { ADD_EMBROIDERY, REMOVE_EMBROIDERY, SET_DRAWER_INDEX, SET_EMBROIDERIES, SET_PERSONAL } from '@/Constants'
 import {
   SET_SELECTED_PARTS,
   SET_ALL_LEATHER_COLOR,
@@ -9,14 +10,10 @@ import {
   SET_FINGER_GUARD,
   SET_LACE_COLOR,
   SET_STITCH_COLOR,
-  SET_EMBROIDERIES,
-  ADD_EMBROIDERY,
-  REMOVE_EMBROIDERY,
   SET_MATERIAL_PACK,
   SET_WEB_COLOR,
   SET_THUMB_HOOK,
   SET_LITTLE_HOOK,
-  SET_PERSONAL,
   SET_THUMB_OUT_COLOR,
   SET_THUMB_WEB_COLOR,
   SET_INDEX_WEB_COLOR,
@@ -30,7 +27,6 @@ import {
   SET_LIST_BELT_COLOR,
   SET_MOUTON_COLOR,
   SET_BASE_MODEL,
-  SET_DRAWER_INDEX,
   SET_ORDER_TYPE,
   SET_FIVE_LABEL,
   SET_F_LEX_ENGRAVING,
@@ -234,7 +230,6 @@ export const reducer = (state: any, action: any) => {
       return { ...state, personal: action.personal }
     case SET_DRAWER_INDEX:
       return { ...state, drawerIndex: action.drawerIndex }
-
     default:
       return state
   }
