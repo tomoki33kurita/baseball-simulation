@@ -6,6 +6,7 @@ import { BACK_PARTS, LEATHER_COLORS_BY_PARTS, PALM_PARTS } from '@/features/five
 import { EMBROIDERY_POSITIONS, EMBROIDERY_ITEMS, SHADOW_EDGE_COLORS, TYPE_FACES } from '@/features/five/Constants/embroidery'
 import { isHalfWidthCharChecker } from '@/features/five/Drawer/canvas/back/useCanvasEmbroideries'
 import { SET_EMBROIDERIES } from '@/Constants'
+import { unselectedState } from '@/features/five/reducer/infielder'
 
 export const getComponentParts = (state: FiveState) => {
   const {
@@ -87,9 +88,12 @@ export const characterCheckHelper = (embroidery: Embroidery) => {
   const normalContentMaxLength = isHalfWidthChar ? 16 : 8
   const bandContentMaxLength = isHalfWidthChar ? 2 : 1
   const contentMaxLength = embroidery.position.value === 'band' ? bandContentMaxLength : normalContentMaxLength
+  const characterType = contentStr.charCodeAt(0) >= 256 ? 'ja' : 'en'
+
   return {
     contentMaxLength,
-    existsContent: contentStr.length > 0
+    existsContent: contentStr.length > 0,
+    characterType
   }
 }
 
@@ -138,7 +142,7 @@ const useEmbroideryContent = (dispatch: (value: unknown) => void, embroideries: 
   }
   // テキストの遅延更新処理ここから
   const updateEmbroideryContent = (delayedValue: string, i: number) => {
-    const newEmbroideries = { ...embroideries[i], content: delayedValue }
+    const newEmbroideries = { ...embroideries[i], content: delayedValue, typeFace: unselectedState }
     return embroideriesReducer(embroideries, newEmbroideries, i)
   }
   useEffect(() => {

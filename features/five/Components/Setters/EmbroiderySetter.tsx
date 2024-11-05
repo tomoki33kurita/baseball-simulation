@@ -37,7 +37,7 @@ export const EmbroiderySetter: React.FC<Props> = ({ state, selectedIndex, dispat
           {isCustomOrder && <EmbroideryFormUpDown {...{ embroideries, dispatch }} />}
           {embroideries.map((e, i) => {
             const { shadowColorLabel, edgeColorLabel, disabledShadowColor, disabledEdgeColor, isSelectedTypeFace } = embroideryFlagGenerator(e)
-            const { contentMaxLength, existsContent } = characterCheckHelper(e)
+            const { contentMaxLength, existsContent, characterType } = characterCheckHelper(e)
             const selectablePosition = selectablePositionGenerator(embroideries, i)
 
             const shadowColors = generateSubColors(disabledShadowColor)
@@ -74,9 +74,10 @@ export const EmbroiderySetter: React.FC<Props> = ({ state, selectedIndex, dispat
                       <SelectCard
                         summary={'書体'}
                         selectedLabel={e.typeFace.label}
-                        objects={TYPE_FACES}
+                        objects={TYPE_FACES.filter((x) => x.selectable.includes(characterType))}
                         index={i}
                         handleChange={handle.typeFace}
+                        isError={e.typeFace.value === 'unselected'}
                         disabled={!existsContent}
                       />
                     </Box>

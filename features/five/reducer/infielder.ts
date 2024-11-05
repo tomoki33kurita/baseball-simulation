@@ -45,7 +45,7 @@ const initialPersonalState = {
   remarks: ''
 }
 
-const unselectedState = { label: '未選択', value: 'unselected' }
+export const unselectedState = { label: '未選択', value: 'unselected' }
 const unselectedStateWithPrice = { label: '未選択', value: 'unselected', price: 0 }
 const unselectedColorState = {
   label: '未選択',
@@ -55,11 +55,11 @@ const unselectedColorState = {
 
 const initialEmbroideryState = {
   id: 0,
-  typeFace: { label: '', value: '' },
-  position: { label: '', value: '' },
-  color: { label: '未選択', value: 'unselected', color: '' },
-  shadowColor: { label: '未選択', value: 'unselected' },
-  edgeColor: { label: '未選択', value: 'unselected' },
+  typeFace: unselectedState,
+  position: unselectedState,
+  color: unselectedColorState,
+  shadowColor: unselectedColorState,
+  edgeColor: unselectedColorState,
   content: ''
 }
 
