@@ -16,7 +16,7 @@ export const getBaseCells = (
   }
   switch (state.orderType.value) {
     case 'basic':
-    case 'basicWithEmbroidery':
+    // case 'basicWithEmbroidery':
     case 'colorSelect':
       return [genGloveBaseCell('基本モデル', baseModelStateObj), genGloveBaseCell('利き腕', state.dominantArm)]
 

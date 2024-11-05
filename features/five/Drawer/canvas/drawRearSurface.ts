@@ -15,7 +15,7 @@ import { webOfGloveBackDrawer } from './rightThrow/back/web/webOfGloveBackDrawer
 export const drawRearSurface = (ctx: CanvasRenderingContext2D | null, state: FiveState): void => {
   if (!ctx) return
 
-  const { isBasicOrder, isBasicWithEmbroideryOrder } = getOrderType(state.orderType)
+  const { isBasicOrder } = getOrderType(state.orderType)
   const { isFLexEngraving } = getFLexEngraving(state.fLexEngraving)
   const baseModel = state.baseModel
 
@@ -26,7 +26,7 @@ export const drawRearSurface = (ctx: CanvasRenderingContext2D | null, state: Fiv
   ctx.strokeText('型番：' + baseModel.productNumber, 50, 70)
 
   // Basicオーダーの場合、色の指定は不可
-  if (isBasicOrder || isBasicWithEmbroideryOrder) {
+  if (isBasicOrder) {
     const basicColors = baseModel.basicColors
     const basicColor = basicColors.leather.color
     const basicLaceColor = basicColors.lace.color

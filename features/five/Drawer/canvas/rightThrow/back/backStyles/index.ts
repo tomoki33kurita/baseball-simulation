@@ -104,18 +104,15 @@ const outfielderDefaultBackLace = (ctx: CanvasRenderingContext2D, laceColor: str
 
 export const backStyleOfGloveBackDrawer = (ctx: CanvasRenderingContext2D, state: FiveState): void => {
   const needPalmWrap = !state.baseModel?.isUBack || false
-  const { isBasicOrder, isBasicWithEmbroideryOrder } = getOrderType(state.orderType)
-  const laceColor = isBasicOrder || isBasicWithEmbroideryOrder ? state.baseModel.basicColors.lace.color : state.lace.color
+  const { isBasicOrder } = getOrderType(state.orderType)
+  const laceColor = isBasicOrder ? state.baseModel.basicColors.lace.color : state.lace.color
   const position = state.baseModel?.position
   const { isOutfielder } = positionChecker(position)
 
-  switch (isBasicOrder || isBasicWithEmbroideryOrder) {
-    case true:
-      beltBackStyleDrawerForBasic(ctx, state, needPalmWrap)
-      break
-    case false:
-      beltBackStyleDrawer(ctx, state, needPalmWrap)
-      break
+  if (isBasicOrder) {
+    beltBackStyleDrawerForBasic(ctx, state, needPalmWrap)
+  } else {
+    beltBackStyleDrawer(ctx, state, needPalmWrap)
   }
   // 背面紐通し(外野手のみ)
   isOutfielder && outfielderDefaultBackLace(ctx, laceColor, 0, 25)

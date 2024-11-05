@@ -27,13 +27,12 @@ type Props = {
 export const EmbroiderySetter: React.FC<Props> = ({ state, selectedIndex, dispatch }) => {
   const { embroideries, orderType } = state
   const { handle } = useEmbroideriesDispatchGenerator(dispatch, embroideries)
-  const { isSelectedOrderType, isNotSelectedOrderType, isBasicOrder, isCustomOrder } = getOrderType(orderType)
+  const { isSelectedOrderType, isNotSelectedOrderType, isCustomOrder } = getOrderType(orderType)
 
   return (
     <TabPanel selectedIndex={selectedIndex} index={2}>
       {isNotSelectedOrderType && <Box my={3} color={'blue'}>{`パーツ設定 > オーダータイプ を先に選択してください。`}</Box>}
-      {isBasicOrder && <Box my={3} color={'blue'}>{`選択できる項目はありません。`}</Box>}
-      {!isBasicOrder && isSelectedOrderType && (
+      {isSelectedOrderType && (
         <>
           {isCustomOrder && <EmbroideryFormUpDown {...{ embroideries, dispatch }} />}
           {embroideries.map((e, i) => {

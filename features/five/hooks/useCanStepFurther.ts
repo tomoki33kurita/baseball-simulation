@@ -36,7 +36,7 @@ export const useCanStepFurther = (state: FiveState, isCopied: boolean, watch: Co
 
   const canInputConsumer = ![existUnselectedState].includes(true)
   const canSave = [existInvalidPersonal, isSaved, isInValidMailAddress].every((b) => b === false)
-  const canClose = (isSaved && isCopied) || (!isSaved && !isCopied)
+  const canClose = isCopied || (!isSaved && !isCopied)
 
   return {
     canSave,

@@ -13,10 +13,10 @@ import { ringFingerLeft, ringFingerRight } from '../ringFinger'
 import { weltingOfNormal } from '../welting/normal'
 import { getOrderType } from '@/features/five/Components/Setters/logic'
 
-// 通常ベルトモデル
+// ※オーダータイプ：basicの場合はこの関数は呼ばれない想定
 export const beltBackStyleDrawer = (ctx: CanvasRenderingContext2D, state: FiveState, needPalmWrap: boolean): void => {
-  const { isBasicOrder, isBasicWithEmbroideryOrder } = getOrderType(state.orderType)
-  if (isBasicOrder || isBasicWithEmbroideryOrder) return
+  const { isBasicOrder } = getOrderType(state.orderType)
+  if (isBasicOrder) return
 
   const isIndexFingerPad = ['indexPad'].includes(state.fingerGuard.value)
   const isMiddleFingerPad = ['middlePad'].includes(state.fingerGuard.value)

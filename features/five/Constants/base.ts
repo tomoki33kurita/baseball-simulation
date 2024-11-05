@@ -1,6 +1,6 @@
 export const ORDER_TYPES = [
   { label: 'Basic', value: 'basic', price: 53900 },
-  { label: 'Basic(刺繍有)', value: 'basicWithEmbroidery', price: 53900 },
+  // { label: 'Basic(刺繍有)', value: 'basicWithEmbroidery', price: 53900 },
   { label: 'Color Select', value: 'colorSelect', price: 57200 },
   { label: 'Custom', value: 'custom', price: 61600 }
 ]

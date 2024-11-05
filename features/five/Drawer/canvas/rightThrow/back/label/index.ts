@@ -7,12 +7,12 @@ export const fiveLabel = (ctx: CanvasRenderingContext2D, state: FiveState, x: nu
   ctx.rotate((rotate * Math.PI) / 180)
   ctx.scale(scaleSize, scaleSize)
 
-  const { isBasicOrder, isBasicWithEmbroideryOrder } = getOrderType(state.orderType)
-  const isBasic = isBasicOrder || isBasicWithEmbroideryOrder
+  const { isBasicOrder } = getOrderType(state.orderType)
+  const isBasic = isBasicOrder
   const labelValue = isBasic ? state.baseModel.basicColors.fiveLabel.value : state.fiveLabel.value
   const label = FIVE_LABEL_COLORS.find((o) => o.value === labelValue) || { core: '#eeeeee', binding: '#eeeeee', secondary: '#eeeeee' }
 
-  if (isBasicOrder || isBasicWithEmbroideryOrder) {
+  if (isBasicOrder) {
     labelBaseLeather(ctx, state.baseModel.basicColors.leather.color, state.baseModel.basicColors.stitch.color, x, y)
     parts1(ctx, label.binding, label.core, x, y)
     parts2(ctx, label.binding, label.secondary, x, y)

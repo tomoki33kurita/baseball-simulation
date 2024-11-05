@@ -70,7 +70,7 @@ export const getColorOptionsByParts = (partsKey: PartsKey) => LEATHER_COLORS_BY_
 export const getSelectableParts = (drawerIndex: DrawerIndex, orderType: BaseItem): PartsItem[] => {
   switch (orderType.value) {
     case 'basic':
-    case 'basicWithEmbroidery':
+      // case 'basicWithEmbroidery':
       return []
     case 'colorSelect':
       return [{ label: '全体', value: 'all' }]
@@ -232,12 +232,12 @@ export const getOrderType = (orderType: BaseItem) => {
   const isSelectedOrderType = orderType.value !== 'unselected'
   const isNotSelectedOrderType = orderType.value === 'unselected'
   const isBasicOrder = ['basic'].includes(orderType.value)
-  const isBasicWithEmbroideryOrder = ['basicWithEmbroidery'].includes(orderType.value)
+  // const isBasicWithEmbroideryOrder = ['basicWithEmbroidery'].includes(orderType.value)
 
   return {
     isBasicOrder,
-    isBasicWithEmbroideryOrder,
-    isBasic: isBasicOrder || isBasicWithEmbroideryOrder,
+    // isBasicWithEmbroideryOrder,
+    isBasic: isBasicOrder, //|| isBasicWithEmbroideryOrder,
     isColorSelectOrder: orderType.value === 'colorSelect',
     isCustomOrder: orderType.value === 'custom',
     isSelectedOrderType,

@@ -8,18 +8,12 @@ export const fingerGuardDrawer = (ctx: CanvasRenderingContext2D, state: FiveStat
     state.fingerGuard.value == 'indexCover' || (state.fingerGuard.value === 'unselected' && state.baseModel.position === 'pitcher')
   const isMiddleFingerCover = state.fingerGuard.value === 'middleCover'
 
-  const { isBasicOrder, isBasicWithEmbroideryOrder } = getOrderType(state.orderType)
-
-  if (isBasicOrder || isBasicWithEmbroideryOrder) {
-    const basicColors = state.baseModel.basicColors
-    // 指カバー
-    isIndexFingerCover && indexFingerCover(ctx, basicColors.leather.color, basicColors.stitch.color)
-    // 指カバー(中指)
-    isMiddleFingerCover && middleFingerCover(ctx, basicColors.leather.color, basicColors.stitch.color, -140, 65, -10)
-    return
-  }
+  const { isBasicOrder } = getOrderType(state.orderType)
+  const basicColors = state.baseModel.basicColors
+  const fingerGuardColor = isBasicOrder ? basicColors.leather.color : state.fingerGuardColor.color
+  const stitchColor = isBasicOrder ? basicColors.stitch.color : state.stitch.color
   // 指カバー
-  isIndexFingerCover && indexFingerCover(ctx, state.fingerGuardColor.color, state.stitch.color)
+  isIndexFingerCover && indexFingerCover(ctx, fingerGuardColor, stitchColor)
   // 指カバー(中指)
-  isMiddleFingerCover && middleFingerCover(ctx, state.fingerGuardColor.color, state.stitch.color, -140, 65, -10)
+  isMiddleFingerCover && middleFingerCover(ctx, fingerGuardColor, stitchColor, -140, 65, -10)
 }

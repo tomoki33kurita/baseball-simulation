@@ -43,7 +43,7 @@ export const getColorCells = (state: FiveState) => {
 
   switch (state.orderType.value) {
     case 'basic':
-    case 'basicWithEmbroidery':
+      // case 'basicWithEmbroidery':
       return [genGloveColorCell('本体カラー（指定不可）', state.baseModel.basicColors.leather, 'all')]
     case 'colorSelect':
       return [
