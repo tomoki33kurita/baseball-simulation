@@ -1,5 +1,5 @@
 import { webKnots } from '@/util/canvas/lace/webKnots'
-import { topSidePartOfOutFielderWeb } from './parts/sideParts'
+import { topSidePartOfWeb2 } from './parts/sideParts'
 import { verticalPartOfOutfielderWeb } from './parts/verticalParts'
 
 const laceOfLoopOfNet3 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
@@ -176,7 +176,7 @@ export const ou01Web = (ctx: CanvasRenderingContext2D, webColor: string, laceCol
   ctx.strokeStyle = '#383838'
   ctx.fillStyle = webColor
   // 横上パーツ
-  topSidePartOfOutFielderWeb(ctx, webColor, laceColor, stitchColor)
+  topSidePartOfWeb2(ctx, webColor, laceColor, stitchColor)
   // 縦パーツ
   verticalPartOfOutfielderWeb(ctx, webColor, laceColor, stitchColor)
   // laceここから
