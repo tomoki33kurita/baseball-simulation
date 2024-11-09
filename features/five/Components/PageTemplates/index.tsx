@@ -21,7 +21,7 @@ type Props = {
   dispatch: Dispatch<unknown>
 }
 
-export const PageTemplates: FC<Props> = ({ state, position, theme, rearSurfaceId, palmSurfaceId, dispatch }) => {
+export const FivePageTemplates: FC<Props> = ({ state, position, theme, rearSurfaceId, palmSurfaceId, dispatch }) => {
   const { drawerIndex } = state
   const handleDrawerIndex = (_: unknown, newValue: DrawerIndex) => dispatch({ ...state, type: SET_DRAWER_INDEX, drawerIndex: newValue })
   return (
