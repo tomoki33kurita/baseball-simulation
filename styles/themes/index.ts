@@ -12,7 +12,7 @@ export const commonTheme = createTheme({
       main: '#2b2b2b' // プライマリカラー
     },
     secondary: {
-      main: '#545454' // セカンダリカラー
+      main: '#949494' // セカンダリカラー
     },
     // background: {
     //   default: '#487e4c' // 背景のデフォルトカラー

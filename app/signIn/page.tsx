@@ -15,9 +15,7 @@ import { commonTheme } from '@/styles/themes'
 const SignIn: React.FC = () => {
   const { handleSubmit, control, register } = useForm()
   const router = useRouter()
-  const [isLogining, setIsLogining] = React.useState(false)
   const handleSignIn = async (data: any) => {
-    setIsLogining(true)
     const googleProvider = new GoogleAuthProvider()
     try {
       await setPersistence(auth, browserSessionPersistence)
@@ -38,25 +36,20 @@ const SignIn: React.FC = () => {
               小売店用ログイン画面
             </Typography>
           </Box>
-          <Box p={2} pt={4}>
-            小売店員の方はログインの上、お客様のシミュレーション結果をIDで検索をしてください
+          <Box pt={4}>小売店員の方はログインの上、お客様のシミュレーション結果をIDで検索してください。</Box>
+          <Box display={'flex'} justifyContent={'center'} fontSize={14} pb={2}>
+            ※システムへの事前申請が必要です。
           </Box>
           <form onSubmit={handleSubmit(handleSignIn)}>
-            <Box>
+            {/* <Box>
               <ControlledTextField name={'email'} label={'メールアドレス'} control={control} register={register} />
             </Box>
             <Box>
               <ControlledTextField name={'password'} type={'password'} label={'パスワード'} control={control} register={register} />
-            </Box>
-            <Button type="submit" fullWidth variant="contained" color="secondary">
-              ログイン
+            </Box> */}
+            <Button type="submit" fullWidth variant="contained" color="primary">
+              Googleアカウントでログイン
             </Button>
-            {isLogining && (
-              <Box style={{ textAlign: 'right' }}>
-                ログイン中...
-                <CircularProgress size={14} />
-              </Box>
-            )}
           </form>
         </Box>
         <Box display={'flex'} justifyContent={'center'}>

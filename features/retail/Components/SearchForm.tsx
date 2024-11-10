@@ -82,7 +82,7 @@ export const SearchForm: React.FC<Props> = ({ retailShop, disabled, setResponse,
               <Box>シミュレーションID</Box>
               <ControlledTextField name={'documentId'} label={'IDを入力'} {...{ control, register, disabled }} />
             </Box>
-            <Box display={'flex'} alignItems={'center'}>
+            <Box display={'flex'} alignItems={'center'} mt={3} ml={2}>
               <Button variant={'contained'} color={'primary'} type={'submit'} onClick={handleSubmit(handleClick)} disabled={disabled}>
                 検索
               </Button>
