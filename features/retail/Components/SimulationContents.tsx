@@ -1,8 +1,8 @@
 import { Grid, Box } from '@mui/material'
 import { muiGrey } from '@/styles'
 import { FiveState } from '@/features/five/types'
-import { getBaseCells } from '@/features/five/Components/ConfirmContents/base'
-import { getColorCells } from '@/features/five/Components/ConfirmContents/color'
+import { getFiveBaseCells } from '@/features/five/Components/ConfirmContents/base'
+import { getFiveColorCells } from '@/features/five/Components/ConfirmContents/color'
 import { ItemCell } from '@/components/SimulationContent/ItemCell'
 import { Embroideries } from '@/components/SimulationContent/Embroideries'
 
@@ -13,8 +13,8 @@ type Props = {
 }
 
 export const SimulationContents: React.FC<Props> = ({ state }) => {
-  const baseCells = getBaseCells(state)
-  const colorCells = getColorCells(state)
+  const baseCells = getFiveBaseCells(state)
+  const colorCells = getFiveColorCells(state)
 
   const baseCellCount = baseCells.length
   const colorCellCount = colorCells.length

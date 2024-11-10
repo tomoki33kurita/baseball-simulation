@@ -1,12 +1,12 @@
 import { Grid, Box } from '@mui/material'
 import { ItemCell } from '@/components/SimulationContent/ItemCell'
 import { Embroideries } from './Embroideries'
-import { FiveState } from '@/features/five/types'
+import { State } from '@/types'
 
 export const cellColor = (cellValue: string) => (cellValue === 'unselected' ? 'red' : '#383838')
 
 type Props = {
-  state: FiveState
+  state: State
   baseCells: {
     head: string
     label: string

@@ -1,11 +1,11 @@
 import React from 'react'
 import { Box } from '@mui/material'
-import { FiveState } from '@/features/five/types'
 import { PriceDisplay } from './PriceDisplay'
 import { calculateBaseCost, calculateEmbroideryCost, calculateOptionCost } from '@/features/Cost'
+import { State } from '@/types'
 
 type Props = {
-  state: FiveState
+  state: State
 }
 export const Prices: React.FC<Props> = ({ state }) => {
   const brand = state.baseModel.brand

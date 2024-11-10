@@ -1,9 +1,12 @@
 import { useState } from 'react'
 import { UseFormWatch } from 'react-hook-form'
-import { Embroidery, Personal } from '@/types'
+import { Embroidery, Personal, State } from '@/types'
 import { CanStepFurther, FiveState } from '@/features/five/types'
-import { getBaseCells } from '@/features/five/Components/ConfirmContents/base'
-import { getColorCells } from '@/features/five/Components/ConfirmContents/color'
+import { GenuineState } from '@/features/genuine/types'
+import { getFiveBaseCells } from '@/features/five/Components/ConfirmContents/base'
+import { getGenuineBaseCells } from '@/features/genuine/Components/ConfirmContents/base'
+import { getFiveColorCells } from '@/features/five/Components/ConfirmContents/color'
+import { getGenuineColorCells } from '@/features/genuine/Components/ConfirmContents/color'
 import { getOrderType } from '@/features/five/Components/Setters/logic'
 import { getFiveEmbroideryCells } from '@/features/five/Components/ConfirmContents/embroidery'
 
@@ -19,7 +22,41 @@ const isInvalidPersonalData = (personal: Personal): boolean => {
   return false
 }
 
-export const useCanStepFurther = (state: FiveState, isCopied: boolean, watch: CompareEmailWatch): CanStepFurther => {
+const getBaseCells = (state: State) => {
+  switch (state.baseModel.brand) {
+    case 'five':
+      return getFiveBaseCells(state as FiveState)
+    case 'genuine':
+      return getGenuineBaseCells(state as GenuineState)
+    default:
+      return []
+  }
+}
+
+const getColorCells = (state: State) => {
+  switch (state.baseModel.brand) {
+    case 'five':
+      return getFiveColorCells(state as FiveState)
+    case 'genuine':
+      return getGenuineColorCells(state as GenuineState)
+    default:
+      return []
+  }
+}
+
+const getEmbroideryCells = (state: State, isCustomOrder: boolean, existEmbroidery: boolean) => {
+  if (!existEmbroidery) return []
+  switch (state.baseModel.brand) {
+    case 'five':
+      return state.embroideries.map((e: Embroidery) => getFiveEmbroideryCells(e, isCustomOrder)).flat()
+    case 'genuine':
+      return [] //state.embroideries.map((e: Embroidery) => getFiveEmbroideryCells(e, isCustomOrder)).flat()
+    default:
+      return []
+  }
+}
+
+export const useCanStepFurther = (state: State, isCopied: boolean, watch: CompareEmailWatch): CanStepFurther => {
   const [isSaved, setIsSave] = useState<boolean>(false)
   const watchMailAddress = watch('mailAddress')
   const watchMailAddress2 = watch('mailAddress2')
@@ -28,7 +65,7 @@ export const useCanStepFurther = (state: FiveState, isCopied: boolean, watch: Co
   const colorSettings = getColorCells(state)
   const existEmbroidery = state.embroideries.filter((e: Embroidery) => e.content.trim().length > 0).length > 0
   const { isCustomOrder } = getOrderType(state.orderType)
-  const embroiderySettings = existEmbroidery ? state.embroideries.map((e: Embroidery) => getFiveEmbroideryCells(e, isCustomOrder)).flat() : []
+  const embroiderySettings = getEmbroideryCells(state, isCustomOrder, existEmbroidery)
   const existInvalidPersonal = isInvalidPersonalData(state.personal)
 
   const existUnselectedState = [...baseSettings, ...colorSettings, ...embroiderySettings].some((y) => y.value === 'unselected')

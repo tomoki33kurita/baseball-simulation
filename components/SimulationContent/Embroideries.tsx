@@ -1,14 +1,14 @@
 import React from 'react'
 import { Box } from '@mui/material'
-import { FiveState } from '@/features/five/types'
 import { ItemCell } from '@/components/SimulationContent/ItemCell'
 import { getFiveEmbroideryCells } from '@/features/five/Components/ConfirmContents/embroidery'
 import { getOrderType } from '@/features/five/Components/Setters/logic'
+import { State } from '@/types'
 
 const cellColor = (cellValue: string) => (cellValue === 'unselected' ? 'red' : '#383838')
 
 type Props = {
-  state: FiveState
+  state: State
   previousIndex: number
 }
 

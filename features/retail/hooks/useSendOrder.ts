@@ -4,10 +4,10 @@ import { useContext, useState } from 'react'
 import { japaneseFont } from '@/public/font/vfsFont'
 import { getPdfDocDefine } from '../Documents'
 import { RetailContext } from './useRetailContext'
-import { getBaseCells } from '@/features/five/Components/ConfirmContents/base'
 import { switchEmbroideryCells } from '../Documents/embroiderySettings'
 import { colorCells2Condition } from '../Documents/colorSettings'
-import { getColorCells } from '@/features/five/Components/ConfirmContents/color'
+import { getFiveBaseCells } from '@/features/five/Components/ConfirmContents/base'
+import { getFiveColorCells } from '@/features/five/Components/ConfirmContents/color'
 import pdfMake from 'pdfmake/build/pdfmake'
 import axios from 'axios'
 pdfMake.vfs = japaneseFont
@@ -24,7 +24,7 @@ const brandNameIdentifier = (brand: Brand) => {
 }
 
 const divideColorSettings = (state: State) => {
-  const settings = getColorCells(state)
+  const settings = getFiveColorCells(state as FiveState)
   const settings1 = settings.filter((x) => !colorCells2Condition.includes(x.partsKey)).map((x) => ({ head: x.head, label: x.label }))
   const settings2 = settings.filter((x) => colorCells2Condition.includes(x.partsKey)).map((x) => ({ head: x.head, label: x.label }))
 
@@ -32,7 +32,7 @@ const divideColorSettings = (state: State) => {
 }
 
 const getPayload = (state: State, pdfBase64: string, agency: Agency, savedId: string) => {
-  const baseSettings = getBaseCells(state)
+  const baseSettings = getFiveBaseCells(state as FiveState)
   const { colorSettings1, colorSettings2 } = divideColorSettings(state)
   const embroideries = state.embroideries.map(switchEmbroideryCells(state))
   const personal = state.personal

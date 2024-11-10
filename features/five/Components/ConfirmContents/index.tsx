@@ -8,8 +8,8 @@ import { useDrawGlovePalmSurface } from '../../Drawer/hooks/useDrawGlovePalmSurf
 import { RearSurface } from '@/components/Drawers/RearSurface'
 import { PalmSurface } from '@/components/Drawers/PalmSurface'
 import { Position } from '@/types'
-import { getBaseCells } from './base'
-import { getColorCells } from './color'
+import { getFiveBaseCells } from './base'
+import { getFiveColorCells } from './color'
 import { SimulationContent } from '@/components/SimulationContent'
 
 type Props = {
@@ -17,15 +17,15 @@ type Props = {
   position: Position
 }
 
-export const ConfirmContents: React.FC<Props> = ({ state, position }) => {
+export const FiveConfirmContents: React.FC<Props> = ({ state, position }) => {
   const rearSurfaceId = 'rearSurfaceOnDialog'
   useDrawGloveRearSurface(rearSurfaceId, state)
   const palmSurfaceId = 'palmSurfaceOnDialog'
   useDrawGlovePalmSurface(palmSurfaceId, state)
 
   const basePrice = state.orderType.price // 今はFIVEのことだけ想定
-  const baseCells = getBaseCells(state)
-  const colorCells = getColorCells(state)
+  const baseCells = getFiveBaseCells(state)
+  const colorCells = getFiveColorCells(state)
 
   const props = { state, position }
   return (

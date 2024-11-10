@@ -5,7 +5,7 @@ import { BaseSetter } from './BaseSetter'
 import { ColorSetter } from './ColorSetter'
 import { EmbroiderySetter } from './EmbroiderySetter'
 import { SimulationConfirmDialog } from '@/components/SimulationConfirmDialog'
-import { ConfirmContents } from '../ConfirmContents'
+import { FiveConfirmContents } from '../ConfirmContents'
 import { SettingTabs } from '@/components/SettingFrame/SettingTabs'
 import { SettingButtons } from '@/components/SettingFrame/SettingButtons'
 
@@ -30,7 +30,7 @@ export const Setters: React.FC<Props> = ({ state, position, dispatch }) => {
       <SettingTabs {...{ selectedIndex, setSelectedIndex }} />
       <SettingButtons {...{ toTopPath, handleDialogOpen }} />
       <SimulationConfirmDialog {...{ state, position, isDialogOpen, handleDialogClose, dispatch }}>
-        <ConfirmContents {...{ state, position }} />
+        <FiveConfirmContents {...{ state, position }} />
       </SimulationConfirmDialog>
     </>
   )

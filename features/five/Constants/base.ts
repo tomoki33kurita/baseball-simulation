@@ -1,3 +1,5 @@
+import { WebParts } from '@/types'
+
 export const ORDER_TYPES = [
   { label: 'Basic', value: 'basic', price: 53900 },
   // { label: 'Basic(刺繍有)', value: 'basicWithEmbroidery', price: 53900 },
@@ -28,13 +30,7 @@ export const F_LEX_ENGRAVINGS = [
 ]
 
 const webImageBaseUrl = '/five/webParts'
-type WebPartsObj = {
-  label: string
-  value: string
-  positions: string[]
-  imageUrl: string
-}
-export const WEB_PARTS: WebPartsObj[] = [
+export const WEB_PARTS: WebParts[] = [
   { label: 'P-01', value: 'p01', positions: ['pitcher'], imageUrl: `${webImageBaseUrl}/p01.jpg` },
   { label: 'P-02', value: 'p02', positions: ['pitcher'], imageUrl: `${webImageBaseUrl}/p02.jpg` },
   { label: 'P-03', value: 'p03', positions: ['pitcher'], imageUrl: `${webImageBaseUrl}/p03.jpg` },
