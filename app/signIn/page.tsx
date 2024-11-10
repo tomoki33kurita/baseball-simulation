@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography'
 import Container from '@mui/material/Container'
 import { useForm } from 'react-hook-form'
 import { useRouter } from 'next/navigation'
-import { browserSessionPersistence, setPersistence, signInWithEmailAndPassword } from 'firebase/auth'
+import { browserSessionPersistence, setPersistence, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from 'firebase/auth'
 import Link from 'next/link'
 import { auth } from '../api/server/firebase'
 import { ControlledTextField } from '@/components/ControlledTextField'
@@ -18,10 +18,11 @@ const SignIn: React.FC = () => {
   const [isLogining, setIsLogining] = React.useState(false)
   const handleSignIn = async (data: any) => {
     setIsLogining(true)
-    const { email, password } = data
+    const googleProvider = new GoogleAuthProvider()
     try {
-      await setPersistence(auth, browserSessionPersistence).then(() => signInWithEmailAndPassword(auth, email, password))
-      router.replace('/retail')
+      await setPersistence(auth, browserSessionPersistence)
+        .then(() => signInWithPopup(auth, googleProvider))
+        .then(() => router.replace('/retail'))
     } catch (err: any) {
       alert(err.message)
     }

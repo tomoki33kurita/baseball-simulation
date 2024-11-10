@@ -2,34 +2,36 @@ import React, { SetStateAction } from 'react'
 import axios from 'axios'
 import Select from 'react-select'
 import { Box, Button } from '@mui/material'
-import { Brand, SavedData } from '@/types'
+import { Brand, BrandOption, RetailShop, SavedData } from '@/types'
 import { useForm, Controller } from 'react-hook-form'
 import { borderStyle as border } from '@/styles'
 import { ControlledTextField } from '@/components/ControlledTextField'
-import { ALL_BRANDS } from '../Constants/brands'
 import { FiveState } from '@/features/five/types'
 
 const GET_DOCUMENT_PATH = '/api/server/getDocument'
 
-type BrandOption = {
-  value: Brand
-  label: string
-}
 type FormValues = { brand: BrandOption; documentId: string }
 
 type Props = {
+  retailShop: RetailShop | null
   disabled: boolean
   setResponse: React.Dispatch<SetStateAction<SavedData<FiveState> | null>>
   setBrand: React.Dispatch<SetStateAction<Brand | null>>
 }
 
-export const SearchForm: React.FC<Props> = ({ disabled, setResponse, setBrand }) => {
-  const { handleSubmit, control, register, reset } = useForm<FormValues>()
+export const SearchForm: React.FC<Props> = ({ retailShop, disabled, setResponse, setBrand }) => {
+  const { handleSubmit, control, register, reset } = useForm<FormValues>({
+    defaultValues: {
+      brand: { label: '', value: '' },
+      documentId: ''
+    }
+  })
   const handleClick = async (value: FormValues) => {
     const documentId = value.documentId
+    const brand = value.brand.value
     if (documentId.length >= 1) {
       // documentId:"retail/retailName Request Method: POST" だったら、API叩かない
-      await axios.get(`${GET_DOCUMENT_PATH}?docId=${documentId}&brand=${value.brand.value}`).then((res) => {
+      await axios.get(`${GET_DOCUMENT_PATH}?docId=${documentId}&brand=${brand}`).then((res) => {
         if (!res.data) {
           console.log('No documentId! Please set documentId')
           return
@@ -44,7 +46,6 @@ export const SearchForm: React.FC<Props> = ({ disabled, setResponse, setBrand })
       console.log('No documentId! Please set documentId')
     }
   }
-  //   const handleBrand = (object: Option) => setBrand(object.value)
   return (
     <Box p={8} pt={10} width={'100%'}>
       <Box display={'flex'} justifyContent={'center'}>
@@ -58,9 +59,8 @@ export const SearchForm: React.FC<Props> = ({ disabled, setResponse, setBrand })
                 render={({ field }) => (
                   <Select
                     {...field}
-                    options={ALL_BRANDS as BrandOption[]}
+                    options={retailShop ? retailShop.selectableBrands : []}
                     minMenuHeight={50}
-                    // onChange={(e: any) => handleBrand(e)}
                     isSearchable={false}
                     styles={{
                       container: (p) => ({

@@ -1,7 +1,10 @@
 import { retailShops } from '@/app/api/store/retailShops'
 import { NextResponse } from 'next/server'
 
-export async function GET(_: Request, { email }: { email: string }) {
+export async function GET(req: Request) {
+  const { searchParams } = new URL(req.url)
+  const email = searchParams.get('email')
+
   const foundShop = retailShops.find((shop) => shop.email.toLocaleLowerCase() === email)
 
   if (!foundShop) {

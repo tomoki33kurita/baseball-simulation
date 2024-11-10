@@ -19,27 +19,25 @@ const failedLogOut = (err: any) => console.log('ログアウトに失敗しま�
 const Retail: FC = () => {
   const [brand, setBrand] = useState<Brand | null>(null)
   const [response, setResponse] = useState<SavedData<FiveState> | null>(null)
-  const email = 'hoge'
-  const handleToTop = () => location.replace('/')
-  // const { email, handleToTop } = useLoadAuth()
+  const { email, handleToTop } = useLoadAuth()
   const handleSignOut = async () => await auth.signOut().then(toSignIn).catch(failedLogOut)
-  const { isSelectableBrand, retailName } = useRetailInformation(email, brand)
+  const { retailShop } = useRetailInformation(email, brand)
   const disabled = false //!isSelectableBrand
 
   return (
     <ThemeProvider theme={commonTheme}>
       <RetailContext.Provider value={{ email }}>
-        {/* <Auth> */}
-        <Box>
-          <AppBar>
-            <Toolbar style={{ display: 'flex', justifyContent: 'end' }}>
-              <RetailInfo {...{ email, handleToTop, handleSignOut }} />
-            </Toolbar>
-          </AppBar>
-          <SearchForm {...{ disabled, setResponse, setBrand }} />
-          {response !== null && <SearchResult {...{ response, email }} />}
-        </Box>
-        {/* </Auth> */}
+        <Auth>
+          <Box>
+            <AppBar>
+              <Toolbar style={{ display: 'flex', justifyContent: 'end' }}>
+                <RetailInfo {...{ email, handleToTop, handleSignOut }} />
+              </Toolbar>
+            </AppBar>
+            <SearchForm {...{ retailShop, disabled, setResponse, setBrand }} />
+            {response !== null && <SearchResult {...{ response, email }} />}
+          </Box>
+        </Auth>
       </RetailContext.Provider>
     </ThemeProvider>
   )

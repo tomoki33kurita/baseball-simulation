@@ -22,7 +22,7 @@ export type ColorItem = {
   price?: number
   order?: number
 }
-export type Brand = 'five' | 'genuine'
+export type Brand = 'five' | 'genuine' | ''
 export type Position = 'pitcher' | 'infielder' | 'outfielder' | 'catcher' | 'first-baseman'
 export type Personal = {
   userName: string
@@ -96,11 +96,13 @@ export type TwoDimensional = {
 
 export type State = FiveState
 
+export type BrandOption = {
+  value: Brand
+  label: string
+}
+
 export type RetailShop = {
   email: string
-  selectableBrands: {
-    value: string
-    label: string
-  }[]
+  selectableBrands: BrandOption[]
   name: string
 }

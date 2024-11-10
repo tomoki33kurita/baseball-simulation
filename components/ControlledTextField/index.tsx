@@ -29,7 +29,6 @@ export const ControlledTextField: React.FC<Props> = ({ control, register, name, 
             autoFocus
             style={{ width: '100%' }}
             disabled={disabled}
-            {...register(name)}
           />
         )
       }}
