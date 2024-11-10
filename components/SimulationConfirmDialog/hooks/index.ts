@@ -9,6 +9,8 @@ const getBrandName = (brand: Brand) => {
   switch (brand) {
     case 'five':
       return 'FIVE'
+    case 'genuine':
+      return 'Genuine'
     default:
       return '--'
   }
