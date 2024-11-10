@@ -12,7 +12,6 @@ export async function POST(req: Request) {
         pass: process.env.SMTP_AUTH_PASS
       }
     })
-    console.log({ data })
     const info = await transporter.sendMail({
       from: process.env.SMTP_AUTH_USER,
       to: receiverEmailAddress,

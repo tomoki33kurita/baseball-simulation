@@ -1,6 +1,6 @@
 export const weltingOfNormal = (ctx: CanvasRenderingContext2D, weltingColor: string): void => {
-  ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = 'gray' //'#383838'
+  ctx.lineWidth = 0.5
   ctx.fillStyle = weltingColor
   ctx.beginPath()
   ctx.moveTo(215, 153) // 小指先端左

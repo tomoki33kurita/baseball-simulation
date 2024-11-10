@@ -9,12 +9,12 @@ export const drawImages = () => {
             {
               image: `${canvasBack.toDataURL()}`,
               width: 210,
-              height: 150
+              height: 170
             },
             {
               image: `${canvasFront.toDataURL()}`,
               width: 210,
-              height: 150
+              height: 170
             }
           ]
         ]

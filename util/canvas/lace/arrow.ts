@@ -1,6 +1,6 @@
 export const arrow1 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number, numerator?: number, scaleSize?: number): void => {
-  ctx.strokeStyle = '#383838'
-  ctx.lineWidth = 0.7
+  ctx.strokeStyle = 'gray' //'#383838'
+  ctx.lineWidth = 0.5
   ctx.fillStyle = color
   // ウェブ先端側の結び目
   // 左側の先端紐
@@ -44,8 +44,8 @@ export const arrow1 = (ctx: CanvasRenderingContext2D, color: string, x: number, 
 }
 
 export const arrow2 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number, numerator?: number, scaleSize?: number): void => {
-  ctx.strokeStyle = '#383838'
-  ctx.lineWidth = 0.7
+  ctx.strokeStyle = 'gray' //'#383838'
+  ctx.lineWidth = 0.5
   ctx.fillStyle = color
   // ウェブ先端側の結び目
   // 左側の先端紐

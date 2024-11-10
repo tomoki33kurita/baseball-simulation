@@ -6,8 +6,8 @@ export const webKnotUpward = (
   numerator?: number,
   scaleSize?: number
 ): void => {
-  ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = 'gray' //'#383838'
+  ctx.lineWidth = 0.5
   ctx.fillStyle = color
   ctx.beginPath()
   if (numerator !== undefined && numerator !== 0) {
@@ -67,8 +67,8 @@ export const webKnotDownward = (
   numerator?: number,
   scaleSize?: number
 ): void => {
-  ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = 'gray' //'#383838'
+  ctx.lineWidth = 0.5
   ctx.fillStyle = color
   // 結び目1段目
   ctx.beginPath()

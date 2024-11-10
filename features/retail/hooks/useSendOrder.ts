@@ -64,7 +64,6 @@ export const useSendOrder = () => {
       try {
         const docDefine = getPdfDocDefine(state, retail)
         pdfMake.createPdf(docDefine).getBase64((pdfBase64: string) => {
-          console.log({ pdfBase64 })
           const payload = getPayload(state, pdfBase64, agency, savedId) // 変数多すぎ
           axios.post(RETAIL_EMAIL_PATH, payload).then((x) => {
             const isSuccess = x.status === 200
