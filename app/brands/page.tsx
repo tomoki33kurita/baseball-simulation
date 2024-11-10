@@ -15,11 +15,11 @@ const Brands = () => {
               FIVE
             </Button>
           </Box>
-          <Box m={2}>
+          {/* <Box m={2}>
             <Button size={'large'} variant={'outlined'} color={'primary'} href={'/genuine'} sx={{ textTransform: 'none' }}>
               Genuine
             </Button>
-          </Box>
+          </Box> */}
         </Box>
       </Box>
     </ThemeProvider>
