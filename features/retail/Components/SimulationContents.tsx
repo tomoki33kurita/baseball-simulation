@@ -1,20 +1,19 @@
 import { Grid, Box } from '@mui/material'
 import { muiGrey } from '@/styles'
-import { FiveState } from '@/features/five/types'
-import { getFiveBaseCells } from '@/features/five/Components/ConfirmContents/base'
-import { getFiveColorCells } from '@/features/five/Components/ConfirmContents/color'
 import { ItemCell } from '@/components/SimulationContent/ItemCell'
 import { Embroideries } from '@/components/SimulationContent/Embroideries'
+import { State } from '@/types'
+import { getBaseCells, getColorCells } from '@/features/Logic'
 
 export const cellColor = (cellValue: string) => (cellValue === 'unselected' ? 'red' : muiGrey)
 
 type Props = {
-  state: FiveState
+  state: State
 }
 
 export const SimulationContents: React.FC<Props> = ({ state }) => {
-  const baseCells = getFiveBaseCells(state)
-  const colorCells = getFiveColorCells(state)
+  const baseCells = getBaseCells(state)
+  const colorCells = getColorCells(state)
 
   const baseCellCount = baseCells.length
   const colorCellCount = colorCells.length

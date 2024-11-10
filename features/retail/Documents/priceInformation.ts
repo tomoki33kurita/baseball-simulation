@@ -1,12 +1,13 @@
 import { FiveState } from '@/features/five/types'
 import { calculateBaseCost, calculateEmbroideryCost, calculateOptionCost } from '@/features/Cost'
+import { State } from '@/types'
 const moneyUnitSticker = (price: number): string => {
   const formatted = `${(price || 0)?.toLocaleString()}`
   // return isUsModel ? `$${formatted}` : `${formatted}円`
   return `${formatted}円`
 }
 
-export const priceInformation = (state: FiveState, genCellContent: any) => {
+export const priceInformation = (state: State, genCellContent: any) => {
   const basePrice = calculateBaseCost(state.baseModel.brand, state)
   const embroideryPrice = calculateEmbroideryCost(state.baseModel.brand, state)
   const optionPrice = calculateOptionCost(state.baseModel.brand, state)

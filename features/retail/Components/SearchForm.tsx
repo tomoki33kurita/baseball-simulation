@@ -2,11 +2,10 @@ import React, { SetStateAction } from 'react'
 import axios from 'axios'
 import Select from 'react-select'
 import { Box, Button } from '@mui/material'
-import { Brand, BrandOption, RetailShop, SavedData } from '@/types'
+import { Brand, BrandOption, RetailShop, SavedData, State } from '@/types'
 import { useForm, Controller } from 'react-hook-form'
 import { borderStyle as border } from '@/styles'
 import { ControlledTextField } from '@/components/ControlledTextField'
-import { FiveState } from '@/features/five/types'
 
 const GET_DOCUMENT_PATH = '/api/server/getDocument'
 
@@ -15,7 +14,7 @@ type FormValues = { brand: BrandOption; documentId: string }
 type Props = {
   retailShop: RetailShop | null
   disabled: boolean
-  setResponse: React.Dispatch<SetStateAction<SavedData<FiveState> | null>>
+  setResponse: React.Dispatch<SetStateAction<SavedData<State> | null>>
   setBrand: React.Dispatch<SetStateAction<Brand | null>>
 }
 
