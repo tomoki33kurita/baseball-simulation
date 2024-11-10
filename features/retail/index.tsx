@@ -1,8 +1,7 @@
 'use client'
 import { Box, AppBar, Toolbar, ThemeProvider } from '@mui/material'
 import { FC, useState } from 'react'
-import { Brand, SavedData } from '@/types'
-import { FiveState } from '../five/types'
+import { Brand, SavedData, State } from '@/types'
 import { Auth } from '../auth'
 import { SearchForm } from './Components/SearchForm'
 import { SearchResult } from './Components/SearchResult'
@@ -18,7 +17,7 @@ const failedLogOut = (err: any) => console.log('ログアウトに失敗しま�
 
 const Retail: FC = () => {
   const [brand, setBrand] = useState<Brand | null>(null)
-  const [response, setResponse] = useState<SavedData<FiveState> | null>(null)
+  const [response, setResponse] = useState<SavedData<State> | null>(null)
   const { email, handleToTop } = useLoadAuth()
   const handleSignOut = async () => await auth.signOut().then(toSignIn).catch(failedLogOut)
   const { retailShop } = useRetailInformation(email, brand)

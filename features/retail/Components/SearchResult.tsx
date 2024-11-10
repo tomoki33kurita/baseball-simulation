@@ -1,19 +1,23 @@
-import { forwardRef } from 'react'
+import { forwardRef, useEffect } from 'react'
 import { Alert as MuiAlert, AlertProps, Box, Button } from '@mui/material'
 import { useForm } from 'react-hook-form'
-import { FiveState } from '@/features/five/types'
-import { Brand, Personal, SavedData } from '@/types'
+import { Brand, SavedData, State } from '@/types'
 import { PalmSurface } from '@/components/Drawers/PalmSurface'
 import { RearSurface } from '@/components/Drawers/RearSurface'
 import { Prices } from '@/components/Prices'
 import { PersonalContents } from './PersonalContents'
 import { SimulationContents } from './SimulationContents'
-import { useDrawGlovePalmSurface } from '@/features/five/Drawer/hooks/useDrawGlovePalmSurface'
-import { useDrawGloveRearSurface } from '@/features/five/Drawer/hooks/useDrawGloveRearSurface'
 
 import { agencies } from '@/app/api/server/order/agency'
 import { useSendOrder } from '../hooks/useSendOrder'
 import { initialPersonal } from '../Constants/personal'
+import { drawRearSurface as drawFiveRearSurface } from '@/features/five/Drawer/canvas/drawRearSurface'
+import { drawPalmSurface as drawFivePalmSurface } from '@/features/five/Drawer/canvas/drawPalmSurface'
+import { getCtx } from '@/util/canvas/ctx'
+import { FiveState } from '@/features/five/types'
+import { GenuineState } from '@/features/genuine/types'
+import { drawPalmSurface as drawGenuinePalmSurface } from '@/features/genuine/Drawer/canvas/drawPalmSurface'
+import { drawRearSurface as drawGenuineRearSurface } from '@/features/genuine/Drawer/canvas/drawRearSurface'
 
 const agencyFilter = (brand: Brand) => () => agencies.filter((a) => a.brands && a.brands.includes(brand))
 
@@ -22,14 +26,14 @@ const Alert = forwardRef<HTMLDivElement, AlertProps>(function Alert(props, ref) 
 })
 
 type Props = {
-  response: SavedData<FiveState> | null
+  response: SavedData<State> | null
   email: string
 }
 
 export const SearchResult: React.FC<Props> = ({ response, email }) => {
   const personal = response?.state.personal ? response.state.personal : initialPersonal
   const { league, position } = personal
-  const state = response?.state ?? ({} as FiveState)
+  const state = response?.state ?? ({} as State)
   const { register } = useForm({
     defaultValues: {
       userName: '',
@@ -43,11 +47,24 @@ export const SearchResult: React.FC<Props> = ({ response, email }) => {
   })
 
   const rearSurfaceId = 'rearSurfaceOnDialog'
-  useDrawGloveRearSurface(rearSurfaceId, state)
   const palmSurfaceId = 'palmSurfaceOnDialog'
-  useDrawGlovePalmSurface(palmSurfaceId, state)
+  useEffect(() => {
+    const rearCtx = getCtx(rearSurfaceId) // useEventEffect使って見える
+    const palmCtx = getCtx(palmSurfaceId)
+    switch (state.baseModel.brand) {
+      case 'five':
+        drawFiveRearSurface(rearCtx, state as FiveState)
+        drawFivePalmSurface(palmCtx, state as FiveState)
+        break
+      case 'genuine':
+        drawGenuineRearSurface(rearCtx, state as GenuineState)
+        drawGenuinePalmSurface(palmCtx, state as GenuineState)
+        break
+      default:
+        break
+    }
+  }, [state, rearSurfaceId, palmSurfaceId])
 
-  console.log({ state })
   const { isSendMail, isFailedMail, isProgress, handleOrderMail, onCloseAlert } = useSendOrder()
   if (!response) return null
   return (

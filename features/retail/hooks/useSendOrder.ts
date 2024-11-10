@@ -1,30 +1,19 @@
-import { FiveState } from '@/features/five/types'
-import { Agency, Brand, State } from '@/types'
+import { Agency, State } from '@/types'
 import { useContext, useState } from 'react'
 import { japaneseFont } from '@/public/font/vfsFont'
 import { getPdfDocDefine } from '../Documents'
 import { RetailContext } from './useRetailContext'
 import { switchEmbroideryCells } from '../Documents/embroiderySettings'
 import { colorCells2Condition } from '../Documents/colorSettings'
-import { getFiveBaseCells } from '@/features/five/Components/ConfirmContents/base'
-import { getFiveColorCells } from '@/features/five/Components/ConfirmContents/color'
 import pdfMake from 'pdfmake/build/pdfmake'
 import axios from 'axios'
+import { getBaseCells, getBrandName, getColorCells } from '@/features/Logic'
 pdfMake.vfs = japaneseFont
 pdfMake.fonts = { GenYoMin: { normal: 'ipaexg.ttf' } }
 const RETAIL_EMAIL_PATH = '/api/server/mail/retail'
 
-const brandNameIdentifier = (brand: Brand) => {
-  switch (brand) {
-    case 'five':
-      return 'FIVE'
-    default:
-      return '--'
-  }
-}
-
 const divideColorSettings = (state: State) => {
-  const settings = getFiveColorCells(state as FiveState)
+  const settings = getColorCells(state)
   const settings1 = settings.filter((x) => !colorCells2Condition.includes(x.partsKey)).map((x) => ({ head: x.head, label: x.label }))
   const settings2 = settings.filter((x) => colorCells2Condition.includes(x.partsKey)).map((x) => ({ head: x.head, label: x.label }))
 
@@ -32,13 +21,13 @@ const divideColorSettings = (state: State) => {
 }
 
 const getPayload = (state: State, pdfBase64: string, agency: Agency, savedId: string) => {
-  const baseSettings = getFiveBaseCells(state as FiveState)
+  const baseSettings = getBaseCells(state)
   const { colorSettings1, colorSettings2 } = divideColorSettings(state)
   const embroideries = state.embroideries.map(switchEmbroideryCells(state))
   const personal = state.personal
 
   return {
-    subject: `【${brandNameIdentifier(state.baseModel.brand)} 発注】`,
+    subject: `【${getBrandName(state.baseModel.brand)} 発注】`,
     agencyEmail: agency.email,
     savedId,
     imageUrlRear: (document.getElementById('rearSurfaceOnDialog') as HTMLCanvasElement).toDataURL(),
@@ -58,7 +47,7 @@ export const useSendOrder = () => {
   const [isFailedMail, setIsFailedMail] = useState(false)
   const retail = useContext(RetailContext)
 
-  const handleOrderMail = async (state: FiveState, agency: Agency, savedId: string) => {
+  const handleOrderMail = async (state: State, agency: Agency, savedId: string) => {
     if (confirm(`${agency.name}に発注しますか？`)) {
       setIsProgress(true)
       try {

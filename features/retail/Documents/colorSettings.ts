@@ -1,19 +1,19 @@
 import { getFiveColorCells } from '@/features/five/Components/ConfirmContents/color'
 import { FiveState } from '@/features/five/types'
-import { Brand, TwoDimensional } from '@/types'
+import { Brand, State, TwoDimensional } from '@/types'
 
 export const colorCells2Condition = ['lace', 'stitch', 'binding', 'welting', 'mouton', 'fiveLabel']
 
-const genGloveColorCells = (state: FiveState, brand: Brand) => {
+const genGloveColorCells = (state: State, brand: Brand) => {
   switch (brand) {
     case 'five':
     default:
-      return getFiveColorCells(state)
+      return getFiveColorCells(state as FiveState)
   }
 }
 
 const genColorCells = (
-  state: FiveState,
+  state: State,
   brand: Brand
 ): {
   head: string
@@ -31,7 +31,7 @@ const genColorCells = (
   }
 }
 
-export const colorSettings = (state: FiveState): any => {
+export const colorSettings = (state: State): any => {
   const brand = state.baseModel.brand
   const colorCells = genColorCells(state, brand)
   const colorCells1 = colorCells.filter((x) => !colorCells2Condition.includes(x.partsKey))

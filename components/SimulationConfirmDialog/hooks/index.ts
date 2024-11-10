@@ -1,20 +1,11 @@
 import axios from 'axios'
 import { useState } from 'react'
 import { Brand, State } from '@/types'
+import { getBrandName } from '@/features/Logic'
 
 const SAVE_SIMULATION_PATH = '/api/server/createDocument'
 const SEND_MAIL_CONSUMER_PATH = '/api/server/mail/consumer'
 
-const getBrandName = (brand: Brand) => {
-  switch (brand) {
-    case 'five':
-      return 'FIVE'
-    case 'genuine':
-      return 'Genuine'
-    default:
-      return '--'
-  }
-}
 const getSubject = (savedId: number, brand: Brand) => {
   const brandName = getBrandName(brand)
   return `【${brandName} オーダーシミュレーション】保存IDが発行されました ${savedId}`

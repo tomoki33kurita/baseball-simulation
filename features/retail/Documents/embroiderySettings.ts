@@ -1,5 +1,4 @@
-import { Brand, DocumentContentGenerator, Embroidery, State } from '@/types'
-import { FiveState } from '@/features/five/types'
+import { DocumentContentGenerator, Embroidery, State } from '@/types'
 import { getFiveEmbroideryCells } from '@/features/five/Components/ConfirmContents/embroidery'
 import { getOrderType } from '@/features/five/Components/Setters/logic'
 
