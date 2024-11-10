@@ -20,7 +20,7 @@ const divideColorSettings = (state: State) => {
   return { colorSettings1: settings1, colorSettings2: settings2 }
 }
 
-const getPayload = (state: State, pdfBase64: string, agency: Agency, savedId: string) => {
+const getPayload = (state: State, pdfBase64: string, agency: Agency, savedId: string, retail: { email: string }) => {
   const baseSettings = getBaseCells(state)
   const { colorSettings1, colorSettings2 } = divideColorSettings(state)
   const embroideries = state.embroideries.map(switchEmbroideryCells(state))
@@ -29,6 +29,7 @@ const getPayload = (state: State, pdfBase64: string, agency: Agency, savedId: st
   return {
     subject: `【${getBrandName(state.baseModel.brand)} 発注】`,
     agencyEmail: agency.email,
+    retailEmail: retail.email,
     savedId,
     imageUrlRear: (document.getElementById('rearSurfaceOnDialog') as HTMLCanvasElement).toDataURL(),
     imageUrlPalm: (document.getElementById('palmSurfaceOnDialog') as HTMLCanvasElement).toDataURL(),
@@ -53,7 +54,7 @@ export const useSendOrder = () => {
       try {
         const docDefine = getPdfDocDefine(state, retail)
         pdfMake.createPdf(docDefine).getBase64((pdfBase64: string) => {
-          const payload = getPayload(state, pdfBase64, agency, savedId) // 変数多すぎ
+          const payload = getPayload(state, pdfBase64, agency, savedId, retail) // 変数多すぎ
           axios.post(RETAIL_EMAIL_PATH, payload).then((x) => {
             const isSuccess = x.status === 200
             setIsProgress(false)

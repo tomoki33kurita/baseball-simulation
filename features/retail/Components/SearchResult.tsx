@@ -93,6 +93,7 @@ export const SearchResult: React.FC<Props> = ({ response, email }) => {
             <Button
               variant="contained"
               onClick={() => handleOrderMail(state, agency, response.savedId)}
+              disabled={isProgress}
               // disabled={isDisabled || !retailNameSearched}
             >
               {isProgress ? '送信中' : `${agency.name}`}

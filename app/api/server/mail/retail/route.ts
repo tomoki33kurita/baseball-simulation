@@ -4,7 +4,8 @@ import { NextResponse } from 'next/server'
 export async function POST(req: Request) {
   try {
     const data = await req.json()
-    const receiverEmailAddress = data.email
+    const receiverEmailAddress = data.agencyEmail
+    const retailEmail = data.retailEmail
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
@@ -15,6 +16,7 @@ export async function POST(req: Request) {
     const info = await transporter.sendMail({
       from: process.env.SMTP_AUTH_USER,
       to: receiverEmailAddress,
+      cc: retailEmail,
       bcc: process.env.SMTP_AUTH_USER,
       subject: data.subject,
       attachments: [
@@ -72,7 +74,7 @@ const mailTextGenerator = (data: any) => {
         <head></head>
         <body>
           <div style="margin-bottom:8px; display:flex">
-            <div ${defaultFontSize}>発注元：(${data.agencyEmail})</div>
+            <div ${defaultFontSize}>発注元：(${data.retailEmail})</div>
             <div style="margin-left:16px;font-size:11px;" >保存ID：${data.savedId}</div>
           </div>
           <div style="display:flex">
@@ -89,8 +91,8 @@ const mailTextGenerator = (data: any) => {
               <div>
                 <div>
                   <h4 ${htmlH3Style}>お客様情報</h4>
-                  <div ${defaultFontSize}>お名前：${data.personal.name}</div>
-                  <div ${defaultFontSize}>お名前(カナ)：${data.personal.kana}</div>
+                  <div ${defaultFontSize}>お名前：${data.personal.userName}</div>
+                  <div ${defaultFontSize}>お名前(カナ)：${data.personal.userNameKana}</div>
                   <div ${defaultFontSize}>Email：${data.personal.mailAddress}</div>
                   <div ${defaultFontSize}>電話番号：${data.personal.phoneNumber}</div>
                   <div ${defaultFontSize}>リーグ：${data.personal.league}</div>
