@@ -1,4 +1,4 @@
-import { Brand, DocumentContentGenerator, Embroidery } from '@/types'
+import { Brand, DocumentContentGenerator, Embroidery, State } from '@/types'
 import { FiveState } from '@/features/five/types'
 import { getFiveEmbroideryCells } from '@/features/five/Components/ConfirmContents/embroidery'
 import { getOrderType } from '@/features/five/Components/Setters/logic'
@@ -9,7 +9,7 @@ const genEmbroideryPdfHeader = (index: number) => ({
   margin: [0, 8, 0, 4]
 })
 
-export const switchEmbroideryCells = (state: FiveState) => (e: Embroidery) => {
+export const switchEmbroideryCells = (state: State) => (e: Embroidery) => {
   const brand = state.baseModel.brand
   switch (brand) {
     case 'five':
@@ -20,7 +20,7 @@ export const switchEmbroideryCells = (state: FiveState) => (e: Embroidery) => {
   }
 }
 
-export const embroiderySettings = (state: FiveState, genCellContent: DocumentContentGenerator): any => {
+export const embroiderySettings = (state: State, genCellContent: DocumentContentGenerator): any => {
   const cellsList = state.embroideries.map(switchEmbroideryCells(state))
   const existEmbroidery = state.embroideries.some((e) => e.content.length > 0)
   if (!existEmbroidery) {

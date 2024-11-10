@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import { Box, Button, Dialog, DialogActions, DialogContent } from '@mui/material'
 import { useForm } from 'react-hook-form'
-import { Position } from '@/types'
+import { Position, State } from '@/types'
 import { ConsumerForm } from '@/components/ConsumerForm'
 import { SavedIdDisplay } from '@/components/SimulationConfirmDialog/SavedIdDIsplay'
-import { useCanStepFurther } from '@/features/five/hooks/useCanStepFurther'
-import { FiveState } from '@/features/five/types'
+import { useCanStepFurther } from '@/features/hooks/useCanStepFurther'
 import { ConfirmDialog } from '../ConfirmDialog'
 import { useConfirm } from '../SettingFrame/hooks/useConfirm'
 import { useSaveSimulation } from './hooks'
+
 const watchFormDefaultValue = {
   defaultValues: {
     mailAddress: '',
@@ -17,7 +17,7 @@ const watchFormDefaultValue = {
 }
 
 type Props = {
-  state: FiveState
+  state: State
   position: Position
   isDialogOpen: boolean
   children: React.ReactNode

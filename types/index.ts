@@ -1,4 +1,5 @@
 import { FiveState } from '@/features/five/types'
+import { GenuineState } from '@/features/genuine/types'
 
 export type ChoiceItem = {
   label: string
@@ -23,7 +24,7 @@ export type ColorItem = {
   order?: number
 }
 export type Brand = 'five' | 'genuine' | ''
-export type Position = 'pitcher' | 'infielder' | 'outfielder' | 'catcher' | 'first-baseman'
+export type Position = 'pitcher' | 'infielder' | 'outfielder' | 'catcher' | 'firstBaseman'
 export type Personal = {
   userName: string
   userNameKana: string
@@ -94,7 +95,7 @@ export type TwoDimensional = {
   alignment: string
 }
 
-export type State = FiveState
+export type State = FiveState | GenuineState
 
 export type BrandOption = {
   value: Brand
@@ -105,4 +106,11 @@ export type RetailShop = {
   email: string
   selectableBrands: BrandOption[]
   name: string
+}
+
+export type WebParts = {
+  label: string
+  value: string
+  positions: string[]
+  imageUrl: string
 }

@@ -1,9 +1,9 @@
-import { getBaseCells } from '@/features/five/Components/ConfirmContents/base'
+import { getFiveBaseCells } from '@/features/five/Components/ConfirmContents/base'
 import { FiveState } from '@/features/five/types'
-import { TwoDimensional } from '@/types'
+import { State, TwoDimensional } from '@/types'
 
-export const baseSettings = (state: FiveState): any => {
-  const baseCells = getBaseCells(state)
+export const baseSettings = (state: State): any => {
+  const baseCells = getFiveBaseCells(state as FiveState)
   const remaining = baseCells.length % 3 // 配列要素数合計を3の倍数で割った時の余り
   const DUMMY = { head: '', label: '', value: '' }
   const formattedBaseCells = remaining === 2 ? [...baseCells, DUMMY] : remaining === 1 ? [...baseCells, DUMMY, DUMMY] : baseCells

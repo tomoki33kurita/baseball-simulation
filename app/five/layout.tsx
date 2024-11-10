@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   //   description: ''
 }
 
-export default function FivePitcherLayout({
+export default function FiveLayout({
   children
 }: Readonly<{
   children: React.ReactNode

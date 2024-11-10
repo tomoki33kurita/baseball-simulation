@@ -4,12 +4,12 @@ import { RearSurface } from './RearSurface'
 import { PalmSurface } from './PalmSurface'
 import { TabPanel } from '@/components/TabPanel'
 import { a11yProps, tabStyle } from '@/util/drawer/tab'
-import { FiveState } from '@/features/five/types'
+import { State } from '@/types'
 
 type Props = {
   rearSurfaceId: string
   palmSurfaceId: string
-  state: FiveState
+  state: State
   drawerIndex: number
   handleDrawerIndex: (_: unknown, newValue: 0 | 1) => void
 }

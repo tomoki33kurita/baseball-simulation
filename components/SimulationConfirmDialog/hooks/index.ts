@@ -1,7 +1,6 @@
 import axios from 'axios'
-import { FiveState } from '@/features/five/types'
 import { useState } from 'react'
-import { Brand } from '@/types'
+import { Brand, State } from '@/types'
 
 const SAVE_SIMULATION_PATH = '/api/server/createDocument'
 const SEND_MAIL_CONSUMER_PATH = '/api/server/mail/consumer'
@@ -10,6 +9,8 @@ const getBrandName = (brand: Brand) => {
   switch (brand) {
     case 'five':
       return 'FIVE'
+    case 'genuine':
+      return 'Genuine'
     default:
       return '--'
   }
@@ -23,7 +24,7 @@ export const useSaveSimulation = (email: string, setSavedId: React.Dispatch<Reac
   const [isSaving, setIsSaving] = useState(false)
 
   // 別のブランドのシミュレーションを保存する場合を想定して、後で修正が必要
-  const handleSave = async (state: FiveState) => {
+  const handleSave = async (state: State) => {
     const brand = state.baseModel.brand
     setIsSaving(true)
     try {

@@ -1,4 +1,4 @@
-import { getColorCells as getFiveColorCells } from '@/features/five/Components/ConfirmContents/color'
+import { getFiveColorCells } from '@/features/five/Components/ConfirmContents/color'
 import { FiveState } from '@/features/five/types'
 import { Brand, TwoDimensional } from '@/types'
 
@@ -25,7 +25,7 @@ const genColorCells = (
   const position = state.baseModel.position
   switch (position) {
     case 'catcher':
-    case 'first-baseman':
+    case 'firstBaseman':
     default:
       return genGloveColorCells(state, brand)
   }

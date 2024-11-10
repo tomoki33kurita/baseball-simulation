@@ -38,7 +38,7 @@ const genGloveColorCell = (head: string, item: ColorItem, partsKey: string) => (
 //   }
 // }
 
-export const getColorCells = (state: FiveState) => {
+export const getFiveColorCells = (state: FiveState) => {
   const needFingerCoverOrPad = state.fingerGuard.value !== 'none'
 
   switch (state.orderType.value) {
