@@ -1,15 +1,15 @@
 'use client'
 import React from 'react'
 import CssBaseline from '@mui/material/CssBaseline'
-import { Box, Button, CircularProgress, ThemeProvider } from '@mui/material'
+import { Box, Button, ThemeProvider } from '@mui/material'
 import Typography from '@mui/material/Typography'
 import Container from '@mui/material/Container'
 import { useForm } from 'react-hook-form'
 import { useRouter } from 'next/navigation'
-import { browserSessionPersistence, setPersistence, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from 'firebase/auth'
+import { browserSessionPersistence, setPersistence, signInWithPopup, GoogleAuthProvider } from 'firebase/auth'
 import Link from 'next/link'
 import { auth } from '../api/server/firebase'
-import { ControlledTextField } from '@/components/ControlledTextField'
+// import { ControlledTextField } from '@/components/ControlledTextField'
 import { commonTheme } from '@/styles/themes'
 
 const SignIn: React.FC = () => {
