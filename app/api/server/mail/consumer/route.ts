@@ -1,5 +1,6 @@
 import nodemailer from 'nodemailer'
 import { NextResponse } from 'next/server'
+import { Brand } from '@/types'
 
 export async function POST(req: Request) {
   try {
@@ -29,7 +30,7 @@ export async function POST(req: Request) {
           cid: 'palmImage'
         }
       ],
-      html: mailTextGenerator(data.locale, data.savedId)
+      html: mailTextGenerator('ja', data.savedId, data.brand)
     })
     //   <div style="margin-bottom:8px">
     //   <div>シミュレーションIDからオーダー発注が可能な店舗一覧はこちら</div>
@@ -57,7 +58,7 @@ export async function POST(req: Request) {
   }
 }
 
-const mailTextGenerator = (locale = 'ja', savedId: string) => {
+const mailTextGenerator = (locale = 'ja', savedId: string, brand: Brand) => {
   switch (locale) {
     default:
       return `
@@ -65,7 +66,7 @@ const mailTextGenerator = (locale = 'ja', savedId: string) => {
         <head></head>
         <body>
           <div style="margin-bottom:8px">
-            <div>ATOMSオーダーシミュレーションをご利用頂きありがとうございます。</div>
+            <div>${brand}オーダーシミュレーションをご利用頂きありがとうございます。</div>
           </div>
       
           <div style="display:flex; margin-bottom:8px">

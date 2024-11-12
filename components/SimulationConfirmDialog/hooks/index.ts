@@ -31,7 +31,8 @@ export const useSaveSimulation = (email: string, setSavedId: React.Dispatch<Reac
           savedId,
           imageUrlRear,
           imageUrlPalm,
-          email
+          email,
+          brand: getBrandName(state.baseModel.brand)
         })
         setIsSaving(false)
       }

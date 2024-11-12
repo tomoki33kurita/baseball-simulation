@@ -9,7 +9,7 @@ const demoKurita = {
 
 // const a = {
 //   email: '',
-//   selectableBrands: [ATOMS, YELL_STORY, DxM],
+//   selectableBrands: [YELL_STORY, DxM],
 //   name: ''
 // }
 
