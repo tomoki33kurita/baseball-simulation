@@ -73,6 +73,7 @@ export type FiveState = {
   littleOut: ColorItem
   listBelt: ColorItem
   labelStand: ColorItem
+  specifiedLogo: BaseItemWithPrice
 }
 
 export type ResponseDispatch = (selected: string) => void

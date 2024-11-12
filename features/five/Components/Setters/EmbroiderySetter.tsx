@@ -4,7 +4,7 @@ import { FiveState } from '@/features/five/types'
 import { TabPanel } from '@/components/TabPanel'
 import { SelectCard } from '@/components/Setters/SelectCard'
 import { EmbroideryFormUpDown } from '@/components/Setters/Embroidery/EmbroideryFormUpDown'
-import { EMBROIDERY_COLORS, TYPE_FACES } from '@/features/five/Constants/embroidery'
+import { EMBROIDERY_COLORS, LOGOS, TYPE_FACES } from '@/features/five/Constants/embroidery'
 import { EmbroideryAccordionSummary } from '@/components/Setters/Embroidery/EmbroideryAccordionSummary'
 import { EmbroideryContent } from '@/components/Setters/Embroidery/EmbroideryContent'
 import {
@@ -17,6 +17,8 @@ import {
   useEmbroideriesDispatchGenerator
 } from './logic'
 import Image from 'next/image'
+import { SET_EMBROIDERIES } from '@/Constants'
+import { SET_SPECIFIED_LOGO } from '../../Constants/action'
 
 type Props = {
   state: FiveState
@@ -34,6 +36,19 @@ export const EmbroiderySetter: React.FC<Props> = ({ state, selectedIndex, dispat
       {isNotSelectedOrderType && <Box my={3} color={'blue'}>{`パーツ設定 > オーダータイプ を先に選択してください。`}</Box>}
       {isSelectedOrderType && (
         <>
+          <SelectCard
+            summary={'指定ロゴの刺繍'}
+            selectedLabel={state.specifiedLogo.label}
+            objects={LOGOS}
+            handleChange={(selected: string) => {
+              dispatch({
+                type: SET_SPECIFIED_LOGO,
+                specifiedLogo: LOGOS.find((x) => x.value === selected)
+              })
+            }}
+            isError={state.specifiedLogo.value === 'unselected'}
+          />
+
           {isCustomOrder && <EmbroideryFormUpDown {...{ embroideries, dispatch }} />}
           {embroideries.map((e, i) => {
             const { shadowColorLabel, edgeColorLabel, disabledShadowColor, disabledEdgeColor, isSelectedTypeFace } = embroideryFlagGenerator(e)

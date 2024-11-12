@@ -18,9 +18,18 @@ export const Embroideries: React.FC<Props> = ({ state, previousIndex }) => {
   const { isCustomOrder } = getOrderType(state.orderType)
   return (
     <>
-      {embroideries.every((e) => e.content.length === 0) ? (
+      <Box fontWeight="bold" fontSize="16px" color={'#383838'}>
+        刺繍項目
+      </Box>
+      {state.baseModel.brand === 'five' && state.orderType.value === 'custom' && (
         <Box fontWeight="bold" fontSize="16px" color={'#383838'}>
-          刺繍項目 - 刺繍なし
+          {/* @ts-ignore */}
+          <ItemCell itemIndex={0} cell={{ head: '指定ロゴ', label: state.specifiedLogo.label }} />
+        </Box>
+      )}
+      {embroideries.every((e) => e.content.length === 0) ? (
+        <Box ml={1} fontWeight="bold" fontSize="16px" color={'#383838'}>
+          (0) 通常刺繍なし
         </Box>
       ) : (
         <>

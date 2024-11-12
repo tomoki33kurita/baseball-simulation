@@ -36,6 +36,7 @@ export const SET_RING_LITTLE_COLOR = 'ringLittle'
 
 export const SET_LITTLE_RING_COLOR = 'littleRing'
 export const SET_LITTLE_OUT_COLOR = 'littleOut'
+export const SET_SPECIFIED_LOGO = 'setSpecifiedLogo'
 
 // これはカラーだけに関するconstantsなので、別ファイルにあるべき
 export const DISPATCHER = {
@@ -58,6 +59,7 @@ export const DISPATCHER = {
   mouton: SET_MOUTON_COLOR,
   labelStand: SET_LABEL_STAND,
   fiveLabel: SET_FIVE_LABEL,
+  specifiedLogo: SET_SPECIFIED_LOGO,
 
   // 内野手用グラブここから
   thumbOut: SET_THUMB_OUT_COLOR,

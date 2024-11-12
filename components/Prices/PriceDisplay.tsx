@@ -12,8 +12,7 @@ export const PriceDisplay: React.FC<Props> = ({ label, amount }) => {
   // const priceWithUnit = `${price}円`
   return (
     <Box>
-      {label}
-      {priceWithUnit}
+      {label}：{priceWithUnit}
     </Box>
   )
 }

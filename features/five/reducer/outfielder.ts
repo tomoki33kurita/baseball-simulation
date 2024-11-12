@@ -32,7 +32,8 @@ import {
   SET_F_LEX_ENGRAVING,
   SET_BINDING_COLOR,
   SET_LABEL_STAND,
-  SET_FINGER_GUARD_COLOR
+  SET_FINGER_GUARD_COLOR,
+  SET_SPECIFIED_LOGO
 } from '../Constants/action'
 import { ADD_EMBROIDERY, REMOVE_EMBROIDERY, SET_DRAWER_INDEX, SET_EMBROIDERIES, SET_PERSONAL } from '@/Constants'
 
@@ -122,7 +123,8 @@ export const initialState = {
   personal: initialPersonalState,
   drawerIndex: 0,
   labelStand: unselectedState,
-  fiveLabel: unselectedState
+  fiveLabel: unselectedState,
+  specifiedLogo: unselectedStateWithPrice
 }
 
 export const reducer = (state: any, action: any) => {
@@ -172,6 +174,8 @@ export const reducer = (state: any, action: any) => {
       return { ...state, webParts: action.webParts }
     case SET_FIVE_LABEL:
       return { ...state, fiveLabel: action.fiveLabel, drawerIndex: 0 }
+    case SET_SPECIFIED_LOGO:
+      return { ...state, specifiedLogo: action.specifiedLogo }
     case SET_LABEL_STAND:
       return { ...state, labelStand: action.labelStand, drawerIndex: 0 }
     case SET_LEATHER_COLOR:

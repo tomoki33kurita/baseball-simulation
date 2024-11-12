@@ -29,7 +29,8 @@ export const calculateFiveEmbroideryCost = (state: FiveState): number => {
     }) // [2750, 2200, ...]
     .reduce((a: number, c: number) => a + c, 0) //
   const existsDiscount = embroideriesOfFiltered.some((e) => e.edgeColor.value === 'none' && e.shadowColor.value === 'none')
+  const specificLogo = state.specifiedLogo.price
   const discount = existsDiscount ? 1100 : 0
-  const discounted = costsOfEmbroideries - discount
+  const discounted = costsOfEmbroideries + specificLogo - discount
   return discounted
 }
