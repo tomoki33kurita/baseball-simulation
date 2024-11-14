@@ -35,6 +35,10 @@ export const SET_RING_LITTLE_COLOR = 'ringLittle'
 export const SET_LITTLE_RING_COLOR = 'littleRing'
 export const SET_LITTLE_OUT_COLOR = 'littleOut'
 
+export const SET_THUMB_COLOR = 'setThumbColor'
+export const SET_BOOMERANG_COLOR = 'setBoomerangColor'
+export const SET_UNDER_WEB_COLOR = 'setUnderWebColor'
+
 // これはカラーだけに関するconstantsなので、別ファイルにあるべき
 export const DISPATCHER = {
   dominantArm: SET_DOMINANT_ARM,
@@ -67,5 +71,10 @@ export const DISPATCHER = {
   ringLittle: SET_RING_LITTLE_COLOR,
   littleRing: SET_LITTLE_RING_COLOR,
   littleOut: SET_LITTLE_OUT_COLOR,
-  listBelt: SET_LIST_BELT_COLOR
+  listBelt: SET_LIST_BELT_COLOR,
+
+  // 一塁手用ココカラ
+  thumb: SET_THUMB_COLOR,
+  boomerang: SET_BOOMERANG_COLOR,
+  underWeb: SET_UNDER_WEB_COLOR
 }

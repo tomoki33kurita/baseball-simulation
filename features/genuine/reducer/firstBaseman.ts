@@ -30,10 +30,14 @@ import {
   SET_ORDER_TYPE,
   SET_BINDING_COLOR,
   SET_LABEL_STAND,
-  SET_FINGER_GUARD_COLOR
+  SET_FINGER_GUARD_COLOR,
+  SET_THUMB_COLOR,
+  SET_UNDER_WEB_COLOR,
+  SET_BOOMERANG_COLOR
 } from '@/features/genuine/Constants/action'
 import { GenuineState } from '../types'
 import { Embroidery } from '@/types'
+import { boomerang } from '../Drawer/canvas/rightThrow/firstMitt/back/boomerang'
 
 const initialPersonalState = {
   userName: '',
@@ -138,18 +142,9 @@ export const reducer = (state: any, action: any) => {
         fingerGuardColor: action.all,
         listBelt: action.all,
         linings: action.all,
-        // 内野手用グラブ
-        thumbOut: action.all,
-        thumbWeb: action.all,
-        indexWeb: action.all,
-        indexMiddle: action.all,
-        middleIndex: action.all,
-        middleRing: action.all,
-        ringMiddle: action.all,
-        ringLittle: action.all,
-        littleRing: action.all,
-        littleOut: action.all,
-        labelStand: action.all
+        thumb: action.all,
+        boomerang: action.all,
+        underWeb: action.all
       }
     case SET_BASE_MODEL:
       return { ...state, baseModel: action.baseModel }
@@ -220,6 +215,12 @@ export const reducer = (state: any, action: any) => {
       return { ...state, littleHook: action.littleHook }
     case SET_FINGER_GUARD_COLOR:
       return { ...state, fingerGuardColor: action.fingerGuardColor, drawerIndex: 0 }
+    case SET_THUMB_COLOR:
+      return { ...state, thumb: action.thumb, drawerIndex: 0 }
+    case SET_UNDER_WEB_COLOR:
+      return { ...state, underWeb: action.underWeb, drawerIndex: 0 }
+    case SET_BOOMERANG_COLOR:
+      return { ...state, boomerang: action.boomerang, drawerIndex: 0 }
     case SET_PERSONAL:
       return { ...state, personal: action.personal }
     case SET_DRAWER_INDEX:
