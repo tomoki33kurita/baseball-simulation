@@ -50,14 +50,20 @@ export const p05Web = (ctx: CanvasRenderingContext2D, webColor: string, laceColo
   // 斜線_1
   ctx.moveTo(491, 224)
   ctx.quadraticCurveTo(672, 222, 672, 222)
+  ctx.moveTo(491, 228)
+  ctx.quadraticCurveTo(672, 226, 672, 226)
 
   // 斜線_2
   ctx.moveTo(493, 271)
   ctx.quadraticCurveTo(687, 264, 687, 264)
+  ctx.moveTo(493, 275)
+  ctx.quadraticCurveTo(687, 269, 687, 269)
 
   // 斜線_3
   ctx.moveTo(521, 318)
   ctx.quadraticCurveTo(650, 308, 650, 308)
+  ctx.moveTo(521, 322)
+  ctx.quadraticCurveTo(650, 312, 650, 312)
 
   // 星
   ctx.moveTo(608, 128)
