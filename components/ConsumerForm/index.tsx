@@ -47,6 +47,7 @@ export const ConsumerForm: React.FC<Props> = ({ position, isDisabled, dispatch, 
                 styles={{ menu: (provided: any) => ({ ...provided, zIndex: 9999 }) }}
                 isDisabled={isDisabled}
                 isSearchable={false}
+                menuPlacement={'top'}
                 onChange={(value) => setPersonalData({ ...personalData, league: value ? value.label : 'nodata' })}
               />
             </Box>
@@ -61,6 +62,7 @@ export const ConsumerForm: React.FC<Props> = ({ position, isDisabled, dispatch, 
                 isMulti
                 isSearchable={false}
                 isDisabled={isDisabled}
+                menuPlacement={'top'}
                 onChange={(values) =>
                   setPersonalData({
                     ...personalData,

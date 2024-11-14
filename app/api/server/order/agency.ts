@@ -6,4 +6,10 @@ const kuritaMainOffice: Agency = {
   brands: ['five']
 }
 
+// const fiveMainOffice: Agency = {
+//   name: 'FIVE本社',
+//   email: '',
+//   brands: ['five']
+// }
+
 export const agencies = [kuritaMainOffice]
