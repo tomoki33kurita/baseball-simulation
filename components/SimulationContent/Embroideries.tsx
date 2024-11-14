@@ -23,8 +23,13 @@ export const Embroideries: React.FC<Props> = ({ state, previousIndex }) => {
       </Box>
       {state.baseModel.brand === 'five' && state.orderType.value === 'custom' && (
         <Box fontWeight="bold" fontSize="16px" color={'#383838'}>
-          {/* @ts-ignore */}
-          <ItemCell itemIndex={0} cell={{ head: '指定ロゴ', label: state.specifiedLogo.label }} />
+          <ItemCell
+            itemIndex={0}
+            cell={{
+              head: '指定ロゴ', // @ts-ignore
+              label: `${state.specifiedLogo.label}${state.specifiedLogo.value === 'logo' ? `(${state.specifiedLogoPosition.label})` : ''}`
+            }}
+          />
         </Box>
       )}
       {embroideries.every((e) => e.content.length === 0) ? (

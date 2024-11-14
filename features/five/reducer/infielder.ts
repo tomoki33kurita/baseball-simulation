@@ -33,7 +33,8 @@ import {
   SET_BINDING_COLOR,
   SET_LABEL_STAND,
   SET_FINGER_GUARD_COLOR,
-  SET_SPECIFIED_LOGO
+  SET_SPECIFIED_LOGO,
+  SET_SPECIFIED_LOGO_POSITION
 } from '../Constants/action'
 
 const initialPersonalState = {
@@ -123,7 +124,8 @@ export const initialState = {
   drawerIndex: 0,
   labelStand: unselectedColorState,
   fiveLabel: unselectedState,
-  specifiedLogo: unselectedStateWithPrice
+  specifiedLogo: unselectedStateWithPrice,
+  specifiedLogoPosition: unselectedState
 }
 
 export const reducer = (state: any, action: any) => {
@@ -175,6 +177,8 @@ export const reducer = (state: any, action: any) => {
       return { ...state, fiveLabel: action.fiveLabel, drawerIndex: 0 }
     case SET_SPECIFIED_LOGO:
       return { ...state, specifiedLogo: action.specifiedLogo }
+    case SET_SPECIFIED_LOGO_POSITION:
+      return { ...state, specifiedLogoPosition: action.specifiedLogoPosition }
     case SET_LABEL_STAND:
       return { ...state, labelStand: action.labelStand, drawerIndex: 0 }
     case SET_LEATHER_COLOR:

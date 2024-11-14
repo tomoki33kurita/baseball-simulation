@@ -4,7 +4,7 @@ import { FiveState } from '@/features/five/types'
 import { TabPanel } from '@/components/TabPanel'
 import { SelectCard } from '@/components/Setters/SelectCard'
 import { EmbroideryFormUpDown } from '@/components/Setters/Embroidery/EmbroideryFormUpDown'
-import { EMBROIDERY_COLORS, LOGOS, TYPE_FACES } from '@/features/five/Constants/embroidery'
+import { EMBROIDERY_COLORS, EMBROIDERY_POSITIONS, SPECIFIED_LOGOS, TYPE_FACES } from '@/features/five/Constants/embroidery'
 import { EmbroideryAccordionSummary } from '@/components/Setters/Embroidery/EmbroideryAccordionSummary'
 import { EmbroideryContent } from '@/components/Setters/Embroidery/EmbroideryContent'
 import {
@@ -17,7 +17,7 @@ import {
   useEmbroideriesDispatchGenerator
 } from './logic'
 import Image from 'next/image'
-import { SET_SPECIFIED_LOGO } from '../../Constants/action'
+import { SET_SPECIFIED_LOGO, SET_SPECIFIED_LOGO_POSITION } from '../../Constants/action'
 
 type Props = {
   state: FiveState
@@ -39,15 +39,28 @@ export const EmbroiderySetter: React.FC<Props> = ({ state, selectedIndex, dispat
           <SelectCard
             summary={'指定ロゴの刺繍'}
             selectedLabel={state.specifiedLogo.label}
-            objects={LOGOS}
+            objects={SPECIFIED_LOGOS}
             handleChange={(selected: string) => {
               dispatch({
                 type: SET_SPECIFIED_LOGO,
-                specifiedLogo: LOGOS.find((x) => x.value === selected)
+                specifiedLogo: SPECIFIED_LOGOS.find((x) => x.value === selected)
               })
             }}
             isError={state.specifiedLogo.value === 'unselected'}
             description={state.specifiedLogo.value === 'logo' ? 'ロゴデータ(画像やPDF)を小売店様にお伝えください。(+6,600円)' : ''}
+          />
+          <SelectCard
+            summary={'指定ロゴの位置'}
+            selectedLabel={state.specifiedLogoPosition.label}
+            objects={EMBROIDERY_POSITIONS.filter((p) => embroideries.some((e) => e.position.value !== p.value))}
+            handleChange={(selected: string) => {
+              dispatch({
+                type: SET_SPECIFIED_LOGO_POSITION,
+                specifiedLogoPosition: EMBROIDERY_POSITIONS.find((x) => x.value === selected)
+              })
+            }}
+            isDisplay={state.specifiedLogo.value === 'logo'}
+            isError={state.specifiedLogoPosition.value === 'unselected'}
           />
 
           {isCustomOrder && <EmbroideryFormUpDown {...{ embroideries, dispatch }} />}
@@ -78,7 +91,13 @@ export const EmbroiderySetter: React.FC<Props> = ({ state, selectedIndex, dispat
                       />
                     </Box>
                     <Box width={'100%'}>
-                      <EmbroideryContent content={e.content} contentMaxLength={contentMaxLength} embroideryIndex={i} handleContent={handle.content} />
+                      <EmbroideryContent
+                        content={e.content}
+                        contentMaxLength={contentMaxLength}
+                        embroideryIndex={i}
+                        disabled={!isSelectedFLexEngraving}
+                        handleContent={handle.content}
+                      />
                     </Box>
                     <Box my={1} width={'100%'}>
                       <Card>

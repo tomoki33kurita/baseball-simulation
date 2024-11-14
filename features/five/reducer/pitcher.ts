@@ -122,7 +122,8 @@ export const initialState = {
   drawerIndex: 0,
   labelStand: unselectedColorState,
   fiveLabel: unselectedState,
-  specifiedLogo: unselectedStateWithPrice
+  specifiedLogo: unselectedStateWithPrice,
+  specifiedLogoPosition: unselectedState
 }
 
 export const reducer = (state: any, action: any) => {

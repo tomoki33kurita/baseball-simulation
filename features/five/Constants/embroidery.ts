@@ -41,7 +41,7 @@ export const EMBROIDERY_ITEMS: EmbroideryItems = {
   edgeColor: SHADOW_EDGE_COLORS
 }
 
-export const LOGOS = [
+export const SPECIFIED_LOGOS = [
   { label: '有り', value: 'logo', price: 6600 },
   { label: '無し', value: 'none', price: 0 }
 ]

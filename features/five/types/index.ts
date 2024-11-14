@@ -75,6 +75,7 @@ export type FiveState = {
   listBelt: ColorItem
   labelStand: ColorItem
   specifiedLogo: BaseItemWithPrice
+  specifiedLogoPosition: BaseItem
 }
 
 export type ResponseDispatch = (selected: string) => void

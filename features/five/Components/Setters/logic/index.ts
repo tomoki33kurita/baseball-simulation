@@ -122,6 +122,7 @@ export const selectablePositionGenerator = (state: FiveState, index: number) => 
   )
     .filter((p) => !overAllSelectedPositions.includes(p.value) || p.value === embroideries[index].position.value)
     .filter((p) => (isFLexEngraving ? p.value !== 'band' : true))
+    .filter((p) => p.value !== state.specifiedLogoPosition.value)
 
   return selectablePosition
 }
