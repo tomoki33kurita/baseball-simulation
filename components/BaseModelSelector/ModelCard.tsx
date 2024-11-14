@@ -2,11 +2,12 @@ import React from 'react'
 import Image from 'next/image'
 import { Box, Button } from '@mui/material'
 import { borderStyle } from '@/styles'
-import { FiveBaseModel } from '../../features/five/types'
+import { FiveBaseModel } from '@/features/five/types'
+import { GenuineBaseModel } from '@/features/genuine/types'
 import { BaseModel } from '@/types'
 
 type Props = {
-  model: FiveBaseModel | BaseModel
+  model: FiveBaseModel | GenuineBaseModel
   selectedModel: BaseModel | null
   isOnlyImage?: boolean
   handleBaseModel: (model: BaseModel) => void

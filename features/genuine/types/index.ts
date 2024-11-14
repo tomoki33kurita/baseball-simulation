@@ -24,7 +24,6 @@ export type PartsItem = {
     | 'drawerIndex'
     | 'genuineLabel'
     | 'mouton'
-    | 'genuineLabel'
   >
   // value: keyof typeof LEATHER_COLORS_BY_PARTS
 }
@@ -34,6 +33,8 @@ export type PartsKey = PartsItem['value']
 export type LeatherColorsByParts = Record<PartsKey, typeof LEATHER_COLORS | typeof LACES | typeof BINDINGS | typeof STITCHES | typeof WELTINGS>
 
 export type DrawerIndex = 0 | 1
+
+export type GenuineBaseModel = {} & BaseModel
 
 export type GenuineState = {
   baseModel: GenuineBaseModel
@@ -60,6 +61,7 @@ export type GenuineState = {
   littleHook: ColorItem
   fingerGuardColor: ColorItem
   linings: ColorItem
+  thumb: ColorItem
   thumbOut: ColorItem
   thumbWeb: ColorItem
   indexWeb: ColorItem
@@ -71,20 +73,10 @@ export type GenuineState = {
   littleRing: ColorItem
   littleOut: ColorItem
   listBelt: ColorItem
-  labelStand: ColorItem
+  boomerang: ColorItem // only for first baseman
+  underWeb: ColorItem // only for first baseman
 }
 
 export type ResponseDispatch = (selected: string) => void
-
-export type GenuineBaseModel = {
-  basicColors: {
-    leather: ColorItem
-    lace: ColorItem
-    stitch: ColorItem
-    binding: ColorItem
-    welting: ColorItem
-    genuineLabel: BaseItem
-  }
-} & BaseModel
 
 export type CanStepFurther = any

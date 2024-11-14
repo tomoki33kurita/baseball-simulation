@@ -32,6 +32,8 @@ import {
   SET_LABEL_STAND,
   SET_FINGER_GUARD_COLOR
 } from '@/features/genuine/Constants/action'
+import { GenuineState } from '../types'
+import { Embroidery } from '@/types'
 
 const initialPersonalState = {
   userName: '',
@@ -51,22 +53,20 @@ const unselectedColorState = {
   color: '#fff'
 }
 
-const initialEmbroideryState = {
+const initialEmbroideryState: Embroidery = {
   id: 0,
-  typeFace: { label: '', value: '' },
-  position: { label: '', value: '' },
-  color: { label: '未選択', value: 'unselected', color: '' },
-  shadowColor: { label: '未選択', value: 'unselected' },
-  edgeColor: { label: '未選択', value: 'unselected' },
+  typeFace: unselectedState,
+  position: unselectedState,
+  color: unselectedColorState,
+  shadowColor: unselectedColorState,
+  edgeColor: unselectedColorState,
   content: ''
 }
 
-export const initialState = {
+export const initialState: GenuineState = {
   baseModel: {
     productNumber: '',
-    position: '',
-    imageUrl: '',
-    dominantArm: 'unselected',
+    position: 'firstBaseman',
     size: {
       unit: 'cm',
       value: 0
@@ -103,6 +103,7 @@ export const initialState = {
   littleHook: unselectedColorState,
   listBelt: unselectedColorState,
   mouton: unselectedColorState,
+  thumb: unselectedColorState,
   thumbOut: unselectedColorState,
   thumbWeb: unselectedColorState,
   indexWeb: unselectedColorState,
@@ -113,7 +114,9 @@ export const initialState = {
   ringLittle: unselectedColorState,
   littleRing: unselectedColorState,
   littleOut: unselectedColorState,
-
+  genuineLabel: unselectedColorState,
+  boomerang: unselectedColorState,
+  underWeb: unselectedColorState,
   embroideries: [initialEmbroideryState],
   personal: initialPersonalState,
   drawerIndex: 0

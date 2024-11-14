@@ -1,6 +1,5 @@
 import { positionChecker } from '@/util/logic'
-import { beltBackStyleDrawer, beltBackStyleDrawerForBasic } from './beltBackStyleDrawer'
-import { getOrderType } from '@/features/five/Components/Setters/logic'
+import { beltBackStyleDrawer } from './beltBackStyleDrawer'
 import { webKnots } from '@/util/canvas/lace/webKnots'
 import { GenuineState } from '@/features/genuine/types'
 
@@ -104,16 +103,11 @@ const outfielderDefaultBackLace = (ctx: CanvasRenderingContext2D, laceColor: str
 
 export const backStyleOfGloveBackDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
   const needPalmWrap = !state.baseModel?.isUBack || false
-  const { isBasicOrder } = getOrderType(state.orderType)
-  const laceColor = isBasicOrder ? state.baseModel.basicColors.lace.color : state.lace.color
+  const laceColor = state.lace.color
   const position = state.baseModel?.position
   const { isOutfielder } = positionChecker(position)
 
-  if (isBasicOrder) {
-    beltBackStyleDrawerForBasic(ctx, state, needPalmWrap)
-  } else {
-    beltBackStyleDrawer(ctx, state, needPalmWrap)
-  }
+  beltBackStyleDrawer(ctx, state, needPalmWrap)
   // 背面紐通し(外野手のみ)
   isOutfielder && outfielderDefaultBackLace(ctx, laceColor, 0, 25)
   // outfielderDefaultBackLace(ctx, laceColor, -8, 35)

@@ -1,14 +1,19 @@
 import { GenuineState } from '../../types'
 import { canvasResetter } from './canvasResetter'
-import { backStyleOfGloveBackDrawer } from './rightThrow/back/backStyles'
 import { fingerGuardDrawer } from './rightThrow/back/fingerCoverOrPad/fingerGuardDrawer'
-import { littleHook } from './rightThrow/back/fingerHooks/littleHook'
-import { thumbHook } from './rightThrow/back/fingerHooks/thumbHook'
-import { fiveLabel } from './rightThrow/back/label'
-import { lace } from './rightThrow/back/lace'
-import { laceOfWristBeltCrossDrawer } from './rightThrow/back/lace/laceOfWristBeltFix'
-import { lining } from './rightThrow/back/lining'
-import { webOfGloveBackDrawer } from './rightThrow/back/web/webOfGloveBackDrawer'
+import { backOfIndexToLittle } from './rightThrow/firstMitt/back/backOfIndexToLittle'
+import { boomerang } from './rightThrow/firstMitt/back/boomerang'
+import { palm } from './rightThrow/firstMitt/back/palm'
+import { liningLeather } from './rightThrow/firstMitt/back/liningLeather'
+import { backOfThumbDrawer } from './rightThrow/firstMitt/back/thumbDrawer'
+import { thumbHook } from './rightThrow/firstMitt/back/thumbHook'
+import { littleHook } from './rightThrow/firstMitt/back/littleHook'
+import { webBottom, webTop } from './rightThrow/firstMitt/back/web'
+import { wristBeltDrawer } from './rightThrow/firstMitt/back/wristBeltDrawer'
+import { backAroundWeb } from './rightThrow/firstMitt/back/backAroundWeb'
+import { edgeDrawer } from './rightThrow/firstMitt/back/edgeDrawer'
+import { stitch } from './rightThrow/firstMitt/back/stitch'
+import { laces } from './rightThrow/firstMitt/back/lace'
 
 export const drawGenuineFirstMittRearSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
   if (!ctx) return
@@ -21,17 +26,65 @@ export const drawGenuineFirstMittRearSurface = (ctx: CanvasRenderingContext2D | 
   ctx.fillStyle = '#383838'
   ctx.strokeText('型番：' + baseModel.productNumber, 50, 70)
 
-  const webColor = state.web.color
-  const laceColor = state.lace.color
-  const stitchColor = state.stitch.color
-  lining(ctx, state.linings.color) // 裏革
-  backStyleOfGloveBackDrawer(ctx, state) // バックスタイルの描画(ハミダシ,親指刺繍含)
-  fingerGuardDrawer(ctx, state) // 指カバー・パッド
-  thumbHook(ctx, state.thumbHook.color, 110, -310, 15) // 先端 // 親指掛け紐_上
-  webOfGloveBackDrawer(ctx, state, webColor, laceColor, stitchColor)
-  lace(ctx, laceColor) // 革紐
-  laceOfWristBeltCrossDrawer(ctx, laceColor)
-  fiveLabel(ctx, state, 20, 38, 0, 0.95) // ラベル描画
-  littleHook(ctx, state.littleHook.color, 25, 240, -10, 0.7) // 小指掛け紐
-  thumbHook(ctx, state.thumbHook.color, -14, 30, 0) //手元
+  liningLeather(ctx, state.linings.color)
+  // const isEmbroideryOfLining = state.embroideries.some((x) => x.position.value === 'leatherLiningFirst')
+  // if (isEmbroideryOfLining) {
+  //   liningEmbroidery(
+  //     ctx,
+  //     state.embroideries.find((e) => e.position.value === 'leatherLiningFirst'),
+  //     110,
+  //     -65
+  //   )
+  // }
+
+  // const isEmbroideryOfLiningSecond = state.embroideries.some((x) => x.position.value === 'leatherLiningSecond')
+  // // 平裏への刺繍
+  // if (isEmbroideryOfLiningSecond) {
+  //   liningEmbroidery(
+  //     ctx,
+  //     state.embroideries.find((e) => e.position.value === 'leatherLiningSecond'),
+  //     110,
+  //     -25
+  //   )
+  // }
+
+  palm(ctx, state.palm.color) // 捕球面
+  webTop(ctx, state.web.color, state.baseModel) // ウェブ先端側
+  webBottom(ctx, state.web.color, state.baseModel) // ウェブ捕球面側
+  boomerang(ctx, state.boomerang.color) // ブーメラン部分
+  backOfIndexToLittle(ctx, state.boomerang.color) //  // 背面＿人差し指-小指
+
+  // // 小指への刺繍
+  // const isEmbroideryOfChild = state.embroideries.some((x) => x.position.value === 'pinkyFingerSideBack')
+  // if (isEmbroideryOfChild) {
+  //   firstMittChildFingerEmbroidery(
+  //     ctx,
+  //     state.embroideries.find((embroidery) => embroidery.position.value === 'pinkyFingerSideBack'),
+  //     -100,
+  //     580
+  //   )
+  // }
+  backOfThumbDrawer(ctx, state.thumb.color, state.stitch.color) // 背面＿親指_
+
+  wristBeltDrawer(ctx, state) // 手首ベルト
+  littleHook(ctx, state.littleHook.color) // 小指掛け紐
+  thumbHook(ctx, state.thumbHook.color) // 親指掛け紐
+  // // 親指への刺繍
+  // const isEmbroideryOfThumb = state.embroideries.some((x) => x.position.value === 'thumbFinger')
+  // if (isEmbroideryOfThumb) {
+  //   thumbEmbroidery(
+  //     ctx,
+  //     state.embroideries.find((embroidery) => embroidery.position.value === 'thumbFinger'),
+  //     -220,
+  //     40,
+  //     -20
+  //   )
+  // }
+  backAroundWeb(ctx, state.underWeb.color) //背面＿ウェブ周り
+  edgeDrawer(ctx, state) // ヘリ革
+  stitch(ctx, state.stitch.color) // ステッチ
+  fingerGuardDrawer(ctx, state) // 指カバー
+
+  // atomsLabel(ctx, state.atomsLabel.value, -20, 25, 0, 1)
+  laces(ctx, state.lace.color) // 革紐
 }

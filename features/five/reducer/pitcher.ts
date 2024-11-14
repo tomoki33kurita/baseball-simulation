@@ -117,7 +117,6 @@ export const initialState = {
   ringLittle: unselectedColorState,
   littleRing: unselectedColorState,
   littleOut: unselectedColorState,
-
   embroideries: [initialEmbroideryState],
   personal: initialPersonalState,
   drawerIndex: 0,

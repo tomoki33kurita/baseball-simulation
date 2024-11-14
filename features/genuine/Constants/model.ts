@@ -26,10 +26,6 @@ export const models: GenuineBaseModel[] = [
     isUBack: false,
     brand: 'genuine',
     bankLaceDirection: 'sequentialRoll',
-    basicColors: {
-      ...basicColors,
-      lace: { label: 'ブラック', value: 'black', color: '#1E1E1E' }
-    },
     image: {
       url: `${imageBaseUrl}/f101.jpg`,
       width: gloveImageWidth,
@@ -49,7 +45,6 @@ export const models: GenuineBaseModel[] = [
     isUBack: false,
     brand: 'genuine',
     bankLaceDirection: 'reverseRoll',
-    basicColors,
     image: {
       url: `${imageBaseUrl}/f501.jpg`,
       width: gloveImageWidth,
@@ -69,7 +64,6 @@ export const models: GenuineBaseModel[] = [
     isUBack: false,
     brand: 'genuine',
     bankLaceDirection: 'sequentialRoll',
-    basicColors,
     image: {
       url: `${imageBaseUrl}/f601.jpg`,
       width: gloveImageWidth,
@@ -89,7 +83,6 @@ export const models: GenuineBaseModel[] = [
     isUBack: false,
     brand: 'genuine',
     bankLaceDirection: 'reverseRoll',
-    basicColors,
     image: {
       url: `${imageBaseUrl}/f801.jpg`,
       width: gloveImageWidth,
@@ -109,7 +102,6 @@ export const models: GenuineBaseModel[] = [
     isUBack: false,
     brand: 'genuine',
     bankLaceDirection: 'reverseRoll',
-    basicColors,
     image: {
       url: `${imageBaseUrl}/2.jpg`,
       width: gloveImageWidth,
@@ -129,7 +121,6 @@ export const models: GenuineBaseModel[] = [
     isUBack: false,
     brand: 'genuine',
     bankLaceDirection: 'reverseRoll',
-    basicColors,
     image: {
       url: `${imageBaseUrl}/3.jpg`,
       width: gloveImageWidth,

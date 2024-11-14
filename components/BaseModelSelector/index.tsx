@@ -1,16 +1,17 @@
 import React from 'react'
 import { Box, Dialog, DialogContent, DialogActions } from '@mui/material'
-import { BaseModel, Position } from '@/types'
+import { Position } from '@/types'
 import { startConfirmMessageGenerator, useConfirm, useSelectBaseModel } from '../SettingFrame/hooks/useConfirm'
 import { ModelCard } from './ModelCard'
 import { ConfirmDialog } from '../ConfirmDialog'
 import { positionFilterLogic } from '@/util/logic'
 import { FiveBaseModel } from '../../features/five/types'
+import { GenuineBaseModel } from '@/features/genuine/types'
 
 const SET_BASE_MODEL = 'setBaseModel'
 
 type Props = {
-  models: FiveBaseModel[] | BaseModel[]
+  models: FiveBaseModel[] | GenuineBaseModel[]
   position: Position
   dispatch: React.Dispatch<any>
 }

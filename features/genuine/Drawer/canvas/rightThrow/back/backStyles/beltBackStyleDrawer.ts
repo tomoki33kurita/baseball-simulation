@@ -37,31 +37,3 @@ export const beltBackStyleDrawer = (ctx: CanvasRenderingContext2D, state: Genuin
   isMiddleFingerPad && middleFingerPad(ctx, state.fingerGuardColor.color, stitchColor, -165, 90, -15) // 指当て(中指)
   fingerCrotch(ctx, state.palm.color, state.welting.color, state.baseModel.isFingerCrotch) // 指股
 }
-
-export const beltBackStyleDrawerForBasic = (ctx: CanvasRenderingContext2D, state: GenuineState, needPalmWrap: boolean): void => {
-  const isIndexFingerPad = ['indexPad'].includes(state.fingerGuard.value)
-  const isMiddleFingerPad = ['middlePad'].includes(state.fingerGuard.value)
-  const basicColor = state.baseModel.basicColors.leather.color
-  const basicStitchColor = state.baseModel.basicColors.stitch.color
-  const basicBindingColor = state.baseModel.basicColors.binding.color
-  const basicWeltingColor = state.baseModel.basicColors.welting.color
-
-  thumbAndListBelt(ctx, '#2e4732', basicStitchColor)
-  thumbAndListBelt(ctx, basicColor, basicStitchColor)
-  thumbOut(ctx, basicColor) // 親指＿外
-  indexFingerRight(ctx, basicColor) // 人差し指＿右
-  indexFingerLeft(ctx, basicColor) // 人差し指＿左
-  middleFingerRight(ctx, basicColor) // 中指＿右
-  middleFingerLeft(ctx, basicColor) // 中指＿左
-  ringFingerRight(ctx, basicColor) // 薬指＿右
-  ringFingerLeft(ctx, basicColor) // 薬指＿左
-  littleFingerRight(ctx, basicColor) // 小指＿右
-  littleFingerLeft(ctx, basicColor) // 小指＿左
-  weltingOfNormal(ctx, basicWeltingColor) // ハミダシ
-  palm(ctx, basicColor, basicStitchColor, needPalmWrap) // 捕球面 / ウェブ下折り返し
-  bindingOfBeltBackStyle(ctx, basicBindingColor, basicStitchColor) // ヘリ革
-  bindingOfWrist(ctx, basicBindingColor, basicStitchColor) // ヘリ革
-  isIndexFingerPad && indexFingerPad(ctx, basicColor, basicStitchColor) // 指当て(人指し指)
-  isMiddleFingerPad && middleFingerPad(ctx, basicColor, basicStitchColor, -165, 90, -15) // 指当て(中指)
-  fingerCrotch(ctx, basicColor, state.baseModel.basicColors.welting.color, state.baseModel.isFingerCrotch) // 指股
-}

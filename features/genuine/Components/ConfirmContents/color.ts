@@ -42,9 +42,6 @@ export const getGenuineColorCells = (state: GenuineState) => {
   const needFingerCoverOrPad = state.fingerGuard.value !== 'none'
 
   switch (state.orderType.value) {
-    case 'basic':
-      // case 'basicWithEmbroidery':
-      return [genGloveColorCell('本体カラー（指定不可）', state.baseModel.basicColors.leather, 'all')]
     case 'colorSelect':
       return [
         genGloveColorCell('本体カラー（1色のみ）', state.all, 'all'),

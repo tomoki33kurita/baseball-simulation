@@ -20,7 +20,6 @@ import { indexWrapBack } from '../lace/connectIndexToWeb'
 import { webDrawUtil } from '@/util/canvas'
 import { laceOfVerticalPartsRight, laceParts1, laceParts7 } from './parts/laceParts'
 import { topSidePartOfWeb } from './parts/sideParts'
-import { getOrderType } from '@/features/five/Components/Setters/logic'
 import { GenuineState } from '@/features/genuine/types'
 
 export const webOfGloveFrontDrawer = (
@@ -175,12 +174,9 @@ const underWebForNetWeb2 = (ctx: CanvasRenderingContext2D, color: string, x: num
 
 export const rightLaceOfNetWebDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
   const { webMatcher } = webDrawUtil(state)
-  const { isBasicOrder } = getOrderType(state.orderType)
-  const baseModel = state.baseModel
-  const basicColors = baseModel.basicColors
-  const webLeatherColor = isBasicOrder ? basicColors.leather.color : state.web.color
-  const laceColor = isBasicOrder ? basicColors.lace.color : state.lace.color
-  const stitchColor = isBasicOrder ? basicColors.stitch.color : state.stitch.color
+  const webLeatherColor = state.web.color
+  const laceColor = state.lace.color
+  const stitchColor = state.stitch.color
 
   if (webMatcher(['ou01'])) {
     laceOfNetWebDouble(ctx, webLeatherColor, laceColor, stitchColor)
