@@ -18,10 +18,10 @@ export const SurfaceDrawers: FC<Props> = ({ rearSurfaceId, palmSurfaceId, drawer
   return (
     <Box position={'sticky'} top={0}>
       <TabPanel selectedIndex={drawerIndex} index={0}>
-        <RearSurface rearSurfaceId={rearSurfaceId} />
+        <RearSurface rearSurfaceId={rearSurfaceId} devFlg />
       </TabPanel>
       <TabPanel selectedIndex={drawerIndex} index={1}>
-        <PalmSurface palmSurfaceId={palmSurfaceId} />
+        <PalmSurface palmSurfaceId={palmSurfaceId} devFlg />
       </TabPanel>
       <AppBar position="static">
         <Tabs value={drawerIndex} onChange={handleDrawerIndex} aria-label="figure-tab-wrapper" centered>

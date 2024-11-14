@@ -1,4 +1,4 @@
-import { allowLace } from '../../lace/allowCenterOfCrossWeb'
+import { allowLace2 } from '../../lace/allowCenterOfCrossWeb'
 
 // クロスウェブ等の縦パーツ
 
@@ -136,9 +136,9 @@ export const verticalPartOfWebWithLace = (ctx: CanvasRenderingContext2D, webColo
   // stitchここまで
 
   // laceここから
-  allowLace(ctx, laceColor, -2, -5, 1, 1)
-  allowLace(ctx, laceColor, -19, 33, 0, 1)
-  allowLace(ctx, laceColor, -34, 58, 0, 1)
-  allowLace(ctx, laceColor, -53, 85, 0, 1)
-  allowLace(ctx, laceColor, -73, 110, 0, 1)
+  allowLace2(ctx, laceColor, -5, 0)
+  allowLace2(ctx, laceColor, -18, 25)
+  allowLace2(ctx, laceColor, -36, 54)
+  allowLace2(ctx, laceColor, -57, 83)
+  allowLace2(ctx, laceColor, -80, 110)
 }
