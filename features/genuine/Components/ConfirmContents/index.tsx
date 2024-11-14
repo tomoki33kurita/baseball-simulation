@@ -3,8 +3,8 @@
 import { Prices } from '@/components/Prices'
 import { Box } from '@mui/material'
 import { GenuineState } from '../../types'
-import { useDrawGloveRearSurface } from '../../Drawer/hooks/useDrawGenuineGloveRearSurface'
-import { useDrawGlovePalmSurface } from '../../Drawer/hooks/useDrawGenuineGlovePalmSurface'
+import { useDrawGenuineGloveRearSurface } from '../../Drawer/hooks/useDrawGenuineGloveRearSurface'
+import { useDrawGenuineGlovePalmSurface } from '../../Drawer/hooks/useDrawGenuineGlovePalmSurface'
 import { RearSurface } from '@/components/Drawers/RearSurface'
 import { PalmSurface } from '@/components/Drawers/PalmSurface'
 import { Position } from '@/types'
@@ -19,9 +19,9 @@ type Props = {
 
 export const GenuineConfirmContents: React.FC<Props> = ({ state, position }) => {
   const rearSurfaceId = 'rearSurfaceOnDialog'
-  useDrawGloveRearSurface(rearSurfaceId, state)
+  useDrawGenuineGloveRearSurface(rearSurfaceId, state)
   const palmSurfaceId = 'palmSurfaceOnDialog'
-  useDrawGlovePalmSurface(palmSurfaceId, state)
+  useDrawGenuineGlovePalmSurface(palmSurfaceId, state)
 
   const basePrice = state.orderType.price // 今はFIVEのことだけ想定
   const baseCells = getGenuineBaseCells(state)

@@ -3,8 +3,8 @@
 import { Prices } from '@/components/Prices'
 import { Box } from '@mui/material'
 import { FiveState } from '../../types'
-import { useDrawGloveRearSurface } from '../../Drawer/hooks/useDrawFiveGloveRearSurface'
-import { useDrawGlovePalmSurface } from '../../Drawer/hooks/useDrawFiveGlovePalmSurface'
+import { useDrawFiveGloveRearSurface } from '../../Drawer/hooks/useDrawFiveGloveRearSurface'
+import { useDrawFiveGlovePalmSurface } from '../../Drawer/hooks/useDrawFiveGlovePalmSurface'
 import { RearSurface } from '@/components/Drawers/RearSurface'
 import { PalmSurface } from '@/components/Drawers/PalmSurface'
 import { Position } from '@/types'
@@ -19,9 +19,9 @@ type Props = {
 
 export const FiveConfirmContents: React.FC<Props> = ({ state, position }) => {
   const rearSurfaceId = 'rearSurfaceOnDialog'
-  useDrawGloveRearSurface(rearSurfaceId, state)
+  useDrawFiveGloveRearSurface(rearSurfaceId, state)
   const palmSurfaceId = 'palmSurfaceOnDialog'
-  useDrawGlovePalmSurface(palmSurfaceId, state)
+  useDrawFiveGlovePalmSurface(palmSurfaceId, state)
 
   const basePrice = state.orderType.price // 今はFIVEのことだけ想定
   const baseCells = getFiveBaseCells(state)
