@@ -6,20 +6,22 @@ import Typography from '@mui/material/Typography'
 import Container from '@mui/material/Container'
 import { useForm } from 'react-hook-form'
 import { useRouter } from 'next/navigation'
-import { browserSessionPersistence, setPersistence, signInWithPopup, GoogleAuthProvider } from 'firebase/auth'
+import { browserSessionPersistence, setPersistence, signInWithEmailAndPassword } from 'firebase/auth'
 import Link from 'next/link'
 import { auth } from '../api/server/firebase'
-// import { ControlledTextField } from '@/components/ControlledTextField'
 import { commonTheme } from '@/styles/themes'
+import { ControlledTextField } from '@/components/ControlledTextField'
 
 const SignIn: React.FC = () => {
+  const [isLoggingIn, setIsLoggingIn] = React.useState(false)
   const { handleSubmit, control, register } = useForm()
   const router = useRouter()
   const handleSignIn = async (data: any) => {
-    const googleProvider = new GoogleAuthProvider()
+    const { email, password } = data
     try {
+      setIsLoggingIn(true)
       await setPersistence(auth, browserSessionPersistence)
-        .then(() => signInWithPopup(auth, googleProvider))
+        .then(() => signInWithEmailAndPassword(auth, email, password))
         .then(() => router.replace('/retail'))
     } catch (err: any) {
       alert(err.message)
@@ -41,14 +43,15 @@ const SignIn: React.FC = () => {
             ※システムへの事前申請が必要です。
           </Box>
           <form onSubmit={handleSubmit(handleSignIn)}>
-            {/* <Box>
+            <Box>
               <ControlledTextField name={'email'} label={'メールアドレス'} control={control} register={register} />
             </Box>
             <Box>
               <ControlledTextField name={'password'} type={'password'} label={'パスワード'} control={control} register={register} />
-            </Box> */}
+            </Box>
             <Button type="submit" fullWidth variant="contained" color="primary">
-              Googleアカウントでログイン
+              ログイン
+              {isLoggingIn && '中...'}
             </Button>
           </form>
         </Box>
