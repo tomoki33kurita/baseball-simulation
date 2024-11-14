@@ -17,7 +17,6 @@ import {
   useEmbroideriesDispatchGenerator
 } from './logic'
 import Image from 'next/image'
-import { SET_EMBROIDERIES } from '@/Constants'
 import { SET_SPECIFIED_LOGO } from '../../Constants/action'
 
 type Props = {
@@ -27,10 +26,11 @@ type Props = {
 }
 
 export const EmbroiderySetter: React.FC<Props> = ({ state, selectedIndex, dispatch }) => {
-  const { embroideries, orderType } = state
+  const { embroideries, orderType, fLexEngraving } = state
   const { handle } = useEmbroideriesDispatchGenerator(dispatch, embroideries)
-  const { isSelectedOrderType, isNotSelectedOrderType, isCustomOrder } = getOrderType(orderType)
+  const { isSelectedOrderType, isNotSelectedOrderType, isCustomOrder, isBasicOrder } = getOrderType(orderType)
 
+  const isSelectedFLexEngraving = fLexEngraving.value !== 'unselected' || isBasicOrder
   return (
     <TabPanel selectedIndex={selectedIndex} index={2}>
       {isNotSelectedOrderType && <Box my={3} color={'blue'}>{`パーツ設定 > オーダータイプ を先に選択してください。`}</Box>}
@@ -54,7 +54,7 @@ export const EmbroiderySetter: React.FC<Props> = ({ state, selectedIndex, dispat
           {embroideries.map((e, i) => {
             const { shadowColorLabel, edgeColorLabel, disabledShadowColor, disabledEdgeColor, isSelectedTypeFace } = embroideryFlagGenerator(e)
             const { contentMaxLength, existsContent, characterType } = characterCheckHelper(e)
-            const selectablePosition = selectablePositionGenerator(embroideries, i)
+            const selectablePosition = selectablePositionGenerator(state, i)
 
             const shadowColors = generateSubColors(disabledShadowColor)
             const edgeColors = generateSubColors(disabledEdgeColor)
@@ -72,7 +72,9 @@ export const EmbroiderySetter: React.FC<Props> = ({ state, selectedIndex, dispat
                         objects={selectablePosition}
                         index={i}
                         handleChange={handle.position}
-                        disabled={existsContent}
+                        isError={e.position.value === 'unselected'}
+                        disabled={existsContent || !isSelectedFLexEngraving}
+                        description={!isSelectedFLexEngraving ? 'バンド部F・レックス刻印を先に選択してください。' : ''}
                       />
                     </Box>
                     <Box width={'100%'}>

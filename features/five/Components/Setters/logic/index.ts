@@ -108,7 +108,9 @@ const embroideryPositionListGenerator = (embroideries: Embroidery[], overAllInde
 
 const embroideryPositionFilter = (selectedPosition: string[]) => EMBROIDERY_POSITIONS.filter((p) => !selectedPosition.includes(p.value))
 
-export const selectablePositionGenerator = (embroideries: Embroidery[], index: number) => {
+export const selectablePositionGenerator = (state: FiveState, index: number) => {
+  const embroideries = state.embroideries
+  const { isFLexEngraving } = getFLexEngraving(state.fLexEngraving)
   const selectedPosition = embroideryPositionListGenerator(embroideries, index)
   const selectablePositionBase = embroideryPositionFilter(selectedPosition)
   const overAllSelectedPositions = embroideries.map((e) => e.position.value)
@@ -117,7 +119,10 @@ export const selectablePositionGenerator = (embroideries: Embroidery[], index: n
   const isSelectableOfLiningFirst = selectablePositionBase.some((p) => p.value === 'leatherLiningFirst')
   const selectablePosition = (
     isSelectableOfLiningFirst ? selectablePositionBase.filter((p) => p.value !== 'leatherLiningSecond') : selectablePositionBase
-  ).filter((p) => !overAllSelectedPositions.includes(p.value) || p.value === embroideries[index].position?.value)
+  )
+    .filter((p) => !overAllSelectedPositions.includes(p.value) || p.value === embroideries[index].position.value)
+    .filter((p) => (isFLexEngraving ? p.value !== 'band' : true))
+
   return selectablePosition
 }
 
@@ -264,4 +269,9 @@ const typeFaceResolver = (embroidery: Embroidery) => {
 export const fontImageResolver = (embroidery: Embroidery) => {
   const typeFace = typeFaceResolver(embroidery)
   return { typeFace }
+}
+
+export const checkEmbroidery = (state: FiveState) => {
+  const isSpecifiedEmbroideryOnBand = state.embroideries.some((e) => e.position.value === 'band')
+  return { isSpecifiedEmbroideryOnBand }
 }
