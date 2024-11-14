@@ -105,8 +105,8 @@ export const p06Web = (ctx: CanvasRenderingContext2D, webColor: string, laceColo
 
   // 右下のデザイン
   ctx.strokeStyle = '#383838'
-  ctx.fillStyle = '#eeeeee'
-  ctx.lineWidth = 2.0
+  ctx.fillStyle = webColor
+  ctx.lineWidth = 1.2
   ctx.beginPath()
   ctx.arc(632, 300, 3, 0, 2 * Math.PI)
   ctx.stroke()
