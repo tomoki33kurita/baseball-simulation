@@ -9,6 +9,7 @@ export const useLoadAuth = () => {
   const handleToTop = () => router.push('/')
 
   useEffect(() => {
+    // api router を経由して呼ぶ感じにしたい。
     auth.onAuthStateChanged((user) => {
       if (user !== null && user.email !== null) {
         setEmail(user.email)
