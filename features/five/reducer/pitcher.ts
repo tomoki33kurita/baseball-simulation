@@ -121,7 +121,7 @@ export const initialState = {
   embroideries: [initialEmbroideryState],
   personal: initialPersonalState,
   drawerIndex: 0,
-  labelStand: unselectedState,
+  labelStand: unselectedColorState,
   fiveLabel: unselectedState,
   specifiedLogo: unselectedStateWithPrice
 }

@@ -108,14 +108,14 @@ export const in06Web = (ctx: CanvasRenderingContext2D, laceColor: string, stitch
   ctx.quadraticCurveTo(508, 166, 486, 252) // 左下
   ctx.quadraticCurveTo(505, 318, 581, 358) // 右下
   ctx.quadraticCurveTo(630, 326, 689, 277) //
-  // バスケットの周り
   // 内側
-  ctx.moveTo(560, 113) //左上
-  ctx.quadraticCurveTo(527, 172, 500, 243) // 左下
-  ctx.quadraticCurveTo(572, 335, 577, 335) // 右下
-  ctx.quadraticCurveTo(632, 295, 673, 254) // 右上
-  ctx.quadraticCurveTo(635, 161, 560, 113) // 左上
-  // 外側
+  ctx.moveTo(555, 87) // 左上
+  ctx.quadraticCurveTo(511, 166, 489, 252) // 左下
+  ctx.quadraticCurveTo(507, 315, 581, 353) // 右下
+  ctx.quadraticCurveTo(627, 324, 686, 275) //
+  ctx.quadraticCurveTo(650, 154, 555, 87)
+
+  // バスケットの周り
   ctx.moveTo(558, 107) //左上
   ctx.quadraticCurveTo(527, 172, 496, 243) // 左下
   ctx.quadraticCurveTo(572, 345, 575, 340) // 右下

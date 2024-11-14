@@ -8,8 +8,7 @@ export const fiveLabel = (ctx: CanvasRenderingContext2D, state: FiveState, x: nu
   ctx.scale(scaleSize, scaleSize)
 
   const { isBasicOrder } = getOrderType(state.orderType)
-  const isBasic = isBasicOrder
-  const labelValue = isBasic ? state.baseModel.basicColors.fiveLabel.value : state.fiveLabel.value
+  const labelValue = isBasicOrder ? state.baseModel.basicColors.fiveLabel.value : state.fiveLabel.value
   const label = FIVE_LABEL_COLORS.find((o) => o.value === labelValue) || { core: '#eeeeee', binding: '#eeeeee', secondary: '#eeeeee' }
 
   if (isBasicOrder) {

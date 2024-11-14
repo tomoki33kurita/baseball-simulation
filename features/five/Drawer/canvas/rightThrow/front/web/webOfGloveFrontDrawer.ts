@@ -22,6 +22,7 @@ import { webDrawUtil } from '@/util/canvas'
 import { laceOfVerticalPartsRight, laceParts1, laceParts7 } from './parts/laceParts'
 import { topSidePartOfWeb } from './parts/sideParts'
 import { getOrderType } from '@/features/five/Components/Setters/logic'
+import { positionChecker } from '@/util/logic'
 
 export const webOfGloveFrontDrawer = (
   ctx: CanvasRenderingContext2D,
@@ -176,24 +177,42 @@ const underWebForNetWeb2 = (ctx: CanvasRenderingContext2D, color: string, x: num
 export const rightLaceOfNetWebDrawer = (ctx: CanvasRenderingContext2D, state: FiveState): void => {
   const { webMatcher } = webDrawUtil(state)
   const { isBasicOrder } = getOrderType(state.orderType)
+  const { isPitcher } = positionChecker(state.baseModel.position)
   const baseModel = state.baseModel
   const basicColors = baseModel.basicColors
   const webLeatherColor = isBasicOrder ? basicColors.leather.color : state.web.color
   const laceColor = isBasicOrder ? basicColors.lace.color : state.lace.color
   const stitchColor = isBasicOrder ? basicColors.stitch.color : state.stitch.color
 
+  if (isPitcher || webMatcher(['in06'])) {
+    underWeb(ctx, laceColor, 17, -12) // ウェブ下＿右
+    underWeb(ctx, laceColor, -11, 32) // ウェブ下＿中
+    underWeb(ctx, laceColor, -38, 73) // ウェブ下＿左
+    indexWrapBack(ctx, laceColor, -10, -100) // 上
+    indexWrapBack(ctx, laceColor, -3, -30) // 中
+    indexWrapBack(ctx, laceColor, 5, 35) // 下
+    return
+  }
   if (webMatcher(['ou01'])) {
     laceOfNetWebDouble(ctx, webLeatherColor, laceColor, stitchColor)
     underWebForNetWeb1(ctx, laceColor, 0, 0)
     underWebForNetWeb1(ctx, laceColor, -17, 30)
     underWebForNetWeb2(ctx, laceColor, -133, 95, -20)
     underWebForNetWeb2(ctx, laceColor, -15, 28, 0)
-  } else {
+    return
+  }
+  if (webMatcher(['ou02'])) {
     underWeb(ctx, laceColor, 10, 0) // ウェブ下＿右
     underWeb(ctx, laceColor, -32, 64) // ウェブ下＿左
     indexWrapBack(ctx, laceColor, -10, -100) // 上
-    indexWrapBack(ctx, laceColor, 0, 0) // 下
+    indexWrapBack(ctx, laceColor, -3, -30) // 中
+    indexWrapBack(ctx, laceColor, 5, 35) // 下
+    return
   }
+  underWeb(ctx, laceColor, 10, 0) // ウェブ下＿右
+  underWeb(ctx, laceColor, -32, 64) // ウェブ下＿左
+  indexWrapBack(ctx, laceColor, -10, -100) // 上
+  indexWrapBack(ctx, laceColor, 0, 0) // 下
 }
 
 // const standardLine = (ctx: CanvasRenderingContext2D): void => {

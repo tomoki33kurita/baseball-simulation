@@ -117,8 +117,7 @@ export const initialState = {
 
   embroideries: [initialEmbroideryState],
   personal: initialPersonalState,
-  drawerIndex: 0,
-  labelStand: unselectedState
+  drawerIndex: 0
 }
 
 export const reducer = (state: any, action: any) => {
