@@ -7,7 +7,6 @@ export const fiveLabel = (ctx: CanvasRenderingContext2D, state: GenuineState, x:
 
   const label = { core: '#eeeeee', binding: '#eeeeee', secondary: '#eeeeee' }
 
-  labelBaseLeather(ctx, state.labelStand.color, state.stitch.color, x, y)
   parts1(ctx, label.binding, label.core, x, y)
   parts2(ctx, label.binding, label.secondary, x, y)
   parts3(ctx, label.binding, label.core, x, y)
@@ -15,62 +14,6 @@ export const fiveLabel = (ctx: CanvasRenderingContext2D, state: GenuineState, x:
   ctx.restore()
 }
 
-// ベースになる黒地部分
-const labelBaseLeather = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchColor: string, x: number, y: number): void => {
-  ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#140C09'
-  ctx.fillStyle = leatherColor
-  ctx.beginPath()
-  ctx.moveTo(492 + x, 447 + y)
-  ctx.quadraticCurveTo(511 + x, 451 + y, 511 + x, 451 + y)
-  ctx.quadraticCurveTo(472 + x, 545 + y, 472 + x, 545 + y)
-  ctx.quadraticCurveTo(520 + x, 527 + y, 520 + x, 527 + y)
-  ctx.quadraticCurveTo(518 + x, 534 + y, 518 + x, 534 + y)
-  ctx.quadraticCurveTo(469 + x, 547 + y, 432 + x, 587 + y)
-  ctx.quadraticCurveTo(483 + x, 587 + y, 483 + x, 587 + y)
-  ctx.quadraticCurveTo(573 + x, 540 + y, 573 + x, 540 + y)
-  ctx.quadraticCurveTo(590 + x, 457 + y, 590 + x, 457 + y)
-  ctx.quadraticCurveTo(563 + x, 468 + y, 563 + x, 468 + y)
-  ctx.quadraticCurveTo(565 + x, 461 + y, 565 + x, 461 + y)
-  ctx.quadraticCurveTo(589 + x, 453 + y, 589 + x, 453 + y)
-  ctx.quadraticCurveTo(612 + x, 404 + y, 612 + x, 404 + y)
-  ctx.quadraticCurveTo(582 + x, 421 + y, 536 + x, 436 + y)
-  ctx.quadraticCurveTo(499 + x, 434 + y, 499 + x, 434 + y)
-  ctx.quadraticCurveTo(492 + x, 447 + y, 492 + x, 447 + y)
-  // ctx.quadraticCurveTo()
-  ctx.fill()
-  ctx.stroke()
-
-  // stitch
-  ctx.strokeStyle = stitchColor
-  ctx.lineWidth = 1.3
-  ctx.beginPath()
-  ctx.setLineDash([3, 3])
-  // 手口
-  ctx.moveTo(498 + x, 443 + y)
-  ctx.quadraticCurveTo(516 + x, 447 + y, 516 + x, 447 + y)
-  ctx.quadraticCurveTo(483 + x, 534 + y, 483 + x, 534 + y)
-  ctx.quadraticCurveTo(527 + x, 519 + y, 527 + x, 519 + y)
-  ctx.quadraticCurveTo(525 + x, 535 + y, 525 + x, 535 + y)
-  ctx.quadraticCurveTo(476 + x, 549 + y, 444 + x, 585 + y)
-  ctx.quadraticCurveTo(483 + x, 585 + y, 483 + x, 585 + y)
-  ctx.quadraticCurveTo(570 + x, 538 + y, 570 + x, 538 + y)
-  ctx.quadraticCurveTo(585 + x, 462 + y, 585 + x, 462 + y)
-  ctx.quadraticCurveTo(557 + x, 473 + y, 557 + x, 473 + y)
-  ctx.quadraticCurveTo(562 + x, 456 + y, 562 + x, 456 + y)
-  ctx.quadraticCurveTo(587 + x, 448 + y, 587 + x, 448 + y)
-  ctx.quadraticCurveTo(605 + x, 409 + y, 605 + x, 412 + y)
-  ctx.quadraticCurveTo(565 + x, 434 + y, 536 + x, 440 + y)
-  ctx.quadraticCurveTo(515 + x, 445 + y, 498 + x, 438 + y)
-  // ctx.quadraticCurveTo()
-  ctx.stroke()
-  ctx.setLineDash([])
-  ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
-  ctx.closePath()
-
-  ctx.closePath()
-}
 // 左上のパーツ
 const parts1 = (ctx: CanvasRenderingContext2D, bindingColor: string, coreColor: string, x: number, y: number): void => {
   ctx.lineWidth = 3.2

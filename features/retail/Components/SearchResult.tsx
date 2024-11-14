@@ -16,8 +16,12 @@ import { drawFivePalmSurface } from '@/features/five/Drawer/canvas/drawFivePalmS
 import { getCtx } from '@/util/canvas/ctx'
 import { FiveState } from '@/features/five/types'
 import { GenuineState } from '@/features/genuine/types'
-import { drawGenuinePalmSurface as drawGenuinePalmSurface } from '@/features/genuine/Drawer/canvas/drawGenuinePalmSurface'
-import { drawGenuineRearSurface } from '@/features/genuine/Drawer/canvas/drawGenuineRearSurface'
+import { drawGenuineGlovePalmSurface } from '@/features/genuine/Drawer/canvas/drawGenuineGlovePalmSurface'
+import { drawGenuineGloveRearSurface } from '@/features/genuine/Drawer/canvas/drawGenuineGloveRearSurface'
+import { drawGenuineCatcherMittRearSurface } from '@/features/genuine/Drawer/canvas/drawGenuineCatcherMittRearSurface'
+import { drawGenuineCatcherMittPalmSurface } from '@/features/genuine/Drawer/canvas/drawGenuineCatcherMittPalmSurface'
+import { drawGenuineFirstMittRearSurface } from '@/features/genuine/Drawer/canvas/drawGenuineFirstMittRearSurface'
+import { drawGenuineFirstMittPalmSurface } from '@/features/genuine/Drawer/canvas/drawGenuineFirstMittPalmSurface'
 
 const agencyFilter = (brand: Brand) => () => agencies.filter((a) => a.brands && a.brands.includes(brand))
 
@@ -57,8 +61,20 @@ export const SearchResult: React.FC<Props> = ({ response, email }) => {
         drawFivePalmSurface(palmCtx, state as FiveState)
         break
       case 'genuine':
-        drawGenuineRearSurface(rearCtx, state as GenuineState)
-        drawGenuinePalmSurface(palmCtx, state as GenuineState)
+        switch (state.baseModel.position) {
+          case 'catcher':
+            drawGenuineCatcherMittRearSurface(rearCtx, state as GenuineState)
+            drawGenuineCatcherMittPalmSurface(palmCtx, state as GenuineState)
+            break
+          case 'firstBaseman':
+            drawGenuineFirstMittRearSurface(rearCtx, state as GenuineState)
+            drawGenuineFirstMittPalmSurface(palmCtx, state as GenuineState)
+            break
+          default:
+            drawGenuineGloveRearSurface(rearCtx, state as GenuineState)
+            drawGenuineGlovePalmSurface(palmCtx, state as GenuineState)
+            break
+        }
         break
       default:
         break

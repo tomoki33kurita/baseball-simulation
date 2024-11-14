@@ -1,12 +1,12 @@
 import { useEffect } from 'react'
 import { getCtx } from '@/util/canvas/ctx'
-import { drawGenuineGloveRearSurface } from '../canvas/drawGenuineGloveRearSurface'
 import { GenuineState } from '../../types'
+import { drawGenuineFirstMittRearSurface } from '../canvas/drawGenuineFirstMittRearSurface'
 
-export const useDrawGenuineGloveRearSurface = (id: string, state: GenuineState) => {
+export const useDrawGenuineFirstMittRearSurface = (id: string, state: GenuineState) => {
   useEffect(() => {
     const ctx = getCtx(id) // useEventEffect使って見える
     if (state.baseModel.productNumber === '') return
-    drawGenuineGloveRearSurface(ctx, state)
+    drawGenuineFirstMittRearSurface(ctx, state)
   }, [id, state])
 }

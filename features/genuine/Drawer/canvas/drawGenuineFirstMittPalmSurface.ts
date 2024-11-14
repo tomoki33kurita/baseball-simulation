@@ -14,7 +14,7 @@ import { backLaceDrawerOfFront } from './rightThrow/front/lace/backLace'
 import { genuineEngravedOfPalm } from './rightThrow/front/engraving'
 import { GenuineState } from '../../types'
 
-export const drawGenuinePalmSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
+export const drawGenuineFirstMittPalmSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
   if (!ctx) return
 
   const baseModel = state.baseModel

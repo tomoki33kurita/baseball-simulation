@@ -10,7 +10,7 @@ import { laceOfWristBeltCrossDrawer } from './rightThrow/back/lace/laceOfWristBe
 import { lining } from './rightThrow/back/lining'
 import { webOfGloveBackDrawer } from './rightThrow/back/web/webOfGloveBackDrawer'
 
-export const drawGenuineRearSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
+export const drawGenuineFirstMittRearSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
   if (!ctx) return
 
   const baseModel = state.baseModel
