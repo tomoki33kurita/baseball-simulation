@@ -10,7 +10,19 @@ export const in04Web = (ctx: CanvasRenderingContext2D, webColor: string, laceCol
   // 横下パーツ
   middleSidePartOfWeb2(ctx, webColor, laceColor, stitchColor, -10, 10, 1, 1)
   // 縦パーツ
+
   ctx.fillStyle = webColor
+  // 裏地
+  ctx.beginPath()
+  ctx.moveTo(612, 100) //左上
+  ctx.quadraticCurveTo(571, 220, 571, 220) //左下
+  ctx.quadraticCurveTo(591, 240, 604, 270) //右下
+  ctx.quadraticCurveTo(686, 211, 686, 209) //右上
+  ctx.quadraticCurveTo(612, 100, 612, 100) //
+  ctx.fill()
+  ctx.stroke()
+  ctx.closePath()
+  // 表地
   ctx.beginPath()
   ctx.moveTo(612, 100) //左上
   ctx.quadraticCurveTo(571, 220, 571, 220) //左下

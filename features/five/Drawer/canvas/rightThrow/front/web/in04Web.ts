@@ -18,10 +18,7 @@ export const in04Web = (ctx: CanvasRenderingContext2D, webColor: string, laceCol
   ctx.quadraticCurveTo(265, 269, 265, 269) // 左＿下
   ctx.quadraticCurveTo(310, 212, 310, 212) // 右＿下
   ctx.quadraticCurveTo(303, 146, 303, 146) // 右＿上
-  ctx.quadraticCurveTo(279, 165, 269, 187) // 右上_左上
-  ctx.quadraticCurveTo(276, 214, 276, 214) // 中央下
-  ctx.quadraticCurveTo(263, 195, 263, 195) // 左上_右上
-  ctx.quadraticCurveTo(240, 207, 237, 242) // 左＿上
+  ctx.quadraticCurveTo(230, 150, 237, 242) // 左＿上
   ctx.fill()
   ctx.stroke()
   ctx.closePath()
