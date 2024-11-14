@@ -11,7 +11,7 @@ export const bankLace = (ctx: CanvasRenderingContext2D, color: string, materialP
 }
 
 const sideMaterialPack = (ctx: CanvasRenderingContext2D, color: string, materialPack: BaseItem, position: Position, productNumber: string): void => {
-  if (position !== 'outfielder') {
+  if (['pitcher', 'infielder'].includes(position)) {
     thumbInner(ctx, color, 0, 0) // 一番先端
     thumbInner(ctx, color, 22, 40) // 中間
     thumbInner(ctx, color, 41, 75) //一番手元
@@ -34,9 +34,7 @@ const sideMaterialPack = (ctx: CanvasRenderingContext2D, color: string, material
     sideBank(ctx, color, 0, 3) // 一番右
     sideBank(ctx, color, -70, -5) // 一番中央
     sideBank2(ctx, color, 10, 10)
-    if (position !== 'outfielder') {
-      sideBank2(ctx, color, -30, -25)
-    }
+    if (['pitcher', 'infielder'].includes(position)) sideBank2(ctx, color, -30, -25)
   }
 
   // 紐抜き
@@ -65,7 +63,7 @@ const sideMaterialPack = (ctx: CanvasRenderingContext2D, color: string, material
     ctx.closePath()
   }
   // 通常のダブルヒンジ
-  if (['sideDouble', 'sideSingle', 'sideDoubleNoLace', undefined, 'unselected'].includes(materialPack.value)) {
+  if (['sideDouble', 'sideSingle', 'sideDoubleNoLace', 'unselected'].includes(materialPack.value)) {
     if (['F101', 'F501', 'F801'].includes(productNumber)) {
       thumbUpper(ctx, color, -70, 128, -15) //
     }
