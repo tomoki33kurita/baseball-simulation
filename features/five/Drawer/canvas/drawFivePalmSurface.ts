@@ -1,3 +1,4 @@
+import { FiveState } from '@/features/five/types'
 import { canvasResetter } from './canvasResetter'
 import { listLining } from './rightThrow/front/listLining'
 import { thumbBackOut, thumbBackWebSide } from './rightThrow/front/back/thumbFinger'
@@ -11,12 +12,13 @@ import { bindings } from './rightThrow/front/bindings'
 import { rightLaceOfNetWebDrawer, webOfGloveFrontDrawer } from './rightThrow/front/web/webOfGloveFrontDrawer'
 import { lace } from './rightThrow/front/lace'
 import { backLaceDrawerOfFront } from './rightThrow/front/lace/backLace'
-import { genuineEngravedOfPalm } from './rightThrow/front/engraving'
-import { GenuineState } from '../../types'
+import { fiveEngravedOfPalm } from './rightThrow/front/engraving'
+import { getOrderType } from '../../Components/Setters/logic'
 
-export const drawPalmSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
+export const drawFivePalmSurface = (ctx: CanvasRenderingContext2D | null, state: FiveState): void => {
   if (!ctx) return
 
+  const { isBasicOrder } = getOrderType(state.orderType)
   const baseModel = state.baseModel
   const position = baseModel.position
   // リセット
@@ -25,6 +27,36 @@ export const drawPalmSurface = (ctx: CanvasRenderingContext2D | null, state: Gen
   ctx.strokeStyle = '#383838'
   ctx.fillStyle = '#383838'
   ctx.strokeText('型番：' + baseModel.productNumber, 50, 70)
+
+  if (isBasicOrder) {
+    const basicColors = baseModel.basicColors
+    const basicColor = basicColors.leather.color
+    const basicLaceColor = basicColors.lace.color
+    const basicWeltingColor = basicColors.welting.color
+    const basicBindingColor = basicColors.binding.color
+    const basicStitchColor = basicColors.stitch.color
+
+    listLining(ctx, basicColor) // 裏革
+    backLaceDrawerOfFront(ctx, basicLaceColor, position) // 背面の紐
+    // ウェブの描画
+    webOfGloveFrontDrawer(ctx, state, basicColor, basicLaceColor, basicStitchColor) // ✅
+    palm(ctx, basicColor) // 捕球面
+    thumbBackOut(ctx, basicColor) // 親指背面＿外側
+    thumbBackWebSide(ctx, basicColor) // 親指背面＿ウェブ側
+    indexBackWebSide(ctx, basicColor) // 人差し指背面＿ウェブ側
+    indexBackMiddleSide(ctx, basicColor) // 人差し指背面＿中指側
+    middleBackIndexSide(ctx, basicColor) // 中指背面＿人差し指側
+    middleBackRingSide(ctx, basicColor) // 中指背面＿薬指側
+    ringBackLittleSide(ctx, basicColor) // 薬指背面＿小指側
+    littleBackRingSide(ctx, basicColor) // 小指背面＿薬指側
+    littleBackOut(ctx, basicColor) // 小指背面＿外側
+    welting(ctx, basicWeltingColor, baseModel.isFingerCrotch, basicColor) // ハミダシ
+    bindings(ctx, basicBindingColor, basicLaceColor, basicStitchColor, baseModel.bankLaceDirection) // ヘリ革
+    rightLaceOfNetWebDrawer(ctx, state) // ネットウェブのみの革紐
+    lace(ctx, basicLaceColor, state) // 革紐
+    fiveEngravedOfPalm(ctx, baseModel.basicColors.leather, 0, 0) // メーカー捕球面の刻印
+    return
+  }
 
   const laceColor = state.lace.color
   const stitchColor = state.stitch.color
@@ -46,5 +78,5 @@ export const drawPalmSurface = (ctx: CanvasRenderingContext2D | null, state: Gen
   bindings(ctx, state.binding.color, laceColor, stitchColor, baseModel.bankLaceDirection) // ヘリ革
   rightLaceOfNetWebDrawer(ctx, state) // ネットウェブのみの革紐
   lace(ctx, laceColor, state) // 革紐
-  genuineEngravedOfPalm(ctx, palmState, 0, 0) // メーカー捕球面の刻印
+  fiveEngravedOfPalm(ctx, palmState, 0, 0) // メーカー捕球面の刻印
 }

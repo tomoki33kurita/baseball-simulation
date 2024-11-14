@@ -4,17 +4,17 @@ import { useReducer } from 'react'
 import { initialState, reducer } from '@/features/five/reducer/outfielder'
 import { fiveTheme } from '@/styles/themes/five'
 import { FivePageTemplates } from '@/features/five/Components/PageTemplates'
-import { useDrawGloveRearSurface } from '@/features/five/Drawer/hooks/useDrawGloveRearSurface'
-import { useDrawGlovePalmSurface } from '@/features/five/Drawer/hooks/useDrawGlovePalmSurface'
+import { useDrawFiveGloveRearSurface } from '@/features/five/Drawer/hooks/useDrawFiveGloveRearSurface'
+import { useDrawFiveGlovePalmSurface } from '@/features/five/Drawer/hooks/useDrawFiveGlovePalmSurface'
 
 const FiveOutfielder = () => {
   const position = 'outfielder'
   const [state, dispatch] = useReducer(reducer, initialState)
 
   const rearSurfaceId = 'rearSurface'
-  useDrawGloveRearSurface(rearSurfaceId, state)
+  useDrawFiveGloveRearSurface(rearSurfaceId, state)
   const palmSurfaceId = 'palmSurface'
-  useDrawGlovePalmSurface(palmSurfaceId, state)
+  useDrawFiveGlovePalmSurface(palmSurfaceId, state)
   return <FivePageTemplates {...{ state, position, rearSurfaceId, palmSurfaceId, dispatch }} theme={fiveTheme} />
 }
 

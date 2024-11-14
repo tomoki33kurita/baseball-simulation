@@ -11,13 +11,13 @@ import { SimulationContents } from './SimulationContents'
 import { agencies } from '@/app/api/server/order/agency'
 import { useSendOrder } from '../hooks/useSendOrder'
 import { initialPersonal } from '../Constants/personal'
-import { drawRearSurface as drawFiveRearSurface } from '@/features/five/Drawer/canvas/drawRearSurface'
-import { drawPalmSurface as drawFivePalmSurface } from '@/features/five/Drawer/canvas/drawPalmSurface'
+import { drawFiveRearSurface } from '@/features/five/Drawer/canvas/drawFiveRearSurface'
+import { drawFivePalmSurface } from '@/features/five/Drawer/canvas/drawFivePalmSurface'
 import { getCtx } from '@/util/canvas/ctx'
 import { FiveState } from '@/features/five/types'
 import { GenuineState } from '@/features/genuine/types'
-import { drawPalmSurface as drawGenuinePalmSurface } from '@/features/genuine/Drawer/canvas/drawPalmSurface'
-import { drawRearSurface as drawGenuineRearSurface } from '@/features/genuine/Drawer/canvas/drawRearSurface'
+import { drawGenuinePalmSurface as drawGenuinePalmSurface } from '@/features/genuine/Drawer/canvas/drawGenuinePalmSurface'
+import { drawGenuineRearSurface } from '@/features/genuine/Drawer/canvas/drawGenuineRearSurface'
 
 const agencyFilter = (brand: Brand) => () => agencies.filter((a) => a.brands && a.brands.includes(brand))
 

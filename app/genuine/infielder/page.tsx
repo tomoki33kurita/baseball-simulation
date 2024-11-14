@@ -4,8 +4,8 @@ import { useReducer } from 'react'
 import { initialState, reducer } from '@/features/genuine/reducer/infielder'
 import { genuineTheme } from '@/styles/themes/genuine'
 import { GenuinePageTemplates } from '@/features/genuine/Components/PageTemplates'
-import { useDrawGloveRearSurface } from '@/features/genuine/Drawer/hooks/useDrawGloveRearSurface'
-import { useDrawGlovePalmSurface } from '@/features/genuine/Drawer/hooks/useDrawGlovePalmSurface'
+import { useDrawGloveRearSurface } from '@/features/genuine/Drawer/hooks/useDrawGenuineGloveRearSurface'
+import { useDrawGlovePalmSurface } from '@/features/genuine/Drawer/hooks/useDrawGenuineGlovePalmSurface'
 
 const GenuineInfielder = () => {
   const position = 'infielder'

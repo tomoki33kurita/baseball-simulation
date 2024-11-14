@@ -8,8 +8,6 @@ import { toji } from '../toji'
 export const bankLace = (ctx: CanvasRenderingContext2D, color: string, materialPack: BaseItem, position: Position, productNumber: string): void => {
   // ヨコトジ系の革紐
   sideMaterialPack(ctx, color, materialPack, position, productNumber)
-  // タテトジの革紐
-  verticalMaterialPack(ctx, color, materialPack)
 }
 
 const sideMaterialPack = (ctx: CanvasRenderingContext2D, color: string, materialPack: BaseItem, position: Position, productNumber: string): void => {
@@ -31,8 +29,8 @@ const sideMaterialPack = (ctx: CanvasRenderingContext2D, color: string, material
     littleInner(ctx, color, -37, 85) //
     littleInner(ctx, color, -54, 132) // 一番根元
   }
-  // TODO 本当は undefinedではないようにしたい
-  if (['bindDouble', 'sideDouble', 'spaceHingeDouble', undefined, 'unselected'].includes(materialPack.value)) {
+
+  if (['bindDouble', 'sideDouble', 'spaceHingeDouble', 'unselected'].includes(materialPack.value)) {
     sideBank(ctx, color, 0, 3) // 一番右
     sideBank(ctx, color, -70, -5) // 一番中央
     sideBank2(ctx, color, 10, 10)
@@ -68,18 +66,24 @@ const sideMaterialPack = (ctx: CanvasRenderingContext2D, color: string, material
   }
   // 通常のダブルヒンジ
   if (['sideDouble', 'sideSingle', 'sideDoubleNoLace', undefined, 'unselected'].includes(materialPack.value)) {
-    if (productNumber === 'F501') {
+    if (['F101', 'F501', 'F801'].includes(productNumber)) {
+      thumbUpper(ctx, color, -70, 128, -15) //
+    }
+    if (['F101', 'F601', 'F801'].includes(productNumber)) {
       thumbUpper(ctx, color, 0, 0) // 親指-土手芯の上部の革紐
+      thumbUpper(ctx, color, -5, 154, -15) // 親指-土手芯の上部の革紐3
+      thumbUpper(ctx, color, 80, 139, -10) // 親指-土手芯の上部の革紐3
+      toji(ctx, color, -20, 35) // 土手側
+    }
+    if (productNumber === 'F501') {
+      thumbUpper(ctx, color, 0, 0)
       thumbUpper(ctx, color, -15, 158, -15) // 親指-土手芯の上部の革紐3
       thumbUpper(ctx, color, 120, 104, -5) // 親指-土手芯の上部の革紐3
       toji(ctx, color, -30, 45) // 土手側
       toji(ctx, color, -12, 25) // 土手側
-    } else {
-      thumbUpper(ctx, color, 0, 0) // 親指-土手芯の上部の革紐
-      if (productNumber === 'F601') thumbUpper(ctx, color, -92, 160, -20) // 親指-土手芯の上部の革紐2
-      thumbUpper(ctx, color, -5, 154, -15) // 親指-土手芯の上部の革紐3
-      thumbUpper(ctx, color, 80, 139, -10) // 親指-土手芯の上部の革紐3
-      toji(ctx, color, -20, 35) // 土手側
+    }
+    if (productNumber === 'F601') {
+      thumbUpper(ctx, color, -92, 160, -20)
     }
     toji(ctx, color, 0, 0) // 小指側末
     toji(ctx, color, 115, -280, 22) //小指側中間
@@ -95,83 +99,5 @@ const sideMaterialPack = (ctx: CanvasRenderingContext2D, color: string, material
     toji(ctx, color, 115, -280, 22) //小指側中間
     toji(ctx, color, 122, -467, 35) //小指側先端
     toji(ctx, color, -37, 40) // 土手側
-  }
-}
-
-// タテトジ
-const verticalMaterialPack = (ctx: CanvasRenderingContext2D, color: string, materialPack: BaseItem): void => {
-  if (materialPack?.value === 'vertical') {
-    ctx.lineWidth = 0.8
-    ctx.strokeStyle = '#383838'
-    ctx.fillStyle = color
-    // 左1
-    ctx.beginPath()
-    ctx.moveTo(361, 451) // 左上
-    ctx.quadraticCurveTo(344, 458, 336, 480) // 左下
-    ctx.quadraticCurveTo(337, 483, 344, 481) // 右下
-    ctx.quadraticCurveTo(350, 469, 368, 452) // 右上
-    ctx.quadraticCurveTo(361, 451, 361, 451) // 左上
-    ctx.fill()
-    // 側面ライン
-    ctx.moveTo(341, 482) // 下
-    ctx.quadraticCurveTo(348, 462, 367, 453) // 上
-    ctx.stroke()
-    ctx.closePath()
-
-    // 左2
-    ctx.beginPath()
-    ctx.moveTo(401, 474) // 左上
-    ctx.quadraticCurveTo(389, 488, 382, 513) // 左下
-    ctx.quadraticCurveTo(386, 517, 393, 516) // 右下
-    ctx.quadraticCurveTo(398, 496, 410, 478) // 右上
-    ctx.quadraticCurveTo(406, 472, 401, 474) // 左上
-    ctx.fill()
-    // 側面ライン
-    ctx.moveTo(390, 516) // 下
-    ctx.quadraticCurveTo(397, 493, 409, 475) // 上
-    ctx.stroke()
-    ctx.closePath()
-
-    // 左3
-    ctx.beginPath()
-    ctx.moveTo(454, 488) // 左上
-    ctx.quadraticCurveTo(449, 506, 449, 530) // 左下
-    ctx.quadraticCurveTo(455, 533, 460, 531) // 右下
-    ctx.quadraticCurveTo(459, 509, 463, 488) // 右上
-    ctx.quadraticCurveTo(454, 488, 454, 488) // 左上
-    ctx.fill()
-    // 側面ライン
-    ctx.moveTo(458, 531) // 下
-    ctx.quadraticCurveTo(456, 507, 461, 488) // 上
-    ctx.stroke()
-    ctx.closePath()
-
-    // 左4
-    ctx.beginPath()
-    ctx.moveTo(513, 478) // 左上
-    ctx.quadraticCurveTo(517, 497, 529, 521) // 左下
-    ctx.quadraticCurveTo(537, 520, 538, 514) // 右下
-    ctx.quadraticCurveTo(527, 493, 522, 474) // 右上
-    ctx.quadraticCurveTo(517, 471, 513, 478) // 左上
-    ctx.fill()
-    // 側面ライン
-    ctx.moveTo(537, 517) // 下
-    ctx.quadraticCurveTo(525, 495, 519, 474) // 上
-    ctx.stroke()
-    ctx.closePath()
-
-    // 左5
-    ctx.beginPath()
-    ctx.moveTo(564, 449) // 左上
-    ctx.quadraticCurveTo(579, 464, 589, 488) // 左下
-    ctx.quadraticCurveTo(597, 487, 597, 480) // 右下
-    ctx.quadraticCurveTo(585, 456, 570, 442) // 右上
-    ctx.quadraticCurveTo(565, 440, 564, 449) // 左上
-    ctx.fill()
-    // 側面ライン
-    ctx.moveTo(591, 488) // 下
-    ctx.quadraticCurveTo(580, 459, 565, 448) // 上
-    ctx.stroke()
-    ctx.closePath()
   }
 }
