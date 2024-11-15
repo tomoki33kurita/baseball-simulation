@@ -26,6 +26,7 @@ export type PartsItem = {
     | 'fiveLabel'
     | 'mouton'
     | 'specifiedLogo'
+    | 'specifiedLogoPosition'
   >
   // value: keyof typeof LEATHER_COLORS_BY_PARTS
 }
