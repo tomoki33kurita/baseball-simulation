@@ -274,5 +274,6 @@ export const fontImageResolver = (embroidery: Embroidery) => {
 
 export const checkEmbroidery = (state: FiveState) => {
   const isSpecifiedEmbroideryOnBand = state.embroideries.some((e) => e.position.value === 'band')
-  return { isSpecifiedEmbroideryOnBand }
+  const existsSpecifiedLogoOnBand = state.specifiedLogo.value === 'logo' && state.specifiedLogoPosition.value === 'band'
+  return { isSpecifiedEmbroideryOnBand, existsSpecifiedLogoOnBand }
 }

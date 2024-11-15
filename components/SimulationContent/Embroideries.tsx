@@ -22,7 +22,7 @@ export const Embroideries: React.FC<Props> = ({ state, previousIndex }) => {
         刺繍項目
       </Box>
       {state.baseModel.brand === 'five' && state.orderType.value === 'custom' && (
-        <Box fontWeight="bold" fontSize="16px" color={'#383838'}>
+        <Box fontSize="16px" color={'#383838'}>
           <ItemCell
             itemIndex={0}
             cell={{

@@ -39,7 +39,8 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
     fLexEngraving: dispatcher('fLexEngraving', dispatch)
   }
   const { isCustomOrder, isColorSelectOrder, isSelectedOrderType, isNotSelectedOrderType } = getOrderType(orderType)
-  const { isSpecifiedEmbroideryOnBand } = checkEmbroidery(state)
+  const { isSpecifiedEmbroideryOnBand, existsSpecifiedLogoOnBand } = checkEmbroidery(state)
+  const canNotSelectFLexEngraving = isSpecifiedEmbroideryOnBand || existsSpecifiedLogoOnBand
   return (
     <TabPanel selectedIndex={selectedIndex} index={0}>
       <SelectCard
@@ -96,12 +97,12 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
           <SelectCard
             summary={'バンド部F・レックス刻印'} // fLexEngraving
             selectedLabel={fLexEngraving.label}
-            objects={F_LEX_ENGRAVINGS.filter((o) => (isSpecifiedEmbroideryOnBand ? o.value === 'none' : true))}
+            objects={F_LEX_ENGRAVINGS.filter((o) => (canNotSelectFLexEngraving ? o.value === 'none' : true))}
             isDisplay={isCustomOrder || isColorSelectOrder}
             isError={fLexEngraving.value === 'unselected'}
             defaultExpanded={fLexEngraving.value === 'unselected'}
             className={WELTING_CUT_BUTTON_OPTION}
-            description={isSpecifiedEmbroideryOnBand ? '選択をご希望の場合、[通常刺繍-バンド部]が指定を解除してください。' : ''}
+            description={canNotSelectFLexEngraving ? '選択をご希望の場合、[通常刺繍-バンド部]または[指定ロゴ-バンド部]指定を解除してください。' : ''}
             handleChange={handle.fLexEngraving}
           />
         </>

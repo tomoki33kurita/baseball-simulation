@@ -52,7 +52,9 @@ export const EmbroiderySetter: React.FC<Props> = ({ state, selectedIndex, dispat
           <SelectCard
             summary={'指定ロゴの位置'}
             selectedLabel={state.specifiedLogoPosition.label}
-            objects={EMBROIDERY_POSITIONS.filter((p) => embroideries.some((e) => e.position.value !== p.value))}
+            objects={EMBROIDERY_POSITIONS.filter((p) => embroideries.some((e) => e.position.value !== p.value)).filter((p) =>
+              fLexEngraving.value === 'fLexEngraving' ? p.value !== 'band' : true
+            )}
             handleChange={(selected: string) => {
               dispatch({
                 type: SET_SPECIFIED_LOGO_POSITION,
@@ -61,6 +63,8 @@ export const EmbroiderySetter: React.FC<Props> = ({ state, selectedIndex, dispat
             }}
             isDisplay={state.specifiedLogo.value === 'logo'}
             isError={state.specifiedLogoPosition.value === 'unselected'}
+            disabled={!isSelectedFLexEngraving}
+            description={!isSelectedFLexEngraving ? 'バンド部F・レックス刻印を先に選択してください。' : ''}
           />
 
           {isCustomOrder && <EmbroideryFormUpDown {...{ embroideries, dispatch }} />}
