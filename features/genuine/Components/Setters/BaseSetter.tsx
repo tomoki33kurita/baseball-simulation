@@ -37,7 +37,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
     fingerGuard: dispatcher('fingerGuard', dispatch),
     webParts: dispatcher('webParts', dispatch)
   }
-  const { isCustomOrder, isColorSelectOrder, isSelectedOrderType, isNotSelectedOrderType } = getOrderType(orderType)
+  const { isCustomOrder, isSelectedOrderType, isNotSelectedOrderType } = getOrderType(orderType)
   return (
     <TabPanel selectedIndex={selectedIndex} index={0}>
       <SelectCard
@@ -46,7 +46,6 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         objects={ORDER_TYPES}
         isError={orderType.value === 'unselected'}
         handleChange={handle.orderType}
-        disabled={orderType.value !== 'unselected'}
         defaultExpanded={isNotSelectedOrderType}
         className={TANNER_BUTTON_OPTION}
       />
