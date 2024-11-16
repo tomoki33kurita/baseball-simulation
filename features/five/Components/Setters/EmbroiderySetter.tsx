@@ -52,7 +52,7 @@ export const EmbroiderySetter: React.FC<Props> = ({ state, selectedIndex, dispat
           <SelectCard
             summary={'指定ロゴの位置'}
             selectedLabel={state.specifiedLogoPosition.label}
-            objects={EMBROIDERY_POSITIONS.filter((p) => embroideries.some((e) => e.position.value !== p.value)).filter((p) =>
+            objects={EMBROIDERY_POSITIONS.filter((p) => embroideries.every((e) => e.position.value !== p.value)).filter((p) =>
               fLexEngraving.value === 'fLexEngraving' ? p.value !== 'band' : true
             )}
             handleChange={(selected: string) => {
