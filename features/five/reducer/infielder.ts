@@ -36,6 +36,7 @@ import {
   SET_SPECIFIED_LOGO,
   SET_SPECIFIED_LOGO_POSITION
 } from '../Constants/action'
+import { FiveState } from '../types'
 
 const initialPersonalState = {
   userName: '',
@@ -65,12 +66,10 @@ const initialEmbroideryState = {
   content: ''
 }
 
-export const initialState = {
+export const initialState: FiveState = {
   baseModel: {
     productNumber: '',
-    position: '',
-    imageUrl: '',
-    dominantArm: 'unselected',
+    position: 'infielder',
     size: {
       unit: 'cm',
       value: 0
@@ -79,6 +78,14 @@ export const initialState = {
     description: '',
     isFingerCrotch: false,
     isUBack: false,
+    basicColors: {
+      leather: { label: 'ブラック', value: 'black', color: '#1E1E1E' },
+      stitch: { label: 'ファイブグリーン', value: 'fiveGreen', color: '#42A670' },
+      lace: { label: 'タン', value: 'tan', color: '#C19445' },
+      binding: { label: 'ブラック', value: 'black', color: '#1E1E1E' },
+      welting: { label: '切りハミ(ホワイト)', value: 'kirihamiWhite', color: '#fff' },
+      fiveLabel: { label: 'No.01', value: '1' }
+    },
     brand: '',
     bankLaceDirection: 'sequentialRoll',
     image: {
@@ -123,7 +130,7 @@ export const initialState = {
   personal: initialPersonalState,
   drawerIndex: 0,
   labelStand: unselectedColorState,
-  fiveLabel: unselectedState,
+  fiveLabel: unselectedColorState,
   specifiedLogo: unselectedStateWithPrice,
   specifiedLogoPosition: unselectedState
 }

@@ -7,6 +7,8 @@ import { GenuineState } from '../genuine/types'
 import { getFiveBaseCells } from '../five/Components/ConfirmContents/base'
 import { getGenuineBaseCells } from '../genuine/Components/ConfirmContents/base'
 import { getFiveEmbroideryCells } from '../five/Components/ConfirmContents/embroidery'
+import { getOrderType } from '../five/Components/Setters/logic'
+import { getGenuineEmbroideryCells } from '../genuine/Components/ConfirmContents/embroidery'
 
 export const calculateBaseCost = (brand: Brand, state: FiveState): number => {
   switch (brand) {
@@ -63,13 +65,15 @@ export const getBaseCells = (state: State) => {
   }
 }
 
-export const getEmbroideryCells = (state: State, isCustomOrder: boolean, existEmbroidery: boolean) => {
+export const getEmbroideryCells = (state: State, existEmbroidery: boolean) => {
   if (!existEmbroidery) return []
   switch (state.baseModel.brand) {
     case 'five':
+      const fiveState = state as FiveState
+      const { isCustomOrder } = getOrderType(fiveState.orderType)
       return state.embroideries.map((e: Embroidery) => getFiveEmbroideryCells(e, isCustomOrder)).flat()
     case 'genuine':
-      return [] //state.embroideries.map((e: Embroidery) => getFiveEmbroideryCells(e, isCustomOrder)).flat()
+      return state.embroideries.map(getGenuineEmbroideryCells).flat()
     default:
       return []
   }

@@ -64,18 +64,8 @@ export const getComponentParts = (state: GenuineState) => {
 
 export const getColorOptionsByParts = (partsKey: PartsKey) => LEATHER_COLORS_BY_PARTS[partsKey]
 
-export const getSelectableParts = (drawerIndex: DrawerIndex, orderType: BaseItem): PartsItem[] => {
-  switch (orderType.value) {
-    case 'basic':
-      // case 'basicWithEmbroidery':
-      return []
-    case 'colorSelect':
-      return [{ label: '全体', value: 'all' }]
-    case 'custom':
-      return drawerIndex === 1 ? PALM_PARTS : BACK_PARTS
-    default:
-      return []
-  }
+export const getSelectableParts = (drawerIndex: DrawerIndex): PartsItem[] => {
+  return drawerIndex === 1 ? PALM_PARTS : BACK_PARTS
 }
 
 export const characterCheckHelper = (embroidery: Embroidery) => {
@@ -225,24 +215,6 @@ export const embroideryFlagGenerator = (e: Embroidery) => {
     isUnSelectedTypeFace,
     isUnSelectedMainColor,
     isSelectedTypeFace
-  }
-}
-
-export const getOrderType = (orderType: BaseItem) => {
-  const isSelectedOrderType = orderType.value !== 'unselected'
-  const isNotSelectedOrderType = orderType.value === 'unselected'
-  const isBasicOrder = ['basic'].includes(orderType.value)
-  // const isBasicWithEmbroideryOrder = ['basicWithEmbroidery'].includes(orderType.value)
-
-  return {
-    isBasicOrder,
-    // isBasicWithEmbroideryOrder,
-    isBasic: isBasicOrder, //|| isBasicWithEmbroideryOrder,
-    isColorSelectOrder: orderType.value === 'colorSelect',
-    isCustomOrder: orderType.value === 'custom',
-    isSelectedOrderType,
-    isNotSelectedOrderType,
-    isSelectableLimitedEmbroidery: ['basicWithEmbroidery', 'colorSelect'].includes(orderType.value)
   }
 }
 

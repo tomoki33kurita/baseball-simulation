@@ -10,7 +10,7 @@ import { PalmSurface } from '@/components/Drawers/PalmSurface'
 import { Position } from '@/types'
 import { getFiveBaseCells } from './base'
 import { getFiveColorCells } from './color'
-import { SimulationContent } from '@/components/SimulationContent'
+import { SimulationContent } from '../SimulationContent'
 
 type Props = {
   state: FiveState

@@ -3,7 +3,7 @@ import { GenuineState } from '@/features/genuine/types'
 import { Position } from '@/types'
 import { TabPanel } from '@/components/TabPanel'
 import { dispatcher } from './dispatcher'
-import { getColorOptionsByParts, getSelectableParts, getComponentParts, getOrderType } from './logic'
+import { getColorOptionsByParts, getSelectableParts, getComponentParts } from './logic'
 import {
   BINDING_COLOR_BUTTON_OPTION,
   WELTING_COLOR_BUTTON_OPTION,
@@ -30,12 +30,12 @@ type Props = {
 }
 
 export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch }) => {
-  const { parts, orderType, drawerIndex, lace, binding, stitch, welting, mouton } = state
+  const { parts, drawerIndex, lace, binding, stitch, welting, mouton } = state
   const partsKey = parts.value
   const partsLabel = parts.label
   const componentParts = getComponentParts(state)
   const selectedParts = componentParts[partsKey as keyof typeof componentParts]
-  const selectableParts = getSelectableParts(drawerIndex, orderType)
+  const selectableParts = getSelectableParts(drawerIndex)
   const colorsByParts = getColorOptionsByParts(partsKey)
   const handle = {
     [partsKey]: originDispatcher(DISPATCHER, partsKey, dispatch, colorsByParts),
@@ -46,88 +46,69 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
     welting: dispatcher('welting', dispatch),
     mouton: dispatcher('mouton', dispatch)
   }
-  const { isBasic, isColorSelectOrder, isCustomOrder, isNotSelectedOrderType } = getOrderType(orderType)
-  const isSelectableColor = isColorSelectOrder || isCustomOrder
 
   if (!componentParts || !selectableParts) return <></>
   return (
     <TabPanel selectedIndex={selectedIndex} index={1}>
-      {isNotSelectedOrderType && <Box my={3} color={'blue'}>{`パーツ設定 > オーダータイプ を先に選択してください。`}</Box>}
-      {isBasic && <Box my={3} color={'blue'}>{`選択できる項目はありません。`}</Box>}
-      {(isColorSelectOrder || isCustomOrder) && (
-        <>
-          <SelectCard
-            summary={'パーツ'}
-            selectedLabel={partsLabel}
-            objects={selectableParts}
-            defaultExpanded={orderType.value === 'custom'}
-            handleChange={handle.parts}
-          />
-          <SelectCard
-            summary={`${partsLabel}カラー`}
-            selectedLabel={selectedParts.label}
-            selectedColor={selectedParts.color}
-            objects={colorsByParts}
-            handleChange={handle[partsKey]}
-            className={LEATHER_COLOR_BUTTON_OPTION}
-          />
-          <SelectCard
-            summary={'ハミダシ'}
-            selectedLabel={welting.label}
-            selectedColor={welting.color}
-            objects={WELTINGS}
-            defaultExpanded={welting.value === 'unselected'}
-            handleChange={handle.welting}
-            isError={welting.value === 'unselected'}
-            isDisplay={isCustomOrder}
-            className={WELTING_COLOR_BUTTON_OPTION}
-          />
-          <SelectCard
-            summary={'ヘリ革'}
-            selectedLabel={binding.label}
-            selectedColor={binding.color}
-            objects={BINDINGS}
-            defaultExpanded={binding.value === 'unselected'}
-            handleChange={handle.binding}
-            isError={binding.value === 'unselected'}
-            isDisplay={isCustomOrder}
-            className={BINDING_COLOR_BUTTON_OPTION}
-          />
-          <SelectCard
-            summary={'縫い糸'}
-            selectedLabel={stitch.label}
-            selectedColor={stitch.color}
-            objects={STITCHES}
-            defaultExpanded={stitch.value === 'unselected'}
-            handleChange={handle.stitch}
-            isError={stitch.value === 'unselected'}
-            isDisplay={isSelectableColor}
-            className={STITCH_COLOR_BUTTON_OPTION}
-          />
-          <SelectCard
-            summary={'レース'}
-            selectedLabel={lace.label}
-            selectedColor={lace.color}
-            objects={LACES}
-            defaultExpanded={lace.value === 'unselected'}
-            handleChange={handle.lace}
-            isError={lace.value === 'unselected'}
-            isDisplay={isSelectableColor}
-            className={LACE_COLOR_BUTTON_OPTION}
-          />
-          <SelectCard
-            summary={'ムートン'}
-            selectedLabel={mouton.label}
-            selectedColor={mouton.color}
-            objects={MOUTON_COLORS}
-            defaultExpanded={mouton.value === 'unselected'}
-            handleChange={handle.mouton}
-            isError={mouton.value === 'unselected'}
-            isDisplay={isSelectableColor}
-            className={MOUTON_BUTTON_OPTION}
-          />
-        </>
-      )}
+      <SelectCard summary={'パーツ'} selectedLabel={partsLabel} objects={selectableParts} handleChange={handle.parts} />
+      <SelectCard
+        summary={`${partsLabel}カラー`}
+        selectedLabel={selectedParts.label}
+        selectedColor={selectedParts.color}
+        objects={colorsByParts}
+        handleChange={handle[partsKey]}
+        className={LEATHER_COLOR_BUTTON_OPTION}
+      />
+      <SelectCard
+        summary={'ハミダシ'}
+        selectedLabel={welting.label}
+        selectedColor={welting.color}
+        objects={WELTINGS}
+        defaultExpanded={welting.value === 'unselected'}
+        handleChange={handle.welting}
+        isError={welting.value === 'unselected'}
+        className={WELTING_COLOR_BUTTON_OPTION}
+      />
+      <SelectCard
+        summary={'ヘリ革'}
+        selectedLabel={binding.label}
+        selectedColor={binding.color}
+        objects={BINDINGS}
+        defaultExpanded={binding.value === 'unselected'}
+        handleChange={handle.binding}
+        isError={binding.value === 'unselected'}
+        className={BINDING_COLOR_BUTTON_OPTION}
+      />
+      <SelectCard
+        summary={'縫い糸'}
+        selectedLabel={stitch.label}
+        selectedColor={stitch.color}
+        objects={STITCHES}
+        defaultExpanded={stitch.value === 'unselected'}
+        handleChange={handle.stitch}
+        isError={stitch.value === 'unselected'}
+        className={STITCH_COLOR_BUTTON_OPTION}
+      />
+      <SelectCard
+        summary={'レース'}
+        selectedLabel={lace.label}
+        selectedColor={lace.color}
+        objects={LACES}
+        defaultExpanded={lace.value === 'unselected'}
+        handleChange={handle.lace}
+        isError={lace.value === 'unselected'}
+        className={LACE_COLOR_BUTTON_OPTION}
+      />
+      <SelectCard
+        summary={'ムートン'}
+        selectedLabel={mouton.label}
+        selectedColor={mouton.color}
+        objects={MOUTON_COLORS}
+        defaultExpanded={mouton.value === 'unselected'}
+        handleChange={handle.mouton}
+        isError={mouton.value === 'unselected'}
+        className={MOUTON_BUTTON_OPTION}
+      />
     </TabPanel>
   )
 }

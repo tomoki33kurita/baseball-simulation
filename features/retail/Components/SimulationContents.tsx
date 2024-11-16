@@ -1,9 +1,12 @@
 import { Grid, Box } from '@mui/material'
 import { muiGrey } from '@/styles'
-import { ItemCell } from '@/components/SimulationContent/ItemCell'
-import { Embroideries } from '@/components/SimulationContent/Embroideries'
 import { State } from '@/types'
 import { getBaseCells, getColorCells } from '@/features/Logic'
+import { FiveEmbroideries } from '@/features/five/Components/SimulationContent/Embroideries'
+import { GenuineEmbroideries } from '@/features/genuine/Components/SimulationContent/Embroideries'
+import { GenuineState } from '@/features/genuine/types'
+import { FiveState } from '@/features/five/types'
+import { ItemCell } from '@/components/ItemCell'
 
 export const cellColor = (cellValue: string) => (cellValue === 'unselected' ? 'red' : muiGrey)
 
@@ -43,7 +46,12 @@ export const SimulationContents: React.FC<Props> = ({ state }) => {
       <Grid item xs={12} sm={4}>
         <Box pt={2}>
           <Box mt={2}>
-            <Embroideries state={state} previousIndex={baseCellCount + colorCellCount} />
+            <>
+              {state.baseModel.brand === 'five' && <FiveEmbroideries state={state as FiveState} previousIndex={baseCellCount + colorCellCount} />}
+              {state.baseModel.brand === 'genuine' && (
+                <GenuineEmbroideries state={state as GenuineState} previousIndex={baseCellCount + colorCellCount} />
+              )}
+            </>
           </Box>
         </Box>
       </Grid>

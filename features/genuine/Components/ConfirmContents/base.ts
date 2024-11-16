@@ -18,8 +18,8 @@ export const getGenuineBaseCells = (
     default:
       return [
         genGloveBaseCell('基本モデル', baseModelStateObj),
-        genGloveBaseCell('オーダータイプ', state.orderType),
         genGloveBaseCell('利き腕', state.dominantArm),
+        genGloveBaseCell('背面デザイン', state.backStyle),
         genGloveBaseCell('ウェブパーツ', state.webParts),
         genGloveBaseCell('芯とじ', state.materialPack),
         genGloveBaseCell('指カバー/指当て', state.fingerGuard)

@@ -36,6 +36,7 @@ import {
   SET_SPECIFIED_LOGO
 } from '../Constants/action'
 import { ADD_EMBROIDERY, REMOVE_EMBROIDERY, SET_DRAWER_INDEX, SET_EMBROIDERIES, SET_PERSONAL } from '@/Constants'
+import { FiveState } from '../types'
 
 const initialPersonalState = {
   userName: '',
@@ -57,20 +58,18 @@ const unselectedColorState = {
 
 const initialEmbroideryState = {
   id: 0,
-  typeFace: { label: '', value: '' },
-  position: { label: '', value: '' },
-  color: { label: '未選択', value: 'unselected', color: '' },
-  shadowColor: { label: '未選択', value: 'unselected' },
-  edgeColor: { label: '未選択', value: 'unselected' },
+  typeFace: unselectedState,
+  position: unselectedState,
+  color: unselectedColorState,
+  shadowColor: unselectedColorState,
+  edgeColor: unselectedColorState,
   content: ''
 }
 
-export const initialState = {
+export const initialState: FiveState = {
   baseModel: {
     productNumber: '',
-    position: '',
-    imageUrl: '',
-    dominantArm: 'unselected',
+    position: 'outfielder',
     size: {
       unit: 'cm',
       value: 0
@@ -79,6 +78,14 @@ export const initialState = {
     description: '',
     isFingerCrotch: false,
     isUBack: false,
+    basicColors: {
+      leather: { label: 'ブラック', value: 'black', color: '#1E1E1E' },
+      stitch: { label: 'ファイブグリーン', value: 'fiveGreen', color: '#42A670' },
+      lace: { label: 'タン', value: 'tan', color: '#C19445' },
+      binding: { label: 'ブラック', value: 'black', color: '#1E1E1E' },
+      welting: { label: '切りハミ(ホワイト)', value: 'kirihamiWhite', color: '#fff' },
+      fiveLabel: { label: 'No.01', value: '1' }
+    },
     brand: '',
     bankLaceDirection: 'sequentialRoll',
     image: {
@@ -123,7 +130,7 @@ export const initialState = {
   personal: initialPersonalState,
   drawerIndex: 0,
   labelStand: unselectedColorState,
-  fiveLabel: unselectedState,
+  fiveLabel: unselectedColorState,
   specifiedLogo: unselectedStateWithPrice,
   specifiedLogoPosition: unselectedState
 }

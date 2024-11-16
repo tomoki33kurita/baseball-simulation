@@ -91,5 +91,3 @@ export type FiveBaseModel = {
     fiveLabel: BaseItem
   }
 } & BaseModel
-
-export type CanStepFurther = any

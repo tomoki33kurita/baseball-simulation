@@ -1,12 +1,12 @@
 import { Grid, Box } from '@mui/material'
-import { ItemCell } from '@/components/SimulationContent/ItemCell'
-import { Embroideries } from './Embroideries'
-import { State } from '@/types'
+import { FiveEmbroideries } from './Embroideries'
+import { ItemCell } from '@/components/ItemCell'
+import { FiveState } from '../../types'
 
 export const cellColor = (cellValue: string) => (cellValue === 'unselected' ? 'red' : '#383838')
 
 type Props = {
-  state: State
+  state: FiveState
   baseCells: {
     head: string
     label: string
@@ -48,7 +48,7 @@ export const SimulationContent: React.FC<Props> = ({ state, baseCells, colorCell
       </Grid>
       <Grid item xs={12} sm={4}>
         <Box mt={2}>
-          <Embroideries state={state} previousIndex={embroideryCellStartCount + 1} />
+          <FiveEmbroideries state={state} previousIndex={embroideryCellStartCount + 1} />
         </Box>
       </Grid>
     </Grid>

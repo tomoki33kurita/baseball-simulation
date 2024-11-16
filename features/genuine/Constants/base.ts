@@ -1,15 +1,13 @@
 import { WebParts } from '@/types'
 
-export const ORDER_TYPES = [
-  { label: 'Basic', value: 'basic', price: 53900 },
-  // { label: 'Basic(刺繍有)', value: 'basicWithEmbroidery', price: 53900 },
-  { label: 'Color Select', value: 'colorSelect', price: 57200 },
-  { label: 'Custom', value: 'custom', price: 61600 }
-]
-
 export const DOMINANT_ARMS = [
   { label: '右投げ', value: 'rightThrow' },
   { label: '左投げ', value: 'leftThrow' }
+]
+
+export const BACK_STYLES = [
+  { label: 'ノーマル', value: 'normal' },
+  { label: 'ベルクロ', value: 'velcro' }
 ]
 
 export const MATERIAL_PACKS = [
@@ -24,35 +22,37 @@ export const FINGER_GUARDS = [
   { label: '無し', value: 'none' }
 ]
 
-export const F_LEX_ENGRAVINGS = [
-  { label: '有り', value: 'fLexEngraving', price: 3300 },
-  { label: '無し', value: 'none', price: 0 }
-]
-
 const webImageBaseUrl = '/genuine/webParts'
 export const WEB_PARTS: WebParts[] = [
-  { label: 'P-01', value: 'p01', positions: ['pitcher'], imageUrl: `${webImageBaseUrl}/p01.jpg` },
-  { label: 'P-02', value: 'p02', positions: ['pitcher'], imageUrl: `${webImageBaseUrl}/p02.jpg` },
-  { label: 'P-03', value: 'p03', positions: ['pitcher'], imageUrl: `${webImageBaseUrl}/p03.jpg` },
-  { label: 'P-04', value: 'p04', positions: ['pitcher'], imageUrl: `${webImageBaseUrl}/p04.jpg` },
-  { label: 'P-05', value: 'p05', positions: ['pitcher'], imageUrl: `${webImageBaseUrl}/p05.jpg` },
-  { label: 'P-06', value: 'p06', positions: ['pitcher'], imageUrl: `${webImageBaseUrl}/p06.jpg` },
-  { label: 'IN-01', value: 'in01', positions: ['infielder'], imageUrl: `${webImageBaseUrl}/in01.jpg` },
-  { label: 'IN-02', value: 'in02', positions: ['infielder'], imageUrl: `${webImageBaseUrl}/in02.jpg` },
-  { label: 'IN-03', value: 'in03', positions: ['infielder'], imageUrl: `${webImageBaseUrl}/in03.jpg` },
-  { label: 'IN-04', value: 'in04', positions: ['infielder'], imageUrl: `${webImageBaseUrl}/in04.jpg` },
-  { label: 'IN-05', value: 'in05', positions: ['infielder'], imageUrl: `${webImageBaseUrl}/in05.jpg` },
-  { label: 'IN-06', value: 'in06', positions: ['infielder'], imageUrl: `${webImageBaseUrl}/in06.jpg` },
-  { label: 'OU-01', value: 'ou01', positions: ['outfielder'], imageUrl: `${webImageBaseUrl}/ou01.jpg` },
-  { label: 'OU-02', value: 'ou02', positions: ['outfielder'], imageUrl: `${webImageBaseUrl}/ou02.jpg` },
-  { label: 'OU-03', value: 'ou03', positions: ['outfielder'], imageUrl: `${webImageBaseUrl}/ou03.jpg` }
+  { label: 'フラット', value: 'flat', positions: ['pitcher'], imageUrl: `${webImageBaseUrl}/flat.jpg` },
+  { label: 'フラット2', value: 'flat2', positions: ['pitcher'], imageUrl: `${webImageBaseUrl}/flat2.jpg` },
+  { label: 'バスケット', value: 'basket', positions: ['pitcher'], imageUrl: `${webImageBaseUrl}/basket.jpg` },
+  { label: 'バスケット2', value: 'basket2', positions: ['pitcher'], imageUrl: `${webImageBaseUrl}/basket2.jpg` },
+  { label: 'ツーピース', value: 'twoPeace', positions: ['pitcher'], imageUrl: `${webImageBaseUrl}/twoPeace.jpg` },
+  { label: 'ツーピース2', value: 'twoPeace2', positions: ['pitcher'], imageUrl: `${webImageBaseUrl}/twoPeace2.jpg` },
+  { label: 'Genuine', value: 'genuine', positions: ['pitcher'], imageUrl: `${webImageBaseUrl}/genuine.jpg` },
+
+  { label: 'クロス', value: 'cross', positions: ['infielder'], imageUrl: `${webImageBaseUrl}/cross.jpg` },
+  { label: 'クロス2', value: 'cross2', positions: ['infielder'], imageUrl: `${webImageBaseUrl}/cross2.jpg` },
+  { label: 'クロス3', value: 'cross3', positions: ['infielder'], imageUrl: `${webImageBaseUrl}/cross3.jpg` },
+  { label: 'クロスV', value: 'crossV', positions: ['infielder'], imageUrl: `${webImageBaseUrl}/crossV.jpg` },
+  { label: 'クロスV2', value: 'crossV2', positions: ['infielder'], imageUrl: `${webImageBaseUrl}/crossV2.jpg` },
+  { label: 'Hウェブ', value: 'h', positions: ['infielder'], imageUrl: `${webImageBaseUrl}/h.jpg` },
+  { label: 'Uネット', value: 'uNet', positions: ['infielder'], imageUrl: `${webImageBaseUrl}/uNet.jpg` },
+  { label: 'Uネット2', value: 'uNet2', positions: ['infielder'], imageUrl: `${webImageBaseUrl}/uNet2.jpg` },
+
+  { label: 'Tネット', value: 'tNet', positions: ['outfielder'], imageUrl: `${webImageBaseUrl}/TNet.jpg` },
+  { label: 'Tネット2', value: 'tNet2', positions: ['outfielder'], imageUrl: `${webImageBaseUrl}/TNet2.jpg` },
+  { label: 'Tネット3', value: 'tNet3', positions: ['outfielder'], imageUrl: `${webImageBaseUrl}/TNet3.jpg` },
+  { label: 'Iネット', value: 'iNet', positions: ['outfielder'], imageUrl: `${webImageBaseUrl}/iNet.jpg` },
+  { label: 'トンボ', value: 'dragonfly', positions: ['outfielder'], imageUrl: `${webImageBaseUrl}/dragonfly.jpg` },
+  { label: 'トンボ2', value: 'dragonfly2', positions: ['outfielder'], imageUrl: `${webImageBaseUrl}/dragonfly2.jpg` },
+  { label: 'ラダー', value: 'ladder', positions: ['outfielder'], imageUrl: `${webImageBaseUrl}/ladder.jpg` }
 ]
 
-export const TANNER_BUTTON_OPTION = 'genuine-tanner-card'
-export const BACK_STYLE_BUTTON_OPTION = 'genuine-back-style-card'
 export const DOMINANT_ARM_BUTTON_OPTION = 'genuine-dominant-arm-card'
+export const BACK_STYLE_BUTTON_OPTION = 'genuine-back-style-card'
 export const MATERIAL_PACK_BUTTON_OPTION = 'genuine-material-pack-card'
 export const FINGER_GUARD_TYPE_BUTTON_OPTION = 'genuine-finger-guard-type-card'
 export const WEB_PARTS_BUTTON_OPTION = 'genuine-web-parts-card'
 export const LOOP_OF_RING_FINGER_BUTTON_OPTION = 'genuine-loop-of-ring-finger-card'
-export const WELTING_CUT_BUTTON_OPTION = 'genuine-welting-cut-card'

@@ -5,21 +5,18 @@ import {
   DOMINANT_ARM_BUTTON_OPTION,
   DOMINANT_ARMS,
   FINGER_GUARD_TYPE_BUTTON_OPTION,
-  WELTING_CUT_BUTTON_OPTION,
-  F_LEX_ENGRAVINGS,
   MATERIAL_PACK_BUTTON_OPTION,
   MATERIAL_PACKS,
-  ORDER_TYPES,
-  TANNER_BUTTON_OPTION,
   WEB_PARTS_BUTTON_OPTION,
   WEB_PARTS,
-  FINGER_GUARDS
-} from '@/features/five/Constants/base'
+  FINGER_GUARDS,
+  BACK_STYLE_BUTTON_OPTION,
+  BACK_STYLES
+} from '@/features/genuine/Constants/base'
 import { SelectCard } from '@/components/Setters/SelectCard'
 import { SelectCardWithImage } from '@/components/Setters/SelectCardWithImage'
 import { TabPanel } from '@/components/TabPanel'
 import { dispatcher } from './dispatcher'
-import { getOrderType } from './logic'
 
 type Props = {
   state: GenuineState
@@ -29,26 +26,17 @@ type Props = {
 }
 
 export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, dispatch }) => {
-  const { orderType, dominantArm, fingerGuard, materialPack, webParts } = state
+  const { dominantArm, backStyle, fingerGuard, materialPack, webParts } = state
   const handle = {
-    orderType: dispatcher('orderType', dispatch),
     dominantArm: dispatcher('dominantArm', dispatch),
+    backStyle: dispatcher('backStyle', dispatch),
     materialPack: dispatcher('materialPack', dispatch),
     fingerGuard: dispatcher('fingerGuard', dispatch),
     webParts: dispatcher('webParts', dispatch)
   }
-  const { isCustomOrder, isSelectedOrderType, isNotSelectedOrderType } = getOrderType(orderType)
+  console.log({ backStyle })
   return (
     <TabPanel selectedIndex={selectedIndex} index={0}>
-      <SelectCard
-        summary={'オーダータイプ'} // orderType
-        selectedLabel={orderType.label}
-        objects={ORDER_TYPES}
-        isError={orderType.value === 'unselected'}
-        handleChange={handle.orderType}
-        defaultExpanded={isNotSelectedOrderType}
-        className={TANNER_BUTTON_OPTION}
-      />
       <SelectCard
         summary={'利き腕'} // dominantArm
         selectedLabel={dominantArm.label}
@@ -58,40 +46,42 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         defaultExpanded={dominantArm.value === 'unselected'}
         className={DOMINANT_ARM_BUTTON_OPTION}
       />
-      {isSelectedOrderType && (
-        <>
-          <SelectCardWithImage
-            summary={'ウェブ'} // webParts
-            selectedLabel={webParts.label}
-            objects={WEB_PARTS.filter((o) => o.positions.includes(position))}
-            isError={webParts.value === 'unselected'}
-            isDisplay={isCustomOrder}
-            defaultExpanded={webParts.value === 'unselected'}
-            handleChange={handle.webParts}
-            className={WEB_PARTS_BUTTON_OPTION}
-          />
-          <SelectCard
-            summary={'芯とじ'} // materialPack
-            selectedLabel={materialPack.label}
-            objects={MATERIAL_PACKS}
-            handleChange={handle.materialPack}
-            isError={materialPack.value === 'unselected'}
-            defaultExpanded={materialPack.value === 'unselected'}
-            className={MATERIAL_PACK_BUTTON_OPTION}
-            isDisplay={isCustomOrder}
-          />
-          <SelectCard
-            summary={'指カバー/指当て'} // fingerGuard
-            selectedLabel={fingerGuard.label}
-            objects={FINGER_GUARDS}
-            isError={fingerGuard.value === 'unselected'}
-            isDisplay={isCustomOrder}
-            defaultExpanded={fingerGuard.value === 'unselected'}
-            className={FINGER_GUARD_TYPE_BUTTON_OPTION}
-            handleChange={handle.fingerGuard}
-          />
-        </>
-      )}
+      <SelectCard
+        summary={'背面デザイン'} // backStyle
+        selectedLabel={backStyle.label}
+        objects={BACK_STYLES}
+        isError={backStyle.value === 'unselected'}
+        handleChange={handle.backStyle}
+        defaultExpanded={backStyle.value === 'unselected'}
+        className={BACK_STYLE_BUTTON_OPTION}
+      />
+      <SelectCardWithImage
+        summary={'ウェブ'} // webParts
+        selectedLabel={webParts.label}
+        objects={WEB_PARTS.filter((o) => o.positions.includes(position))}
+        isError={webParts.value === 'unselected'}
+        defaultExpanded={webParts.value === 'unselected'}
+        handleChange={handle.webParts}
+        className={WEB_PARTS_BUTTON_OPTION}
+      />
+      <SelectCard
+        summary={'芯とじ'} // materialPack
+        selectedLabel={materialPack.label}
+        objects={MATERIAL_PACKS}
+        handleChange={handle.materialPack}
+        isError={materialPack.value === 'unselected'}
+        defaultExpanded={materialPack.value === 'unselected'}
+        className={MATERIAL_PACK_BUTTON_OPTION}
+      />
+      <SelectCard
+        summary={'指カバー/指当て'} // fingerGuard
+        selectedLabel={fingerGuard.label}
+        objects={FINGER_GUARDS}
+        isError={fingerGuard.value === 'unselected'}
+        defaultExpanded={fingerGuard.value === 'unselected'}
+        className={FINGER_GUARD_TYPE_BUTTON_OPTION}
+        handleChange={handle.fingerGuard}
+      />
     </TabPanel>
   )
 }

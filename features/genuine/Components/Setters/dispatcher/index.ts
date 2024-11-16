@@ -1,12 +1,12 @@
 import React from 'react'
-import { ORDER_TYPES, MATERIAL_PACKS, WEB_PARTS, F_LEX_ENGRAVINGS, DOMINANT_ARMS, FINGER_GUARDS } from '@/features/genuine/Constants/base'
+import { BACK_STYLES, MATERIAL_PACKS, WEB_PARTS, DOMINANT_ARMS, FINGER_GUARDS } from '@/features/genuine/Constants/base'
 import { objectsFilter } from '@/util/logic'
 import { ResponseDispatch } from '@/features/genuine/types'
 import {
   SET_DOMINANT_ARM,
   SET_FINGER_GUARD,
   SET_MATERIAL_PACK,
-  SET_ORDER_TYPE,
+  SET_BACK_STYLE,
   SET_WEB_PARTS,
   SET_BINDING_COLOR,
   SET_WELTING,
@@ -18,9 +18,9 @@ import { BINDINGS, LACES, MOUTON_COLORS, STITCHES, WELTINGS } from '@/features/g
 
 // ここはブランドのドメイン
 const dispatchBaseStore = {
-  orderType: { objects: ORDER_TYPES, actionType: SET_ORDER_TYPE },
-  materialPack: { objects: MATERIAL_PACKS, actionType: SET_MATERIAL_PACK },
   dominantArm: { objects: DOMINANT_ARMS, actionType: SET_DOMINANT_ARM },
+  backStyle: { objects: BACK_STYLES, actionType: SET_BACK_STYLE },
+  materialPack: { objects: MATERIAL_PACKS, actionType: SET_MATERIAL_PACK },
   fingerGuard: { objects: FINGER_GUARDS, actionType: SET_FINGER_GUARD },
   webParts: { objects: WEB_PARTS, actionType: SET_WEB_PARTS },
   lace: { objects: LACES, actionType: SET_LACE_COLOR },

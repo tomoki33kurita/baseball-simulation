@@ -10,11 +10,11 @@ import { PalmSurface } from '@/components/Drawers/PalmSurface'
 import { Position } from '@/types'
 import { getGenuineBaseCells } from './base'
 import { getGenuineColorCells } from './color'
-import { SimulationContent } from '@/components/SimulationContent'
 import { useDrawGenuineCatcherMittPalmSurface } from '@/features/genuine/Drawer/hooks/catcherMitt/useDrawGenuineCatcherMittPalmSurface'
 import { useDrawGenuineCatcherMittRearSurface } from '@/features/genuine/Drawer/hooks/catcherMitt/useDrawGenuineCatcherMittRearSurface'
 import { useDrawGenuineFirstMittRearSurface } from '@/features/genuine/Drawer/hooks/firstMitt/useDrawGenuineFIrstMittRearSurface'
 import { useDrawGenuineFirstMittPalmSurface } from '@/features/genuine/Drawer/hooks/firstMitt/useDrawGenuineFIrstMittPalmSurface'
+import { SimulationContent } from '../SimulationContent'
 
 type Props = {
   state: GenuineState
@@ -31,7 +31,7 @@ export const GenuineConfirmContents: React.FC<Props> = ({ state, position }) => 
   useDrawGenuineFirstMittRearSurface(rearSurfaceId, state)
   useDrawGenuineFirstMittPalmSurface(palmSurfaceId, state)
 
-  const basePrice = state.orderType.price // 今はFIVEのことだけ想定
+  const basePrice = 0
   const baseCells = getGenuineBaseCells(state)
   const colorCells = getGenuineColorCells(state)
 

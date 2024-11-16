@@ -114,3 +114,5 @@ export type WebParts = {
   positions: string[]
   imageUrl: string
 }
+
+export type CanStepFurther = any

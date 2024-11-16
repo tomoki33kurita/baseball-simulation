@@ -1,7 +1,7 @@
 // BASE SET
 export const SET_BASE_MODEL = 'setBaseModel'
-export const SET_ORDER_TYPE = 'setOrderType'
 export const SET_DOMINANT_ARM = 'setDominantArm'
+export const SET_BACK_STYLE = 'setBackStyle'
 export const SET_LININGS = 'setLinings'
 export const SET_WEB_PARTS = 'setWebParts'
 export const SET_LABEL_STAND = 'setLabelStand'
@@ -48,6 +48,7 @@ export const SET_LITTLE_MACHI_COLOR = 'setLittleMachiColor'
 // これはカラーだけに関するconstantsなので、別ファイルにあるべき
 export const DISPATCHER = {
   dominantArm: SET_DOMINANT_ARM,
+  backStyle: SET_BACK_STYLE,
   fingerGuard: SET_FINGER_GUARD,
   materialPack: SET_MATERIAL_PACK,
   webParts: SET_WEB_PARTS,

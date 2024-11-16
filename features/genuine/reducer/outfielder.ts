@@ -27,10 +27,10 @@ import {
   SET_LIST_BELT_COLOR,
   SET_MOUTON_COLOR,
   SET_BASE_MODEL,
-  SET_ORDER_TYPE,
   SET_BINDING_COLOR,
   SET_LABEL_STAND,
-  SET_FINGER_GUARD_COLOR
+  SET_FINGER_GUARD_COLOR,
+  SET_BACK_STYLE
 } from '@/features/genuine/Constants/action'
 import { ADD_EMBROIDERY, REMOVE_EMBROIDERY, SET_DRAWER_INDEX, SET_EMBROIDERIES, SET_PERSONAL } from '@/Constants'
 import { GenuineState } from '../types'
@@ -86,7 +86,7 @@ export const initialState: GenuineState = {
   dominantArm: unselectedState,
   fingerGuard: unselectedState,
   fingerGuardColor: unselectedColorState,
-  orderType: unselectedStateWithPrice,
+  backStyle: unselectedStateWithPrice,
   materialPack: unselectedState,
   webParts: unselectedColorState,
   parts: { label: '全体', value: 'all' },
@@ -159,10 +159,10 @@ export const reducer = (state: any, action: any) => {
         littleOut: action.all,
         labelStand: action.all
       }
+    case SET_BACK_STYLE:
+      return { ...state, backStyle: action.backStyle }
     case SET_BASE_MODEL:
       return { ...state, baseModel: action.baseModel }
-    case SET_ORDER_TYPE:
-      return { ...state, orderType: action.orderType }
     case SET_DOMINANT_ARM:
       return { ...state, dominantArm: action.dominantArm }
     case SET_MATERIAL_PACK:

@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import { UseFormWatch } from 'react-hook-form'
 import { Embroidery, Personal, State } from '@/types'
-import { CanStepFurther } from '@/features/five/types'
-import { getOrderType } from '@/features/five/Components/Setters/logic'
+import { CanStepFurther } from '@/types'
 import { getBaseCells, getColorCells, getEmbroideryCells } from '../Logic'
 
 type CompareEmailWatch = UseFormWatch<{
@@ -25,8 +24,7 @@ export const useCanStepFurther = (state: State, isCopied: boolean, watch: Compar
   const baseSettings = getBaseCells(state)
   const colorSettings = getColorCells(state)
   const existEmbroidery = state.embroideries.filter((e: Embroidery) => e.content.trim().length > 0).length > 0
-  const { isCustomOrder } = getOrderType(state.orderType)
-  const embroiderySettings = getEmbroideryCells(state, isCustomOrder, existEmbroidery)
+  const embroiderySettings = getEmbroideryCells(state, existEmbroidery)
   const existInvalidPersonal = isInvalidPersonalData(state.personal)
 
   const existUnselectedState = [...baseSettings, ...colorSettings, ...embroiderySettings].some((y) => y.value === 'unselected')

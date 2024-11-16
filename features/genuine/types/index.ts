@@ -24,6 +24,7 @@ export type PartsItem = {
     | 'drawerIndex'
     | 'genuineLabel'
     | 'mouton'
+    | 'backStyle'
   >
   // value: keyof typeof LEATHER_COLORS_BY_PARTS
 }
@@ -42,8 +43,8 @@ export type GenuineBaseModel = {} & BaseModel
 export type GenuineState = {
   baseModel: GenuineBaseModel
   dominantArm: BaseItem
+  backStyle: BaseItem
   fingerGuard: BaseItem
-  orderType: BaseItemWithPrice
   materialPack: BaseItem
   webParts: BaseItem
   parts: PartsItem
