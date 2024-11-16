@@ -20,6 +20,8 @@ import { SelectCardWithImage } from '@/components/Setters/SelectCardWithImage'
 import { TabPanel } from '@/components/TabPanel'
 import { dispatcher } from './dispatcher'
 import { checkEmbroidery, getOrderType } from './logic'
+import { Box } from '@mui/material'
+import Image from 'next/image'
 
 type Props = {
   state: FiveState
@@ -53,6 +55,9 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         defaultExpanded={isNotSelectedOrderType}
         className={TANNER_BUTTON_OPTION}
       />
+      {/* <Box>
+        <Image src={`/five/orderType.jpg`} alt={'orderType'} width={525} height={425} />
+      </Box> */}
       <SelectCard
         summary={'利き腕'} // dominantArm
         selectedLabel={dominantArm.label}
