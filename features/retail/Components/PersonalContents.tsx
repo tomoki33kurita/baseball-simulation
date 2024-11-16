@@ -3,6 +3,8 @@ import { Box, InputLabel, OutlinedInput } from '@mui/material'
 import { UseFormRegister } from 'react-hook-form'
 import { Personal } from '@/types'
 
+const fontColor = '#383838'
+
 type Props = {
   personal: Personal
   register: UseFormRegister<Personal>
@@ -15,31 +17,45 @@ export const PersonalContents: React.FC<Props> = ({ personal, register }) => {
           お客様情報
         </Box>
         <Box pb={1} display={'flex'} alignItems={'center'}>
-          <InputLabel htmlFor="name-label">お名前：</InputLabel>
+          <InputLabel htmlFor="name-label" style={{ color: fontColor }}>
+            お名前：
+          </InputLabel>
           <OutlinedInput type={'text'} autoComplete={'off'} {...register('userName')} style={{ marginRight: '8px' }} />様
         </Box>
         <Box pb={1} display={'flex'} alignItems={'center'}>
-          <InputLabel htmlFor="name-kana-label">お名前(カナ)：</InputLabel>
+          <InputLabel htmlFor="name-kana-label" style={{ color: fontColor }}>
+            お名前(カナ)：
+          </InputLabel>
           <OutlinedInput type={'text'} autoComplete={'off'} {...register('userNameKana')} style={{ marginRight: '8px' }} />様
         </Box>
         <Box pb={1} display={'flex'} alignItems={'center'}>
-          <InputLabel htmlFor="mail-label">メールアドレス：</InputLabel>
+          <InputLabel htmlFor="mail-label" style={{ color: fontColor }}>
+            メールアドレス：
+          </InputLabel>
           <OutlinedInput type={'email'} autoComplete={'off'} {...register('mailAddress')} />
         </Box>
         <Box pb={1} display={'flex'} alignItems={'center'}>
-          <InputLabel htmlFor="phone-label">お電話：</InputLabel>
+          <InputLabel htmlFor="phone-label" style={{ color: fontColor }}>
+            お電話：
+          </InputLabel>
           <OutlinedInput type={'tel'} autoComplete={'off'} {...register('phoneNumber')} />
         </Box>
         <Box pb={1} display={'flex'} alignItems={'center'}>
-          <InputLabel htmlFor="league-label">リーグ：</InputLabel>
-          <OutlinedInput type={'text'} autoComplete={'off'} defaultValue={personal?.league} {...register('league')} />
+          <InputLabel htmlFor="league-label" style={{ color: fontColor }}>
+            リーグ：
+          </InputLabel>
+          <OutlinedInput type={'text'} autoComplete={'off'} defaultValue={personal.league} {...register('league')} />
         </Box>
         <Box pb={1} display={'flex'} alignItems={'center'}>
-          <InputLabel htmlFor="position-label">ポジション：</InputLabel>
-          <OutlinedInput type={'text'} autoComplete={'off'} defaultValue={personal?.position?.toString()} {...register('position')} />
+          <InputLabel htmlFor="position-label" style={{ color: fontColor }}>
+            ポジション：
+          </InputLabel>
+          <OutlinedInput type={'text'} autoComplete={'off'} defaultValue={personal.position.toString()} {...register('position')} />
         </Box>
         <Box pb={1} display={'flex'} alignItems={'center'}>
-          <InputLabel htmlFor="remarks-label">備考欄</InputLabel>
+          <InputLabel htmlFor="remarks-label" style={{ color: fontColor }}>
+            備考欄：
+          </InputLabel>
           <OutlinedInput type={'textArea'} rows={10} multiline autoComplete={'off'} {...register('remarks')} />
         </Box>
         <Box pl={3} textAlign="left" color={'red'}>

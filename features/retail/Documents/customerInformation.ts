@@ -1,7 +1,6 @@
-import { DocumentContentGenerator, Personal } from '@/types'
+import { DocumentContentGenerator, Personal, Retail } from '@/types'
 
-export const customerInformation = (personal: Personal, email: string, genCellContent: DocumentContentGenerator): any[] => {
-  const retailName = ''
+export const customerInformation = (personal: Personal, retail: Retail, genCellContent: DocumentContentGenerator): any[] => {
   return [
     {
       text: 'お客様情報',
@@ -13,8 +12,8 @@ export const customerInformation = (personal: Personal, email: string, genCellCo
         widths: ['25%', '25%', '25%', '25%'],
         body: [
           [
-            genCellContent('小売店メール', email),
-            genCellContent('小売店名', retailName),
+            genCellContent('小売店メール', retail.email),
+            genCellContent('小売店名', retail.name),
             genCellContent('お客様名', personal?.userName),
             genCellContent('お名前(カナ)', personal?.userNameKana)
           ],

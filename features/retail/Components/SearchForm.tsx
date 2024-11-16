@@ -1,24 +1,24 @@
-import React, { SetStateAction } from 'react'
+import React, { SetStateAction, useContext } from 'react'
 import axios from 'axios'
 import Select from 'react-select'
 import { Box, Button } from '@mui/material'
-import { Brand, BrandOption, RetailShop, SavedData, State } from '@/types'
+import { BrandOption, SavedData, State } from '@/types'
 import { useForm, Controller } from 'react-hook-form'
 import { borderStyle as border } from '@/styles'
 import { ControlledTextField } from '@/components/ControlledTextField'
+import { RetailContext } from '../hooks/useRetailContext'
 
 const GET_DOCUMENT_PATH = '/api/server/getDocument'
 
 type FormValues = { brand: BrandOption; documentId: string }
 
 type Props = {
-  retailShop: RetailShop | null
   disabled: boolean
   setResponse: React.Dispatch<SetStateAction<SavedData<State> | null>>
-  setBrand: React.Dispatch<SetStateAction<Brand | null>>
 }
 
-export const SearchForm: React.FC<Props> = ({ retailShop, disabled, setResponse, setBrand }) => {
+export const SearchForm: React.FC<Props> = ({ disabled, setResponse }) => {
+  const retail = useContext(RetailContext)
   const { handleSubmit, control, register, reset } = useForm<FormValues>({
     defaultValues: {
       brand: { label: '', value: '' },
@@ -58,7 +58,7 @@ export const SearchForm: React.FC<Props> = ({ retailShop, disabled, setResponse,
                 render={({ field }) => (
                   <Select
                     {...field}
-                    options={retailShop ? retailShop.selectableBrands : []}
+                    options={retail ? retail.selectableBrands : []}
                     minMenuHeight={50}
                     isSearchable={false}
                     styles={{
@@ -90,7 +90,7 @@ export const SearchForm: React.FC<Props> = ({ retailShop, disabled, setResponse,
                   variant={'outlined'}
                   style={{ border }}
                   onClick={() => {
-                    reset({ documentId: '' }), setResponse(null), setBrand(null)
+                    reset({ documentId: '' }), setResponse(null)
                   }}
                 >
                   リセット

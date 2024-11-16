@@ -5,7 +5,7 @@ import { priceInformation } from './priceInformation'
 import { baseSettings } from './baseSettings'
 import { colorSettings } from './colorSettings'
 import { embroiderySettings } from './embroiderySettings'
-import { State } from '@/types'
+import { Retail, State } from '@/types'
 
 const genCellContent = (head: string, content: string, alignment?: string, color?: string) => [
   { text: `${head}： `, fontSize: 8 },
@@ -17,14 +17,14 @@ const genCellContent = (head: string, content: string, alignment?: string, color
   }
 ]
 
-export const getPdfDocDefine = (state: State, retail: { email: string }): any => {
+export const getPdfDocDefine = (state: State, retail: Retail): any => {
   const personal = state.personal
   const remarks = personal.remarks
   return {
     content: [
       { text: 'オーダー仕様書', style: { fontSize: 16 } },
       ...drawImages(),
-      ...customerInformation(personal, retail.email, genCellContent),
+      ...customerInformation(personal, retail, genCellContent),
       remarks.length > 0 && customerRemarks(remarks, genCellContent),
       ...priceInformation(state, genCellContent),
       ...baseSettings(state),

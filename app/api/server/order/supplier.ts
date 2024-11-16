@@ -1,15 +1,15 @@
-import { Agency } from '@/types'
+import { Supplier } from '@/types'
 
-const kuritaMainOffice: Agency = {
+const kuritaMainOffice: Supplier = {
   name: 'クリタ33本社',
   email: 'tomoki33kurita@gmail.com',
   brands: ['five']
 }
 
-// const fiveMainOffice: Agency = {
+// const fiveMainOffice: Supplier = {
 //   name: 'FIVE本社',
 //   email: '',
 //   brands: ['five']
 // }
 
-export const agencies = [kuritaMainOffice]
+export const supplierList = [kuritaMainOffice]

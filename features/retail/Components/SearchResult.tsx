@@ -1,14 +1,15 @@
-import { forwardRef, useEffect } from 'react'
+'use client'
+import { forwardRef, useEffect, useState } from 'react'
 import { Alert as MuiAlert, AlertProps, Box, Button } from '@mui/material'
 import { useForm } from 'react-hook-form'
-import { Brand, SavedData, State } from '@/types'
+import { Supplier, Brand, SavedData, State } from '@/types'
 import { PalmSurface } from '@/components/Drawers/PalmSurface'
 import { RearSurface } from '@/components/Drawers/RearSurface'
 import { Prices } from '@/components/Prices'
 import { PersonalContents } from './PersonalContents'
 import { SimulationContents } from './SimulationContents'
 
-import { agencies } from '@/app/api/server/order/agency'
+import { supplierList } from '@/app/api/server/order/supplier'
 import { useSendOrder } from '../hooks/useSendOrder'
 import { initialPersonal } from '../Constants/personal'
 import { drawFiveRearSurface } from '@/features/five/Drawer/canvas/drawFiveRearSurface'
@@ -23,7 +24,7 @@ import { drawGenuineCatcherMittPalmSurface } from '@/features/genuine/Drawer/can
 import { drawGenuineFirstMittRearSurface } from '@/features/genuine/Drawer/canvas/drawGenuineFirstMittRearSurface'
 import { drawGenuineFirstMittPalmSurface } from '@/features/genuine/Drawer/canvas/drawGenuineFirstMittPalmSurface'
 
-const agencyFilter = (brand: Brand) => () => agencies.filter((a) => a.brands && a.brands.includes(brand))
+const supplierFilter = (brand: Brand) => () => supplierList.filter((s) => s.brands && s.brands.includes(brand))
 
 const Alert = forwardRef<HTMLDivElement, AlertProps>(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />
@@ -31,14 +32,14 @@ const Alert = forwardRef<HTMLDivElement, AlertProps>(function Alert(props, ref) 
 
 type Props = {
   response: SavedData<State> | null
-  email: string
 }
 
-export const SearchResult: React.FC<Props> = ({ response, email }) => {
+export const SearchResult: React.FC<Props> = ({ response }) => {
   const personal = response?.state.personal ? response.state.personal : initialPersonal
   const { league, position } = personal
   const state = response?.state ?? ({} as State)
-  const { register } = useForm({
+  const [selectedSupplier, setSelectedSupplier] = useState<Supplier | null>(null)
+  const { register, handleSubmit } = useForm({
     defaultValues: {
       userName: '',
       userNameKana: '',
@@ -82,6 +83,8 @@ export const SearchResult: React.FC<Props> = ({ response, email }) => {
   }, [state, rearSurfaceId, palmSurfaceId])
 
   const { isSendMail, isFailedMail, isProgress, handleOrderMail, onCloseAlert } = useSendOrder()
+  const handleSupplier = (supplier: Supplier) => setSelectedSupplier(supplier)
+
   if (!response) return null
   return (
     <Box p={3} borderTop={'solid 1px #eee'}>
@@ -97,36 +100,40 @@ export const SearchResult: React.FC<Props> = ({ response, email }) => {
         <SimulationContents {...{ state }} />
       </Box>
       <Prices {...{ state }} />
-      <Box mt={1} p={3} border={'solid 1px #bbb'}>
-        <PersonalContents {...{ personal, register }} />
-      </Box>
-      <Box display={'flex'} justifyContent={'center'} p={2}>
-        {/* <Box px={1}>
-          <PdfGenerateBtn {...{ state, email }} personal={watch()} />
-        </Box> */}
-        {agencies.filter(agencyFilter(state.baseModel.brand)).map((agency) => (
-          <Box px={1} key={agency.name}>
-            <Button
-              variant="contained"
-              onClick={() => handleOrderMail(state, agency, response.savedId)}
-              disabled={isProgress}
-              // disabled={isDisabled || !retailNameSearched}
-            >
-              {isProgress ? '送信中' : `${agency.name}`}
-            </Button>
-          </Box>
-        ))}
-        {isSendMail && (
-          <Alert onClose={onCloseAlert} severity="success">
-            送信完了
-          </Alert>
-        )}
-        {isFailedMail && (
-          <Alert onClose={onCloseAlert} severity={'error'}>
-            送信に失敗しました。
-          </Alert>
-        )}
-      </Box>
+      <form
+        onSubmit={handleSubmit((data) => {
+          if (!selectedSupplier) return
+          handleOrderMail({
+            savedData: response,
+            personal: { ...data },
+            supplier: selectedSupplier
+          })
+        })}
+      >
+        <Box mt={1} p={3} border={'solid 1px #bbb'}>
+          <PersonalContents {...{ personal, register }} />
+        </Box>
+        <Box display={'flex'} justifyContent={'center'} p={2}>
+          {supplierList.filter(supplierFilter(state.baseModel.brand)).map((supplier) => (
+            <Box px={1} key={supplier.name}>
+              <Button variant="contained" disabled={isProgress} onClick={() => handleSupplier(supplier)} type="submit">
+                {isProgress ? '送信中' : `${supplier.name}`}
+              </Button>
+            </Box>
+          ))}
+
+          {isSendMail && (
+            <Alert onClose={onCloseAlert} severity="success">
+              送信完了
+            </Alert>
+          )}
+          {isFailedMail && (
+            <Alert onClose={onCloseAlert} severity={'error'}>
+              送信に失敗しました。
+            </Alert>
+          )}
+        </Box>
+      </form>
     </Box>
   )
 }

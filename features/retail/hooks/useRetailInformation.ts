@@ -1,11 +1,11 @@
-import { Brand, RetailShop } from '@/types'
+import { Retail } from '@/types'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 
 const GET_RETAIL_INFORMATION_PATH = '/api/server/retail/information'
 
-export const useRetailInformation = (email: string, brand: Brand | null) => {
-  const [retailShop, setRetailShop] = useState<RetailShop | null>(null)
+export const useRetailInformation = (email: string) => {
+  const [retail, setRetail] = useState<Retail | null>(null)
   useEffect(() => {
     const fetchRetailInformation = async () => {
       if (email === '') return
@@ -14,16 +14,13 @@ export const useRetailInformation = (email: string, brand: Brand | null) => {
           console.log('No selectable brands')
           return
         }
-        setRetailShop(res.data.foundShop)
+        setRetail(res.data.foundShop)
       })
     }
     fetchRetailInformation()
   }, [email])
 
-  const retailName = retailShop ? retailShop.name : '--'
-
   return {
-    retailShop,
-    retailName
+    retail
   }
 }

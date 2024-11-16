@@ -76,10 +76,10 @@ export type SavedData<T> = {
   }
 }
 
-export type Agency = {
+export type Supplier = {
   name: string
   email: string
-  brands?: Brand[]
+  brands: Brand[]
 }
 
 export type DocumentContent = {
@@ -102,10 +102,10 @@ export type BrandOption = {
   label: string
 }
 
-export type RetailShop = {
+export type Retail = {
+  name: string
   email: string
   selectableBrands: BrandOption[]
-  name: string
 }
 
 export type WebParts = {

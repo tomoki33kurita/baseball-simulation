@@ -1,4 +1,4 @@
-import { Agency, State } from '@/types'
+import { Supplier, Personal, SavedData, State } from '@/types'
 import { useContext, useState } from 'react'
 import { japaneseFont } from '@/public/font/vfsFont'
 import { getPdfDocDefine } from '../Documents'
@@ -12,25 +12,31 @@ pdfMake.vfs = japaneseFont
 pdfMake.fonts = { GenYoMin: { normal: 'ipaexg.ttf' } }
 const RETAIL_EMAIL_PATH = '/api/server/mail/retail'
 
+type OrderData<T> = {
+  savedData: SavedData<T>
+  personal: Personal
+  supplier: Supplier
+}
+
 const divideColorSettings = (state: State) => {
   const settings = getColorCells(state)
   const settings1 = settings.filter((x) => !colorCells2Condition.includes(x.partsKey)).map((x) => ({ head: x.head, label: x.label }))
   const settings2 = settings.filter((x) => colorCells2Condition.includes(x.partsKey)).map((x) => ({ head: x.head, label: x.label }))
-
   return { colorSettings1: settings1, colorSettings2: settings2 }
 }
 
-const getPayload = (state: State, pdfBase64: string, agency: Agency, savedId: string, retail: { email: string }) => {
+const getPayload = (pdfBase64: string, orderData: OrderData<State>, retail: { email: string; name: string }) => {
+  const { savedData, supplier, personal } = orderData
+  const state = savedData.state
   const baseSettings = getBaseCells(state)
   const { colorSettings1, colorSettings2 } = divideColorSettings(state)
   const embroideries = state.embroideries.map(switchEmbroideryCells(state))
-  const personal = state.personal
 
   return {
     subject: `【${getBrandName(state.baseModel.brand)} 発注】`,
-    agencyEmail: agency.email,
+    agencyEmail: supplier.email,
     retailEmail: retail.email,
-    savedId,
+    savedId: savedData.savedId,
     imageUrlRear: (document.getElementById('rearSurfaceOnDialog') as HTMLCanvasElement).toDataURL(),
     imageUrlPalm: (document.getElementById('palmSurfaceOnDialog') as HTMLCanvasElement).toDataURL(),
     baseSettings,
@@ -48,13 +54,19 @@ export const useSendOrder = () => {
   const [isFailedMail, setIsFailedMail] = useState(false)
   const retail = useContext(RetailContext)
 
-  const handleOrderMail = async (state: State, agency: Agency, savedId: string) => {
-    if (confirm(`${agency.name}に発注しますか？`)) {
+  const handleOrderMail = async (orderData: OrderData<State>) => {
+    const { savedData, personal, supplier } = orderData
+    if (retail === null) {
+      alert('小売店情報が取得できませんでした。メーカーの担当者様にお問い合わせください。')
+      return
+    }
+    if (confirm(`${supplier.name}に発注しますか？`)) {
       setIsProgress(true)
       try {
-        const docDefine = getPdfDocDefine(state, retail)
+        const state = savedData.state
+        const docDefine = getPdfDocDefine({ ...state, personal }, retail)
         pdfMake.createPdf(docDefine).getBase64((pdfBase64: string) => {
-          const payload = getPayload(state, pdfBase64, agency, savedId, retail) // 変数多すぎ
+          const payload = getPayload(pdfBase64, orderData, retail)
           axios.post(RETAIL_EMAIL_PATH, payload).then((x) => {
             const isSuccess = x.status === 200
             setIsProgress(false)
