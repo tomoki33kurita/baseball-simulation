@@ -25,6 +25,7 @@ export type PartsItem = {
     | 'genuineLabel'
     | 'mouton'
     | 'backStyle'
+    | 'size'
   >
   // value: keyof typeof LEATHER_COLORS_BY_PARTS
 }
@@ -43,7 +44,10 @@ export type GenuineBaseModel = {} & BaseModel
 export type GenuineState = {
   baseModel: GenuineBaseModel
   dominantArm: BaseItem
-  backStyle: BaseItem
+  backStyle: BaseItemWithPrice
+  meshColor: ColorItem
+  size: BaseItemWithPrice // reducerを追加する
+
   fingerGuard: BaseItem
   materialPack: BaseItem
   webParts: BaseItem

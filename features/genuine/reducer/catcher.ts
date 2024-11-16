@@ -34,7 +34,9 @@ import {
   SET_THUMB_INDEX_MIDDLE_RIGHT_COLOR,
   SET_MIDDLE_LEFT_RING_COLOR,
   SET_MIDDLE_LEFT_RING_LITTLE_COLOR,
-  SET_BACK_STYLE
+  SET_BACK_STYLE,
+  SET_MESH_COLOR,
+  SET_SIZE
 } from '@/features/genuine/Constants/action'
 import { GenuineState } from '../types'
 import { Embroidery } from '@/types'
@@ -89,6 +91,8 @@ export const initialState: GenuineState = {
   },
   dominantArm: unselectedState,
   backStyle: unselectedStateWithPrice,
+  meshColor: unselectedColorState,
+  size: unselectedStateWithPrice,
   fingerGuard: unselectedState,
   fingerGuardColor: unselectedColorState,
   materialPack: unselectedState,
@@ -172,6 +176,10 @@ export const reducer = (state: any, action: any) => {
       return { ...state, dominantArm: action.dominantArm }
     case SET_BACK_STYLE:
       return { ...state, backStyle: action.backStyle }
+    case SET_MESH_COLOR:
+      return { ...state, meshColor: action.meshColor }
+    case SET_SIZE:
+      return { ...state, size: action.size }
     case SET_MATERIAL_PACK:
       return { ...state, materialPack: action.materialPack, drawerIndex: 1 }
     case SET_FINGER_GUARD:

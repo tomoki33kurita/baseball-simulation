@@ -33,7 +33,9 @@ import {
   SET_THUMB_COLOR,
   SET_UNDER_WEB_COLOR,
   SET_BOOMERANG_COLOR,
-  SET_BACK_STYLE
+  SET_BACK_STYLE,
+  SET_MESH_COLOR,
+  SET_SIZE
 } from '@/features/genuine/Constants/action'
 import { GenuineState } from '../types'
 import { Embroidery } from '@/types'
@@ -90,6 +92,8 @@ export const initialState: GenuineState = {
   fingerGuard: unselectedState,
   fingerGuardColor: unselectedColorState,
   backStyle: unselectedStateWithPrice,
+  meshColor: unselectedColorState,
+  size: unselectedStateWithPrice,
   materialPack: unselectedState,
   webParts: unselectedColorState,
   parts: { label: '全体', value: 'all' },
@@ -157,6 +161,10 @@ export const reducer = (state: any, action: any) => {
       return { ...state, dominantArm: action.dominantArm }
     case SET_BACK_STYLE:
       return { ...state, backStyle: action.backStyle }
+    case SET_MESH_COLOR:
+      return { ...state, meshColor: action.meshColor }
+    case SET_SIZE:
+      return { ...state, size: action.size }
     case SET_MATERIAL_PACK:
       return { ...state, materialPack: action.materialPack, drawerIndex: 1 }
     case SET_FINGER_GUARD:

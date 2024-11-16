@@ -6,10 +6,27 @@ export const DOMINANT_ARMS = [
 ]
 
 export const BACK_STYLES = [
-  { label: 'ノーマル', value: 'normal' },
-  { label: 'ベルクロ', value: 'velcro' }
+  { label: 'ノーマル', value: 'normal', price: 0 },
+  { label: '王冠スタイル', value: 'crown', price: 0 },
+  { label: 'ノーマルメッシュ', value: 'normalMesh', price: 3300 },
+  { label: '王冠メッシュ', value: 'crownMesh', price: 3300 }
 ]
 
+export const MESH_COLORS = [
+  { label: 'ブラック', value: 'black', color: '#1E1E1E' },
+  { label: 'ホワイト', value: 'white', color: '#000000' },
+  { label: 'ブルー', value: 'blue', color: '#253F86' },
+  { label: 'ネイビー', value: 'navy', color: '#151830' },
+  { label: 'レッド', value: 'red', color: '#CB1527' }
+]
+
+export const SIZES = [
+  { label: '10mm大きく', value: 'large10', price: 3300 },
+  { label: '5mm大きく', value: 'large5', price: 3300 },
+  { label: '基本モデルズバリ', value: 'default', price: 0 },
+  { label: '5mm小さく', value: 'small5', price: 3300 },
+  { label: '10mm小さく', value: 'small10', price: 3300 }
+]
 export const MATERIAL_PACKS = [
   { label: '横とじシングル', value: 'sideSingle' },
   { label: '横とじダブル', value: 'sideDouble' },

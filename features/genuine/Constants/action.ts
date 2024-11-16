@@ -7,8 +7,10 @@ export const SET_WEB_PARTS = 'setWebParts'
 export const SET_LABEL_STAND = 'setLabelStand'
 export const SET_FINGER_GUARD = 'setFingerGuardType'
 export const SET_MATERIAL_PACK = 'setMaterialPack'
+export const SET_SIZE = 'setSize'
 
 // COLOR
+export const SET_MESH_COLOR = 'setMeshColor'
 export const SET_SELECTED_PARTS = 'setSelectedParts'
 export const SET_ALL_LEATHER_COLOR = 'setAllLeatherColor'
 export const SET_LEATHER_COLOR = 'setLeatherColor'
@@ -66,6 +68,8 @@ export const DISPATCHER = {
   welting: SET_WELTING,
   mouton: SET_MOUTON_COLOR,
   labelStand: SET_LABEL_STAND,
+  meshColor: SET_MESH_COLOR,
+  size: SET_SIZE,
 
   // 内野手用グラブここから
   thumbOut: SET_THUMB_OUT_COLOR,

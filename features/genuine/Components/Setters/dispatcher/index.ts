@@ -1,5 +1,5 @@
 import React from 'react'
-import { BACK_STYLES, MATERIAL_PACKS, WEB_PARTS, DOMINANT_ARMS, FINGER_GUARDS } from '@/features/genuine/Constants/base'
+import { BACK_STYLES, MATERIAL_PACKS, WEB_PARTS, DOMINANT_ARMS, FINGER_GUARDS, MESH_COLORS, SIZES } from '@/features/genuine/Constants/base'
 import { objectsFilter } from '@/util/logic'
 import { ResponseDispatch } from '@/features/genuine/types'
 import {
@@ -12,7 +12,9 @@ import {
   SET_WELTING,
   SET_LACE_COLOR,
   SET_MOUTON_COLOR,
-  SET_STITCH_COLOR
+  SET_STITCH_COLOR,
+  SET_MESH_COLOR,
+  SET_SIZE
 } from '@/features/genuine/Constants/action'
 import { BINDINGS, LACES, MOUTON_COLORS, STITCHES, WELTINGS } from '@/features/genuine/Constants/color'
 
@@ -20,6 +22,8 @@ import { BINDINGS, LACES, MOUTON_COLORS, STITCHES, WELTINGS } from '@/features/g
 const dispatchBaseStore = {
   dominantArm: { objects: DOMINANT_ARMS, actionType: SET_DOMINANT_ARM },
   backStyle: { objects: BACK_STYLES, actionType: SET_BACK_STYLE },
+  meshColor: { objects: MESH_COLORS, actionType: SET_MESH_COLOR },
+  size: { objects: SIZES, actionType: SET_SIZE },
   materialPack: { objects: MATERIAL_PACKS, actionType: SET_MATERIAL_PACK },
   fingerGuard: { objects: FINGER_GUARDS, actionType: SET_FINGER_GUARD },
   webParts: { objects: WEB_PARTS, actionType: SET_WEB_PARTS },

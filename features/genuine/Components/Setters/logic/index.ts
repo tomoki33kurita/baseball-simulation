@@ -68,6 +68,13 @@ export const getSelectableParts = (drawerIndex: DrawerIndex): PartsItem[] => {
   return drawerIndex === 1 ? PALM_PARTS : BACK_PARTS
 }
 
+export const getGenuineBackStyle = (state: GenuineState) => {
+  const isMesh = ['normalMesh', 'crownMesh'].includes(state.backStyle.value)
+  return {
+    isMesh
+  }
+}
+
 export const characterCheckHelper = (embroidery: Embroidery) => {
   const contentStr = embroidery.content
   const isHalfWidthChar = isHalfWidthCharChecker(contentStr)

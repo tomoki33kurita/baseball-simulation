@@ -30,7 +30,9 @@ import {
   SET_BINDING_COLOR,
   SET_LABEL_STAND,
   SET_FINGER_GUARD_COLOR,
-  SET_BACK_STYLE
+  SET_BACK_STYLE,
+  SET_MESH_COLOR,
+  SET_SIZE
 } from '@/features/genuine/Constants/action'
 import { GenuineState } from '../types'
 
@@ -86,6 +88,8 @@ export const initialState: GenuineState = {
   fingerGuard: unselectedState,
   fingerGuardColor: unselectedColorState,
   backStyle: unselectedStateWithPrice,
+  meshColor: unselectedColorState,
+  size: unselectedStateWithPrice,
   materialPack: unselectedState,
   webParts: unselectedColorState,
   parts: { label: '全体', value: 'all' },
@@ -163,6 +167,10 @@ export const reducer = (state: any, action: any) => {
       return { ...state, dominantArm: action.dominantArm }
     case SET_BACK_STYLE:
       return { ...state, backStyle: action.backStyle }
+    case SET_MESH_COLOR:
+      return { ...state, meshColor: action.meshColor }
+    case SET_SIZE:
+      return { ...state, size: action.size }
     case SET_MATERIAL_PACK:
       return { ...state, materialPack: action.materialPack, drawerIndex: 1 }
     case SET_FINGER_GUARD:

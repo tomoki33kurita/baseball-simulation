@@ -1,4 +1,5 @@
 import { LeatherColorsByPartsOfGenuine, PartsItem } from '../types'
+import { MESH_COLORS } from './base'
 
 export const LEATHER_COLORS = [
   { label: 'ブラック', value: 'black', color: '#1E1E1E' },
@@ -148,6 +149,7 @@ export const LEATHER_COLORS_BY_PARTS: LeatherColorsByPartsOfGenuine = {
   all: LEATHER_COLORS,
   lace: LACES,
   binding: BINDINGS,
+  meshColor: MESH_COLORS,
   stitch: STITCHES,
   welting: WELTINGS,
   palm: LEATHER_COLORS,
