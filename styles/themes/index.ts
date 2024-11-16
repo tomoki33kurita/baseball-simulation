@@ -1,10 +1,5 @@
 import { createTheme } from '@mui/material/styles'
 
-// export const FIVE_COLOR = {
-//   primary: '#284127',
-//   secondary: '#ffa733'
-// }
-
 // commonっていう命名嫌いだけど、他に思いつかないのでこれで進める // 2024/11/02
 export const commonTheme = createTheme({
   palette: {

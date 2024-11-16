@@ -2,7 +2,7 @@
 
 import { useReducer } from 'react'
 import { initialState, reducer } from '@/features/genuine/reducer/catcher'
-import { genuineTheme } from '@/styles/themes/genuine'
+import { genuineTheme } from '@/features/genuine/Styles'
 import { GenuinePageTemplates } from '@/features/genuine/Components/PageTemplates'
 import { useDrawGenuineCatcherMittRearSurface } from '@/features/genuine/Drawer/hooks/useDrawGenuineCatcherMittRearSurface'
 import { useDrawGenuineCatcherMittPalmSurface } from '@/features/genuine/Drawer/hooks/useDrawGenuineCatcherMittPalmSurface'

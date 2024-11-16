@@ -1,21 +1,18 @@
 import { createTheme } from '@mui/material/styles'
 
-// export const FIVE_COLOR = {
-//   primary: '#284127',
-//   secondary: '#ffa733'
-// }
+export const GENUINE_COLOR = {
+  primary: '#080704',
+  secondary: '#f5bd05'
+}
 
 export const genuineTheme = createTheme({
   palette: {
     primary: {
-      main: '#080704' // プライマリカラー
+      main: GENUINE_COLOR.primary // プライマリカラー
     },
     secondary: {
-      main: '#f5bd05' // セカンダリカラー
+      main: GENUINE_COLOR.secondary // セカンダリカラー
     },
-    // background: {
-    //   default: '#487e4c' // 背景のデフォルトカラー
-    // },
     text: {
       primary: '#000000', // テキストのプライマリカラー
       secondary: '#ffffff' // テキストのセカンダリカラー

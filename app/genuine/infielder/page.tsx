@@ -2,7 +2,7 @@
 
 import { useReducer } from 'react'
 import { initialState, reducer } from '@/features/genuine/reducer/infielder'
-import { genuineTheme } from '@/styles/themes/genuine'
+import { genuineTheme } from '@/features/genuine/Styles'
 import { GenuinePageTemplates } from '@/features/genuine/Components/PageTemplates'
 import { useDrawGenuineGloveRearSurface } from '@/features/genuine/Drawer/hooks/useDrawGenuineGloveRearSurface'
 import { useDrawGenuineGlovePalmSurface } from '@/features/genuine/Drawer/hooks/useDrawGenuineGlovePalmSurface'

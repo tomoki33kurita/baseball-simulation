@@ -1,11 +1,8 @@
 'use client'
+import { FIVE_COLOR } from '@/features/five/Styles'
 import { Box, Button, Grid, useMediaQuery } from '@mui/material'
 import Image from 'next/image'
 
-const FIVE_COLOR = {
-  primary: '#284127',
-  secondary: '#ffa733'
-}
 const color = FIVE_COLOR.primary
 const border = `solid 2px ${FIVE_COLOR.primary}`
 

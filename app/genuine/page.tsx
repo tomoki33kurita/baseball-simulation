@@ -1,13 +1,10 @@
 'use client'
+import { GENUINE_COLOR } from '@/features/genuine/Styles'
 import { Box, Button, Grid, useMediaQuery } from '@mui/material'
 import Image from 'next/image'
 
-const FIVE_COLOR = {
-  primary: '#284127',
-  secondary: '#ffa733'
-}
-const color = FIVE_COLOR.primary
-const border = `solid 2px ${FIVE_COLOR.primary}`
+const color = GENUINE_COLOR.primary
+const border = `solid 2px ${GENUINE_COLOR.primary}`
 
 const Brands = () => {
   const isMobile = useMediaQuery('(max-width: 430px)')
@@ -49,14 +46,14 @@ const Brands = () => {
           </Grid>
           <Grid item width={isMobile ? '100%' : 'unset'}>
             <Box m={2}>
-              <Button size={'large'} variant={'outlined'} href={'/genuine/first-baseman'} fullWidth={isMobile}>
+              <Button size={'large'} variant={'outlined'} href={'/genuine/first-baseman'} style={{ color, border }} fullWidth={isMobile}>
                 一塁手用
               </Button>
             </Box>
-          </Grid>{' '}
+          </Grid>
           <Grid item width={isMobile ? '100%' : 'unset'}>
             <Box m={2}>
-              <Button size={'large'} variant={'outlined'} href={'/genuine/catcher'} fullWidth={isMobile}>
+              <Button size={'large'} variant={'outlined'} href={'/genuine/catcher'} style={{ color, border }} fullWidth={isMobile}>
                 捕手用
               </Button>
             </Box>
