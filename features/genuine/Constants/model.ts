@@ -3,126 +3,177 @@ import { GenuineBaseModel } from '../types'
 const imageBaseUrl = '/genuine/baseModels'
 const gloveImageWidth = 240
 const gloveImageHeight = 200
-const basicColors = {
-  leather: { label: 'ブラック', value: 'black', color: '#1E1E1E' },
-  stitch: { label: 'ブラック', value: 'black', color: '#0a0a0a' },
-  lace: { label: 'タン', value: 'tan', color: '#C19445' },
-  binding: { label: 'ブラック', value: 'black', color: '#1E1E1E' },
-  welting: { label: '切りハミ(ホワイト)', value: 'kirihamiWhite', color: '#fff' },
-  genuineLabel: { label: 'No.01', value: '1' }
-}
+const SEQUENTIAL_ROLL = 'sequentialRoll'
+const REVERSE_ROLL = 'reverseRoll'
 
 export const models: GenuineBaseModel[] = [
   {
-    productNumber: 'F101',
+    productNumber: 'MIU-T1',
     position: 'pitcher',
     size: {
       value: 30.0,
       unit: 'cm'
     },
-    webParts: 'p01',
-    description: '',
-    isFingerCrotch: true,
+    webParts: '',
+    description: '縦、横にもどちらにも使用可能なモデル。投手用としてフィールディングも意識した万能モデル。',
+    isFingerCrotch: true, //要確認 ?
     isUBack: false,
     brand: 'genuine',
-    bankLaceDirection: 'sequentialRoll',
+    bankLaceDirection: SEQUENTIAL_ROLL,
     image: {
-      url: `${imageBaseUrl}/f101.jpg`,
+      url: `${imageBaseUrl}/mui-t1.jpg`,
       width: gloveImageWidth,
       height: gloveImageHeight
     }
   },
   {
-    productNumber: 'F501',
+    productNumber: 'MIU-T2',
+    position: 'pitcher',
+    size: {
+      value: 30.0,
+      unit: 'cm'
+    },
+    webParts: '',
+    description: '',
+    isFingerCrotch: true, //要確認 ?
+    isUBack: false,
+    brand: 'genuine',
+    bankLaceDirection: SEQUENTIAL_ROLL,
+    image: {
+      url: `${imageBaseUrl}/mui-t2.jpg`,
+      width: gloveImageWidth,
+      height: gloveImageHeight
+    }
+  },
+  {
+    productNumber: 'MIU-T4',
+    position: 'pitcher',
+    size: {
+      value: 29.0,
+      unit: 'cm'
+    },
+    webParts: '',
+    description: 'ライナーバックスタイルの投手用',
+    isFingerCrotch: false,
+    isUBack: false,
+    brand: 'genuine',
+    bankLaceDirection: SEQUENTIAL_ROLL,
+    image: {
+      url: `${imageBaseUrl}/mui-t4.jpg`,
+      width: gloveImageWidth,
+      height: gloveImageHeight
+    }
+  },
+  {
+    productNumber: 'MIU-S4',
     position: 'infielder',
     size: {
       value: 28.5,
       unit: 'cm'
     },
-    webParts: 'in01',
-    description: '',
-    isFingerCrotch: true,
+    webParts: '',
+    description: '内野手用の中で一番浅くコンパクトなタイプ',
+    isFingerCrotch: false,
     isUBack: false,
     brand: 'genuine',
-    bankLaceDirection: 'reverseRoll',
+    bankLaceDirection: REVERSE_ROLL,
     image: {
-      url: `${imageBaseUrl}/f501.jpg`,
+      url: `${imageBaseUrl}/miu-s4.jpg`,
       width: gloveImageWidth,
       height: gloveImageHeight
     }
   },
   {
-    productNumber: 'F601',
+    productNumber: 'MIU-S5',
     position: 'infielder',
     size: {
       value: 29.0,
       unit: 'cm'
     },
-    webParts: 'in03',
-    description: '',
+    webParts: '',
+    description: '指股を無くしMIU-S7よりも浅く設計。つかみ取り当て取りどちらにも対応できるタイプ。',
     isFingerCrotch: false,
     isUBack: false,
     brand: 'genuine',
-    bankLaceDirection: 'sequentialRoll',
+    bankLaceDirection: REVERSE_ROLL,
     image: {
-      url: `${imageBaseUrl}/f601.jpg`,
+      url: `${imageBaseUrl}/miu-s5.jpg`,
       width: gloveImageWidth,
       height: gloveImageHeight
     }
   },
   {
-    productNumber: 'F801',
+    productNumber: 'MIU-S7',
+    position: 'infielder',
+    size: {
+      value: 29.5,
+      unit: 'cm'
+    },
+    webParts: '',
+    description: '指股を設計することによりMIU-S5よりも深くつかみ取りしやすいタイプ。',
+    isFingerCrotch: true,
+    isUBack: false,
+    brand: 'genuine',
+    bankLaceDirection: SEQUENTIAL_ROLL,
+    image: {
+      url: `${imageBaseUrl}/miu-s7.jpg`,
+      width: gloveImageWidth,
+      height: gloveImageHeight
+    }
+  },
+  {
+    productNumber: 'MIU-M8',
     position: 'outfielder',
     size: {
-      value: 31.5,
+      value: 33.0,
       unit: 'cm'
     },
-    webParts: 'ou01',
-    description: '',
+    webParts: '',
+    description: '深めのポケットでがっちり握れる仕様',
     isFingerCrotch: true,
     isUBack: false,
     brand: 'genuine',
-    bankLaceDirection: 'reverseRoll',
+    bankLaceDirection: SEQUENTIAL_ROLL,
     image: {
-      url: `${imageBaseUrl}/f801.jpg`,
+      url: `${imageBaseUrl}miu-m8/.jpg`,
       width: gloveImageWidth,
       height: gloveImageHeight
     }
   },
   {
-    productNumber: '2',
-    position: 'catcher',
+    productNumber: 'MIU-M9',
+    position: 'outfielder',
     size: {
-      value: 31.5,
+      value: 33.0,
       unit: 'cm'
     },
-    webParts: 'ou01',
-    description: '',
+    webParts: '',
+    description: '球際を意識し指先まで感覚の通るがっちりと掴めるタイプで設計。',
     isFingerCrotch: true,
     isUBack: false,
     brand: 'genuine',
-    bankLaceDirection: 'reverseRoll',
+    bankLaceDirection: SEQUENTIAL_ROLL,
     image: {
-      url: `${imageBaseUrl}/2.jpg`,
+      url: `${imageBaseUrl}miu-m9/.jpg`,
       width: gloveImageWidth,
       height: gloveImageHeight
     }
   },
   {
-    productNumber: '3',
+    productNumber: 'MIU-N10',
     position: 'firstBaseman',
     size: {
       value: 31.5,
       unit: 'cm'
     },
-    webParts: 'ou01',
+    webParts: '',
     description: '',
     isFingerCrotch: true,
     isUBack: false,
     brand: 'genuine',
-    bankLaceDirection: 'reverseRoll',
+    bankLaceDirection: SEQUENTIAL_ROLL,
     image: {
-      url: `${imageBaseUrl}/3.jpg`,
+      url: `${imageBaseUrl}/miu-n10.jpg`,
       width: gloveImageWidth,
       height: gloveImageHeight
     }

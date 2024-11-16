@@ -2,15 +2,19 @@
 
 import { Prices } from '@/components/Prices'
 import { Box } from '@mui/material'
-import { GenuineState } from '../../types'
-import { useDrawGenuineGloveRearSurface } from '../../Drawer/hooks/useDrawGenuineGloveRearSurface'
-import { useDrawGenuineGlovePalmSurface } from '../../Drawer/hooks/useDrawGenuineGlovePalmSurface'
+import { GenuineState } from '@/features/genuine/types'
+import { useDrawGenuineGloveRearSurface } from '@/features/genuine/Drawer/hooks/glove/useDrawGenuineGloveRearSurface'
+import { useDrawGenuineGlovePalmSurface } from '@/features/genuine/Drawer/hooks/glove/useDrawGenuineGlovePalmSurface'
 import { RearSurface } from '@/components/Drawers/RearSurface'
 import { PalmSurface } from '@/components/Drawers/PalmSurface'
 import { Position } from '@/types'
 import { getGenuineBaseCells } from './base'
 import { getGenuineColorCells } from './color'
 import { SimulationContent } from '@/components/SimulationContent'
+import { useDrawGenuineCatcherMittPalmSurface } from '@/features/genuine/Drawer/hooks/catcherMitt/useDrawGenuineCatcherMittPalmSurface'
+import { useDrawGenuineCatcherMittRearSurface } from '@/features/genuine/Drawer/hooks/catcherMitt/useDrawGenuineCatcherMittRearSurface'
+import { useDrawGenuineFirstMittRearSurface } from '@/features/genuine/Drawer/hooks/firstMitt/useDrawGenuineFIrstMittRearSurface'
+import { useDrawGenuineFirstMittPalmSurface } from '@/features/genuine/Drawer/hooks/firstMitt/useDrawGenuineFIrstMittPalmSurface'
 
 type Props = {
   state: GenuineState
@@ -19,9 +23,13 @@ type Props = {
 
 export const GenuineConfirmContents: React.FC<Props> = ({ state, position }) => {
   const rearSurfaceId = 'rearSurfaceOnDialog'
-  useDrawGenuineGloveRearSurface(rearSurfaceId, state)
   const palmSurfaceId = 'palmSurfaceOnDialog'
+  useDrawGenuineGloveRearSurface(rearSurfaceId, state)
   useDrawGenuineGlovePalmSurface(palmSurfaceId, state)
+  useDrawGenuineCatcherMittRearSurface(rearSurfaceId, state)
+  useDrawGenuineCatcherMittPalmSurface(palmSurfaceId, state)
+  useDrawGenuineFirstMittRearSurface(rearSurfaceId, state)
+  useDrawGenuineFirstMittPalmSurface(palmSurfaceId, state)
 
   const basePrice = state.orderType.price // 今はFIVEのことだけ想定
   const baseCells = getGenuineBaseCells(state)
