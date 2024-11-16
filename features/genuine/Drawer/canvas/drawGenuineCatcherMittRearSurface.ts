@@ -1,14 +1,14 @@
 import { GenuineState } from '../../types'
 import { canvasResetter } from './canvasResetter'
-import { backStyleOfGloveBackDrawer } from './rightThrow/glove/back/backStyles'
+import { backStyleDrawer } from './rightThrow/catcherMitt/back/backStyleDrawer'
+import { catchFaceDrawer } from './rightThrow/catcherMitt/back/catchFaceDrawer'
+// import { fingerEmbroideryDrawer } from './rightThrow/catcherMitt/back/fingerEmbroideryDrawer'
+import { laceDrawer } from './rightThrow/catcherMitt/back/lace'
+import { liningDrawer } from './rightThrow/catcherMitt/back/liningDrawer'
+import { littleHook } from './rightThrow/catcherMitt/back/littleHook'
+import { thumbHook } from './rightThrow/catcherMitt/back/thumbHook'
+import { webDrawer } from './rightThrow/catcherMitt/back/webDrawer'
 import { fingerGuardDrawer } from './rightThrow/glove/back/fingerCoverOrPad/fingerGuardDrawer'
-import { littleHook } from './rightThrow/glove/back/fingerHooks/littleHook'
-import { thumbHook } from './rightThrow/glove/back/fingerHooks/thumbHook'
-import { fiveLabel } from './rightThrow/glove/back/label'
-import { lace } from './rightThrow/glove/back/lace'
-import { laceOfWristBeltCrossDrawer } from './rightThrow/glove/back/lace/laceOfWristBeltFix'
-import { lining } from './rightThrow/glove/back/lining'
-import { webOfGloveBackDrawer } from './rightThrow/glove/back/web/webOfGloveBackDrawer'
 
 export const drawGenuineCatcherMittRearSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
   if (!ctx) return
@@ -20,18 +20,14 @@ export const drawGenuineCatcherMittRearSurface = (ctx: CanvasRenderingContext2D 
   ctx.strokeStyle = '#383838'
   ctx.fillStyle = '#383838'
   ctx.strokeText('型番：' + baseModel.productNumber, 50, 70)
-
-  const webColor = state.web.color
-  const laceColor = state.lace.color
-  const stitchColor = state.stitch.color
-  lining(ctx, state.linings.color) // 裏革
-  backStyleOfGloveBackDrawer(ctx, state) // バックスタイルの描画(ハミダシ,親指刺繍含)
-  fingerGuardDrawer(ctx, state) // 指カバー・パッド
-  thumbHook(ctx, state.thumbHook.color, 110, -310, 15) // 先端 // 親指掛け紐_上
-  webOfGloveBackDrawer(ctx, state, webColor, laceColor, stitchColor)
-  lace(ctx, laceColor) // 革紐
-  laceOfWristBeltCrossDrawer(ctx, laceColor)
-  fiveLabel(ctx, state, 20, 38, 0, 0.95) // ラベル描画
-  littleHook(ctx, state.littleHook.color, 25, 240, -10, 0.7) // 小指掛け紐
-  thumbHook(ctx, state.thumbHook.color, -14, 30, 0) //手元
+  canvasResetter(ctx)
+  liningDrawer(ctx, state) // 裏革
+  backStyleDrawer(ctx, state) // バックスタイル
+  catchFaceDrawer(ctx, state.palm.color, state.stitch.color, state.baseModel.productNumber) // 捕球面側
+  fingerGuardDrawer(ctx, state) // 指カバー・指当て
+  // fingerEmbroideryDrawer(ctx, state.embroideries) // 親指、小指の刺繍
+  webDrawer(ctx, state) // ウェブ
+  laceDrawer(ctx, state.lace.color) // 革紐
+  thumbHook(ctx, state.thumbHook.color) // かけ紐
+  littleHook(ctx, state.littleHook.color) // かけ紐
 }

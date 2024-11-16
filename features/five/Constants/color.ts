@@ -1,4 +1,4 @@
-import { LeatherColorsByParts, PartsItem } from '../types'
+import { LeatherColorsByPartsOFFive, PartsItem } from '../types'
 
 export const LEATHER_COLORS = [
   { label: 'ブラック', value: 'black', color: '#1E1E1E' },
@@ -146,7 +146,7 @@ export const BACK_PARTS: PartsItem[] = [...commonPartsObjs, ...backGloveObjs, { 
 
 export const PARTS = [...commonPartsObjs, ...PALM_PARTS, ...BACK_PARTS]
 
-export const LEATHER_COLORS_BY_PARTS: LeatherColorsByParts = {
+export const LEATHER_COLORS_BY_PARTS: LeatherColorsByPartsOFFive = {
   all: LEATHER_COLORS,
   lace: LACES,
   binding: BINDINGS,

@@ -1,50 +1,38 @@
 import { canvasResetter } from './canvasResetter'
-import { listLining } from './rightThrow/glove/front/listLining'
-import { thumbBackOut, thumbBackWebSide } from './rightThrow/glove/front/back/thumbFinger'
-import { palm } from './rightThrow/glove/front/catchFace'
-import { indexBackMiddleSide, indexBackWebSide } from './rightThrow/glove/front/back/indexFinger'
-import { middleBackIndexSide, middleBackRingSide } from './rightThrow/glove/front/back/middleFinger'
-import { ringBackLittleSide } from './rightThrow/glove/front/back/ringFinger'
-import { littleBackOut, littleBackRingSide } from './rightThrow/glove/front/back/littleFinger'
-import { welting } from './rightThrow/glove/front/welting'
-import { bindings } from './rightThrow/glove/front/bindings'
-import { rightLaceOfNetWebDrawer, webOfGloveFrontDrawer } from './rightThrow/glove/front/web/webOfGloveFrontDrawer'
-import { lace } from './rightThrow/glove/front/lace'
-import { backLaceDrawerOfFront } from './rightThrow/glove/front/lace/backLace'
 import { genuineEngravedOfPalm } from './rightThrow/glove/front/engraving'
 import { GenuineState } from '../../types'
+import { laceOfKnots } from './rightThrow/catcherMitt/front/lace/knots'
+import { laceOfBackOfAroundWebDrawer } from './rightThrow/catcherMitt/front/lace/aroundWeb'
+import { palmDrawer } from './rightThrow/catcherMitt/front/palm'
+import { thumbMachi } from './rightThrow/catcherMitt/front/thumbMachi'
+import { littleMachi } from './rightThrow/catcherMitt/front/littleMachi'
+import { edgeDrawer } from './rightThrow/catcherMitt/front/binding'
+import { stitch } from './rightThrow/catcherMitt/front/stitch'
+import { laceDrawer } from './rightThrow/catcherMitt/front/lace'
+import { webDrawer } from './rightThrow/catcherMitt/front/web'
 
 export const drawGenuineCatcherMittPalmSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
   if (!ctx) return
 
   const baseModel = state.baseModel
-  const position = baseModel.position
-  // リセット
-  canvasResetter(ctx)
+  canvasResetter(ctx) // リセット
   ctx.font = '40px serif'
   ctx.strokeStyle = '#383838'
   ctx.fillStyle = '#383838'
   ctx.strokeText('型番：' + baseModel.productNumber, 50, 70)
 
-  const laceColor = state.lace.color
-  const stitchColor = state.stitch.color
   const palmState = state.palm
-  listLining(ctx, state.linings.color) // 裏革
-  backLaceDrawerOfFront(ctx, laceColor, position) // 背面の紐
-  webOfGloveFrontDrawer(ctx, state, state.web.color, laceColor, stitchColor) // ウェブの描画
-  palm(ctx, palmState.color) // 捕球面
-  thumbBackOut(ctx, state.thumbOut.color) // 親指背面＿外側
-  thumbBackWebSide(ctx, state.thumbWeb.color) // 親指背面＿ウェブ側
-  indexBackWebSide(ctx, state.indexWeb.color) // 人差し指背面＿ウェブ側
-  indexBackMiddleSide(ctx, state.indexMiddle.color) // 人差し指背面＿中指側
-  middleBackIndexSide(ctx, state.middleIndex.color) // 中指背面＿人差し指側
-  middleBackRingSide(ctx, state.middleRing.color) // 中指背面＿薬指側
-  ringBackLittleSide(ctx, state.ringLittle.color) // 薬指背面＿小指側
-  littleBackRingSide(ctx, state.littleRing.color) // 小指背面＿薬指側
-  littleBackOut(ctx, state.littleOut.color) // 小指背面＿外側
-  welting(ctx, state.welting.color, baseModel.isFingerCrotch, palmState.color) // ハミダシ
-  bindings(ctx, state.binding.color, laceColor, stitchColor, baseModel.bankLaceDirection) // ヘリ革
-  rightLaceOfNetWebDrawer(ctx, state) // ネットウェブのみの革紐
-  lace(ctx, laceColor, state) // 革紐
+  laceOfKnots(ctx, state.lace.color, 0, 0)
+  laceOfBackOfAroundWebDrawer(ctx, state)
+  webDrawer(ctx, state)
+  palmDrawer(ctx, state)
+
+  thumbMachi(ctx, state.thumbMachi.color)
+  littleMachi(ctx, state.littleMachi.color)
+
+  edgeDrawer(ctx, state)
+  stitch(ctx, state.stitch.color)
+  laceDrawer(ctx, state)
+
   genuineEngravedOfPalm(ctx, palmState, 0, 0) // メーカー捕球面の刻印
 }

@@ -30,8 +30,14 @@ import {
   SET_ORDER_TYPE,
   SET_BINDING_COLOR,
   SET_LABEL_STAND,
-  SET_FINGER_GUARD_COLOR
+  SET_FINGER_GUARD_COLOR,
+  SET_FINGER_STAND_COLOR,
+  SET_THUMB_INDEX_MIDDLE_RIGHT_COLOR,
+  SET_MIDDLE_LEFT_RING_COLOR,
+  SET_MIDDLE_LEFT_RING_LITTLE_COLOR
 } from '@/features/genuine/Constants/action'
+import { GenuineState } from '../types'
+import { Embroidery } from '@/types'
 
 const initialPersonalState = {
   userName: '',
@@ -51,22 +57,20 @@ const unselectedColorState = {
   color: '#fff'
 }
 
-const initialEmbroideryState = {
+const initialEmbroideryState: Embroidery = {
   id: 0,
   typeFace: { label: '', value: '' },
   position: { label: '', value: '' },
-  color: { label: '未選択', value: 'unselected', color: '' },
-  shadowColor: { label: '未選択', value: 'unselected' },
-  edgeColor: { label: '未選択', value: 'unselected' },
+  color: unselectedColorState,
+  shadowColor: unselectedColorState,
+  edgeColor: unselectedColorState,
   content: ''
 }
 
-export const initialState = {
+export const initialState: GenuineState = {
   baseModel: {
     productNumber: '',
-    position: '',
-    imageUrl: '',
-    dominantArm: 'unselected',
+    position: 'catcher',
     size: {
       unit: 'cm',
       value: 0
@@ -113,7 +117,16 @@ export const initialState = {
   ringLittle: unselectedColorState,
   littleRing: unselectedColorState,
   littleOut: unselectedColorState,
-
+  thumb: unselectedColorState, // first baseman
+  boomerang: unselectedColorState, // first baseman
+  underWeb: unselectedColorState, // first baseman
+  fingerStand: unselectedColorState, // catcher
+  thumbIndexMiddleRight: unselectedColorState, // catcher
+  middleLeftRing: unselectedColorState, // catcher
+  middleLeftRingLittle: unselectedColorState, // catcher
+  thumbMachi: unselectedColorState, // catcher
+  littleMachi: unselectedColorState, // catcher
+  genuineLabel: unselectedColorState,
   embroideries: [initialEmbroideryState],
   personal: initialPersonalState,
   drawerIndex: 0
@@ -146,7 +159,12 @@ export const reducer = (state: any, action: any) => {
         ringLittle: action.all,
         littleRing: action.all,
         littleOut: action.all,
-        labelStand: action.all
+        fingerStand: action.all,
+        thumbIndexMiddleRight: action.all,
+        middleLeftRight: action.all,
+        middleLeftRingLittle: action.all,
+        thumbMachi: action.all,
+        littleMachi: action.all
       }
     case SET_BASE_MODEL:
       return { ...state, baseModel: action.baseModel }
@@ -217,6 +235,15 @@ export const reducer = (state: any, action: any) => {
       return { ...state, littleHook: action.littleHook }
     case SET_FINGER_GUARD_COLOR:
       return { ...state, fingerGuardColor: action.fingerGuardColor, drawerIndex: 0 }
+    // catchersMitt
+    case SET_FINGER_STAND_COLOR:
+      return { ...state, fingerStand: action.fingerStand }
+    case SET_THUMB_INDEX_MIDDLE_RIGHT_COLOR:
+      return { ...state, thumbIndexMiddleRight: action.thumbIndexMiddleRight }
+    case SET_MIDDLE_LEFT_RING_COLOR:
+      return { ...state, middleLeftRing: action.middleLeftRing }
+    case SET_MIDDLE_LEFT_RING_LITTLE_COLOR:
+      return { ...state, middleLeftRingLittle: action.middleLeftRingLittle }
     case SET_PERSONAL:
       return { ...state, personal: action.personal }
     case SET_DRAWER_INDEX:

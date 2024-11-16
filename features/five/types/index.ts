@@ -33,7 +33,7 @@ export type PartsItem = {
 
 export type PartsKey = PartsItem['value']
 
-export type LeatherColorsByParts = Record<PartsKey, typeof LEATHER_COLORS | typeof LACES | typeof BINDINGS | typeof STITCHES | typeof WELTINGS>
+export type LeatherColorsByPartsOFFive = Record<PartsKey, typeof LEATHER_COLORS | typeof LACES | typeof BINDINGS | typeof STITCHES | typeof WELTINGS>
 
 export type DrawerIndex = 0 | 1
 

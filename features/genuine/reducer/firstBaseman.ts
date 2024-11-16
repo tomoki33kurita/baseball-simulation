@@ -37,7 +37,6 @@ import {
 } from '@/features/genuine/Constants/action'
 import { GenuineState } from '../types'
 import { Embroidery } from '@/types'
-import { boomerang } from '../Drawer/canvas/rightThrow/firstMitt/back/boomerang'
 
 const initialPersonalState = {
   userName: '',
@@ -121,6 +120,12 @@ export const initialState: GenuineState = {
   genuineLabel: unselectedColorState,
   boomerang: unselectedColorState,
   underWeb: unselectedColorState,
+  fingerStand: unselectedColorState,
+  thumbIndexMiddleRight: unselectedColorState,
+  middleLeftRing: unselectedColorState,
+  middleLeftRingLittle: unselectedColorState,
+  thumbMachi: unselectedColorState,
+  littleMachi: unselectedColorState,
   embroideries: [initialEmbroideryState],
   personal: initialPersonalState,
   drawerIndex: 0

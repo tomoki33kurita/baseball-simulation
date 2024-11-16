@@ -23,7 +23,7 @@ export const genuineEngravedOfPalm = (ctx: CanvasRenderingContext2D, palm: Color
   ctx.strokeStyle = isBright ? '#eee' : '#6d6d6d'
   ctx.beginPath()
   ctx.font = '16px serif'
-  ctx.strokeText(`Grab the Future`, 420 + x, 455 + y)
+  ctx.strokeText(`これはGenuine`, 420 + x, 455 + y)
   ctx.stroke()
   ctx.closePath()
 }

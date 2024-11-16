@@ -38,6 +38,12 @@ export const SET_LITTLE_OUT_COLOR = 'littleOut'
 export const SET_THUMB_COLOR = 'setThumbColor'
 export const SET_BOOMERANG_COLOR = 'setBoomerangColor'
 export const SET_UNDER_WEB_COLOR = 'setUnderWebColor'
+export const SET_FINGER_STAND_COLOR = 'setFingerStandColor'
+export const SET_THUMB_INDEX_MIDDLE_RIGHT_COLOR = 'setThumbIndexMiddleRight'
+export const SET_MIDDLE_LEFT_RING_COLOR = 'setMiddleLeftRing'
+export const SET_MIDDLE_LEFT_RING_LITTLE_COLOR = 'setMiddleLeftRingLittle'
+export const SET_THUMB_MACHI_COLOR = 'setThumbMachiColor'
+export const SET_LITTLE_MACHI_COLOR = 'setLittleMachiColor'
 
 // これはカラーだけに関するconstantsなので、別ファイルにあるべき
 export const DISPATCHER = {
@@ -76,5 +82,13 @@ export const DISPATCHER = {
   // 一塁手用ココカラ
   thumb: SET_THUMB_COLOR,
   boomerang: SET_BOOMERANG_COLOR,
-  underWeb: SET_UNDER_WEB_COLOR
+  underWeb: SET_UNDER_WEB_COLOR,
+
+  // catcher
+  fingerStand: SET_FINGER_STAND_COLOR,
+  thumbIndexMiddleRight: SET_THUMB_INDEX_MIDDLE_RIGHT_COLOR,
+  middleLeftRing: SET_MIDDLE_LEFT_RING_COLOR,
+  middleLeftRingLittle: SET_MIDDLE_LEFT_RING_LITTLE_COLOR,
+  thumbMachi: SET_THUMB_MACHI_COLOR,
+  littleMachi: SET_LITTLE_MACHI_COLOR
 }

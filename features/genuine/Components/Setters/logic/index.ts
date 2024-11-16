@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react'
 import { useDebounce } from 'use-debounce'
 import { BaseItem, Embroidery, EmbroideryKey, State } from '@/types'
-import { DrawerIndex, PartsItem, PartsKey } from '@/features/genuine/types'
+import { DrawerIndex, GenuineState, PartsItem, PartsKey } from '@/features/genuine/types'
 import { BACK_PARTS, LEATHER_COLORS_BY_PARTS, PALM_PARTS } from '@/features/genuine/Constants/color'
 import { EMBROIDERY_POSITIONS, EMBROIDERY_ITEMS, SHADOW_EDGE_COLORS, TYPE_FACES } from '@/features/genuine/Constants/embroidery'
 import { isHalfWidthCharChecker } from '@/features/genuine/Drawer/canvas/back/useCanvasEmbroideries'
 import { SET_EMBROIDERIES } from '@/Constants'
 import { unselectedState } from '@/features/genuine/reducer/infielder'
 
-export const getComponentParts = (state: State) => {
+export const getComponentParts = (state: GenuineState) => {
   const {
     all,
     palm,

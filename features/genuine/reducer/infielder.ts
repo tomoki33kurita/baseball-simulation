@@ -32,6 +32,7 @@ import {
   SET_LABEL_STAND,
   SET_FINGER_GUARD_COLOR
 } from '@/features/genuine/Constants/action'
+import { GenuineState } from '../types'
 
 const initialPersonalState = {
   userName: '',
@@ -61,12 +62,10 @@ const initialEmbroideryState = {
   content: ''
 }
 
-export const initialState = {
+export const initialState: GenuineState = {
   baseModel: {
     productNumber: '',
-    position: '',
-    imageUrl: '',
-    dominantArm: 'unselected',
+    position: 'infielder',
     size: {
       unit: 'cm',
       value: 0
@@ -113,6 +112,16 @@ export const initialState = {
   ringLittle: unselectedColorState,
   littleRing: unselectedColorState,
   littleOut: unselectedColorState,
+  thumb: unselectedColorState,
+  boomerang: unselectedColorState,
+  underWeb: unselectedColorState,
+  fingerStand: unselectedColorState,
+  thumbIndexMiddleRight: unselectedColorState,
+  middleLeftRing: unselectedColorState,
+  middleLeftRingLittle: unselectedColorState,
+  thumbMachi: unselectedColorState,
+  littleMachi: unselectedColorState,
+  genuineLabel: unselectedColorState,
 
   embroideries: [initialEmbroideryState],
   personal: initialPersonalState,

@@ -33,6 +33,7 @@ import {
   SET_FINGER_GUARD_COLOR
 } from '@/features/genuine/Constants/action'
 import { ADD_EMBROIDERY, REMOVE_EMBROIDERY, SET_DRAWER_INDEX, SET_EMBROIDERIES, SET_PERSONAL } from '@/Constants'
+import { GenuineState } from '../types'
 
 const initialPersonalState = {
   userName: '',
@@ -56,18 +57,16 @@ const initialEmbroideryState = {
   id: 0,
   typeFace: { label: '', value: '' },
   position: { label: '', value: '' },
-  color: { label: '未選択', value: 'unselected', color: '' },
-  shadowColor: { label: '未選択', value: 'unselected' },
-  edgeColor: { label: '未選択', value: 'unselected' },
+  color: unselectedColorState,
+  shadowColor: unselectedColorState,
+  edgeColor: unselectedColorState,
   content: ''
 }
 
-export const initialState = {
+export const initialState: GenuineState = {
   baseModel: {
     productNumber: '',
-    position: '',
-    imageUrl: '',
-    dominantArm: 'unselected',
+    position: 'outfielder',
     size: {
       unit: 'cm',
       value: 0
@@ -114,6 +113,17 @@ export const initialState = {
   ringLittle: unselectedColorState,
   littleRing: unselectedColorState,
   littleOut: unselectedColorState,
+
+  thumb: unselectedColorState,
+  boomerang: unselectedColorState,
+  underWeb: unselectedColorState,
+  fingerStand: unselectedColorState,
+  thumbIndexMiddleRight: unselectedColorState,
+  middleLeftRing: unselectedColorState,
+  middleLeftRingLittle: unselectedColorState,
+  thumbMachi: unselectedColorState,
+  littleMachi: unselectedColorState,
+  genuineLabel: unselectedColorState,
 
   embroideries: [initialEmbroideryState],
   personal: initialPersonalState,

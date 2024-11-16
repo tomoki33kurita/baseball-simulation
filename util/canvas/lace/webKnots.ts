@@ -121,12 +121,10 @@ export const webKnots = (ctx: CanvasRenderingContext2D, color: string, x: number
   }
 }
 
-export const verticalKnot = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number, numerator: number, scaleSize: number): void => {
-  ctx.strokeStyle = 'gray' //'#383838'
-  ctx.lineWidth = 0.5
+export const verticalKnotForCatcher = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number, scaleSize: number): void => {
+  ctx.lineWidth = 0.8
+  ctx.strokeStyle = '#383838'
   ctx.fillStyle = color
-  ctx.save()
-  ctx.rotate((numerator * Math.PI) / 180)
 
   //  先端上向き
   ctx.beginPath()
@@ -189,6 +187,4 @@ export const verticalKnot = (ctx: CanvasRenderingContext2D, color: string, x: nu
   ctx.quadraticCurveTo(118 + x, 402 + y, 118 + x, 402 + y) //
   ctx.stroke()
   ctx.closePath()
-
-  ctx.restore()
 }

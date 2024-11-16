@@ -30,7 +30,10 @@ export type PartsItem = {
 
 export type PartsKey = PartsItem['value']
 
-export type LeatherColorsByParts = Record<PartsKey, typeof LEATHER_COLORS | typeof LACES | typeof BINDINGS | typeof STITCHES | typeof WELTINGS>
+export type LeatherColorsByPartsOfGenuine = Record<
+  PartsKey,
+  typeof LEATHER_COLORS | typeof LACES | typeof BINDINGS | typeof STITCHES | typeof WELTINGS
+>
 
 export type DrawerIndex = 0 | 1
 
@@ -75,6 +78,12 @@ export type GenuineState = {
   listBelt: ColorItem
   boomerang: ColorItem // only for first baseman
   underWeb: ColorItem // only for first baseman
+  fingerStand: ColorItem // only for catcher
+  thumbIndexMiddleRight: ColorItem // only for catcher
+  middleLeftRing: ColorItem // only for catcher
+  middleLeftRingLittle: ColorItem // only for catcher
+  thumbMachi: ColorItem // only for catcher
+  littleMachi: ColorItem // only for catcher
 }
 
 export type ResponseDispatch = (selected: string) => void

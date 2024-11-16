@@ -1,4 +1,4 @@
-import { LeatherColorsByParts, PartsItem } from '../types'
+import { LeatherColorsByPartsOfGenuine, PartsItem } from '../types'
 
 export const LEATHER_COLORS = [
   { label: 'ブラック', value: 'black', color: '#1E1E1E' },
@@ -144,7 +144,7 @@ export const BACK_PARTS: PartsItem[] = [...commonPartsObjs, ...backGloveObjs, { 
 
 export const PARTS = [...commonPartsObjs, ...PALM_PARTS, ...BACK_PARTS]
 
-export const LEATHER_COLORS_BY_PARTS: LeatherColorsByParts = {
+export const LEATHER_COLORS_BY_PARTS: LeatherColorsByPartsOfGenuine = {
   all: LEATHER_COLORS,
   lace: LACES,
   binding: BINDINGS,
@@ -169,7 +169,13 @@ export const LEATHER_COLORS_BY_PARTS: LeatherColorsByParts = {
   listBelt: LEATHER_COLORS,
   thumb: LEATHER_COLORS, // only for firstMitt
   boomerang: LEATHER_COLORS, // only for firstMitt
-  underWeb: LEATHER_COLORS // only for firstMitt
+  underWeb: LEATHER_COLORS, // only for firstMitt
+  fingerStand: LEATHER_COLORS, // only for catcher
+  thumbIndexMiddleRight: LEATHER_COLORS, // only for catcher
+  middleLeftRing: LEATHER_COLORS, // only for catcher
+  middleLeftRingLittle: LEATHER_COLORS, // only for catcher
+  thumbMachi: LEATHER_COLORS, // only for catcher
+  littleMachi: LEATHER_COLORS // only for catcher
 }
 
 // export const PARTS_BUTTON_OPTION = 'genuine-parts-button-option'
