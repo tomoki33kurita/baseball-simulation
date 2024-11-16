@@ -20,8 +20,8 @@ import { SelectCardWithImage } from '@/components/Setters/SelectCardWithImage'
 import { TabPanel } from '@/components/TabPanel'
 import { dispatcher } from './dispatcher'
 import { checkEmbroidery, getOrderType } from './logic'
-import { Box } from '@mui/material'
-import Image from 'next/image'
+// import { Box } from '@mui/material'
+// import Image from 'next/image'
 
 type Props = {
   state: FiveState
