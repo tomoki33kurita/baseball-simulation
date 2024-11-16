@@ -1,14 +1,14 @@
 import { GenuineState } from '../../types'
 import { canvasResetter } from './canvasResetter'
-import { backStyleOfGloveBackDrawer } from './rightThrow/back/backStyles'
-import { fingerGuardDrawer } from './rightThrow/back/fingerCoverOrPad/fingerGuardDrawer'
-import { littleHook } from './rightThrow/back/fingerHooks/littleHook'
-import { thumbHook } from './rightThrow/back/fingerHooks/thumbHook'
-import { fiveLabel } from './rightThrow/back/label'
-import { lace } from './rightThrow/back/lace'
-import { laceOfWristBeltCrossDrawer } from './rightThrow/back/lace/laceOfWristBeltFix'
-import { lining } from './rightThrow/back/lining'
-import { webOfGloveBackDrawer } from './rightThrow/back/web/webOfGloveBackDrawer'
+import { backStyleOfGloveBackDrawer } from './rightThrow/glove/back/backStyles'
+import { fingerGuardDrawer } from './rightThrow/glove/back/fingerCoverOrPad/fingerGuardDrawer'
+import { littleHook } from './rightThrow/glove/back/fingerHooks/littleHook'
+import { thumbHook } from './rightThrow/glove/back/fingerHooks/thumbHook'
+import { fiveLabel } from './rightThrow/glove/back/label'
+import { lace } from './rightThrow/glove/back/lace'
+import { laceOfWristBeltCrossDrawer } from './rightThrow/glove/back/lace/laceOfWristBeltFix'
+import { lining } from './rightThrow/glove/back/lining'
+import { webOfGloveBackDrawer } from './rightThrow/glove/back/web/webOfGloveBackDrawer'
 
 export const drawGenuineCatcherMittRearSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
   if (!ctx) return

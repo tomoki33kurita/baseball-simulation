@@ -1,5 +1,5 @@
 import { canvasResetter } from './canvasResetter'
-import { genuineEngravedOfPalm } from './rightThrow/front/engraving'
+import { genuineEngravedOfPalm } from './rightThrow/glove/front/engraving'
 import { GenuineState } from '../../types'
 import { webCross } from './rightThrow/firstMitt/front/lace/webCross'
 import { palm } from './rightThrow/firstMitt/front/palm'
