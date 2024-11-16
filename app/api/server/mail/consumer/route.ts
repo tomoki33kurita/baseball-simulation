@@ -70,8 +70,8 @@ const mailTextGenerator = (locale = 'ja', savedId: string, brand: Brand) => {
           </div>
       
           <div style="display:flex; margin-bottom:8px">
-            <img width=300 src="cid:frontImage"/>
-            <img width=300 src="cid:backImage"/>
+            <img width=300 src="cid:rearImage"/>
+            <img width=300 src="cid:palmImage"/>
           </div>
 
           <div style="margin-bottom:8px">

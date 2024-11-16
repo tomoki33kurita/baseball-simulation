@@ -78,8 +78,8 @@ const mailTextGenerator = (data: any) => {
             <div style="margin-left:16px;font-size:11px;" >保存ID：${data.savedId}</div>
           </div>
           <div style="display:flex">
-            <img width=300 src="cid:backImage"/>
-            <img width=300 src="cid:frontImage"/>
+            <img width=300 src="cid:rearImage"/>
+            <img width=300 src="cid:palmImage"/>
           </div>
   
           <div style="display:flex;width:600px;justify-content:space-between;">

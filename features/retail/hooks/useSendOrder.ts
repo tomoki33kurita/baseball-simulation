@@ -1,5 +1,5 @@
 import { Supplier, Personal, SavedData, State } from '@/types'
-import { useContext, useState } from 'react'
+import { useContext, useRef, useState } from 'react'
 import { japaneseFont } from '@/public/font/vfsFont'
 import { getPdfDocDefine } from '../Documents'
 import { RetailContext } from './useRetailContext'
@@ -53,6 +53,7 @@ export const useSendOrder = () => {
   const [isSendMail, setIsSendMail] = useState(false)
   const [isFailedMail, setIsFailedMail] = useState(false)
   const retail = useContext(RetailContext)
+  const executeRef = useRef(false)
 
   const handleOrderMail = async (orderData: OrderData<State>) => {
     const { savedData, personal, supplier } = orderData
@@ -62,7 +63,9 @@ export const useSendOrder = () => {
     }
     if (confirm(`${supplier.name}に発注しますか？`)) {
       setIsProgress(true)
+      if (executeRef.current) return
       try {
+        executeRef.current = true
         const state = savedData.state
         const docDefine = getPdfDocDefine({ ...state, personal }, retail)
         pdfMake.createPdf(docDefine).getBase64((pdfBase64: string) => {
@@ -75,7 +78,8 @@ export const useSendOrder = () => {
             setTimeout(() => {
               setIsFailedMail(false)
               setIsSendMail(false)
-            }, 5000)
+            }, 3000)
+            executeRef.current = false
           })
         })
       } catch (err) {
@@ -86,6 +90,7 @@ export const useSendOrder = () => {
   const onCloseAlert = () => {
     setIsSendMail(false)
     setIsFailedMail(false)
+    executeRef.current = false
   }
 
   return { isSendMail, isFailedMail, isProgress, handleOrderMail, onCloseAlert }
