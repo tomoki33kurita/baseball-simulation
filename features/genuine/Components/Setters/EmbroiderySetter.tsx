@@ -1,10 +1,10 @@
 import React from 'react'
-import { Box, Accordion, AccordionDetails, Card } from '@mui/material'
+import { Box, Accordion, AccordionDetails } from '@mui/material'
 import { GenuineState } from '@/features/genuine/types'
 import { TabPanel } from '@/components/TabPanel'
 import { SelectCard } from '@/components/Setters/SelectCard'
 import { EmbroideryFormUpDown } from '@/components/Setters/Embroidery/EmbroideryFormUpDown'
-import { EMBROIDERY_COLORS, TYPE_FACES } from '@/features/five/Constants/embroidery'
+import { EMBROIDERY_COLORS, TYPE_FACES } from '@/features/genuine/Constants/embroidery'
 import { EmbroideryAccordionSummary } from '@/components/Setters/Embroidery/EmbroideryAccordionSummary'
 import { EmbroideryContent } from '@/components/Setters/Embroidery/EmbroideryContent'
 import {
@@ -56,14 +56,6 @@ export const EmbroiderySetter: React.FC<Props> = ({ state, selectedIndex, dispat
                 </Box>
                 <Box width={'100%'}>
                   <EmbroideryContent content={e.content} contentMaxLength={contentMaxLength} embroideryIndex={i} handleContent={handle.content} />
-                </Box>
-                <Box my={1} width={'100%'}>
-                  <Card>
-                    <Box>刺繍イメージ</Box>
-                    <Box>
-                      <Image src={`/five/embroidery/font/${typeFace.value}.jpg`} alt={typeFace.value} width={250} height={50} />
-                    </Box>
-                  </Card>
                 </Box>
                 <Box width={'100%'} mt={2}>
                   <SelectCard

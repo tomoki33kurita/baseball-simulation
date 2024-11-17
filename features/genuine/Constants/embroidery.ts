@@ -1,35 +1,37 @@
 import { EmbroideryItems } from '../types'
 
 export const TYPE_FACES = [
-  { label: 'ブロック体', value: 'sanserif', selectable: ['en'] }, //ゴシック体
+  { label: 'ローマ字活字体', value: 'sanserif', selectable: ['en'] }, //ゴシック体
   { label: '筆記体', value: 'cursive', selectable: ['en'] }, // 筆記体
   { label: 'ブラッシュ体', value: 'fantasy', selectable: ['en'] }, // ブラッシュ体
-  { label: '楷書体', value: 'serif', selectable: ['ja'] }, // 楷書
-  { label: '行書体', value: 'monospace', selectable: ['ja'] } // 行書
+  { label: 'オールドイングリッシュ体', value: 'MariageD', selectable: ['en'] }, // オールドイングリッシュ体
+  { label: '漢字', value: 'monospace', selectable: ['ja'] } // 行書
 ]
 
 export const EMBROIDERY_POSITIONS = [
   { label: '親指部', value: 'thumbFinger' },
   { label: '小指部', value: 'childFinger' },
   { label: '平裏', value: 'leatherLiningFirst' },
-  // { label: '裏革部分(2段目)', value: 'leatherLiningSecond' }
+  { label: '平裏(2段目)', value: 'leatherLiningSecond' },
   { label: 'バンド部', value: 'band' }
 ]
 
 export const EMBROIDERY_COLORS = [
+  { label: 'ブラック', value: 'black', color: '#1A1919' },
+  { label: 'レッド', value: 'red', color: '#BD313F' },
+  { label: 'ライトゴールド', value: 'lightGold', color: '#B2A666' },
+  { label: 'ライトシルバー', value: 'lightSilver', color: '#B5B5B5' },
+  { label: 'ゴールド', value: 'gold', color: '#B7AF75' },
+  { label: 'シルバー', value: 'silver', color: '#B5B5B5' },
+  { label: 'ネイビー', value: 'navy', color: '#2D2B54' },
   { label: 'ホワイト', value: 'white', color: '#FFFFFF' },
+  { label: 'ブルー', value: 'blue', color: '#2C338B' },
   { label: 'イエロー', value: 'yellow', color: '#C1BB32' },
   { label: 'オレンジ', value: 'orange', color: '#DF572C' },
-  { label: 'レッド', value: 'red', color: '#BD313F' },
+  { label: 'ブラウン', value: 'brown', color: '#895129' },
   { label: 'ピンク', value: 'pink', color: '#B9527D' },
-  { label: 'サックス', value: 'saxe', color: '#3A7993' },
-  { label: 'ブルー', value: 'blue', color: '#2C338B' },
-  { label: 'ネイビー', value: 'navy', color: '#2D2B54' },
-  { label: 'グリーン', value: 'green', color: '#284127' },
-  { label: 'ライトゴールド', value: 'lightGold', color: '#B2A666' },
-  { label: 'ラメシルバー', value: 'lameSilver', color: '#B5B5B5' },
-  { label: 'ラメゴールド', value: 'lameGold', color: '#B7AF75' },
-  { label: 'ブラック', value: 'black', color: '#1A1919' }
+  { label: 'パープル', value: 'purple', color: '#7f00ff' },
+  { label: 'サックス', value: 'sax', color: '#3A7993' }
 ]
 export const SHADOW_EDGE_COLORS = [{ label: '不要', value: 'none' }, ...EMBROIDERY_COLORS]
 

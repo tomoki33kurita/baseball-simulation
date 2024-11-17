@@ -28,7 +28,6 @@ import { TabPanel } from '@/components/TabPanel'
 import { dispatcher } from './dispatcher'
 import { positionChecker } from '@/util/logic'
 import { getGenuineBackStyle } from './logic'
-import { bankLace } from '@/features/five/Drawer/canvas/rightThrow/front/lace/bank'
 
 type Props = {
   state: GenuineState
