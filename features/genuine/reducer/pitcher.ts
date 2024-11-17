@@ -42,7 +42,8 @@ import {
   SET_LOOP_OF_RING_FINGER,
   SET_THUMB_INDEX_MIDDLE_RIGHT_COLOR,
   SET_MIDDLE_LEFT_RING_RIGHT_COLOR,
-  SET_RING_LEFT_LITTLE_RIGHT_COLOR
+  SET_RING_LEFT_LITTLE_RIGHT_COLOR,
+  SET_INDEX_LEFT_MIDDLE_RIGHT_COLOR
 } from '@/features/genuine/Constants/action'
 import { GenuineState } from '../types'
 
@@ -144,6 +145,8 @@ export const initialState: GenuineState = {
   thumbIndexMiddle: unselectedColorState, // first back style glove
   middleLeftRingRight: unselectedColorState, // first back style glove
   ringLeftLittleRight: unselectedColorState, // first back style glove
+  indexLeftMiddleRight: unselectedColorState, // crown back style glove
+
   thumbMachi: unselectedColorState,
   littleMachi: unselectedColorState,
   genuineLabel: unselectedStateWithPrice,
@@ -181,6 +184,7 @@ export const reducer = (state: any, action: any) => {
         littleOut: action.all,
         thumbIndexMiddle: action.all,
         thumbIndexMiddleRight: action.all,
+        indexLeftMiddleRight: action.all, // crown back style glove
         middleLeftRingRight: action.all,
         ringLeftLittleRight: action.all
       }
@@ -238,6 +242,8 @@ export const reducer = (state: any, action: any) => {
     // ringLeftLittleRight // first back style
     case SET_THUMB_INDEX_MIDDLE_RIGHT_COLOR:
       return { ...state, thumbIndexMiddleRight: action.thumbIndexMiddleRight }
+    case SET_INDEX_LEFT_MIDDLE_RIGHT_COLOR:
+      return { ...state, indexLeftMiddleRight: action.indexLeftMiddleRight }
     case SET_MIDDLE_LEFT_RING_RIGHT_COLOR:
       return { ...state, middleLeftRingRight: action.middleLeftRingRight }
     case SET_RING_LEFT_LITTLE_RIGHT_COLOR:

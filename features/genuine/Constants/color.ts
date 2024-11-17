@@ -171,7 +171,19 @@ export const FIRST_BACK_PARTS: PartsItem[] = [
   { label: 'バンド', value: 'listBelt' }
 ]
 
-export const PARTS = [...commonPartsObjs, ...PALM_PARTS, ...BACK_PARTS, ...FIRST_BACK_PARTS]
+export const CROWN_BACK_PARTS: PartsItem[] = [
+  ...commonPartsObjs,
+  { label: '親指1', value: 'thumbOut' },
+  { label: '親指2', value: 'thumbWeb' },
+  { label: '人差指3', value: 'indexWeb' },
+  { label: '人差指4・中指5', value: 'indexLeftMiddleRight' },
+  { label: '中指6・薬指7', value: 'middleLeftRingRight' },
+  { label: '薬指8・小指9', value: 'ringLeftLittleRight' },
+  { label: '小指10', value: 'littleOut' },
+  { label: 'バンド', value: 'listBelt' }
+]
+
+export const PARTS = [...commonPartsObjs, ...PALM_PARTS, ...BACK_PARTS, ...FIRST_BACK_PARTS, ...CROWN_BACK_PARTS]
 
 export const LEATHER_COLORS_BY_PARTS: LeatherColorsByPartsOfGenuine = {
   all: LEATHER_COLORS,
@@ -208,7 +220,8 @@ export const LEATHER_COLORS_BY_PARTS: LeatherColorsByPartsOfGenuine = {
   thumbIndexMiddle: LEATHER_COLORS, // only for catcher
   thumbIndexMiddleRight: LEATHER_COLORS, // only for catcher of first back style
   middleLeftRingRight: LEATHER_COLORS, // only for first back style
-  ringLeftLittleRight: LEATHER_COLORS // only for first back style
+  ringLeftLittleRight: LEATHER_COLORS, // only for first back style
+  indexLeftMiddleRight: LEATHER_COLORS // crown back style glove
 }
 
 // export const PARTS_BUTTON_OPTION = 'genuine-parts-button-option'

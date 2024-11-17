@@ -35,8 +35,8 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
   const partsLabel = parts.label
   const componentParts = getComponentParts(state)
   const selectedParts = componentParts[partsKey as keyof typeof componentParts]
-  const { isFirstBackStyle } = getBackStyle(state)
-  const selectableParts = getSelectableParts(drawerIndex, isFirstBackStyle)
+  const { isFirstBackStyle, isCrownBackStyle } = getBackStyle(state)
+  const selectableParts = getSelectableParts(drawerIndex, isFirstBackStyle, isCrownBackStyle)
   const colorsByParts = getColorOptionsByParts(partsKey)
   const handle = {
     [partsKey]: originDispatcher(DISPATCHER, partsKey, dispatch, colorsByParts),

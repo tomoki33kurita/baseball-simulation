@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useDebounce } from 'use-debounce'
 import { Embroidery, EmbroideryKey } from '@/types'
 import { DrawerIndex, GenuineState, PartsItem, PartsKey } from '@/features/genuine/types'
-import { BACK_PARTS, FIRST_BACK_PARTS, LEATHER_COLORS_BY_PARTS, PALM_PARTS } from '@/features/genuine/Constants/color'
+import { BACK_PARTS, CROWN_BACK_PARTS, FIRST_BACK_PARTS, LEATHER_COLORS_BY_PARTS, PALM_PARTS } from '@/features/genuine/Constants/color'
 import { EMBROIDERY_POSITIONS, EMBROIDERY_ITEMS, SHADOW_EDGE_COLORS, TYPE_FACES } from '@/features/genuine/Constants/embroidery'
 import { isHalfWidthCharChecker } from '@/features/genuine/Drawer/canvas/back/useCanvasEmbroideries'
 import { SET_EMBROIDERIES } from '@/Constants'
@@ -28,6 +28,7 @@ export const getComponentParts = (state: GenuineState) => {
     thumbIndexMiddleRight, // first back style or catcher
     indexWeb,
     indexMiddle,
+    indexLeftMiddleRight, // crown back style
     middleLeftRingLittle, // catcher
     middleLeftRingRight, // first back style
     middleIndex,
@@ -66,6 +67,7 @@ export const getComponentParts = (state: GenuineState) => {
     littleOut,
     thumbIndexMiddle, // first back style no finger hole
     thumbIndexMiddleRight, // first back style or catcher
+    indexLeftMiddleRight,
     middleLeftRingLittle, // catcher
     middleLeftRingRight, // first back style
     ringLeftLittleRight // first back style
@@ -74,10 +76,13 @@ export const getComponentParts = (state: GenuineState) => {
 
 export const getColorOptionsByParts = (partsKey: PartsKey) => LEATHER_COLORS_BY_PARTS[partsKey]
 
-export const getSelectableParts = (drawerIndex: DrawerIndex, isFirstBackStyle: boolean): PartsItem[] => {
+export const getSelectableParts = (drawerIndex: DrawerIndex, isFirstBackStyle: boolean, isCrownBackStyle: boolean): PartsItem[] => {
   if (drawerIndex === 0) {
     if (isFirstBackStyle) {
       return FIRST_BACK_PARTS
+    }
+    if (isCrownBackStyle) {
+      return CROWN_BACK_PARTS
     }
     return BACK_PARTS
   } else {
@@ -253,15 +258,17 @@ export const fontImageResolver = (embroidery: Embroidery) => {
 }
 
 export const getBackStyle = (state: GenuineState) => {
-  const isFirstBackStyle = ['firstBackStyle'].includes(state.backStyle.value)
+  // const isFirstBackStyle = ['firstBackStyle'].includes(state.backStyle.value)
+  const isCrownBackStyle = ['crown', 'crownMesh'].includes(state.backStyle.value)
   const isMIUT4Model = state.baseModel.productNumber === 'MIU-T4' && state.backStyle.value === 'unselected'
   return {
-    isFirstBackStyle: isFirstBackStyle || isMIUT4Model
+    isFirstBackStyle: isMIUT4Model, //|| isFirstBackStyle
+    isCrownBackStyle
   }
 }
 
 export const getFingerColor = (state: GenuineState) => {
-  const { isFirstBackStyle } = getBackStyle(state)
+  const { isFirstBackStyle, isCrownBackStyle } = getBackStyle(state)
   if (isFirstBackStyle) {
     return {
       thumbWebColor: state.thumbIndexMiddleRight.color,
@@ -274,6 +281,17 @@ export const getFingerColor = (state: GenuineState) => {
     }
   }
 
+  if (isCrownBackStyle) {
+    return {
+      thumbWebColor: state.thumbWeb.color,
+      indexWebColor: state.indexWeb.color,
+      indexMiddleColor: state.indexLeftMiddleRight.color,
+      middleIndexColor: state.indexLeftMiddleRight.color,
+      middleRingColor: state.middleLeftRingRight.color,
+      ringLittleColor: state.ringLeftLittleRight.color,
+      littleRingColor: state.littleRing.color
+    }
+  }
   return {
     thumbWebColor: state.thumbWeb.color,
     indexWebColor: state.indexWeb.color,
