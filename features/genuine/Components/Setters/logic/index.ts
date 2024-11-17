@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import { useDebounce } from 'use-debounce'
-import { BaseItem, Embroidery, EmbroideryKey, State } from '@/types'
+import { Embroidery, EmbroideryKey } from '@/types'
 import { DrawerIndex, GenuineState, PartsItem, PartsKey } from '@/features/genuine/types'
-import { BACK_PARTS, LEATHER_COLORS_BY_PARTS, PALM_PARTS } from '@/features/genuine/Constants/color'
+import { BACK_PARTS, FIRST_BACK_PARTS, LEATHER_COLORS_BY_PARTS, PALM_PARTS } from '@/features/genuine/Constants/color'
 import { EMBROIDERY_POSITIONS, EMBROIDERY_ITEMS, SHADOW_EDGE_COLORS, TYPE_FACES } from '@/features/genuine/Constants/embroidery'
 import { isHalfWidthCharChecker } from '@/features/genuine/Drawer/canvas/back/useCanvasEmbroideries'
 import { SET_EMBROIDERIES } from '@/Constants'
@@ -24,12 +24,17 @@ export const getComponentParts = (state: GenuineState) => {
     welting,
     thumbOut,
     thumbWeb,
+    thumbIndexMiddle, // first back style no finger hole
+    thumbIndexMiddleRight, // first back style or catcher
     indexWeb,
     indexMiddle,
+    middleLeftRingLittle, // catcher
+    middleLeftRingRight, // first back style
     middleIndex,
     middleRing,
     ringMiddle,
     ringLittle,
+    ringLeftLittleRight, // first back style
     littleRing,
     littleOut,
     mouton
@@ -58,14 +63,26 @@ export const getComponentParts = (state: GenuineState) => {
     ringMiddle,
     ringLittle,
     littleRing,
-    littleOut
+    littleOut,
+    thumbIndexMiddle, // first back style no finger hole
+    thumbIndexMiddleRight, // first back style or catcher
+    middleLeftRingLittle, // catcher
+    middleLeftRingRight, // first back style
+    ringLeftLittleRight // first back style
   }
 }
 
 export const getColorOptionsByParts = (partsKey: PartsKey) => LEATHER_COLORS_BY_PARTS[partsKey]
 
-export const getSelectableParts = (drawerIndex: DrawerIndex): PartsItem[] => {
-  return drawerIndex === 1 ? PALM_PARTS : BACK_PARTS
+export const getSelectableParts = (drawerIndex: DrawerIndex, isFirstBackStyle: boolean): PartsItem[] => {
+  if (drawerIndex === 0) {
+    if (isFirstBackStyle) {
+      return FIRST_BACK_PARTS
+    }
+    return BACK_PARTS
+  } else {
+    return PALM_PARTS
+  }
 }
 
 export const getGenuineBackStyle = (state: GenuineState) => {
@@ -233,4 +250,13 @@ const typeFaceResolver = (embroidery: Embroidery) => {
 export const fontImageResolver = (embroidery: Embroidery) => {
   const typeFace = typeFaceResolver(embroidery)
   return { typeFace }
+}
+
+export const getBackStyle = (state: GenuineState) => {
+  const isFirstBackStyle = ['firstBackStyle'].includes(state.backStyle.value)
+  const isMIUT4Model = state.baseModel.productNumber === 'MIU-T4' && state.backStyle.value === 'unselected'
+
+  return {
+    isFirstBackStyle: isFirstBackStyle || isMIUT4Model
+  }
 }

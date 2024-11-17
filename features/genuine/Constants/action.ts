@@ -50,6 +50,8 @@ export const SET_BOOMERANG_COLOR = 'setBoomerangColor'
 export const SET_UNDER_WEB_COLOR = 'setUnderWebColor'
 export const SET_FINGER_STAND_COLOR = 'setFingerStandColor'
 export const SET_THUMB_INDEX_MIDDLE_RIGHT_COLOR = 'setThumbIndexMiddleRight'
+export const SET_MIDDLE_LEFT_RING_RIGHT_COLOR = 'setMiddleLeftRingRight'
+export const SET_RING_LEFT_LITTLE_RIGHT_COLOR = 'setRingLeftLittleRight'
 export const SET_MIDDLE_LEFT_RING_COLOR = 'setMiddleLeftRing'
 export const SET_MIDDLE_LEFT_RING_LITTLE_COLOR = 'setMiddleLeftRingLittle'
 export const SET_THUMB_MACHI_COLOR = 'setThumbMachiColor'
@@ -109,7 +111,9 @@ export const DISPATCHER = {
   fingerStand: SET_FINGER_STAND_COLOR,
   thumbIndexMiddleRight: SET_THUMB_INDEX_MIDDLE_RIGHT_COLOR,
   middleLeftRing: SET_MIDDLE_LEFT_RING_COLOR,
+  middleLeftRingRight: SET_MIDDLE_LEFT_RING_RIGHT_COLOR,
   middleLeftRingLittle: SET_MIDDLE_LEFT_RING_LITTLE_COLOR,
+  ringLeftLittleRight: SET_RING_LEFT_LITTLE_RIGHT_COLOR,
   thumbMachi: SET_THUMB_MACHI_COLOR,
   littleMachi: SET_LITTLE_MACHI_COLOR
 }

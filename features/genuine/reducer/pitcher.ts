@@ -39,7 +39,10 @@ import {
   SET_CORE_HARDNESS,
   SET_GLOVE_SIZE,
   SET_BANK_LACE_DIRECTION,
-  SET_LOOP_OF_RING_FINGER
+  SET_LOOP_OF_RING_FINGER,
+  SET_THUMB_INDEX_MIDDLE_RIGHT_COLOR,
+  SET_MIDDLE_LEFT_RING_RIGHT_COLOR,
+  SET_RING_LEFT_LITTLE_RIGHT_COLOR
 } from '@/features/genuine/Constants/action'
 import { GenuineState } from '../types'
 
@@ -138,6 +141,9 @@ export const initialState: GenuineState = {
   thumbIndexMiddleRight: unselectedColorState,
   middleLeftRing: unselectedColorState,
   middleLeftRingLittle: unselectedColorState,
+  thumbIndexMiddle: unselectedColorState, // first back style glove
+  middleLeftRingRight: unselectedColorState, // first back style glove
+  ringLeftLittleRight: unselectedColorState, // first back style glove
   thumbMachi: unselectedColorState,
   littleMachi: unselectedColorState,
   genuineLabel: unselectedStateWithPrice,
@@ -173,7 +179,9 @@ export const reducer = (state: any, action: any) => {
         ringLittle: action.all,
         littleRing: action.all,
         littleOut: action.all,
-        labelStand: action.all
+        thumbIndexMiddle: action.all,
+        middleLeftRingRight: action.all,
+        ringLeftLittleRight: action.all
       }
     case SET_BASE_MODEL:
       return { ...state, baseModel: action.baseModel }
@@ -225,6 +233,14 @@ export const reducer = (state: any, action: any) => {
       return { ...state, thumbOut: action.thumbOut }
     case SET_THUMB_WEB_COLOR:
       return { ...state, thumbWeb: action.thumbWeb }
+    // thumbIndexMiddle, // first back style no finger hole
+    // ringLeftLittleRight // first back style
+    case SET_THUMB_INDEX_MIDDLE_RIGHT_COLOR:
+      return { ...state, thumbIndexMiddleRight: action.thumbIndexMiddleRight }
+    case SET_MIDDLE_LEFT_RING_RIGHT_COLOR:
+      return { ...state, middleLeftRingRight: action.middleLeftRingRight }
+    case SET_RING_LEFT_LITTLE_RIGHT_COLOR:
+      return { ...state, ringLeftLittleRight: action.ringLeftLittleRight }
     case SET_INDEX_WEB_COLOR:
       return { ...state, indexWeb: action.indexWeb }
     case SET_INDEX_MIDDLE_COLOR:

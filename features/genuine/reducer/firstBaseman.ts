@@ -142,6 +142,10 @@ export const initialState: GenuineState = {
   thumbIndexMiddleRight: unselectedColorState,
   middleLeftRing: unselectedColorState,
   middleLeftRingLittle: unselectedColorState,
+  thumbIndexMiddle: unselectedColorState, // first back style glove
+  middleLeftRingRight: unselectedColorState, // first back style glove
+  ringLeftLittleRight: unselectedColorState, // first back style glove
+
   thumbMachi: unselectedColorState,
   littleMachi: unselectedColorState,
   embroideries: [initialEmbroideryState],

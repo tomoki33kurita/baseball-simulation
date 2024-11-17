@@ -3,7 +3,7 @@ import { GenuineState } from '@/features/genuine/types'
 import { Position } from '@/types'
 import { TabPanel } from '@/components/TabPanel'
 import { dispatcher } from './dispatcher'
-import { getColorOptionsByParts, getSelectableParts, getComponentParts } from './logic'
+import { getColorOptionsByParts, getSelectableParts, getComponentParts, getBackStyle } from './logic'
 import {
   BINDING_COLOR_BUTTON_OPTION,
   WELTING_COLOR_BUTTON_OPTION,
@@ -35,7 +35,8 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
   const partsLabel = parts.label
   const componentParts = getComponentParts(state)
   const selectedParts = componentParts[partsKey as keyof typeof componentParts]
-  const selectableParts = getSelectableParts(drawerIndex)
+  const { isFirstBackStyle } = getBackStyle(state)
+  const selectableParts = getSelectableParts(drawerIndex, isFirstBackStyle)
   const colorsByParts = getColorOptionsByParts(partsKey)
   const handle = {
     [partsKey]: originDispatcher(DISPATCHER, partsKey, dispatch, colorsByParts),

@@ -103,6 +103,9 @@ export type GenuineState = {
   middleLeftRingLittle: ColorItem // only for catcher
   thumbMachi: ColorItem // only for catcher
   littleMachi: ColorItem // only for catcher
+  thumbIndexMiddle: ColorItem // only for first back style glove
+  middleLeftRingRight: ColorItem // only for first back style glove
+  ringLeftLittleRight: ColorItem // only for first back style glove
 }
 
 export type ResponseDispatch = (selected: string) => void

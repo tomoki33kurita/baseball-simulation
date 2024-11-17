@@ -139,6 +139,10 @@ export const initialState: GenuineState = {
   middleLeftRingLittle: unselectedColorState,
   thumbMachi: unselectedColorState,
   littleMachi: unselectedColorState,
+  thumbIndexMiddle: unselectedColorState, // first back style glove
+  middleLeftRingRight: unselectedColorState, // first back style glove
+  ringLeftLittleRight: unselectedColorState, // first back style glove
+
   genuineLabel: unselectedStateWithPrice,
   embroideries: [initialEmbroideryState],
   personal: initialPersonalState,

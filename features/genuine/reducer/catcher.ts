@@ -139,11 +139,14 @@ export const initialState: GenuineState = {
   boomerang: unselectedColorState, // first baseman
   underWeb: unselectedColorState, // first baseman
   fingerStand: unselectedColorState, // catcher
-  thumbIndexMiddleRight: unselectedColorState, // catcher
+  thumbIndexMiddleRight: unselectedColorState, // first back style glove // catcher
   middleLeftRing: unselectedColorState, // catcher
   middleLeftRingLittle: unselectedColorState, // catcher
   thumbMachi: unselectedColorState, // catcher
   littleMachi: unselectedColorState, // catcher
+  thumbIndexMiddle: unselectedColorState, // first back style glove
+  middleLeftRingRight: unselectedColorState, // first back style glove
+  ringLeftLittleRight: unselectedColorState, // first back style glove
   genuineLabel: unselectedStateWithPrice,
   embroideries: [initialEmbroideryState],
   personal: initialPersonalState,

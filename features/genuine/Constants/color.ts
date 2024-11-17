@@ -156,8 +156,17 @@ const backGloveObjs: PartsItem[] = [
 export const PALM_PARTS = [...commonPartsObjs]
 
 export const BACK_PARTS: PartsItem[] = [...commonPartsObjs, ...backGloveObjs, { label: '裏革', value: 'linings' }]
+export const FIRST_BACK_PARTS: PartsItem[] = [
+  ...commonPartsObjs,
+  { label: '親指1', value: 'thumbOut' },
+  { label: '親指2・人差指・中指5', value: 'thumbIndexMiddleRight' },
+  { label: '中指6・薬指7', value: 'middleLeftRingRight' },
+  { label: '薬指8・小指9', value: 'ringLeftLittleRight' },
+  { label: '小指10', value: 'littleOut' },
+  { label: 'バンド', value: 'listBelt' }
+]
 
-export const PARTS = [...commonPartsObjs, ...PALM_PARTS, ...BACK_PARTS]
+export const PARTS = [...commonPartsObjs, ...PALM_PARTS, ...BACK_PARTS, ...FIRST_BACK_PARTS]
 
 export const LEATHER_COLORS_BY_PARTS: LeatherColorsByPartsOfGenuine = {
   all: LEATHER_COLORS,
@@ -187,11 +196,14 @@ export const LEATHER_COLORS_BY_PARTS: LeatherColorsByPartsOfGenuine = {
   boomerang: LEATHER_COLORS, // only for firstMitt
   underWeb: LEATHER_COLORS, // only for firstMitt
   fingerStand: LEATHER_COLORS, // only for catcher
-  thumbIndexMiddleRight: LEATHER_COLORS, // only for catcher
   middleLeftRing: LEATHER_COLORS, // only for catcher
   middleLeftRingLittle: LEATHER_COLORS, // only for catcher
   thumbMachi: LEATHER_COLORS, // only for catcher
-  littleMachi: LEATHER_COLORS // only for catcher
+  littleMachi: LEATHER_COLORS, // only for catcher
+  thumbIndexMiddle: LEATHER_COLORS, // only for catcher
+  thumbIndexMiddleRight: LEATHER_COLORS, // only for catcher of first back style
+  middleLeftRingRight: LEATHER_COLORS, // only for first back style
+  ringLeftLittleRight: LEATHER_COLORS // only for first back style
 }
 
 // export const PARTS_BUTTON_OPTION = 'genuine-parts-button-option'
