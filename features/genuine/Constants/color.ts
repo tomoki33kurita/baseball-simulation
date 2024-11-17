@@ -3,105 +3,78 @@ import { LeatherColorsByPartsOfGenuine, PartsItem } from '../types'
 import { MESH_COLORS } from './base'
 
 export const LEATHER_COLORS: ColorItem[] = [
-  { label: 'ホワイト', value: 'white', color: '#F6F3F0' },
-  { label: 'グレー', value: 'gray', color: '#646464' },
-  { label: 'キャメル', value: 'camel', color: '#f0dbc0' },
-  { label: 'ライムイエロー', value: 'limeYellow', color: '#E4F74A' },
-  { label: 'イエロー', value: 'yellow', color: '#C2B64A' },
-  { label: 'オレンジ', value: 'orange', color: '#D5803D' },
-  { label: 'Lオレンジ', value: 'lOrange', color: '#D5803D' },
-  { label: 'Rオレンジ', value: 'rOrange', color: '#CE2A2B' },
-  { label: 'Sオレンジ', value: 'sOrange', color: '#CE2A2B' },
-  { label: 'レッド', value: 'red', color: '#A03D38' },
-  { label: 'ピンク', value: 'pink', color: '#DE949A' },
-  { label: 'パープル', value: 'purple', color: '#754F6E' },
-  { label: 'グリーン', value: 'green', color: '#2A4029' },
-  { label: 'ワイン', value: 'wine', color: '#CE2A2B' },
-  { label: 'Lブラウン', value: 'lBrown', color: '#4A3826' },
-  { label: 'Dブラウン', value: 'dBrown', color: '#4A3826' },
-  { label: 'ブルー', value: 'blue', color: '#253F86' },
-  { label: 'ネイビー', value: 'navy', color: '#151830' },
-  { label: 'ブラック', value: 'black', color: '#1E1E1E' },
-  { label: 'サックス', value: 'sax', color: '#53B7ED' }
+  { label: 'ホワイト', value: 'white', color: '#AFB3B1' },
+  { label: 'グレー', value: 'gray', color: '#959190' },
+  { label: 'キャメル', value: 'camel', color: '#9F9059' },
+  { label: 'ライムイエロー', value: 'limeYellow', color: '#ABA025' },
+  { label: 'イエロー', value: 'yellow', color: '#AA9123' },
+  { label: 'オレンジ', value: 'orange', color: '#9A7729' },
+  { label: 'Lオレンジ', value: 'lOrange', color: '#B56723' },
+  { label: 'Rオレンジ', value: 'rOrange', color: '#A83327' },
+  { label: 'Sオレンジ', value: 'sOrange', color: '#A12F28' },
+  { label: 'レッド', value: 'red', color: '#9D2E28' },
+  { label: 'ピンク', value: 'pink', color: '#BB5B78' },
+  { label: 'パープル', value: 'purple', color: '#6F267A' },
+  { label: 'グリーン', value: 'green', color: '#264425' },
+  { label: 'ワイン', value: 'wine', color: '#812824' },
+  { label: 'コルク', value: 'cork', color: '#B07824' },
+  { label: 'Lブラウン', value: 'lBrown', color: '#60311A' },
+  { label: 'Dブラウン', value: 'dBrown', color: '#1C110C' },
+  { label: 'ブルー', value: 'blue', color: '#24226F' },
+  { label: 'ネイビー', value: 'navy', color: '#17131B' },
+  { label: 'ブラック', value: 'black', color: '#14120D' },
+  { label: 'サックス', value: 'sax', color: '#2D5181' }
 ]
-
 export const LININGS: ColorItem[] = [...LEATHER_COLORS]
-export const WELTINGS: ColorItem[] = [
-  { label: 'キリハミ(ブラック)', value: 'cutWeltingBlack', color: '#1E1E1E' },
-  { label: 'キリハミ(ホワイト)', value: 'cutWeltingWhite', color: '#fff' },
-  { label: '玉ハミ(ブラック)', value: 'black', color: '#1E1E1E' },
-  { label: '玉ハミ(ホワイト)', value: 'white', color: '#fff' },
-  { label: '玉ハミ(グレー)', value: 'gray', color: '#646464' },
-  { label: '玉ハミ(キャメル)', value: 'camel', color: '#f0dbc0' },
-  { label: '玉ハミ(ライムイエロー)', value: 'limeYellow', color: '#E4F74A' },
-  { label: '玉ハミ(イエロー)', value: 'yellow', color: '#C2B64A' },
-  { label: '玉ハミ(オレンジ)', value: 'orange', color: '#D5803D' },
-  { label: '玉ハミ(Lオレンジ)', value: 'lOrange', color: '#CE2A2B' },
-  { label: '玉ハミ(Rオレンジ)', value: 'rOrange', color: '#CE2A2B' },
-  { label: '玉ハミ(Sオレンジ)', value: 'sOrange', color: '#CE2A2B' },
-  { label: '玉ハミ(レッド)', value: 'red', color: '#A03D38' },
-  { label: '玉ハミ(ピンク)', value: 'pink', color: '#DE949A' },
-  { label: '玉ハミ(パープル)', value: 'purple', color: '#754F6E' },
-  { label: '玉ハミ(グリーン)', value: 'green', color: '#2A4019' },
-  { label: '玉ハミ(ワイン)', value: 'wine', color: '#CE2A2B' },
-  { label: '玉ハミ(Lブラウン)', value: 'lBrown', color: '#4A3826' },
-  { label: '玉ハミ(Dブラウン)', value: 'dBrown', color: '#4A3826' },
-  { label: '玉ハミ(ブルー)', value: 'blue', color: '#253F86' },
-  { label: '玉ハミ(ネイビー)', value: 'navy', color: '#151830' },
-  { label: '玉ハミ(サックス)', value: 'sax', color: '#53B7ED' },
-  { label: '玉ハミ(ゴールド)', value: 'gold', color: '#D9A948' }
-]
 
 export const BINDINGS: ColorItem[] = [
-  { label: 'ホワイト', value: 'white', color: '#F6F3F0' },
-  { label: 'グレー', value: 'gray', color: '#646464' },
-  { label: 'キャメル', value: 'camel', color: '#f0dbc0' },
-  { label: 'ライムイエロー', value: 'limeYellow', color: '#E4F74A' },
-  { label: 'イエロー', value: 'yellow', color: '#C2B64A' },
-  { label: 'オレンジ', value: 'orange', color: '#D5803D' },
-  { label: 'Lオレンジ', value: 'lOrange', color: '#D5803D' },
-  { label: 'Rオレンジ', value: 'rOrange', color: '#CE2A2B' },
-  { label: 'Sオレンジ', value: 'sOrange', color: '#CE2A2B' },
-  { label: 'レッド', value: 'red', color: '#A03D38' },
-  { label: 'ピンク', value: 'pink', color: '#DE949A' },
-  { label: 'パープル', value: 'purple', color: '#754F6E' },
-  { label: 'グリーン', value: 'green', color: '#2A4029' },
-  { label: 'ワイン', value: 'wine', color: '#CE2A2B' },
-  { label: 'Lブラウン', value: 'lBrown', color: '#4A3826' },
-  { label: 'Dブラウン', value: 'dBrown', color: '#4A3826' },
-  { label: 'ブルー', value: 'blue', color: '#253F86' },
-  { label: 'ネイビー', value: 'navy', color: '#151830' },
-  { label: 'ブラック', value: 'black', color: '#1E1E1E' },
-  { label: 'サックス', value: 'sax', color: '#53B7ED' }
+  { label: 'ホワイト', value: 'white', color: '#AFB3B1' },
+  { label: 'グレー', value: 'gray', color: '#959190' },
+  { label: 'キャメル', value: 'camel', color: '#9F9059' },
+  { label: 'ライムイエロー', value: 'limeYellow', color: '#ABA025' },
+  { label: 'イエロー', value: 'yellow', color: '#AA9123' },
+  { label: 'オレンジ', value: 'orange', color: '#9A7729' },
+  { label: 'Lオレンジ', value: 'lOrange', color: '#B56723' },
+  { label: 'Rオレンジ', value: 'rOrange', color: '#A83327' },
+  { label: 'Sオレンジ', value: 'sOrange', color: '#A12F28' },
+  { label: 'レッド', value: 'red', color: '#9D2E28' },
+  { label: 'ピンク', value: 'pink', color: '#BB5B78' },
+  { label: 'パープル', value: 'purple', color: '#6F267A' },
+  { label: 'グリーン', value: 'green', color: '#264425' },
+  { label: 'ワイン', value: 'wine', color: '#812824' },
+  { label: 'コルク', value: 'cork', color: '#B07824' },
+  { label: 'Lブラウン', value: 'lBrown', color: '#60311A' },
+  { label: 'Dブラウン', value: 'dBrown', color: '#1C110C' },
+  { label: 'ブルー', value: 'blue', color: '#24226F' },
+  { label: 'ネイビー', value: 'navy', color: '#17131B' },
+  { label: 'ブラック', value: 'black', color: '#14120D' },
+  { label: 'サックス', value: 'sax', color: '#2D5181' }
 ]
 
-export const LACES: ColorItem[] = [
-  { label: 'ホワイト', value: 'white', color: '#F6F3F0' },
-  { label: 'グレー', value: 'gray', color: '#646464' },
-  { label: 'キャメル', value: 'camel', color: '#f0dbc0' },
-  { label: 'ライムイエロー', value: 'limeYellow', color: '#E4F74A' },
-  { label: 'イエロー', value: 'yellow', color: '#C2B64A' },
-  { label: 'オレンジ', value: 'orange', color: '#D5803D' },
-  { label: 'Lオレンジ', value: 'lOrange', color: '#D5803D' },
-  { label: 'Rオレンジ', value: 'rOrange', color: '#CE2A2B' },
-  { label: 'Sオレンジ', value: 'sOrange', color: '#CE2A2B' },
-  { label: 'レッド', value: 'red', color: '#A03D38' },
-  { label: 'ピンク', value: 'pink', color: '#DE949A' },
-  { label: 'パープル', value: 'purple', color: '#754F6E' },
-  { label: 'グリーン', value: 'green', color: '#2A4029' },
-  { label: 'Lブラウン', value: 'lBrown', color: '#4A3826' },
-  { label: 'Dブラウン', value: 'dBrown', color: '#4A3826' },
-  { label: 'ブルー', value: 'blue', color: '#253F86' },
-  { label: 'ネイビー', value: 'navy', color: '#151830' },
-  { label: 'ブラック', value: 'black', color: '#1E1E1E' },
-  { label: 'サックス', value: 'sax', color: '#53B7ED' },
-  { label: 'タン', value: 'tan', color: '#b08030' }
-]
-
-export const MOUTON_COLORS: ColorItem[] = [
-  { label: 'ムートン白', value: 'white', color: '#fff' },
-  { label: 'ムートン黒', value: 'black', color: '#1E1E1E' },
-  { label: 'ディアスキンパット', value: 'deerSkinPad', color: '#1E1E1E' }
+export const WELTINGS: ColorItem[] = [
+  { label: 'キリハミ(ブラック)', value: 'cutWeltingBlack', color: '#1E1E1E' },
+  { label: 'キリハミ(ホワイト)', value: 'cutWeltingWhite', color: '#AFB3B1' },
+  { label: '玉ハミ(ブラック)', value: 'black', color: '#1E1E1E' },
+  { label: '玉ハミ(ホワイト)', value: 'white', color: '#AFB3B1' },
+  { label: '玉ハミ(グレー)', value: 'gray', color: '#959190' },
+  { label: '玉ハミ(キャメル)', value: 'camel', color: '#9F9059' },
+  { label: '玉ハミ(ライムイエロー)', value: 'limeYellow', color: '#ABA025' },
+  { label: '玉ハミ(イエロー)', value: 'yellow', color: '#AA9123' },
+  { label: '玉ハミ(オレンジ)', value: 'orange', color: '#9A7729' },
+  { label: '玉ハミ(Lオレンジ)', value: 'lOrange', color: '#B56723' },
+  { label: '玉ハミ(Rオレンジ)', value: 'rOrange', color: '#A83327' },
+  { label: '玉ハミ(Sオレンジ)', value: 'sOrange', color: '#A12F28' },
+  { label: '玉ハミ(レッド)', value: 'red', color: '#9D2E28' },
+  { label: '玉ハミ(ピンク)', value: 'pink', color: '#BB5B78' },
+  { label: '玉ハミ(パープル)', value: 'purple', color: '#6F267A' },
+  { label: '玉ハミ(グリーン)', value: 'green', color: '#264425' },
+  { label: '玉ハミ(ワイン)', value: 'wine', color: '#812824' },
+  { label: '玉ハミ(Lブラウン)', value: 'lBrown', color: '#60311A' },
+  { label: '玉ハミ(Dブラウン)', value: 'dBrown', color: '#1C110C' },
+  { label: '玉ハミ(ブルー)', value: 'blue', color: '#24226F' },
+  { label: '玉ハミ(ネイビー)', value: 'navy', color: '#17131B' },
+  { label: '玉ハミ(サックス)', value: 'sax', color: '#2D5181' },
+  { label: '玉ハミ(ゴールド)', value: 'gold', color: '#D9A948' }
 ]
 
 export const STITCHES: ColorItem[] = [
@@ -120,6 +93,38 @@ export const STITCHES: ColorItem[] = [
   { label: 'ピンク', value: 'pink', color: '#B9527D' },
   { label: 'ブラウン', value: 'brown', color: '#895129' },
   { label: 'キャメル', value: 'camel', color: '#f0dbc0' }
+]
+
+export const LACES: ColorItem[] = [
+  { label: 'ホワイト', value: 'white', color: '#AFB3B1' },
+  { label: 'グレー', value: 'gray', color: '#646464' },
+  { label: 'キャメル', value: 'camel', color: '#f0dbc0' },
+  { label: 'ライムイエロー', value: 'limeYellow', color: '#ABA025' },
+  { label: 'グレー', value: 'gray', color: '#959190' },
+  { label: 'キャメル', value: 'camel', color: '#9F9059' },
+  { label: 'ライムイエロー', value: 'limeYellow', color: '#ABA025' },
+  { label: 'イエロー', value: 'yellow', color: '#AA9123' },
+  { label: 'オレンジ', value: 'orange', color: '#9A7729' },
+  { label: 'Lオレンジ', value: 'lOrange', color: '#B56723' },
+  { label: 'Rオレンジ', value: 'rOrange', color: '#A83327' },
+  { label: 'Sオレンジ', value: 'sOrange', color: '#A12F28' },
+  { label: 'レッド', value: 'red', color: '#9D2E28' },
+  { label: 'ピンク', value: 'pink', color: '#BB5B78' },
+  { label: 'パープル', value: 'purple', color: '#6F267A' },
+  { label: 'グリーン', value: 'green', color: '#264425' },
+  { label: 'Lブラウン', value: 'lBrown', color: '#60311A' },
+  { label: 'Dブラウン', value: 'dBrown', color: '#1C110C' },
+  { label: 'ブルー', value: 'blue', color: '#24226F' },
+  { label: 'ネイビー', value: 'navy', color: '#17131B' },
+  { label: 'ブラック', value: 'black', color: '#14120D' },
+  { label: 'サックス', value: 'sax', color: '#2D5181' },
+  { label: 'タン', value: 'tan', color: '#b08030' }
+]
+
+export const MOUTON_COLORS: ColorItem[] = [
+  { label: 'ムートン白', value: 'white', color: '#fff' },
+  { label: 'ムートン黒', value: 'black', color: '#1E1E1E' },
+  { label: 'ディアスキンパット', value: 'deerSkinPad', color: '#1E1E1E' }
 ]
 
 // setter側で使用

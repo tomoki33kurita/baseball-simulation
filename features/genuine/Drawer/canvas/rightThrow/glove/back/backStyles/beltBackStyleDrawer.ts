@@ -11,9 +11,12 @@ import { middleFingerLeft, middleFingerRight } from '../middleFinger'
 import { ringFingerLeft, ringFingerRight } from '../ringFinger'
 import { weltingOfNormal } from '../welting/normal'
 import { GenuineState } from '@/features/genuine/types'
+import { getBackStyle } from '@/features/genuine/Components/Setters/logic'
 
 // ※オーダータイプ：basicの場合はこの関数は呼ばれない想定
 export const beltBackStyleDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState, needPalmWrap: boolean): void => {
+  const { isFirstBackStyle } = getBackStyle(state)
+  if (isFirstBackStyle) return
   const isIndexFingerPad = ['indexPad'].includes(state.fingerGuard.value)
   const isMiddleFingerPad = ['middlePad'].includes(state.fingerGuard.value)
   const stitchColor = state.stitch.color

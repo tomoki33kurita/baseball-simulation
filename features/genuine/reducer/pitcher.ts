@@ -180,6 +180,7 @@ export const reducer = (state: any, action: any) => {
         littleRing: action.all,
         littleOut: action.all,
         thumbIndexMiddle: action.all,
+        thumbIndexMiddleRight: action.all,
         middleLeftRingRight: action.all,
         ringLeftLittleRight: action.all
       }
