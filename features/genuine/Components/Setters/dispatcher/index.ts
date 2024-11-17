@@ -1,5 +1,20 @@
 import React from 'react'
-import { BACK_STYLES, MATERIAL_PACKS, WEB_PARTS, DOMINANT_ARMS, FINGER_GUARDS, MESH_COLORS, SIZES } from '@/features/genuine/Constants/base'
+import {
+  BACK_STYLES,
+  MATERIAL_PACKS,
+  WEB_PARTS,
+  DOMINANT_ARMS,
+  FINGER_GUARDS,
+  MESH_COLORS,
+  SIZES,
+  WEB_LACE_STYLES,
+  BACK_LACE_STYLES,
+  LEATHER_THICKNESS,
+  CORE_HARDNESSES,
+  GLOVE_SIZES,
+  BANK_LACE_DIRECTIONS,
+  LOOP_OF_RING_FINGERS
+} from '@/features/genuine/Constants/base'
 import { objectsFilter } from '@/util/logic'
 import { ResponseDispatch } from '@/features/genuine/types'
 import {
@@ -14,9 +29,17 @@ import {
   SET_MOUTON_COLOR,
   SET_STITCH_COLOR,
   SET_MESH_COLOR,
-  SET_SIZE
+  SET_SIZE,
+  SET_WEB_LACE_STYLE,
+  SET_BACK_LACE_STYLE,
+  SET_LEATHER_THICKNESS,
+  SET_CORE_HARDNESS,
+  SET_GLOVE_SIZE,
+  SET_BANK_LACE_DIRECTION,
+  SET_LOOP_OF_RING_FINGER
 } from '@/features/genuine/Constants/action'
 import { BINDINGS, LACES, MOUTON_COLORS, STITCHES, WELTINGS } from '@/features/genuine/Constants/color'
+import { bankLace } from '@/features/five/Drawer/canvas/rightThrow/front/lace/bank'
 
 // ここはブランドのドメイン
 const dispatchBaseStore = {
@@ -24,6 +47,13 @@ const dispatchBaseStore = {
   backStyle: { objects: BACK_STYLES, actionType: SET_BACK_STYLE },
   meshColor: { objects: MESH_COLORS, actionType: SET_MESH_COLOR },
   size: { objects: SIZES, actionType: SET_SIZE },
+  webLaceStyle: { objects: WEB_LACE_STYLES, actionType: SET_WEB_LACE_STYLE },
+  backLaceStyle: { objects: BACK_LACE_STYLES, actionType: SET_BACK_LACE_STYLE },
+  leatherThickness: { objects: LEATHER_THICKNESS, actionType: SET_LEATHER_THICKNESS },
+  coreHardness: { objects: CORE_HARDNESSES, actionType: SET_CORE_HARDNESS },
+  gloveSize: { objects: GLOVE_SIZES, actionType: SET_GLOVE_SIZE },
+  bankLaceDirection: { objects: BANK_LACE_DIRECTIONS, actionType: SET_BANK_LACE_DIRECTION },
+  loopOfRingFinger: { objects: LOOP_OF_RING_FINGERS, actionType: SET_LOOP_OF_RING_FINGER },
   materialPack: { objects: MATERIAL_PACKS, actionType: SET_MATERIAL_PACK },
   fingerGuard: { objects: FINGER_GUARDS, actionType: SET_FINGER_GUARD },
   webParts: { objects: WEB_PARTS, actionType: SET_WEB_PARTS },

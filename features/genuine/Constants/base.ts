@@ -27,10 +27,52 @@ export const SIZES = [
   { label: '5mm小さく', value: 'small5', price: 3300 },
   { label: '10mm小さく', value: 'small10', price: 3300 }
 ]
+
+export const WEB_LACE_STYLES = [
+  { label: '通常', value: 'normal' },
+  { label: 'クロス', value: 'cross' }
+]
+
+export const BACK_LACE_STYLES = [
+  { label: 'なし', value: 'none' },
+  { label: '並行通し', value: 'normal' },
+  { label: 'クロス通し', value: 'cross' }
+]
+
+export const LEATHER_THICKNESS = [
+  { label: '普通', value: 'normal' },
+  { label: '薄く', value: 'thin' }
+]
+
+export const CORE_HARDNESSES = [
+  { label: '普通', value: 'normal' },
+  { label: '硬め', value: 'hard' }
+]
+
+export const GLOVE_SIZES = [
+  { label: '23cm以下', value: 'under23' },
+  { label: '24~26cm', value: 'between24and26' },
+  { label: '27cm以上', value: 'over27' }
+]
+
+export const BANK_LACE_DIRECTIONS = [
+  { label: 'レギュラー巻き', value: 'sequentialRoll' },
+  { label: '逆巻き', value: 'reverseRoll' }
+]
+
+export const LOOP_OF_RING_FINGERS = [
+  { label: '有り', value: 'loopOfRingFinger', price: 2200 },
+  { label: '無し', value: 'none', price: 0 }
+]
+
 export const MATERIAL_PACKS = [
-  { label: '横とじシングル', value: 'sideSingle' },
-  { label: '横とじダブル', value: 'sideDouble' },
-  { label: 'ダブルレース無し', value: 'sideDoubleNoLace' }
+  { label: 'タテとじ', value: 'vertical' },
+  { label: 'ヨコトジ', value: 'sideSingle' },
+  { label: 'ヨコトジダブル', value: 'sideDouble' },
+  { label: 'ヨコトジ(紐抜き)', value: 'sideDoubleNoLace' },
+  { label: 'ワイドヒンジ', value: 'sideSingleWideHinge' }, // canvas
+  { label: 'ワイドヒンジダブル', value: 'sideDoubleWideHinge' }, // canvas
+  { label: 'ワイドヒンジ(紐抜き)', value: 'sideDoubleWideHingeNoLace' } // canvas
 ]
 export const FINGER_GUARDS = [
   { label: '指カバー有り', value: 'indexCover' },

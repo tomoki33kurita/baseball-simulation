@@ -8,6 +8,13 @@ export const SET_LABEL_STAND = 'setLabelStand'
 export const SET_FINGER_GUARD = 'setFingerGuardType'
 export const SET_MATERIAL_PACK = 'setMaterialPack'
 export const SET_SIZE = 'setSize'
+export const SET_WEB_LACE_STYLE = 'setWebLaceStyle'
+export const SET_BACK_LACE_STYLE = 'setBackLaceStyle'
+export const SET_LEATHER_THICKNESS = 'setLeatherThickness'
+export const SET_CORE_HARDNESS = 'setCoreHardness'
+export const SET_GLOVE_SIZE = 'setGloveSize'
+export const SET_BANK_LACE_DIRECTION = 'setBankLaceDirection'
+export const SET_LOOP_OF_RING_FINGER = 'setLoopOfRingFinger'
 
 // COLOR
 export const SET_MESH_COLOR = 'setMeshColor'
@@ -70,6 +77,13 @@ export const DISPATCHER = {
   labelStand: SET_LABEL_STAND,
   meshColor: SET_MESH_COLOR,
   size: SET_SIZE,
+  webLaceStyle: SET_WEB_LACE_STYLE,
+  backLaceStyle: SET_BACK_LACE_STYLE,
+  leatherThickness: SET_LEATHER_THICKNESS,
+  coreHardness: SET_CORE_HARDNESS,
+  gloveSize: SET_GLOVE_SIZE,
+  bankLaceDirection: SET_BANK_LACE_DIRECTION,
+  loopOfRingFinger: SET_LOOP_OF_RING_FINGER,
 
   // 内野手用グラブここから
   thumbOut: SET_THUMB_OUT_COLOR,

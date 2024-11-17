@@ -13,7 +13,14 @@ import {
   BACK_STYLE_BUTTON_OPTION,
   BACK_STYLES,
   MESH_COLORS,
-  SIZES
+  SIZES,
+  WEB_LACE_STYLES,
+  BACK_LACE_STYLES,
+  LEATHER_THICKNESS,
+  CORE_HARDNESSES,
+  GLOVE_SIZES,
+  BANK_LACE_DIRECTIONS,
+  LOOP_OF_RING_FINGERS
 } from '@/features/genuine/Constants/base'
 import { SelectCard } from '@/components/Setters/SelectCard'
 import { SelectCardWithImage } from '@/components/Setters/SelectCardWithImage'
@@ -21,6 +28,7 @@ import { TabPanel } from '@/components/TabPanel'
 import { dispatcher } from './dispatcher'
 import { positionChecker } from '@/util/logic'
 import { getGenuineBackStyle } from './logic'
+import { bankLace } from '@/features/five/Drawer/canvas/rightThrow/front/lace/bank'
 
 type Props = {
   state: GenuineState
@@ -30,12 +38,34 @@ type Props = {
 }
 
 export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, dispatch }) => {
-  const { dominantArm, backStyle, meshColor, size, fingerGuard, materialPack, webParts } = state
+  const {
+    dominantArm,
+    backStyle,
+    meshColor,
+    size,
+    webLaceStyle,
+    backLaceStyle,
+    leatherThickness,
+    fingerGuard,
+    coreHardness,
+    gloveSize,
+    bankLaceDirection,
+    loopOfRingFinger,
+    materialPack,
+    webParts
+  } = state
   const handle = {
     dominantArm: dispatcher('dominantArm', dispatch),
     backStyle: dispatcher('backStyle', dispatch),
     meshColor: dispatcher('meshColor', dispatch),
     size: dispatcher('size', dispatch),
+    webLaceStyle: dispatcher('webLaceStyle', dispatch),
+    backLaceStyle: dispatcher('backLaceStyle', dispatch),
+    leatherThickness: dispatcher('leatherThickness', dispatch),
+    coreHardness: dispatcher('coreHardness', dispatch),
+    gloveSize: dispatcher('gloveSize', dispatch),
+    bankLaceDirection: dispatcher('bankLaceDirection', dispatch),
+    loopOfRingFinger: dispatcher('loopOfRingFinger', dispatch),
     materialPack: dispatcher('materialPack', dispatch),
     fingerGuard: dispatcher('fingerGuard', dispatch),
     webParts: dispatcher('webParts', dispatch)
@@ -44,6 +74,22 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
   const { isMesh } = getGenuineBackStyle(state)
   return (
     <TabPanel selectedIndex={selectedIndex} index={0}>
+      <SelectCard
+        summary={'革の厚さ'} // leatherThickness
+        selectedLabel={leatherThickness.label}
+        objects={LEATHER_THICKNESS}
+        isError={leatherThickness.value === 'unselected'}
+        defaultExpanded={leatherThickness.value === 'unselected'}
+        handleChange={handle.leatherThickness}
+      />
+      <SelectCard
+        summary={'手袋サイズ'} // gloveSize
+        selectedLabel={gloveSize.label}
+        objects={GLOVE_SIZES}
+        isError={gloveSize.value === 'unselected'}
+        defaultExpanded={gloveSize.value === 'unselected'}
+        handleChange={handle.gloveSize}
+      />
       <SelectCard
         summary={'利き腕'} // dominantArm
         selectedLabel={dominantArm.label}
@@ -54,6 +100,15 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         className={DOMINANT_ARM_BUTTON_OPTION}
       />
       <SelectCard
+        summary={'指カバー/指当て'} // fingerGuard
+        selectedLabel={fingerGuard.label}
+        objects={FINGER_GUARDS}
+        isError={fingerGuard.value === 'unselected'}
+        defaultExpanded={fingerGuard.value === 'unselected'}
+        className={FINGER_GUARD_TYPE_BUTTON_OPTION}
+        handleChange={handle.fingerGuard}
+      />
+      <SelectCard
         summary={'背面デザイン'} // backStyle
         selectedLabel={backStyle.label}
         objects={BACK_STYLES.filter((o) => (isPitcher ? true : o.value !== 'crown' && o.value !== 'crownMesh'))}
@@ -62,16 +117,15 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         defaultExpanded={backStyle.value === 'unselected'}
         className={BACK_STYLE_BUTTON_OPTION}
       />
-      {isMesh && (
-        <SelectCard
-          summary={'背面メッシュカラー'} // fingerGuard
-          selectedLabel={meshColor.label}
-          objects={MESH_COLORS}
-          isError={meshColor.value === 'unselected'}
-          defaultExpanded={meshColor.value === 'unselected'}
-          handleChange={handle.meshColor}
-        />
-      )}
+      <SelectCard
+        summary={'背面メッシュカラー'} // fingerGuard
+        selectedLabel={meshColor.label}
+        objects={MESH_COLORS}
+        isError={meshColor.value === 'unselected'}
+        defaultExpanded={meshColor.value === 'unselected'}
+        isDisplay={isMesh}
+        handleChange={handle.meshColor}
+      />
       <SelectCard
         summary={'サイズ'} // size
         selectedLabel={size.label}
@@ -80,7 +134,6 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         defaultExpanded={size.value === 'unselected'}
         handleChange={handle.size}
       />
-
       <SelectCardWithImage
         summary={'ウェブ'} // webParts
         selectedLabel={webParts.label}
@@ -91,7 +144,23 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         className={WEB_PARTS_BUTTON_OPTION}
       />
       <SelectCard
-        summary={'芯とじ'} // materialPack
+        summary={'ウェブ紐スタイル'} // webLaceStyle
+        selectedLabel={webLaceStyle.label}
+        objects={WEB_LACE_STYLES}
+        isError={webLaceStyle.value === 'unselected'}
+        defaultExpanded={webLaceStyle.value === 'unselected'}
+        handleChange={handle.webLaceStyle}
+      />
+      <SelectCard
+        summary={'背面紐通し'} // backLaceStyle
+        selectedLabel={backLaceStyle.label}
+        objects={BACK_LACE_STYLES}
+        isError={backLaceStyle.value === 'unselected'}
+        defaultExpanded={backLaceStyle.value === 'unselected'}
+        handleChange={handle.backLaceStyle}
+      />
+      <SelectCard
+        summary={'土手芯'} // materialPack
         selectedLabel={materialPack.label}
         objects={MATERIAL_PACKS}
         handleChange={handle.materialPack}
@@ -100,13 +169,28 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         className={MATERIAL_PACK_BUTTON_OPTION}
       />
       <SelectCard
-        summary={'指カバー/指当て'} // fingerGuard
-        selectedLabel={fingerGuard.label}
-        objects={FINGER_GUARDS}
-        isError={fingerGuard.value === 'unselected'}
-        defaultExpanded={fingerGuard.value === 'unselected'}
-        className={FINGER_GUARD_TYPE_BUTTON_OPTION}
-        handleChange={handle.fingerGuard}
+        summary={'芯材の硬さ'} // coreHardness
+        selectedLabel={coreHardness.label}
+        objects={CORE_HARDNESSES}
+        isError={coreHardness.value === 'unselected'}
+        defaultExpanded={coreHardness.value === 'unselected'}
+        handleChange={handle.coreHardness}
+      />
+      <SelectCard
+        summary={'手口巻スタイル'} //  bankLaceDirection
+        selectedLabel={bankLaceDirection.label}
+        objects={BANK_LACE_DIRECTIONS}
+        isError={bankLaceDirection.value === 'unselected'}
+        defaultExpanded={bankLaceDirection.value === 'unselected'}
+        handleChange={handle.bankLaceDirection}
+      />
+      <SelectCard
+        summary={'薬指リング'} //  loopOfRingFinger
+        selectedLabel={loopOfRingFinger.label}
+        objects={LOOP_OF_RING_FINGERS}
+        isError={loopOfRingFinger.value === 'unselected'}
+        defaultExpanded={loopOfRingFinger.value === 'unselected'}
+        handleChange={handle.loopOfRingFinger}
       />
     </TabPanel>
   )

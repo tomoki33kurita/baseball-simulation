@@ -32,7 +32,14 @@ import {
   SET_FINGER_GUARD_COLOR,
   SET_BACK_STYLE,
   SET_MESH_COLOR,
-  SET_SIZE
+  SET_SIZE,
+  SET_WEB_LACE_STYLE,
+  SET_BACK_LACE_STYLE,
+  SET_LEATHER_THICKNESS,
+  SET_CORE_HARDNESS,
+  SET_GLOVE_SIZE,
+  SET_BANK_LACE_DIRECTION,
+  SET_LOOP_OF_RING_FINGER
 } from '@/features/genuine/Constants/action'
 import { ADD_EMBROIDERY, REMOVE_EMBROIDERY, SET_DRAWER_INDEX, SET_EMBROIDERIES, SET_PERSONAL } from '@/Constants'
 import { GenuineState } from '../types'
@@ -91,6 +98,14 @@ export const initialState: GenuineState = {
   backStyle: unselectedStateWithPrice,
   meshColor: unselectedColorState,
   size: unselectedStateWithPrice,
+  webLaceStyle: unselectedState,
+  backLaceStyle: unselectedState,
+  leatherThickness: unselectedState,
+  coreHardness: unselectedState,
+  gloveSize: unselectedState,
+  bankLaceDirection: unselectedState,
+  loopOfRingFinger: unselectedStateWithPrice,
+
   materialPack: unselectedState,
   webParts: unselectedColorState,
   parts: { label: '全体', value: 'all' },
@@ -169,6 +184,21 @@ export const reducer = (state: any, action: any) => {
       return { ...state, meshColor: action.meshColor }
     case SET_SIZE:
       return { ...state, size: action.size }
+    case SET_WEB_LACE_STYLE:
+      return { ...state, webLaceStyle: action.webLaceStyle }
+    case SET_BACK_LACE_STYLE:
+      return { ...state, backLaceStyle: action.backLaceStyle }
+    case SET_LEATHER_THICKNESS:
+      return { ...state, leatherThickness: action.leatherThickness }
+    case SET_CORE_HARDNESS:
+      return { ...state, coreHardness: action.coreHardness }
+    case SET_GLOVE_SIZE:
+      return { ...state, gloveSize: action.gloveSize }
+    case SET_BANK_LACE_DIRECTION:
+      return { ...state, bankLaceDirection: action.bankLaceDirection }
+    case SET_LOOP_OF_RING_FINGER:
+      return { ...state, loopOfRingFinger: action.loopOfRingFinger }
+
     case SET_BASE_MODEL:
       return { ...state, baseModel: action.baseModel }
     case SET_DOMINANT_ARM:

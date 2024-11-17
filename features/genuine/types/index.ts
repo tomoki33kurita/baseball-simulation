@@ -26,6 +26,13 @@ export type PartsItem = {
     | 'mouton'
     | 'backStyle'
     | 'size'
+    | 'webLaceStyle'
+    | 'backLaceStyle'
+    | 'leatherThickness'
+    | 'coreHardness'
+    | 'gloveSize'
+    | 'bankLaceDirection'
+    | 'loopOfRingFinger'
   >
   // value: keyof typeof LEATHER_COLORS_BY_PARTS
 }
@@ -46,7 +53,14 @@ export type GenuineState = {
   dominantArm: BaseItem
   backStyle: BaseItemWithPrice
   meshColor: ColorItem
-  size: BaseItemWithPrice // reducerを追加する
+  size: BaseItemWithPrice
+  webLaceStyle: BaseItem
+  backLaceStyle: BaseItem
+  leatherThickness: BaseItem
+  coreHardness: BaseItem
+  gloveSize: BaseItem
+  bankLaceDirection: BaseItem
+  loopOfRingFinger: BaseItemWithPrice
 
   fingerGuard: BaseItem
   materialPack: BaseItem
