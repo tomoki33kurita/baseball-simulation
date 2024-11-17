@@ -69,7 +69,7 @@ export type GenuineState = {
   embroideries: Embroidery[]
   personal: Personal
   drawerIndex: DrawerIndex
-  genuineLabel: ColorItem
+  genuineLabel: BaseItemWithPrice
 
   all: ColorItem
   lace: ColorItem

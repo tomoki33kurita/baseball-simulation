@@ -135,7 +135,7 @@ export const initialState: GenuineState = {
   ringLittle: unselectedColorState,
   littleRing: unselectedColorState,
   littleOut: unselectedColorState,
-  genuineLabel: unselectedColorState,
+  genuineLabel: unselectedStateWithPrice,
   boomerang: unselectedColorState,
   underWeb: unselectedColorState,
   fingerStand: unselectedColorState,

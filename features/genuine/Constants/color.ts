@@ -1,7 +1,8 @@
+import { BaseItemWithPrice, ColorItem } from '@/types'
 import { LeatherColorsByPartsOfGenuine, PartsItem } from '../types'
 import { MESH_COLORS } from './base'
 
-export const LEATHER_COLORS = [
+export const LEATHER_COLORS: ColorItem[] = [
   { label: 'ブラック', value: 'black', color: '#1E1E1E' },
   { label: 'ダークブラウン', value: 'darkBrown', color: '#4A3826' },
   { label: 'タン', value: 'tan', color: '#b08030' },
@@ -16,9 +17,9 @@ export const LEATHER_COLORS = [
   { label: 'グレー', value: 'gray', color: '#646464' }
 ]
 
-const SOFT_LEATHER_BLACK = { label: 'ソフトレザー(ブラック)', value: 'softLeatherBlack', color: '#232222' }
-export const LININGS = [SOFT_LEATHER_BLACK, ...LEATHER_COLORS]
-export const WELTINGS = [
+const SOFT_LEATHER_BLACK: ColorItem = { label: 'ソフトレザー(ブラック)', value: 'softLeatherBlack', color: '#232222' }
+export const LININGS: ColorItem[] = [SOFT_LEATHER_BLACK, ...LEATHER_COLORS]
+export const WELTINGS: ColorItem[] = [
   { label: '切りハミ(ホワイト)', value: 'kirihamiWhite', color: '#fff' },
   { label: '玉ハミ(ブラック)', value: 'black', color: '#1E1E1E' },
   { label: '玉ハミ(ダークブラウン)', value: 'darkBrown', color: '#4A3826' },
@@ -34,7 +35,7 @@ export const WELTINGS = [
   { label: '玉ハミ(グレー)', value: 'gray', color: '#646464' }
 ]
 
-export const BINDINGS = [
+export const BINDINGS: ColorItem[] = [
   { label: 'ブラック', value: 'black', color: '#1E1E1E' },
   { label: 'ダークブラウン', value: 'darkBrown', color: '#4A3826' },
   { label: 'タン', value: 'tan', color: '#b08030' },
@@ -48,7 +49,7 @@ export const BINDINGS = [
   { label: 'グレー', value: 'gray', color: '#646464' }
 ]
 
-export const LACES = [
+export const LACES: ColorItem[] = [
   { label: 'ブラック', value: 'black', color: '#1E1E1E' },
   { label: 'ダークブラウン', value: 'darkBrown', color: '#4A3826' },
   { label: 'タン', value: 'tan', color: '#b08030' },
@@ -62,12 +63,12 @@ export const LACES = [
   { label: 'グレー', value: 'gray', color: '#646464' }
 ]
 
-export const MOUTON_COLORS = [
+export const MOUTON_COLORS: ColorItem[] = [
   { label: 'ホワイト', value: 'white', color: '#fff' },
   { label: 'ブラック', value: 'black', color: '#1E1E1E' }
 ]
 
-export const STITCHES = [
+export const STITCHES: ColorItem[] = [
   { label: 'グリーン', value: 'green', color: '#022b02' },
   { label: 'ブラック', value: 'black', color: '#0a0a0a' },
   { label: 'ネイビー', value: 'navy', color: '#041342' },
@@ -84,36 +85,11 @@ export const STITCHES = [
 ]
 
 // setter側で使用
-export const GENUINE_LABELS = [
-  { label: 'No.01', value: '1', imageUrl: '/genuine/labels/1.jpg' },
-  { label: 'No.02', value: '2', imageUrl: '/genuine/labels/2.jpg' },
-  { label: 'No.03', value: '3', imageUrl: '/genuine/labels/3.jpg' },
-  { label: 'No.04', value: '4', imageUrl: '/genuine/labels/4.jpg' },
-  { label: 'No.05', value: '5', imageUrl: '/genuine/labels/5.jpg' },
-  { label: 'No.06', value: '6', imageUrl: '/genuine/labels/6.jpg' },
-  { label: 'No.07', value: '7', imageUrl: '/genuine/labels/7.jpg' },
-  { label: 'No.08', value: '8', imageUrl: '/genuine/labels/8.jpg' },
-  { label: 'No.09', value: '9', imageUrl: '/genuine/labels/9.jpg' },
-  { label: 'No.10', value: '10', imageUrl: '/genuine/labels/10.jpg' },
-  { label: 'No.11', value: '11', imageUrl: '/genuine/labels/11.jpg' },
-  { label: 'No.12', value: '12', imageUrl: '/genuine/labels/12.jpg' }
-]
-
-// canvas側で使用
-const CORE_GOLD = '#f2bf05'
-export const GENUINE_LABEL_COLORS = [
-  { value: '1', core: CORE_GOLD, secondary: CORE_GOLD, binding: '#121212' },
-  { value: '2', core: '#C3934C', secondary: '#C3934C', binding: '#C3934C' },
-  { value: '3', core: CORE_GOLD, secondary: CORE_GOLD, binding: '#2A4029' },
-  { value: '4', core: CORE_GOLD, secondary: CORE_GOLD, binding: 'blue' },
-  { value: '5', core: CORE_GOLD, secondary: CORE_GOLD, binding: 'red' },
-  { value: '6', core: '#C9B284', secondary: '#C9B284', binding: '#121212' },
-  { value: '7', core: '#C9B284', secondary: '#C9B284', binding: '#C9B284' },
-  { value: '8', core: 'silver', secondary: 'silver', binding: '#121212' },
-  { value: '9', core: 'silver', secondary: 'silver', binding: 'silver' },
-  { value: '10', core: '#121212', secondary: '#121212', binding: '#121212' },
-  { value: '11', core: '#20373F', secondary: '#c9b606', binding: 'navy' },
-  { value: '12', core: 'navy', secondary: 'red', binding: 'silver' }
+export const GENUINE_LABELS: BaseItemWithPrice[] = [
+  { label: '通常フロント', value: 'normalFront', price: 0 },
+  { label: '通常サイド', value: 'normalSide', price: 0 },
+  { label: '直刺繍フロント', value: 'directEmbroideryFront', price: 5500 },
+  { label: '直刺繍サイド', value: 'directEmbroiderySide', price: 5500 }
 ]
 
 const commonPartsObjs: PartsItem[] = [

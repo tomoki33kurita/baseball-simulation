@@ -31,6 +31,7 @@ export const SET_LITTLE_HOOK = 'setLittleHook'
 export const SET_LIST_BELT_COLOR = 'setListBeltColor'
 export const SET_FINGER_GUARD_COLOR = 'setFingerGuardColor'
 export const SET_WELTING = 'setWelting'
+export const SET_GENUINE_LABEL = 'setGenuineLabel'
 
 export const SET_THUMB_OUT_COLOR = 'thumbOut'
 export const SET_THUMB_WEB_COLOR = 'thumbWeb'
@@ -84,6 +85,7 @@ export const DISPATCHER = {
   gloveSize: SET_GLOVE_SIZE,
   bankLaceDirection: SET_BANK_LACE_DIRECTION,
   loopOfRingFinger: SET_LOOP_OF_RING_FINGER,
+  genuineLabel: SET_GENUINE_LABEL,
 
   // 内野手用グラブここから
   thumbOut: SET_THUMB_OUT_COLOR,

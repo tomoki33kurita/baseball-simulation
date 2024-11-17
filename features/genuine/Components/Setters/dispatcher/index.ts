@@ -36,10 +36,10 @@ import {
   SET_CORE_HARDNESS,
   SET_GLOVE_SIZE,
   SET_BANK_LACE_DIRECTION,
-  SET_LOOP_OF_RING_FINGER
+  SET_LOOP_OF_RING_FINGER,
+  SET_GENUINE_LABEL
 } from '@/features/genuine/Constants/action'
-import { BINDINGS, LACES, MOUTON_COLORS, STITCHES, WELTINGS } from '@/features/genuine/Constants/color'
-import { bankLace } from '@/features/five/Drawer/canvas/rightThrow/front/lace/bank'
+import { BINDINGS, GENUINE_LABELS, LACES, MOUTON_COLORS, STITCHES, WELTINGS } from '@/features/genuine/Constants/color'
 
 // ここはブランドのドメイン
 const dispatchBaseStore = {
@@ -61,7 +61,8 @@ const dispatchBaseStore = {
   binding: { objects: BINDINGS, actionType: SET_BINDING_COLOR },
   stitch: { objects: STITCHES, actionType: SET_STITCH_COLOR },
   welting: { objects: WELTINGS, actionType: SET_WELTING },
-  mouton: { objects: MOUTON_COLORS, actionType: SET_MOUTON_COLOR }
+  mouton: { objects: MOUTON_COLORS, actionType: SET_MOUTON_COLOR },
+  genuineLabel: { objects: GENUINE_LABELS, actionType: SET_GENUINE_LABEL }
 }
 
 type DispatchKey = keyof typeof dispatchBaseStore

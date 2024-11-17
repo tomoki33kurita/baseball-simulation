@@ -144,7 +144,7 @@ export const initialState: GenuineState = {
   middleLeftRingLittle: unselectedColorState, // catcher
   thumbMachi: unselectedColorState, // catcher
   littleMachi: unselectedColorState, // catcher
-  genuineLabel: unselectedColorState,
+  genuineLabel: unselectedStateWithPrice,
   embroideries: [initialEmbroideryState],
   personal: initialPersonalState,
   drawerIndex: 0

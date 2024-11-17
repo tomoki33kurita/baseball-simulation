@@ -16,9 +16,9 @@ import {
   PARTS,
   STITCH_COLOR_BUTTON_OPTION,
   STITCHES,
-  BINDINGS
+  BINDINGS,
+  GENUINE_LABELS
 } from '../../Constants/color'
-import { Box } from '@mui/material'
 import { originDispatcher } from '@/util/logic'
 import { DISPATCHER } from '@/features/genuine/Constants/action'
 
@@ -30,7 +30,7 @@ type Props = {
 }
 
 export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch }) => {
-  const { parts, drawerIndex, lace, binding, stitch, welting, mouton } = state
+  const { parts, drawerIndex, lace, binding, stitch, welting, mouton, genuineLabel } = state
   const partsKey = parts.value
   const partsLabel = parts.label
   const componentParts = getComponentParts(state)
@@ -44,7 +44,8 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
     binding: dispatcher('binding', dispatch),
     stitch: dispatcher('stitch', dispatch),
     welting: dispatcher('welting', dispatch),
-    mouton: dispatcher('mouton', dispatch)
+    mouton: dispatcher('mouton', dispatch),
+    genuineLabel: dispatcher('genuineLabel', dispatch)
   }
 
   if (!componentParts || !selectableParts) return <></>
@@ -60,16 +61,6 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
         className={LEATHER_COLOR_BUTTON_OPTION}
       />
       <SelectCard
-        summary={'ハミダシ'}
-        selectedLabel={welting.label}
-        selectedColor={welting.color}
-        objects={WELTINGS}
-        defaultExpanded={welting.value === 'unselected'}
-        handleChange={handle.welting}
-        isError={welting.value === 'unselected'}
-        className={WELTING_COLOR_BUTTON_OPTION}
-      />
-      <SelectCard
         summary={'ヘリ革'}
         selectedLabel={binding.label}
         selectedColor={binding.color}
@@ -80,7 +71,17 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
         className={BINDING_COLOR_BUTTON_OPTION}
       />
       <SelectCard
-        summary={'縫い糸'}
+        summary={'ハミダシ'}
+        selectedLabel={welting.label}
+        selectedColor={welting.color}
+        objects={WELTINGS}
+        defaultExpanded={welting.value === 'unselected'}
+        handleChange={handle.welting}
+        isError={welting.value === 'unselected'}
+        className={WELTING_COLOR_BUTTON_OPTION}
+      />
+      <SelectCard
+        summary={'ステッチ'}
         selectedLabel={stitch.label}
         selectedColor={stitch.color}
         objects={STITCHES}
@@ -90,7 +91,7 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
         className={STITCH_COLOR_BUTTON_OPTION}
       />
       <SelectCard
-        summary={'レース'}
+        summary={'革紐'}
         selectedLabel={lace.label}
         selectedColor={lace.color}
         objects={LACES}
@@ -109,14 +110,14 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
         isError={mouton.value === 'unselected'}
         className={MOUTON_BUTTON_OPTION}
       />
-      {/* <SelectCard
-        summary={''} // 
-        selectedLabel={}
-        objects={}
-        isError={.value === 'unselected'}
-        defaultExpanded={.value === 'unselected'}
-        handleChange={handle.}
-      /> */}
+      <SelectCard
+        summary={'ラベル'} //
+        selectedLabel={genuineLabel.label}
+        objects={GENUINE_LABELS}
+        isError={genuineLabel.value === 'unselected'}
+        defaultExpanded={genuineLabel.value === 'unselected'}
+        handleChange={handle.genuineLabel}
+      />
     </TabPanel>
   )
 }

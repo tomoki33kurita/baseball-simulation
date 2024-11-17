@@ -1,18 +1,18 @@
-import { WebParts } from '@/types'
+import { BaseItem, BaseItemWithPrice, ColorItem, WebParts } from '@/types'
 
-export const DOMINANT_ARMS = [
+export const DOMINANT_ARMS: BaseItem[] = [
   { label: '右投げ', value: 'rightThrow' },
   { label: '左投げ', value: 'leftThrow' }
 ]
 
-export const BACK_STYLES = [
+export const BACK_STYLES: BaseItemWithPrice[] = [
   { label: 'ノーマル', value: 'normal', price: 0 },
   { label: '王冠スタイル', value: 'crown', price: 0 },
   { label: 'ノーマルメッシュ', value: 'normalMesh', price: 3300 },
   { label: '王冠メッシュ', value: 'crownMesh', price: 3300 }
 ]
 
-export const MESH_COLORS = [
+export const MESH_COLORS: ColorItem[] = [
   { label: 'ブラック', value: 'black', color: '#1E1E1E' },
   { label: 'ホワイト', value: 'white', color: '#000000' },
   { label: 'ブルー', value: 'blue', color: '#253F86' },
@@ -20,7 +20,7 @@ export const MESH_COLORS = [
   { label: 'レッド', value: 'red', color: '#CB1527' }
 ]
 
-export const SIZES = [
+export const SIZES: BaseItemWithPrice[] = [
   { label: '10mm大きく', value: 'large10', price: 3300 },
   { label: '5mm大きく', value: 'large5', price: 3300 },
   { label: '基本モデルズバリ', value: 'default', price: 0 },
@@ -28,44 +28,44 @@ export const SIZES = [
   { label: '10mm小さく', value: 'small10', price: 3300 }
 ]
 
-export const WEB_LACE_STYLES = [
+export const WEB_LACE_STYLES: BaseItem[] = [
   { label: '通常', value: 'normal' },
   { label: 'クロス', value: 'cross' }
 ]
 
-export const BACK_LACE_STYLES = [
+export const BACK_LACE_STYLES: BaseItem[] = [
   { label: 'なし', value: 'none' },
   { label: '並行通し', value: 'normal' },
   { label: 'クロス通し', value: 'cross' }
 ]
 
-export const LEATHER_THICKNESS = [
+export const LEATHER_THICKNESS: BaseItem[] = [
   { label: '普通', value: 'normal' },
   { label: '薄く', value: 'thin' }
 ]
 
-export const CORE_HARDNESSES = [
+export const CORE_HARDNESSES: BaseItem[] = [
   { label: '普通', value: 'normal' },
   { label: '硬め', value: 'hard' }
 ]
 
-export const GLOVE_SIZES = [
+export const GLOVE_SIZES: BaseItem[] = [
   { label: '23cm以下', value: 'under23' },
   { label: '24~26cm', value: 'between24and26' },
   { label: '27cm以上', value: 'over27' }
 ]
 
-export const BANK_LACE_DIRECTIONS = [
+export const BANK_LACE_DIRECTIONS: BaseItem[] = [
   { label: 'レギュラー巻き', value: 'sequentialRoll' },
   { label: '逆巻き', value: 'reverseRoll' }
 ]
 
-export const LOOP_OF_RING_FINGERS = [
+export const LOOP_OF_RING_FINGERS: BaseItemWithPrice[] = [
   { label: '有り', value: 'loopOfRingFinger', price: 2200 },
   { label: '無し', value: 'none', price: 0 }
 ]
 
-export const MATERIAL_PACKS = [
+export const MATERIAL_PACKS: BaseItem[] = [
   { label: 'タテとじ', value: 'vertical' },
   { label: 'ヨコトジ', value: 'sideSingle' },
   { label: 'ヨコトジダブル', value: 'sideDouble' },
@@ -74,7 +74,7 @@ export const MATERIAL_PACKS = [
   { label: 'ワイドヒンジダブル', value: 'sideDoubleWideHinge' }, // canvas
   { label: 'ワイドヒンジ(紐抜き)', value: 'sideDoubleWideHingeNoLace' } // canvas
 ]
-export const FINGER_GUARDS = [
+export const FINGER_GUARDS: BaseItem[] = [
   { label: '指カバー有り', value: 'indexCover' },
   { label: '指アテ有り', value: 'indexPad' },
   // { label: '指アテ有り(中指)', value: 'middlePad' },
