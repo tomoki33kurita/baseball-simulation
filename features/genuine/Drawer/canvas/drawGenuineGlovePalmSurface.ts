@@ -13,12 +13,15 @@ import { lace } from './rightThrow/glove/front/lace'
 import { backLaceDrawerOfFront } from './rightThrow/glove/front/lace/backLace'
 import { genuineEngravedOfPalm } from './rightThrow/glove/front/engraving'
 import { GenuineState } from '../../types'
+import { getFingerColor } from '../../Components/Setters/logic'
 
 export const drawGenuineGlovePalmSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
   if (!ctx) return
-
   const baseModel = state.baseModel
   const position = baseModel.position
+  const { thumbWebColor, indexWebColor, indexMiddleColor, middleIndexColor, middleRingColor, ringLittleColor, littleRingColor } =
+    getFingerColor(state)
+
   // リセット
   canvasResetter(ctx)
   ctx.font = '40px serif'
@@ -34,13 +37,13 @@ export const drawGenuineGlovePalmSurface = (ctx: CanvasRenderingContext2D | null
   webOfGloveFrontDrawer(ctx, state, state.web.color, laceColor, stitchColor) // ウェブの描画
   palm(ctx, palmState.color) // 捕球面
   thumbBackOut(ctx, state.thumbOut.color) // 親指背面＿外側
-  thumbBackWebSide(ctx, state.thumbWeb.color) // 親指背面＿ウェブ側
-  indexBackWebSide(ctx, state.indexWeb.color) // 人差し指背面＿ウェブ側
-  indexBackMiddleSide(ctx, state.indexMiddle.color) // 人差し指背面＿中指側
-  middleBackIndexSide(ctx, state.middleIndex.color) // 中指背面＿人差し指側
-  middleBackRingSide(ctx, state.middleRing.color) // 中指背面＿薬指側
-  ringBackLittleSide(ctx, state.ringLittle.color) // 薬指背面＿小指側
-  littleBackRingSide(ctx, state.littleRing.color) // 小指背面＿薬指側
+  thumbBackWebSide(ctx, thumbWebColor) // 親指背面＿ウェブ側
+  indexBackWebSide(ctx, indexWebColor) // 人差し指背面＿ウェブ側
+  indexBackMiddleSide(ctx, indexMiddleColor) // 人差し指背面＿中指側
+  middleBackIndexSide(ctx, middleIndexColor) // 中指背面＿人差し指側
+  middleBackRingSide(ctx, middleRingColor) // 中指背面＿薬指側
+  ringBackLittleSide(ctx, ringLittleColor) // 薬指背面＿小指側
+  littleBackRingSide(ctx, littleRingColor) // 小指背面＿薬指側
   littleBackOut(ctx, state.littleOut.color) // 小指背面＿外側
   welting(ctx, state.welting.color, baseModel.isFingerCrotch, palmState.color) // ハミダシ
   bindings(ctx, state.binding.color, laceColor, stitchColor, baseModel.bankLaceDirection) // ヘリ革

@@ -255,8 +255,32 @@ export const fontImageResolver = (embroidery: Embroidery) => {
 export const getBackStyle = (state: GenuineState) => {
   const isFirstBackStyle = ['firstBackStyle'].includes(state.backStyle.value)
   const isMIUT4Model = state.baseModel.productNumber === 'MIU-T4' && state.backStyle.value === 'unselected'
-
   return {
     isFirstBackStyle: isFirstBackStyle || isMIUT4Model
+  }
+}
+
+export const getFingerColor = (state: GenuineState) => {
+  const { isFirstBackStyle } = getBackStyle(state)
+  if (isFirstBackStyle) {
+    return {
+      thumbWebColor: state.thumbIndexMiddleRight.color,
+      indexWebColor: state.thumbIndexMiddleRight.color,
+      indexMiddleColor: state.thumbIndexMiddleRight.color,
+      middleIndexColor: state.thumbIndexMiddleRight.color,
+      middleRingColor: state.middleLeftRingRight.color,
+      ringLittleColor: state.ringLeftLittleRight.color,
+      littleRingColor: state.ringLeftLittleRight.color
+    }
+  }
+
+  return {
+    thumbWebColor: state.thumbWeb.color,
+    indexWebColor: state.indexWeb.color,
+    indexMiddleColor: state.indexMiddle.color,
+    middleIndexColor: state.middleIndex.color,
+    middleRingColor: state.middleRing.color,
+    ringLittleColor: state.ringLittle.color,
+    littleRingColor: state.littleRing.color
   }
 }
