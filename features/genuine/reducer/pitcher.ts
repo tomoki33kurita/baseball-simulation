@@ -191,7 +191,7 @@ export const reducer = (state: any, action: any) => {
     case SET_BASE_MODEL:
       return { ...state, baseModel: action.baseModel }
     case SET_BACK_STYLE:
-      return { ...state, backStyle: action.backStyle }
+      return { ...state, backStyle: action.backStyle, drawerIndex: 0 }
     case SET_MESH_COLOR:
       return { ...state, meshColor: action.meshColor }
     case SET_SIZE:

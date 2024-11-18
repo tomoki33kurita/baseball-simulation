@@ -6,9 +6,6 @@ export const genuineEngravedOfPalm = (ctx: CanvasRenderingContext2D, palm: Color
   ctx.lineWidth = 1.5
   const isBright = [
     'black',
-    'kBlack',
-    'uBlack',
-    'jBlack',
     'navy',
     'blue',
     'cork',
@@ -19,9 +16,12 @@ export const genuineEngravedOfPalm = (ctx: CanvasRenderingContext2D, palm: Color
     'chocolate',
     'green',
     'gray',
+    'red',
+    'pink',
     'sOrange',
     'rOrange',
-    'lOrange'
+    'lOrange',
+    'wine'
   ].includes(palm.value)
   ctx.strokeStyle = isBright ? '#eee' : '#6d6d6d'
   ctx.beginPath()
