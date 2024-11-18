@@ -1,37 +1,52 @@
 import { GenuineState } from '@/features/genuine/types'
 
+export const genuineEngraved = (ctx: CanvasRenderingContext2D, x: number, y: number, scaleSize: number, strokeColor: string): void => {
+  ctx.save()
+  ctx.scale(scaleSize, scaleSize)
+  // stand(ctx, '#383838', x, y)
+  parts8(ctx, 'gold', x, y, strokeColor, false)
+  parts7(ctx, 'gold', x, y, strokeColor, false)
+  parts6(ctx, 'gold', x, y, strokeColor, false)
+  parts5(ctx, 'gold', x, y, strokeColor, false)
+  parts4(ctx, 'gold', x, y, strokeColor, false)
+  parts3(ctx, 'gold', x, y, strokeColor, false)
+  parts2(ctx, 'gold', x, y, strokeColor, false)
+  parts1(ctx, 'gold', x, y, strokeColor, false)
+  ctx.restore()
+}
+
 export const genuineLabel = (ctx: CanvasRenderingContext2D, state: GenuineState, x: number, y: number, rotate: number, scaleSize: number): void => {
   ctx.save()
   ctx.rotate((rotate * Math.PI) / 180)
   ctx.scale(scaleSize, scaleSize)
 
   stand(ctx, '#383838', x, y)
-  parts8(ctx, 'gold', x, y)
-  parts7(ctx, 'gold', x, y)
-  parts6(ctx, 'gold', x, y)
-  parts5(ctx, 'gold', x, y)
-  parts4(ctx, 'gold', x, y)
-  parts3(ctx, 'gold', x, y)
-  parts2(ctx, 'gold', x, y)
-  parts1(ctx, 'gold', x, y)
+  parts8(ctx, 'gold', x, y, '#383838')
+  parts7(ctx, 'gold', x, y, '#383838')
+  parts6(ctx, 'gold', x, y, '#383838')
+  parts5(ctx, 'gold', x, y, '#383838')
+  parts4(ctx, 'gold', x, y, '#383838')
+  parts3(ctx, 'gold', x, y, '#383838')
+  parts2(ctx, 'gold', x, y, '#383838')
+  parts1(ctx, 'gold', x, y, '#383838')
   ctx.restore()
 }
-// const parts = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number): void => {
+// const parts = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number , strokeStyle: string, isFill = true): void => {
 //   ctx.beginPath()
-//   ctx.strokeStyle = 'red' // '#383838'
+//   ctx.strokeStyle =strokeStyle
 //   ctx.fillStyle = color
-//   ctx.lineWidth = 0.8
+//   ctx.lineWidth =1.0
 //   ctx.moveTo(357+x, 556+y)
 //   // ctx.quadraticCurveTo(350+x, 561+y, 352+x, 568+y)
 //   ctx.stroke()
 //   ctx.closePath()
 // }
 
-const parts1 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number): void => {
+const parts1 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number, strokeStyle: string, isFill = true): void => {
   ctx.beginPath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = strokeStyle
   ctx.fillStyle = color
-  ctx.lineWidth = 0.7
+  ctx.lineWidth = 1.0
   ctx.moveTo(336 + x, 557 + y)
   ctx.quadraticCurveTo(341 + x, 554 + y, 347 + x, 558 + y)
   ctx.quadraticCurveTo(341 + x, 557 + y, 345 + x, 562 + y)
@@ -58,43 +73,48 @@ const parts1 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: numb
   ctx.quadraticCurveTo(336 + x, 554 + y, 336 + x, 554 + y)
   ctx.quadraticCurveTo(335 + x, 556 + y, 336 + x, 557 + y)
   // ctx.
-  ctx.fill()
+  if (isFill) {
+    ctx.fill()
+  }
   ctx.stroke()
   ctx.closePath()
 
   ctx.beginPath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = strokeStyle
   ctx.fillStyle = '#383838'
-  ctx.lineWidth = 0.7
+  ctx.lineWidth = 1.0
   ctx.moveTo(346 + x, 537 + y)
   ctx.quadraticCurveTo(351 + x, 536 + y, 354 + x, 532 + y)
   ctx.quadraticCurveTo(350 + x, 528 + y, 346 + x, 537 + y)
-  ctx.fill()
+  if (isFill) {
+    ctx.fill()
+  }
   ctx.stroke()
   ctx.closePath()
 }
 
-const parts2 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number): void => {
+const parts2 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number, strokeStyle: string, isFill = true): void => {
   ctx.beginPath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = strokeStyle
   ctx.fillStyle = color
-  ctx.lineWidth = 0.8
+  ctx.lineWidth = 1.0
   ctx.moveTo(342 + x, 529 + y)
   ctx.quadraticCurveTo(342 + x, 525 + y, 347 + x, 522 + y)
   ctx.quadraticCurveTo(343 + x, 518 + y, 346 + x, 515 + y)
   ctx.quadraticCurveTo(341 + x, 515 + y, 342 + x, 515 + y)
   ctx.quadraticCurveTo(337 + x, 519 + y, 342 + x, 529 + y)
-  // ctx.
-  ctx.fill()
+  if (isFill) {
+    ctx.fill()
+  }
   ctx.stroke()
   ctx.closePath()
 }
 
-const parts3 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number): void => {
+const parts3 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number, strokeStyle: string, isFill = true): void => {
   ctx.beginPath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = strokeStyle
   ctx.fillStyle = color
-  ctx.lineWidth = 0.8
+  ctx.lineWidth = 1.0
   ctx.moveTo(347 + x, 522 + y)
   ctx.quadraticCurveTo(354 + x, 519 + y, 354 + x, 519 + y)
   ctx.quadraticCurveTo(355 + x, 509 + y, 361 + x, 505 + y)
@@ -102,34 +122,36 @@ const parts3 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: numb
   ctx.quadraticCurveTo(383 + x, 492 + y, 378 + x, 494 + y)
   ctx.quadraticCurveTo(368 + x, 494 + y, 355 + x, 503 + y)
   ctx.quadraticCurveTo(345 + x, 510 + y, 347 + x, 522 + y)
-  // ctx.
-  ctx.fill()
+  if (isFill) {
+    ctx.fill()
+  }
   ctx.stroke()
   ctx.closePath()
 }
 
-const parts4 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number): void => {
+const parts4 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number, strokeStyle: string, isFill = true): void => {
   ctx.beginPath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = strokeStyle
   ctx.fillStyle = color
-  ctx.lineWidth = 0.8
+  ctx.lineWidth = 1.0
   ctx.moveTo(355 + x, 519 + y)
   ctx.quadraticCurveTo(367 + x, 506 + y, 392 + x, 500 + y)
   ctx.quadraticCurveTo(394 + x, 497 + y, 395 + x, 492 + y)
   ctx.quadraticCurveTo(392 + x, 492 + y, 390 + x, 494 + y)
   ctx.quadraticCurveTo(369 + x, 502 + y, 369 + x, 502 + y)
   ctx.quadraticCurveTo(358 + x, 503 + y, 355 + x, 519 + y)
-  // ctx.
-  ctx.fill()
+  if (isFill) {
+    ctx.fill()
+  }
   ctx.stroke()
   ctx.closePath()
 }
 
-const parts5 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number): void => {
+const parts5 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number, strokeStyle: string, isFill = true): void => {
   ctx.beginPath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = strokeStyle
   ctx.fillStyle = color
-  ctx.lineWidth = 0.8
+  ctx.lineWidth = 1.0
   ctx.moveTo(370 + x, 511 + y)
   ctx.quadraticCurveTo(385 + x, 520 + y, 385 + x, 520 + y)
   ctx.quadraticCurveTo(392 + x, 521 + y, 392 + x, 531 + y)
@@ -138,17 +160,18 @@ const parts5 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: numb
   ctx.quadraticCurveTo(384 + x, 510 + y, 384 + x, 508 + y)
   ctx.quadraticCurveTo(401 + x, 505 + y, 404 + x, 506 + y)
   ctx.quadraticCurveTo(393 + x, 497 + y, 370 + x, 511 + y)
-  // ctx.
-  ctx.fill()
+  if (isFill) {
+    ctx.fill()
+  }
   ctx.stroke()
   ctx.closePath()
 }
 
-const parts6 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number): void => {
+const parts6 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number, strokeStyle: string, isFill = true): void => {
   ctx.beginPath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = strokeStyle
   ctx.fillStyle = color
-  ctx.lineWidth = 0.8
+  ctx.lineWidth = 1.0
   ctx.moveTo(378 + x, 576 + y)
   ctx.quadraticCurveTo(385 + x, 568 + y, 385 + x, 568 + y)
   ctx.quadraticCurveTo(398 + x, 570 + y, 398 + x, 572 + y)
@@ -176,17 +199,18 @@ const parts6 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: numb
   ctx.quadraticCurveTo(382 + x, 538 + y, 379 + x, 552 + y)
   ctx.quadraticCurveTo(375 + x, 569 + y, 375 + x, 569 + y)
   ctx.quadraticCurveTo(378 + x, 576 + y, 378 + x, 576 + y)
-  // ctx.
-  ctx.fill()
+  if (isFill) {
+    ctx.fill()
+  }
   ctx.stroke()
   ctx.closePath()
 }
 
-const parts7 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number): void => {
+const parts7 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number, strokeStyle: string, isFill = true): void => {
   ctx.beginPath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = strokeStyle
   ctx.fillStyle = color
-  ctx.lineWidth = 0.8
+  ctx.lineWidth = 1.0
   ctx.moveTo(371 + x, 526 + y)
   ctx.quadraticCurveTo(380 + x, 530 + y, 374 + x, 538 + y)
   ctx.quadraticCurveTo(364 + x, 555 + y, 364 + x, 555 + y)
@@ -196,17 +220,18 @@ const parts7 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: numb
   ctx.quadraticCurveTo(382 + x, 519 + y, 376 + x, 520 + y)
   ctx.quadraticCurveTo(378 + x, 524 + y, 380 + x, 525 + y)
   ctx.quadraticCurveTo(371 + x, 526 + y, 371 + x, 526 + y)
-  // ctx.
-  ctx.fill()
+  if (isFill) {
+    ctx.fill()
+  }
   ctx.stroke()
   ctx.closePath()
 }
 
-const parts8 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number): void => {
+const parts8 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number, strokeStyle: string, isFill = true): void => {
   ctx.beginPath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = strokeStyle
   ctx.fillStyle = color
-  ctx.lineWidth = 0.8
+  ctx.lineWidth = 1.0
   ctx.moveTo(357 + x, 556 + y)
   ctx.quadraticCurveTo(350 + x, 561 + y, 352 + x, 568 + y)
   ctx.quadraticCurveTo(353 + x, 580 + y, 367 + x, 580 + y)
@@ -214,7 +239,9 @@ const parts8 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: numb
   ctx.quadraticCurveTo(356 + x, 565 + y, 361 + x, 558 + y)
   ctx.quadraticCurveTo(359 + x, 553 + y, 357 + x, 556 + y)
   // ctx.
-  ctx.fill()
+  if (isFill) {
+    ctx.fill()
+  }
   ctx.stroke()
   ctx.closePath()
 }
@@ -223,7 +250,7 @@ const stand = (ctx: CanvasRenderingContext2D, color: string, x: number, y: numbe
   ctx.beginPath()
   ctx.strokeStyle = '#383838'
   ctx.fillStyle = color
-  ctx.lineWidth = 1
+  ctx.lineWidth = 1.0
   ctx.moveTo(382 + x, 487 + y)
   ctx.quadraticCurveTo(355 + x, 492 + y, 342 + x, 511 + y)
   ctx.quadraticCurveTo(332 + x, 513 + y, 338 + x, 535 + y)

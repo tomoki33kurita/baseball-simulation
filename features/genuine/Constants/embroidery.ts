@@ -3,7 +3,7 @@ import { EmbroideryItems } from '../types'
 export const TYPE_FACES = [
   { label: 'ローマ字活字体', value: 'sanserif', selectable: ['en'] }, //ゴシック体
   { label: '筆記体', value: 'cursive', selectable: ['en'] }, // 筆記体
-  { label: 'ブラッシュ体', value: 'fantasy', selectable: ['en'] }, // ブラッシュ体
+  { label: 'ブラッシュ体', value: 'Brush Script MT', selectable: ['en'] }, // ブラッシュ体
   { label: 'オールドイングリッシュ体', value: 'MariageD', selectable: ['en'] }, // オールドイングリッシュ体
   { label: '漢字', value: 'monospace', selectable: ['ja'] } // 行書
 ]
