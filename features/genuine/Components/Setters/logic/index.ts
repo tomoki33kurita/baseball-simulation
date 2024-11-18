@@ -276,8 +276,7 @@ export const getFingerColor = (state: GenuineState) => {
       indexMiddleColor: state.thumbIndexMiddleRight.color,
       middleIndexColor: state.thumbIndexMiddleRight.color,
       middleRingColor: state.middleLeftRingRight.color,
-      ringLittleColor: state.ringLeftLittleRight.color,
-      littleRingColor: state.ringLeftLittleRight.color
+      ringLittleColor: state.ringLeftLittleRight.color
     }
   }
 
@@ -288,8 +287,7 @@ export const getFingerColor = (state: GenuineState) => {
       indexMiddleColor: state.indexLeftMiddleRight.color,
       middleIndexColor: state.indexLeftMiddleRight.color,
       middleRingColor: state.middleLeftRingRight.color,
-      ringLittleColor: state.ringLeftLittleRight.color,
-      littleRingColor: state.littleRing.color
+      ringLittleColor: state.ringLeftLittleRight.color
     }
   }
   return {
@@ -298,7 +296,6 @@ export const getFingerColor = (state: GenuineState) => {
     indexMiddleColor: state.indexMiddle.color,
     middleIndexColor: state.middleIndex.color,
     middleRingColor: state.middleRing.color,
-    ringLittleColor: state.ringLittle.color,
-    littleRingColor: state.littleRing.color
+    ringLittleColor: state.ringLittle.color
   }
 }

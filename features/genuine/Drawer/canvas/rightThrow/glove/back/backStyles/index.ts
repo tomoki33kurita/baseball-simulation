@@ -3,6 +3,7 @@ import { beltBackStyleDrawer } from './beltBackStyleDrawer'
 import { webKnots } from '@/util/canvas/lace/webKnots'
 import { GenuineState } from '@/features/genuine/types'
 import { firstBackStyleDrawer } from './firstBackStyleDrawer'
+import { crownBackStyleDrawer } from './crownBackStyleDrawer'
 
 const outfielderDefaultBackLace = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
   ctx.strokeStyle = '#383838'
@@ -110,6 +111,7 @@ export const backStyleOfGloveBackDrawer = (ctx: CanvasRenderingContext2D, state:
 
   beltBackStyleDrawer(ctx, state, needPalmWrap)
   firstBackStyleDrawer(ctx, state)
+  crownBackStyleDrawer(ctx, state)
   // 背面紐通し(外野手のみ)
   isOutfielder && outfielderDefaultBackLace(ctx, laceColor, 0, 25)
   // outfielderDefaultBackLace(ctx, laceColor, -8, 35)

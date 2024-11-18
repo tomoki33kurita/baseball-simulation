@@ -19,8 +19,7 @@ export const drawGenuineGlovePalmSurface = (ctx: CanvasRenderingContext2D | null
   if (!ctx) return
   const baseModel = state.baseModel
   const position = baseModel.position
-  const { thumbWebColor, indexWebColor, indexMiddleColor, middleIndexColor, middleRingColor, ringLittleColor, littleRingColor } =
-    getFingerColor(state)
+  const { thumbWebColor, indexWebColor, indexMiddleColor, middleIndexColor, middleRingColor, ringLittleColor } = getFingerColor(state)
 
   // リセット
   canvasResetter(ctx)
@@ -43,7 +42,7 @@ export const drawGenuineGlovePalmSurface = (ctx: CanvasRenderingContext2D | null
   middleBackIndexSide(ctx, middleIndexColor) // 中指背面＿人差し指側
   middleBackRingSide(ctx, middleRingColor) // 中指背面＿薬指側
   ringBackLittleSide(ctx, ringLittleColor) // 薬指背面＿小指側
-  littleBackRingSide(ctx, littleRingColor) // 小指背面＿薬指側
+  littleBackRingSide(ctx, ringLittleColor) // 小指背面＿薬指側
   littleBackOut(ctx, state.littleOut.color) // 小指背面＿外側
   welting(ctx, state.welting.color, baseModel.isFingerCrotch, palmState.color) // ハミダシ
   bindings(ctx, state.binding.color, laceColor, stitchColor, baseModel.bankLaceDirection) // ヘリ革
