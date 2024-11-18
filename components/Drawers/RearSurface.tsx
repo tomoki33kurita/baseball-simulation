@@ -4,13 +4,13 @@ import { FC } from 'react'
 
 const devToolStyle = {
   // 画像表示させたい時は canvasResetter をコメントアウトすること
-  // backgroundImage: `url(${'/flex.jpg'})`,
-  backgroundRepeat: 'no-repeat',
-  backgroundPosition: 'left 0px top 350px',
-  backgroundSize: '40%',
-  maxWidth: '100%',
-  zIndex: 1000
-  // transform: `rotate(-5deg)`
+  // backgroundImage: `url(${'/genuine/label/genuineLabel.jpg'})`,
+  // backgroundRepeat: 'no-repeat',
+  // backgroundPosition: 'left 305px top 462px',
+  // backgroundSize: '25%',
+  // maxWidth: '100%',
+  // zIndex: 1000
+  // transform: `rotate(-3deg)`
 }
 
 type Props = {
@@ -19,7 +19,7 @@ type Props = {
   devFlg?: boolean
 }
 
-export const RearSurface: FC<Props> = ({ rearSurfaceId, maxWidth = '100%', devFlg }) => {
+export const RearSurface: FC<Props> = ({ rearSurfaceId, maxWidth = '100%', devFlg = false }) => {
   const { devTools, handleCoordinate } = useDevelopmentHooks()
   return (
     <>

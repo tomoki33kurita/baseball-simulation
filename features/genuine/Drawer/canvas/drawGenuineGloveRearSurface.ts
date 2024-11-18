@@ -6,6 +6,7 @@ import { fingerGuardDrawer } from './rightThrow/glove/back/fingerCoverOrPad/fing
 import { littleHook } from './rightThrow/glove/back/fingerHooks/littleHook'
 import { thumbHook } from './rightThrow/glove/back/fingerHooks/thumbHook'
 import { genuineLabel } from './rightThrow/glove/back/label'
+import { genuineLabelDrawer } from './rightThrow/glove/back/label/drawer'
 import { lace } from './rightThrow/glove/back/lace'
 import { laceOfWristBeltCrossDrawer } from './rightThrow/glove/back/lace/laceOfWristBeltFix'
 import { lining } from './rightThrow/glove/back/lining'
@@ -33,7 +34,7 @@ export const drawGenuineGloveRearSurface = (ctx: CanvasRenderingContext2D | null
   webOfGloveBackDrawer(ctx, state, webColor, laceColor, stitchColor)
   lace(ctx, laceColor) // 革紐
   !isFirstBackStyle && laceOfWristBeltCrossDrawer(ctx, laceColor)
-  genuineLabel(ctx, state, 20, 38, 0, 0.95) // ラベル描画
-  littleHook(ctx, state.littleHook.color, 25, 240, -10, 0.7) // 小指掛け紐
+  genuineLabelDrawer(ctx, state) // ラベル描画
+  littleHook(ctx, state.littleHook.color, 15, 240, -10, 0.7) // 小指掛け紐
   thumbHook(ctx, state.thumbHook.color, -14, 30, 0) //手元
 }

@@ -21,7 +21,6 @@ export const beltBackStyleDrawer = (ctx: CanvasRenderingContext2D, state: Genuin
   const isMiddleFingerPad = ['middlePad'].includes(state.fingerGuard.value)
   const stitchColor = state.stitch.color
 
-  thumbAndListBelt(ctx, '#2e4732', stitchColor)
   thumbAndListBelt(ctx, state.thumbWeb.color, stitchColor)
   thumbOut(ctx, state.thumbOut.color) // 親指＿外
   indexFingerRight(ctx, state.indexWeb.color) // 人差し指＿右

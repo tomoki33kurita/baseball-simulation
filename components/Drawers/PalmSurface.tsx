@@ -16,7 +16,7 @@ type Props = {
   devFlg?: boolean
 }
 
-export const PalmSurface: FC<Props> = ({ palmSurfaceId, maxWidth = '100%', devFlg }) => {
+export const PalmSurface: FC<Props> = ({ palmSurfaceId, maxWidth = '100%', devFlg = false }) => {
   const { devTools, handleCoordinate } = useDevelopmentHooks()
   return (
     <>
