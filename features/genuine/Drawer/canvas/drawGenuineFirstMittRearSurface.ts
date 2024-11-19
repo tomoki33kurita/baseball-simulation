@@ -14,6 +14,7 @@ import { backAroundWeb } from './rightThrow/firstMitt/back/backAroundWeb'
 import { edgeDrawer } from './rightThrow/firstMitt/back/edgeDrawer'
 import { stitch } from './rightThrow/firstMitt/back/stitch'
 import { laces } from './rightThrow/firstMitt/back/lace'
+import { genuineLabel } from './label'
 
 export const drawGenuineFirstMittRearSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
   if (!ctx) return
@@ -85,6 +86,6 @@ export const drawGenuineFirstMittRearSurface = (ctx: CanvasRenderingContext2D | 
   stitch(ctx, state.stitch.color) // ステッチ
   fingerGuardDrawer(ctx, state) // 指カバー
 
-  // atomsLabel(ctx, state.atomsLabel.value, -20, 25, 0, 1)
+  genuineLabel(ctx, state, 40, 85, 0, 0.9)
   laces(ctx, state.lace.color) // 革紐
 }

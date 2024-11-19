@@ -177,5 +177,24 @@ export const models: GenuineBaseModel[] = [
       width: gloveImageWidth,
       height: gloveImageHeight
     }
+  },
+  {
+    productNumber: 'MIU-hoge',
+    position: 'catcher',
+    size: {
+      value: 31.5,
+      unit: 'cm'
+    },
+    webParts: '',
+    description: '',
+    isFingerCrotch: true,
+    isUBack: false,
+    brand: 'genuine',
+    bankLaceDirection: SEQUENTIAL_ROLL,
+    image: {
+      url: `${imageBaseUrl}/miu-hoge.jpg`,
+      width: gloveImageWidth,
+      height: gloveImageHeight
+    }
   }
 ]
