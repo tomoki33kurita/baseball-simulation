@@ -16,11 +16,10 @@ const devToolStyle = {
 type Props = {
   rearSurfaceId: string
   maxWidth?: '100%' | '50%'
-  devFlg?: boolean
 }
 
-export const RearSurface: FC<Props> = ({ rearSurfaceId, maxWidth = '100%', devFlg = false }) => {
-  const { devTools, handleCoordinate } = useDevelopmentHooks()
+export const RearSurface: FC<Props> = ({ rearSurfaceId, maxWidth = '100%' }) => {
+  const { devFlg, devTools, handleCoordinate } = useDevelopmentHooks()
   return (
     <>
       {devFlg ? (

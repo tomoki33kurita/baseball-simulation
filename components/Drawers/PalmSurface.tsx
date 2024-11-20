@@ -13,11 +13,10 @@ const devToolStyle = {
 type Props = {
   palmSurfaceId: string
   maxWidth?: '100%' | '50%'
-  devFlg?: boolean
 }
 
-export const PalmSurface: FC<Props> = ({ palmSurfaceId, maxWidth = '100%', devFlg = false }) => {
-  const { devTools, handleCoordinate } = useDevelopmentHooks()
+export const PalmSurface: FC<Props> = ({ palmSurfaceId, maxWidth = '100%' }) => {
+  const { devFlg, devTools, handleCoordinate } = useDevelopmentHooks()
   return (
     <>
       {devFlg ? (
