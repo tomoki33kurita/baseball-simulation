@@ -18,7 +18,6 @@ import { getBankLaceDirection, getFingerColor } from '../../Components/Setters/l
 export const drawGenuineGlovePalmSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
   if (!ctx) return
   const baseModel = state.baseModel
-  const position = baseModel.position
   const { thumbWebColor, indexWebColor, indexMiddleColor, middleIndexColor, middleRingColor, ringLittleColor } = getFingerColor(state)
   const { bankLaceDirection } = getBankLaceDirection(state)
 

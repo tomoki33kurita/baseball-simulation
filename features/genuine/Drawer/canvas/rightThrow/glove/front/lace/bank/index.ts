@@ -31,8 +31,7 @@ const sideMaterialPack = (ctx: CanvasRenderingContext2D, color: string, material
     littleInner(ctx, color, -37, 85) //
     littleInner(ctx, color, -54, 132) // 一番根元
   }
-  // TODO 本当は undefinedではないようにしたい
-  if (['bindDouble', 'sideDouble', 'spaceHingeDouble', undefined, 'unselected'].includes(materialPack.value)) {
+  if (['bindDouble', 'sideDouble', 'sideDoubleWideHinge', 'unselected'].includes(materialPack.value)) {
     sideBank(ctx, color, 0, 3) // 一番右
     sideBank(ctx, color, -70, -5) // 一番中央
     sideBank2(ctx, color, 10, 10)
@@ -42,7 +41,7 @@ const sideMaterialPack = (ctx: CanvasRenderingContext2D, color: string, material
   }
 
   // 紐抜き
-  if (['sideDoubleNoLace', 'spaceHingeDoubleNoLace'].includes(materialPack?.value)) {
+  if (['sideDoubleNoLace', 'sideDoubleWideHingeNoLace'].includes(materialPack?.value)) {
     ctx.beginPath()
     ctx.lineWidth = 1.4
     ctx.fillStyle = '#fff'
@@ -67,31 +66,23 @@ const sideMaterialPack = (ctx: CanvasRenderingContext2D, color: string, material
     ctx.closePath()
   }
   // 通常のダブルヒンジ
-  if (['sideDouble', 'sideSingle', 'sideDoubleNoLace', undefined, 'unselected'].includes(materialPack.value)) {
-    if (productNumber === 'F501') {
-      thumbUpper(ctx, color, 0, 0) // 親指-土手芯の上部の革紐
-      thumbUpper(ctx, color, -15, 158, -15) // 親指-土手芯の上部の革紐3
-      thumbUpper(ctx, color, 120, 104, -5) // 親指-土手芯の上部の革紐3
-      toji(ctx, color, -30, 45) // 土手側
-      toji(ctx, color, -12, 25) // 土手側
-    } else {
-      thumbUpper(ctx, color, 0, 0) // 親指-土手芯の上部の革紐
-      if (productNumber === 'F601') thumbUpper(ctx, color, -92, 160, -20) // 親指-土手芯の上部の革紐2
-      thumbUpper(ctx, color, -5, 154, -15) // 親指-土手芯の上部の革紐3
-      thumbUpper(ctx, color, 80, 139, -10) // 親指-土手芯の上部の革紐3
-      toji(ctx, color, -20, 35) // 土手側
-    }
+  if (['sideSingle', 'sideDouble', 'sideDoubleNoLace', 'unselected'].includes(materialPack.value)) {
+    thumbUpper(ctx, color, 0, 0) // 親指-土手芯の上部の革紐
+    thumbUpper(ctx, color, -92, 160, -20) // 親指-土手芯の上部の革紐2
+    thumbUpper(ctx, color, -5, 154, -15) // 親指-土手芯の上部の革紐3
+    thumbUpper(ctx, color, 80, 139, -10) // 親指-土手芯の上部の革紐3
+    toji(ctx, color, -20, 35) // 土手側
     toji(ctx, color, 0, 0) // 小指側末
     toji(ctx, color, 115, -280, 22) //小指側中間
     toji(ctx, color, 122, -467, 35) //小指側先端
   }
-  // スペースダブルヒンジ
-  if (['spaceHinge', 'spaceHingeDouble', 'spaceHingeDoubleNoLace'].includes(materialPack?.value)) {
+  if (['sideSingleWideHinge', 'sideDoubleWideHinge', 'sideDoubleWideHingeNoLace'].includes(materialPack?.value)) {
     thumbUpper(ctx, color, 0, 0) // 親指-土手芯の上部の革紐
-    thumbUpper(ctx, color, -120, 145, -20) // 親指-土手芯の上部の革紐2
+    thumbUpper(ctx, color, -92, 160, -20) // 親指-土手芯の上部の革紐2
     thumbUpper(ctx, color, -5, 152, -15) // 親指-土手芯の上部の革紐3
     thumbUpper2(ctx, color) // 親指-土手芯の上部の革紐3
     toji(ctx, color, 0, 0) // 小指側末
+    toji(ctx, color, -15, 25) // 小指側末
     toji(ctx, color, 115, -280, 22) //小指側中間
     toji(ctx, color, 122, -467, 35) //小指側先端
     toji(ctx, color, -37, 40) // 土手側
