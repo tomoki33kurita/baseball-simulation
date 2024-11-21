@@ -11,6 +11,7 @@ import { lace } from './rightThrow/glove/back/lace'
 import { laceOfWristBeltCrossDrawer } from './rightThrow/glove/back/lace/laceOfWristBeltFix'
 import { lining } from './rightThrow/glove/back/lining'
 import { webOfGloveBackDrawer } from './rightThrow/glove/back/web/webOfGloveBackDrawer'
+import { loopOfRingFingerDrawer } from './rightThrow/glove/back/loopOfFingerDrawer'
 
 export const drawGenuineGloveRearSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
   const { isFirstBackStyle } = getBackStyle(state)
@@ -28,6 +29,7 @@ export const drawGenuineGloveRearSurface = (ctx: CanvasRenderingContext2D | null
   const laceColor = state.lace.color
   const stitchColor = state.stitch.color
   lining(ctx, state.linings.color) // 裏革
+  loopOfRingFingerDrawer(ctx, state)
   backStyleOfGloveBackDrawer(ctx, state) // バックスタイルの描画(ハミダシ,親指刺繍含)
   fingerGuardDrawer(ctx, state) // 指カバー・パッド
   thumbHook(ctx, state.thumbHook.color, 110, -310, 15) // 先端 // 親指掛け紐_上

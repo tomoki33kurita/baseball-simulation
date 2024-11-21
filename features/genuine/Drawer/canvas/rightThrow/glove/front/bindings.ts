@@ -99,6 +99,8 @@ export const bindings = (
 const bankLaceAroundBinding = (ctx: CanvasRenderingContext2D, color: string, bankLaceDirection: BankLaceDirection): void => {
   // 逆巻き
   const isReverseRollLace = bankLaceDirection === 'reverseRoll'
+  console.log({ isReverseRollLace })
+  console.log({ hoge: bankLaceDirection === 'sequentialRoll' })
   if (isReverseRollLace) {
     onBindingTojiThumb(ctx, color, 0, 0) // 親指側＿根元側
     onBindingTojiThumb(ctx, color, -22, -25)

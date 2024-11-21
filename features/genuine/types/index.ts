@@ -1,4 +1,4 @@
-import { BaseItem, BaseItemWithPrice, BaseModel, ChoiceItem, ColorItem, Embroidery, Personal } from '@/types'
+import { BankLaceDirectionItem, BaseItem, BaseItemWithPrice, BaseModel, ChoiceItem, ColorItem, Embroidery, Personal } from '@/types'
 import { BINDINGS, LACES, LEATHER_COLORS, STITCHES, WELTINGS } from '../Constants/color'
 
 export type EmbroideryItems = {
@@ -59,7 +59,7 @@ export type GenuineState = {
   leatherThickness: BaseItem
   coreHardness: BaseItem
   gloveSize: BaseItem
-  bankLaceDirection: BaseItem
+  bankLaceDirection: BankLaceDirectionItem
   loopOfRingFinger: BaseItemWithPrice
 
   fingerGuard: BaseItem

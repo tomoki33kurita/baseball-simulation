@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useDebounce } from 'use-debounce'
-import { Embroidery, EmbroideryKey } from '@/types'
+import { BankLaceDirection, Embroidery, EmbroideryKey } from '@/types'
 import { DrawerIndex, GenuineState, PartsItem, PartsKey } from '@/features/genuine/types'
 import { BACK_PARTS, CROWN_BACK_PARTS, FIRST_BACK_PARTS, LEATHER_COLORS_BY_PARTS, PALM_PARTS } from '@/features/genuine/Constants/color'
 import { EMBROIDERY_POSITIONS, EMBROIDERY_ITEMS, SHADOW_EDGE_COLORS, TYPE_FACES } from '@/features/genuine/Constants/embroidery'
@@ -297,5 +297,12 @@ export const getFingerColor = (state: GenuineState) => {
     middleIndexColor: state.middleIndex.color,
     middleRingColor: state.middleRing.color,
     ringLittleColor: state.ringLittle.color
+  }
+}
+
+export const getBankLaceDirection = (state: GenuineState) => {
+  const bankLaceDirection = state.bankLaceDirection.value === 'unselected' ? state.baseModel.bankLaceDirection : state.bankLaceDirection.value
+  return {
+    bankLaceDirection
   }
 }

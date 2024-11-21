@@ -13,13 +13,14 @@ import { lace } from './rightThrow/glove/front/lace'
 import { backLaceDrawerOfFront } from './rightThrow/glove/front/lace/backLace'
 import { genuineEngravedOfPalm } from './rightThrow/glove/front/engraving'
 import { GenuineState } from '../../types'
-import { getFingerColor } from '../../Components/Setters/logic'
+import { getBankLaceDirection, getFingerColor } from '../../Components/Setters/logic'
 
 export const drawGenuineGlovePalmSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
   if (!ctx) return
   const baseModel = state.baseModel
   const position = baseModel.position
   const { thumbWebColor, indexWebColor, indexMiddleColor, middleIndexColor, middleRingColor, ringLittleColor } = getFingerColor(state)
+  const { bankLaceDirection } = getBankLaceDirection(state)
 
   // リセット
   canvasResetter(ctx)
@@ -32,7 +33,7 @@ export const drawGenuineGlovePalmSurface = (ctx: CanvasRenderingContext2D | null
   const stitchColor = state.stitch.color
   const palmState = state.palm
   listLining(ctx, state.linings.color) // 裏革
-  backLaceDrawerOfFront(ctx, laceColor, position) // 背面の紐
+  backLaceDrawerOfFront(ctx, state) // 背面の紐
   webOfGloveFrontDrawer(ctx, state, state.web.color, laceColor, stitchColor) // ウェブの描画
   palm(ctx, palmState.color) // 捕球面
   thumbBackOut(ctx, state.thumbOut.color) // 親指背面＿外側
@@ -45,7 +46,7 @@ export const drawGenuineGlovePalmSurface = (ctx: CanvasRenderingContext2D | null
   littleBackRingSide(ctx, ringLittleColor) // 小指背面＿薬指側
   littleBackOut(ctx, state.littleOut.color) // 小指背面＿外側
   welting(ctx, state.welting.color, baseModel.isFingerCrotch, palmState.color) // ハミダシ
-  bindings(ctx, state.binding.color, laceColor, stitchColor, baseModel.bankLaceDirection) // ヘリ革
+  bindings(ctx, state.binding.color, laceColor, stitchColor, bankLaceDirection) // ヘリ革
   rightLaceOfNetWebDrawer(ctx, state) // ネットウェブのみの革紐
   lace(ctx, laceColor, state) // 革紐
   genuineEngravedOfPalm(ctx, palmState, 0, 0) // メーカー捕球面の刻印

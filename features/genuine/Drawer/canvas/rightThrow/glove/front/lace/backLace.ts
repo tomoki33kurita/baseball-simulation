@@ -1,6 +1,6 @@
-import { Position } from '@/types'
+import { GenuineState } from '@/features/genuine/types'
 
-export const straightBackLace = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number, numerator: number): void => {
+const straightBackLaceOfFront = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number, numerator: number): void => {
   ctx.strokeStyle = '#383838'
   ctx.lineWidth = 0.8
   ctx.fillStyle = laceColor
@@ -37,7 +37,7 @@ export const straightBackLace = (ctx: CanvasRenderingContext2D, laceColor: strin
   ctx.closePath()
 }
 
-export const crossBackLace = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number, numerator: number): void => {
+const crossBackLaceOfFront = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number, numerator: number): void => {
   ctx.strokeStyle = '#383838'
   ctx.lineWidth = 0.8
   ctx.fillStyle = laceColor
@@ -75,12 +75,30 @@ export const crossBackLace = (ctx: CanvasRenderingContext2D, laceColor: string, 
   }
 }
 
-export const backLaceDrawerOfFront = (ctx: CanvasRenderingContext2D, laceColor: string, position: Position): void => {
+export const backLaceDrawerOfFront = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
+  const { backLaceStyle } = state
+  const backLaceValue = backLaceStyle.value
+  const position = state.baseModel.position
+  const laceColor = state.lace.color
+
   switch (position) {
     case 'outfielder':
-      crossBackLace(ctx, laceColor, 5, 0, 1)
+      crossBackLaceOfFront(ctx, laceColor, 5, 0, 1)
       return
     default:
-      return
+      switch (backLaceValue) {
+        case 'normal':
+          straightBackLaceOfFront(ctx, laceColor, 0, 0, 1)
+          straightBackLaceOfFront(ctx, laceColor, 128, -270, 30)
+          straightBackLaceOfFront(ctx, laceColor, 222, -260, 30)
+          return
+        case 'cross':
+          crossBackLaceOfFront(ctx, laceColor, 5, 0, 1)
+          crossBackLaceOfFront(ctx, laceColor, 128, -270, 30)
+          crossBackLaceOfFront(ctx, laceColor, 225, -265, 30)
+          return
+        default:
+          return
+      }
   }
 }

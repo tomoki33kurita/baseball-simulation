@@ -10,6 +10,11 @@ export type BaseItem = {
   label: string
 }
 
+export type BankLaceDirectionItem = {
+  value: BankLaceDirection | 'unselected'
+  label: string
+}
+
 export type BaseItemWithPrice = {
   value: string
   label: string

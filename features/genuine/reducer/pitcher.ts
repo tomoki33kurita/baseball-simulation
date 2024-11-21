@@ -57,7 +57,7 @@ const initialPersonalState = {
   remarks: ''
 }
 
-const unselectedState = { label: '未選択', value: 'unselected' }
+const unselectedState = { label: '未選択', value: 'unselected' } as const
 const unselectedStateWithPrice = { label: '未選択', value: 'unselected', price: 0 }
 const unselectedColorState = {
   label: '未選択',
@@ -199,7 +199,7 @@ export const reducer = (state: any, action: any) => {
     case SET_WEB_LACE_STYLE:
       return { ...state, webLaceStyle: action.webLaceStyle }
     case SET_BACK_LACE_STYLE:
-      return { ...state, backLaceStyle: action.backLaceStyle }
+      return { ...state, backLaceStyle: action.backLaceStyle, drawerIndex: 0 }
     case SET_LEATHER_THICKNESS:
       return { ...state, leatherThickness: action.leatherThickness }
     case SET_CORE_HARDNESS:
@@ -207,10 +207,9 @@ export const reducer = (state: any, action: any) => {
     case SET_GLOVE_SIZE:
       return { ...state, gloveSize: action.gloveSize }
     case SET_BANK_LACE_DIRECTION:
-      return { ...state, bankLaceDirection: action.bankLaceDirection }
+      return { ...state, bankLaceDirection: action.bankLaceDirection, drawerIndex: 1 }
     case SET_LOOP_OF_RING_FINGER:
-      return { ...state, loopOfRingFinger: action.loopOfRingFinger }
-
+      return { ...state, loopOfRingFinger: action.loopOfRingFinger, drawerIndex: 0 }
     case SET_DOMINANT_ARM:
       return { ...state, dominantArm: action.dominantArm }
     case SET_MATERIAL_PACK:

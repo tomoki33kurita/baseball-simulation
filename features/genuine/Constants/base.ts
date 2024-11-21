@@ -1,4 +1,4 @@
-import { BaseItem, BaseItemWithPrice, ColorItem, WebParts } from '@/types'
+import { BankLaceDirectionItem, BaseItem, BaseItemWithPrice, ColorItem, WebParts } from '@/types'
 
 export const DOMINANT_ARMS: BaseItem[] = [
   { label: '右投げ', value: 'rightThrow' },
@@ -55,7 +55,7 @@ export const GLOVE_SIZES: BaseItem[] = [
   { label: '27cm以上', value: 'over27' }
 ]
 
-export const BANK_LACE_DIRECTIONS: BaseItem[] = [
+export const BANK_LACE_DIRECTIONS: BankLaceDirectionItem[] = [
   { label: 'レギュラー巻き', value: 'sequentialRoll' },
   { label: '逆巻き', value: 'reverseRoll' }
 ]
