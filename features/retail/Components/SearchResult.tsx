@@ -1,6 +1,6 @@
 'use client'
 import { forwardRef, useEffect, useState } from 'react'
-import { Alert as MuiAlert, AlertProps, Box, Button } from '@mui/material'
+import { Alert as MuiAlert, AlertProps, Box, Button, useMediaQuery } from '@mui/material'
 import { useForm } from 'react-hook-form'
 import { Supplier, Brand, SavedData, State } from '@/types'
 import { PalmSurface } from '@/components/Drawers/PalmSurface'
@@ -50,6 +50,7 @@ export const SearchResult: React.FC<Props> = ({ response }) => {
       remarks: ''
     }
   })
+  const isMobile = useMediaQuery('(max-width: 430px)')
 
   const rearSurfaceId = 'rearSurfaceOnDialog'
   const palmSurfaceId = 'palmSurfaceOnDialog'
@@ -65,15 +66,15 @@ export const SearchResult: React.FC<Props> = ({ response }) => {
         switch (state.baseModel.position) {
           case 'catcher':
             drawGenuineCatcherMittRearSurface(rearCtx, state as GenuineState)
-            drawGenuineCatcherMittPalmSurface(palmCtx, state as GenuineState)
+            drawGenuineCatcherMittPalmSurface(palmCtx, state as GenuineState, isMobile)
             break
           case 'firstBaseman':
             drawGenuineFirstMittRearSurface(rearCtx, state as GenuineState)
-            drawGenuineFirstMittPalmSurface(palmCtx, state as GenuineState)
+            drawGenuineFirstMittPalmSurface(palmCtx, state as GenuineState, isMobile)
             break
           default:
             drawGenuineGloveRearSurface(rearCtx, state as GenuineState)
-            drawGenuineGlovePalmSurface(palmCtx, state as GenuineState)
+            drawGenuineGlovePalmSurface(palmCtx, state as GenuineState, isMobile)
             break
         }
         break

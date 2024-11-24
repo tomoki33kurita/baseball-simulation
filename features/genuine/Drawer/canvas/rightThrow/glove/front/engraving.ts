@@ -2,7 +2,7 @@ import { ColorItem } from '@/types'
 import { genuineEngraved } from '../../../label'
 
 // 捕球面の刻印
-export const genuineEngravedOfPalm = (ctx: CanvasRenderingContext2D, palm: ColorItem, x: number, y: number): void => {
+export const genuineEngravedOfPalm = (ctx: CanvasRenderingContext2D, palm: ColorItem, isMobile: boolean, x: number, y: number): void => {
   ctx.lineWidth = 1.5
   const isBright = [
     'black',
@@ -25,9 +25,7 @@ export const genuineEngravedOfPalm = (ctx: CanvasRenderingContext2D, palm: Color
   ].includes(palm.value)
   ctx.strokeStyle = isBright ? '#eee' : '#6d6d6d'
   ctx.beginPath()
-  // ctx.font = '32px Brush Script MT'
-  // ctx.strokeText(`g`, 420 + x, 455 + y)
-  ctx.font = '56px Brush Script MT'
+  ctx.font = !isMobile ? '42px cursive' : '56px Brush Script MT'
   ctx.strokeText(`genuine`, 415 + x, 450 + y)
   ctx.stroke()
 
