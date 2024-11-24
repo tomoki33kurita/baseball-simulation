@@ -26,19 +26,17 @@ import { tNet3Web } from './tNet3Web'
 import { iNetWeb } from './iNetWeb'
 import { dragonfly2Web } from './dragonfly2Web'
 
-export const webOfGloveBackDrawer = (
-  ctx: CanvasRenderingContext2D,
-  state: GenuineState,
-  webColor: string,
-  laceColor: string,
-  stitchColor: string
-): void => {
+export const webOfGloveBackDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
+  const laceColor = state.lace.color
+  const stitchColor = state.stitch.color
+  const webColor = state.web.color
+  const web2Color = state.web2.color
   const { webMatcher } = webDrawUtil(state)
   // if (state.baseModel.productNumber !== 'U300') reinforcementCrossLace(ctx, laceColor, 0, 0, 1, 1)
   if (webMatcher(['flat'])) flatWeb(ctx, webColor, laceColor, stitchColor)
   if (webMatcher(['flat2'])) flat2Web(ctx, webColor, laceColor, stitchColor)
   if (webMatcher(['basket'])) basketWeb(ctx, webColor, laceColor, stitchColor)
-  if (webMatcher(['basket2'])) basket2Web(ctx, webColor, laceColor, stitchColor)
+  if (webMatcher(['basket2'])) basket2Web(ctx, webColor, web2Color, laceColor, stitchColor)
   if (webMatcher(['twoPeace'])) twoPeaceWeb(ctx, webColor, laceColor, stitchColor)
   if (webMatcher(['twoPeace2'])) twoPeaceWeb2Web(ctx, webColor, laceColor, stitchColor)
   if (webMatcher(['genuine'])) genuineWeb(ctx, webColor, laceColor, stitchColor)

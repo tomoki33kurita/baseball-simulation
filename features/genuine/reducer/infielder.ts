@@ -40,7 +40,8 @@ import {
   SET_GLOVE_SIZE,
   SET_BANK_LACE_DIRECTION,
   SET_LOOP_OF_RING_FINGER,
-  SET_GENUINE_LABEL
+  SET_GENUINE_LABEL,
+  SET_WEB2_COLOR
 } from '@/features/genuine/Constants/action'
 import { GenuineState } from '../types'
 
@@ -117,6 +118,7 @@ export const initialState: GenuineState = {
   welting: unselectedColorState,
   stitch: { label: '未選択', value: 'unselected', color: '#eee' },
   web: unselectedColorState,
+  web2: unselectedColorState,
   thumbHook: unselectedColorState,
   littleHook: unselectedColorState,
   listBelt: unselectedColorState,
@@ -161,6 +163,7 @@ export const reducer = (state: any, action: any) => {
         all: action.all,
         palm: action.all,
         web: action.all,
+        web2: action.all,
         thumbHook: action.all,
         littleHook: action.all,
         binding: action.all,
@@ -223,6 +226,8 @@ export const reducer = (state: any, action: any) => {
       return { ...state, binding: action.binding }
     case SET_WEB_COLOR:
       return { ...state, web: action.web }
+    case SET_WEB2_COLOR:
+      return { ...state, web2: action.web2 }
     case SET_MOUTON_COLOR:
       return { ...state, mouton: action.mouton }
     // 内野手用グラブ

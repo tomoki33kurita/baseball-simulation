@@ -1,5 +1,5 @@
 import { connectWebToIndex, connectWebToIndexTop, connectWebToThumb, connectWebToThumbTop } from '../../lace/connectWebAndFinger'
-import { webTops } from '../../lace/webTop'
+import { webTopCross, webTopCrossSingleLeftDown, webTopCrossSingleLeftUp, webTops } from '../../lace/webTop'
 
 export const topSidePartOfWeb = (ctx: CanvasRenderingContext2D, webColor: string, laceColor: string, stitchColor: string): void => {
   ctx.strokeStyle = '#383838'
@@ -177,6 +177,120 @@ export const topSidePartOfWebForPitcher = (ctx: CanvasRenderingContext2D, webCol
   connectWebToIndex(ctx, laceColor, 45, -92) //
   connectWebToThumbTop(ctx, laceColor, 0, 0)
   connectWebToThumb(ctx, laceColor, 62, -63) //
+}
+
+const jointParts = (ctx: CanvasRenderingContext2D, webColorSecond: string, x: number, y: number, numerator?: number): void => {
+  ctx.beginPath()
+  ctx.strokeStyle = '#383838'
+  ctx.fillStyle = webColorSecond
+  if (numerator !== undefined && numerator !== 0) {
+    ctx.save()
+    ctx.rotate((numerator * Math.PI) / 180)
+  }
+  ctx.moveTo(602 + x, 94 + y) //左上
+  ctx.quadraticCurveTo(590 + x, 92 + y, 581 + x, 107 + y) //左下
+  ctx.quadraticCurveTo(595 + x, 116 + y, 608 + x, 134 + y) //右下
+  ctx.quadraticCurveTo(618 + x, 127 + y, 620 + x, 113 + y) //右上
+  ctx.quadraticCurveTo(611 + x, 99 + y, 602 + x, 94 + y) //左上
+  ctx.stroke()
+  ctx.fill()
+  if (numerator !== undefined) {
+    ctx.restore()
+  }
+  ctx.closePath()
+  ctx.strokeStyle = '#383838'
+}
+
+const sidePartsOfUnderJoinnt = (ctx: CanvasRenderingContext2D, webColorSecond: string): void => {
+  // 横パーツ＿ジョイントの下
+  ctx.beginPath()
+  ctx.fillStyle = webColorSecond
+
+  ctx.moveTo(550, 80) // 左上
+  ctx.quadraticCurveTo(541, 98, 541, 98) //左下
+  ctx.quadraticCurveTo(629, 164, 672, 288) //右下
+  ctx.quadraticCurveTo(684, 289, 690, 282) //右上
+  ctx.quadraticCurveTo(646, 148, 550, 80) // 左上
+  ctx.fill()
+  // 左側面の断面
+  ctx.moveTo(550, 80) // 左上
+  ctx.quadraticCurveTo(554, 90, 541, 98) //左下
+  // ctx.stroke()
+  ctx.closePath()
+}
+
+export const topSidePartOfWebWithJoint = (
+  ctx: CanvasRenderingContext2D,
+  webColorFirst: string,
+  webColorSecond: string,
+  laceColor: string,
+  stitchColor: string
+): void => {
+  ctx.strokeStyle = '#383838'
+  // 親指への革紐
+  connectWebToThumbTop(ctx, laceColor, 0, 0)
+  connectWebToThumb(ctx, laceColor, 62, -63) //
+  connectWebToThumb(ctx, laceColor, 47, -55) //
+  ctx.fillStyle = webColorFirst
+  // 横パーツ＿ジョイントの上
+  ctx.beginPath()
+  ctx.moveTo(550, 80) // 横下パーツの左下
+  ctx.quadraticCurveTo(640, 142, 690, 280) //右下
+  ctx.quadraticCurveTo(700, 285, 704, 270) //
+  ctx.quadraticCurveTo(703, 253, 721, 245) //右上
+  ctx.quadraticCurveTo(706, 174, 661, 115)
+  ctx.quadraticCurveTo(625, 70, 576, 44) //左上
+  ctx.quadraticCurveTo(562, 43, 563, 62) //
+  ctx.quadraticCurveTo(561, 79, 550, 80) //左下
+  ctx.quadraticCurveTo(557, 66, 564, 52) // 左下の革紐の穴上部
+  ctx.fill()
+  ctx.stroke()
+  ctx.closePath()
+
+  // 切り込みライン
+  ctx.beginPath()
+  ctx.moveTo(563, 62) //左上
+  ctx.quadraticCurveTo(659, 125, 702, 263) //右下
+  ctx.stroke()
+  ctx.closePath()
+
+  // ジョイントパーツ切り込み
+  jointParts(ctx, webColorSecond, 0, 0, 0) // 左
+  jointParts(ctx, webColorSecond, 57, -27, 7) // 中
+  jointParts(ctx, webColorSecond, 110, -105, 18) // 右
+  sidePartsOfUnderJoinnt(ctx, webColorSecond)
+
+  // stitchここから
+  ctx.beginPath()
+  ctx.strokeStyle = stitchColor
+  ctx.setLineDash([3, 3])
+  // 横向き＿ジョイントの上
+  ctx.moveTo(575, 65) // 左上
+  ctx.quadraticCurveTo(664, 124, 702, 248) // 右下
+  ctx.quadraticCurveTo(707, 246, 707, 246) // 右上
+  ctx.quadraticCurveTo(662, 114, 575, 59) //
+  ctx.quadraticCurveTo(575, 65, 575, 65) //
+  // 横向き＿ジョイントの下
+  ctx.moveTo(553, 86) // 左上
+  ctx.quadraticCurveTo(555, 89, 551, 93) // 左下
+  ctx.quadraticCurveTo(641, 167, 681, 284) // 右下
+  ctx.quadraticCurveTo(686, 280, 686, 280) // 右上
+  ctx.quadraticCurveTo(642, 153, 553, 86) // 左上
+  ctx.stroke()
+  ctx.setLineDash([])
+  ctx.closePath()
+  // stitchここまで
+
+  // laceここから
+  webTopCrossSingleLeftDown(ctx, laceColor, -10, -8)
+  webTopCross(ctx, laceColor, 12, 10) // 左1
+  webTopCross(ctx, laceColor, 55, -71, 10) // 左2
+  webTopCross(ctx, laceColor, 89, -98, 15) // 左2
+  webTopCross(ctx, laceColor, 100, -249, 30) // 左2
+  webTopCrossSingleLeftUp(ctx, laceColor, 145, -32, 15)
+  connectWebToIndexTop(ctx, laceColor, 0, 0)
+  connectWebToIndex(ctx, laceColor, 45, -92) //
+  connectWebToIndex(ctx, laceColor, 34, -76) //
 }
 
 export const middleSidePartOfWeb = (

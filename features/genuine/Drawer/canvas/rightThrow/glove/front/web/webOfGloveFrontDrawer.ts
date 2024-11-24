@@ -29,18 +29,16 @@ import { dragonflyWeb } from './dragonflyWeb'
 import { dragonfly2Web } from './dragonfly2Web'
 import { ladderWeb } from './ladderWeb'
 
-export const webOfGloveFrontDrawer = (
-  ctx: CanvasRenderingContext2D,
-  state: GenuineState,
-  webColor: string,
-  laceColor: string,
-  stitchColor: string
-): void => {
+export const webOfGloveFrontDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
+  const webColor = state.web.color
+  const web2Color = state.web2.color
+  const laceColor = state.lace.color
+  const stitchColor = state.stitch.color
   const { webMatcher } = webDrawUtil(state)
   if (webMatcher(['flat'])) flatWeb(ctx, webColor, laceColor, stitchColor)
   if (webMatcher(['flat2'])) flat2Web(ctx, webColor, laceColor, stitchColor)
   if (webMatcher(['basket'])) basketWeb(ctx, webColor, laceColor, stitchColor)
-  if (webMatcher(['basket2'])) basket2Web(ctx, webColor, laceColor, stitchColor)
+  if (webMatcher(['basket2'])) basket2Web(ctx, webColor, web2Color, laceColor, stitchColor)
   if (webMatcher(['twoPeace'])) twoPeaceWeb(ctx, webColor, laceColor, stitchColor)
   if (webMatcher(['twoPeace2'])) twoPeace2Web(ctx, webColor, laceColor, stitchColor)
   if (webMatcher(['genuine'])) genuineWeb(ctx, webColor, laceColor, stitchColor)

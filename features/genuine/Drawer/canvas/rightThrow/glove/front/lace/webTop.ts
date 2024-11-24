@@ -133,3 +133,22 @@ export const webTopCrossLeftUp = (
     ctx.restore()
   }
 }
+
+export const webTopCross = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number, numerator?: number, scaleSize?: number): void => {
+  ctx.lineWidth = 1.0
+  ctx.strokeStyle = '#383838'
+  ctx.fillStyle = laceColor
+  // 長方形＿巻き込みパーツ＿
+  if (numerator !== undefined && numerator !== 0) {
+    ctx.save()
+    ctx.rotate((numerator * Math.PI) / 180)
+    if (scaleSize !== undefined) {
+      ctx.scale(scaleSize, scaleSize)
+    }
+  }
+  webTopCrossLeftDown(ctx, laceColor, x, y)
+  webTopCrossLeftUp(ctx, laceColor, x, y)
+  if (numerator !== undefined) {
+    ctx.restore()
+  }
+}

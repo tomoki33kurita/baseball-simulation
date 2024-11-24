@@ -79,6 +79,7 @@ export type GenuineState = {
   mouton: ColorItem
   palm: ColorItem
   web: ColorItem
+  web2: ColorItem
   thumbHook: ColorItem
   littleHook: ColorItem
   fingerGuardColor: ColorItem

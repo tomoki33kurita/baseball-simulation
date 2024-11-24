@@ -33,7 +33,7 @@ export const drawGenuineGlovePalmSurface = (ctx: CanvasRenderingContext2D | null
   const palmState = state.palm
   listLining(ctx, state.linings.color) // 裏革
   backLaceDrawerOfFront(ctx, state) // 背面の紐
-  webOfGloveFrontDrawer(ctx, state, state.web.color, laceColor, stitchColor) // ウェブの描画
+  webOfGloveFrontDrawer(ctx, state) // ウェブの描画
   palm(ctx, palmState.color) // 捕球面
   thumbBackOut(ctx, state.thumbOut.color) // 親指背面＿外側
   thumbBackWebSide(ctx, thumbWebColor) // 親指背面＿ウェブ側

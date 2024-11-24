@@ -44,7 +44,8 @@ import {
   SET_MIDDLE_LEFT_RING_RIGHT_COLOR,
   SET_RING_LEFT_LITTLE_RIGHT_COLOR,
   SET_INDEX_LEFT_MIDDLE_RIGHT_COLOR,
-  SET_GENUINE_LABEL
+  SET_GENUINE_LABEL,
+  SET_WEB2_COLOR
 } from '@/features/genuine/Constants/action'
 import { GenuineState } from '../types'
 import { genuineLabel } from '../Drawer/canvas/label'
@@ -123,6 +124,7 @@ export const initialState: GenuineState = {
   welting: unselectedColorState,
   stitch: { label: '未選択', value: 'unselected', color: '#eee' },
   web: unselectedColorState,
+  web2: unselectedColorState,
   thumbHook: unselectedColorState,
   littleHook: unselectedColorState,
   listBelt: unselectedColorState,
@@ -167,6 +169,7 @@ export const reducer = (state: any, action: any) => {
         all: action.all,
         palm: action.all,
         web: action.all,
+        web2: action.all,
         thumbHook: action.all,
         littleHook: action.all,
         binding: action.all,
@@ -232,6 +235,8 @@ export const reducer = (state: any, action: any) => {
       return { ...state, binding: action.binding }
     case SET_WEB_COLOR:
       return { ...state, web: action.web }
+    case SET_WEB2_COLOR:
+      return { ...state, web2: action.web2 }
     case SET_MOUTON_COLOR:
       return { ...state, mouton: action.mouton }
     // 内野手用グラブ

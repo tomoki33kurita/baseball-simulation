@@ -25,15 +25,13 @@ export const drawGenuineGloveRearSurface = (ctx: CanvasRenderingContext2D | null
   ctx.fillStyle = '#383838'
   ctx.strokeText('型番：' + baseModel.productNumber, 50, 70)
 
-  const webColor = state.web.color
   const laceColor = state.lace.color
-  const stitchColor = state.stitch.color
   lining(ctx, state.linings.color) // 裏革
   loopOfRingFingerDrawer(ctx, state)
   backStyleOfGloveBackDrawer(ctx, state) // バックスタイルの描画(ハミダシ,親指刺繍含)
   fingerGuardDrawer(ctx, state) // 指カバー・パッド
   thumbHook(ctx, state.thumbHook.color, 110, -310, 15) // 先端 // 親指掛け紐_上
-  webOfGloveBackDrawer(ctx, state, webColor, laceColor, stitchColor)
+  webOfGloveBackDrawer(ctx, state)
   lace(ctx, laceColor) // 革紐
   !isFirstBackStyle && laceOfWristBeltCrossDrawer(ctx, laceColor)
   genuineLabelDrawer(ctx, state) // ラベル描画

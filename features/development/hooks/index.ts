@@ -18,7 +18,7 @@ export const useDevelopmentHooks = () => {
     setCopy(false)
   }
 
-  const devFlg = false
+  const devFlg = true
   return {
     devFlg,
     devTools,
