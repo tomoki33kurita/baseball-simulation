@@ -220,6 +220,9 @@ export const reducer = (state: any, action: any) => {
     case SET_BINDING_COLOR:
       return { ...state, binding: action.binding }
     case SET_WEB_COLOR:
+      if (state.web2.value === 'unselected') {
+        return { ...state, web: action.web, web2: action.web }
+      }
       return { ...state, web: action.web }
     case SET_WEB2_COLOR:
       return { ...state, web2: action.web2 }

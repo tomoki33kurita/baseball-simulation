@@ -46,9 +46,9 @@ export const webOfGloveFrontDrawer = (ctx: CanvasRenderingContext2D, state: Genu
   if (webMatcher(['cross'])) crossWeb(ctx, webColor, laceColor, stitchColor)
   if (webMatcher(['cross2'])) cross2Web(ctx, webColor, laceColor, stitchColor)
   if (webMatcher(['cross3'])) cross3Web(ctx, webColor, laceColor, stitchColor)
-  if (webMatcher(['crossV'])) crossVWeb(ctx, webColor, laceColor, stitchColor)
-  if (webMatcher(['crossV2'])) crossV2Web(ctx, webColor, laceColor, stitchColor)
-  if (webMatcher(['h'])) hWeb(ctx, laceColor, stitchColor, webColor)
+  if (webMatcher(['crossV'])) crossVWeb(ctx, webColor, web2Color, laceColor, stitchColor)
+  if (webMatcher(['crossV2'])) crossV2Web(ctx, webColor, web2Color, laceColor, stitchColor)
+  if (webMatcher(['h'])) hWeb(ctx, webColor, laceColor, stitchColor)
   if (webMatcher(['uNet'])) uNetWeb(ctx, laceColor, stitchColor, webColor)
   if (webMatcher(['uNet2'])) uNet2Web(ctx, laceColor, stitchColor, webColor)
 

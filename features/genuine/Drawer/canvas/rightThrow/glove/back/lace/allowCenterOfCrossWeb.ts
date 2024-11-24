@@ -1,5 +1,5 @@
 export const allowLace = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number, numerator?: number, scaleSize?: number): void => {
-  ctx.lineWidth = 0.8
+  ctx.lineWidth = 0.5
   ctx.strokeStyle = '#383838'
   ctx.fillStyle = color
   if (numerator !== undefined && numerator !== 0) {

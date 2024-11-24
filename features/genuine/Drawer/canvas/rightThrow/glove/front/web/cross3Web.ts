@@ -1,49 +1,44 @@
-import { hWebCrossUpperLeft, hWebCrossUpperLeft2, hWebCrossUpperRight } from '../lace/hWebCross'
 import { middleSidePartOfWeb, topSidePartOfWeb } from './parts/sideParts'
 
 export const cross3Web = (ctx: CanvasRenderingContext2D, webColor: string, laceColor: string, stitchColor: string): void => {
   ctx.lineWidth = 1.0
   ctx.strokeStyle = '#383838'
-  // 捕球面とウェブ横2を繋ぐ革紐
-  hWebCrossUpperLeft(ctx, laceColor, 0, 0) // クロス部分の右
-  hWebCrossUpperLeft(ctx, laceColor, -3, 3) // クロス部分の右
-  hWebCrossUpperRight(ctx, laceColor, 0, 0) // クロス部分の右
-  hWebCrossUpperRight(ctx, laceColor, -3, 3) // クロス部分の右
-  hWebCrossUpperLeft2(ctx, laceColor, 0, 0) // クロス部分の左
-  hWebCrossUpperLeft2(ctx, laceColor, -3, 3) // クロス部分の左
-  // ウェブ縦
-  ctx.fillStyle = webColor
+  // 縦パーツ
   ctx.beginPath()
-  ctx.moveTo(240, 233) // 左＿上
-  ctx.quadraticCurveTo(263, 274, 263, 274) // 左＿下
-  ctx.quadraticCurveTo(301, 221, 301, 221) // 右＿下
-  ctx.quadraticCurveTo(283, 168, 283, 168) // 右＿上
-  ctx.quadraticCurveTo(254, 199, 240, 233) // 左＿上
+  ctx.moveTo(250, 212) // 左＿上
+  ctx.quadraticCurveTo(273, 285, 315, 355) // 左＿下
+  ctx.quadraticCurveTo(347, 322, 347, 309) // 右＿下
+  ctx.quadraticCurveTo(313, 241, 293, 150) // 右＿上
+  ctx.quadraticCurveTo(265, 189, 251, 212) // 左＿上
   ctx.fill()
   ctx.stroke()
   ctx.closePath()
+
+  // stitchここから
+  ctx.beginPath()
+  ctx.strokeStyle = stitchColor
+  ctx.setLineDash([3, 3])
+  // 左＿外
+  ctx.moveTo(255, 213) // 上
+  ctx.quadraticCurveTo(272, 270, 313, 346) // 下
+  // 左上＿内
+  ctx.moveTo(257, 208) // 上
+  ctx.quadraticCurveTo(276, 270, 316, 344) // 下
+  // 右上＿外
+  ctx.moveTo(291, 162) // 上
+  ctx.quadraticCurveTo(303, 222, 342, 310) // 下
+  // 右上＿内
+  ctx.moveTo(288, 165) // 上
+  ctx.quadraticCurveTo(305, 238, 339, 313) // 下
+  ctx.stroke()
+  ctx.setLineDash([])
+  ctx.closePath()
+  ctx.strokeStyle = '#383838'
+  // stitchここまで
+
   // ウェブ横2
   middleSidePartOfWeb(ctx, webColor, stitchColor, 5, 30)
 
   // ウェブ横1(先端)
   topSidePartOfWeb(ctx, webColor, laceColor, stitchColor)
-
-  // stitchここから
-  ctx.lineWidth = 1.2
-  ctx.strokeStyle = stitchColor
-  ctx.beginPath()
-  ctx.lineWidth = 1.3
-  ctx.setLineDash([3, 3])
-  // // 縦＿左
-  ctx.moveTo(266, 191) // 上
-  ctx.quadraticCurveTo(289, 222, 289, 222)
-  ctx.quadraticCurveTo(265, 224, 265, 224)
-  ctx.quadraticCurveTo(283, 242, 283, 242)
-  ctx.moveTo(261, 199) // 上
-  ctx.quadraticCurveTo(273, 215, 273, 215)
-  ctx.quadraticCurveTo(251, 217, 251, 217)
-  ctx.quadraticCurveTo(276, 249, 276, 249)
-  ctx.stroke()
-  ctx.setLineDash([])
-  ctx.closePath()
 }

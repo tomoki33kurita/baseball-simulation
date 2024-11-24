@@ -1,90 +1,95 @@
-import { hWebCrossUpperLeft, hWebCrossUpperLeft2, hWebCrossUpperRight } from '../lace/hWebCross'
-import { laceParts6 } from './parts/laceParts'
-import { topSidePartOfWeb } from './parts/sideParts'
+import { middleSidePartOfWeb, topSidePartOfWeb } from './parts/sideParts'
 
-export const crossV2Web = (ctx: CanvasRenderingContext2D, webColor: string, laceColor: string, stitchColor: string): void => {
+export const crossV2Web = (ctx: CanvasRenderingContext2D, webColor: string, web2Color: string, laceColor: string, stitchColor: string): void => {
   ctx.lineWidth = 1.0
   ctx.strokeStyle = '#383838'
   ctx.fillStyle = webColor
+  // ウェブ_縦
+  verticalPartOfVWeb(ctx, web2Color, stitchColor)
   // ウェブ先端
+  topSidePartOfWeb(ctx, webColor, laceColor, stitchColor)
+  // ウェブ_横
+  middleSidePartOfWeb(ctx, webColor, stitchColor, 5, 10)
+
+  onCatchFaceParts(ctx, webColor)
+}
+
+const verticalPartOfVWeb = (ctx: CanvasRenderingContext2D, webColor: string, stitchColor: string) => {
+  ctx.strokeStyle = '#383838'
+  ctx.fillStyle = webColor
+  // ウェブ_縦
   ctx.beginPath()
-  ctx.moveTo(194, 245) // 左＿左上
-  ctx.quadraticCurveTo(225, 242, 230, 262) // 左＿右下
-  ctx.quadraticCurveTo(271, 320, 271, 330) // 左＿左下
-  ctx.quadraticCurveTo(305, 250, 370, 210) // 右＿右下
-  ctx.quadraticCurveTo(354, 104, 354, 104) // 右＿下
-  ctx.quadraticCurveTo(352, 87, 352, 68) // 右＿下
-  ctx.quadraticCurveTo(351, 58, 343, 52) // 右＿上
-  ctx.quadraticCurveTo(223, 110, 194, 245) // 右＿下
+  ctx.moveTo(238, 237) // 左＿上
+  ctx.quadraticCurveTo(308, 354, 308, 354) // 左＿下
+  ctx.quadraticCurveTo(325, 326, 325, 326) // 右＿下
+  ctx.quadraticCurveTo(261, 196, 261, 196) // 右＿上
+  ctx.quadraticCurveTo(238, 237, 238, 237) // 左＿上
   ctx.fill()
   ctx.stroke()
   ctx.closePath()
-  topSidePartOfWeb(ctx, webColor, laceColor, stitchColor)
+  ctx.beginPath()
+  ctx.moveTo(293, 156) // 左＿上
+  ctx.quadraticCurveTo(341, 296, 341, 296) // 左＿下
+  ctx.quadraticCurveTo(360, 268, 360, 268) // 右＿下
+  ctx.quadraticCurveTo(323, 128, 323, 128) // 右＿上
+  ctx.quadraticCurveTo(293, 156, 293, 156) // 左＿上
+  ctx.fill()
+  ctx.stroke()
+  ctx.closePath()
 
-  hWebCrossUpperLeft(ctx, laceColor, 0, 0) // クロス部分の右
-  hWebCrossUpperLeft(ctx, laceColor, -3, 3) // クロス部分の右
-  hWebCrossUpperRight(ctx, laceColor, 0, 0) // クロス部分の右
-  hWebCrossUpperRight(ctx, laceColor, -3, 3) // クロス部分の右
-  hWebCrossUpperLeft2(ctx, laceColor, 0, 0) // クロス部分の左
-  hWebCrossUpperLeft2(ctx, laceColor, -3, 3) // クロス部分の左
-
-  // stitchここから
-  ctx.lineWidth = 1.3
+  ctx.lineWidth = 1.2
   ctx.strokeStyle = stitchColor
   ctx.beginPath()
   ctx.setLineDash([3, 3])
-  // ウェブ上部＿横ライン
-  ctx.moveTo(337, 87) // 右上
-  ctx.quadraticCurveTo(250, 140, 231, 218) // 左下
-  ctx.moveTo(339, 91) // 右上
-  ctx.quadraticCurveTo(245, 153, 227, 248) // 左下
-  ctx.moveTo(339, 94) // 右上
-  ctx.quadraticCurveTo(245, 158, 230, 255) // 左下
-
-  // 中央の四角_上辺
-  ctx.moveTo(232, 266) // 左下
-  ctx.quadraticCurveTo(273, 160, 350, 113) // 右上
-  ctx.moveTo(235, 270) // 左下
-  ctx.quadraticCurveTo(275, 165, 350, 116) // 右上
-
-  // 中央の四角_右辺
-  ctx.moveTo(350, 110) // 右上
-  ctx.quadraticCurveTo(356, 171, 357, 171) // 左下
-  ctx.moveTo(346, 113) // 右上
-  ctx.quadraticCurveTo(352, 174, 353, 174) // 左下
-
-  // 中央の四角_下辺
-  ctx.moveTo(357, 165) // 右上
-  ctx.quadraticCurveTo(316, 200, 296, 251) // 左下
-  ctx.quadraticCurveTo(277, 260, 259, 288) // 左
-  ctx.moveTo(353, 174) // 右上
-  ctx.quadraticCurveTo(318, 202, 298, 253) // 中央下
-  ctx.quadraticCurveTo(274, 264, 257, 295) // 左
-
-  // 中央デザイン
-  ctx.moveTo(320, 140) // 右上
-  ctx.quadraticCurveTo(318, 166, 318, 166) //
-  ctx.quadraticCurveTo(332, 155, 332, 155) //
-  ctx.quadraticCurveTo(290, 236, 290, 236) //
-  ctx.quadraticCurveTo(247, 273, 247, 273) //
-  ctx.quadraticCurveTo(260, 247, 260, 247) //
-  ctx.quadraticCurveTo(243, 251, 243, 251) //
-
-  ctx.moveTo(316, 140) // 右上
-  ctx.quadraticCurveTo(314, 172, 314, 172) //
-  ctx.quadraticCurveTo(320, 170, 320, 170) //
-  ctx.quadraticCurveTo(285, 231, 285, 231)
-  ctx.quadraticCurveTo(261, 254, 261, 254)
-  ctx.quadraticCurveTo(268, 240, 268, 240)
-  ctx.quadraticCurveTo(247, 245, 247, 245)
-  // ctx.quadraticCurveTo()
-
-  // 一番したの横ライン
-  ctx.moveTo(266, 308) // 左上
-  ctx.quadraticCurveTo(302, 233, 362, 196) // 右上
-  ctx.moveTo(268, 312) // 左上
-  ctx.quadraticCurveTo(304, 237, 364, 200) // 右上
+  // 左＿左
+  ctx.moveTo(240, 233) // 上
+  ctx.quadraticCurveTo(301, 338, 303, 338) // 下
+  // 左＿右
+  ctx.moveTo(259, 202) // 上
+  ctx.quadraticCurveTo(316, 314, 314, 314) // 下
+  // 右＿左
+  ctx.moveTo(298, 157) // 上
+  ctx.quadraticCurveTo(339, 279, 339, 279) // 下
+  // 右＿右
+  ctx.moveTo(320, 133) // 上
+  ctx.quadraticCurveTo(353, 259, 353, 259) // 下
   ctx.stroke()
   ctx.setLineDash([])
   ctx.closePath()
+  ctx.strokeStyle = '#383838'
+}
+
+const onCatchFaceParts = (ctx: CanvasRenderingContext2D, webColor: string) => {
+  ctx.fillStyle = webColor
+  ctx.strokeStyle = '#383838'
+  // 縦パーツ_左
+  ctx.beginPath()
+  ctx.moveTo(293, 360) //左上
+  ctx.quadraticCurveTo(303, 376, 303, 376) //左下
+  ctx.quadraticCurveTo(346, 316, 376, 253) //右下
+  ctx.quadraticCurveTo(374, 235, 374, 235) //右上
+  ctx.quadraticCurveTo(319, 302, 293, 360) //左上
+  ctx.fill()
+  ctx.stroke()
+  ctx.closePath()
+
+  // // stitchここから
+  // ctx.beginPath()
+  // ctx.strokeStyle = stitchColor
+  // ctx.setLineDash([3, 3])
+  // // 縦向き＿左
+  // // 左
+  // ctx.moveTo(471, 274) // 左上
+  // ctx.quadraticCurveTo(462, 293, 464, 293) // 左下
+  // ctx.quadraticCurveTo(466, 321, 488, 349) // 中央下
+  // ctx.quadraticCurveTo(516, 376, 549, 383) // 右下
+  // ctx.quadraticCurveTo(557, 375, 557, 375) // 右上
+  // ctx.quadraticCurveTo(505, 333, 471, 274) // 左上
+  // ctx.moveTo(470, 279) // 左上
+  // ctx.quadraticCurveTo(505, 336, 557, 380) // 左下
+  // ctx.stroke()
+  // ctx.setLineDash([])
+  // ctx.strokeStyle = '#383838'
+  // ctx.closePath()
+  // // stitchここまで
 }

@@ -1,6 +1,90 @@
 import { allowLace } from '../../lace/allowCenterOfCrossWeb'
 
-// クロスウェブ等の縦パーツ
+export const verticalPartOfVWeb = (ctx: CanvasRenderingContext2D, webColor: string, laceColor: string, stitchColor: string): void => {
+  ctx.fillStyle = webColor
+  // 縦パーツ_左
+  ctx.beginPath()
+  ctx.moveTo(593, 83) //左上
+  ctx.quadraticCurveTo(545, 176, 490, 311) //左下
+  ctx.quadraticCurveTo(512, 335, 512, 335) //右下
+  ctx.quadraticCurveTo(579, 205, 630, 120) //右上
+  ctx.quadraticCurveTo(614, 97, 593, 83) //左上
+  ctx.fill()
+  ctx.stroke()
+  ctx.closePath()
+  // 縦パーツ_右
+  ctx.beginPath()
+  ctx.moveTo(668, 176) //左上
+  ctx.quadraticCurveTo(615, 246, 514, 335) //左下
+  ctx.quadraticCurveTo(538, 355, 538, 355) //右下
+  ctx.quadraticCurveTo(635, 285, 689, 222) //右上
+  ctx.quadraticCurveTo(681, 195, 668, 176) //左上
+  ctx.fill()
+  ctx.stroke()
+  ctx.closePath()
+
+  // stitchここから
+  ctx.beginPath()
+  ctx.strokeStyle = stitchColor
+  ctx.setLineDash([3, 3])
+
+  // 縦向き＿左
+  // 左
+  ctx.moveTo(596, 88) // 上
+  ctx.quadraticCurveTo(554, 168, 495, 309) // 下
+  // 右
+  ctx.moveTo(625, 118) // 上
+  ctx.quadraticCurveTo(573, 205, 511, 328) // 下
+  // 縦向き＿左
+  // 左
+  ctx.moveTo(669, 183) // 上
+  ctx.quadraticCurveTo(612, 257, 518, 335) // 下
+  // 右
+  ctx.moveTo(685, 221) // 上
+  ctx.quadraticCurveTo(626, 287, 539, 348) // 下
+  ctx.stroke()
+  ctx.setLineDash([])
+  ctx.strokeStyle = laceColor
+  ctx.closePath()
+  // stitchここまで
+}
+
+export const verticalPartOfWeb = (ctx: CanvasRenderingContext2D, webColor: string, laceColor: string, stitchColor: string): void => {
+  ctx.fillStyle = webColor
+  // 縦パーツ
+  ctx.beginPath()
+  ctx.moveTo(630, 120) //左上
+  ctx.quadraticCurveTo(587, 214, 482, 330) //左下
+  ctx.quadraticCurveTo(520, 370, 520, 370) //右下
+  ctx.quadraticCurveTo(658, 225, 668, 175) //右上
+  ctx.quadraticCurveTo(650, 141, 630, 120) //左上
+  ctx.fill()
+  ctx.stroke()
+  ctx.closePath()
+
+  // stitchここから
+  ctx.beginPath()
+  ctx.strokeStyle = stitchColor
+  ctx.setLineDash([3, 3])
+
+  // 縦向き＿左＿外側
+  ctx.moveTo(642, 143) // 上
+  ctx.quadraticCurveTo(605, 230, 501, 343) // 下
+  // 縦向き＿左＿内側
+  ctx.moveTo(645, 145) // 上
+  ctx.quadraticCurveTo(608, 233, 505, 345) // 下
+  // 縦向き＿右＿内側
+  ctx.moveTo(650, 151) // 上
+  ctx.quadraticCurveTo(610, 245, 508, 351) // 下
+  // // 縦向き＿右＿外側
+  ctx.moveTo(652, 155) // 上
+  ctx.quadraticCurveTo(613, 250, 512, 352) // 下
+  ctx.stroke()
+  ctx.setLineDash([])
+  ctx.strokeStyle = laceColor
+  ctx.closePath()
+  // stitchここまで
+}
 
 export const verticalPartOfWeb2 = (ctx: CanvasRenderingContext2D, webColor: string, laceColor: string, stitchColor: string): void => {
   ctx.fillStyle = webColor
