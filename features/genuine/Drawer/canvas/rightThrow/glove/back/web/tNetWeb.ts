@@ -1,6 +1,6 @@
 import { webKnots } from '@/util/canvas/lace/webKnots'
 import { topSidePartOfWeb2 } from './parts/sideParts'
-import { verticalPartOfOutfielderWeb } from './parts/verticalParts'
+import { verticalPartOfOutfielderWeb, verticalPartOfWebWithLace } from './parts/verticalParts'
 
 const laceOfLoopOfNet3 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
   ctx.lineWidth = 0.8
@@ -178,7 +178,7 @@ export const tNetWeb = (ctx: CanvasRenderingContext2D, webColor: string, laceCol
   // 横上パーツ
   topSidePartOfWeb2(ctx, webColor, laceColor, stitchColor)
   // 縦パーツ
-  verticalPartOfOutfielderWeb(ctx, webColor, laceColor, stitchColor)
+  verticalPartOfWebWithLace(ctx, webColor, laceColor, stitchColor)
   // laceここから
   // 根元
   laceOfLoopOfNet3(ctx, laceColor, -63, 64)

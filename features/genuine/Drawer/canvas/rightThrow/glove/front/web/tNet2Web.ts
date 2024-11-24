@@ -1,4 +1,4 @@
-import { middleSidePartOfDoubleWeb, topSidePartOfWeb } from './parts/sideParts'
+import { topSidePartOfWeb } from './parts/sideParts'
 import { verticalPartsOfWebWithCenterStitch } from './parts/verticalParts'
 
 export const tNet2Web = (ctx: CanvasRenderingContext2D, webColor: string, laceColor: string, stitchColor: string): void => {
@@ -8,6 +8,4 @@ export const tNet2Web = (ctx: CanvasRenderingContext2D, webColor: string, laceCo
   verticalPartsOfWebWithCenterStitch(ctx, webColor, stitchColor) // ウェブ_縦
   // ウェブ先端
   topSidePartOfWeb(ctx, webColor, laceColor, stitchColor)
-  // ウェブ_横＿中間
-  middleSidePartOfDoubleWeb(ctx, webColor, stitchColor)
 }

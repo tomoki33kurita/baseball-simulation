@@ -13,12 +13,12 @@ import { hWeb } from './hWeb'
 
 import { tNetWeb } from './tNetWeb'
 import { tNet2Web } from './tNet2Web'
-import { tNet3Web } from './tNet3Web'
+import { laceOfNetWebDoubleWithJoint, tNet3Web } from './tNet3Web'
 
 import { underWeb } from '../lace/underWeb'
 import { indexWrapBack } from '../lace/connectIndexToWeb'
 import { webDrawUtil } from '@/util/canvas'
-import { laceOfVerticalPartsRight, laceParts1, laceParts7 } from './parts/laceParts'
+import { laceOfVerticalPartsRight, laceParts1, laceParts6, laceParts7 } from './parts/laceParts'
 import { topSidePartOfWeb } from './parts/sideParts'
 import { GenuineState } from '@/features/genuine/types'
 import { genuineWeb } from './genuineWeb'
@@ -54,10 +54,10 @@ export const webOfGloveFrontDrawer = (ctx: CanvasRenderingContext2D, state: Genu
 
   if (webMatcher(['tNet'])) tNetWeb(ctx, webColor, laceColor, stitchColor)
   if (webMatcher(['tNet2'])) tNet2Web(ctx, webColor, laceColor, stitchColor)
-  if (webMatcher(['tNet3'])) tNet3Web(ctx, webColor, laceColor, stitchColor)
+  if (webMatcher(['tNet3'])) tNet3Web(ctx, webColor, web2Color, laceColor, stitchColor)
   if (webMatcher(['iNet'])) iNetWeb(ctx, webColor, laceColor, stitchColor)
   if (webMatcher(['dragonfly'])) dragonflyWeb(ctx, webColor, laceColor, stitchColor)
-  if (webMatcher(['dragonfly2'])) dragonfly2Web(ctx, webColor, laceColor, stitchColor)
+  if (webMatcher(['dragonfly2'])) dragonfly2Web(ctx, webColor, web2Color, laceColor, stitchColor)
   if (webMatcher(['ladder'])) ladderWeb(ctx, webColor, laceColor, stitchColor)
 }
 
@@ -184,24 +184,43 @@ const underWebForNetWeb2 = (ctx: CanvasRenderingContext2D, color: string, x: num
   ctx.restore()
 }
 
+const laceOfNetWeb = (ctx: CanvasRenderingContext2D, laceColor: string): void => {
+  // ネットウェブ用の革紐最右
+  laceParts6(ctx, laceColor, -2, -25) // 上1
+  laceParts6(ctx, laceColor, 0, 0) // 上2
+  laceParts6(ctx, laceColor, 5, 27) // 上3
+  laceParts6(ctx, laceColor, 8, 55) // 上4
+  laceParts6(ctx, laceColor, 14, 84) // 上5
+}
+
 export const rightLaceOfNetWebDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
   const { webMatcher } = webDrawUtil(state)
-  const webLeatherColor = state.web.color
+  const webColor = state.web.color
+  const web2Color = state.web.color
   const laceColor = state.lace.color
   const stitchColor = state.stitch.color
 
-  if (webMatcher(['ou01'])) {
-    laceOfNetWebDouble(ctx, webLeatherColor, laceColor, stitchColor)
+  if (webMatcher(['tNet2'])) laceOfNetWeb(ctx, laceColor)
+  if (webMatcher(['tNet3'])) laceOfNetWebDoubleWithJoint(ctx, webColor, web2Color, laceColor, stitchColor)
+  if (webMatcher(['tNet', 'tNet2', 'tNet3'])) {
+    // laceOfNetWebDouble(ctx, webColor, laceColor, stitchColor)
     underWebForNetWeb1(ctx, laceColor, 0, 0)
     underWebForNetWeb1(ctx, laceColor, -17, 30)
     underWebForNetWeb2(ctx, laceColor, -133, 95, -20)
     underWebForNetWeb2(ctx, laceColor, -15, 28, 0)
-  } else {
+    return
+  }
+  if (webMatcher(['dragonfly', 'dragonfly2'])) {
     underWeb(ctx, laceColor, 10, 0) // ウェブ下＿右
     underWeb(ctx, laceColor, -32, 64) // ウェブ下＿左
     indexWrapBack(ctx, laceColor, -10, -100) // 上
     indexWrapBack(ctx, laceColor, 0, 0) // 下
+    return
   }
+  underWeb(ctx, laceColor, 10, 0) // ウェブ下＿右
+  underWeb(ctx, laceColor, -32, 64) // ウェブ下＿左
+  indexWrapBack(ctx, laceColor, -10, -100) // 上
+  indexWrapBack(ctx, laceColor, 0, 0) // 下
 }
 
 // const standardLine = (ctx: CanvasRenderingContext2D): void => {

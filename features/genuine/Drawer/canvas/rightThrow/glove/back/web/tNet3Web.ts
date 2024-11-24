@@ -1,6 +1,7 @@
 import { webKnots } from '@/util/canvas/lace/webKnots'
-import { topSidePartOfWeb2 } from './parts/sideParts'
-import { verticalPartOfOutfielderWeb } from './parts/verticalParts'
+import { topSidePartOfWebWithJoint } from './parts/sideParts'
+import { verticalPartOfWebWithLaceWithJointForOutfielder } from './parts/verticalParts'
+import { crossLace } from '../lace/crossLace'
 
 const laceOfLoopOfNet3 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
   ctx.lineWidth = 0.8
@@ -171,14 +172,15 @@ const laceOfVerticalWebPartsLeft = (ctx: CanvasRenderingContext2D, laceColor: st
   ctx.stroke()
 }
 
-export const tNet3Web = (ctx: CanvasRenderingContext2D, webColor: string, laceColor: string, stitchColor: string): void => {
+export const tNet3Web = (ctx: CanvasRenderingContext2D, webColor: string, web2Color: string, laceColor: string, stitchColor: string): void => {
   ctx.lineWidth = 0.8
   ctx.strokeStyle = '#383838'
   ctx.fillStyle = webColor
   // 横上パーツ
-  topSidePartOfWeb2(ctx, webColor, laceColor, stitchColor)
+  topSidePartOfWebWithJoint(ctx, webColor, web2Color, laceColor, stitchColor)
+
   // 縦パーツ
-  verticalPartOfOutfielderWeb(ctx, webColor, laceColor, stitchColor)
+  verticalPartOfWebWithLaceWithJointForOutfielder(ctx, webColor, laceColor, stitchColor)
   // laceここから
   // 根元
   laceOfLoopOfNet3(ctx, laceColor, -63, 64)
@@ -244,5 +246,11 @@ export const tNet3Web = (ctx: CanvasRenderingContext2D, webColor: string, laceCo
   laceOfVerticalWebPartsLeft(ctx, laceColor, -65, 103)
   laceOfVerticalWebPartsLeft(ctx, laceColor, -84, 128)
 
-  webKnots(ctx, laceColor, -110, 120) // 捕球面上のウェブ結び目
+  // webKnots(ctx, laceColor, -110, 120) // 捕球面上のウェブ結び目
+  // 結び目
+  webKnots(ctx, laceColor, 3, -25) // ウェブ先端
+  webKnots(ctx, laceColor, -95, 110) // 捕球面折り返し上
+
+  crossLace(ctx, laceColor, 0, 0, 1, 1)
+  webKnots(ctx, laceColor, -135, 140) // 捕球面折り返し上
 }

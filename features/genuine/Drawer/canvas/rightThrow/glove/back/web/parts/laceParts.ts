@@ -55,6 +55,7 @@ export const lacePartsOfWeb1 = (
 }
 
 export const upLeftDownRight = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
+  ctx.lineWidth = 0.8
   ctx.fillStyle = laceColor
   ctx.strokeStyle = '#383838' //
   // 左上→右上

@@ -113,7 +113,7 @@ const laceOfVerticalPartsRight = (ctx: CanvasRenderingContext2D, laceColor: stri
   ctx.closePath()
 }
 
-export const tNetWeb = (ctx: CanvasRenderingContext2D, laceColor: string, stitchColor: string, webColor: string): void => {
+export const tNetWeb = (ctx: CanvasRenderingContext2D, webColor: string, laceColor: string, stitchColor: string): void => {
   ctx.lineWidth = 1.0
   ctx.strokeStyle = '#383838'
   // ウェブ_縦

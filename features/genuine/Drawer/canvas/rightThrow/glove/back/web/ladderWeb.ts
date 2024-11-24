@@ -1,5 +1,5 @@
 import { webKnots } from '@/util/canvas/lace/webKnots'
-import { middleSidePartOfWeb3, topSidePartOfWeb2 } from './parts/sideParts'
+import { middleSidePartOfWeb, topSidePartOfWeb2 } from './parts/sideParts'
 
 export const ladderWeb = (ctx: CanvasRenderingContext2D, webColor: string, laceColor: string, stitchColor: string): void => {
   ctx.lineWidth = 0.8
@@ -9,9 +9,9 @@ export const ladderWeb = (ctx: CanvasRenderingContext2D, webColor: string, laceC
   // 横上パーツ
   topSidePartOfWeb2(ctx, webColor, laceColor, stitchColor)
   // 横下パーツ
-  middleSidePartOfWeb3(ctx, webColor, laceColor, stitchColor, -10, 20, 1, 1)
+  middleSidePartOfWeb(ctx, webColor, laceColor, stitchColor, -10, 20, 1, 1)
   // 捕球面＿折り返し上パーツ
-  onCatchFaceParts(ctx, webColor, stitchColor)
+  // onCatchFaceParts(ctx, webColor, stitchColor)
   // 縦パーツ
   verticalPartOfFenceWeb(ctx, webColor, laceColor, stitchColor)
   // 捕球面上のウェブ結び目

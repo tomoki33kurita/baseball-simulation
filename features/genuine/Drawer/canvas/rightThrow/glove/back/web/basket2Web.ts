@@ -1,5 +1,5 @@
 import { webKnots } from '@/util/canvas/lace/webKnots'
-import { topSidePartOfWebForPitcher, topSidePartOfWebWithJoint } from './parts/sideParts'
+import { topSidePartOfWebWithJoint } from './parts/sideParts'
 
 export const basket2Web = (
   ctx: CanvasRenderingContext2D,
@@ -10,7 +10,6 @@ export const basket2Web = (
 ): void => {
   ctx.lineWidth = 0.8
   ctx.strokeStyle = '#383838'
-  // web先端の革パーツ
   topSidePartOfWebWithJoint(ctx, webColorFirst, webColorSecond, laceColor, stitchColor)
 
   // ウェブ-人差し指のジョイントパーツ

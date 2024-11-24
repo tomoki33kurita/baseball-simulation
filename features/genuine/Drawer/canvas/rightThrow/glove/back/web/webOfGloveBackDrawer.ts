@@ -51,10 +51,10 @@ export const webOfGloveBackDrawer = (ctx: CanvasRenderingContext2D, state: Genui
   if (webMatcher(['uNet2'])) uNet2Web(ctx, laceColor, stitchColor, webColor)
 
   if (webMatcher(['tNet'])) tNetWeb(ctx, webColor, laceColor, stitchColor)
-  if (webMatcher(['tNet2'])) tNet2Web(ctx, webColor, laceColor, stitchColor)
-  if (webMatcher(['tNet3'])) tNet3Web(ctx, webColor, laceColor, stitchColor)
+  if (webMatcher(['tNet2'])) tNet2Web(ctx, webColor, web2Color, laceColor, stitchColor)
+  if (webMatcher(['tNet3'])) tNet3Web(ctx, webColor, web2Color, laceColor, stitchColor)
   if (webMatcher(['iNet'])) iNetWeb(ctx, webColor, laceColor, stitchColor)
   if (webMatcher(['dragonfly'])) dragonflyWeb(ctx, webColor, laceColor, stitchColor)
-  if (webMatcher(['dragonfly2'])) dragonfly2Web(ctx, webColor, laceColor, stitchColor)
+  if (webMatcher(['dragonfly2'])) dragonfly2Web(ctx, webColor, web2Color, laceColor, stitchColor)
   if (webMatcher(['ladder'])) ladderWeb(ctx, webColor, laceColor, stitchColor)
 }
