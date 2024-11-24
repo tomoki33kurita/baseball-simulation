@@ -42,7 +42,8 @@ import {
   SET_CORE_HARDNESS,
   SET_GLOVE_SIZE,
   SET_BANK_LACE_DIRECTION,
-  SET_LOOP_OF_RING_FINGER
+  SET_LOOP_OF_RING_FINGER,
+  SET_GENUINE_LABEL
 } from '@/features/genuine/Constants/action'
 import { GenuineState } from '../types'
 import { Embroidery } from '@/types'
@@ -264,6 +265,8 @@ export const reducer = (state: any, action: any) => {
       return { ...state, fingerGuardColor: action.fingerGuardColor, drawerIndex: 0 }
     case SET_THUMB_COLOR:
       return { ...state, thumb: action.thumb, drawerIndex: 0 }
+    case SET_GENUINE_LABEL:
+      return { ...state, genuineLabel: action.genuineLabel }
     case SET_UNDER_WEB_COLOR:
       return { ...state, underWeb: action.underWeb, drawerIndex: 0 }
     case SET_BOOMERANG_COLOR:

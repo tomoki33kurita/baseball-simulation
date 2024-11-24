@@ -39,7 +39,8 @@ import {
   SET_CORE_HARDNESS,
   SET_GLOVE_SIZE,
   SET_BANK_LACE_DIRECTION,
-  SET_LOOP_OF_RING_FINGER
+  SET_LOOP_OF_RING_FINGER,
+  SET_GENUINE_LABEL
 } from '@/features/genuine/Constants/action'
 import { GenuineState } from '../types'
 
@@ -265,6 +266,8 @@ export const reducer = (state: any, action: any) => {
       return { ...state, thumbHook: action.thumbHook }
     case SET_LITTLE_HOOK:
       return { ...state, littleHook: action.littleHook }
+    case SET_GENUINE_LABEL:
+      return { ...state, genuineLabel: action.genuineLabel }
     case SET_FINGER_GUARD_COLOR:
       return { ...state, fingerGuardColor: action.fingerGuardColor, drawerIndex: 0 }
     case SET_PERSONAL:

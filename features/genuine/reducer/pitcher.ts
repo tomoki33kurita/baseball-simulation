@@ -43,9 +43,11 @@ import {
   SET_THUMB_INDEX_MIDDLE_RIGHT_COLOR,
   SET_MIDDLE_LEFT_RING_RIGHT_COLOR,
   SET_RING_LEFT_LITTLE_RIGHT_COLOR,
-  SET_INDEX_LEFT_MIDDLE_RIGHT_COLOR
+  SET_INDEX_LEFT_MIDDLE_RIGHT_COLOR,
+  SET_GENUINE_LABEL
 } from '@/features/genuine/Constants/action'
 import { GenuineState } from '../types'
+import { genuineLabel } from '../Drawer/canvas/label'
 
 const initialPersonalState = {
   userName: '',
@@ -283,6 +285,8 @@ export const reducer = (state: any, action: any) => {
       return { ...state, thumbHook: action.thumbHook }
     case SET_LITTLE_HOOK:
       return { ...state, littleHook: action.littleHook }
+    case SET_GENUINE_LABEL:
+      return { ...state, genuineLabel: action.genuineLabel }
     case SET_FINGER_GUARD_COLOR:
       return { ...state, fingerGuardColor: action.fingerGuardColor, drawerIndex: 0 }
     case SET_PERSONAL:
