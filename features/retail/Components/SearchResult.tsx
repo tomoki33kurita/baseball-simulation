@@ -24,7 +24,7 @@ import { drawGenuineCatcherMittPalmSurface } from '@/features/genuine/Drawer/can
 import { drawGenuineFirstMittRearSurface } from '@/features/genuine/Drawer/canvas/drawGenuineFirstMittRearSurface'
 import { drawGenuineFirstMittPalmSurface } from '@/features/genuine/Drawer/canvas/drawGenuineFirstMittPalmSurface'
 
-const supplierFilter = (brand: Brand) => () => supplierList.filter((s) => s.brands && s.brands.includes(brand))
+const supplierFilter = (brand: Brand) => () => supplierList.filter((s) => s.brands.includes(brand))
 
 const Alert = forwardRef<HTMLDivElement, AlertProps>(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />
