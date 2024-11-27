@@ -46,6 +46,7 @@ export const EmbroiderySetter: React.FC<Props> = ({ state, selectedIndex, dispat
                 specifiedLogo: SPECIFIED_LOGOS.find((x) => x.value === selected)
               })
             }}
+            isDisplay={isCustomOrder}
             isError={state.specifiedLogo.value === 'unselected'}
             description={state.specifiedLogo.value === 'logo' ? 'ロゴデータ(画像やPDF)を小売店様にお伝えください。(+6,600円)' : ''}
           />

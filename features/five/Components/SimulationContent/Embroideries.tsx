@@ -29,6 +29,7 @@ export const FiveEmbroideries: React.FC<Props> = ({ state, previousIndex }) => {
               head: '指定ロゴ', // @ts-ignore
               label: `${state.specifiedLogo.label}${state.specifiedLogo.value === 'logo' ? `(${state.specifiedLogoPosition.label})` : ''}`
             }}
+            color={cellColor(state.specifiedLogo.value)}
           />
         </Box>
       )}
