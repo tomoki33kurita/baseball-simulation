@@ -19,7 +19,7 @@ import { underWeb } from '../lace/underWeb'
 import { indexWrapBack } from '../lace/connectIndexToWeb'
 import { webDrawUtil } from '@/util/canvas'
 import { laceOfVerticalPartsRight, laceParts1, laceParts6, laceParts7 } from './parts/laceParts'
-import { topSidePartOfWeb } from './parts/sideParts'
+import { topCrossLaceFront, topSidePartOfWeb, topStraightLaceFront } from './parts/sideParts'
 import { GenuineState } from '@/features/genuine/types'
 import { genuineWeb } from './genuineWeb'
 import { uNet2Web } from './uNet2Web'
@@ -59,6 +59,12 @@ export const webOfGloveFrontDrawer = (ctx: CanvasRenderingContext2D, state: Genu
   if (webMatcher(['dragonfly'])) dragonflyWeb(ctx, webColor, laceColor, stitchColor)
   if (webMatcher(['dragonfly2'])) dragonfly2Web(ctx, webColor, web2Color, laceColor, stitchColor)
   if (webMatcher(['ladder'])) ladderWeb(ctx, webColor, laceColor, stitchColor)
+
+  if (state.webLaceStyle.value === 'cross') {
+    topCrossLaceFront(ctx, laceColor)
+  } else {
+    topStraightLaceFront(ctx, laceColor)
+  }
 }
 
 const laceOfNetWebDouble3 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {

@@ -30,6 +30,7 @@ export const basketWeb = (ctx: CanvasRenderingContext2D, webColor: string, laceC
   ctx.strokeStyle = '#383838'
   // web先端の革パーツ
   topSidePartOfWebForPitcher(ctx, webColor, laceColor, stitchColor)
+
   // ウェブ-人差し指のジョイントパーツ
   jointOfIndexFinger(ctx, webColor, laceColor, 3, 30)
   jointOfIndexFinger(ctx, webColor, laceColor, -24, 90)

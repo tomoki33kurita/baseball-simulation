@@ -48,18 +48,6 @@ export const topSidePartOfWeb = (ctx: CanvasRenderingContext2D, webColor: string
   ctx.closePath()
   // stitchここまで
 
-  // laceここから
-  webTops(ctx, laceColor, 25, 80) // 右＿親指から1番目
-  webTops(ctx, laceColor, 17, 60) // 右＿親指から2番目
-  webTops(ctx, laceColor, 10, 37) // 右＿親指から3番目
-  webTops(ctx, laceColor, 0, 16) // 右＿親指から4番目
-  webTops(ctx, laceColor, -12, -7) // 右＿親指から5番目
-  webTops(ctx, laceColor, -24, -25) // 右＿親指から6番目
-  webTops(ctx, laceColor, -38, -42) // 右＿親指から7番目
-  webTops(ctx, laceColor, -50, -57) // 右＿親指から8番目
-  webTops(ctx, laceColor, -68, -73) // 右＿親指から8番目
-  webTops(ctx, laceColor, -83, -85) // 右＿親指から8番目
-  webTops(ctx, laceColor, -100, -95) // 右＿親指から8番目
   connectWebToIndexTop(ctx, laceColor, 0, 0)
   connectWebToIndex(ctx, laceColor, 45, -92) //
   connectWebToThumbTop(ctx, laceColor, 0, 0)
@@ -109,17 +97,17 @@ export const topSidePartOfWeb2 = (ctx: CanvasRenderingContext2D, webColor: strin
   // stitchここまで
 
   // laceここから
-  webTops(ctx, laceColor, 25, 80) // 右＿親指から1番目
-  webTops(ctx, laceColor, 17, 60) // 右＿親指から2番目
-  webTops(ctx, laceColor, 10, 37) // 右＿親指から3番目
-  webTops(ctx, laceColor, 0, 16) // 右＿親指から4番目
-  webTops(ctx, laceColor, -12, -7) // 右＿親指から5番目
-  webTops(ctx, laceColor, -24, -25) // 右＿親指から6番目
-  webTops(ctx, laceColor, -38, -42) // 右＿親指から7番目
-  webTops(ctx, laceColor, -50, -57) // 右＿親指から8番目
-  webTops(ctx, laceColor, -68, -73) // 右＿親指から8番目
-  webTops(ctx, laceColor, -83, -85) // 右＿親指から8番目
-  webTops(ctx, laceColor, -100, -95) // 右＿親指から8番目
+  // webTops(ctx, laceColor, 25, 80) // 右＿親指から1番目
+  // webTops(ctx, laceColor, 17, 60) // 右＿親指から2番目
+  // webTops(ctx, laceColor, 10, 37) // 右＿親指から3番目
+  // webTops(ctx, laceColor, 0, 16) // 右＿親指から4番目
+  // webTops(ctx, laceColor, -12, -7) // 右＿親指から5番目
+  // webTops(ctx, laceColor, -24, -25) // 右＿親指から6番目
+  // webTops(ctx, laceColor, -38, -42) // 右＿親指から7番目
+  // webTops(ctx, laceColor, -50, -57) // 右＿親指から8番目
+  // webTops(ctx, laceColor, -68, -73) // 右＿親指から8番目
+  // webTops(ctx, laceColor, -83, -85) // 右＿親指から8番目
+  // webTops(ctx, laceColor, -100, -95) // 右＿親指から8番目
   connectWebToIndexTop(ctx, laceColor, 0, 0)
   connectWebToIndex(ctx, laceColor, 45, -92) //
   connectWebToThumbTop(ctx, laceColor, 0, 0)
@@ -162,17 +150,17 @@ export const topSidePartOfWebForPitcher = (ctx: CanvasRenderingContext2D, webCol
   // stitchここまで
 
   // laceここから
-  webTops(ctx, laceColor, 25, 80) // 右＿親指から1番目
-  webTops(ctx, laceColor, 17, 60) // 右＿親指から2番目
-  webTops(ctx, laceColor, 10, 37) // 右＿親指から3番目
-  webTops(ctx, laceColor, 0, 16) // 右＿親指から4番目
-  webTops(ctx, laceColor, -12, -7) // 右＿親指から5番目
-  webTops(ctx, laceColor, -24, -25) // 右＿親指から6番目
-  webTops(ctx, laceColor, -38, -42) // 右＿親指から7番目
-  webTops(ctx, laceColor, -50, -57) // 右＿親指から8番目
-  webTops(ctx, laceColor, -68, -73) // 右＿親指から8番目
-  webTops(ctx, laceColor, -83, -85) // 右＿親指から8番目
-  webTops(ctx, laceColor, -100, -95) // 右＿親指から8番目
+  // webTops(ctx, laceColor, 25, 80) // 右＿親指から1番目
+  // webTops(ctx, laceColor, 17, 60) // 右＿親指から2番目
+  // webTops(ctx, laceColor, 10, 37) // 右＿親指から3番目
+  // webTops(ctx, laceColor, 0, 16) // 右＿親指から4番目
+  // webTops(ctx, laceColor, -12, -7) // 右＿親指から5番目
+  // webTops(ctx, laceColor, -24, -25) // 右＿親指から6番目
+  // webTops(ctx, laceColor, -38, -42) // 右＿親指から7番目
+  // webTops(ctx, laceColor, -50, -57) // 右＿親指から8番目
+  // webTops(ctx, laceColor, -68, -73) // 右＿親指から8番目
+  // webTops(ctx, laceColor, -83, -85) // 右＿親指から8番目
+  // webTops(ctx, laceColor, -100, -95) // 右＿親指から8番目
   connectWebToIndexTop(ctx, laceColor, 0, 0)
   connectWebToIndex(ctx, laceColor, 45, -92) //
   connectWebToThumbTop(ctx, laceColor, 0, 0)
@@ -281,16 +269,10 @@ export const topSidePartOfWebWithJoint = (
   ctx.closePath()
   // stitchここまで
 
-  // laceここから
-  webTopCrossSingleLeftDown(ctx, laceColor, -10, -8)
-  webTopCross(ctx, laceColor, 12, 10) // 左1
-  webTopCross(ctx, laceColor, 55, -71, 10) // 左2
-  webTopCross(ctx, laceColor, 89, -98, 15) // 左2
-  webTopCross(ctx, laceColor, 100, -249, 30) // 左2
-  webTopCrossSingleLeftUp(ctx, laceColor, 145, -32, 15)
   connectWebToIndexTop(ctx, laceColor, 0, 0)
   connectWebToIndex(ctx, laceColor, 45, -92) //
-  connectWebToIndex(ctx, laceColor, 34, -76) //
+  connectWebToThumbTop(ctx, laceColor, 0, 0)
+  connectWebToThumb(ctx, laceColor, 62, -63) //
 }
 
 export const middleSidePartOfWeb = (
@@ -486,4 +468,31 @@ export const middleSidePartOfWeb3 = (
   if (numerator !== undefined) {
     ctx.restore()
   }
+}
+
+export const topCrossLace = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number, numerator?: number): void => {
+  webTopCrossSingleLeftDown(ctx, laceColor, -10 + x, -8 + y)
+  webTopCross(ctx, laceColor, 12 + x, 10 + y) // 左1
+  webTopCross(ctx, laceColor, 55 + x, -71 + y, 10) // 左2
+  webTopCross(ctx, laceColor, 89 + x, -98 + y, 15) // 左2
+  webTopCross(ctx, laceColor, 100 + x, -249 + y, 30) // 左2
+  webTopCrossSingleLeftUp(ctx, laceColor, 145 + x, -32 + y, 15)
+  connectWebToIndexTop(ctx, laceColor, 0 + x, 0 + y)
+  connectWebToIndex(ctx, laceColor, 45 + x, -92 + y) //
+  // connectWebToIndex(ctx, laceColor, 34 + x, -76 + y) //
+}
+
+export const topStraightLace = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number, numerator?: number): void => {
+  // laceここから
+  webTops(ctx, laceColor, 25 + x, 80 + y) // 右＿親指から1番目
+  webTops(ctx, laceColor, 17 + x, 60 + y) // 右＿親指から2番目
+  webTops(ctx, laceColor, 10 + x, 37 + y) // 右＿親指から3番目
+  webTops(ctx, laceColor, 0 + x, 16 + y) // 右＿親指から4番目
+  webTops(ctx, laceColor, -12 + x, -7 + y) // 右＿親指から5番目
+  webTops(ctx, laceColor, -24 + x, -25 + y) // 右＿親指から6番目
+  webTops(ctx, laceColor, -38 + x, -42 + y) // 右＿親指から7番目
+  webTops(ctx, laceColor, -50 + x, -57 + y) // 右＿親指から8番目
+  webTops(ctx, laceColor, -68 + x, -73 + y) // 右＿親指から8番目
+  webTops(ctx, laceColor, -83 + x, -85 + y) // 右＿親指から8番目
+  webTops(ctx, laceColor, -100 + x, -95 + y) // 右＿親指から8番目
 }

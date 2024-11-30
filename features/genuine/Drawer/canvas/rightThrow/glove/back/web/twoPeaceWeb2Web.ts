@@ -119,17 +119,17 @@ export const twoPeaceWeb2Web = (ctx: CanvasRenderingContext2D, webColor: string,
   underKnotLace(ctx, laceColor, 0, 0)
   underKnotLace(ctx, laceColor, 45, 53)
 
-  webTops(ctx, laceColor, 20, 82) // 右＿親指から1番目
-  webTops(ctx, laceColor, 15, 70) // 右＿親指から2番目
-  webTops(ctx, laceColor, 5, 51) // 右＿親指から3番目
-  webTops(ctx, laceColor, -7, 30) // 右＿親指から4番目
-  webTops(ctx, laceColor, -20, 10) // 右＿親指から5番目
-  webTops(ctx, laceColor, -33, -10) // 右＿親指から6番目
-  webTops(ctx, laceColor, -45, -29) // 右＿親指から7番目
-  webTops(ctx, laceColor, -58, -47) // 右＿親指から8番目
-  webTops(ctx, laceColor, -70, -63) // 右＿親指から8番目
-  webTops(ctx, laceColor, -85, -80) // 右＿親指から8番目
-  webTops(ctx, laceColor, -100, -95) // 右＿親指から8番目
+  // webTops(ctx, laceColor, 20, 82) // 右＿親指から1番目
+  // webTops(ctx, laceColor, 15, 70) // 右＿親指から2番目
+  // webTops(ctx, laceColor, 5, 51) // 右＿親指から3番目
+  // webTops(ctx, laceColor, -7, 30) // 右＿親指から4番目
+  // webTops(ctx, laceColor, -20, 10) // 右＿親指から5番目
+  // webTops(ctx, laceColor, -33, -10) // 右＿親指から6番目
+  // webTops(ctx, laceColor, -45, -29) // 右＿親指から7番目
+  // webTops(ctx, laceColor, -58, -47) // 右＿親指から8番目
+  // webTops(ctx, laceColor, -70, -63) // 右＿親指から8番目
+  // webTops(ctx, laceColor, -85, -80) // 右＿親指から8番目
+  // webTops(ctx, laceColor, -100, -95) // 右＿親指から8番目
 
   connectWebToIndexTop(ctx, laceColor, 0, 0)
   connectWebToIndex(ctx, laceColor, 45, -92) //

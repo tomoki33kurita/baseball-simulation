@@ -25,6 +25,7 @@ import { tNet2Web } from './tNet2Web'
 import { tNet3Web } from './tNet3Web'
 import { iNetWeb } from './iNetWeb'
 import { dragonfly2Web } from './dragonfly2Web'
+import { topCrossLace, topStraightLace } from './parts/sideParts'
 
 export const webOfGloveBackDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
   const laceColor = state.lace.color
@@ -57,4 +58,10 @@ export const webOfGloveBackDrawer = (ctx: CanvasRenderingContext2D, state: Genui
   if (webMatcher(['dragonfly'])) dragonflyWeb(ctx, webColor, laceColor, stitchColor)
   if (webMatcher(['dragonfly2'])) dragonfly2Web(ctx, webColor, web2Color, laceColor, stitchColor)
   if (webMatcher(['ladder'])) ladderWeb(ctx, webColor, laceColor, stitchColor)
+
+  if (state.webLaceStyle.value === 'cross') {
+    topCrossLace(ctx, laceColor, 0, 0)
+  } else {
+    topStraightLace(ctx, laceColor, 0, 0)
+  }
 }
