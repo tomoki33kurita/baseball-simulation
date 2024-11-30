@@ -68,7 +68,7 @@ export const models: GenuineBaseModel[] = [
     productNumber: 'MIU-T4',
     position: 'pitcher',
     size: {
-      value: 29.0,
+      value: 29.5,
       unit: 'cm'
     },
     webParts: 'genuine',
