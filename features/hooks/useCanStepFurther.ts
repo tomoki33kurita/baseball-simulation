@@ -31,7 +31,8 @@ export const useCanStepFurther = (state: State, isCopied: boolean, watch: Compar
   const isInValidMailAddress = watchMailAddress !== watchMailAddress2 || [watchMailAddress, watchMailAddress2].some((x) => x.length === 0)
 
   const canInputConsumer = ![existUnselectedState].includes(true)
-  const canSave = [existInvalidPersonal, isSaved, isInValidMailAddress].every((b) => b === false)
+  // const canSave = [existInvalidPersonal, isSaved, isInValidMailAddress].every((b) => b === false)
+  const canSave = [isSaved, isInValidMailAddress].every((b) => b === false)
   const canClose = isCopied || (!isSaved && !isCopied)
 
   return {
