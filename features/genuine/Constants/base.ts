@@ -100,9 +100,9 @@ export const WEB_PARTS: WebParts[] = [
   { label: 'Uネット', value: 'uNet', positions: ['infielder'], imageUrl: `${webImageBaseUrl}/uNet.jpg` },
   { label: 'Uネット2', value: 'uNet2', positions: ['infielder'], imageUrl: `${webImageBaseUrl}/uNet2.jpg` },
 
-  { label: 'Tネット', value: 'tNet', positions: ['outfielder'], imageUrl: `${webImageBaseUrl}/TNet.jpg` },
-  { label: 'Tネット2', value: 'tNet2', positions: ['outfielder'], imageUrl: `${webImageBaseUrl}/TNet2.jpg` },
-  { label: 'Tネット3', value: 'tNet3', positions: ['outfielder'], imageUrl: `${webImageBaseUrl}/TNet3.jpg` },
+  { label: 'Tネット', value: 'tNet', positions: ['outfielder'], imageUrl: `${webImageBaseUrl}/tNet.jpg` },
+  { label: 'Tネット2', value: 'tNet2', positions: ['outfielder'], imageUrl: `${webImageBaseUrl}/tNet2.jpg` },
+  { label: 'Tネット3', value: 'tNet3', positions: ['outfielder'], imageUrl: `${webImageBaseUrl}/tNet3.jpg` },
   { label: 'Iネット', value: 'iNet', positions: ['outfielder'], imageUrl: `${webImageBaseUrl}/iNet.jpg` },
   { label: 'トンボ', value: 'dragonfly', positions: ['outfielder'], imageUrl: `${webImageBaseUrl}/dragonfly.jpg` },
   { label: 'トンボ2', value: 'dragonfly2', positions: ['outfielder'], imageUrl: `${webImageBaseUrl}/dragonfly2.jpg` },

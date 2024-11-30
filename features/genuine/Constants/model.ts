@@ -14,14 +14,14 @@ export const models: GenuineBaseModel[] = [
       value: 30.0,
       unit: 'cm'
     },
-    webParts: '',
+    webParts: 'flat2',
     description: '縦、横にもどちらにも使用可能なモデル。投手用としてフィールディングも意識した万能モデル。',
     isFingerCrotch: true, //要確認 ?
     isUBack: false,
     brand: 'genuine',
     bankLaceDirection: SEQUENTIAL_ROLL,
     image: {
-      url: `${imageBaseUrl}/mui-t1.jpg`,
+      url: `${imageBaseUrl}/1.jpg`,
       width: gloveImageWidth,
       height: gloveImageHeight
     }
@@ -33,18 +33,37 @@ export const models: GenuineBaseModel[] = [
       value: 30.0,
       unit: 'cm'
     },
-    webParts: '',
-    description: '',
+    webParts: 'twoPeace2',
+    description: '完全横型投手用グラブを握り潰し投球したい投手仕様',
     isFingerCrotch: true, //要確認 ?
     isUBack: false,
     brand: 'genuine',
     bankLaceDirection: SEQUENTIAL_ROLL,
     image: {
-      url: `${imageBaseUrl}/mui-t2.jpg`,
+      url: `${imageBaseUrl}/2.jpg`,
       width: gloveImageWidth,
       height: gloveImageHeight
     }
   },
+  // {
+  //   productNumber: 'MIU-T1',
+  //   position: 'pitcher',
+  //   size: {
+  //     value: 30.0,
+  //     unit: 'cm'
+  //   },
+  //   webParts: 'twoPeace2',
+  //   description: '縦、横にもどちらにも使用可能なモデル。投手用としてフィールディングも意識した万能モデル。',
+  //   isFingerCrotch: true, //要確認 ?
+  //   isUBack: false,
+  //   brand: 'genuine',
+  //   bankLaceDirection: SEQUENTIAL_ROLL,
+  //   image: {
+  //     url: `${imageBaseUrl}/3.jpg`,
+  //     width: gloveImageWidth,
+  //     height: gloveImageHeight
+  //   }
+  // },
   {
     productNumber: 'MIU-T4',
     position: 'pitcher',
@@ -52,14 +71,14 @@ export const models: GenuineBaseModel[] = [
       value: 29.0,
       unit: 'cm'
     },
-    webParts: '',
+    webParts: 'genuine',
     description: 'ライナーバックスタイルの投手用',
     isFingerCrotch: false,
     isUBack: false,
     brand: 'genuine',
     bankLaceDirection: SEQUENTIAL_ROLL,
     image: {
-      url: `${imageBaseUrl}/mui-t4.jpg`,
+      url: `${imageBaseUrl}/4.jpg`,
       width: gloveImageWidth,
       height: gloveImageHeight
     }
@@ -71,14 +90,14 @@ export const models: GenuineBaseModel[] = [
       value: 28.5,
       unit: 'cm'
     },
-    webParts: '',
+    webParts: 'h',
     description: '内野手用の中で一番浅くコンパクトなタイプ',
     isFingerCrotch: false,
     isUBack: false,
     brand: 'genuine',
     bankLaceDirection: REVERSE_ROLL,
     image: {
-      url: `${imageBaseUrl}/miu-s4.jpg`,
+      url: `${imageBaseUrl}/5.jpg`,
       width: gloveImageWidth,
       height: gloveImageHeight
     }
@@ -90,14 +109,14 @@ export const models: GenuineBaseModel[] = [
       value: 29.0,
       unit: 'cm'
     },
-    webParts: '',
+    webParts: 'cross3',
     description: '指股を無くしMIU-S7よりも浅く設計。つかみ取り当て取りどちらにも対応できるタイプ。',
     isFingerCrotch: false,
     isUBack: false,
     brand: 'genuine',
     bankLaceDirection: REVERSE_ROLL,
     image: {
-      url: `${imageBaseUrl}/miu-s5.jpg`,
+      url: `${imageBaseUrl}/6.jpg`,
       width: gloveImageWidth,
       height: gloveImageHeight
     }
@@ -109,14 +128,14 @@ export const models: GenuineBaseModel[] = [
       value: 29.5,
       unit: 'cm'
     },
-    webParts: '',
+    webParts: 'crossV2',
     description: '指股を設計することによりMIU-S5よりも深くつかみ取りしやすいタイプ。',
     isFingerCrotch: true,
     isUBack: false,
     brand: 'genuine',
     bankLaceDirection: SEQUENTIAL_ROLL,
     image: {
-      url: `${imageBaseUrl}/miu-s7.jpg`,
+      url: `${imageBaseUrl}/7.jpg`,
       width: gloveImageWidth,
       height: gloveImageHeight
     }
@@ -128,14 +147,14 @@ export const models: GenuineBaseModel[] = [
       value: 33.0,
       unit: 'cm'
     },
-    webParts: '',
+    webParts: 'tNet2',
     description: '深めのポケットでがっちり握れる仕様',
     isFingerCrotch: true,
     isUBack: false,
     brand: 'genuine',
     bankLaceDirection: SEQUENTIAL_ROLL,
     image: {
-      url: `${imageBaseUrl}miu-m8/.jpg`,
+      url: `${imageBaseUrl}/8.jpg`,
       width: gloveImageWidth,
       height: gloveImageHeight
     }
@@ -147,14 +166,14 @@ export const models: GenuineBaseModel[] = [
       value: 33.0,
       unit: 'cm'
     },
-    webParts: '',
+    webParts: 'tNet2',
     description: '球際を意識し指先まで感覚の通るがっちりと掴めるタイプで設計。',
     isFingerCrotch: true,
     isUBack: false,
     brand: 'genuine',
     bankLaceDirection: SEQUENTIAL_ROLL,
     image: {
-      url: `${imageBaseUrl}miu-m9/.jpg`,
+      url: `${imageBaseUrl}/9.jpg`,
       width: gloveImageWidth,
       height: gloveImageHeight
     }
@@ -173,7 +192,7 @@ export const models: GenuineBaseModel[] = [
     brand: 'genuine',
     bankLaceDirection: SEQUENTIAL_ROLL,
     image: {
-      url: `${imageBaseUrl}/miu-n10.jpg`,
+      url: `${imageBaseUrl}/10.jpg`,
       width: gloveImageWidth,
       height: gloveImageHeight
     }

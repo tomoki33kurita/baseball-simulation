@@ -16,6 +16,8 @@ export const backLaceDrawer = (ctx: CanvasRenderingContext2D, state: GenuineStat
     case 'cross':
       crossBackLace(ctx, laceColor)
       return
+    case 'none':
+      return
     default:
       switch (state.baseModel.position) {
         case 'outfielder':

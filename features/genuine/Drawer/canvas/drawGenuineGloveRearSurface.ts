@@ -5,13 +5,13 @@ import { backStyleOfGloveBackDrawer } from './rightThrow/glove/back/backStyles'
 import { fingerGuardDrawer } from './rightThrow/glove/back/fingerCoverOrPad/fingerGuardDrawer'
 import { littleHook } from './rightThrow/glove/back/fingerHooks/littleHook'
 import { thumbHook } from './rightThrow/glove/back/fingerHooks/thumbHook'
-import { genuineLabel } from './label'
 import { genuineLabelDrawer } from './label/drawer'
 import { lace } from './rightThrow/glove/back/lace'
 import { laceOfWristBeltCrossDrawer } from './rightThrow/glove/back/lace/laceOfWristBeltFix'
 import { lining } from './rightThrow/glove/back/lining'
 import { webOfGloveBackDrawer } from './rightThrow/glove/back/web/webOfGloveBackDrawer'
 import { loopOfRingFingerDrawer } from './rightThrow/glove/back/loopOfFingerDrawer'
+// import { meshDrawer } from './rightThrow/glove/back/mesh'
 
 export const drawGenuineGloveRearSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
   const { isFirstBackStyle } = getBackStyle(state)
@@ -37,4 +37,8 @@ export const drawGenuineGloveRearSurface = (ctx: CanvasRenderingContext2D | null
   genuineLabelDrawer(ctx, state) // ラベル描画
   littleHook(ctx, state.littleHook.color, 15, 240, -10, 0.7) // 小指掛け紐
   thumbHook(ctx, state.thumbHook.color, -14, 30, 0) //手元
+  if (['normalMesh', 'crownMesh'].includes(state.backStyle.value)) {
+    // console.log('メッシュ指定されている')
+    // meshDrawer(ctx, 'red')
+  }
 }

@@ -1,5 +1,5 @@
 export const webKnots = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number, numerator?: number, scaleSize?: number): void => {
-  ctx.strokeStyle = 'gray' //'#383838'
+  ctx.strokeStyle = '#383838'
   ctx.lineWidth = 0.8
   ctx.fillStyle = color
   // ウェブ先端側の結び目
