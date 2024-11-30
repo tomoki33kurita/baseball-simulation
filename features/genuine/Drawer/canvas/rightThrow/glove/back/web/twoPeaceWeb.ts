@@ -1,7 +1,5 @@
 import { webKnots } from '@/util/canvas/lace/webKnots'
 import { topSidePartOfWebForPitcher } from './parts/sideParts'
-import { jointOfCatchFace, jointOfIndexFinger, jointOfThumbFinger2 } from './parts/earJointParts'
-import { webTops } from '../lace/webTop'
 import { connectWebToIndex, connectWebToIndexTop, connectWebToThumb, connectWebToThumbTop } from '../lace/connectWebAndFinger'
 
 export const twoPeaceWeb = (ctx: CanvasRenderingContext2D, webColor: string, laceColor: string, stitchColor: string): void => {
@@ -9,6 +7,8 @@ export const twoPeaceWeb = (ctx: CanvasRenderingContext2D, webColor: string, lac
   ctx.fillStyle = webColor
   ctx.strokeStyle = '#383838'
   // ウェブパーツ // 先端側
+  topSidePartOfWebForPitcher(ctx, webColor, laceColor, stitchColor) // ウェブ先端
+  ctx.fillStyle = webColor
   ctx.beginPath()
   ctx.moveTo(576, 44) // 左上
   ctx.quadraticCurveTo(534, 103, 498, 211) // 左下
@@ -18,11 +18,7 @@ export const twoPeaceWeb = (ctx: CanvasRenderingContext2D, webColor: string, lac
   ctx.quadraticCurveTo(625, 70, 576, 44) //左上
   ctx.fill()
   ctx.quadraticCurveTo(498, 211, 500, 212) // 左下の革紐の穴上部
-  // ウェブ先端の横ライン
-  ctx.moveTo(566, 67)
-  ctx.quadraticCurveTo(658, 158, 702, 257)
-  ctx.stroke()
-  ctx.closePath()
+
   // ウェブパーツ // 捕球面側
   ctx.beginPath()
   ctx.moveTo(495, 214) // 左上
