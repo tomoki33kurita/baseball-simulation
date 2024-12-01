@@ -1,7 +1,7 @@
 import { GenuineBaseModel } from '../types'
 
 const imageBaseUrl = '/genuine/baseModels'
-const gloveImageWidth = 240
+const gloveImageWidth = 200
 const gloveImageHeight = 200
 const SEQUENTIAL_ROLL = 'sequentialRoll'
 const REVERSE_ROLL = 'reverseRoll'
