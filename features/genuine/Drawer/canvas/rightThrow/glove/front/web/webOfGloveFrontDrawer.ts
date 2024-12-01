@@ -217,6 +217,15 @@ export const rightLaceOfNetWebDrawer = (ctx: CanvasRenderingContext2D, state: Ge
     indexWrapBack(ctx, laceColor, 0, 0) // 下
     return
   }
+  if (webMatcher(['flat', 'flat2', 'basket', 'basket2', 'genuine'])) {
+    underWeb(ctx, laceColor, 10, 0) // ウェブ下＿右
+    underWeb(ctx, laceColor, -11, 32) // ウェブ下＿中央
+    underWeb(ctx, laceColor, -32, 64) // ウェブ下＿左
+    indexWrapBack(ctx, laceColor, -10, -100) // 上
+    indexWrapBack(ctx, laceColor, -5, -35) // 上
+    indexWrapBack(ctx, laceColor, 0, 30) // 下
+    return
+  }
   underWeb(ctx, laceColor, 10, 0) // ウェブ下＿右
   underWeb(ctx, laceColor, -32, 64) // ウェブ下＿左
   indexWrapBack(ctx, laceColor, -10, -100) // 上
