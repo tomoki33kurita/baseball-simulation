@@ -24,11 +24,11 @@ export const RearSurface: FC<Props> = ({ rearSurfaceId, maxWidth = '100%' }) => 
     <>
       {devFlg ? (
         <div>
-          <canvas width={880} height={630} id={rearSurfaceId} style={{ ...devToolStyle }} onClick={(e) => handleCoordinate(e)} />
+          <canvas width={880} height={680} id={rearSurfaceId} style={{ ...devToolStyle }} onClick={(e) => handleCoordinate(e)} />
           <DevTool devTools={devTools} />
         </div>
       ) : (
-        <canvas id={rearSurfaceId} width={880} height={630} style={{ maxWidth }} />
+        <canvas id={rearSurfaceId} width={880} height={680} style={{ maxWidth }} />
       )}
     </>
   )

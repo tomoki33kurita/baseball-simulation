@@ -21,11 +21,11 @@ export const PalmSurface: FC<Props> = ({ palmSurfaceId, maxWidth = '100%' }) => 
     <>
       {devFlg ? (
         <div>
-          <canvas width={880} height={630} id={palmSurfaceId} style={{ ...devToolStyle }} onClick={(e) => handleCoordinate(e)} />
+          <canvas width={880} height={680} id={palmSurfaceId} style={{ ...devToolStyle }} onClick={(e) => handleCoordinate(e)} />
           <DevTool devTools={devTools} />
         </div>
       ) : (
-        <canvas id={palmSurfaceId} width={880} height={630} style={{ maxWidth }} />
+        <canvas id={palmSurfaceId} width={880} height={680} style={{ maxWidth }} />
       )}
     </>
   )
