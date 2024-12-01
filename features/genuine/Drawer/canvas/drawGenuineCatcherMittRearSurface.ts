@@ -2,13 +2,12 @@ import { GenuineState } from '../../types'
 import { canvasResetter } from './canvasResetter'
 import { backStyleDrawer } from './rightThrow/catcherMitt/back/backStyleDrawer'
 import { catchFaceDrawer } from './rightThrow/catcherMitt/back/catchFaceDrawer'
-// import { fingerEmbroideryDrawer } from './rightThrow/catcherMitt/back/fingerEmbroideryDrawer'
+import { fingerGuardDrawer } from './rightThrow/catcherMitt/back/fingerGuardDrawer'
 import { laceDrawer } from './rightThrow/catcherMitt/back/lace'
 import { liningDrawer } from './rightThrow/catcherMitt/back/liningDrawer'
 import { littleHook } from './rightThrow/catcherMitt/back/littleHook'
 import { thumbHook } from './rightThrow/catcherMitt/back/thumbHook'
 import { webDrawer } from './rightThrow/catcherMitt/back/webDrawer'
-import { fingerGuardDrawer } from './rightThrow/glove/back/fingerCoverOrPad/fingerGuardDrawer'
 
 export const drawGenuineCatcherMittRearSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
   if (!ctx) return
