@@ -29,6 +29,7 @@ export const EmbroiderySetter: React.FC<Props> = ({ state, selectedIndex, dispat
 
   return (
     <TabPanel selectedIndex={selectedIndex} index={2}>
+      <EmbroideryFormUpDown embroideries={embroideries} dispatch={dispatch} />
       {embroideries.map((e, i) => {
         const { shadowColorLabel, edgeColorLabel, disabledShadowColor, disabledEdgeColor, isSelectedTypeFace } = embroideryFlagGenerator(e)
         const { contentMaxLength, existsContent, characterType } = characterCheckHelper(e)
@@ -40,7 +41,6 @@ export const EmbroiderySetter: React.FC<Props> = ({ state, selectedIndex, dispat
 
         return (
           <Box key={`${e.id}`} my={1}>
-            <EmbroideryFormUpDown embroideries={embroideries} dispatch={dispatch} />
             <Accordion defaultExpanded>
               <EmbroideryAccordionSummary embroideryIndex={i} />
               <AccordionDetails style={{ flexWrap: 'wrap' }}>

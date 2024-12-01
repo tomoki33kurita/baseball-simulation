@@ -1,5 +1,7 @@
-import { ColorItem } from '@/types'
+import { BaseItem, ColorItem } from '@/types'
 import { GenuineState } from '@/features/genuine/types'
+
+const genGloveBaseCell = (head: string, item: BaseItem) => ({ head, label: item.label, value: item.value })
 
 const genGloveColorCell = (head: string, item: ColorItem, partsKey: string) => ({
   head,
@@ -44,9 +46,10 @@ export const getGenuineColorCells = (state: GenuineState) => {
   return [
     genGloveColorCell('捕球面', state.palm, 'palm'),
     genGloveColorCell('ウェブ', state.web, 'web'),
+    genGloveColorCell('ウェブ2', state.web, 'web2'),
     genGloveColorCell('親指かけ紐', state.thumbHook, 'thumbHook'),
     genGloveColorCell('小指かけ紐', state.littleHook, 'littleHook'),
-    needFingerCoverOrPad && genGloveColorCell('指カバー・指あて', state.fingerGuardColor, 'fingerGuardColor'),
+    needFingerCoverOrPad && genGloveColorCell('指カバー/指あて', state.fingerGuardColor, 'fingerGuardColor'),
     genGloveColorCell('裏平', state.linings, 'linings'),
     genGloveColorCell('親指1', state.thumbOut, 'thumbOut'),
     genGloveColorCell('親指2', state.thumbWeb, 'thumbWeb'),
@@ -61,8 +64,9 @@ export const getGenuineColorCells = (state: GenuineState) => {
     genGloveColorCell('バンド', state.listBelt, 'listBelt'),
     genGloveColorCell('ハミダシ', state.welting, 'welting'),
     genGloveColorCell('ヘリ革', state.binding, 'binding'),
-    genGloveColorCell('縫い糸', state.stitch, 'stitch'),
-    genGloveColorCell('レース', state.lace, 'lace'),
-    genGloveColorCell('ムートン', state.mouton, 'mouton')
+    genGloveColorCell('ステッチ', state.stitch, 'stitch'),
+    genGloveColorCell('革紐', state.lace, 'lace'),
+    genGloveColorCell('ムートン', state.mouton, 'mouton'),
+    genGloveBaseCell('ラベル', state.genuineLabel)
   ].filter((item) => item !== false)
 }
