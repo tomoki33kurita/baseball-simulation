@@ -1,3 +1,19 @@
+export const laceParts0 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
+  ctx.strokeStyle = '#383838'
+  ctx.fillStyle = laceColor
+  ctx.lineWidth = 0.8
+  ctx.beginPath()
+  ctx.moveTo(231 + x, 250 + y) // 左下
+  ctx.quadraticCurveTo(267 + x, 247 + y, 277 + x, 252 + y) // 右下
+  ctx.quadraticCurveTo(275 + x, 247 + y, 273 + x, 242 + y) // 右上
+  ctx.quadraticCurveTo(260 + x, 235 + y, 235 + x, 240 + y) // 左上途中
+  ctx.quadraticCurveTo(232 + x, 242 + y, 231 + x, 250 + y) // 左上
+  ctx.fill()
+  ctx.moveTo(237 + x, 248 + y) // 左下
+  ctx.quadraticCurveTo(257 + x, 242 + y, 276 + x, 250 + y) // 右下
+  ctx.stroke()
+  ctx.closePath()
+}
 export const laceParts1 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
   ctx.strokeStyle = '#383838'
   ctx.fillStyle = laceColor
@@ -12,6 +28,70 @@ export const laceParts1 = (ctx: CanvasRenderingContext2D, laceColor: string, x: 
   ctx.fill()
   ctx.moveTo(234 + x, 267 + y) // 左上
   ctx.quadraticCurveTo(255 + x, 267 + y, 253 + x, 289 + y) // 左下
+  ctx.stroke()
+  ctx.closePath()
+}
+
+export const laceParts2 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
+  ctx.strokeStyle = '#383838'
+  ctx.fillStyle = laceColor
+  ctx.lineWidth = 0.8
+  ctx.beginPath()
+  ctx.moveTo(241 + x, 252 + y) // 左上
+  ctx.quadraticCurveTo(241 + x, 260 + y, 241 + x, 260 + y) // 左下
+  ctx.quadraticCurveTo(248 + x, 253 + y, 279 + x, 253 + y) // 右下
+  ctx.quadraticCurveTo(274 + x, 244 + y, 274 + x, 244 + y) // 右上
+  ctx.quadraticCurveTo(248 + x, 242 + y, 241 + x, 252 + y) // 左上
+  ctx.fill()
+  ctx.moveTo(241 + x, 258 + y) // 左下
+  ctx.quadraticCurveTo(251 + x, 246 + y, 277 + x, 251 + y) // 右下
+  ctx.stroke()
+  ctx.closePath()
+}
+
+export const laceParts3 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
+  ctx.strokeStyle = '#383838'
+  ctx.fillStyle = laceColor
+  ctx.lineWidth = 0.8
+  ctx.beginPath()
+  ctx.moveTo(297 + x, 224 + y) // 左＿上
+  ctx.quadraticCurveTo(294 + x, 228 + y, 300 + x, 234 + y) // 左下
+  ctx.quadraticCurveTo(330 + x, 215 + y, 315 + x, 182 + y) // 右上＿右
+  ctx.quadraticCurveTo(314 + x, 188 + y, 309 + x, 191 + y) // 右上＿左
+  ctx.quadraticCurveTo(315 + x, 210 + y, 297 + x, 224 + y) // 左＿上
+  ctx.fill()
+  ctx.moveTo(310 + x, 191 + y) // 上
+  ctx.quadraticCurveTo(319 + x, 214 + y, 296 + x, 226 + y) // 左下
+  ctx.stroke()
+  ctx.closePath()
+}
+
+export const laceParts4 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
+  ctx.strokeStyle = '#383838'
+  ctx.fillStyle = laceColor
+  ctx.lineWidth = 0.8
+  ctx.beginPath()
+  ctx.moveTo(312 + x, 175 + y) // 左上
+  ctx.quadraticCurveTo(316 + x, 188 + y, 316 + x, 188 + y) // 左下
+  ctx.quadraticCurveTo(330 + x, 193 + y, 357 + x, 191 + y) // 右下
+  ctx.quadraticCurveTo(349 + x, 185 + y, 348 + x, 180 + y) // 右上
+  ctx.quadraticCurveTo(325 + x, 182 + y, 312 + x, 175 + y) // 左上
+  ctx.fill()
+  ctx.stroke()
+  ctx.closePath()
+}
+
+export const laceParts5 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
+  ctx.strokeStyle = '#383838'
+  ctx.fillStyle = laceColor
+  ctx.lineWidth = 0.8
+  ctx.beginPath()
+  ctx.moveTo(314 + x, 183 + y) // 左上
+  ctx.quadraticCurveTo(317 + x, 191 + y, 317 + x, 191 + y) // 左下
+  ctx.quadraticCurveTo(330 + x, 177 + y, 328 + x, 165 + y) // 右右
+  ctx.quadraticCurveTo(319 + x, 165 + y, 317 + x, 163 + y) // 右左
+  ctx.quadraticCurveTo(320 + x, 170 + y, 314 + x, 183 + y) // 左上
+  ctx.fill()
   ctx.stroke()
   ctx.closePath()
 }
