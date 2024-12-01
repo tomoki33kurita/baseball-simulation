@@ -36,11 +36,11 @@ export const getGenuineBaseCells = (
         genGloveBaseCell('サイズ', state.size),
         isGlove ? genGloveBaseCell('ウェブパーツ', state.webParts) : dummy,
         genGloveBaseCell('ウェブ紐スタイル', state.webLaceStyle),
-        genGloveBaseCell('背面紐通し', state.backLaceStyle),
-        genGloveBaseCell('土手芯', state.materialPack),
+        isGlove ? genGloveBaseCell('背面紐通し', state.backLaceStyle) : dummy,
+        isGlove ? genGloveBaseCell('土手芯', state.materialPack) : dummy,
         genGloveBaseCell('芯材の硬さ', state.coreHardness),
         genGloveBaseCell('手口巻スタイル', state.bankLaceDirection),
-        genGloveBaseCell('薬指リング', state.loopOfRingFinger)
+        isGlove ? genGloveBaseCell('薬指リング', state.loopOfRingFinger) : dummy
       ].filter((cell) => cell.value !== dummy.value)
   }
 }

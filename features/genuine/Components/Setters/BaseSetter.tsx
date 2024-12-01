@@ -69,7 +69,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
     fingerGuard: dispatcher('fingerGuard', dispatch),
     webParts: dispatcher('webParts', dispatch)
   }
-  const { isPitcher } = positionChecker(position)
+  const { isPitcher, isGlove } = positionChecker(position)
   const { isMesh } = getGenuineBackStyle(state)
   return (
     <TabPanel selectedIndex={selectedIndex} index={0}>
@@ -139,6 +139,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         objects={WEB_PARTS.filter((o) => o.positions.includes(position))}
         isError={webParts.value === 'unselected'}
         defaultExpanded={webParts.value === 'unselected'}
+        isDisplay={isGlove}
         handleChange={handle.webParts}
         className={WEB_PARTS_BUTTON_OPTION}
       />
@@ -155,6 +156,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         selectedLabel={backLaceStyle.label}
         objects={BACK_LACE_STYLES}
         isError={backLaceStyle.value === 'unselected'}
+        isDisplay={isGlove}
         defaultExpanded={backLaceStyle.value === 'unselected'}
         handleChange={handle.backLaceStyle}
       />
@@ -164,6 +166,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         objects={MATERIAL_PACKS}
         handleChange={handle.materialPack}
         isError={materialPack.value === 'unselected'}
+        isDisplay={isGlove}
         defaultExpanded={materialPack.value === 'unselected'}
         className={MATERIAL_PACK_BUTTON_OPTION}
       />
@@ -188,6 +191,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         selectedLabel={loopOfRingFinger.label}
         objects={LOOP_OF_RING_FINGERS}
         isError={loopOfRingFinger.value === 'unselected'}
+        isDisplay={isGlove}
         defaultExpanded={loopOfRingFinger.value === 'unselected'}
         handleChange={handle.loopOfRingFinger}
       />
