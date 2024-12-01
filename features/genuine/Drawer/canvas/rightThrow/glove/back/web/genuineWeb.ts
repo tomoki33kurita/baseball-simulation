@@ -30,6 +30,33 @@ export const genuineWeb = (ctx: CanvasRenderingContext2D, webColor: string, lace
   ctx.stroke()
   ctx.closePath()
 
+  webKnots(ctx, laceColor, -110, 110, 1) // ウェブ先端寄りのウェブ結び目
+
+  // genuine のデザイン
+  ctx.strokeStyle = 'white'
+  ctx.beginPath()
+  ctx.moveTo(558, 118) // 左上
+  ctx.quadraticCurveTo(543, 147, 537, 182) // 左下1
+  ctx.quadraticCurveTo(526, 241, 537, 289)
+  ctx.quadraticCurveTo(542, 312, 570, 335) // 右下
+  ctx.quadraticCurveTo(579, 315, 579, 315)
+  ctx.quadraticCurveTo(593, 321, 622, 298) // 右上
+  ctx.quadraticCurveTo(605, 281, 579, 298)
+  ctx.quadraticCurveTo(572, 292, 578, 288)
+  ctx.quadraticCurveTo(579, 269, 616, 269)
+  ctx.quadraticCurveTo(649, 257, 629, 215)
+  ctx.quadraticCurveTo(589, 235, 563, 292)
+  ctx.quadraticCurveTo(557, 267, 580, 237)
+  ctx.quadraticCurveTo(617, 205, 621, 200)
+  ctx.quadraticCurveTo(623, 169, 602, 152)
+  ctx.quadraticCurveTo(565, 201, 553, 270)
+  ctx.quadraticCurveTo(551, 275, 549, 267)
+  ctx.quadraticCurveTo(550, 219, 579, 157)
+  ctx.quadraticCurveTo(575, 131, 558, 118)
+  // ctx.quadraticCurveTo()
+  ctx.stroke()
+  ctx.closePath()
+
   // stitchここから
   ctx.beginPath()
   ctx.lineWidth = 1.3
@@ -45,10 +72,29 @@ export const genuineWeb = (ctx: CanvasRenderingContext2D, webColor: string, lace
   ctx.quadraticCurveTo(510, 163, 490, 253)
   ctx.quadraticCurveTo(513, 317, 580, 353)
   ctx.quadraticCurveTo(690, 272, 690, 272)
+
+  // genuineのデザイン
+  ctx.moveTo(555, 115)
+  ctx.quadraticCurveTo(518, 185, 530, 284)
+  ctx.quadraticCurveTo(542, 318, 572, 340)
+  ctx.quadraticCurveTo(580, 319, 580, 319)
+  ctx.quadraticCurveTo(599, 322, 626, 297)
+  ctx.quadraticCurveTo(603, 277, 579, 295)
+  ctx.quadraticCurveTo(579, 274, 603, 273)
+  ctx.quadraticCurveTo(619, 277, 636, 256)
+  ctx.quadraticCurveTo(644, 239, 630, 212)
+  ctx.quadraticCurveTo(585, 236, 566, 281)
+  ctx.quadraticCurveTo(560, 263, 583, 238)
+  ctx.quadraticCurveTo(624, 200, 624, 200)
+  ctx.quadraticCurveTo(627, 165, 600, 149)
+  ctx.quadraticCurveTo(560, 209, 552, 263)
+  ctx.quadraticCurveTo(553, 215, 583, 157)
+  ctx.quadraticCurveTo(576, 126, 555, 115)
+  // ctx.quadraticCurveTo()
+  // ctx.quadraticCurveTo()
   ctx.stroke()
   ctx.setLineDash([])
   ctx.strokeStyle = laceColor
   ctx.closePath()
   // stitchここまで
-  webKnots(ctx, laceColor, -110, 110, 1) // ウェブ先端寄りのウェブ結び目
 }

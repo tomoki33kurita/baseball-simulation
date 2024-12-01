@@ -8,7 +8,7 @@ import { ringBackLittleSide } from './rightThrow/glove/front/back/ringFinger'
 import { littleBackOut, littleBackRingSide } from './rightThrow/glove/front/back/littleFinger'
 import { welting } from './rightThrow/glove/front/welting'
 import { bindings } from './rightThrow/glove/front/bindings'
-import { rightLaceOfNetWebDrawer, webOfGloveFrontDrawer } from './rightThrow/glove/front/web/webOfGloveFrontDrawer'
+import { rightLaceOfNetWebDrawer, topLaceDrawer, webOfGloveFrontDrawer } from './rightThrow/glove/front/web/webOfGloveFrontDrawer'
 import { lace } from './rightThrow/glove/front/lace'
 import { backLaceDrawerOfFront } from './rightThrow/glove/front/lace/backLace'
 import { genuineEngravedOfPalm } from './rightThrow/glove/front/engraving'
@@ -47,6 +47,7 @@ export const drawGenuineGlovePalmSurface = (ctx: CanvasRenderingContext2D | null
   welting(ctx, state.welting.color, baseModel.isFingerCrotch, palmState.color) // ハミダシ
   bindings(ctx, state.binding.color, laceColor, stitchColor, bankLaceDirection) // ヘリ革
   rightLaceOfNetWebDrawer(ctx, state) // ネットウェブのみの革紐
+  topLaceDrawer(ctx, state) // トップレース
   lace(ctx, laceColor, state) // 革紐
   genuineEngravedOfPalm(ctx, palmState, isMobile, 0, 0) // メーカー捕球面の刻印
 }

@@ -59,12 +59,6 @@ export const webOfGloveFrontDrawer = (ctx: CanvasRenderingContext2D, state: Genu
   if (webMatcher(['dragonfly'])) dragonflyWeb(ctx, webColor, laceColor, stitchColor)
   if (webMatcher(['dragonfly2'])) dragonfly2Web(ctx, webColor, web2Color, laceColor, stitchColor)
   if (webMatcher(['ladder'])) ladderWeb(ctx, webColor, laceColor, stitchColor)
-
-  if (state.webLaceStyle.value === 'cross') {
-    topCrossLaceFront(ctx, laceColor)
-  } else {
-    topStraightLaceFront(ctx, laceColor)
-  }
 }
 
 const laceOfNetWebDouble3 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
@@ -227,6 +221,15 @@ export const rightLaceOfNetWebDrawer = (ctx: CanvasRenderingContext2D, state: Ge
   underWeb(ctx, laceColor, -32, 64) // ウェブ下＿左
   indexWrapBack(ctx, laceColor, -10, -100) // 上
   indexWrapBack(ctx, laceColor, 0, 0) // 下
+}
+
+export const topLaceDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
+  const laceColor = state.lace.color
+  if (state.webLaceStyle.value === 'cross') {
+    topCrossLaceFront(ctx, laceColor)
+  } else {
+    topStraightLaceFront(ctx, laceColor)
+  }
 }
 
 // const standardLine = (ctx: CanvasRenderingContext2D): void => {

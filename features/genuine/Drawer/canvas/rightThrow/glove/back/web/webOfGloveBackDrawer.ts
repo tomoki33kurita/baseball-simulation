@@ -65,3 +65,18 @@ export const webOfGloveBackDrawer = (ctx: CanvasRenderingContext2D, state: Genui
     topStraightLace(ctx, laceColor, 0, 0)
   }
 }
+
+// // 基準となる線 十字
+// ctx.lineWidth = 1.0
+// ctx.strokeStyle = 'red'
+// ctx.beginPath()
+// ctx.moveTo(643, 164) // 左上
+// ctx.quadraticCurveTo(517, 315, 517, 315) // 左下1
+// ctx.stroke()
+// ctx.closePath()
+
+// ctx.beginPath()
+// ctx.moveTo(512, 158) // 左上
+// ctx.quadraticCurveTo(588, 222, 636, 321) // 左下1
+// ctx.stroke()
+// ctx.closePath()
