@@ -198,20 +198,58 @@ export const models: GenuineBaseModel[] = [
     }
   },
   {
-    productNumber: 'MIU-hoge',
+    productNumber: 'HM-37',
     position: 'catcher',
     size: {
       value: 31.5,
       unit: 'cm'
     },
     webParts: '',
-    description: '',
+    description: '1番大きくポケットが深いモデル。しっかりと捕球したい選手向け仕様',
     isFingerCrotch: true,
     isUBack: false,
     brand: 'genuine',
     bankLaceDirection: SEQUENTIAL_ROLL,
     image: {
-      url: `${imageBaseUrl}/miu-hoge.jpg`,
+      url: `${imageBaseUrl}/11.jpg`,
+      width: gloveImageWidth,
+      height: gloveImageHeight
+    }
+  },
+  {
+    productNumber: 'TM-411',
+    position: 'catcher',
+    size: {
+      value: 31.5,
+      unit: 'cm'
+    },
+    webParts: '',
+    description: 'オーソドックスなタイプ。HMの小型仕様。',
+    isFingerCrotch: true,
+    isUBack: false,
+    brand: 'genuine',
+    bankLaceDirection: SEQUENTIAL_ROLL,
+    image: {
+      url: `${imageBaseUrl}/12.jpg`,
+      width: gloveImageWidth,
+      height: gloveImageHeight
+    }
+  },
+  {
+    productNumber: 'YT-22',
+    position: 'catcher',
+    size: {
+      value: 31.5,
+      unit: 'cm'
+    },
+    webParts: '',
+    description: '1番コンパクトでポケットも浅いモデル。握り変えのスピードを追求した選手向け仕様。',
+    isFingerCrotch: true,
+    isUBack: false,
+    brand: 'genuine',
+    bankLaceDirection: SEQUENTIAL_ROLL,
+    image: {
+      url: `${imageBaseUrl}/13.jpg`,
       width: gloveImageWidth,
       height: gloveImageHeight
     }
