@@ -134,7 +134,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         handleChange={handle.size}
       />
       <SelectCardWithImage
-        summary={'ウェブ'} // webParts
+        summary={'ウェブパーツ'} // webParts
         selectedLabel={webParts.label}
         objects={WEB_PARTS.filter((o) => o.positions.includes(position))}
         isError={webParts.value === 'unselected'}
