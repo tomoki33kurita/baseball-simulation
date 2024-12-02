@@ -67,6 +67,6 @@ export const getGenuineColorCells = (state: GenuineState) => {
     genGloveColorCell('ステッチ', state.stitch, 'stitch'),
     genGloveColorCell('革紐', state.lace, 'lace'),
     genGloveColorCell('ムートン', state.mouton, 'mouton'),
-    genGloveBaseCell('ラベル', state.genuineLabel)
+    genGloveColorCell('ラベル', { label: 'ラベル', color: state.genuineLabel.value, value: state.genuineLabel.value }, 'genuineLabel')
   ].filter((item) => item !== false)
 }

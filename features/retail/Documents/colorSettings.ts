@@ -2,7 +2,7 @@ import { getFiveColorCells } from '@/features/five/Components/ConfirmContents/co
 import { FiveState } from '@/features/five/types'
 import { Brand, State, TwoDimensional } from '@/types'
 
-export const colorCells2Condition = ['lace', 'stitch', 'binding', 'welting', 'mouton', 'fiveLabel']
+export const colorCells2Condition = ['lace', 'stitch', 'binding', 'welting', 'mouton', 'fiveLabel', 'genuineLabel']
 
 const genGloveColorCells = (state: State, brand: Brand) => {
   switch (brand) {
