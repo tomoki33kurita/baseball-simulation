@@ -22,6 +22,7 @@ const Retail: FC = () => {
   const { retail } = useRetailInformation(email)
   const disabled = false //!isSelectableBrand
 
+  if (!retail) return null
   return (
     <ThemeProvider theme={commonTheme}>
       <RetailContext.Provider value={retail}>
@@ -29,7 +30,7 @@ const Retail: FC = () => {
           <Box>
             <AppBar>
               <Toolbar style={{ display: 'flex', justifyContent: 'end' }}>
-                <RetailInfo {...{ email, handleToTop, handleSignOut }} />
+                <RetailInfo {...{ retail, handleToTop, handleSignOut }} />
               </Toolbar>
             </AppBar>
             <SearchForm {...{ disabled, setResponse }} />
