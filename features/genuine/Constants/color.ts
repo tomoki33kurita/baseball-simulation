@@ -125,9 +125,9 @@ export const LACES: ColorItem[] = [
 ]
 
 export const MOUTON_COLORS: ColorItem[] = [
-  { label: 'ムートン白', value: 'white', color: '#fff' },
-  { label: 'ムートン黒', value: 'black', color: '#1E1E1E' },
-  { label: 'ディアスキンパット', value: 'deerSkinPad', color: '#1E1E1E' }
+  { label: 'ムートン白', value: 'white', color: '#fff', price: 0 },
+  { label: 'ムートン黒', value: 'black', color: '#1E1E1E', price: 0 },
+  { label: 'ディアスキンパット', value: 'deerSkinPad', color: '#1E1E1E', price: 3300 }
 ]
 
 // setter側で使用

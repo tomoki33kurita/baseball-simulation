@@ -99,16 +99,13 @@ export const initialState: GenuineState = {
     }
   },
   dominantArm: unselectedState,
-  backStyle: unselectedStateWithPrice,
   meshColor: unselectedColorState,
-  size: unselectedStateWithPrice,
   webLaceStyle: unselectedState,
   backLaceStyle: unselectedState,
   leatherThickness: unselectedState,
   coreHardness: unselectedState,
   gloveSize: unselectedState,
   bankLaceDirection: unselectedState,
-  loopOfRingFinger: unselectedStateWithPrice,
 
   fingerGuard: unselectedState,
   fingerGuardColor: unselectedColorState,
@@ -127,7 +124,6 @@ export const initialState: GenuineState = {
   thumbHook: unselectedColorState,
   littleHook: unselectedColorState,
   listBelt: unselectedColorState,
-  mouton: unselectedColorState,
   thumbOut: unselectedColorState,
   thumbWeb: unselectedColorState,
   indexWeb: unselectedColorState,
@@ -152,6 +148,10 @@ export const initialState: GenuineState = {
   ringLeftLittleRight: unselectedColorState, // first back style glove
   indexLeftMiddleRight: unselectedColorState, // crown back style glove
   genuineLabel: unselectedStateWithPrice,
+  mouton: unselectedStateWithPrice,
+  loopOfRingFinger: unselectedStateWithPrice,
+  size: unselectedStateWithPrice,
+  backStyle: unselectedStateWithPrice,
   embroideries: [initialEmbroideryState],
   personal: initialPersonalState,
   drawerIndex: 0

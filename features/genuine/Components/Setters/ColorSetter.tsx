@@ -105,7 +105,7 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
       <SelectCard
         summary={'ムートン'}
         selectedLabel={mouton.label}
-        selectedColor={mouton.color}
+        // selectedColor={mouton.color}
         objects={MOUTON_COLORS}
         defaultExpanded={mouton.value === 'unselected'}
         handleChange={handle.mouton}

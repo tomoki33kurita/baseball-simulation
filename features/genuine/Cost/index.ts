@@ -7,7 +7,12 @@ export const calculateGenuineBaseCost = (state: GenuineState): number => {
 
 export const calculateGenuineOptionCost = (state: GenuineState): number => {
   const labelCost = state.genuineLabel.price
-  const optionCost = labelCost
+  const deerSkinCost = state.mouton.price
+  const loopOfRingFingerCost = state.loopOfRingFinger.price
+  const sizeCost = state.size.price
+  const meshCost = state.backStyle.price
+
+  const optionCost = labelCost + deerSkinCost + loopOfRingFingerCost + sizeCost + meshCost
   return optionCost
 }
 
