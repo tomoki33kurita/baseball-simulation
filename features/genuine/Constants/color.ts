@@ -11,7 +11,7 @@ export const LEATHER_COLORS: ColorItem[] = [
   { label: 'オレンジ', value: 'orange', color: '#9A7729' },
   { label: 'Lオレンジ', value: 'lOrange', color: '#B56723' },
   { label: 'Rオレンジ', value: 'rOrange', color: '#A83327' },
-  { label: 'Sオレンジ', value: 'sOrange', color: '#A12F28' },
+  { label: 'オレンジ', value: 'orange', color: '#A12F28' },
   { label: 'レッド', value: 'red', color: '#9D2E28' },
   { label: 'ピンク', value: 'pink', color: '#BB5B78' },
   { label: 'パープル', value: 'purple', color: '#6F267A' },
@@ -21,9 +21,11 @@ export const LEATHER_COLORS: ColorItem[] = [
   { label: 'Lブラウン', value: 'lBrown', color: '#60311A' },
   { label: 'Dブラウン', value: 'dBrown', color: '#1C110C' },
   { label: 'ブルー', value: 'blue', color: '#24226F' },
-  { label: 'ネイビー', value: 'navy', color: '#17131B' },
+  { label: 'ネイビー', value: 'navy', color: '##0c1521' },
   { label: 'ブラック', value: 'black', color: '#14120D' },
-  { label: 'サックス', value: 'sax', color: '#2D5181' }
+  { label: 'サックス', value: 'sax', color: '#2D5181' },
+  { label: 'インペリアルブラック', value: 'imperialNavy', color: '#06090f' },
+  { label: 'アベンチュリンブラウン', value: 'aventurineBrown', color: '#420011' }
 ]
 export const LININGS: ColorItem[] = [...LEATHER_COLORS]
 
@@ -36,7 +38,7 @@ export const BINDINGS: ColorItem[] = [
   { label: 'オレンジ', value: 'orange', color: '#9A7729' },
   { label: 'Lオレンジ', value: 'lOrange', color: '#B56723' },
   { label: 'Rオレンジ', value: 'rOrange', color: '#A83327' },
-  { label: 'Sオレンジ', value: 'sOrange', color: '#A12F28' },
+  { label: 'オレンジ', value: 'orange', color: '#A12F28' },
   { label: 'レッド', value: 'red', color: '#9D2E28' },
   { label: 'ピンク', value: 'pink', color: '#BB5B78' },
   { label: 'パープル', value: 'purple', color: '#6F267A' },
@@ -46,9 +48,11 @@ export const BINDINGS: ColorItem[] = [
   { label: 'Lブラウン', value: 'lBrown', color: '#60311A' },
   { label: 'Dブラウン', value: 'dBrown', color: '#1C110C' },
   { label: 'ブルー', value: 'blue', color: '#24226F' },
-  { label: 'ネイビー', value: 'navy', color: '#17131B' },
+  { label: 'ネイビー', value: 'navy', color: '##0c1521' },
   { label: 'ブラック', value: 'black', color: '#14120D' },
-  { label: 'サックス', value: 'sax', color: '#2D5181' }
+  { label: 'サックス', value: 'sax', color: '#2D5181' },
+  { label: 'インペリアルブラック', value: 'imperialNavy', color: '#06090f' },
+  { label: 'アベンチュリンブラウン', value: 'aventurineBrown', color: '#420011' }
 ]
 
 export const WELTINGS: ColorItem[] = [
@@ -63,7 +67,7 @@ export const WELTINGS: ColorItem[] = [
   { label: '玉ハミ(オレンジ)', value: 'orange', color: '#9A7729' },
   { label: '玉ハミ(Lオレンジ)', value: 'lOrange', color: '#B56723' },
   { label: '玉ハミ(Rオレンジ)', value: 'rOrange', color: '#A83327' },
-  { label: '玉ハミ(Sオレンジ)', value: 'sOrange', color: '#A12F28' },
+  { label: '玉ハミ(オレンジ)', value: 'orange', color: '#A12F28' },
   { label: '玉ハミ(レッド)', value: 'red', color: '#9D2E28' },
   { label: '玉ハミ(ピンク)', value: 'pink', color: '#BB5B78' },
   { label: '玉ハミ(パープル)', value: 'purple', color: '#6F267A' },
@@ -72,9 +76,11 @@ export const WELTINGS: ColorItem[] = [
   { label: '玉ハミ(Lブラウン)', value: 'lBrown', color: '#60311A' },
   { label: '玉ハミ(Dブラウン)', value: 'dBrown', color: '#1C110C' },
   { label: '玉ハミ(ブルー)', value: 'blue', color: '#24226F' },
-  { label: '玉ハミ(ネイビー)', value: 'navy', color: '#17131B' },
+  { label: '玉ハミ(ネイビー)', value: 'navy', color: '##0c1521' },
   { label: '玉ハミ(サックス)', value: 'sax', color: '#2D5181' },
-  { label: '玉ハミ(ゴールド)', value: 'gold', color: '#D9A948' }
+  { label: '玉ハミ(ゴールド)', value: 'gold', color: '#D9A948' },
+  { label: '玉ハミ(インペリアルブラック)', value: 'imperialNavy', color: '#06090f' },
+  { label: '玉ハミ(アベンチュリンブラウン)', value: 'aventurineBrown', color: '#420011' }
 ]
 
 export const STITCHES: ColorItem[] = [
@@ -104,7 +110,7 @@ export const LACES: ColorItem[] = [
   { label: 'オレンジ', value: 'orange', color: '#9A7729' },
   { label: 'Lオレンジ', value: 'lOrange', color: '#B56723' },
   { label: 'Rオレンジ', value: 'rOrange', color: '#A83327' },
-  { label: 'Sオレンジ', value: 'sOrange', color: '#A12F28' },
+  { label: 'オレンジ', value: 'orange', color: '#A12F28' },
   { label: 'レッド', value: 'red', color: '#9D2E28' },
   { label: 'ピンク', value: 'pink', color: '#BB5B78' },
   { label: 'パープル', value: 'purple', color: '#6F267A' },
@@ -112,7 +118,7 @@ export const LACES: ColorItem[] = [
   { label: 'Lブラウン', value: 'lBrown', color: '#60311A' },
   { label: 'Dブラウン', value: 'dBrown', color: '#1C110C' },
   { label: 'ブルー', value: 'blue', color: '#24226F' },
-  { label: 'ネイビー', value: 'navy', color: '#17131B' },
+  { label: 'ネイビー', value: 'navy', color: '##0c1521' },
   { label: 'ブラック', value: 'black', color: '#14120D' },
   { label: 'サックス', value: 'sax', color: '#2D5181' },
   { label: 'タン', value: 'tan', color: '#b08030' }
