@@ -3,7 +3,7 @@ import { GenuineState } from '@/features/genuine/types'
 import { Position } from '@/types'
 import { TabPanel } from '@/components/TabPanel'
 import { dispatcher } from './dispatcher'
-import { getColorOptionsByParts, getSelectableParts, getComponentParts, getBackStyle } from './logic'
+import { getColorOptionsByParts, getSelectableParts, getComponentParts, getBackStyle, filterSelectableParts } from './logic'
 import {
   BINDING_COLOR_BUTTON_OPTION,
   WELTING_COLOR_BUTTON_OPTION,
@@ -37,6 +37,7 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
   const selectedParts = componentParts[partsKey as keyof typeof componentParts]
   const { isFirstBackStyle, isCrownBackStyle } = getBackStyle(state)
   const selectableParts = getSelectableParts(drawerIndex, isFirstBackStyle, isCrownBackStyle)
+  const filteredParts = filterSelectableParts(state, selectableParts)
   const colorsByParts = getColorOptionsByParts(partsKey)
   const handle = {
     [partsKey]: originDispatcher(DISPATCHER, partsKey, dispatch, colorsByParts),
@@ -52,7 +53,7 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
   if (!componentParts || !selectableParts) return <></>
   return (
     <TabPanel selectedIndex={selectedIndex} index={1}>
-      <SelectCard summary={'パーツ'} selectedLabel={partsLabel} objects={selectableParts} handleChange={handle.parts} />
+      <SelectCard summary={'パーツ'} selectedLabel={partsLabel} objects={filteredParts} handleChange={handle.parts} />
       <SelectCard
         summary={`${partsLabel}カラー`}
         selectedLabel={selectedParts.label}

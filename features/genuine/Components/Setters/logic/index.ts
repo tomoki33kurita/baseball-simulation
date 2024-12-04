@@ -92,6 +92,14 @@ export const getSelectableParts = (drawerIndex: DrawerIndex, isFirstBackStyle: b
   }
 }
 
+export const filterSelectableParts = (state: GenuineState, selectableParts: PartsItem[]) => {
+  // ラベルの位置によって、バンドパーツを制御する
+  if (['normalSide', 'directEmbroiderySide'].includes(state.genuineLabel.value)) {
+    return selectableParts.filter((p) => p.value !== 'listBelt')
+  }
+  return selectableParts
+}
+
 export const getGenuineBackStyle = (state: GenuineState) => {
   const isMesh = ['normalMesh', 'crownMesh'].includes(state.backStyle.value)
   const isFirstBackStyle = ['MIU-T4'].includes(state.baseModel.productNumber)

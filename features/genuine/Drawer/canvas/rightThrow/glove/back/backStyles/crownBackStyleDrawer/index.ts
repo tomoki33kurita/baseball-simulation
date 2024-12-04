@@ -1,7 +1,6 @@
 import { GenuineState } from '@/features/genuine/types'
 import { getBackStyle } from '@/features/genuine/Components/Setters/logic'
 import { thumbAndListBelt, thumbOut } from './thumbAndListBelt'
-import { wristBelt } from './wristBelt'
 import { indexFingerLeft } from './indexFingerLeft'
 import { middleFingerLeft, middleFingerRight } from './middleFinger'
 import { ringFingerLeft, ringFingerRight } from './ringFInger'
@@ -23,7 +22,7 @@ export const crownBackStyleDrawer = (ctx: CanvasRenderingContext2D, state: Genui
 
   thumbAndListBelt(ctx, state.thumbWeb.color, state.stitch.color) // 親指指袋_手口ベルト(下地)
   thumbOut(ctx, state.thumbOut.color) // 親指＿外
-  wristBelt(ctx, state.listBelt.color, state.stitch.color)
+  // wristBelt(ctx, state.listBelt.color, state.stitch.color)
   indexFingerLeft(ctx, state.indexLeftMiddleRight.color) // 人差し指＿左
   middleFingerRight(ctx, state.indexLeftMiddleRight.color) // 中指＿右
   middleFingerLeft(ctx, state.middleLeftRingRight.color) // 中指＿左
