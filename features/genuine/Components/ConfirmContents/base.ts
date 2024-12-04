@@ -22,9 +22,10 @@ export const getGenuineBaseCells = (
     label: productNumber,
     value: productNumber
   }
-  const { isGlove } = positionChecker(state.baseModel.position)
+  const { isGlove, isCatcher, isFirstBaseman } = positionChecker(state.baseModel.position)
   const isMeshSpecified = ['normalMesh', 'crownMesh'].includes(state.backStyle.value)
   const { isFirstBackStyle } = getGenuineBackStyle(state)
+  const isLoopOfRingFinger = (isGlove && !isFirstBackStyle) || isFirstBaseman
 
   switch (state) {
     default:
@@ -34,16 +35,16 @@ export const getGenuineBaseCells = (
         genGloveBaseCell('手袋サイズ', state.gloveSize),
         genGloveBaseCell('利き腕', state.dominantArm),
         genGloveBaseCell('指カバー/指当て', state.fingerGuard),
-        genGloveBaseCell('背面デザイン', state.backStyle),
+        isGlove && !isFirstBackStyle ? genGloveBaseCell('背面デザイン', state.backStyle) : dummy,
         isMeshSpecified ? genGloveBaseCell('背面メッシュカラー', state.meshColor) : dummy,
         genGloveBaseCell('サイズ', state.size),
-        isGlove ? genGloveBaseCell('ウェブパーツ', state.webParts) : dummy,
+        isCatcher ? dummy : genGloveBaseCell('ウェブパーツ', state.webParts),
         genGloveBaseCell('ウェブ紐スタイル', state.webLaceStyle),
         isGlove ? genGloveBaseCell('背面紐通し', state.backLaceStyle) : dummy,
         isGlove ? genGloveBaseCell('土手芯', state.materialPack) : dummy,
         genGloveBaseCell('芯材の硬さ', state.coreHardness),
-        genGloveBaseCell('手口巻スタイル', state.bankLaceDirection),
-        isGlove && !isFirstBackStyle ? genGloveBaseCell('薬指リング', state.loopOfRingFinger) : dummy
+        isCatcher ? dummy : genGloveBaseCell('手口巻スタイル', state.bankLaceDirection),
+        isLoopOfRingFinger ? genGloveBaseCell('薬指リング', state.loopOfRingFinger) : dummy
       ].filter((cell) => cell.value !== dummy.value)
   }
 }

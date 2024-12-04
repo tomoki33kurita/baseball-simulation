@@ -20,7 +20,8 @@ import {
   CORE_HARDNESSES,
   GLOVE_SIZES,
   BANK_LACE_DIRECTIONS,
-  LOOP_OF_RING_FINGERS
+  LOOP_OF_RING_FINGERS,
+  MATERIAL_PACKS_FOR_FIRST_BASEMAN
 } from '@/features/genuine/Constants/base'
 import { SelectCard } from '@/components/Setters/SelectCard'
 import { SelectCardWithImage } from '@/components/Setters/SelectCardWithImage'
@@ -69,26 +70,11 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
     fingerGuard: dispatcher('fingerGuard', dispatch),
     webParts: dispatcher('webParts', dispatch)
   }
-  const { isPitcher, isGlove } = positionChecker(position)
+  const { isPitcher, isGlove, isCatcher, isFirstBaseman } = positionChecker(position)
   const { isMesh, isFirstBackStyle } = getGenuineBackStyle(state)
+  const isLoopOfRingFinger = (isGlove && !isFirstBackStyle) || isFirstBaseman
   return (
     <TabPanel selectedIndex={selectedIndex} index={0}>
-      <SelectCard
-        summary={'革の厚さ'} // leatherThickness
-        selectedLabel={leatherThickness.label}
-        objects={LEATHER_THICKNESS}
-        isError={leatherThickness.value === 'unselected'}
-        defaultExpanded={leatherThickness.value === 'unselected'}
-        handleChange={handle.leatherThickness}
-      />
-      <SelectCard
-        summary={'手袋サイズ'} // gloveSize
-        selectedLabel={gloveSize.label}
-        objects={GLOVE_SIZES}
-        isError={gloveSize.value === 'unselected'}
-        defaultExpanded={gloveSize.value === 'unselected'}
-        handleChange={handle.gloveSize}
-      />
       <SelectCard
         summary={'利き腕'} // dominantArm
         selectedLabel={dominantArm.label}
@@ -97,6 +83,14 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         handleChange={handle.dominantArm}
         defaultExpanded={dominantArm.value === 'unselected'}
         className={DOMINANT_ARM_BUTTON_OPTION}
+      />
+      <SelectCard
+        summary={'手袋サイズ'} // gloveSize
+        selectedLabel={gloveSize.label}
+        objects={GLOVE_SIZES}
+        isError={gloveSize.value === 'unselected'}
+        defaultExpanded={gloveSize.value === 'unselected'}
+        handleChange={handle.gloveSize}
       />
       <SelectCard
         summary={'指カバー/指当て'} // fingerGuard
@@ -108,10 +102,19 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         handleChange={handle.fingerGuard}
       />
       <SelectCard
+        summary={'革の厚さ'} // leatherThickness
+        selectedLabel={leatherThickness.label}
+        objects={LEATHER_THICKNESS}
+        isError={leatherThickness.value === 'unselected'}
+        defaultExpanded={leatherThickness.value === 'unselected'}
+        handleChange={handle.leatherThickness}
+      />
+      <SelectCard
         summary={'背面デザイン'} // backStyle
         selectedLabel={backStyle.label}
         objects={BACK_STYLES.filter((o) => (isPitcher ? true : o.value !== 'crown' && o.value !== 'crownMesh'))}
         isError={backStyle.value === 'unselected'}
+        isDisplay={isGlove && !isFirstBackStyle}
         handleChange={handle.backStyle}
         defaultExpanded={backStyle.value === 'unselected'}
         className={BACK_STYLE_BUTTON_OPTION}
@@ -136,10 +139,10 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
       <SelectCardWithImage
         summary={'ウェブパーツ'} // webParts
         selectedLabel={webParts.label}
-        objects={WEB_PARTS.filter((o) => o.positions.includes(position))}
+        objects={WEB_PARTS}
         isError={webParts.value === 'unselected'}
         defaultExpanded={webParts.value === 'unselected'}
-        isDisplay={isGlove}
+        isDisplay={!isCatcher}
         handleChange={handle.webParts}
         className={WEB_PARTS_BUTTON_OPTION}
       />
@@ -163,10 +166,10 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
       <SelectCard
         summary={'土手芯'} // materialPack
         selectedLabel={materialPack.label}
-        objects={MATERIAL_PACKS}
+        objects={isFirstBaseman ? MATERIAL_PACKS_FOR_FIRST_BASEMAN : MATERIAL_PACKS}
         handleChange={handle.materialPack}
         isError={materialPack.value === 'unselected'}
-        isDisplay={isGlove}
+        isDisplay={!isCatcher}
         defaultExpanded={materialPack.value === 'unselected'}
         className={MATERIAL_PACK_BUTTON_OPTION}
       />
@@ -183,6 +186,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         selectedLabel={bankLaceDirection.label}
         objects={BANK_LACE_DIRECTIONS}
         isError={bankLaceDirection.value === 'unselected'}
+        isDisplay={!isCatcher}
         defaultExpanded={bankLaceDirection.value === 'unselected'}
         handleChange={handle.bankLaceDirection}
       />
@@ -191,7 +195,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         selectedLabel={loopOfRingFinger.label}
         objects={LOOP_OF_RING_FINGERS}
         isError={loopOfRingFinger.value === 'unselected'}
-        isDisplay={isGlove && !isFirstBackStyle}
+        isDisplay={isLoopOfRingFinger}
         defaultExpanded={loopOfRingFinger.value === 'unselected'}
         handleChange={handle.loopOfRingFinger}
       />

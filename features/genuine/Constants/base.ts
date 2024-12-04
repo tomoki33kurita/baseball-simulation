@@ -74,6 +74,13 @@ export const MATERIAL_PACKS: BaseItem[] = [
   { label: 'ワイドヒンジダブル', value: 'sideDoubleWideHinge' }, // canvas
   { label: 'ワイドヒンジ(紐抜き)', value: 'sideDoubleWideHingeNoLace' } // canvas
 ]
+
+export const MATERIAL_PACKS_FOR_FIRST_BASEMAN: BaseItem[] = [
+  { label: 'ヨコトジ', value: 'sideSingle' },
+  { label: 'ヨコトジダブル', value: 'sideDouble' },
+  { label: 'ヨコトジ(紐抜き)', value: 'sideDoubleNoLace' }
+]
+
 export const FINGER_GUARDS: BaseItem[] = [
   { label: '指カバー有り', value: 'indexCover' },
   { label: '指アテ有り', value: 'indexPad' },

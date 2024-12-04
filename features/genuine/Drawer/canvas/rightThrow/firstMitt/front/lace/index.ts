@@ -48,8 +48,8 @@ export const laces = (ctx: CanvasRenderingContext2D, color: string): void => {
   // 小指->人差し指ヘリ革周り
   littleEdge(ctx, color, 0, 0)
   littleEdge(ctx, color, -30, 30, -5)
+  littleEdge(ctx, color, 13, -15, -3)
   littleEdge2(ctx, color)
-  littleEdge3(ctx, color, 0, 0)
   littleEdge3(ctx, color, -170, 140, -20)
   littleEdge3(ctx, color, -145, 110, -20)
   littleEdge3(ctx, color, -180, 117, -25)
