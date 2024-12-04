@@ -1,6 +1,7 @@
 import { BaseItem } from '@/types'
 import { GenuineState } from '@/features/genuine/types'
 import { positionChecker } from '@/util/logic'
+import { getGenuineBackStyle } from '../Setters/logic'
 
 const dummy = {
   head: 'dummy',
@@ -23,6 +24,8 @@ export const getGenuineBaseCells = (
   }
   const { isGlove } = positionChecker(state.baseModel.position)
   const isMeshSpecified = ['normalMesh', 'crownMesh'].includes(state.backStyle.value)
+  const { isFirstBackStyle } = getGenuineBackStyle(state)
+
   switch (state) {
     default:
       return [
@@ -40,7 +43,7 @@ export const getGenuineBaseCells = (
         isGlove ? genGloveBaseCell('土手芯', state.materialPack) : dummy,
         genGloveBaseCell('芯材の硬さ', state.coreHardness),
         genGloveBaseCell('手口巻スタイル', state.bankLaceDirection),
-        isGlove ? genGloveBaseCell('薬指リング', state.loopOfRingFinger) : dummy
+        isGlove && !isFirstBackStyle ? genGloveBaseCell('薬指リング', state.loopOfRingFinger) : dummy
       ].filter((cell) => cell.value !== dummy.value)
   }
 }

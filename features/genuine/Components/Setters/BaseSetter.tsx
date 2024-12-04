@@ -70,7 +70,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
     webParts: dispatcher('webParts', dispatch)
   }
   const { isPitcher, isGlove } = positionChecker(position)
-  const { isMesh } = getGenuineBackStyle(state)
+  const { isMesh, isFirstBackStyle } = getGenuineBackStyle(state)
   return (
     <TabPanel selectedIndex={selectedIndex} index={0}>
       <SelectCard
@@ -191,7 +191,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         selectedLabel={loopOfRingFinger.label}
         objects={LOOP_OF_RING_FINGERS}
         isError={loopOfRingFinger.value === 'unselected'}
-        isDisplay={isGlove}
+        isDisplay={isGlove && !isFirstBackStyle}
         defaultExpanded={loopOfRingFinger.value === 'unselected'}
         handleChange={handle.loopOfRingFinger}
       />

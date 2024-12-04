@@ -94,8 +94,10 @@ export const getSelectableParts = (drawerIndex: DrawerIndex, isFirstBackStyle: b
 
 export const getGenuineBackStyle = (state: GenuineState) => {
   const isMesh = ['normalMesh', 'crownMesh'].includes(state.backStyle.value)
+  const isFirstBackStyle = ['MIU-T4'].includes(state.baseModel.productNumber)
   return {
-    isMesh
+    isMesh,
+    isFirstBackStyle
   }
 }
 
