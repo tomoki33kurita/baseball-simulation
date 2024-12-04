@@ -22,7 +22,6 @@ const Retail: FC = () => {
   const { retail } = useRetailInformation(email)
   const disabled = false //!isSelectableBrand
 
-  if (!retail) return null
   return (
     <ThemeProvider theme={commonTheme}>
       <RetailContext.Provider value={retail}>

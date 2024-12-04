@@ -3,7 +3,7 @@ import { Box, Link } from '@mui/material'
 import { FC } from 'react'
 
 type Props = {
-  retail: Retail
+  retail: Retail | null
   handleToTop: () => void
   handleSignOut: () => void
 }
