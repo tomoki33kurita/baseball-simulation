@@ -41,7 +41,8 @@ import {
   SET_BANK_LACE_DIRECTION,
   SET_LOOP_OF_RING_FINGER,
   SET_GENUINE_LABEL,
-  SET_WEB2_COLOR
+  SET_WEB2_COLOR,
+  SET_LOOP_OF_RING_FINGER_COLOR
 } from '@/features/genuine/Constants/action'
 import { GenuineState } from '../types'
 
@@ -146,6 +147,7 @@ export const initialState: GenuineState = {
   genuineLabel: unselectedStateWithPrice,
   mouton: unselectedStateWithPrice,
   loopOfRingFinger: unselectedStateWithPrice,
+  loopOfRingFingerColor: unselectedColorState,
   size: unselectedStateWithPrice,
   backStyle: unselectedStateWithPrice,
   embroideries: [initialEmbroideryState],
@@ -181,7 +183,8 @@ export const reducer = (state: any, action: any) => {
         ringLittle: action.all,
         littleRing: action.all,
         littleOut: action.all,
-        labelStand: action.all
+        labelStand: action.all,
+        loopOfRingFingerColor: action.all
       }
     case SET_BASE_MODEL:
       return { ...state, baseModel: action.baseModel }
@@ -207,7 +210,8 @@ export const reducer = (state: any, action: any) => {
       return { ...state, bankLaceDirection: action.bankLaceDirection, drawerIndex: 1 }
     case SET_LOOP_OF_RING_FINGER:
       return { ...state, loopOfRingFinger: action.loopOfRingFinger, drawerIndex: 0 }
-
+    case SET_LOOP_OF_RING_FINGER_COLOR:
+      return { ...state, loopOfRingFingerColor: action.loopOfRingFingerColor }
     case SET_MATERIAL_PACK:
       return { ...state, materialPack: action.materialPack, drawerIndex: 1 }
     case SET_FINGER_GUARD:

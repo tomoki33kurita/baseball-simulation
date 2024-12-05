@@ -61,6 +61,7 @@ export type GenuineState = {
   gloveSize: BaseItem
   bankLaceDirection: BankLaceDirectionItem
   loopOfRingFinger: BaseItemWithPrice
+  loopOfRingFingerColor: ColorItem
 
   fingerGuard: BaseItem
   materialPack: BaseItem

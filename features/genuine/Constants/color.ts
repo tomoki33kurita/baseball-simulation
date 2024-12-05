@@ -21,7 +21,7 @@ export const LEATHER_COLORS: ColorItem[] = [
   { label: 'Lブラウン', value: 'lBrown', color: '#60311A' },
   { label: 'Dブラウン', value: 'dBrown', color: '#1C110C' },
   { label: 'ブルー', value: 'blue', color: '#24226F' },
-  { label: 'ネイビー', value: 'navy', color: '##0c1521' },
+  { label: 'ネイビー', value: 'navy', color: '#0c1521' },
   { label: 'ブラック', value: 'black', color: '#14120D' },
   { label: 'サックス', value: 'sax', color: '#2D5181' },
   { label: 'インペリアルブラック', value: 'imperialNavy', color: '#06090f' },
@@ -48,7 +48,7 @@ export const BINDINGS: ColorItem[] = [
   { label: 'Lブラウン', value: 'lBrown', color: '#60311A' },
   { label: 'Dブラウン', value: 'dBrown', color: '#1C110C' },
   { label: 'ブルー', value: 'blue', color: '#24226F' },
-  { label: 'ネイビー', value: 'navy', color: '##0c1521' },
+  { label: 'ネイビー', value: 'navy', color: '#0c1521' },
   { label: 'ブラック', value: 'black', color: '#14120D' },
   { label: 'サックス', value: 'sax', color: '#2D5181' },
   { label: 'インペリアルブラック', value: 'imperialNavy', color: '#06090f' },
@@ -76,7 +76,7 @@ export const WELTINGS: ColorItem[] = [
   { label: '玉ハミ(Lブラウン)', value: 'lBrown', color: '#60311A' },
   { label: '玉ハミ(Dブラウン)', value: 'dBrown', color: '#1C110C' },
   { label: '玉ハミ(ブルー)', value: 'blue', color: '#24226F' },
-  { label: '玉ハミ(ネイビー)', value: 'navy', color: '##0c1521' },
+  { label: '玉ハミ(ネイビー)', value: 'navy', color: '#0c1521' },
   { label: '玉ハミ(サックス)', value: 'sax', color: '#2D5181' },
   { label: '玉ハミ(ゴールド)', value: 'gold', color: '#D9A948' },
   { label: '玉ハミ(インペリアルブラック)', value: 'imperialNavy', color: '#06090f' },
@@ -118,7 +118,7 @@ export const LACES: ColorItem[] = [
   { label: 'Lブラウン', value: 'lBrown', color: '#60311A' },
   { label: 'Dブラウン', value: 'dBrown', color: '#1C110C' },
   { label: 'ブルー', value: 'blue', color: '#24226F' },
-  { label: 'ネイビー', value: 'navy', color: '##0c1521' },
+  { label: 'ネイビー', value: 'navy', color: '#0c1521' },
   { label: 'ブラック', value: 'black', color: '#14120D' },
   { label: 'サックス', value: 'sax', color: '#2D5181' },
   { label: 'タン', value: 'tan', color: '#b08030' }
@@ -147,7 +147,8 @@ const commonPartsObjs: PartsItem[] = [
   { label: 'ヘリ革', value: 'binding' },
   { label: '親指掛け紐', value: 'thumbHook' },
   { label: '小指掛け紐', value: 'littleHook' },
-  { label: '指カバー/指当て', value: 'fingerGuardColor' }
+  { label: '指カバー/指当て', value: 'fingerGuardColor' },
+  { label: '薬指リング', value: 'loopOfRingFingerColor' }
 ]
 const backGloveObjs: PartsItem[] = [
   { label: '親指1', value: 'thumbOut' },
@@ -214,6 +215,7 @@ export const LEATHER_COLORS_BY_PARTS: LeatherColorsByPartsOfGenuine = {
   littleRing: LEATHER_COLORS,
   littleOut: LEATHER_COLORS,
   listBelt: LEATHER_COLORS,
+  loopOfRingFingerColor: LEATHER_COLORS,
   thumb: LEATHER_COLORS, // only for firstMitt
   boomerang: LEATHER_COLORS, // only for firstMitt
   underWeb: LEATHER_COLORS, // only for firstMitt

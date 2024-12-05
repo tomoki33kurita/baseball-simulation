@@ -17,6 +17,7 @@ export const SET_BANK_LACE_DIRECTION = 'setBankLaceDirection'
 export const SET_LOOP_OF_RING_FINGER = 'setLoopOfRingFinger'
 
 // COLOR
+export const SET_LOOP_OF_RING_FINGER_COLOR = 'setLoopOfRingFingerColor'
 export const SET_MESH_COLOR = 'setMeshColor'
 export const SET_SELECTED_PARTS = 'setSelectedParts'
 export const SET_ALL_LEATHER_COLOR = 'setAllLeatherColor'
@@ -90,6 +91,7 @@ export const DISPATCHER = {
   gloveSize: SET_GLOVE_SIZE,
   bankLaceDirection: SET_BANK_LACE_DIRECTION,
   loopOfRingFinger: SET_LOOP_OF_RING_FINGER,
+  loopOfRingFingerColor: SET_LOOP_OF_RING_FINGER_COLOR,
   genuineLabel: SET_GENUINE_LABEL,
 
   // 内野手用グラブここから

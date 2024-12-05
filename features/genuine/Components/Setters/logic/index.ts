@@ -38,7 +38,8 @@ export const getComponentParts = (state: GenuineState) => {
     ringLittle,
     ringLeftLittleRight, // first back style
     littleRing,
-    littleOut
+    littleOut,
+    loopOfRingFingerColor
     // mouton
   } = state
 
@@ -67,6 +68,7 @@ export const getComponentParts = (state: GenuineState) => {
     ringLittle,
     littleRing,
     littleOut,
+    loopOfRingFingerColor,
     thumbIndexMiddle, // first back style no finger hole
     thumbIndexMiddleRight, // first back style or catcher
     indexLeftMiddleRight,
@@ -94,10 +96,12 @@ export const getSelectableParts = (drawerIndex: DrawerIndex, isFirstBackStyle: b
 
 export const filterSelectableParts = (state: GenuineState, selectableParts: PartsItem[]) => {
   // ラベルの位置によって、バンドパーツを制御する
-  if (['normalSide', 'directEmbroiderySide'].includes(state.genuineLabel.value)) {
-    return selectableParts.filter((p) => p.value !== 'listBelt')
-  }
-  return selectableParts
+  const isSideLabel = ['normalSide', 'directEmbroiderySide'].includes(state.genuineLabel.value)
+  const filtered1 = isSideLabel ? selectableParts.filter((p) => p.value !== 'listBelt') : selectableParts
+  const isLoopOfRingFinger = state.loopOfRingFinger.value === 'loopOfRingFinger'
+  const filtered2 = isLoopOfRingFinger ? filtered1 : filtered1.filter((p) => p.value !== 'loopOfRingFingerColor')
+
+  return filtered2
 }
 
 export const getGenuineBackStyle = (state: GenuineState) => {

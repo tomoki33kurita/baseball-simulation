@@ -50,6 +50,7 @@ export const getGenuineColorCells = (state: GenuineState) => {
   const needFingerCoverOrPad = state.fingerGuard.value !== 'none'
 
   const isSideLabel = ['normalSide', 'directEmbroiderySide'].includes(state.genuineLabel.value)
+  const isLoopOfRingFinger = state.loopOfRingFinger.value === 'loopOfRingFinger'
 
   return [
     genGloveColorCell('捕球面', state.palm, 'palm'),
@@ -70,6 +71,7 @@ export const getGenuineColorCells = (state: GenuineState) => {
     genGloveColorCell('小指9', state.littleRing, 'littleRing'),
     genGloveColorCell('小指10', state.littleOut, 'littleOut'),
     isSideLabel ? dummy : genGloveColorCell('バンド', state.listBelt, 'listBelt'),
+    isLoopOfRingFinger ? genGloveColorCell('薬指リング', state.loopOfRingFingerColor, 'loopOfRingFingerColor') : dummy,
     genGloveColorCell('ハミダシ', state.welting, 'welting'),
     genGloveColorCell('ヘリ革', state.binding, 'binding'),
     genGloveColorCell('ステッチ', state.stitch, 'stitch'),

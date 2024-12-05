@@ -150,6 +150,7 @@ export const initialState: GenuineState = {
   genuineLabel: unselectedStateWithPrice,
   mouton: unselectedStateWithPrice,
   loopOfRingFinger: unselectedStateWithPrice,
+  loopOfRingFingerColor: unselectedColorState,
   size: unselectedStateWithPrice,
   backStyle: unselectedStateWithPrice,
   embroideries: [initialEmbroideryState],
