@@ -14,8 +14,7 @@ const normalWebCatchFaceDrawer = (ctx: CanvasRenderingContext2D, catchFaceColor:
 }
 
 export const catchFaceDrawer = (ctx: CanvasRenderingContext2D, catchFaceColor: string, stitchColor: string, productNumber: string): void => {
-  const isShallowWeb = productNumber === 'AKG-JS2'
-
+  const isShallowWeb = productNumber === 'YT-22'
   if (isShallowWeb) {
     shallowWebCatchFaceDrawer(ctx, catchFaceColor, stitchColor)
   } else {

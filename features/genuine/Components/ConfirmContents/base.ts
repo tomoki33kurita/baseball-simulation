@@ -27,6 +27,7 @@ export const getGenuineBaseCells = (
   const { isFirstBackStyle } = getGenuineBackStyle(state)
   const isLoopOfRingFinger = (isGlove && !isFirstBackStyle) || isFirstBaseman
   const isSelectableWebLaceStyle = ['basket2', 'tNet3'].includes(state.webParts.value)
+  const isYT22 = productNumber === 'YT-22'
 
   switch (state) {
     default:
@@ -37,6 +38,7 @@ export const getGenuineBaseCells = (
         genGloveBaseCell('利き腕', state.dominantArm),
         genGloveBaseCell('指カバー/指当て', state.fingerGuard),
         (isGlove && !isFirstBackStyle) || isCatcher ? genGloveBaseCell('背面デザイン', state.backStyle) : dummy,
+        isYT22 ? genGloveBaseCell('ウェブ-捕球面紐通し', state.palmToWebConnectLaceStyle) : dummy,
         isMeshSpecified ? genGloveBaseCell('背面メッシュカラー', state.meshColor) : dummy,
         genGloveBaseCell('サイズ', state.size),
         isCatcher ? dummy : genGloveBaseCell('ウェブパーツ', state.webParts),

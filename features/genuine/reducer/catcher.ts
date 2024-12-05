@@ -45,7 +45,8 @@ import {
   SET_BANK_LACE_DIRECTION,
   SET_LOOP_OF_RING_FINGER,
   SET_GENUINE_LABEL,
-  SET_WEB2_COLOR
+  SET_WEB2_COLOR,
+  SET_PALM_TO_WEB_CONNECT_LACE_STYLE
 } from '@/features/genuine/Constants/action'
 import { GenuineState } from '../types'
 import { Embroidery } from '@/types'
@@ -106,7 +107,7 @@ export const initialState: GenuineState = {
   coreHardness: unselectedState,
   gloveSize: unselectedState,
   bankLaceDirection: unselectedState,
-
+  palmToWebConnectLaceStyle: unselectedState,
   fingerGuard: unselectedState,
   fingerGuardColor: unselectedColorState,
   materialPack: unselectedState,
@@ -207,6 +208,8 @@ export const reducer = (state: any, action: any) => {
       return { ...state, webLaceStyle: action.webLaceStyle }
     case SET_BACK_LACE_STYLE:
       return { ...state, backLaceStyle: action.backLaceStyle }
+    case SET_PALM_TO_WEB_CONNECT_LACE_STYLE:
+      return { ...state, palmToWebConnectLaceStyle: action.palmToWebConnectLaceStyle }
     case SET_LEATHER_THICKNESS:
       return { ...state, leatherThickness: action.leatherThickness }
     case SET_CORE_HARDNESS:

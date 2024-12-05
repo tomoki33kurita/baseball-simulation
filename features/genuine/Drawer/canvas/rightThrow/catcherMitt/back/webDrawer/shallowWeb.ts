@@ -2,6 +2,7 @@ import { webOfShallowPocket, webTop } from '../web'
 import { webTop0, webTop1, webTop2, webTop3 } from '../lace/web'
 import {
   laceOfConnectWebToCatchFace,
+  laceOfConnectWebToCatchFace2,
   laceOfLeftConnectWebToCatchFace,
   laceOfRightConnectWebToCatchFace,
   laceOfWebTopToIndexFinger,
@@ -37,9 +38,16 @@ export const shallowWeb = (ctx: CanvasRenderingContext2D, state: GenuineState): 
   aroundEdge5(ctx, state.lace.color)
   aroundEdge6(ctx, state.lace.color, 5, 0)
   aroundEdge6(ctx, state.lace.color, -5, 0)
-  // webToThumbFinger(ctx, state.lace.color)
-  laceOfConnectWebToCatchFace(ctx, state.lace.color, 0, 0)
-  laceOfConnectWebToCatchFace(ctx, state.lace.color, 70, 55)
+
+  if (state.palmToWebConnectLaceStyle.value === 'straight') {
+    laceOfConnectWebToCatchFace2(ctx, state.lace.color, 0, 0)
+    laceOfConnectWebToCatchFace2(ctx, state.lace.color, 27, 23)
+    laceOfConnectWebToCatchFace2(ctx, state.lace.color, 62, 50)
+    laceOfConnectWebToCatchFace2(ctx, state.lace.color, 90, 73)
+  } else {
+    laceOfConnectWebToCatchFace(ctx, state.lace.color, 0, 0)
+    laceOfConnectWebToCatchFace(ctx, state.lace.color, 70, 55)
+  }
 
   // 順番が大事なのでこの中でaroundEdgeも一部描画
   aroundEdge8(ctx, state.lace.color)

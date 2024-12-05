@@ -33,6 +33,7 @@ export type PartsItem = {
     | 'gloveSize'
     | 'bankLaceDirection'
     | 'loopOfRingFinger'
+    | 'palmToWebConnectLaceStyle'
   >
   // value: keyof typeof LEATHER_COLORS_BY_PARTS
 }
@@ -71,6 +72,7 @@ export type GenuineState = {
   personal: Personal
   drawerIndex: DrawerIndex
   genuineLabel: BaseItemWithPrice
+  palmToWebConnectLaceStyle: BaseItem
 
   all: ColorItem
   lace: ColorItem

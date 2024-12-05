@@ -22,7 +22,8 @@ import {
   BANK_LACE_DIRECTIONS,
   LOOP_OF_RING_FINGERS,
   MATERIAL_PACKS_FOR_FIRST_BASEMAN,
-  BACK_STYLES_CATCHER
+  BACK_STYLES_CATCHER,
+  PALM_TO_WEB_CONNECT_LACE_STYLE
 } from '@/features/genuine/Constants/base'
 import { SelectCard } from '@/components/Setters/SelectCard'
 import { SelectCardWithImage } from '@/components/Setters/SelectCardWithImage'
@@ -42,6 +43,8 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
   const {
     dominantArm,
     backStyle,
+    palmToWebConnectLaceStyle,
+    baseModel,
     meshColor,
     size,
     webLaceStyle,
@@ -58,6 +61,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
   const handle = {
     dominantArm: dispatcher('dominantArm', dispatch),
     backStyle: dispatcher('backStyle', dispatch),
+    palmToWebConnectLaceStyle: dispatcher('palmToWebConnectLaceStyle', dispatch),
     meshColor: dispatcher('meshColor', dispatch),
     size: dispatcher('size', dispatch),
     webLaceStyle: dispatcher('webLaceStyle', dispatch),
@@ -122,6 +126,16 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         defaultExpanded={backStyle.value === 'unselected'}
         className={BACK_STYLE_BUTTON_OPTION}
       />
+      <SelectCard
+        summary={'ウェブ-捕球面紐通し'}
+        selectedLabel={palmToWebConnectLaceStyle.label}
+        objects={PALM_TO_WEB_CONNECT_LACE_STYLE}
+        isError={palmToWebConnectLaceStyle.value === 'unselected'}
+        isDisplay={baseModel.productNumber === 'YT-22'}
+        defaultExpanded={palmToWebConnectLaceStyle.value === 'unselected'}
+        handleChange={handle.palmToWebConnectLaceStyle}
+      />
+
       <SelectCard
         summary={'背面メッシュカラー'} // fingerGuard
         selectedLabel={meshColor.label}

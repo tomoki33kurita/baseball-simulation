@@ -108,7 +108,7 @@ export const initialState: GenuineState = {
   coreHardness: unselectedState,
   gloveSize: unselectedState,
   bankLaceDirection: unselectedState,
-
+  palmToWebConnectLaceStyle: unselectedState,
   materialPack: unselectedState,
   webParts: unselectedColorState,
   parts: { label: '全体', value: 'all' },

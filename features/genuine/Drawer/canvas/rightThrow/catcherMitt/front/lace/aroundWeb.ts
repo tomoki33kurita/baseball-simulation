@@ -85,6 +85,31 @@ const commonLace = (ctx: CanvasRenderingContext2D) => {
   ctx.closePath()
 }
 
+const shallowWebCommonLace = (ctx: CanvasRenderingContext2D) => {
+  // ウェブ右下→人差指芯への繋ぎ1
+  ctx.beginPath()
+  ctx.moveTo(334, 186) // 左上
+  ctx.quadraticCurveTo(343, 192, 343, 192) // 左下
+  ctx.quadraticCurveTo(382, 177, 382, 177) // 右下
+  ctx.quadraticCurveTo(373, 170, 373, 170) // 右上
+  ctx.quadraticCurveTo(334, 182, 334, 186) // 左上
+  ctx.fill()
+  ctx.stroke()
+  ctx.closePath()
+  // ctx.quadraticCurveTo()
+
+  // ウェブ左下→親指芯への繋ぎ1
+  ctx.beginPath()
+  ctx.moveTo(195, 298) // 右上
+  ctx.quadraticCurveTo(193, 327, 193, 327) // 左上
+  ctx.quadraticCurveTo(202, 331, 202, 331) // 左下
+  ctx.quadraticCurveTo(210, 303, 210, 303) // 右下
+  ctx.quadraticCurveTo(195, 298, 195, 298)
+  ctx.fill()
+  ctx.stroke()
+  ctx.closePath()
+}
+
 const laceOfNormalWeb = (ctx: CanvasRenderingContext2D) => {
   // 左_親指芯とウェブを繋ぐところ1
   ctx.beginPath()
@@ -195,8 +220,25 @@ const laceOfUnderShallowWeb = (ctx: CanvasRenderingContext2D, x: number, y: numb
   ctx.closePath()
 }
 
+const laceOfUnderShallowWeb2 = (ctx: CanvasRenderingContext2D, x: number, y: number) => {
+  // ウェブと捕球面を繋ぐところ左
+  ctx.strokeStyle = '#383838'
+  ctx.beginPath()
+  ctx.moveTo(303 + x, 220 + y) // 左上
+  ctx.quadraticCurveTo(325 + x, 245 + y, 325 + x, 245 + y) // 左下
+  ctx.quadraticCurveTo(331 + x, 232 + y, 331 + x, 232 + y) // 右下
+  ctx.quadraticCurveTo(311 + x, 211 + y, 311 + x, 211 + y) // 右上
+  ctx.quadraticCurveTo(303 + x, 220 + y, 303 + x, 220 + y) // 左上
+  ctx.fill()
+  ctx.moveTo(303 + x, 220 + y) // 左上
+  ctx.quadraticCurveTo(315 + x, 225 + y, 327 + x, 245 + y) // 左下
+  ctx.stroke()
+  ctx.closePath()
+}
+
 export const laceOfBackOfAroundWebDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
-  const isShallowWebModel = false
+  const isShallowWebModel = ['YT-22'].includes(state.baseModel.productNumber)
+  const isStraightLace = state.palmToWebConnectLaceStyle.value === 'straight'
 
   ctx.lineWidth = 0.8
   ctx.strokeStyle = '#383838'
@@ -204,8 +246,16 @@ export const laceOfBackOfAroundWebDrawer = (ctx: CanvasRenderingContext2D, state
 
   commonLace(ctx)
   if (isShallowWebModel) {
-    laceOfUnderShallowWeb(ctx, 15, -15)
-    laceOfUnderShallowWeb(ctx, -30, 30)
+    shallowWebCommonLace(ctx)
+    if (isStraightLace) {
+      laceOfUnderShallowWeb2(ctx, 0, 0)
+      laceOfUnderShallowWeb2(ctx, -25, 25)
+      laceOfUnderShallowWeb2(ctx, -50, 50)
+      laceOfUnderShallowWeb2(ctx, -75, 75)
+    } else {
+      laceOfUnderShallowWeb(ctx, 15, -15)
+      laceOfUnderShallowWeb(ctx, -30, 30)
+    }
   }
 
   if (!isShallowWebModel) {

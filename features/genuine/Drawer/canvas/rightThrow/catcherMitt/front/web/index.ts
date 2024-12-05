@@ -6,8 +6,7 @@ export const webDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState): v
   ctx.strokeStyle = '#383838'
   ctx.fillStyle = state.palm.color
 
-  const isShallowWebModel = ['AKG-JS2'].includes(state.baseModel.productNumber)
-
+  const isShallowWebModel = ['YT-22'].includes(state.baseModel.productNumber)
   if (isShallowWebModel) {
     webOfShallowPocket(ctx, state.web.color, state.stitch.color)
     webTop(ctx, state.web.color, state.stitch.color)

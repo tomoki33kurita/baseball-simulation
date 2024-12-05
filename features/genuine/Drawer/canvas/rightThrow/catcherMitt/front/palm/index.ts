@@ -7,7 +7,7 @@ export const palmDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState): 
   ctx.strokeStyle = '#383838'
   ctx.fillStyle = state.palm.color
 
-  const isShallowWebModel = false
+  const isShallowWebModel = ['YT-22'].includes(state.baseModel.productNumber)
 
   if (isShallowWebModel) {
     shallowPalm(ctx, state.palm.color, state.stitch.color)

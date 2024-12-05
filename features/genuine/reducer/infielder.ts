@@ -143,6 +143,7 @@ export const initialState: GenuineState = {
   middleLeftRingRight: unselectedColorState, // first back style glove
   ringLeftLittleRight: unselectedColorState, // first back style glove
   indexLeftMiddleRight: unselectedColorState, // crown back style glove
+  palmToWebConnectLaceStyle: unselectedState,
 
   genuineLabel: unselectedStateWithPrice,
   mouton: unselectedStateWithPrice,

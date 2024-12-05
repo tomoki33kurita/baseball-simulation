@@ -14,7 +14,8 @@ import {
   GLOVE_SIZES,
   BANK_LACE_DIRECTIONS,
   LOOP_OF_RING_FINGERS,
-  ALL_BACK_STYLES
+  ALL_BACK_STYLES,
+  PALM_TO_WEB_CONNECT_LACE_STYLE
 } from '@/features/genuine/Constants/base'
 import { objectsFilter } from '@/util/logic'
 import { ResponseDispatch } from '@/features/genuine/types'
@@ -38,7 +39,8 @@ import {
   SET_GLOVE_SIZE,
   SET_BANK_LACE_DIRECTION,
   SET_LOOP_OF_RING_FINGER,
-  SET_GENUINE_LABEL
+  SET_GENUINE_LABEL,
+  SET_PALM_TO_WEB_CONNECT_LACE_STYLE
 } from '@/features/genuine/Constants/action'
 import { BINDINGS, GENUINE_LABELS, LACES, MOUTON_COLORS, STITCHES, WELTINGS } from '@/features/genuine/Constants/color'
 
@@ -50,6 +52,7 @@ const dispatchBaseStore = {
   size: { objects: SIZES, actionType: SET_SIZE },
   webLaceStyle: { objects: WEB_LACE_STYLES, actionType: SET_WEB_LACE_STYLE },
   backLaceStyle: { objects: BACK_LACE_STYLES, actionType: SET_BACK_LACE_STYLE },
+  palmToWebConnectLaceStyle: { objects: PALM_TO_WEB_CONNECT_LACE_STYLE, actionType: SET_PALM_TO_WEB_CONNECT_LACE_STYLE },
   leatherThickness: { objects: LEATHER_THICKNESS, actionType: SET_LEATHER_THICKNESS },
   coreHardness: { objects: CORE_HARDNESSES, actionType: SET_CORE_HARDNESS },
   gloveSize: { objects: GLOVE_SIZES, actionType: SET_GLOVE_SIZE },

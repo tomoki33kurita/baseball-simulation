@@ -36,6 +36,11 @@ export const SIZES: BaseItemWithPrice[] = [
   { label: '10mm小さく', value: 'small10', price: 3300 }
 ]
 
+export const PALM_TO_WEB_CONNECT_LACE_STYLE: BaseItem[] = [
+  { label: 'ストレート', value: 'straight' },
+  { label: 'クロス', value: 'cross' }
+]
+
 export const WEB_LACE_STYLES: BaseItem[] = [
   { label: '通常', value: 'normal' },
   { label: 'クロス', value: 'cross' }

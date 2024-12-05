@@ -21,7 +21,7 @@ import { inMachiOfCommon, inMachiOfNormalPocket, inMachiOfShallowPocket } from '
 
 export const laceDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
   const color = state.lace.color
-  const isShallowWebModel = ['AKG-JS2'].includes(state.baseModel.productNumber)
+  const isShallowWebModel = ['YT-22'].includes(state.baseModel.productNumber)
 
   aroundEdge0(ctx, color)
   aroundEdge1(ctx, color, 2, 0)

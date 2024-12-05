@@ -270,6 +270,27 @@ export const laceOfConnectWebToCatchFace = (ctx: CanvasRenderingContext2D, color
   ctx.closePath()
 }
 
+export const laceOfConnectWebToCatchFace2 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number): void => {
+  ctx.lineWidth = 0.8
+  ctx.strokeStyle = '#383838'
+  ctx.fillStyle = color
+
+  // 左上
+  ctx.beginPath()
+  ctx.moveTo(519 + x, 187 + y) // 左上
+  ctx.quadraticCurveTo(483 + x, 224 + y, 483 + x, 224 + y) // 左下
+  ctx.quadraticCurveTo(484 + x, 232 + y, 490 + x, 231 + y) // 右下
+  ctx.quadraticCurveTo(512 + x, 217 + y, 528 + x, 194 + y) // 右上
+  ctx.quadraticCurveTo(530 + x, 185 + y, 519 + x, 187 + y) // 左上
+  ctx.fill()
+  ctx.moveTo(519 + x, 187 + y) // 左上
+  ctx.quadraticCurveTo(508 + x, 203 + y, 483 + x, 224 + y) // 左下
+  ctx.moveTo(528 + x, 194 + y) // 上
+  ctx.quadraticCurveTo(490 + x, 231 + y, 490 + x, 231 + y) // 下
+  ctx.stroke()
+  ctx.closePath()
+}
+
 export const laceOfLeftConnectWebToCatchFace = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 0.8
   ctx.strokeStyle = '#383838'
