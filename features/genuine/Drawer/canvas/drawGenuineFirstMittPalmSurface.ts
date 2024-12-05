@@ -27,6 +27,6 @@ export const drawGenuineFirstMittPalmSurface = (ctx: CanvasRenderingContext2D | 
   thumbHook(ctx, state.thumbHook.color) // 親指掛け紐
   binding(ctx, state.binding.color) // ヘリ革
   stitch(ctx, state.stitch.color) // ステッチ
-  laces(ctx, state.lace.color) // 革紐
+  laces(ctx, state) // 革紐
   genuineEngravedOfPalm(ctx, state.palm, isMobile, 0, 0) // メーカー捕球面の刻印
 }

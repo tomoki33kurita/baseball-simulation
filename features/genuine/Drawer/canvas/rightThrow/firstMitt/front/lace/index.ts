@@ -9,8 +9,10 @@ import { connectCross } from './connectCross'
 import { underLeft, underCenter, underRight, underWebRight } from './underWeb'
 import { webConnectTopUpper, webConnectTopLower } from './webConnect'
 import { knot, singleKnot } from './knot'
+import { GenuineState } from '@/features/genuine/types'
 
-export const laces = (ctx: CanvasRenderingContext2D, color: string): void => {
+export const laces = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
+  const color = state.lace.color
   // ウェブ先端
   webTop3(ctx, color) // 一番右
   webTop2(ctx, color, 17, -8) //
@@ -82,10 +84,40 @@ export const laces = (ctx: CanvasRenderingContext2D, color: string): void => {
   hingeLower2(ctx, color)
   hingeLower(ctx, color)
 
-  // 親指芯 -> 土手芯
-  bankMaterial(ctx, color)
-  bankMaterial2(ctx, color, 0, 0)
-  bankMaterial2(ctx, color, 85, 8)
+  // // 親指芯 -> 土手芯
+  const materialPack = state.materialPack
+  const isSideSingle = materialPack.value === 'sideSingle'
+  const isSideDouble = materialPack.value === 'sideDouble'
+  const isSideDoubleNoLace = materialPack.value === 'sideDoubleNoLace'
+
+  if (isSideSingle) {
+    console.log('sideSingle')
+  }
+  if (isSideDouble) {
+    bankMaterial(ctx, color)
+    bankMaterial2(ctx, color, 0, 0)
+    bankMaterial2(ctx, color, 85, 8)
+  }
+  if (isSideDoubleNoLace) {
+    ctx.beginPath()
+    ctx.lineWidth = 1.4
+    ctx.fillStyle = '#fff'
+    ctx.moveTo(392, 475)
+    ctx.arc(392, 475, 4, 0, 2 * Math.PI)
+    ctx.moveTo(406, 500)
+    ctx.arc(406, 500, 4, 0, 2 * Math.PI)
+    ctx.moveTo(443, 526)
+    ctx.arc(443, 526, 4, 0, 2 * Math.PI)
+    ctx.moveTo(484, 529)
+    ctx.arc(484, 529, 4, 0, 2 * Math.PI)
+    ctx.moveTo(527, 538)
+    ctx.arc(527, 538, 4, 0, 2 * Math.PI)
+    ctx.moveTo(569, 541)
+    ctx.arc(569, 541, 4, 0, 2 * Math.PI)
+    ctx.stroke()
+    ctx.fill()
+    ctx.closePath()
+  }
 
   underLeft(ctx, color, 0, 0)
   underLeft(ctx, color, 25, -12)

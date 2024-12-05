@@ -1,6 +1,6 @@
 import { GenuineState } from '../../types'
 import { canvasResetter } from './canvasResetter'
-import { fingerGuardDrawer } from './rightThrow/glove/back/fingerCoverOrPad/fingerGuardDrawer'
+import { fingerGuardDrawer } from './rightThrow/firstMitt/back/fingerGuardDrawer'
 import { backOfIndexToLittle } from './rightThrow/firstMitt/back/backOfIndexToLittle'
 import { boomerang } from './rightThrow/firstMitt/back/boomerang'
 import { palm } from './rightThrow/firstMitt/back/palm'
