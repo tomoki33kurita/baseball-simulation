@@ -12,6 +12,14 @@ export const BACK_STYLES: BaseItemWithPrice[] = [
   { label: '王冠メッシュ', value: 'crownMesh', price: 3300 }
 ]
 
+export const BACK_STYLES_CATCHER: BaseItemWithPrice[] = [
+  { label: 'ベルト', value: 'belt', price: 0 },
+  { label: 'レギュラー', value: 'regular', price: 0 },
+  { label: 'TMバック', value: 'tmBack', price: 0 }
+]
+
+export const ALL_BACK_STYLES: BaseItemWithPrice[] = [...BACK_STYLES, ...BACK_STYLES_CATCHER]
+
 export const MESH_COLORS: ColorItem[] = [
   { label: 'ブラック', value: 'black', color: '#1E1E1E' },
   { label: 'ホワイト', value: 'white', color: '#000000' },

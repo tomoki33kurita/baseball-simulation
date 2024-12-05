@@ -21,7 +21,8 @@ import {
   GLOVE_SIZES,
   BANK_LACE_DIRECTIONS,
   LOOP_OF_RING_FINGERS,
-  MATERIAL_PACKS_FOR_FIRST_BASEMAN
+  MATERIAL_PACKS_FOR_FIRST_BASEMAN,
+  BACK_STYLES_CATCHER
 } from '@/features/genuine/Constants/base'
 import { SelectCard } from '@/components/Setters/SelectCard'
 import { SelectCardWithImage } from '@/components/Setters/SelectCardWithImage'
@@ -114,9 +115,9 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
       <SelectCard
         summary={'背面デザイン'} // backStyle
         selectedLabel={backStyle.label}
-        objects={BACK_STYLES.filter((o) => (isPitcher ? true : o.value !== 'crown' && o.value !== 'crownMesh'))}
+        objects={isCatcher ? BACK_STYLES_CATCHER : BACK_STYLES.filter((o) => (isPitcher ? true : o.value !== 'crown' && o.value !== 'crownMesh'))}
         isError={backStyle.value === 'unselected'}
-        isDisplay={isGlove && !isFirstBackStyle}
+        isDisplay={(isGlove && !isFirstBackStyle) || isCatcher}
         handleChange={handle.backStyle}
         defaultExpanded={backStyle.value === 'unselected'}
         className={BACK_STYLE_BUTTON_OPTION}

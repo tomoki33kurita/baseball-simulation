@@ -13,7 +13,8 @@ import {
   CORE_HARDNESSES,
   GLOVE_SIZES,
   BANK_LACE_DIRECTIONS,
-  LOOP_OF_RING_FINGERS
+  LOOP_OF_RING_FINGERS,
+  ALL_BACK_STYLES
 } from '@/features/genuine/Constants/base'
 import { objectsFilter } from '@/util/logic'
 import { ResponseDispatch } from '@/features/genuine/types'
@@ -44,7 +45,7 @@ import { BINDINGS, GENUINE_LABELS, LACES, MOUTON_COLORS, STITCHES, WELTINGS } fr
 // ここはブランドのドメイン
 const dispatchBaseStore = {
   dominantArm: { objects: DOMINANT_ARMS, actionType: SET_DOMINANT_ARM },
-  backStyle: { objects: BACK_STYLES, actionType: SET_BACK_STYLE },
+  backStyle: { objects: ALL_BACK_STYLES, actionType: SET_BACK_STYLE },
   meshColor: { objects: MESH_COLORS, actionType: SET_MESH_COLOR },
   size: { objects: SIZES, actionType: SET_SIZE },
   webLaceStyle: { objects: WEB_LACE_STYLES, actionType: SET_WEB_LACE_STYLE },

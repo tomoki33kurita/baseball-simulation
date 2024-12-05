@@ -36,7 +36,7 @@ export const getGenuineBaseCells = (
         genGloveBaseCell('手袋サイズ', state.gloveSize),
         genGloveBaseCell('利き腕', state.dominantArm),
         genGloveBaseCell('指カバー/指当て', state.fingerGuard),
-        isGlove && !isFirstBackStyle ? genGloveBaseCell('背面デザイン', state.backStyle) : dummy,
+        (isGlove && !isFirstBackStyle) || isCatcher ? genGloveBaseCell('背面デザイン', state.backStyle) : dummy,
         isMeshSpecified ? genGloveBaseCell('背面メッシュカラー', state.meshColor) : dummy,
         genGloveBaseCell('サイズ', state.size),
         isCatcher ? dummy : genGloveBaseCell('ウェブパーツ', state.webParts),
