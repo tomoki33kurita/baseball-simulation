@@ -26,6 +26,7 @@ export const getGenuineBaseCells = (
   const isMeshSpecified = ['normalMesh', 'crownMesh'].includes(state.backStyle.value)
   const { isFirstBackStyle } = getGenuineBackStyle(state)
   const isLoopOfRingFinger = (isGlove && !isFirstBackStyle) || isFirstBaseman
+  const isSelectableWebLaceStyle = ['basket2', 'tNet3'].includes(state.webParts.value)
 
   switch (state) {
     default:
@@ -39,7 +40,7 @@ export const getGenuineBaseCells = (
         isMeshSpecified ? genGloveBaseCell('背面メッシュカラー', state.meshColor) : dummy,
         genGloveBaseCell('サイズ', state.size),
         isCatcher ? dummy : genGloveBaseCell('ウェブパーツ', state.webParts),
-        genGloveBaseCell('ウェブ紐スタイル', state.webLaceStyle),
+        isSelectableWebLaceStyle ? genGloveBaseCell('ウェブ紐スタイル', state.webLaceStyle) : dummy,
         isGlove ? genGloveBaseCell('背面紐通し', state.backLaceStyle) : dummy,
         isGlove ? genGloveBaseCell('土手芯', state.materialPack) : dummy,
         genGloveBaseCell('芯材の硬さ', state.coreHardness),

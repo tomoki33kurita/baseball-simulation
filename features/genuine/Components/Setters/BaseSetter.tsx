@@ -72,7 +72,9 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
   }
   const { isPitcher, isGlove, isCatcher, isFirstBaseman } = positionChecker(position)
   const { isMesh, isFirstBackStyle } = getGenuineBackStyle(state)
+  const isSelectableWebLaceStyle = ['basket2', 'tNet3'].includes(state.webParts.value)
   const isLoopOfRingFinger = (isGlove && !isFirstBackStyle) || isFirstBaseman
+
   return (
     <TabPanel selectedIndex={selectedIndex} index={0}>
       <SelectCard
@@ -152,6 +154,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         objects={WEB_LACE_STYLES}
         isError={webLaceStyle.value === 'unselected'}
         defaultExpanded={webLaceStyle.value === 'unselected'}
+        isDisplay={isSelectableWebLaceStyle}
         handleChange={handle.webLaceStyle}
       />
       <SelectCard

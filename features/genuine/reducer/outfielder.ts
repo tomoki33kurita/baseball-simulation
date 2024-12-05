@@ -223,6 +223,10 @@ export const reducer = (state: any, action: any) => {
         drawerIndex: 0
       }
     case SET_WEB_PARTS:
+      const isForceWebLaceStyleNormal = !['basket2', 'tNet3'].includes(action.webParts.value)
+      if (isForceWebLaceStyleNormal) {
+        return { ...state, webParts: action.webParts, webLaceStyle: { label: '通常', value: 'normal' } }
+      }
       return { ...state, webParts: action.webParts }
     case SET_LABEL_STAND:
       return { ...state, labelStand: action.labelStand, drawerIndex: 0 }
