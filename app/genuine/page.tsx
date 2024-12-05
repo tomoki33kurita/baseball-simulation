@@ -8,12 +8,12 @@ const border = `solid 2px ${GENUINE_COLOR.primary}`
 
 const Brands = () => {
   const isMobile = useMediaQuery('(max-width: 430px)')
-  const imageWidth = isMobile ? 390 : 780
-  const imageHeight = isMobile ? 230 : 460
+  const imageWidth = isMobile ? 390 : 460
+  const imageHeight = isMobile ? 390 : 460
   return (
     <Box display={'flex'} justifyContent={'center'} mt={8}>
       <Box>
-        <Box mb={4}>
+        <Box mb={4} textAlign={'center'}>
           <Image
             src={'/genuine/top/heading.jpg'}
             alt={''}

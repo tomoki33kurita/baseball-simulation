@@ -2,7 +2,7 @@ import { Embroidery } from '@/types'
 import { GenuineState } from '../types'
 
 export const calculateGenuineBaseCost = (state: GenuineState): number => {
-  return 50000
+  return 77000
 }
 
 export const calculateGenuineOptionCost = (state: GenuineState): number => {
