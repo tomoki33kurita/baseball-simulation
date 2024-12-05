@@ -15,6 +15,7 @@ import { edgeDrawer } from './rightThrow/firstMitt/back/edgeDrawer'
 import { stitch } from './rightThrow/firstMitt/back/stitch'
 import { laces } from './rightThrow/firstMitt/back/lace'
 import { genuineLabel } from './label'
+import { loopOfRingFingerDrawer } from './rightThrow/glove/back/loopOfFingerDrawer'
 
 export const drawGenuineFirstMittRearSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
   if (!ctx) return
@@ -28,6 +29,7 @@ export const drawGenuineFirstMittRearSurface = (ctx: CanvasRenderingContext2D | 
   ctx.strokeText('型番：' + baseModel.productNumber, 50, 70)
 
   liningLeather(ctx, state.linings.color)
+  loopOfRingFingerDrawer(ctx, state) // 薬指ループ
   // const isEmbroideryOfLining = state.embroideries.some((x) => x.position.value === 'leatherLiningFirst')
   // if (isEmbroideryOfLining) {
   //   liningEmbroidery(
