@@ -46,11 +46,11 @@ const verticalPartOfVWeb = (ctx: CanvasRenderingContext2D, webColor: string, sti
   ctx.strokeStyle = '#383838'
 }
 
-export const ladderWeb = (ctx: CanvasRenderingContext2D, webColor: string, laceColor: string, stitchColor: string): void => {
+export const ladderWeb = (ctx: CanvasRenderingContext2D, webColor: string, web2Color: string, laceColor: string, stitchColor: string): void => {
   ctx.lineWidth = 1.0
   ctx.strokeStyle = '#383838'
   // ウェブ_縦
-  verticalPartOfVWeb(ctx, webColor, stitchColor)
+  verticalPartOfVWeb(ctx, web2Color, stitchColor)
   // ウェブ先端
   topSidePartOfWeb(ctx, webColor, laceColor, stitchColor)
   // ウェブ_横＿中間

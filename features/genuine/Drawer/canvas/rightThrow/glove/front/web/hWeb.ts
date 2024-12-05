@@ -1,7 +1,7 @@
 import { hWebCrossUpperLeft, hWebCrossUpperLeft2, hWebCrossUpperRight } from '../lace/hWebCross'
 import { middleSidePartOfWeb, topSidePartOfWeb } from './parts/sideParts'
 
-export const hWeb = (ctx: CanvasRenderingContext2D, webColor: string, laceColor: string, stitchColor: string): void => {
+export const hWeb = (ctx: CanvasRenderingContext2D, webColor: string, web2Color: string, laceColor: string, stitchColor: string): void => {
   ctx.lineWidth = 1.0
   ctx.strokeStyle = '#383838'
   // 捕球面とウェブ横2を繋ぐ革紐
@@ -12,7 +12,7 @@ export const hWeb = (ctx: CanvasRenderingContext2D, webColor: string, laceColor:
   hWebCrossUpperLeft2(ctx, laceColor, 0, 0) // クロス部分の左
   hWebCrossUpperLeft2(ctx, laceColor, -3, 3) // クロス部分の左
   // ウェブ縦
-  ctx.fillStyle = webColor
+  ctx.fillStyle = web2Color
   ctx.beginPath()
   ctx.moveTo(240, 233) // 左＿上
   ctx.quadraticCurveTo(263, 274, 263, 274) // 左＿下

@@ -5,7 +5,7 @@ export const dragonfly2Web = (ctx: CanvasRenderingContext2D, webColor: string, w
   ctx.lineWidth = 1.0
   ctx.strokeStyle = '#383838'
   // ウェブ_縦
-  verticalPartsOfWeb(ctx, webColor, stitchColor) // ウェブ_縦
+  verticalPartsOfWeb(ctx, web2Color, stitchColor) // ウェブ_縦
   // ウェブ先端
   topSidePartOfWeb(ctx, webColor, laceColor, stitchColor)
   // ウェブ_横＿中間

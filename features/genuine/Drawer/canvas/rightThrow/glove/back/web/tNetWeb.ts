@@ -171,14 +171,14 @@ const laceOfVerticalWebPartsLeft = (ctx: CanvasRenderingContext2D, laceColor: st
   ctx.stroke()
 }
 
-export const tNetWeb = (ctx: CanvasRenderingContext2D, webColor: string, laceColor: string, stitchColor: string): void => {
+export const tNetWeb = (ctx: CanvasRenderingContext2D, webColor: string, web2Color: string, laceColor: string, stitchColor: string): void => {
   ctx.lineWidth = 0.8
   ctx.strokeStyle = '#383838'
   ctx.fillStyle = webColor
   // 横上パーツ
   topSidePartOfWeb2(ctx, webColor, laceColor, stitchColor)
   // 縦パーツ
-  verticalPartOfWebWithLace(ctx, webColor, laceColor, stitchColor)
+  verticalPartOfWebWithLace(ctx, web2Color, laceColor, stitchColor)
   // laceここから
   // 根元
   laceOfLoopOfNet3(ctx, laceColor, -63, 64)

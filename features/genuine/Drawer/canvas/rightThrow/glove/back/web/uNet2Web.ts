@@ -8,20 +8,21 @@ export const uNet2Web = (ctx: CanvasRenderingContext2D, state: GenuineState): vo
   const laceColor = state.lace.color
   const stitchColor = state.stitch.color
   const webColor = state.web.color
+  const web2Color = state.web2.color
 
   ctx.lineWidth = 0.8
   ctx.strokeStyle = '#383838'
   // web先端の革パーツ
-  topSidePartOfWeb2(ctx, webColor, laceColor, stitchColor)
+  topSidePartOfWeb2(ctx, web2Color, laceColor, stitchColor)
   // ウェブ-人差し指のジョイントパーツ
-  jointOfIndexFinger(ctx, webColor, laceColor, 3, 30)
-  jointOfIndexFinger(ctx, webColor, laceColor, -24, 90)
-  jointOfIndexFinger(ctx, webColor, laceColor, -45, 160)
-  jointOfCatchFace(ctx, webColor, laceColor, -10, 12)
-  jointOfCatchFace(ctx, webColor, laceColor, 38, 57)
-  jointOfThumbFinger2(ctx, webColor, laceColor, 53, -56)
-  jointOfThumbFinger2(ctx, webColor, laceColor, 19, -30)
-  jointOfThumbFinger2(ctx, webColor, laceColor, -18, -5)
+  jointOfIndexFinger(ctx, web2Color, laceColor, 3, 30)
+  jointOfIndexFinger(ctx, web2Color, laceColor, -24, 90)
+  jointOfIndexFinger(ctx, web2Color, laceColor, -45, 160)
+  jointOfCatchFace(ctx, web2Color, laceColor, -10, 12)
+  jointOfCatchFace(ctx, web2Color, laceColor, 38, 57)
+  jointOfThumbFinger2(ctx, web2Color, laceColor, 53, -56)
+  jointOfThumbFinger2(ctx, web2Color, laceColor, 19, -30)
+  jointOfThumbFinger2(ctx, web2Color, laceColor, -18, -5)
   // web本体のflatパーツ
   ctx.fillStyle = webColor
   ctx.beginPath()

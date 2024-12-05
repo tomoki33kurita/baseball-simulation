@@ -1,7 +1,7 @@
 import { webKnots } from '@/util/canvas/lace/webKnots'
 import { middleSidePartOfWeb, topSidePartOfWeb2 } from './parts/sideParts'
 
-export const ladderWeb = (ctx: CanvasRenderingContext2D, webColor: string, laceColor: string, stitchColor: string): void => {
+export const ladderWeb = (ctx: CanvasRenderingContext2D, webColor: string, web2Color: string, laceColor: string, stitchColor: string): void => {
   ctx.lineWidth = 0.8
   ctx.strokeStyle = '#383838'
   ctx.fillStyle = webColor
@@ -13,7 +13,7 @@ export const ladderWeb = (ctx: CanvasRenderingContext2D, webColor: string, laceC
   // 捕球面＿折り返し上パーツ
   // onCatchFaceParts(ctx, webColor, stitchColor)
   // 縦パーツ
-  verticalPartOfFenceWeb(ctx, webColor, laceColor, stitchColor)
+  verticalPartOfFenceWeb(ctx, web2Color, laceColor, stitchColor)
   // 捕球面上のウェブ結び目
   webKnots(ctx, laceColor, -120, 120)
 }

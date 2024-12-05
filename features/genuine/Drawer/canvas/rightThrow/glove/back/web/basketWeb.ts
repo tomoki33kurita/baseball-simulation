@@ -23,7 +23,7 @@ const basketCheckCellSecond = (ctx: CanvasRenderingContext2D, webColorSecond: st
   ctx.closePath()
 }
 
-export const basketWeb = (ctx: CanvasRenderingContext2D, webColor: string, laceColor: string, stitchColor: string): void => {
+export const basketWeb = (ctx: CanvasRenderingContext2D, webColor: string, web2Color: string, laceColor: string, stitchColor: string): void => {
   ctx.lineWidth = 0.8
   ctx.strokeStyle = '#383838'
   ctx.lineWidth = 0.8
@@ -32,14 +32,14 @@ export const basketWeb = (ctx: CanvasRenderingContext2D, webColor: string, laceC
   topSidePartOfWebForPitcher(ctx, webColor, laceColor, stitchColor)
 
   // ウェブ-人差し指のジョイントパーツ
-  jointOfIndexFinger(ctx, webColor, laceColor, 3, 30)
-  jointOfIndexFinger(ctx, webColor, laceColor, -24, 90)
-  jointOfIndexFinger(ctx, webColor, laceColor, -45, 160)
-  jointOfCatchFace(ctx, webColor, laceColor, -10, 12)
-  jointOfCatchFace(ctx, webColor, laceColor, 38, 57)
-  jointOfThumbFinger2(ctx, webColor, laceColor, 53, -56)
-  jointOfThumbFinger2(ctx, webColor, laceColor, 19, -30)
-  jointOfThumbFinger2(ctx, webColor, laceColor, -18, -5)
+  jointOfIndexFinger(ctx, web2Color, laceColor, 3, 30)
+  jointOfIndexFinger(ctx, web2Color, laceColor, -24, 90)
+  jointOfIndexFinger(ctx, web2Color, laceColor, -45, 160)
+  jointOfCatchFace(ctx, web2Color, laceColor, -10, 12)
+  jointOfCatchFace(ctx, web2Color, laceColor, 38, 57)
+  jointOfThumbFinger2(ctx, web2Color, laceColor, 53, -56)
+  jointOfThumbFinger2(ctx, web2Color, laceColor, 19, -30)
+  jointOfThumbFinger2(ctx, web2Color, laceColor, -18, -5)
   // web本体のflatパーツ
   ctx.fillStyle = webColor
   ctx.beginPath()
@@ -80,23 +80,23 @@ export const basketWeb = (ctx: CanvasRenderingContext2D, webColor: string, laceC
   ctx.closePath()
 
   // 1段目
-  basketCheckCellSecond(ctx, webColor, 0, 0)
-  basketCheckCellSecond(ctx, webColor, 64, -58, 10)
-  basketCheckCellSecond(ctx, webColor, 119, -128, 20)
+  basketCheckCellSecond(ctx, web2Color, 0, 0)
+  basketCheckCellSecond(ctx, web2Color, 64, -58, 10)
+  basketCheckCellSecond(ctx, web2Color, 119, -128, 20)
   // 2段目
-  basketCheckCellSecond(ctx, webColor, 22, -8, 5)
-  basketCheckCellSecond(ctx, webColor, 83, -75, 15)
+  basketCheckCellSecond(ctx, web2Color, 22, -8, 5)
+  basketCheckCellSecond(ctx, web2Color, 83, -75, 15)
   // 3段目
-  basketCheckCellSecond(ctx, webColor, -24, 42)
-  basketCheckCellSecond(ctx, webColor, 43, -20, 10)
-  basketCheckCellSecond(ctx, webColor, 100, -94, 20)
+  basketCheckCellSecond(ctx, web2Color, -24, 42)
+  basketCheckCellSecond(ctx, web2Color, 43, -20, 10)
+  basketCheckCellSecond(ctx, web2Color, 100, -94, 20)
   // 4段目
-  basketCheckCellSecond(ctx, webColor, -3, 35, 5)
-  basketCheckCellSecond(ctx, webColor, 59, -10, 13)
+  basketCheckCellSecond(ctx, web2Color, -3, 35, 5)
+  basketCheckCellSecond(ctx, web2Color, 59, -10, 13)
   // 5段目
-  basketCheckCellSecond(ctx, webColor, -45, 80, 1)
-  basketCheckCellSecond(ctx, webColor, 20, 24, 10)
-  basketCheckCellSecond(ctx, webColor, 82, -50, 20)
+  basketCheckCellSecond(ctx, web2Color, -45, 80, 1)
+  basketCheckCellSecond(ctx, web2Color, 20, 24, 10)
+  basketCheckCellSecond(ctx, web2Color, 82, -50, 20)
 
   // stitchここから
   ctx.beginPath()

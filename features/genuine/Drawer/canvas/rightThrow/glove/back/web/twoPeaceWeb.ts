@@ -17,6 +17,7 @@ export const twoPeaceWeb = (ctx: CanvasRenderingContext2D, webColor: string, lac
   ctx.quadraticCurveTo(703, 253, 721, 245) //右上
   ctx.quadraticCurveTo(625, 70, 576, 44) //左上
   ctx.fill()
+  // ctx.stroke()
   ctx.quadraticCurveTo(498, 211, 500, 212) // 左下の革紐の穴上部
 
   // ウェブパーツ // 捕球面側

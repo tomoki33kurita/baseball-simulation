@@ -21,10 +21,10 @@ const checkCellParts = (ctx: CanvasRenderingContext2D, webColor: string, x: numb
   ctx.closePath()
 }
 
-export const basketWeb = (ctx: CanvasRenderingContext2D, webColor: string, laceColor: string, stitchColor: string): void => {
+export const basketWeb = (ctx: CanvasRenderingContext2D, webColor: string, web2Color: string, laceColor: string, stitchColor: string): void => {
   ctx.lineWidth = 0.8
   ctx.strokeStyle = '#383838'
-  ctx.fillStyle = webColor
+  ctx.fillStyle = web2Color
   // ウェブ本体
   ctx.beginPath()
   ctx.moveTo(300, 376) // 左下

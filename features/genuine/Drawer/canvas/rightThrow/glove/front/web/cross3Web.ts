@@ -1,8 +1,9 @@
 import { middleSidePartOfWeb, topSidePartOfWeb } from './parts/sideParts'
 
-export const cross3Web = (ctx: CanvasRenderingContext2D, webColor: string, laceColor: string, stitchColor: string): void => {
+export const cross3Web = (ctx: CanvasRenderingContext2D, webColor: string, web2Color: string, laceColor: string, stitchColor: string): void => {
   ctx.lineWidth = 1.0
   ctx.strokeStyle = '#383838'
+  ctx.fillStyle = web2Color
   // 縦パーツ
   ctx.beginPath()
   ctx.moveTo(250, 212) // 左＿上

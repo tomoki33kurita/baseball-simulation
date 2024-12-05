@@ -6,6 +6,7 @@ export const uNet2Web = (ctx: CanvasRenderingContext2D, state: GenuineState): vo
   const laceColor = state.lace.color
   const stitchColor = state.stitch.color
   const webColor = state.web.color
+  const web2Color = state.web2.color
   // lace_1
   laceParts1(ctx, laceColor, 45, 75) // 上4
   laceParts1(ctx, laceColor, 32, 50) // 上3
@@ -104,5 +105,5 @@ export const uNet2Web = (ctx: CanvasRenderingContext2D, state: GenuineState): vo
   // lace_2
 
   // ウェブ先端
-  topSidePartOfWeb(ctx, webColor, laceColor, stitchColor)
+  topSidePartOfWeb(ctx, web2Color, laceColor, stitchColor)
 }
