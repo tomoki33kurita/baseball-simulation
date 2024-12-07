@@ -27,6 +27,7 @@ export const EMBROIDERY_COLORS = [
   { label: 'ネイビー', value: 'navy', color: '#2D2B54' },
   { label: 'グリーン', value: 'green', color: '#284127' },
   { label: 'ライトゴールド', value: 'lightGold', color: '#B2A666' },
+  { label: 'ライトシルバー', value: 'lightSilver', color: '#a1a1a1' },
   { label: 'ラメシルバー', value: 'lameSilver', color: '#B5B5B5' },
   { label: 'ラメゴールド', value: 'lameGold', color: '#B7AF75' },
   { label: 'ブラック', value: 'black', color: '#1A1919' }
