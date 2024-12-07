@@ -51,6 +51,39 @@ const getFingerParts = (state: GenuineState) => {
     ]
   }
 
+  if (isCatcher) {
+    switch (backStyle) {
+      case 'regular':
+        return [
+          genGloveColorCell('親指マチ', state.thumbMachi, 'thumbMachi'),
+          genGloveColorCell('小指マチ', state.littleMachi, 'littleMachi'),
+          genGloveColorCell('土台', state.fingerStand, 'fingerStand'),
+          genGloveColorCell('親指・人差指・中指5', state.thumbIndexMiddleRight, 'thumbIndexMiddleRight'),
+          genGloveColorCell('中指6・薬指', state.middleLeftRing, 'middleLeftRing'),
+          genGloveColorCell('小指10', state.littleOut, 'littleOut'),
+          genGloveColorCell('指出し', state.indexFingerTipOut, 'indexFingerTipOut')
+        ]
+      case 'tmBack':
+        return [
+          genGloveColorCell('親指マチ', state.thumbMachi, 'thumbMachi'),
+          genGloveColorCell('小指マチ', state.littleMachi, 'littleMachi'),
+          genGloveColorCell('土台', state.fingerStand, 'fingerStand'),
+          genGloveColorCell('親指', state.thumb, 'thumb'),
+          genGloveColorCell('人差指・中指・薬指・小指', state.indexMiddleRingLittle, 'indexMiddleRingLittle')
+        ]
+      case 'belt':
+      default:
+        return [
+          genGloveColorCell('親指マチ', state.thumbMachi, 'thumbMachi'),
+          genGloveColorCell('小指マチ', state.littleMachi, 'littleMachi'),
+          genGloveColorCell('土台', state.fingerStand, 'fingerStand'),
+          genGloveColorCell('親指・人差指・中指5', state.thumbIndexMiddleRight, 'thumbIndexMiddleRight'),
+          genGloveColorCell('中指6・薬指', state.middleLeftRing, 'middleLeftRing'),
+          genGloveColorCell('小指10', state.littleOut, 'littleOut')
+        ]
+    }
+  }
+
   return [
     genGloveColorCell('親指1', state.thumbOut, 'thumbOut'),
     genGloveColorCell('親指2', state.thumbWeb, 'thumbWeb'),

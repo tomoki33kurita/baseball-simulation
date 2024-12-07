@@ -1,7 +1,12 @@
-export const littleRingMergedFingerOfBeltBackStyle = (ctx: CanvasRenderingContext2D, color: string, stitchColor: string): void => {
+import { GenuineState } from '@/features/genuine/types'
+
+export const littleRingMergedFingerOfBeltBackStyle = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
+  const littleOutColor = state.littleOut.color
+  const middleLeftRingColor = state.middleLeftRing.color
+  const stitchColor = state.stitch.color
   ctx.lineWidth = 0.8
   ctx.strokeStyle = '#383838'
-  ctx.fillStyle = color
+  ctx.fillStyle = littleOutColor
   ctx.beginPath()
   ctx.moveTo(195, 175) // 上
   ctx.quadraticCurveTo(145, 230, 145, 319) //
@@ -10,18 +15,37 @@ export const littleRingMergedFingerOfBeltBackStyle = (ctx: CanvasRenderingContex
   ctx.quadraticCurveTo(193, 502, 191, 510) //
   ctx.quadraticCurveTo(205, 534, 226, 546) // 中央下
   ctx.quadraticCurveTo(244, 558, 243, 609) //
-  ctx.quadraticCurveTo(249, 618, 267, 614) // 右下
+  ctx.quadraticCurveTo(249, 618, 255, 614) // 右下
+  ctx.quadraticCurveTo(240, 534, 240, 534)
+  ctx.quadraticCurveTo(204, 440, 196, 374)
+  ctx.quadraticCurveTo(180, 310, 187, 259)
+  // ctx.quadraticCurveTo()
+  ctx.quadraticCurveTo(195, 175, 195, 175)
+  ctx.fill()
+  ctx.moveTo(235, 188) //  中指袋_小指袋＿間の頂点
+  ctx.quadraticCurveTo(228, 250, 238, 325) // 中指袋_小指袋＿間の溝
+  ctx.stroke()
+  ctx.closePath()
+
+  ctx.beginPath()
+  ctx.fillStyle = middleLeftRingColor
+  moveTo(195, 175)
+  ctx.quadraticCurveTo(180, 310, 187, 259)
+  ctx.quadraticCurveTo(204, 440, 196, 374)
+  ctx.quadraticCurveTo(240, 534, 240, 534)
+  ctx.quadraticCurveTo(255, 618, 255, 618) // 右下
+  ctx.quadraticCurveTo(275, 608, 268, 574)
+
   ctx.quadraticCurveTo(280, 562, 261, 521) //
   ctx.quadraticCurveTo(251, 498, 255, 462) //
   ctx.quadraticCurveTo(289, 448, 289, 448) // 中指右下
   ctx.quadraticCurveTo(235, 278, 276, 118) // 中指頂点
   ctx.quadraticCurveTo(240, 128, 235, 188) // 中指袋_小指袋＿間の頂点
   ctx.quadraticCurveTo(228, 164, 195, 175) // 小指袋頂点
-  ctx.fill()
-  ctx.moveTo(235, 188) //  中指袋_小指袋＿間の頂点
-  ctx.quadraticCurveTo(228, 250, 238, 325) // 中指袋_小指袋＿間の溝
   ctx.stroke()
+  ctx.fill()
   ctx.closePath()
+
   // 通気用＿穴
   ctx.beginPath()
   ctx.lineWidth = 1.4

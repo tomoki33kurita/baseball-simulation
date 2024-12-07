@@ -144,7 +144,8 @@ export const initialState: GenuineState = {
   ringLeftLittleRight: unselectedColorState, // first back style glove
   indexLeftMiddleRight: unselectedColorState, // crown back style glove
   palmToWebConnectLaceStyle: unselectedState,
-
+  indexFingerTipOut: unselectedColorState, // catcher
+  indexMiddleRingLittle: unselectedColorState, // catcher
   thumbMachi: unselectedColorState,
   littleMachi: unselectedColorState,
   genuineLabel: unselectedStateWithPrice,

@@ -163,14 +163,52 @@ const backGloveObjs: PartsItem[] = [
 export const PALM_PARTS = [...commonPartsObjs]
 
 export const BACK_PARTS: PartsItem[] = [...commonPartsObjs, ...backGloveObjs, { label: '裏革', value: 'linings' }]
+
+export const CATCHER_MITT_REGULAR_BACK_PARTS: PartsItem[] = [
+  ...commonPartsObjs,
+  { label: '親指マチ', value: 'thumbMachi' },
+  { label: '小指マチ', value: 'littleMachi' },
+  { label: '土台', value: 'fingerStand' },
+  { label: '親指・人差指・中指5', value: 'thumbIndexMiddleRight' },
+  { label: '中指6・薬指', value: 'middleLeftRing' },
+  { label: '小指10', value: 'littleOut' },
+  { label: '指出し', value: 'indexFingerTipOut' },
+  { label: 'バンド', value: 'listBelt' },
+  { label: '裏革', value: 'linings' }
+]
+
+export const CATCHER_MITT_TM_BACK_PARTS: PartsItem[] = [
+  ...commonPartsObjs,
+  { label: '親指マチ', value: 'thumbMachi' },
+  { label: '小指マチ', value: 'littleMachi' },
+  { label: '土台', value: 'fingerStand' },
+  { label: '親指', value: 'thumb' },
+  { label: '人差指・中指・薬指・小指', value: 'indexMiddleRingLittle' },
+  { label: 'バンド', value: 'listBelt' },
+  { label: '裏革', value: 'linings' }
+]
+
+export const CATCHER_MITT_BELT_BACK_PARTS: PartsItem[] = [
+  ...commonPartsObjs,
+  { label: '親指マチ', value: 'thumbMachi' },
+  { label: '小指マチ', value: 'littleMachi' },
+  { label: '土台', value: 'fingerStand' },
+  { label: '親指・人差指・中指5', value: 'thumbIndexMiddleRight' },
+  { label: '中指6・薬指', value: 'middleLeftRing' },
+  { label: '小指10', value: 'littleOut' },
+  { label: 'バンド', value: 'listBelt' },
+  { label: '裏革', value: 'linings' }
+]
+
 export const FIRST_BACK_PARTS: PartsItem[] = [
   ...commonPartsObjs,
   { label: '親指1', value: 'thumbOut' },
-  { label: '親指2・人差指・中指5', value: 'thumbIndexMiddleRight' },
+  { label: '親指・人差指・中指5', value: 'thumbIndexMiddleRight' },
   { label: '中指6・薬指7', value: 'middleLeftRingRight' },
   { label: '薬指8・小指9', value: 'ringLeftLittleRight' },
   { label: '小指10', value: 'littleOut' },
-  { label: 'バンド', value: 'listBelt' }
+  { label: 'バンド', value: 'listBelt' },
+  { label: '裏革', value: 'linings' }
 ]
 
 export const CROWN_BACK_PARTS: PartsItem[] = [
@@ -193,7 +231,17 @@ export const FIRST_MITT_PARTS: PartsItem[] = [
   { label: 'バンド', value: 'listBelt' }
 ]
 
-export const PARTS = [...commonPartsObjs, ...PALM_PARTS, ...BACK_PARTS, ...FIRST_BACK_PARTS, ...CROWN_BACK_PARTS, ...FIRST_MITT_PARTS]
+export const PARTS = [
+  ...commonPartsObjs,
+  ...PALM_PARTS,
+  ...BACK_PARTS,
+  ...FIRST_BACK_PARTS,
+  ...CROWN_BACK_PARTS,
+  ...FIRST_MITT_PARTS,
+  ...CATCHER_MITT_REGULAR_BACK_PARTS,
+  ...CATCHER_MITT_BELT_BACK_PARTS,
+  ...CATCHER_MITT_TM_BACK_PARTS
+]
 
 export const LEATHER_COLORS_BY_PARTS: LeatherColorsByPartsOfGenuine = {
   all: LEATHER_COLORS,
@@ -229,7 +277,9 @@ export const LEATHER_COLORS_BY_PARTS: LeatherColorsByPartsOfGenuine = {
   middleLeftRingLittle: LEATHER_COLORS, // only for catcher
   thumbMachi: LEATHER_COLORS, // only for catcher
   littleMachi: LEATHER_COLORS, // only for catcher
+  indexFingerTipOut: LEATHER_COLORS, // only for catcher
   thumbIndexMiddle: LEATHER_COLORS, // only for catcher
+  indexMiddleRingLittle: LEATHER_COLORS, // only for catcher
   thumbIndexMiddleRight: LEATHER_COLORS, // only for catcher of first back style
   middleLeftRingRight: LEATHER_COLORS, // only for first back style
   ringLeftLittleRight: LEATHER_COLORS, // only for first back style

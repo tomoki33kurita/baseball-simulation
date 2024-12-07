@@ -8,7 +8,7 @@ import { beltTypeDrawer } from './beltTypeDrawer'
 export const beltStyleDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
   const isBeltBack = ['belt', 'unselected'].includes(state.backStyle.value)
   if (!isBeltBack) return
-  littleRingMergedFingerOfBeltBackStyle(ctx, state.middleLeftRingLittle.color, state.stitch.color) // 小指側の指袋
+  littleRingMergedFingerOfBeltBackStyle(ctx, state) // 小指側の指袋
   thumbFingerOfBeltBackStyle(ctx, state?.thumbIndexMiddleRight.color, state.stitch.color) // 親指側の指袋
   weltingOfMiddleFingerBeltBackStyle(ctx, state.welting) // ベルトスタイルのハミダシ
   edgeOfCommon(ctx, state.binding.color) // ヘリ革

@@ -4,6 +4,9 @@ import { Embroidery, EmbroideryKey } from '@/types'
 import { DrawerIndex, GenuineState, PartsItem, PartsKey } from '@/features/genuine/types'
 import {
   BACK_PARTS,
+  CATCHER_MITT_BELT_BACK_PARTS,
+  CATCHER_MITT_REGULAR_BACK_PARTS,
+  CATCHER_MITT_TM_BACK_PARTS,
   CROWN_BACK_PARTS,
   FIRST_BACK_PARTS,
   FIRST_MITT_PARTS,
@@ -39,6 +42,8 @@ export const getComponentParts = (state: GenuineState) => {
     indexWeb,
     indexMiddle,
     indexLeftMiddleRight, // crown back style
+    middleLeftRing, // catcher
+    indexMiddleRingLittle, // catcher
     middleLeftRingLittle, // catcher
     middleLeftRingRight, // first back style
     middleIndex,
@@ -48,6 +53,10 @@ export const getComponentParts = (state: GenuineState) => {
     ringLeftLittleRight, // first back style
     littleRing,
     littleOut,
+    fingerStand,
+    thumbMachi,
+    littleMachi,
+    indexFingerTipOut,
     underWeb,
     boomerang,
     loopOfRingFingerColor
@@ -82,10 +91,16 @@ export const getComponentParts = (state: GenuineState) => {
     littleOut,
     underWeb,
     boomerang,
+    fingerStand,
+    indexFingerTipOut,
     loopOfRingFingerColor,
     thumbIndexMiddle, // first back style no finger hole
     thumbIndexMiddleRight, // first back style or catcher
     indexLeftMiddleRight,
+    middleLeftRing,
+    thumbMachi,
+    littleMachi,
+    indexMiddleRingLittle,
     middleLeftRingLittle, // catcher
     middleLeftRingRight, // first back style
     ringLeftLittleRight // first back style
@@ -97,7 +112,18 @@ export const getColorOptionsByParts = (partsKey: PartsKey) => LEATHER_COLORS_BY_
 export const getSelectableParts = (state: GenuineState): PartsItem[] => {
   const { drawerIndex } = state
   const { isFirstBackStyle, isCrownBackStyle } = getBackStyle(state)
-  const { isFirstBaseman } = positionChecker(state.baseModel.position)
+  const { isFirstBaseman, isCatcher } = positionChecker(state.baseModel.position)
+  if (isCatcher) {
+    switch (state.backStyle.value) {
+      case 'regular':
+        return CATCHER_MITT_REGULAR_BACK_PARTS
+      case 'tmBack':
+        return CATCHER_MITT_TM_BACK_PARTS
+      case 'belt':
+      default:
+        return CATCHER_MITT_BELT_BACK_PARTS
+    }
+  }
   if (isFirstBaseman) {
     return FIRST_MITT_PARTS
   }
@@ -297,9 +323,15 @@ export const getBackStyle = (state: GenuineState) => {
   // const isFirstBackStyle = ['firstBackStyle'].includes(state.backStyle.value)
   const isCrownBackStyle = ['crown', 'crownMesh'].includes(state.backStyle.value)
   const isMIUT4Model = state.baseModel.productNumber === 'MIU-T4' && state.backStyle.value === 'unselected'
+  const isBeltBackStyle = ['belt'].includes(state.backStyle.value)
+  const isRegularBackStyle = ['regular'].includes(state.backStyle.value)
+  const isTMBackStyle = ['tmBack'].includes(state.backStyle.value)
   return {
     isFirstBackStyle: isMIUT4Model, //|| isFirstBackStyle
-    isCrownBackStyle
+    isCrownBackStyle,
+    isBeltBackStyle,
+    isRegularBackStyle,
+    isTMBackStyle
   }
 }
 

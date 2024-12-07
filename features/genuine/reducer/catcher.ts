@@ -46,7 +46,12 @@ import {
   SET_LOOP_OF_RING_FINGER,
   SET_GENUINE_LABEL,
   SET_WEB2_COLOR,
-  SET_PALM_TO_WEB_CONNECT_LACE_STYLE
+  SET_PALM_TO_WEB_CONNECT_LACE_STYLE,
+  SET_LITTLE_MACHI_COLOR,
+  SET_THUMB_MACHI_COLOR,
+  SET_INDEX_FINGER_TIP_OUT_COLOR,
+  SET_INDEX_MIDDLE_RING_LITTLE_COLOR,
+  SET_THUMB_COLOR
 } from '@/features/genuine/Constants/action'
 import { GenuineState } from '../types'
 import { Embroidery } from '@/types'
@@ -144,6 +149,8 @@ export const initialState: GenuineState = {
   middleLeftRingLittle: unselectedColorState, // catcher
   thumbMachi: unselectedColorState, // catcher
   littleMachi: unselectedColorState, // catcher
+  indexFingerTipOut: unselectedColorState, // catcher
+  indexMiddleRingLittle: unselectedColorState, // catcher
   thumbIndexMiddle: unselectedColorState, // first back style glove
   middleLeftRingRight: unselectedColorState, // first back style glove
   ringLeftLittleRight: unselectedColorState, // first back style glove
@@ -190,9 +197,13 @@ export const reducer = (state: any, action: any) => {
         fingerStand: action.all,
         thumbIndexMiddleRight: action.all,
         middleLeftRight: action.all,
+        middleLeftRing: action.all,
+        indexMiddleRingLittle: action.all,
         middleLeftRingLittle: action.all,
         thumbMachi: action.all,
-        littleMachi: action.all
+        littleMachi: action.all,
+        indexFingerTipOut: action.all,
+        thumb: action.all
       }
     case SET_BASE_MODEL:
       return { ...state, baseModel: action.baseModel }
@@ -299,6 +310,16 @@ export const reducer = (state: any, action: any) => {
       return { ...state, middleLeftRing: action.middleLeftRing }
     case SET_MIDDLE_LEFT_RING_LITTLE_COLOR:
       return { ...state, middleLeftRingLittle: action.middleLeftRingLittle }
+    case SET_THUMB_COLOR:
+      return { ...state, thumb: action.thumb }
+    case SET_LITTLE_MACHI_COLOR:
+      return { ...state, littleMachi: action.littleMachi }
+    case SET_THUMB_MACHI_COLOR:
+      return { ...state, thumbMachi: action.thumbMachi }
+    case SET_INDEX_FINGER_TIP_OUT_COLOR:
+      return { ...state, indexFingerTipOut: action.indexFingerTipOut }
+    case SET_INDEX_MIDDLE_RING_LITTLE_COLOR:
+      return { ...state, indexMiddleRingLittle: action.indexMiddleRingLittle }
     case SET_PERSONAL:
       return { ...state, personal: action.personal }
     case SET_DRAWER_INDEX:

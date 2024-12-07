@@ -111,6 +111,8 @@ export type GenuineState = {
   middleLeftRingRight: ColorItem // only for first back style glove
   ringLeftLittleRight: ColorItem // only for first back style glove
   indexLeftMiddleRight: ColorItem // only for crown back style glove
+  indexFingerTipOut: ColorItem // only for Catcher Mitt
+  indexMiddleRingLittle: ColorItem // only for Catcher Mitt
 }
 
 export type ResponseDispatch = (selected: string) => void
