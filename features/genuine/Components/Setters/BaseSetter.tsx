@@ -169,7 +169,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         objects={WEB_LACE_STYLES}
         isError={webLaceStyle.value === 'unselected'}
         defaultExpanded={webLaceStyle.value === 'unselected'}
-        isDisplay={isSelectableWebLaceStyle}
+        isDisplay={isSelectableWebLaceStyle || isCatcher}
         handleChange={handle.webLaceStyle}
       />
       <SelectCard

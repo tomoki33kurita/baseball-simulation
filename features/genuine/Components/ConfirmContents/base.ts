@@ -26,7 +26,7 @@ export const getGenuineBaseCells = (
   const isMeshSpecified = ['normalMesh', 'crownMesh'].includes(state.backStyle.value)
   const { isFirstBackStyle } = getGenuineBackStyle(state)
   const isLoopOfRingFinger = (isGlove && !isFirstBackStyle) || isFirstBaseman
-  const isSelectableWebLaceStyle = ['basket2', 'tNet3'].includes(state.webParts.value)
+  const isSelectableWebLaceStyle = ['basket2', 'tNet3'].includes(state.webParts.value) || isCatcher
   const isYT22 = productNumber === 'YT-22'
 
   switch (state) {
