@@ -1,5 +1,6 @@
 import { GenuineState } from '../../types'
 import { canvasResetter } from './canvasResetter'
+import { genuineLabelDrawer } from './label/drawer'
 import { backStyleDrawer } from './rightThrow/catcherMitt/back/backStyleDrawer'
 import { catchFaceDrawer } from './rightThrow/catcherMitt/back/catchFaceDrawer'
 import { fingerGuardDrawer } from './rightThrow/catcherMitt/back/fingerGuardDrawer'
@@ -29,4 +30,5 @@ export const drawGenuineCatcherMittRearSurface = (ctx: CanvasRenderingContext2D 
   laceDrawer(ctx, state.lace.color) // 革紐
   thumbHook(ctx, state.thumbHook.color) // かけ紐
   littleHook(ctx, state.littleHook.color) // かけ紐
+  genuineLabelDrawer(ctx, state) // ラベル描画
 }

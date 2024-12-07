@@ -6,7 +6,7 @@ import { thumbFingerOfBeltBackStyle } from '../thumbFinger'
 import { beltTypeDrawer } from './beltTypeDrawer'
 
 export const beltStyleDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
-  const isBeltBack = state.backStyle.value === 'belt'
+  const isBeltBack = ['belt', 'unselected'].includes(state.backStyle.value)
   if (!isBeltBack) return
   littleRingMergedFingerOfBeltBackStyle(ctx, state.middleLeftRingLittle.color, state.stitch.color) // 小指側の指袋
   thumbFingerOfBeltBackStyle(ctx, state?.thumbIndexMiddleRight.color, state.stitch.color) // 親指側の指袋
