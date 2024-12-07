@@ -24,7 +24,6 @@ export const drawGenuineCatcherMittRearSurface = (ctx: CanvasRenderingContext2D 
   backStyleDrawer(ctx, state) // バックスタイル
   catchFaceDrawer(ctx, state.palm.color, state.stitch.color, state.baseModel.productNumber) // 捕球面側
   fingerGuardDrawer(ctx, state) // 指カバー・指当て
-  // fingerEmbroideryDrawer(ctx, state.embroideries) // 親指、小指の刺繍
   webDrawer(ctx, state) // ウェブ
   laceDrawer(ctx, state.lace.color) // 革紐
   thumbHook(ctx, state.thumbHook.color) // かけ紐

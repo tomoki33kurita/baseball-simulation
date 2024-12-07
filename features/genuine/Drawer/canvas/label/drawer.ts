@@ -8,8 +8,18 @@ export const genuineLabelDrawer = (ctx: CanvasRenderingContext2D | null, state: 
   if (!ctx) return
   const { isFirstBackStyle } = getBackStyle(state)
   const { isCatcher } = positionChecker(state.baseModel.position)
+  const isUnselectedBackStyle = state.backStyle.value === 'unselected'
 
   if (isCatcher) {
+    if (isUnselectedBackStyle) {
+      switch (state.baseModel.productNumber) {
+        case 'TM-411':
+          genuineLabel(ctx, state, 100, -10, 15, 0.9)
+          return
+        default:
+          genuineLabel(ctx, state, 50, 155, 0, 0.85)
+      }
+    }
     switch (state.backStyle.value) {
       case 'belt':
       case 'unselected':
