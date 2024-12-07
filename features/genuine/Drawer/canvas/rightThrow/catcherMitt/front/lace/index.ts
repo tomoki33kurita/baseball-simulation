@@ -1,4 +1,4 @@
-import { webTop1, webTop2, webTop3 } from './web'
+import { webTop1, webTop2, webTop3, webTopCrossLace } from './web'
 import { connectCatchFace } from './connectCatchFace'
 import { GenuineState } from '@/features/genuine/types'
 import {
@@ -61,18 +61,29 @@ export const laceDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState): 
   aroundEdge9(ctx, color, -90, 77, -10)
   aroundEdge10(ctx, color, 7, -213, 30)
   aroundEdge10(ctx, color, 0, 0)
-  webTop3(ctx, color)
-  webTop1(ctx, color, 180, -260, 20)
-  webTop2(ctx, color, 138, -178, 13)
-  webTop2(ctx, color, 122, -158, 13)
-  webTop2(ctx, color, 106, -138, 13)
-  webTop2(ctx, color, 88, -108, 10)
-  webTop2(ctx, color, 60, -70, 5)
-  webTop2(ctx, color, 30, -37)
-  webTop2(ctx, color, 12, -17)
-  webTop2(ctx, color, 0, 0)
-  webTop2(ctx, color, -14, 18)
-  webTop1(ctx, color, 0, 0)
+
+  if (state.webLaceStyle.value === 'cross') {
+    webTop3(ctx, color)
+    webTopCrossLace(ctx, color, 135, -160, 9)
+    webTopCrossLace(ctx, color, 105, -123, 7)
+    webTopCrossLace(ctx, color, 70, -85, 5)
+    webTopCrossLace(ctx, color, 35, -42, 2)
+    webTopCrossLace(ctx, color, 3, -3, 0)
+    webTopCrossLace(ctx, color, -31, 35, -2)
+  } else {
+    webTop3(ctx, color)
+    webTop1(ctx, color, 180, -260, 20)
+    webTop2(ctx, color, 138, -178, 13)
+    webTop2(ctx, color, 122, -158, 13)
+    webTop2(ctx, color, 106, -138, 13)
+    webTop2(ctx, color, 88, -108, 10)
+    webTop2(ctx, color, 60, -70, 5)
+    webTop2(ctx, color, 30, -37)
+    webTop2(ctx, color, 12, -17)
+    webTop2(ctx, color, 0, 0)
+    webTop2(ctx, color, -14, 18)
+    webTop1(ctx, color, 0, 0)
+  }
 
   if (isShallowWebModel) {
     hinge(ctx, color, -20, 20) // 左

@@ -1,5 +1,5 @@
 import { web, webTop } from '../web'
-import { webTop0, webTop1, webTop2, webTop3 } from '../lace/web'
+import { webTop0, webTop1, webTop2, webTop3, webTopCrossLace } from '../lace/web'
 import { laceOfWebTopToIndexFinger, laceOfWebTopToThumbFinger, webToCatchFace, webToIndexFinger, webToThumbFinger } from '../lace/connectWeb'
 import { GenuineState } from '@/features/genuine/types'
 import { webKnots } from '@/util/canvas/lace/webKnots'
@@ -13,18 +13,28 @@ export const deepWeb = (ctx: CanvasRenderingContext2D, state: GenuineState): voi
   webTop(ctx, state.web.color, state.stitch.color)
   web(ctx, state.web.color, state.stitch.color)
 
-  webTop3(ctx, state.lace.color)
-  webTop2(ctx, state.lace.color, 12, 18)
-  webTop2(ctx, state.lace.color, 0, 0)
-  webTop2(ctx, state.lace.color, -14, -17)
-  webTop1(ctx, state.lace.color, 110, -73, 13)
-  webTop1(ctx, state.lace.color, 89, -28, 8)
-  webTop1(ctx, state.lace.color, 69, -42, 8)
-  webTop1(ctx, state.lace.color, 40, 30)
-  webTop1(ctx, state.lace.color, 20, 14)
-  webTop1(ctx, state.lace.color, 0, 0)
-  webTop1(ctx, state.lace.color, -20, -13)
-  webTop0(ctx, state.lace.color)
+  if (state.webLaceStyle.value === 'cross') {
+    webTop3(ctx, state.lace.color)
+    webTopCrossLace(ctx, state.lace.color, -275, -105, -6, 1.25)
+    webTopCrossLace(ctx, state.lace.color, -250, -88, -6, 1.25)
+    webTopCrossLace(ctx, state.lace.color, -186, -82, -3, 1.17)
+    webTopCrossLace(ctx, state.lace.color, -150, -83, 0, 1.17)
+    webTopCrossLace(ctx, state.lace.color, -88, -48, 0, 1.1)
+    webTopCrossLace(ctx, state.lace.color, 0, 0, 0, 1)
+  } else {
+    webTop3(ctx, state.lace.color)
+    webTop2(ctx, state.lace.color, 12, 18)
+    webTop2(ctx, state.lace.color, 0, 0)
+    webTop2(ctx, state.lace.color, -14, -17)
+    webTop1(ctx, state.lace.color, 110, -73, 13)
+    webTop1(ctx, state.lace.color, 89, -28, 8)
+    webTop1(ctx, state.lace.color, 69, -42, 8)
+    webTop1(ctx, state.lace.color, 40, 30)
+    webTop1(ctx, state.lace.color, 20, 14)
+    webTop1(ctx, state.lace.color, 0, 0)
+    webTop1(ctx, state.lace.color, -20, -13)
+    webTop0(ctx, state.lace.color)
+  }
   webToCatchFace(ctx, state.lace.color, 0, 0)
   webToCatchFace(ctx, state.lace.color, 45, 37)
   webToCatchFace(ctx, state.lace.color, 93, 80)

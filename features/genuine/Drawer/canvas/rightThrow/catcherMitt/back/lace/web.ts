@@ -81,3 +81,46 @@ export const webTop3 = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.stroke()
   ctx.closePath()
 }
+
+export const webTopCrossLace = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number, rotate: number, scaleSize = 1): void => {
+  ctx.lineWidth = 0.8
+  ctx.strokeStyle = '#383838'
+  ctx.fillStyle = color
+
+  // 左上_右下
+  ctx.beginPath()
+  ctx.save()
+  ctx.rotate((rotate * Math.PI) / 180)
+  ctx.scale(scaleSize, scaleSize)
+  ctx.moveTo(691 + x, 182 + y) // 左上奥
+  ctx.quadraticCurveTo(699 + x, 187 + y, 694 + x, 195 + y) // 左下
+  ctx.quadraticCurveTo(695 + x, 201 + y, 700 + x, 204 + y) // 右下
+  ctx.quadraticCurveTo(705 + x, 202 + y, 704 + x, 192 + y) // 右上
+  ctx.quadraticCurveTo(705 + x, 190 + y, 700 + x, 185 + y) // 左上
+  ctx.quadraticCurveTo(700 + x, 180 + y, 691 + x, 182 + y) // 左上奥
+  ctx.fill()
+  ctx.moveTo(700 + x, 185 + y) // 左上
+  ctx.quadraticCurveTo(701 + x, 195 + y, 695 + x, 200 + y) // 左下
+  ctx.stroke()
+  ctx.restore()
+  ctx.closePath()
+
+  // 右上_左下
+  ctx.beginPath()
+  ctx.save()
+  ctx.rotate((rotate * Math.PI) / 180)
+  ctx.scale(scaleSize, scaleSize)
+  ctx.moveTo(706 + x, 192 + y) // 左上
+  ctx.quadraticCurveTo(697 + x, 188 + y, 687 + x, 188 + y) // 左下
+  ctx.quadraticCurveTo(685 + x, 192 + y, 691 + x, 197 + y) // 右下
+  ctx.quadraticCurveTo(707 + x, 200 + y, 707 + x, 200 + y) // 右上
+  ctx.quadraticCurveTo(713 + x, 196 + y, 706 + x, 192 + y) // 左上
+  ctx.fill()
+  ctx.moveTo(707 + x, 200 + y) // 左上
+  ctx.quadraticCurveTo(698 + x, 195 + y, 691 + x, 197 + y) // 左下
+  ctx.stroke()
+  ctx.restore()
+  ctx.closePath()
+}
+
+// ctx.quadraticCurveTo() //
