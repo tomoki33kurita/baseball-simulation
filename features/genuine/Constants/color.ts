@@ -185,7 +185,15 @@ export const CROWN_BACK_PARTS: PartsItem[] = [
   { label: 'バンド', value: 'listBelt' }
 ]
 
-export const PARTS = [...commonPartsObjs, ...PALM_PARTS, ...BACK_PARTS, ...FIRST_BACK_PARTS, ...CROWN_BACK_PARTS]
+export const FIRST_MITT_PARTS: PartsItem[] = [
+  ...commonPartsObjs,
+  { label: '親指', value: 'thumb' },
+  { label: 'ウェブ下', value: 'underWeb' },
+  { label: 'ブーメラン', value: 'boomerang' },
+  { label: 'バンド', value: 'listBelt' }
+]
+
+export const PARTS = [...commonPartsObjs, ...PALM_PARTS, ...BACK_PARTS, ...FIRST_BACK_PARTS, ...CROWN_BACK_PARTS, ...FIRST_MITT_PARTS]
 
 export const LEATHER_COLORS_BY_PARTS: LeatherColorsByPartsOfGenuine = {
   all: LEATHER_COLORS,

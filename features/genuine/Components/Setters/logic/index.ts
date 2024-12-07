@@ -2,11 +2,19 @@ import { useEffect, useState } from 'react'
 import { useDebounce } from 'use-debounce'
 import { Embroidery, EmbroideryKey } from '@/types'
 import { DrawerIndex, GenuineState, PartsItem, PartsKey } from '@/features/genuine/types'
-import { BACK_PARTS, CROWN_BACK_PARTS, FIRST_BACK_PARTS, LEATHER_COLORS_BY_PARTS, PALM_PARTS } from '@/features/genuine/Constants/color'
+import {
+  BACK_PARTS,
+  CROWN_BACK_PARTS,
+  FIRST_BACK_PARTS,
+  FIRST_MITT_PARTS,
+  LEATHER_COLORS_BY_PARTS,
+  PALM_PARTS
+} from '@/features/genuine/Constants/color'
 import { EMBROIDERY_POSITIONS, EMBROIDERY_ITEMS, SHADOW_EDGE_COLORS, TYPE_FACES } from '@/features/genuine/Constants/embroidery'
 import { isHalfWidthCharChecker } from '@/features/genuine/Drawer/canvas/back/useCanvasEmbroideries'
 import { SET_EMBROIDERIES } from '@/Constants'
 import { unselectedState } from '@/features/genuine/reducer/infielder'
+import { positionChecker } from '@/util/logic'
 
 export const getComponentParts = (state: GenuineState) => {
   const {
@@ -23,6 +31,7 @@ export const getComponentParts = (state: GenuineState) => {
     linings,
     lace,
     welting,
+    thumb,
     thumbOut,
     thumbWeb,
     thumbIndexMiddle, // first back style no finger hole
@@ -39,6 +48,8 @@ export const getComponentParts = (state: GenuineState) => {
     ringLeftLittleRight, // first back style
     littleRing,
     littleOut,
+    underWeb,
+    boomerang,
     loopOfRingFingerColor
     // mouton
   } = state
@@ -58,6 +69,7 @@ export const getComponentParts = (state: GenuineState) => {
     lace,
     welting,
     // mouton,
+    thumb,
     thumbOut,
     thumbWeb,
     indexWeb,
@@ -68,6 +80,8 @@ export const getComponentParts = (state: GenuineState) => {
     ringLittle,
     littleRing,
     littleOut,
+    underWeb,
+    boomerang,
     loopOfRingFingerColor,
     thumbIndexMiddle, // first back style no finger hole
     thumbIndexMiddleRight, // first back style or catcher
@@ -80,7 +94,13 @@ export const getComponentParts = (state: GenuineState) => {
 
 export const getColorOptionsByParts = (partsKey: PartsKey) => LEATHER_COLORS_BY_PARTS[partsKey]
 
-export const getSelectableParts = (drawerIndex: DrawerIndex, isFirstBackStyle: boolean, isCrownBackStyle: boolean): PartsItem[] => {
+export const getSelectableParts = (state: GenuineState): PartsItem[] => {
+  const { drawerIndex } = state
+  const { isFirstBackStyle, isCrownBackStyle } = getBackStyle(state)
+  const { isFirstBaseman } = positionChecker(state.baseModel.position)
+  if (isFirstBaseman) {
+    return FIRST_MITT_PARTS
+  }
   if (drawerIndex === 0) {
     if (isFirstBackStyle) {
       return FIRST_BACK_PARTS

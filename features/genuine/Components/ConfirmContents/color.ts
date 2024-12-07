@@ -1,5 +1,6 @@
 import { ColorItem } from '@/types'
 import { GenuineState } from '@/features/genuine/types'
+import { positionChecker } from '@/util/logic'
 
 const dummy = {
   head: 'dummy',
@@ -20,7 +21,9 @@ const genGloveColorCell = (head: string, item: ColorItem, partsKey: string) => (
 const getFingerParts = (state: GenuineState) => {
   const backStyle = state.backStyle.value
   const productNumber = state.baseModel.productNumber
+  const { isFirstBaseman, isCatcher } = positionChecker(state.baseModel.position)
   if (productNumber === 'MIU-T4') {
+    // firstBackStyle
     return [
       genGloveColorCell('親指1', state.thumbOut, 'thumbOut'),
       genGloveColorCell('親指2・人差指・中指5', state.thumbIndexMiddleRight, 'thumbIndexMiddleRight'),
@@ -40,6 +43,14 @@ const getFingerParts = (state: GenuineState) => {
       genGloveColorCell('小指10', state.littleOut, 'littleOut')
     ]
   }
+  if (isFirstBaseman) {
+    return [
+      genGloveColorCell('親指', state.thumb, 'thumb'),
+      genGloveColorCell('ウェブ下', state.underWeb, 'underWeb'),
+      genGloveColorCell('ブーメラン', state.boomerang, 'boomerang')
+    ]
+  }
+
   return [
     genGloveColorCell('親指1', state.thumbOut, 'thumbOut'),
     genGloveColorCell('親指2', state.thumbWeb, 'thumbWeb'),

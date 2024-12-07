@@ -30,13 +30,12 @@ type Props = {
 }
 
 export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch }) => {
-  const { parts, drawerIndex, lace, binding, stitch, welting, mouton, genuineLabel } = state
+  const { parts, lace, binding, stitch, welting, mouton, genuineLabel } = state
   const partsKey = parts.value
   const partsLabel = parts.label
   const componentParts = getComponentParts(state)
   const selectedParts = componentParts[partsKey as keyof typeof componentParts]
-  const { isFirstBackStyle, isCrownBackStyle } = getBackStyle(state)
-  const selectableParts = getSelectableParts(drawerIndex, isFirstBackStyle, isCrownBackStyle)
+  const selectableParts = getSelectableParts(state)
   const filteredParts = filterSelectableParts(state, selectableParts)
   const colorsByParts = getColorOptionsByParts(partsKey)
   const handle = {
