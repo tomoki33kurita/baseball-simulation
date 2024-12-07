@@ -201,3 +201,37 @@ export const thumbFingerOfBeltBackStyle = (ctx: CanvasRenderingContext2D, color:
   ctx.closePath()
   ctx.strokeStyle = '#383838'
 }
+
+export const thumbFingerOfTMBackStyle = (ctx: CanvasRenderingContext2D, color: string, stitchColor: string): void => {
+  ctx.lineWidth = 0.8
+  ctx.strokeStyle = '#383838'
+  ctx.fillStyle = color
+  ctx.beginPath()
+  ctx.moveTo(468, 384) // ウェブ真下＿左上
+  ctx.quadraticCurveTo(434, 450, 434, 450) // ウェブ真下＿左下
+  ctx.quadraticCurveTo(480, 479, 445, 523) // ヘリ革の真ん中
+  ctx.quadraticCurveTo(430, 574, 442, 615) // 親指パーツの左下
+  ctx.quadraticCurveTo(585, 505, 659, 402) //
+  ctx.quadraticCurveTo(676, 384, 688, 356) // 右上
+  ctx.quadraticCurveTo(700, 327, 660, 351) //
+  ctx.quadraticCurveTo(603, 391, 567, 395) //
+  ctx.quadraticCurveTo(515, 405, 468, 384) //
+  // ctx.quadraticCurveTo()
+  ctx.fill()
+  ctx.stroke()
+  ctx.closePath()
+
+  //  stitch
+  ctx.strokeStyle = stitchColor
+  // 親指袋
+  ctx.beginPath()
+  ctx.setLineDash([3, 3])
+  ctx.moveTo(468, 390) // 人差し指袋と親指袋のつなぎ目部分
+  ctx.quadraticCurveTo(551, 419, 617, 385) //
+  ctx.quadraticCurveTo(685, 340, 684, 350) // 親指先端の先
+
+  ctx.stroke()
+  ctx.setLineDash([])
+  ctx.closePath()
+  ctx.strokeStyle = '#383838'
+}

@@ -8,7 +8,7 @@ import { thumbFingerOfRegularBackStyle } from '../thumbFinger'
 import { GenuineState } from '@/features/genuine/types'
 
 export const regularStyleDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
-  const isRegularBack = true
+  const isRegularBack = state.backStyle.value === 'regular'
   // [state.backStyle?.value].includes('regularBackStyle') ||
   // (state.baseModel.backStyle === 'regularBackStyle' && state.backStyle.value === 'unselected')
   if (!isRegularBack) return
