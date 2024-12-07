@@ -135,6 +135,11 @@ export const GENUINE_LABELS: BaseItemWithPrice[] = [
   { label: '直刺繍サイド', value: 'directEmbroiderySide', price: 5500 }
 ]
 
+export const MITT_GENUINE_LABELS: BaseItemWithPrice[] = [
+  { label: '通常フロント', value: 'normalFront', price: 0 },
+  { label: '直刺繍フロント', value: 'directEmbroideryFront', price: 5500 }
+]
+
 const commonPartsObjs: PartsItem[] = [
   // 共通
   { label: '全体', value: 'all' },

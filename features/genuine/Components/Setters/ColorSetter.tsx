@@ -17,9 +17,10 @@ import {
   STITCH_COLOR_BUTTON_OPTION,
   STITCHES,
   BINDINGS,
-  GENUINE_LABELS
+  GENUINE_LABELS,
+  MITT_GENUINE_LABELS
 } from '../../Constants/color'
-import { originDispatcher } from '@/util/logic'
+import { originDispatcher, positionChecker } from '@/util/logic'
 import { DISPATCHER } from '@/features/genuine/Constants/action'
 
 type Props = {
@@ -33,6 +34,7 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
   const { parts, lace, binding, stitch, welting, mouton, genuineLabel } = state
   const partsKey = parts.value
   const partsLabel = parts.label
+  const { isMitt } = positionChecker(state.baseModel.position)
   const componentParts = getComponentParts(state)
   const selectedParts = componentParts[partsKey as keyof typeof componentParts]
   const selectableParts = getSelectableParts(state)
@@ -114,7 +116,7 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
       <SelectCard
         summary={'ラベル'} //
         selectedLabel={genuineLabel.label}
-        objects={GENUINE_LABELS}
+        objects={isMitt ? MITT_GENUINE_LABELS : GENUINE_LABELS}
         isError={genuineLabel.value === 'unselected'}
         defaultExpanded={genuineLabel.value === 'unselected'}
         handleChange={handle.genuineLabel}

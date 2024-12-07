@@ -7,13 +7,15 @@ export const positionChecker = (position: Position) => {
   const isFirstBaseman = position === 'firstBaseman'
   const isOutfielder = position === 'outfielder'
   const isGlove = ['pitcher', 'infielder', 'outfielder'].includes(position)
+  const isMitt = ['catcher', 'firstBaseman'].includes(position)
 
   return {
     isPitcher,
     isCatcher,
     isFirstBaseman,
     isOutfielder,
-    isGlove
+    isGlove,
+    isMitt
   }
 }
 type Item = BaseItem | ColorItem | ChoiceItem
