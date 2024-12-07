@@ -103,6 +103,8 @@ export const FINGER_GUARDS: BaseItem[] = [
 
 const webImageBaseUrl = '/genuine/webParts'
 export const WEB_PARTS: WebParts[] = [
+  { label: '通常', value: 'normal', positions: ['firstBaseman'], imageUrl: `${webImageBaseUrl}/normal.jpg` },
+  { label: '通常2', value: 'normal2', positions: ['firstBaseman'], imageUrl: `${webImageBaseUrl}/normal2.jpg` },
   { label: 'フラット', value: 'flat', positions: ['pitcher'], imageUrl: `${webImageBaseUrl}/flat.jpg` },
   { label: 'フラット2', value: 'flat2', positions: ['pitcher'], imageUrl: `${webImageBaseUrl}/flat2.jpg` },
   { label: 'バスケット', value: 'basket', positions: ['pitcher'], imageUrl: `${webImageBaseUrl}/basket.jpg` },
@@ -112,17 +114,18 @@ export const WEB_PARTS: WebParts[] = [
   { label: 'Genuine', value: 'genuine', positions: ['pitcher'], imageUrl: `${webImageBaseUrl}/genuine.jpg` },
 
   { label: 'クロス', value: 'cross', positions: ['infielder'], imageUrl: `${webImageBaseUrl}/cross.jpg` },
-  { label: 'クロス2', value: 'cross2', positions: ['infielder'], imageUrl: `${webImageBaseUrl}/cross2.jpg` },
-  { label: 'クロス3', value: 'cross3', positions: ['infielder'], imageUrl: `${webImageBaseUrl}/cross3.jpg` },
+  { label: 'クロス2', value: 'cross2', positions: ['infielder', 'firstBaseman'], imageUrl: `${webImageBaseUrl}/cross2.jpg` },
+  { label: 'クロス3', value: 'cross3', positions: ['infielder', 'firstBaseman'], imageUrl: `${webImageBaseUrl}/cross3.jpg` },
   { label: 'クロスV', value: 'crossV', positions: ['infielder'], imageUrl: `${webImageBaseUrl}/crossV.jpg` },
-  { label: 'クロスV2', value: 'crossV2', positions: ['infielder'], imageUrl: `${webImageBaseUrl}/crossV2.jpg` },
+  { label: 'クロスV2', value: 'crossV2', positions: ['infielder', 'firstBaseman'], imageUrl: `${webImageBaseUrl}/crossV2.jpg` },
   { label: 'Hウェブ', value: 'h', positions: ['infielder'], imageUrl: `${webImageBaseUrl}/h.jpg` },
   { label: 'Uネット', value: 'uNet', positions: ['infielder'], imageUrl: `${webImageBaseUrl}/uNet.jpg` },
   { label: 'Uネット2', value: 'uNet2', positions: ['infielder'], imageUrl: `${webImageBaseUrl}/uNet2.jpg` },
 
   { label: 'Tネット', value: 'tNet', positions: ['outfielder'], imageUrl: `${webImageBaseUrl}/tNet.jpg` },
-  { label: 'Tネット2', value: 'tNet2', positions: ['outfielder'], imageUrl: `${webImageBaseUrl}/tNet2.jpg` },
-  { label: 'Tネット3', value: 'tNet3', positions: ['outfielder'], imageUrl: `${webImageBaseUrl}/tNet3.jpg` },
+  { label: 'Tネット2', value: 'tNet2', positions: ['outfielder', 'firstBaseman'], imageUrl: `${webImageBaseUrl}/tNet2.jpg` },
+  { label: 'Tネット3', value: 'tNet3', positions: ['outfielder', 'firstBaseman'], imageUrl: `${webImageBaseUrl}/tNet3.jpg` },
+  { label: 'Tネット4', value: 'tNet4', positions: ['firstBaseman'], imageUrl: `${webImageBaseUrl}/iNet.jpg` },
   { label: 'Iネット', value: 'iNet', positions: ['outfielder'], imageUrl: `${webImageBaseUrl}/iNet.jpg` },
   { label: 'トンボ', value: 'dragonfly', positions: ['outfielder'], imageUrl: `${webImageBaseUrl}/dragonfly.jpg` },
   { label: 'トンボ2', value: 'dragonfly2', positions: ['outfielder'], imageUrl: `${webImageBaseUrl}/dragonfly2.jpg` },

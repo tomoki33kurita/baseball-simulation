@@ -156,7 +156,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
       <SelectCardWithImage
         summary={'ウェブパーツ'} // webParts
         selectedLabel={webParts.label}
-        objects={WEB_PARTS}
+        objects={WEB_PARTS.filter((p) => (isFirstBaseman ? p.positions.includes('firstBaseman') : !p.positions.includes('firstBaseman')))}
         isError={webParts.value === 'unselected'}
         defaultExpanded={webParts.value === 'unselected'}
         isDisplay={!isCatcher}

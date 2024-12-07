@@ -116,7 +116,7 @@ export type Retail = {
 export type WebParts = {
   label: string
   value: string
-  positions: string[]
+  positions: Position[]
   imageUrl: string
 }
 
