@@ -14,7 +14,6 @@ export const drawGenuineCatcherMittRearSurface = (ctx: CanvasRenderingContext2D 
   if (!ctx) return
 
   const baseModel = state.baseModel
-
   canvasResetter(ctx) // リセット
   ctx.font = '40px serif'
   ctx.strokeStyle = '#383838'
