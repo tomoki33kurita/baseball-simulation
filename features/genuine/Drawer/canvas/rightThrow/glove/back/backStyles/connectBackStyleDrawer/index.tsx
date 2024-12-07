@@ -1,22 +1,19 @@
-import { indexFingerLeft, indexFingerRight } from '../indexFinger'
-import { littleFingerLeft, littleFingerRight } from '../littleFinger'
-import { thumbAndWristBelt, thumbOut } from '../thumbAndWristBelt'
-import { indexFingerPad } from '../fingerCoverOrPad/indexFingerPad'
-import { fingerCrotch } from '../fingerCrotch'
-import { palm } from '../catchFace'
-import { bindingOfBeltBackStyle } from '../edge/edgeOfBeltBackStyle'
-import { bindingOfWrist } from '../edge/edgeOfWrist'
-import { middleFingerPad } from '../fingerCoverOrPad/middleFIngerPad'
-import { middleFingerLeft, middleFingerRight } from '../middleFinger'
-import { ringFingerLeft, ringFingerRight } from '../ringFinger'
-import { weltingOfNormal } from '../welting/normal'
 import { GenuineState } from '@/features/genuine/types'
-import { getBackStyle } from '@/features/genuine/Components/Setters/logic'
+import { thumbAndWristBelt, thumbOut } from '../../thumbAndWristBelt'
+import { indexFingerLeft, indexFingerRight } from '../../indexFinger'
+import { middleFingerLeft, middleFingerRight } from '../../middleFinger'
+import { ringFingerLeft, ringFingerRight } from '../../ringFinger'
+import { littleFingerLeft, littleFingerRight } from '../../littleFinger'
+import { weltingOfNormal } from '../../welting/normal'
+import { palm } from '../../catchFace'
+import { bindingOfBeltBackStyle } from '../../edge/edgeOfBeltBackStyle'
+import { bindingOfWrist } from '../crownBackStyleDrawer/binding'
+import { indexFingerPad } from '../../fingerCoverOrPad/indexFingerPad'
+import { middleFingerPad } from '../../fingerCoverOrPad/middleFIngerPad'
+import { fingerCrotch } from '../../fingerCrotch'
 
-// ※オーダータイプ：basicの場合はこの関数は呼ばれない想定
-export const beltBackStyleDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState, needPalmWrap: boolean): void => {
-  const { isFirstBackStyle, isCrownBackStyle, isConnectBackStyle } = getBackStyle(state)
-  if (isFirstBackStyle || isCrownBackStyle || isConnectBackStyle) return
+export const connectBackStyleDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState, needPalmWrap: boolean): void => {
+  if (state.backStyle.value !== 'connect') return
   const isIndexFingerPad = ['indexPad'].includes(state.fingerGuard.value)
   const isMiddleFingerPad = ['middlePad'].includes(state.fingerGuard.value)
   const stitchColor = state.stitch.color

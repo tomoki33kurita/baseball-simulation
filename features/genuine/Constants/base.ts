@@ -9,7 +9,8 @@ export const BACK_STYLES: BaseItemWithPrice[] = [
   { label: 'ノーマル', value: 'normal', price: 0 },
   { label: '王冠スタイル', value: 'crown', price: 0 },
   { label: 'ノーマルメッシュ', value: 'normalMesh', price: 3300 },
-  { label: '王冠メッシュ', value: 'crownMesh', price: 3300 }
+  { label: '王冠メッシュ', value: 'crownMesh', price: 3300 },
+  { label: 'コネクト(仮)', value: 'connect', price: 0 }
 ]
 
 export const BACK_STYLES_CATCHER: BaseItemWithPrice[] = [

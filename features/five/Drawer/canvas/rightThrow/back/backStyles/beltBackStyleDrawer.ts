@@ -1,6 +1,6 @@
 import { indexFingerLeft, indexFingerRight } from '../indexFinger'
 import { littleFingerLeft, littleFingerRight } from '../littleFinger'
-import { thumbAndListBelt, thumbOut } from '../thumbAndListBelt'
+import { thumbAndWristBelt, thumbOut } from '../thumbAndWristBelt'
 import { indexFingerPad } from '../fingerCoverOrPad/indexFingerPad'
 import { fingerCrotch } from '../fingerCrotch'
 import { palm } from '../catchFace'
@@ -22,8 +22,8 @@ export const beltBackStyleDrawer = (ctx: CanvasRenderingContext2D, state: FiveSt
   const isMiddleFingerPad = ['middlePad'].includes(state.fingerGuard.value)
   const stitchColor = state.stitch.color
 
-  thumbAndListBelt(ctx, '#2e4732', stitchColor)
-  thumbAndListBelt(ctx, state.thumbWeb.color, stitchColor)
+  thumbAndWristBelt(ctx, '#2e4732', stitchColor)
+  thumbAndWristBelt(ctx, state.thumbWeb.color, stitchColor)
   thumbOut(ctx, state.thumbOut.color) // 親指＿外
   indexFingerRight(ctx, state.indexWeb.color) // 人差し指＿右
   indexFingerLeft(ctx, state.indexMiddle.color) // 人差し指＿左
@@ -50,8 +50,8 @@ export const beltBackStyleDrawerForBasic = (ctx: CanvasRenderingContext2D, state
   const basicBindingColor = state.baseModel.basicColors.binding.color
   const basicWeltingColor = state.baseModel.basicColors.welting.color
 
-  thumbAndListBelt(ctx, '#2e4732', basicStitchColor)
-  thumbAndListBelt(ctx, basicColor, basicStitchColor)
+  thumbAndWristBelt(ctx, '#2e4732', basicStitchColor)
+  thumbAndWristBelt(ctx, basicColor, basicStitchColor)
   thumbOut(ctx, basicColor) // 親指＿外
   indexFingerRight(ctx, basicColor) // 人差し指＿右
   indexFingerLeft(ctx, basicColor) // 人差し指＿左

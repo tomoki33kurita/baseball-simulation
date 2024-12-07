@@ -1,4 +1,4 @@
-export const thumbAndListBelt = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchColor: string): void => {
+export const thumbAndWristBelt = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchColor: string): void => {
   ctx.lineWidth = 0.8
   ctx.strokeStyle = '#383838'
   ctx.fillStyle = leatherColor
