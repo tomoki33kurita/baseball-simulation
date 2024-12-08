@@ -1,6 +1,6 @@
 export const bindingOfBeltBackStyle = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchColor: string): void => {
-  ctx.strokeStyle = 'gray' //'#383838'
-  ctx.lineWidth = 0.5
+  ctx.strokeStyle = '#383838'
+  ctx.lineWidth = 0.8
   ctx.fillStyle = leatherColor
 
   // 指根元

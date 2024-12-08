@@ -6,7 +6,7 @@ import { positionChecker } from '@/util/logic'
 
 export const genuineLabelDrawer = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
   if (!ctx) return
-  const { isFirstBackStyle } = getBackStyle(state)
+  const { isFirstBackStyle, isConnectBackStyle } = getBackStyle(state)
   const { isCatcher } = positionChecker(state.baseModel.position)
   const isUnselectedBackStyle = state.backStyle.value === 'unselected'
 
@@ -39,6 +39,10 @@ export const genuineLabelDrawer = (ctx: CanvasRenderingContext2D | null, state: 
 
   if (isFirstBackStyle) {
     genuineLabel(ctx, state, -80, 170, -8, 0.7)
+    return
+  }
+  if (isConnectBackStyle) {
+    genuineLabel(ctx, state, -20, 60, -2, 0.9)
     return
   }
   const label = state.genuineLabel

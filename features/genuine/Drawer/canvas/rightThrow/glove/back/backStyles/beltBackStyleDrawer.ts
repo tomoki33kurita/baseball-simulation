@@ -1,6 +1,6 @@
 import { indexFingerLeft, indexFingerRight } from '../indexFinger'
 import { littleFingerLeft, littleFingerRight } from '../littleFinger'
-import { thumbAndWristBelt, thumbOut } from '../thumbAndWristBelt'
+import { thumbAndWristBelt, thumbOut } from '../thumb'
 import { indexFingerPad } from '../fingerCoverOrPad/indexFingerPad'
 import { fingerCrotch } from '../fingerCrotch'
 import { palm } from '../catchFace'

@@ -14,7 +14,7 @@ import { loopOfRingFingerDrawer } from './rightThrow/glove/back/loopOfFingerDraw
 // import { meshDrawer } from './rightThrow/glove/back/mesh'
 
 export const drawGenuineGloveRearSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
-  const { isFirstBackStyle } = getBackStyle(state)
+  const { isFirstBackStyle, isConnectBackStyle } = getBackStyle(state)
   if (!ctx) return
 
   const baseModel = state.baseModel
@@ -33,7 +33,7 @@ export const drawGenuineGloveRearSurface = (ctx: CanvasRenderingContext2D | null
   thumbHook(ctx, state.thumbHook.color, 110, -310, 15) // 先端 // 親指掛け紐_上
   webOfGloveBackDrawer(ctx, state)
   lace(ctx, laceColor) // 革紐
-  !isFirstBackStyle && laceOfWristBeltCrossDrawer(ctx, laceColor)
+  !isFirstBackStyle && !isConnectBackStyle && laceOfWristBeltCrossDrawer(ctx, laceColor)
   genuineLabelDrawer(ctx, state) // ラベル描画
   littleHook(ctx, state.littleHook.color, 15, 240, -10, 0.7) // 小指掛け紐
   thumbHook(ctx, state.thumbHook.color, -14, 30, 0) //手元

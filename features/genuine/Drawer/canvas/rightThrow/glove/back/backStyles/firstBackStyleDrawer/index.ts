@@ -1,5 +1,5 @@
 import { GenuineState } from '@/features/genuine/types'
-import { thumbOut } from '../../thumbAndWristBelt'
+import { thumbOut } from '../../thumb'
 import { thumbIndexMiddleFinger } from './thumbIndexMiddleFinger'
 import { ringLittleFinger } from './ringLittleFinger'
 import { middleRingFinger } from './middleRingFinger'
