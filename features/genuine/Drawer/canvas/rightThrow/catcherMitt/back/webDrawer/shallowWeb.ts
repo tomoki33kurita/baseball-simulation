@@ -20,7 +20,8 @@ export const shallowWeb = (ctx: CanvasRenderingContext2D, state: GenuineState): 
   webTop(ctx, state.web.color, state.stitch.color) // 残す
   webOfShallowPocket(ctx, state.web.color, state.stitch.color) // 変更
 
-  if (state.webLaceStyle.value === 'cross') {
+  const isYT22Default = state.baseModel.productNumber === 'YT-22' && state.webLaceStyle.value === 'unselected'
+  if (state.webLaceStyle.value === 'cross' || isYT22Default) {
     webTop3(ctx, state.lace.color)
     webTopCrossLace(ctx, state.lace.color, -275, -105, -6, 1.25)
     webTopCrossLace(ctx, state.lace.color, -250, -88, -6, 1.25)

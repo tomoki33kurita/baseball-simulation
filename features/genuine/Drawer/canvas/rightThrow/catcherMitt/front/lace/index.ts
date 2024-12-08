@@ -22,6 +22,7 @@ import { inMachiOfCommon, inMachiOfNormalPocket, inMachiOfShallowPocket } from '
 export const laceDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
   const color = state.lace.color
   const isShallowWebModel = ['YT-22'].includes(state.baseModel.productNumber)
+  const isYT22Default = state.baseModel.productNumber === 'YT-22' && state.webLaceStyle.value === 'unselected'
 
   aroundEdge0(ctx, color)
   aroundEdge1(ctx, color, 2, 0)
@@ -62,7 +63,7 @@ export const laceDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState): 
   aroundEdge10(ctx, color, 7, -213, 30)
   aroundEdge10(ctx, color, 0, 0)
 
-  if (state.webLaceStyle.value === 'cross') {
+  if (state.webLaceStyle.value === 'cross' || isYT22Default) {
     webTop3(ctx, color)
     webTopCrossLace(ctx, color, 135, -160, 9)
     webTopCrossLace(ctx, color, 105, -123, 7)
