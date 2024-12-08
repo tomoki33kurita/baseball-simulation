@@ -1,5 +1,5 @@
-import { beltBackStyleDrawer } from './beltBackStyleDrawer'
 import { GenuineState } from '@/features/genuine/types'
+import { beltBackStyleDrawer } from './beltBackStyleDrawer'
 import { firstBackStyleDrawer } from './firstBackStyleDrawer'
 import { crownBackStyleDrawer } from './crownBackStyleDrawer'
 import { backLaceDrawer } from '../lace/backLaceDrawer'
