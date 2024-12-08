@@ -14,7 +14,7 @@ import { bindingOfConnectBackStyle } from '../../edge/edgeOfConnectBackStyle'
 import { weltingForConnectBack } from '../../welting/connect'
 import { crossLaceForBackOfHand1, crossLaceForBackOfHand2, crossLaceForThumb } from '../crownBackStyleDrawer/connectLace'
 
-const connectBackBandParts = (ctx: CanvasRenderingContext2D, color: string): void => {
+const connectBackBandParts = (ctx: CanvasRenderingContext2D, color: string, stitchColor: string): void => {
   ctx.strokeStyle = '#383838'
   ctx.fillStyle = color
   ctx.beginPath()
@@ -31,6 +31,26 @@ const connectBackBandParts = (ctx: CanvasRenderingContext2D, color: string): voi
   ctx.fill()
   ctx.stroke()
   ctx.closePath()
+
+  ctx.lineWidth = 1.3
+  ctx.strokeStyle = stitchColor
+  ctx.beginPath()
+  ctx.setLineDash([3, 3])
+  ctx.moveTo(259, 490) //
+  ctx.quadraticCurveTo(273, 440, 318, 408)
+  ctx.quadraticCurveTo(325, 394, 328, 412)
+  ctx.quadraticCurveTo(336, 432, 369, 445)
+  ctx.quadraticCurveTo(417, 458, 481, 450)
+  // ctx.quadraticCurveTo()
+  // ctx.moveTo(340, 587) // 手口＿左
+  // ctx.quadraticCurveTo(430, 598, 529, 585) // 手口＿右
+  // ステッチここまで
+
+  ctx.stroke()
+  ctx.setLineDash([])
+  ctx.closePath()
+  ctx.lineWidth = 0.8
+  ctx.strokeStyle = '#383838'
 }
 
 export const connectBackStyleDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState, needPalmWrap: boolean): void => {
@@ -52,7 +72,7 @@ export const connectBackStyleDrawer = (ctx: CanvasRenderingContext2D, state: Gen
   weltingForConnectBack(ctx, state.welting.color) // ハミダシ
   palm(ctx, state.palm.color, stitchColor, needPalmWrap) // 捕球面 / ウェブ下折り返し
   fingerCrotch(ctx, state.palm.color, state.welting.color, state.baseModel.isFingerCrotch) // 指股
-  connectBackBandParts(ctx, state.listBelt.color) // バンドパーツ
+  connectBackBandParts(ctx, state.listBelt.color, stitchColor) // バンドパーツ
   bindingOfConnectBackStyle(ctx, state.binding.color, stitchColor) // ヘリ革
   bindingOfWrist(ctx, state.binding.color, stitchColor)
   crossLaceForBackOfHand1(ctx, state.lace.color, 0, 0) // クロスレース

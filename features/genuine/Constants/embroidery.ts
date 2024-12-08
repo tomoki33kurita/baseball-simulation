@@ -5,15 +5,16 @@ export const TYPE_FACES = [
   { label: '筆記体', value: 'cursive', selectable: ['en'] }, // 筆記体
   { label: 'ブラッシュ体', value: 'Brush Script MT', selectable: ['en'] }, // ブラッシュ体
   { label: 'オールドイングリッシュ体', value: 'MariageD', selectable: ['en'] }, // オールドイングリッシュ体
-  { label: '漢字', value: 'monospace', selectable: ['ja'] } // 行書
+  { label: '漢字(楷書体)', value: 'monospacePrintedScript', selectable: ['ja'] }, // 行書
+  { label: '漢字(行書体)', value: 'monospaceCursiveWriting', selectable: ['ja'] } // 行書
 ]
 
 export const EMBROIDERY_POSITIONS = [
-  { label: '親指部', value: 'thumbFinger' },
-  { label: '小指部', value: 'childFinger' },
+  { label: '親指', value: 'thumbFinger' },
+  { label: '小指', value: 'childFinger' },
   { label: '平裏', value: 'leatherLiningFirst' },
-  { label: '平裏(2段目)', value: 'leatherLiningSecond' },
-  { label: 'バンド部', value: 'band' }
+  { label: '平裏(2段目)', value: 'leatherLiningSecond' }
+  // { label: 'バンド部', value: 'band' }
 ]
 
 export const EMBROIDERY_COLORS = [
@@ -26,6 +27,7 @@ export const EMBROIDERY_COLORS = [
   { label: 'ネイビー', value: 'navy', color: '#2D2B54' },
   { label: 'ホワイト', value: 'white', color: '#FFFFFF' },
   { label: 'ブルー', value: 'blue', color: '#2C338B' },
+  { label: 'グリーン', value: 'green', color: '#0d6b15' },
   { label: 'イエロー', value: 'yellow', color: '#C1BB32' },
   { label: 'オレンジ', value: 'orange', color: '#DF572C' },
   { label: 'ブラウン', value: 'brown', color: '#895129' },

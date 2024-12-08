@@ -68,9 +68,10 @@ export const thumbForConnectBack = (ctx: CanvasRenderingContext2D, leatherColor:
   ctx.strokeStyle = stitchColor
   ctx.beginPath()
   ctx.setLineDash([3, 3])
-  // 手口
-  ctx.moveTo(340, 587) // 手口＿左
-  ctx.quadraticCurveTo(430, 598, 529, 585) // 手口＿右
+  ctx.moveTo(504, 435)
+  ctx.quadraticCurveTo(477, 479, 482, 519)
+  ctx.quadraticCurveTo(489, 562, 531, 577)
+  // ctx.quadraticCurveTo()
   ctx.stroke()
   ctx.setLineDash([])
   ctx.lineWidth = 0.8

@@ -49,12 +49,12 @@ export const bindingOfConnectBackStyle = (ctx: CanvasRenderingContext2D, leather
   ctx.beginPath()
   ctx.setLineDash([3, 3])
   // 手窓
-  // ctx.moveTo(292, 490) // 手口＿左
-  // ctx.quadraticCurveTo(450, 477, 450, 475) // 折り返し前
-  // ctx.quadraticCurveTo(490, 465, 501, 435) // 折り返し
-  // ctx.quadraticCurveTo(500, 383, 446, 364) // 折り返し
-  // ctx.quadraticCurveTo(400, 343, 342, 369) // 中指中央ハミダシ
-  // ctx.quadraticCurveTo(296, 388, 271, 427) // 薬指＿小指の間ハミダシ
+  ctx.moveTo(244, 494)
+  ctx.quadraticCurveTo(249, 432, 295, 396)
+  ctx.quadraticCurveTo(307, 367, 368, 354)
+  ctx.quadraticCurveTo(443, 350, 485, 382)
+  ctx.quadraticCurveTo(504, 402, 505, 432)
+  // ctx.quadraticCurveTo()
   ctx.stroke()
   ctx.setLineDash([])
   ctx.closePath()
