@@ -37,5 +37,5 @@ export const crownBackStyleDrawer = (ctx: CanvasRenderingContext2D, state: Genui
   isIndexFingerPad && indexFingerPad(ctx, state.fingerGuardColor.color, state.stitch.color)
   palm2(ctx, state.palm.color, state.stitch.color) // 捕球面 / ウェブ下折り返し
   binding(ctx, state.binding.color, state.stitch.color)
-  bindingOfWrist(ctx, state.binding.color, state.stitch.color) // 親指への刺繍
+  bindingOfWrist(ctx, state.binding.color, state.stitch.color)
 }

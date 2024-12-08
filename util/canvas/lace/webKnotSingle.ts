@@ -67,7 +67,7 @@ export const webKnotDownward = (
   numerator?: number,
   scaleSize?: number
 ): void => {
-  ctx.strokeStyle = 'gray' //'#383838'
+  ctx.strokeStyle = '#383838'
   ctx.lineWidth = 0.5
   ctx.fillStyle = color
   // 結び目1段目

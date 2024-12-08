@@ -12,6 +12,7 @@ import { middleFingerPad } from '../../fingerCoverOrPad/middleFIngerPad'
 import { fingerCrotch } from '../../fingerCrotch'
 import { bindingOfConnectBackStyle } from '../../edge/edgeOfConnectBackStyle'
 import { weltingForConnectBack } from '../../welting/connect'
+import { crossLaceForBackOfHand1, crossLaceForBackOfHand2, crossLaceForThumb } from '../crownBackStyleDrawer/connectLace'
 
 const connectBackBandParts = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.strokeStyle = '#383838'
@@ -54,6 +55,9 @@ export const connectBackStyleDrawer = (ctx: CanvasRenderingContext2D, state: Gen
   connectBackBandParts(ctx, state.listBelt.color) // バンドパーツ
   bindingOfConnectBackStyle(ctx, state.binding.color, stitchColor) // ヘリ革
   bindingOfWrist(ctx, state.binding.color, stitchColor)
+  crossLaceForBackOfHand1(ctx, state.lace.color, 0, 0) // クロスレース
+  crossLaceForBackOfHand2(ctx, state.lace.color, 45, -60) // クロスレース
+  crossLaceForThumb(ctx, state.lace.color, 370, -130, 20) // クロスレース
   isIndexFingerPad && indexFingerPad(ctx, state.fingerGuardColor.color, stitchColor) // 指当て(人指し指)
   isMiddleFingerPad && middleFingerPad(ctx, state.fingerGuardColor.color, stitchColor, -165, 90, -15) // 指当て(中指)
 }

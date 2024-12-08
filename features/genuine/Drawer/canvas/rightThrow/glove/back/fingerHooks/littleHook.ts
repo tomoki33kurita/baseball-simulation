@@ -1,6 +1,6 @@
 export const littleHook = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number, numerator: number, scaleSize: number): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = 'gray' //'#383838'
+  ctx.strokeStyle = '#383838'
   ctx.fillStyle = color
   if (numerator !== undefined && numerator !== 0) {
     ctx.save()
