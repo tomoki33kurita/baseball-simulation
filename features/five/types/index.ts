@@ -73,7 +73,7 @@ export type FiveState = {
   ringLittle: ColorItem
   littleRing: ColorItem
   littleOut: ColorItem
-  listBelt: ColorItem
+  // listBelt: ColorItem
   labelStand: ColorItem
   specifiedLogo: BaseItemWithPrice
   specifiedLogoPosition: BaseItem

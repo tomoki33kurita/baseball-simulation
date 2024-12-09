@@ -137,7 +137,7 @@ const backGloveObjs: PartsItem[] = [
   { label: '薬指8', value: 'ringLittle' },
   { label: '小指9', value: 'littleRing' },
   { label: '小指10', value: 'littleOut' },
-  { label: 'バンド', value: 'listBelt' },
+  // { label: 'バンド', value: 'listBelt' },
   { label: 'ラベル台', value: 'labelStand' }
 ]
 export const PALM_PARTS = [...commonPartsObjs]
@@ -168,7 +168,7 @@ export const LEATHER_COLORS_BY_PARTS: LeatherColorsByPartsOFFive = {
   ringLittle: LEATHER_COLORS,
   littleRing: LEATHER_COLORS,
   littleOut: LEATHER_COLORS,
-  listBelt: LEATHER_COLORS,
+  // listBelt: LEATHER_COLORS,
   labelStand: LEATHER_COLORS
 }
 

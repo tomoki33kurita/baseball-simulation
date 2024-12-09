@@ -21,7 +21,7 @@ export const SET_WEB_COLOR = 'setWebColor'
 export const SET_MOUTON_COLOR = 'setMoutonColor'
 export const SET_THUMB_HOOK = 'setThumbHook'
 export const SET_LITTLE_HOOK = 'setLittleHook'
-export const SET_LIST_BELT_COLOR = 'setListBeltColor'
+// export const SET_LIST_BELT_COLOR = 'setListBeltColor'
 export const SET_FINGER_GUARD_COLOR = 'setFingerGuardColor'
 export const SET_WELTING = 'setWelting'
 
@@ -73,6 +73,6 @@ export const DISPATCHER = {
   ringMiddle: SET_RING_MIDDLE_COLOR,
   ringLittle: SET_RING_LITTLE_COLOR,
   littleRing: SET_LITTLE_RING_COLOR,
-  littleOut: SET_LITTLE_OUT_COLOR,
-  listBelt: SET_LIST_BELT_COLOR
+  littleOut: SET_LITTLE_OUT_COLOR
+  // listBelt: SET_LIST_BELT_COLOR
 }

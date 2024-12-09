@@ -24,7 +24,7 @@ import {
   SET_RING_LITTLE_COLOR,
   SET_LITTLE_RING_COLOR,
   SET_LITTLE_OUT_COLOR,
-  SET_LIST_BELT_COLOR,
+  // SET_LIST_BELT_COLOR,
   SET_MOUTON_COLOR,
   SET_BASE_MODEL,
   SET_ORDER_TYPE,
@@ -114,7 +114,7 @@ export const initialState: FiveState = {
   web: unselectedColorState,
   thumbHook: unselectedColorState,
   littleHook: unselectedColorState,
-  listBelt: unselectedColorState,
+  // listBelt: unselectedColorState,
   mouton: unselectedColorState,
   thumbOut: unselectedColorState,
   thumbWeb: unselectedColorState,
@@ -150,7 +150,7 @@ export const reducer = (state: any, action: any) => {
         littleHook: action.all,
         binding: action.all,
         fingerGuardColor: action.all,
-        listBelt: action.all,
+        // listBelt: action.all,
         linings: action.all,
         // 内野手用グラブ
         thumbOut: action.all,
@@ -218,8 +218,8 @@ export const reducer = (state: any, action: any) => {
       return { ...state, littleRing: action.littleRing }
     case SET_LITTLE_OUT_COLOR:
       return { ...state, littleOut: action.littleOut }
-    case SET_LIST_BELT_COLOR:
-      return { ...state, listBelt: action.listBelt }
+    // case SET_LIST_BELT_COLOR:
+    //   return { ...state, listBelt: action.listBelt }
     case SET_F_LEX_ENGRAVING:
       return { ...state, fLexEngraving: action.fLexEngraving, drawerIndex: 0 }
     case SET_LININGS:
