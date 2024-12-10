@@ -159,6 +159,7 @@ export const initialState: GenuineState = {
   mouton: unselectedStateWithPrice,
   loopOfRingFinger: unselectedStateWithPrice,
   loopOfRingFingerColor: unselectedColorState,
+  leatherIntegratedRing: unselectedStateWithPrice,
   size: unselectedStateWithPrice,
   backStyle: unselectedStateWithPrice,
   embroideries: [initialEmbroideryState],

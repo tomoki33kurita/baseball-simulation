@@ -24,7 +24,9 @@ export const LEATHER_COLORS: ColorItem[] = [
   { label: 'ブラック', value: 'black', color: '#1E1E1E' },
   { label: 'サックス', value: 'sax', color: '#3a8daa' },
   { label: 'インペリアルブラック', value: 'imperialNavy', color: '#06090f' },
-  { label: 'アベンチュリンブラウン', value: 'aventurineBrown', color: '#420011' }
+  { label: 'アベンチュリンブラウン', value: 'aventurineBrown', color: '#420011' },
+  { label: 'ブラック', value: 'blackPaisley', color: '#1E1E1E' },
+  { label: 'Dブラウンペイズリー', value: 'dBrownPaisley', color: '#70352e' }
 ]
 export const LININGS: ColorItem[] = [...LEATHER_COLORS]
 

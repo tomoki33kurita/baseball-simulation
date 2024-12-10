@@ -47,7 +47,8 @@ export const getGenuineBaseCells = (
         isGlove ? genGloveBaseCell('土手芯', state.materialPack) : dummy,
         genGloveBaseCell('芯材の硬さ', state.coreHardness),
         isCatcher ? dummy : genGloveBaseCell('手口巻スタイル', state.bankLaceDirection),
-        isLoopOfRingFinger ? genGloveBaseCell('薬指リング', state.loopOfRingFinger) : dummy
+        isLoopOfRingFinger ? genGloveBaseCell('薬指リング', state.loopOfRingFinger) : dummy,
+        isGlove ? genGloveBaseCell('薬指革一体型仕様', state.leatherIntegratedRing) : dummy
       ].filter((cell) => cell.value !== dummy.value)
   }
 }

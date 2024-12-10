@@ -15,7 +15,8 @@ import {
   BANK_LACE_DIRECTIONS,
   LOOP_OF_RING_FINGERS,
   ALL_BACK_STYLES,
-  PALM_TO_WEB_CONNECT_LACE_STYLE
+  PALM_TO_WEB_CONNECT_LACE_STYLE,
+  LEATHER_INTEGRATED_RINGS
 } from '@/features/genuine/Constants/base'
 import { objectsFilter } from '@/util/logic'
 import { ResponseDispatch } from '@/features/genuine/types'
@@ -40,7 +41,8 @@ import {
   SET_BANK_LACE_DIRECTION,
   SET_LOOP_OF_RING_FINGER,
   SET_GENUINE_LABEL,
-  SET_PALM_TO_WEB_CONNECT_LACE_STYLE
+  SET_PALM_TO_WEB_CONNECT_LACE_STYLE,
+  SET_LEATHER_INTEGRATED_RING
 } from '@/features/genuine/Constants/action'
 import { BINDINGS, GENUINE_LABELS, LACES, MOUTON_COLORS, STITCHES, WELTINGS } from '@/features/genuine/Constants/color'
 
@@ -58,6 +60,7 @@ const dispatchBaseStore = {
   gloveSize: { objects: GLOVE_SIZES, actionType: SET_GLOVE_SIZE },
   bankLaceDirection: { objects: BANK_LACE_DIRECTIONS, actionType: SET_BANK_LACE_DIRECTION },
   loopOfRingFinger: { objects: LOOP_OF_RING_FINGERS, actionType: SET_LOOP_OF_RING_FINGER },
+  leatherIntegratedRing: { objects: LEATHER_INTEGRATED_RINGS, actionType: SET_LEATHER_INTEGRATED_RING },
   materialPack: { objects: MATERIAL_PACKS, actionType: SET_MATERIAL_PACK },
   fingerGuard: { objects: FINGER_GUARDS, actionType: SET_FINGER_GUARD },
   webParts: { objects: WEB_PARTS, actionType: SET_WEB_PARTS },

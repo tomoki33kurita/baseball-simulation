@@ -23,7 +23,8 @@ import {
   LOOP_OF_RING_FINGERS,
   MATERIAL_PACKS_FOR_FIRST_BASEMAN,
   BACK_STYLES_CATCHER,
-  PALM_TO_WEB_CONNECT_LACE_STYLE
+  PALM_TO_WEB_CONNECT_LACE_STYLE,
+  LEATHER_INTEGRATED_RINGS
 } from '@/features/genuine/Constants/base'
 import { SelectCard } from '@/components/Setters/SelectCard'
 import { SelectCardWithImage } from '@/components/Setters/SelectCardWithImage'
@@ -56,7 +57,8 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
     bankLaceDirection,
     loopOfRingFinger,
     materialPack,
-    webParts
+    webParts,
+    leatherIntegratedRing
   } = state
   const handle = {
     dominantArm: dispatcher('dominantArm', dispatch),
@@ -71,6 +73,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
     gloveSize: dispatcher('gloveSize', dispatch),
     bankLaceDirection: dispatcher('bankLaceDirection', dispatch),
     loopOfRingFinger: dispatcher('loopOfRingFinger', dispatch),
+    leatherIntegratedRing: dispatcher('leatherIntegratedRing', dispatch),
     materialPack: dispatcher('materialPack', dispatch),
     fingerGuard: dispatcher('fingerGuard', dispatch),
     webParts: dispatcher('webParts', dispatch)
@@ -216,6 +219,15 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         isDisplay={isLoopOfRingFinger}
         defaultExpanded={loopOfRingFinger.value === 'unselected'}
         handleChange={handle.loopOfRingFinger}
+      />
+      <SelectCard
+        summary={'薬指一体仕様'} //  ringIntegrated
+        selectedLabel={leatherIntegratedRing.label}
+        objects={LEATHER_INTEGRATED_RINGS}
+        isError={leatherIntegratedRing.value === 'unselected'}
+        isDisplay={isGlove}
+        defaultExpanded={leatherIntegratedRing.value === 'unselected'}
+        handleChange={handle.leatherIntegratedRing}
       />
     </TabPanel>
   )

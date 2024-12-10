@@ -102,12 +102,20 @@ export const FINGER_GUARDS: BaseItem[] = [
   { label: '無し', value: 'none' }
 ]
 
+export const LEATHER_INTEGRATED_RINGS: BaseItemWithPrice[] = [
+  { label: '薬指一体型', value: 'atRingFinger', price: 4400 },
+  { label: '無し', value: 'none', price: 0 }
+]
+
 const webImageBaseUrl = '/genuine/webParts'
 export const WEB_PARTS: WebParts[] = [
   { label: '通常', value: 'normal', positions: ['firstBaseman'], imageUrl: `${webImageBaseUrl}/normal.jpg` },
   { label: '通常2', value: 'normal2', positions: ['firstBaseman'], imageUrl: `${webImageBaseUrl}/normal2.jpg` },
   { label: 'フラット', value: 'flat', positions: ['pitcher'], imageUrl: `${webImageBaseUrl}/flat.jpg` },
   { label: 'フラット2', value: 'flat2', positions: ['pitcher'], imageUrl: `${webImageBaseUrl}/flat2.jpg` },
+  { label: 'フラット3', value: 'flat3', positions: ['pitcher'], imageUrl: `${webImageBaseUrl}/flat3.jpg` },
+  { label: 'フラット4', value: 'flat4', positions: ['pitcher'], imageUrl: `${webImageBaseUrl}/flat4.jpg` },
+  { label: 'フラット5', value: 'flat5', positions: ['pitcher'], imageUrl: `${webImageBaseUrl}/flat5.jpg` },
   { label: 'バスケット', value: 'basket', positions: ['pitcher'], imageUrl: `${webImageBaseUrl}/basket.jpg` },
   { label: 'バスケット2', value: 'basket2', positions: ['pitcher', 'infielder'], imageUrl: `${webImageBaseUrl}/basket2.jpg` },
   { label: 'ツーピース', value: 'twoPeace', positions: ['pitcher'], imageUrl: `${webImageBaseUrl}/twoPeace.jpg` },
@@ -119,7 +127,8 @@ export const WEB_PARTS: WebParts[] = [
   { label: 'クロス3', value: 'cross3', positions: ['infielder', 'firstBaseman'], imageUrl: `${webImageBaseUrl}/cross3.jpg` },
   { label: 'クロスV', value: 'crossV', positions: ['infielder'], imageUrl: `${webImageBaseUrl}/crossV.jpg` },
   { label: 'クロスV2', value: 'crossV2', positions: ['infielder', 'firstBaseman'], imageUrl: `${webImageBaseUrl}/crossV2.jpg` },
-  { label: 'Hウェブ', value: 'h', positions: ['infielder'], imageUrl: `${webImageBaseUrl}/h.jpg` },
+  { label: 'H', value: 'h', positions: ['infielder'], imageUrl: `${webImageBaseUrl}/h.jpg` },
+  { label: 'ワンピース', value: 'onePeace', positions: ['infielder'], imageUrl: `${webImageBaseUrl}/onePeace.jpg` },
   { label: 'Uネット', value: 'uNet', positions: ['infielder'], imageUrl: `${webImageBaseUrl}/uNet.jpg` },
   { label: 'Uネット2', value: 'uNet2', positions: ['infielder'], imageUrl: `${webImageBaseUrl}/uNet2.jpg` },
 
@@ -128,6 +137,7 @@ export const WEB_PARTS: WebParts[] = [
   { label: 'Tネット3', value: 'tNet3', positions: ['outfielder', 'firstBaseman'], imageUrl: `${webImageBaseUrl}/tNet3.jpg` },
   { label: 'Tネット4', value: 'tNet4', positions: ['firstBaseman'], imageUrl: `${webImageBaseUrl}/iNet.jpg` },
   { label: 'Iネット', value: 'iNet', positions: ['outfielder'], imageUrl: `${webImageBaseUrl}/iNet.jpg` },
+  { label: 'バスネット', value: 'basNet', positions: ['outfielder'], imageUrl: `${webImageBaseUrl}/basNet.jpg` },
   { label: 'トンボ', value: 'dragonfly', positions: ['outfielder'], imageUrl: `${webImageBaseUrl}/dragonfly.jpg` },
   { label: 'トンボ2', value: 'dragonfly2', positions: ['outfielder'], imageUrl: `${webImageBaseUrl}/dragonfly2.jpg` },
   { label: 'ラダー', value: 'ladder', positions: ['outfielder'], imageUrl: `${webImageBaseUrl}/ladder.jpg` }
