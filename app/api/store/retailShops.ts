@@ -28,6 +28,7 @@ const standInFukuokaMain = { name: 'スタンドイン福岡本店', email: 'fuk
 const standInTenjin = { name: 'スタンドイン天神店', email: 'tenjin@haspo.co.jp', selectableBrands: [FIVE] }
 const bandaiSports = { name: 'バンダイスポーツ', email: 'bandai3kobayashi@gmail.com', selectableBrands: [FIVE] }
 const fiveMain = { name: 'FIVE本社用', email: '20kaikai04@gmail.com', selectableBrands: [FIVE] }
+const aobaya = { name: 'アオバヤスポーツ', email: 'ront.aobaya@gmail.com', selectableBrands: [FIVE] }
 // const a = { name: '', email: '', selectableBrands: [FIVE] }
 
 export const retailShops: Retail[] = [
@@ -57,5 +58,6 @@ export const retailShops: Retail[] = [
   standInFukuokaMain,
   standInTenjin,
   bandaiSports,
+  aobaya,
   fiveMain
 ]
