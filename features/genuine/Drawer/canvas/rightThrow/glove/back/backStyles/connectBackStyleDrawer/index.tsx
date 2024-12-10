@@ -2,7 +2,7 @@ import { GenuineState } from '@/features/genuine/types'
 import { thumbForConnectBack, thumbOut } from '../../thumb'
 import { indexFingerLeft, indexFingerRight } from '../../indexFinger'
 import { middleFingerLeft, middleFingerRight } from '../../middleFinger'
-import { ringFingerLeft, ringFingerRight } from '../../ringFinger'
+import { ringFingerIntegrated, ringFingerLeft, ringFingerRight } from '../../ringFinger'
 import { littleFingerLeft, littleFingerLeftForConnectBack, littleFingerRightForConnectBack } from '../../littleFinger'
 import { weltingOfNormal } from '../../welting/normal'
 import { palm } from '../../catchFace'
@@ -57,6 +57,8 @@ export const connectBackStyleDrawer = (ctx: CanvasRenderingContext2D, state: Gen
   if (state.backStyle.value !== 'connect') return
   const isIndexFingerPad = ['indexPad'].includes(state.fingerGuard.value)
   const isMiddleFingerPad = ['middlePad'].includes(state.fingerGuard.value)
+  const isIntegratedRing = state.leatherIntegratedRing.value === 'atRingFinger'
+
   const stitchColor = state.stitch.color
 
   thumbForConnectBack(ctx, state.thumbWeb.color, stitchColor)
@@ -65,11 +67,15 @@ export const connectBackStyleDrawer = (ctx: CanvasRenderingContext2D, state: Gen
   indexFingerLeft(ctx, state.indexMiddle.color) // 人差し指＿左
   middleFingerRight(ctx, state.middleIndex.color) // 中指＿右
   middleFingerLeft(ctx, state.middleRing.color) // 中指＿左
-  ringFingerRight(ctx, state.ringMiddle.color) // 薬指＿右
-  ringFingerLeft(ctx, state.ringLittle.color) // 薬指＿左
+  if (isIntegratedRing) {
+    ringFingerIntegrated(ctx, state.ringMiddle.color) // 薬指＿右
+  } else {
+    ringFingerRight(ctx, state.ringMiddle.color) // 薬指＿右
+    ringFingerLeft(ctx, state.ringLittle.color) // 薬指＿左
+  }
   littleFingerRightForConnectBack(ctx, state.littleRing.color) // 小指＿右
   littleFingerLeftForConnectBack(ctx, state.littleOut.color) // 小指＿左
-  weltingForConnectBack(ctx, state.welting.color) // ハミダシ
+  weltingForConnectBack(ctx, state.welting.color, isIntegratedRing) // ハミダシ
   palm(ctx, state.palm.color, stitchColor, needPalmWrap) // 捕球面 / ウェブ下折り返し
   fingerCrotch(ctx, state.palm.color, state.welting.color, state.baseModel.isFingerCrotch) // 指股
   connectBackBandParts(ctx, state.listBelt.color, stitchColor) // バンドパーツ

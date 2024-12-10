@@ -146,16 +146,19 @@ export const filterSelectableParts = (state: GenuineState, selectableParts: Part
   const filtered1 = isSideLabel ? selectableParts.filter((p) => p.value !== 'listBelt') : selectableParts
   const isLoopOfRingFinger = state.loopOfRingFinger.value === 'loopOfRingFinger'
   const filtered2 = isLoopOfRingFinger ? filtered1 : filtered1.filter((p) => p.value !== 'loopOfRingFingerColor')
-
-  return filtered2
+  const isIntegratedRing = state.leatherIntegratedRing.value === 'atRingFinger'
+  const filtered3 = isIntegratedRing ? filtered2.filter((p) => p.value !== 'ringLittle') : filtered2
+  return filtered3
 }
 
 export const getGenuineBackStyle = (state: GenuineState) => {
   const isMesh = ['normalMesh', 'crownMesh'].includes(state.backStyle.value)
   const isFirstBackStyle = ['MIU-T4'].includes(state.baseModel.productNumber)
+  const isCrownBackStyle = ['crown', 'crownMesh'].includes(state.backStyle.value)
   return {
     isMesh,
-    isFirstBackStyle
+    isFirstBackStyle,
+    isCrownBackStyle
   }
 }
 
@@ -339,6 +342,7 @@ export const getBackStyle = (state: GenuineState) => {
 
 export const getFingerColor = (state: GenuineState) => {
   const { isFirstBackStyle, isCrownBackStyle } = getBackStyle(state)
+  const isIntegratedRing = state.leatherIntegratedRing.value === 'atRingFinger'
   if (isFirstBackStyle) {
     return {
       thumbWebColor: state.thumbIndexMiddleRight.color,
@@ -366,7 +370,7 @@ export const getFingerColor = (state: GenuineState) => {
     indexMiddleColor: state.indexMiddle.color,
     middleIndexColor: state.middleIndex.color,
     middleRingColor: state.middleRing.color,
-    ringLittleColor: state.ringLittle.color
+    ringLittleColor: isIntegratedRing ? state.ringMiddle.color : state.ringLittle.color
   }
 }
 

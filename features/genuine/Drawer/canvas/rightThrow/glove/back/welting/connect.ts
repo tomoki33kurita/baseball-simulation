@@ -1,4 +1,4 @@
-export const weltingForConnectBack = (ctx: CanvasRenderingContext2D, weltingColor: string): void => {
+export const weltingForConnectBack = (ctx: CanvasRenderingContext2D, weltingColor: string, isIntegratedRing: boolean): void => {
   ctx.strokeStyle = '#383838'
   ctx.lineWidth = 0.5
   ctx.fillStyle = weltingColor
@@ -23,15 +23,17 @@ export const weltingForConnectBack = (ctx: CanvasRenderingContext2D, weltingColo
   ctx.closePath()
 
   // 薬指＿中央
-  ctx.beginPath()
-  ctx.moveTo(275, 92) // 薬指先端＿左
-  ctx.quadraticCurveTo(236, 256, 294, 400) // 薬指末端＿左
-  ctx.quadraticCurveTo(297, 400, 298, 400) // 薬指末端＿右
-  ctx.quadraticCurveTo(240, 250, 279, 90) // 薬指先端＿右
-  ctx.quadraticCurveTo(279, 90, 275, 92) // 薬指末端＿左
-  ctx.fill()
-  ctx.stroke()
-  ctx.closePath()
+  if (!isIntegratedRing) {
+    ctx.beginPath()
+    ctx.moveTo(275, 92) // 薬指先端＿左
+    ctx.quadraticCurveTo(236, 256, 294, 400) // 薬指末端＿左
+    ctx.quadraticCurveTo(297, 400, 298, 400) // 薬指末端＿右
+    ctx.quadraticCurveTo(240, 250, 279, 90) // 薬指先端＿右
+    ctx.quadraticCurveTo(279, 90, 275, 92) // 薬指末端＿左
+    ctx.fill()
+    ctx.stroke()
+    ctx.closePath()
+  }
   // 薬指中指の間
   ctx.beginPath()
   ctx.moveTo(305, 262) // 先端＿左

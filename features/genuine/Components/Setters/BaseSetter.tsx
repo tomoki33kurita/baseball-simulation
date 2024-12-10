@@ -79,9 +79,10 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
     webParts: dispatcher('webParts', dispatch)
   }
   const { isPitcher, isGlove, isCatcher, isFirstBaseman } = positionChecker(position)
-  const { isMesh, isFirstBackStyle } = getGenuineBackStyle(state)
+  const { isMesh, isFirstBackStyle, isCrownBackStyle } = getGenuineBackStyle(state)
   const isSelectableWebLaceStyle = ['basket2', 'tNet3'].includes(state.webParts.value)
   const isLoopOfRingFinger = (isGlove && !isFirstBackStyle) || isFirstBaseman
+  const isSelectableLeatherIntegratedRing = isGlove && !isFirstBackStyle && !isCrownBackStyle && !isMesh
 
   return (
     <TabPanel selectedIndex={selectedIndex} index={0}>
@@ -225,7 +226,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         selectedLabel={leatherIntegratedRing.label}
         objects={LEATHER_INTEGRATED_RINGS}
         isError={leatherIntegratedRing.value === 'unselected'}
-        isDisplay={isGlove}
+        isDisplay={isSelectableLeatherIntegratedRing}
         defaultExpanded={leatherIntegratedRing.value === 'unselected'}
         handleChange={handle.leatherIntegratedRing}
       />
