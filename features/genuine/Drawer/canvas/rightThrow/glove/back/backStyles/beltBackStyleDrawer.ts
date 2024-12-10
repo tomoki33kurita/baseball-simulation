@@ -36,7 +36,7 @@ export const beltBackStyleDrawer = (ctx: CanvasRenderingContext2D, state: Genuin
   }
   littleFingerRight(ctx, state.littleRing.color) // 小指＿右
   littleFingerLeft(ctx, state.littleOut.color) // 小指＿左
-  weltingOfNormal(ctx, state.welting.color, isIntegratedRing) // ハミダシ
+  weltingOfNormal(ctx, state.welting.color, isIntegratedRing, state.ringMiddle.color) // ハミダシ
   palm(ctx, state.palm.color, stitchColor, needPalmWrap) // 捕球面 / ウェブ下折り返し
   bindingOfBeltBackStyle(ctx, state.binding.color, stitchColor) // ヘリ革
   bindingOfWrist(ctx, state.binding.color, stitchColor)

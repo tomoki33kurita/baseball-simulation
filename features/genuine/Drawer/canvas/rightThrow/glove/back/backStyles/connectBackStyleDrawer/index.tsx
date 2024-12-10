@@ -75,7 +75,7 @@ export const connectBackStyleDrawer = (ctx: CanvasRenderingContext2D, state: Gen
   }
   littleFingerRightForConnectBack(ctx, state.littleRing.color) // 小指＿右
   littleFingerLeftForConnectBack(ctx, state.littleOut.color) // 小指＿左
-  weltingForConnectBack(ctx, state.welting.color, isIntegratedRing) // ハミダシ
+  weltingForConnectBack(ctx, state.welting.color, isIntegratedRing, state.ringMiddle.color) // ハミダシ
   palm(ctx, state.palm.color, stitchColor, needPalmWrap) // 捕球面 / ウェブ下折り返し
   fingerCrotch(ctx, state.palm.color, state.welting.color, state.baseModel.isFingerCrotch) // 指股
   connectBackBandParts(ctx, state.listBelt.color, stitchColor) // バンドパーツ

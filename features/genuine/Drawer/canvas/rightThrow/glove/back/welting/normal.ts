@@ -1,4 +1,4 @@
-export const weltingOfNormal = (ctx: CanvasRenderingContext2D, weltingColor: string, isIntegratedRing: boolean): void => {
+export const weltingOfNormal = (ctx: CanvasRenderingContext2D, weltingColor: string, isIntegratedRing: boolean, leatherColor: string): void => {
   ctx.strokeStyle = 'gray' //'#383838'
   ctx.lineWidth = 0.5
   ctx.fillStyle = weltingColor
@@ -22,17 +22,29 @@ export const weltingOfNormal = (ctx: CanvasRenderingContext2D, weltingColor: str
   ctx.stroke()
   ctx.closePath()
 
-  if (!isIntegratedRing) {
-    // 薬指＿中央
+  // 薬指＿中央
+  ctx.beginPath()
+  ctx.moveTo(275, 92) // 薬指先端＿左
+  ctx.quadraticCurveTo(236, 256, 294, 400) // 薬指末端＿左
+  ctx.quadraticCurveTo(297, 400, 298, 400) // 薬指末端＿右
+  ctx.quadraticCurveTo(240, 250, 279, 90) // 薬指先端＿右
+  ctx.quadraticCurveTo(279, 90, 275, 92) // 薬指末端＿左
+  ctx.fill()
+  ctx.stroke()
+  ctx.closePath()
+  if (isIntegratedRing) {
+    ctx.fillStyle = leatherColor
+    // ctx.strokeStyle = 'red'
     ctx.beginPath()
-    ctx.moveTo(275, 92) // 薬指先端＿左
-    ctx.quadraticCurveTo(236, 256, 294, 400) // 薬指末端＿左
-    ctx.quadraticCurveTo(297, 400, 298, 400) // 薬指末端＿右
-    ctx.quadraticCurveTo(240, 250, 279, 90) // 薬指先端＿右
-    ctx.quadraticCurveTo(279, 90, 275, 92) // 薬指末端＿左
+    ctx.moveTo(260, 171) // 薬指先端＿左
+    ctx.quadraticCurveTo(244, 232, 264, 302) // 薬指末端＿左
+    ctx.quadraticCurveTo(268, 312, 272, 302) // 薬指末端＿右
+    ctx.quadraticCurveTo(268, 171, 268, 171) // 薬指先端＿右
+    ctx.quadraticCurveTo(260, 171, 260, 171) // 薬指末端＿左
     ctx.fill()
-    ctx.stroke()
+    // ctx.stroke()
     ctx.closePath()
+    ctx.fillStyle = weltingColor
   }
   // 薬指中指の間
   ctx.beginPath()
