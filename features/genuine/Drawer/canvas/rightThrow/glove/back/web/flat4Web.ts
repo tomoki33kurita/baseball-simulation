@@ -30,6 +30,42 @@ export const flat4Web = (ctx: CanvasRenderingContext2D, webColor: string, laceCo
   ctx.stroke()
   ctx.closePath()
 
+  // 表面のデザイン
+  ctx.beginPath()
+  ctx.strokeStyle = '#383838'
+  ctx.moveTo(675, 227) // 左上
+  ctx.quadraticCurveTo(649, 205, 616, 211)
+  ctx.quadraticCurveTo(655, 236, 671, 279)
+  // ctx.quadraticCurveTo()
+  ctx.stroke()
+  ctx.closePath()
+  ctx.beginPath()
+  ctx.strokeStyle = '#FFFFFF'
+  ctx.moveTo(675, 229) // 左上
+  ctx.quadraticCurveTo(649, 207, 616, 213)
+  ctx.quadraticCurveTo(655, 238, 671, 282)
+  // ctx.quadraticCurveTo()
+  ctx.stroke()
+  ctx.closePath()
+
+  // 表面のデザイン2
+  ctx.beginPath()
+  ctx.strokeStyle = '#383838'
+  ctx.moveTo(647, 293) // 左上
+  ctx.quadraticCurveTo(609, 249, 553, 231)
+  ctx.quadraticCurveTo(602, 266, 624, 308)
+  // ctx.quadraticCurveTo()
+  ctx.stroke()
+  ctx.closePath()
+  ctx.beginPath()
+  ctx.strokeStyle = '#FFFFFF'
+  ctx.moveTo(647, 296) // 左上
+  ctx.quadraticCurveTo(609, 252, 553, 234)
+  ctx.quadraticCurveTo(602, 269, 624, 311)
+  // ctx.quadraticCurveTo()
+  ctx.stroke()
+  ctx.closePath()
+
   // stitchここから
   ctx.beginPath()
   ctx.lineWidth = 1.3
@@ -45,6 +81,21 @@ export const flat4Web = (ctx: CanvasRenderingContext2D, webColor: string, laceCo
   ctx.quadraticCurveTo(510, 163, 490, 253)
   ctx.quadraticCurveTo(513, 317, 580, 353)
   ctx.quadraticCurveTo(690, 272, 690, 272)
+
+  // 表面のデザイン1
+  ctx.moveTo(675, 225) // 左上
+  ctx.quadraticCurveTo(649, 203, 608, 211)
+  ctx.quadraticCurveTo(650, 234, 667, 279)
+
+  // 表面のデザイン2
+  ctx.moveTo(647, 291) // 左上
+  ctx.quadraticCurveTo(609, 247, 546, 229)
+  ctx.quadraticCurveTo(595, 270, 620, 308)
+  // ctx.quadraticCurveTo()
+  ctx.stroke()
+  ctx.stroke()
+  ctx.closePath()
+
   ctx.stroke()
   ctx.setLineDash([])
   ctx.strokeStyle = laceColor
