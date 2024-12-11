@@ -33,8 +33,8 @@ export const topSidePartOfWeb = (ctx: CanvasRenderingContext2D, webColor: string
   ctx.quadraticCurveTo(352, 87, 352, 68) // 右＿下
   ctx.quadraticCurveTo(351, 58, 343, 52) // 右＿上
   ctx.quadraticCurveTo(223, 110, 194, 245) // 右＿下
-  ctx.fill()
   ctx.stroke()
+  ctx.fill()
   ctx.closePath()
 
   // stitchここから
