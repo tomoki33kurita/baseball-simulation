@@ -44,7 +44,7 @@ export const generateLiningsGradient = (
   return gradient
 }
 
-export const webDrawUtil = (state: State) => {
+export const webDrawUtil = (state: State): any => {
   // const isUnselectedWeb2 = state?.web2?.value === 'unselected'
   // const web2Color = isUnselectedWeb2 ? state?.web?.color : state?.web2?.color
   const { webParts, web, lace, stitch, baseModel } = state

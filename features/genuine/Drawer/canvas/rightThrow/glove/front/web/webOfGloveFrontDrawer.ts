@@ -28,6 +28,11 @@ import { iNetWeb } from './iNetWeb'
 import { dragonflyWeb } from './dragonflyWeb'
 import { dragonfly2Web } from './dragonfly2Web'
 import { ladderWeb } from './ladderWeb'
+import { onePeaceWeb } from './onePeaceWeb'
+import { basNetWeb } from './basNetWeb'
+import { flat3Web } from './flat3Web'
+import { flat4Web } from './flat4Web'
+import { flat5Web } from './flat5Web'
 
 export const webOfGloveFrontDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
   const webColor = state.web.color
@@ -37,6 +42,9 @@ export const webOfGloveFrontDrawer = (ctx: CanvasRenderingContext2D, state: Genu
   const { webMatcher } = webDrawUtil(state)
   if (webMatcher(['flat'])) flatWeb(ctx, webColor, laceColor, stitchColor)
   if (webMatcher(['flat2'])) flat2Web(ctx, webColor, laceColor, stitchColor)
+  if (webMatcher(['flat3'])) flat3Web(ctx, webColor, laceColor, stitchColor)
+  if (webMatcher(['flat4'])) flat4Web(ctx, webColor, laceColor, stitchColor)
+  if (webMatcher(['flat5'])) flat5Web(ctx, webColor, laceColor, stitchColor)
   if (webMatcher(['basket'])) basketWeb(ctx, webColor, web2Color, laceColor, stitchColor)
   if (webMatcher(['basket2'])) basket2Web(ctx, webColor, web2Color, laceColor, stitchColor)
   if (webMatcher(['twoPeace'])) twoPeaceWeb(ctx, webColor, laceColor, stitchColor)
@@ -49,6 +57,7 @@ export const webOfGloveFrontDrawer = (ctx: CanvasRenderingContext2D, state: Genu
   if (webMatcher(['crossV'])) crossVWeb(ctx, webColor, web2Color, laceColor, stitchColor)
   if (webMatcher(['crossV2'])) crossV2Web(ctx, webColor, web2Color, laceColor, stitchColor)
   if (webMatcher(['h'])) hWeb(ctx, webColor, web2Color, laceColor, stitchColor)
+  if (webMatcher(['onePeace'])) onePeaceWeb(ctx, webColor, web2Color, laceColor, stitchColor)
   if (webMatcher(['uNet'])) uNetWeb(ctx, state)
   if (webMatcher(['uNet2'])) uNet2Web(ctx, state)
 
@@ -56,6 +65,7 @@ export const webOfGloveFrontDrawer = (ctx: CanvasRenderingContext2D, state: Genu
   if (webMatcher(['tNet2'])) tNet2Web(ctx, webColor, web2Color, laceColor, stitchColor)
   if (webMatcher(['tNet3'])) tNet3Web(ctx, webColor, web2Color, laceColor, stitchColor)
   if (webMatcher(['iNet'])) iNetWeb(ctx, webColor, laceColor, stitchColor)
+  if (webMatcher(['basNet'])) basNetWeb(ctx, webColor, web2Color, laceColor, stitchColor)
   if (webMatcher(['dragonfly'])) dragonflyWeb(ctx, webColor, web2Color, laceColor, stitchColor)
   if (webMatcher(['dragonfly2'])) dragonfly2Web(ctx, webColor, web2Color, laceColor, stitchColor)
   if (webMatcher(['ladder'])) ladderWeb(ctx, webColor, web2Color, laceColor, stitchColor)
