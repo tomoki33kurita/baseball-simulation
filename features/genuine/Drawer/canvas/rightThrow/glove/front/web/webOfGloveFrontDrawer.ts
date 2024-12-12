@@ -210,6 +210,14 @@ export const rightLaceOfNetWebDrawer = (ctx: CanvasRenderingContext2D, state: Ge
   const laceColor = state.lace.color
   const stitchColor = state.stitch.color
 
+  if (webMatcher(['cross2'])) {
+    underWeb(ctx, laceColor, 10, 0) // ウェブ下＿右
+    underWeb(ctx, laceColor, -11, 32) // ウェブ下＿中央
+    underWeb(ctx, laceColor, -32, 64) // ウェブ下＿左
+    indexWrapBack(ctx, laceColor, -10, -100) // 上
+    indexWrapBack(ctx, laceColor, 0, 0) // 下
+  }
+
   if (webMatcher(['tNet2'])) laceOfNetWeb(ctx, laceColor)
   if (webMatcher(['tNet3'])) laceOfNetWebDoubleWithJoint(ctx, webColor, web2Color, laceColor, stitchColor)
   if (webMatcher(['tNet', 'tNet2', 'tNet3'])) {

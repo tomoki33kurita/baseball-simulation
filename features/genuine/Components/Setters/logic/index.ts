@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useDebounce } from 'use-debounce'
-import { Embroidery, EmbroideryKey } from '@/types'
+import { Embroidery, EmbroideryKey, Position, WebParts } from '@/types'
 import { DrawerIndex, GenuineState, PartsItem, PartsKey } from '@/features/genuine/types'
 import {
   BACK_PARTS,
@@ -18,6 +18,7 @@ import { isHalfWidthCharChecker } from '@/features/genuine/Drawer/canvas/back/us
 import { SET_EMBROIDERIES } from '@/Constants'
 import { unselectedState } from '@/features/genuine/reducer/infielder'
 import { positionChecker } from '@/util/logic'
+import { WEB_PARTS } from '@/features/genuine/Constants/base'
 
 export const getComponentParts = (state: GenuineState) => {
   const {
@@ -159,6 +160,15 @@ export const getGenuineBackStyle = (state: GenuineState) => {
     isMesh,
     isFirstBackStyle,
     isCrownBackStyle
+  }
+}
+
+export const getGenuineWebParts = (isFirstBaseman: boolean) => {
+  const findFirstBaseman = (p: Position) => p === 'firstBaseman'
+  const switchWebParts = (p: WebParts) => (isFirstBaseman ? p.positions.some(findFirstBaseman) : !p.positions.every(findFirstBaseman))
+  const selectableWebParts = WEB_PARTS.filter(switchWebParts)
+  return {
+    selectableWebParts
   }
 }
 

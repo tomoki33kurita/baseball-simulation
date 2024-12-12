@@ -1,6 +1,6 @@
 import React from 'react'
 import { GenuineState } from '@/features/genuine/types'
-import { Position } from '@/types'
+import { Position, WebParts } from '@/types'
 import {
   DOMINANT_ARM_BUTTON_OPTION,
   DOMINANT_ARMS,
@@ -31,7 +31,7 @@ import { SelectCardWithImage } from '@/components/Setters/SelectCardWithImage'
 import { TabPanel } from '@/components/TabPanel'
 import { dispatcher } from './dispatcher'
 import { positionChecker } from '@/util/logic'
-import { getGenuineBackStyle } from './logic'
+import { getGenuineBackStyle, getGenuineWebParts } from './logic'
 
 type Props = {
   state: GenuineState
@@ -80,6 +80,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
   }
   const { isPitcher, isGlove, isCatcher, isFirstBaseman } = positionChecker(position)
   const { isMesh, isFirstBackStyle, isCrownBackStyle } = getGenuineBackStyle(state)
+  const { selectableWebParts } = getGenuineWebParts(isFirstBaseman)
   const isSelectableWebLaceStyle = ['basket2', 'tNet3'].includes(state.webParts.value)
   const isLoopOfRingFinger = (isGlove && !isFirstBackStyle) || isFirstBaseman
   const isSelectableLeatherIntegratedRing = isGlove && !isFirstBackStyle && !isCrownBackStyle && !isMesh
@@ -160,7 +161,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
       <SelectCardWithImage
         summary={'ウェブパーツ'} // webParts
         selectedLabel={webParts.label}
-        objects={WEB_PARTS.filter((p) => (isFirstBaseman ? p.positions.includes('firstBaseman') : !p.positions.includes('firstBaseman')))}
+        objects={selectableWebParts}
         isError={webParts.value === 'unselected'}
         defaultExpanded={webParts.value === 'unselected'}
         isDisplay={!isCatcher}
