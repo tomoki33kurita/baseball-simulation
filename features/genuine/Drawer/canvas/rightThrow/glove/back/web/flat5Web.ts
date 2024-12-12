@@ -30,6 +30,20 @@ export const flat5Web = (ctx: CanvasRenderingContext2D, webColor: string, laceCo
   ctx.stroke()
   ctx.closePath()
 
+  // ウェブ上のデザイン
+  ctx.strokeStyle = '#ffffff'
+  ctx.beginPath()
+  ctx.moveTo(581, 101) // 左上
+  ctx.quadraticCurveTo(540, 164, 520, 241)
+  ctx.quadraticCurveTo(512, 262, 545, 297)
+  ctx.quadraticCurveTo(579, 327, 593, 311)
+  ctx.quadraticCurveTo(682, 242, 682, 242)
+  // ctx.quadraticCurveTo()
+  ctx.fill()
+  ctx.stroke()
+  ctx.closePath()
+  ctx.strokeStyle = '#383838'
+
   // stitchここから
   ctx.beginPath()
   ctx.lineWidth = 1.3
@@ -45,6 +59,52 @@ export const flat5Web = (ctx: CanvasRenderingContext2D, webColor: string, laceCo
   ctx.quadraticCurveTo(510, 163, 490, 253)
   ctx.quadraticCurveTo(513, 317, 580, 353)
   ctx.quadraticCurveTo(690, 272, 690, 272)
+
+  //
+  ctx.moveTo(576, 100) // 左上
+  ctx.quadraticCurveTo(539, 153, 518, 231)
+  ctx.quadraticCurveTo(506, 265, 538, 296)
+  ctx.quadraticCurveTo(570, 319, 570, 319)
+  ctx.quadraticCurveTo(579, 324, 602, 309)
+  ctx.quadraticCurveTo(682, 248, 682, 248)
+  // ctx.quadraticCurveTo()
+
+  // 左上→右下
+  ctx.moveTo(524, 234) // 左上
+  ctx.quadraticCurveTo(528, 277, 528, 277)
+  ctx.moveTo(533, 198) // 左上
+  ctx.quadraticCurveTo(543, 247, 543, 295)
+  ctx.moveTo(545, 166) // 左上
+  ctx.quadraticCurveTo(561, 233, 561, 307)
+  ctx.moveTo(564, 129) // 左上
+  ctx.quadraticCurveTo(582, 203, 587, 315)
+  ctx.moveTo(583, 106) // 左上
+  ctx.quadraticCurveTo(609, 195, 609, 301)
+  ctx.moveTo(615, 134) // 左上
+  ctx.quadraticCurveTo(632, 209, 629, 286)
+  ctx.moveTo(643, 166) // 左上
+  ctx.quadraticCurveTo(657, 223, 652, 273)
+  ctx.moveTo(668, 211) // 左上
+  ctx.quadraticCurveTo(675, 245, 671, 255)
+
+  // 左下→右上
+  ctx.moveTo(570, 112) // 左下
+  ctx.quadraticCurveTo(590, 108, 590, 108)
+  ctx.moveTo(552, 138) // 左下
+  ctx.quadraticCurveTo(613, 131, 613, 131)
+  ctx.moveTo(539, 170) // 左下
+  ctx.quadraticCurveTo(638, 160, 638, 160)
+  ctx.moveTo(527, 202) // 左下
+  ctx.quadraticCurveTo(658, 189, 658, 189)
+  ctx.moveTo(519, 231) // 左下
+  ctx.quadraticCurveTo(670, 214, 670, 214)
+  ctx.moveTo(515, 260) // 左下
+  ctx.quadraticCurveTo(681, 241, 681, 241)
+  ctx.moveTo(527, 284) // 左下
+  ctx.quadraticCurveTo(652, 270, 652, 270)
+  ctx.moveTo(553, 306) // 左下
+  ctx.quadraticCurveTo(611, 300, 611, 300)
+
   ctx.stroke()
   ctx.setLineDash([])
   ctx.strokeStyle = laceColor
