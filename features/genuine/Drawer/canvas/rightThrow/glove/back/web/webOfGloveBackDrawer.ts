@@ -31,6 +31,7 @@ import { basNetWeb } from './basNetWeb'
 import { flat3Web } from './flat3Web'
 import { flat4Web } from './flat4Web'
 import { flat5Web } from './flat5Web'
+import { flat6Web } from './flat6Web'
 
 export const webOfGloveBackDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
   const laceColor = state.lace.color
@@ -44,6 +45,7 @@ export const webOfGloveBackDrawer = (ctx: CanvasRenderingContext2D, state: Genui
   if (webMatcher(['flat3'])) flat3Web(ctx, webColor, laceColor, stitchColor)
   if (webMatcher(['flat4'])) flat4Web(ctx, webColor, laceColor, stitchColor)
   if (webMatcher(['flat5'])) flat5Web(ctx, webColor, laceColor, stitchColor)
+  if (webMatcher(['flat6'])) flat6Web(ctx, webColor, laceColor, stitchColor)
   if (webMatcher(['basket'])) basketWeb(ctx, webColor, web2Color, laceColor, stitchColor)
   if (webMatcher(['basket2'])) basket2Web(ctx, webColor, web2Color, laceColor, stitchColor)
   if (webMatcher(['twoPeace'])) twoPeaceWeb(ctx, webColor, laceColor, stitchColor)

@@ -33,6 +33,7 @@ import { basNetWeb } from './basNetWeb'
 import { flat3Web } from './flat3Web'
 import { flat4Web } from './flat4Web'
 import { flat5Web } from './flat5Web'
+import { flat6Web } from './flat6Web'
 
 export const webOfGloveFrontDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
   const webColor = state.web.color
@@ -45,6 +46,7 @@ export const webOfGloveFrontDrawer = (ctx: CanvasRenderingContext2D, state: Genu
   if (webMatcher(['flat3'])) flat3Web(ctx, webColor, laceColor, stitchColor)
   if (webMatcher(['flat4'])) flat4Web(ctx, webColor, laceColor, stitchColor)
   if (webMatcher(['flat5'])) flat5Web(ctx, webColor, laceColor, stitchColor)
+  if (webMatcher(['flat6'])) flat6Web(ctx, webColor, laceColor, stitchColor)
   if (webMatcher(['basket'])) basketWeb(ctx, webColor, web2Color, laceColor, stitchColor)
   if (webMatcher(['basket2'])) basket2Web(ctx, webColor, web2Color, laceColor, stitchColor)
   if (webMatcher(['twoPeace'])) twoPeaceWeb(ctx, webColor, laceColor, stitchColor)
@@ -216,16 +218,29 @@ export const rightLaceOfNetWebDrawer = (ctx: CanvasRenderingContext2D, state: Ge
     underWeb(ctx, laceColor, -32, 64) // ウェブ下＿左
     indexWrapBack(ctx, laceColor, -10, -100) // 上
     indexWrapBack(ctx, laceColor, 0, 0) // 下
+    return
   }
 
   if (webMatcher(['tNet2'])) laceOfNetWeb(ctx, laceColor)
   if (webMatcher(['tNet3'])) laceOfNetWebDoubleWithJoint(ctx, webColor, web2Color, laceColor, stitchColor)
-  if (webMatcher(['tNet', 'tNet2', 'tNet3'])) {
+  if (webMatcher(['tNet', 'tNet3'])) {
     // laceOfNetWebDouble(ctx, webColor, laceColor, stitchColor)
     underWebForNetWeb1(ctx, laceColor, 0, 0)
     underWebForNetWeb1(ctx, laceColor, -17, 30)
     underWebForNetWeb2(ctx, laceColor, -133, 95, -20)
     underWebForNetWeb2(ctx, laceColor, -15, 28, 0)
+    return
+  }
+  if (webMatcher(['tNet2'])) {
+    underWeb(ctx, laceColor, 10, 0) // ウェブ下＿右
+    underWeb(ctx, laceColor, -32, 64) // ウェブ下＿左
+    indexWrapBack(ctx, laceColor, -10, -100) // 上
+    // 親指側＿一番手前の革紐
+    laceParts1(ctx, laceColor, 45, 75) // 上4
+    laceParts1(ctx, laceColor, 32, 50) // 上3
+    laceParts1(ctx, laceColor, 20, 30) // 上2
+    laceParts1(ctx, laceColor, -2, -5) // 上1
+
     return
   }
   if (webMatcher(['dragonfly', 'dragonfly2'])) {
