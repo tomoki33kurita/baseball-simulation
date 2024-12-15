@@ -15,7 +15,9 @@ export const lace = (ctx: CanvasRenderingContext2D, laceColor: string, state: Ge
   thumbWrapBack(ctx, laceColor, -110, 165, -20) // 根元側の折り返しの下の下
   thumbTopOver(ctx, laceColor)
   thumbTop(ctx, laceColor)
-  indexTopOver(ctx, laceColor) // 人差し指先端＿ウェブ繋ぎこみ奥
+  if (state.webParts.value !== 'iNet') {
+    indexTopOver(ctx, laceColor) // 人差し指先端＿ウェブ繋ぎこみ奥
+  }
   indexTop(ctx, laceColor) // 人差し指先端＿ウェブ繋ぎこみ手前
   knotUpward(ctx, laceColor)
   knotDownward(ctx, laceColor)

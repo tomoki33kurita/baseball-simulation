@@ -5,18 +5,18 @@ import { verticalPartsOfWebCircleEndWithEdge } from './parts/verticalParts'
 export const iNetWeb = (ctx: CanvasRenderingContext2D, webColor: string, bindingColor: string, laceColor: string, stitchColor: string): void => {
   verticalPartsOfWebCircleEndWithEdge(ctx, webColor, bindingColor, stitchColor, 17, -37, 3)
 
-  lacePartsOfWeb1(ctx, laceColor, 15, -22, 0, 1)
   iNetTopRollLace(ctx, laceColor, -80, -50)
   iNetTopRollLace(ctx, laceColor, -70, -46)
   iNetTopRollLace(ctx, laceColor, -59, -39)
   iNetTopRollLace(ctx, laceColor, -48, -32)
+  iNetTopLace(ctx, laceColor) // 中央
+
+  lacePartsOfWeb1(ctx, laceColor, 15, -22, 0, 1)
   iNetTopRollLace(ctx, laceColor, -38, -28)
   iNetTopRollLace(ctx, laceColor, -28, -23)
   iNetTopRollLace(ctx, laceColor, -20, -15)
   iNetTopRollLace(ctx, laceColor, -12, -6)
   iNetTopRollLace(ctx, laceColor, -4, 3)
-  iNetTopLace(ctx, laceColor) // 中央
-
   lacePartsOfWeb1(ctx, laceColor, -3, 2, 0, 1)
   lacePartsOfWeb1(ctx, laceColor, -20, 34, 0, 1)
   lacePartsOfWeb1(ctx, laceColor, -43, 64, 0, 1)

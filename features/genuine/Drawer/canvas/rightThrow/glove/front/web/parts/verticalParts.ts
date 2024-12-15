@@ -195,3 +195,56 @@ export const verticalPartsForBasNet = (ctx: CanvasRenderingContext2D, webColor: 
   ctx.strokeStyle = '#383838'
   // stitchここまで
 }
+
+export const verticalPartsOfWebWithCenterBinding = (
+  ctx: CanvasRenderingContext2D,
+  webColor: string,
+  bindingColor: string,
+  stitchColor: string
+): void => {
+  ctx.fillStyle = bindingColor
+  ctx.strokeStyle = '#383838'
+  // 縦パーツ＿ヘリ革
+  ctx.beginPath()
+  ctx.moveTo(237, 175) // 左＿上
+  ctx.quadraticCurveTo(273, 285, 310, 355) // 左＿下
+  ctx.quadraticCurveTo(347, 322, 347, 309) // 右＿下
+  ctx.quadraticCurveTo(316, 241, 284, 134) // 右＿上
+  ctx.quadraticCurveTo(268, 111, 246, 127) // 中央＿上
+  ctx.quadraticCurveTo(227, 140, 237, 175) // 左＿上
+  ctx.fill()
+  ctx.stroke()
+  ctx.closePath()
+
+  // 縦パーツ本体
+  ctx.fillStyle = webColor
+  ctx.beginPath()
+  ctx.moveTo(247, 167) // 左＿上
+  ctx.quadraticCurveTo(270, 254, 319, 349) // 左＿下
+  ctx.quadraticCurveTo(338, 312, 338, 312) // 右＿下
+  ctx.quadraticCurveTo(308, 243, 277, 147) // 右＿上
+  ctx.quadraticCurveTo(268, 124, 254, 136) // 中央＿上
+  ctx.quadraticCurveTo(239, 145, 247, 167) // 左＿上
+  ctx.fill()
+  ctx.stroke()
+  ctx.closePath()
+
+  // stitchここから
+  ctx.beginPath()
+  ctx.lineWidth = 1.3
+  ctx.strokeStyle = stitchColor
+  ctx.setLineDash([3, 3])
+  ctx.moveTo(249, 167) // 左＿上
+  ctx.quadraticCurveTo(272, 254, 321, 349) // 左＿下
+  ctx.moveTo(274, 146) // 右＿上
+  ctx.quadraticCurveTo(332, 314, 336, 314) // 右＿下
+  ctx.moveTo(249, 167) // 左
+  ctx.quadraticCurveTo(243, 146, 254, 138) // 中央
+  ctx.quadraticCurveTo(270, 130, 274, 146)
+  ctx.stroke()
+  ctx.setLineDash([])
+  ctx.closePath()
+  ctx.lineWidth = 0.8
+  ctx.strokeStyle = '#383838'
+  // stitchここまで
+}

@@ -66,7 +66,7 @@ export const webOfGloveFrontDrawer = (ctx: CanvasRenderingContext2D, state: Genu
   if (webMatcher(['tNet'])) tNetWeb(ctx, webColor, web2Color, laceColor, stitchColor)
   if (webMatcher(['tNet2'])) tNet2Web(ctx, webColor, web2Color, laceColor, stitchColor)
   if (webMatcher(['tNet3'])) tNet3Web(ctx, webColor, web2Color, laceColor, stitchColor)
-  if (webMatcher(['iNet'])) iNetWeb(ctx, webColor, laceColor, stitchColor)
+  if (webMatcher(['iNet'])) iNetWeb(ctx, webColor, laceColor, state.binding.color, stitchColor)
   if (webMatcher(['basNet'])) basNetWeb(ctx, webColor, web2Color, laceColor, stitchColor)
   if (webMatcher(['dragonfly'])) dragonflyWeb(ctx, webColor, web2Color, laceColor, stitchColor)
   if (webMatcher(['dragonfly2'])) dragonfly2Web(ctx, webColor, web2Color, laceColor, stitchColor)
@@ -205,6 +205,16 @@ const laceOfNetWeb = (ctx: CanvasRenderingContext2D, laceColor: string, x: numbe
   laceParts6(ctx, laceColor, 14 + x, 84 + y) // 上5
 }
 
+const laceOfNetWeb2 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
+  // ネットウェブ用の革紐最右
+  laceParts6(ctx, laceColor, -4 + x, -50 + y) // 上0
+  laceParts6(ctx, laceColor, -2 + x, -25 + y) // 上1
+  laceParts6(ctx, laceColor, 0 + x, 0 + y) // 上2
+  laceParts6(ctx, laceColor, 5 + x, 27 + y) // 上3
+  laceParts6(ctx, laceColor, 8 + x, 55 + y) // 上4
+  laceParts6(ctx, laceColor, 14 + x, 84 + y) // 上5
+}
+
 export const rightLaceOfNetWebDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
   const { webMatcher } = webDrawUtil(state)
   const webColor = state.web.color
@@ -240,6 +250,17 @@ export const rightLaceOfNetWebDrawer = (ctx: CanvasRenderingContext2D, state: Ge
     underWebForNetWeb1(ctx, laceColor, -17, 30)
     underWebForNetWeb2(ctx, laceColor, -133, 95, -20)
     underWebForNetWeb2(ctx, laceColor, -15, 28, 0)
+    return
+  }
+  if (webMatcher(['iNet'])) {
+    laceOfNetWeb2(ctx, laceColor, 0, 0)
+    underWeb(ctx, laceColor, 10, 0) // ウェブ下＿右
+    underWeb(ctx, laceColor, -32, 64) // ウェブ下＿左
+    // 親指側＿一番手前の革紐
+    laceParts1(ctx, laceColor, 45, 75) // 上4
+    laceParts1(ctx, laceColor, 32, 50) // 上3
+    laceParts1(ctx, laceColor, 20, 30) // 上2
+    laceParts1(ctx, laceColor, -2, -5) // 上1
     return
   }
   if (webMatcher(['basNet'])) {
@@ -280,6 +301,7 @@ export const rightLaceOfNetWebDrawer = (ctx: CanvasRenderingContext2D, state: Ge
 
 export const topLaceDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
   const laceColor = state.lace.color
+  if (state.webParts.value === 'iNet') return
   if (state.webLaceStyle.value === 'cross') {
     topCrossLaceFront(ctx, laceColor)
   } else {
