@@ -65,12 +65,13 @@ export const webOfGloveBackDrawer = (ctx: CanvasRenderingContext2D, state: Genui
   if (webMatcher(['tNet'])) tNetWeb(ctx, webColor, web2Color, laceColor, stitchColor)
   if (webMatcher(['tNet2'])) tNet2Web(ctx, webColor, web2Color, laceColor, stitchColor)
   if (webMatcher(['tNet3'])) tNet3Web(ctx, webColor, web2Color, laceColor, stitchColor)
-  if (webMatcher(['iNet'])) iNetWeb(ctx, webColor, laceColor, stitchColor)
+  if (webMatcher(['iNet'])) iNetWeb(ctx, webColor, state.binding.color, laceColor, stitchColor)
   if (webMatcher(['basNet'])) basNetWeb(ctx, webColor, web2Color, laceColor, stitchColor)
   if (webMatcher(['dragonfly'])) dragonflyWeb(ctx, webColor, web2Color, laceColor, stitchColor)
   if (webMatcher(['dragonfly2'])) dragonfly2Web(ctx, webColor, web2Color, laceColor, stitchColor)
   if (webMatcher(['ladder'])) ladderWeb(ctx, webColor, web2Color, laceColor, stitchColor)
 
+  if (webMatcher(['iNet'])) return
   if (state.webLaceStyle.value === 'cross') {
     topCrossLace(ctx, laceColor, 0, 0)
   } else {

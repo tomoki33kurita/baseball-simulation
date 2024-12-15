@@ -336,6 +336,68 @@ export const verticalPartsOfWebCircleEnd = (ctx: CanvasRenderingContext2D, webCo
   // stitchここまで
 }
 
+export const verticalPartsOfWebCircleEndWithEdge = (
+  ctx: CanvasRenderingContext2D,
+  webColor: string,
+  bindingColor: string,
+  stitchColor: string,
+  x: number,
+  y: number,
+  rotate: number
+): void => {
+  ctx.fillStyle = bindingColor
+  ctx.save()
+  ctx.rotate((rotate * Math.PI) / 180)
+
+  // 縦パーツ
+  ctx.beginPath()
+  ctx.moveTo(630 + x, 120 + y) //左上
+  ctx.quadraticCurveTo(492 + x, 310 + y, 492 + x, 310 + y) //左下
+  ctx.quadraticCurveTo(482 + x, 357 + y, 536 + x, 356 + y) //右下
+  ctx.quadraticCurveTo(668 + x, 176 + y, 668 + x, 176 + y) //右上
+  ctx.quadraticCurveTo(682 + x, 163 + y, 673 + x, 137 + y) // 中央＿上
+  ctx.quadraticCurveTo(650 + x, 103 + y, 630 + x, 120 + y) //左上
+  ctx.fill()
+  ctx.stroke()
+  ctx.closePath()
+
+  // 縦パーツ_ヘリ革想定ここから
+  ctx.beginPath()
+  ctx.fillStyle = webColor
+  ctx.moveTo(639 + x, 124 + y) //左上
+  ctx.quadraticCurveTo(503 + x, 311 + y, 503 + x, 311 + y)
+  ctx.quadraticCurveTo(490 + x, 345 + y, 529 + x, 348 + y)
+  ctx.quadraticCurveTo(665 + x, 161 + y, 665 + x, 161 + y)
+  ctx.quadraticCurveTo(670 + x, 130 + y, 639 + x, 124 + y)
+  // ctx.quadraticCurveTo()
+  // ctx.quadraticCurveTo()
+  ctx.fill()
+  ctx.stroke()
+  ctx.closePath()
+  // // ヘリ革想定ここまで
+  ctx.fillStyle = webColor
+
+  // stitchここから
+  ctx.beginPath()
+  ctx.lineWidth = 1.3
+  ctx.strokeStyle = stitchColor
+  ctx.setLineDash([3, 3])
+  // 縦＿ヘリ革の内側
+  ctx.moveTo(640 + x, 127 + y) // 左上
+  ctx.quadraticCurveTo(505 + x, 315 + y, 505 + x, 315 + y) // 左下
+  ctx.quadraticCurveTo(498 + x, 347 + y, 529 + x, 343 + y) // 右下
+  ctx.quadraticCurveTo(662 + x, 161 + y, 662 + x, 161 + y) // 右上
+  ctx.quadraticCurveTo(667 + x, 133 + y, 640 + x, 127 + y) // 右上
+
+  ctx.stroke()
+  ctx.setLineDash([])
+  ctx.strokeStyle = '#383838'
+  ctx.closePath()
+  // stitchここまで
+  ctx.restore()
+  ctx.lineWidth = 0.8
+}
+
 export const verticalPartForBasNet = (
   ctx: CanvasRenderingContext2D,
   webColor: string,

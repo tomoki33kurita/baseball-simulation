@@ -96,6 +96,7 @@ export const crossLaceForThumb = (ctx: CanvasRenderingContext2D, color: string, 
   ctx.closePath()
   ctx.restore()
 
+  ctx.fillStyle = '#ffffff'
   ctx.beginPath()
   ctx.arc(442, 519, 4, 0, 4 * Math.PI)
   ctx.stroke()
