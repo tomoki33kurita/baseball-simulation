@@ -78,7 +78,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
     fingerGuard: dispatcher('fingerGuard', dispatch),
     webParts: dispatcher('webParts', dispatch)
   }
-  const { isPitcher, isGlove, isCatcher, isFirstBaseman } = positionChecker(position)
+  const { isGlove, isMitt, isPitcher, isCatcher, isFirstBaseman } = positionChecker(position)
   const { isMesh, isFirstBackStyle, isCrownBackStyle } = getGenuineBackStyle(state)
   const { selectableWebParts } = getGenuineWebParts(isFirstBaseman)
   const isSelectableWebLaceStyle = ['basket2', 'tNet3'].includes(state.webParts.value)
@@ -209,7 +209,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         selectedLabel={bankLaceDirection.label}
         objects={BANK_LACE_DIRECTIONS}
         isError={bankLaceDirection.value === 'unselected'}
-        isDisplay={!isCatcher}
+        isDisplay={!isMitt}
         defaultExpanded={bankLaceDirection.value === 'unselected'}
         handleChange={handle.bankLaceDirection}
       />

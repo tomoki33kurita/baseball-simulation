@@ -22,7 +22,7 @@ export const getGenuineBaseCells = (
     label: productNumber,
     value: productNumber
   }
-  const { isGlove, isCatcher, isFirstBaseman } = positionChecker(state.baseModel.position)
+  const { isGlove, isMitt, isCatcher, isFirstBaseman } = positionChecker(state.baseModel.position)
   const isMeshSpecified = ['normalMesh', 'crownMesh'].includes(state.backStyle.value)
   const { isFirstBackStyle, isCrownBackStyle, isMesh } = getGenuineBackStyle(state)
   const isLoopOfRingFinger = (isGlove && !isFirstBackStyle) || isFirstBaseman
@@ -47,7 +47,7 @@ export const getGenuineBaseCells = (
         isGlove ? genGloveBaseCell('背面紐通し', state.backLaceStyle) : dummy,
         isGlove ? genGloveBaseCell('土手芯', state.materialPack) : dummy,
         genGloveBaseCell('芯材の硬さ', state.coreHardness),
-        isCatcher ? dummy : genGloveBaseCell('手口巻スタイル', state.bankLaceDirection),
+        isMitt ? dummy : genGloveBaseCell('手口巻スタイル', state.bankLaceDirection),
         isLoopOfRingFinger ? genGloveBaseCell('薬指リング', state.loopOfRingFinger) : dummy,
         isSelectableLeatherIntegratedRing ? genGloveBaseCell('薬指革一体型仕様', state.leatherIntegratedRing) : dummy
       ].filter((cell) => cell.value !== dummy.value)

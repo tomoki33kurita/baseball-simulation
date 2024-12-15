@@ -106,6 +106,7 @@ export const getGenuineColorCells = (state: GenuineState) => {
   const isSideLabel = ['normalSide', 'directEmbroiderySide'].includes(state.genuineLabel.value)
   const isLoopOfRingFinger = state.loopOfRingFinger.value === 'loopOfRingFinger'
   const isINet = state.webParts.value === 'iNet'
+  const { isFirstBaseman } = positionChecker(state.baseModel.position)
 
   return [
     genGloveColorCell('捕球面', state.palm, 'palm'),
@@ -118,7 +119,7 @@ export const getGenuineColorCells = (state: GenuineState) => {
     ...getFingerParts(state),
     isSideLabel ? dummy : genGloveColorCell('バンド', state.listBelt, 'listBelt'),
     isLoopOfRingFinger ? genGloveColorCell('薬指リング', state.loopOfRingFingerColor, 'loopOfRingFingerColor') : dummy,
-    genGloveColorCell('ハミダシ', state.welting, 'welting'),
+    isFirstBaseman ? dummy : genGloveColorCell('ハミダシ', state.welting, 'welting'),
     genGloveColorCell('ヘリ革', state.binding, 'binding'),
     genGloveColorCell('ステッチ', state.stitch, 'stitch'),
     genGloveColorCell('革紐', state.lace, 'lace'),
