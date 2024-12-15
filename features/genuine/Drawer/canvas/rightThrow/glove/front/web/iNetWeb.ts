@@ -79,8 +79,8 @@ export const iNetWeb = (ctx: CanvasRenderingContext2D, webColor: string, laceCol
   ctx.lineWidth = 1
   verticalPartsOfWebWithCenterBinding(ctx, webColor, bindingColor, stitchColor)
   // laceここから
-  laceParts0(ctx, laceColor, -9, -42) // ウェブ縦左上
-  laceParts0(ctx, laceColor, -3, -15) // ウェブ縦左上
+  laceParts0(ctx, laceColor, -9, -42)
+  laceParts0(ctx, laceColor, -3, -15)
   laceParts2(ctx, laceColor, 7, 9)
   laceParts2(ctx, laceColor, 22, 38)
   laceParts2(ctx, laceColor, 32, 67)
@@ -91,7 +91,7 @@ export const iNetWeb = (ctx: CanvasRenderingContext2D, webColor: string, laceCol
   laceParts3(ctx, laceColor, 8, 22) // 上3
   laceParts3(ctx, laceColor, -3, -8) // 上2
   laceParts3(ctx, laceColor, -12, -36) // 上1
-  laceParts3(ctx, laceColor, -15, -62) // 上1
+  laceParts3(ctx, laceColor, -16, -66) // 上1
 
   laceParts4(ctx, laceColor, 29, 80) // 上5
   laceParts4(ctx, laceColor, 21, 57) // 上4
