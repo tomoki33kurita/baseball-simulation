@@ -9,6 +9,7 @@ export const genuineLabelDrawer = (ctx: CanvasRenderingContext2D | null, state: 
   const { isFirstBackStyle, isConnectBackStyle } = getBackStyle(state)
   const { isCatcher } = positionChecker(state.baseModel.position)
   const isUnselectedBackStyle = state.backStyle.value === 'unselected'
+  if (state.genuineLabel.value === 'unselected') return
 
   if (isCatcher) {
     if (isUnselectedBackStyle) {
@@ -31,10 +32,10 @@ export const genuineLabelDrawer = (ctx: CanvasRenderingContext2D | null, state: 
       case 'tmBack':
         genuineLabel(ctx, state, 100, -10, 15, 0.9)
         return
+      case 'connect':
+        genuineLabel(ctx, state, 50, 60, 0, 0.9)
+        return
     }
-
-    genuineLabel(ctx, state, 50, 60, 0, 0.9)
-    return
   }
 
   if (isFirstBackStyle) {
