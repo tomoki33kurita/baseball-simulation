@@ -196,13 +196,13 @@ const underWebForNetWeb2 = (ctx: CanvasRenderingContext2D, color: string, x: num
   ctx.restore()
 }
 
-const laceOfNetWeb = (ctx: CanvasRenderingContext2D, laceColor: string): void => {
+const laceOfNetWeb = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
   // ネットウェブ用の革紐最右
-  laceParts6(ctx, laceColor, -2, -25) // 上1
-  laceParts6(ctx, laceColor, 0, 0) // 上2
-  laceParts6(ctx, laceColor, 5, 27) // 上3
-  laceParts6(ctx, laceColor, 8, 55) // 上4
-  laceParts6(ctx, laceColor, 14, 84) // 上5
+  laceParts6(ctx, laceColor, -2 + x, -25 + y) // 上1
+  laceParts6(ctx, laceColor, 0 + x, 0 + y) // 上2
+  laceParts6(ctx, laceColor, 5 + x, 27 + y) // 上3
+  laceParts6(ctx, laceColor, 8 + x, 55 + y) // 上4
+  laceParts6(ctx, laceColor, 14 + x, 84 + y) // 上5
 }
 
 export const rightLaceOfNetWebDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
@@ -221,17 +221,8 @@ export const rightLaceOfNetWebDrawer = (ctx: CanvasRenderingContext2D, state: Ge
     return
   }
 
-  if (webMatcher(['tNet2'])) laceOfNetWeb(ctx, laceColor)
-  if (webMatcher(['tNet3'])) laceOfNetWebDoubleWithJoint(ctx, webColor, web2Color, laceColor, stitchColor)
-  if (webMatcher(['tNet', 'tNet3'])) {
-    // laceOfNetWebDouble(ctx, webColor, laceColor, stitchColor)
-    underWebForNetWeb1(ctx, laceColor, 0, 0)
-    underWebForNetWeb1(ctx, laceColor, -17, 30)
-    underWebForNetWeb2(ctx, laceColor, -133, 95, -20)
-    underWebForNetWeb2(ctx, laceColor, -15, 28, 0)
-    return
-  }
-  if (webMatcher(['tNet2'])) {
+  if (webMatcher(['tNet', 'tNet2'])) {
+    laceOfNetWeb(ctx, laceColor, 0, 0)
     underWeb(ctx, laceColor, 10, 0) // ウェブ下＿右
     underWeb(ctx, laceColor, -32, 64) // ウェブ下＿左
     indexWrapBack(ctx, laceColor, -10, -100) // 上
@@ -240,9 +231,31 @@ export const rightLaceOfNetWebDrawer = (ctx: CanvasRenderingContext2D, state: Ge
     laceParts1(ctx, laceColor, 32, 50) // 上3
     laceParts1(ctx, laceColor, 20, 30) // 上2
     laceParts1(ctx, laceColor, -2, -5) // 上1
+    return
+  }
+  if (webMatcher(['tNet3'])) {
+    laceOfNetWebDoubleWithJoint(ctx, webColor, web2Color, laceColor, stitchColor)
+    // laceOfNetWebDouble(ctx, webColor, laceColor, stitchColor)
+    underWebForNetWeb1(ctx, laceColor, 0, 0)
+    underWebForNetWeb1(ctx, laceColor, -17, 30)
+    underWebForNetWeb2(ctx, laceColor, -133, 95, -20)
+    underWebForNetWeb2(ctx, laceColor, -15, 28, 0)
+    return
+  }
+  if (webMatcher(['basNet'])) {
+    laceOfNetWeb(ctx, laceColor, 5, -5)
+    underWeb(ctx, laceColor, 10, 0) // ウェブ下＿右
+    underWeb(ctx, laceColor, -32, 64) // ウェブ下＿左
+    indexWrapBack(ctx, laceColor, -10, -100) // 上
+    // 親指側＿一番手前の革紐
+    laceParts1(ctx, laceColor, 41, 75) // 上4
+    laceParts1(ctx, laceColor, 28, 50) // 上3
+    laceParts1(ctx, laceColor, 16, 30) // 上2
+    laceParts1(ctx, laceColor, -6, -5) // 上1
 
     return
   }
+
   if (webMatcher(['dragonfly', 'dragonfly2'])) {
     underWeb(ctx, laceColor, 10, 0) // ウェブ下＿右
     underWeb(ctx, laceColor, -32, 64) // ウェブ下＿左

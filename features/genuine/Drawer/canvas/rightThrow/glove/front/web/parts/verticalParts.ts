@@ -71,3 +71,127 @@ export const verticalPartsOfWebWithCenterStitch = (ctx: CanvasRenderingContext2D
   ctx.strokeStyle = '#383838'
   // stitchここまで
 }
+
+export const verticalPartsForBasNet = (ctx: CanvasRenderingContext2D, webColor: string, web2Color: string, stitchColor: string): void => {
+  const web2Parts = (ctx: CanvasRenderingContext2D, webColor: string, x: number, y: number): void => {
+    ctx.fillStyle = webColor
+    ctx.beginPath()
+    ctx.moveTo(259 + x, 213 + y) // 左＿上
+    ctx.quadraticCurveTo(266 + x, 226 + y, 266 + x, 226 + y) // 左下
+    ctx.quadraticCurveTo(278 + x, 213 + y, 278 + x, 213 + y) // 右下
+    ctx.quadraticCurveTo(276 + x, 200 + y, 271 + x, 197 + y) // 右上
+    ctx.quadraticCurveTo(263 + x, 202 + y, 259 + x, 213 + y) // 左上
+    ctx.fill()
+    ctx.stroke()
+    ctx.closePath()
+    ctx.beginPath()
+    ctx.fillStyle = 'white'
+    ctx.moveTo(261 + x, 213 + y) // 左＿上
+    ctx.quadraticCurveTo(265 + x, 225 + y, 265 + x, 225 + y) // 左下
+    ctx.quadraticCurveTo(265 + x, 213 + y, 261 + x, 213 + y) // 左上
+    ctx.fill()
+    // ctx.stroke()
+    ctx.closePath()
+    ctx.fillStyle = webColor
+  }
+
+  ctx.fillStyle = web2Color
+  // 縦パーツ_土台
+  ctx.beginPath()
+  ctx.moveTo(241, 234) // 左＿上
+  ctx.quadraticCurveTo(305, 364, 305, 364) // 左＿下
+  ctx.quadraticCurveTo(347, 320, 367, 262) // 右＿下
+  ctx.quadraticCurveTo(319, 132, 319, 132) // 右＿上
+  ctx.quadraticCurveTo(267, 168, 241, 234) // 左＿上
+  // ctx.quadraticCurveTo() // 下
+  // ctx.quadraticCurveTo() // 下
+  // ctx.quadraticCurveTo() // 下
+  ctx.fill()
+  ctx.stroke()
+  ctx.closePath()
+
+  // // 縦パーツ_補助線ここから
+  // ctx.beginPath()
+  // // 縦ライン
+  // ctx.moveTo(254, 210) // 左＿上
+  // ctx.quadraticCurveTo(320, 348, 320, 348) // 下
+  // ctx.moveTo(301, 152) // 左＿上
+  // ctx.quadraticCurveTo(356, 288, 356, 288) // 下
+  // ctx.strokeStyle = 'red'
+  // // 横ライン
+  // ctx.moveTo(257, 215) // 左＿上
+  // ctx.quadraticCurveTo(304, 159, 304, 159) // 下
+  // ctx.moveTo(247, 247) // 左＿上
+  // ctx.quadraticCurveTo(327, 153, 327, 153) //
+  // ctx.moveTo(275, 255) // 左＿上
+  // ctx.quadraticCurveTo(320, 202, 320, 202) // 下
+  // ctx.moveTo(275, 304) // 左＿上
+  // ctx.quadraticCurveTo(349, 213, 349, 213)
+  // ctx.moveTo(267, 243) // 左＿上
+  // ctx.quadraticCurveTo(314, 188, 314, 188) // 下
+  // ctx.moveTo(283, 269) // 左＿上
+  // ctx.quadraticCurveTo(326, 217, 326, 217) // 下
+  // ctx.moveTo(303, 315) // 左＿上
+  // ctx.quadraticCurveTo(344, 260, 344, 260) // 下
+  // ctx.moveTo(297, 301) // 左＿上
+  // ctx.quadraticCurveTo(338, 246, 338, 246) // 下
+  // ctx.moveTo(311, 328) // 左＿上
+  // ctx.quadraticCurveTo(349, 275, 349, 275) // 下
+  // ctx.fill()
+  // ctx.stroke()
+  // ctx.closePath()
+
+  // // 縦
+  // ctx.strokeStyle = '#383838'
+  // ctx.beginPath()
+  // ctx.moveTo(270, 188) // 左＿上
+  // ctx.quadraticCurveTo(331, 324, 331, 324) // 下
+  // ctx.moveTo(286, 167) // 左＿上
+  // ctx.quadraticCurveTo(343, 302, 343, 302) // 下
+  // ctx.fill()
+  // ctx.stroke()
+  // ctx.closePath()
+  // // 縦パーツ_補助線ここまで
+
+  web2Parts(ctx, webColor, 0, 0) // 左1
+  web2Parts(ctx, webColor, 11, 26) // 左2
+  web2Parts(ctx, webColor, 25, 58) // 左3
+  web2Parts(ctx, webColor, 39, 84) // 左4
+  web2Parts(ctx, webColor, 53, 114) // 左5
+  web2Parts(ctx, webColor, 10, -32) // 中央1
+  web2Parts(ctx, webColor, 22, -6) // 中央2
+  web2Parts(ctx, webColor, 34, 24) // 中央3
+  web2Parts(ctx, webColor, 48, 54) // 中央4
+  web2Parts(ctx, webColor, 60, 82) // 中央5
+  web2Parts(ctx, webColor, 32, -36) // 右1
+  web2Parts(ctx, webColor, 42, -8) // 右2
+  web2Parts(ctx, webColor, 54, 23) // 右3
+  web2Parts(ctx, webColor, 68, 51) // 右4
+  web2Parts(ctx, webColor, 78, 78) // 右5
+
+  ctx.strokeStyle = '#383838'
+
+  // stitchここから
+  ctx.beginPath()
+  ctx.strokeStyle = stitchColor
+  ctx.setLineDash([3, 3])
+  ctx.moveTo(244, 231) // 上
+  ctx.quadraticCurveTo(307, 361, 307, 361) // 下
+  ctx.moveTo(247, 231) // 上
+  ctx.quadraticCurveTo(310, 361, 310, 361) // 下
+  ctx.moveTo(252, 210) // 上
+  ctx.quadraticCurveTo(315, 343, 315, 343) // 下
+  ctx.moveTo(303, 147) // 上
+  ctx.quadraticCurveTo(359, 282, 359, 282) // 下
+  ctx.moveTo(318, 137) // 上
+  ctx.quadraticCurveTo(365, 263, 365, 263) // 下
+  ctx.moveTo(315, 137) // 上
+  ctx.quadraticCurveTo(363, 265, 363, 265) // 下
+  // ctx.moveTo() // 上
+  // ctx.quadraticCurveTo() // 下
+  ctx.stroke()
+  ctx.setLineDash([])
+  ctx.closePath()
+  ctx.strokeStyle = '#383838'
+  // stitchここまで
+}
