@@ -25,7 +25,8 @@ export const genuineEngravedOfPalm = (ctx: CanvasRenderingContext2D, palm: Color
   ].includes(palm.value)
   ctx.strokeStyle = isBright ? '#eee' : '#6d6d6d'
   ctx.beginPath()
-  ctx.font = isMobile ? '30px cursive' : '56px Brush Script MT'
+  // ctx.font = isMobile ? '30px cursive' : '56px Brush Script MT'
+  ctx.font = isMobile ? '30px cursive' : '56px Alex Brush'
   ctx.strokeText(`genuine`, 415 + x, 450 + y)
   ctx.stroke()
 
