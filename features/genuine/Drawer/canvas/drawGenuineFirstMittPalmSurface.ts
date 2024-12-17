@@ -10,7 +10,7 @@ import { binding } from './rightThrow/firstMitt/front/binding'
 import { stitch } from './rightThrow/firstMitt/front/stitch'
 import { laces } from './rightThrow/firstMitt/front/lace'
 
-export const drawGenuineFirstMittPalmSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState, isMobile: boolean): void => {
+export const drawGenuineFirstMittPalmSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
   if (!state.underWeb) return
   if (!state.thumb) return
   if (!ctx) return
@@ -28,5 +28,5 @@ export const drawGenuineFirstMittPalmSurface = (ctx: CanvasRenderingContext2D | 
   binding(ctx, state.binding.color) // ヘリ革
   stitch(ctx, state.stitch.color) // ステッチ
   laces(ctx, state) // 革紐
-  genuineEngravedOfPalm(ctx, state.palm, isMobile, 0, 0) // メーカー捕球面の刻印
+  genuineEngravedOfPalm(ctx, state.palm, 0, 0) // メーカー捕球面の刻印
 }

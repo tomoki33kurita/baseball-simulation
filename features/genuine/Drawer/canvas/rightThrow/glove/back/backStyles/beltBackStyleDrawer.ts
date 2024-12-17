@@ -31,7 +31,6 @@ export const beltBackStyleDrawer = (ctx: CanvasRenderingContext2D, state: Genuin
   middleFingerLeft(ctx, state.middleRing.color) // 中指＿左
   if (isIntegratedRing) {
     ringFingerIntegrated(ctx, state.ringMiddle.color) // 薬指＿統合
-    genuineEmbroideryForRingFinger(ctx, state.ringMiddle, false, 0, 0)
   } else {
     ringFingerRight(ctx, state.ringMiddle.color) // 薬指＿右
     ringFingerLeft(ctx, state.ringLittle.color) // 薬指＿左

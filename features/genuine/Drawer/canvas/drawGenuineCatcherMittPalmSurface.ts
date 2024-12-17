@@ -11,7 +11,7 @@ import { stitch } from './rightThrow/catcherMitt/front/stitch'
 import { laceDrawer } from './rightThrow/catcherMitt/front/lace'
 import { webDrawer } from './rightThrow/catcherMitt/front/web'
 
-export const drawGenuineCatcherMittPalmSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState, isMobile: boolean): void => {
+export const drawGenuineCatcherMittPalmSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
   if (!ctx) return
 
   const baseModel = state.baseModel
@@ -34,5 +34,5 @@ export const drawGenuineCatcherMittPalmSurface = (ctx: CanvasRenderingContext2D 
   stitch(ctx, state.stitch.color)
   laceDrawer(ctx, state)
 
-  genuineEngravedOfPalm(ctx, palmState, isMobile, 0, 0) // メーカー捕球面の刻印
+  genuineEngravedOfPalm(ctx, palmState, 0, 0) // メーカー捕球面の刻印
 }

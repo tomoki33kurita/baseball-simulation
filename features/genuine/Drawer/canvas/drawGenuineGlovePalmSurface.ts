@@ -15,7 +15,7 @@ import { genuineEngravedOfPalm } from './rightThrow/glove/front/engraving'
 import { GenuineState } from '../../types'
 import { getBankLaceDirection, getFingerColor } from '../../Components/Setters/logic'
 
-export const drawGenuineGlovePalmSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState, isMobile: boolean): void => {
+export const drawGenuineGlovePalmSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
   if (!ctx) return
   const baseModel = state.baseModel
   const { thumbWebColor, indexWebColor, indexMiddleColor, middleIndexColor, middleRingColor, ringLittleColor } = getFingerColor(state)
@@ -49,5 +49,5 @@ export const drawGenuineGlovePalmSurface = (ctx: CanvasRenderingContext2D | null
   rightLaceOfNetWebDrawer(ctx, state) // ネットウェブのみの革紐
   topLaceDrawer(ctx, state) // トップレース
   lace(ctx, laceColor, state) // 革紐
-  genuineEngravedOfPalm(ctx, palmState, isMobile, 0, 0) // メーカー捕球面の刻印
+  genuineEngravedOfPalm(ctx, palmState, 0, 0) // メーカー捕球面の刻印
 }
