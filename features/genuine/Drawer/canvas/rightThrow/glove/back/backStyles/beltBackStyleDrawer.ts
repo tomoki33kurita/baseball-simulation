@@ -12,6 +12,7 @@ import { ringFingerIntegrated, ringFingerLeft, ringFingerRight } from '../ringFi
 import { weltingOfNormal } from '../welting/normal'
 import { GenuineState } from '@/features/genuine/types'
 import { getBackStyle } from '@/features/genuine/Components/Setters/logic'
+import { genuineEmbroideryForRingFinger } from '../../front/engraving'
 
 // ※オーダータイプ：basicの場合はこの関数は呼ばれない想定
 export const beltBackStyleDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState, needPalmWrap: boolean): void => {
@@ -30,6 +31,7 @@ export const beltBackStyleDrawer = (ctx: CanvasRenderingContext2D, state: Genuin
   middleFingerLeft(ctx, state.middleRing.color) // 中指＿左
   if (isIntegratedRing) {
     ringFingerIntegrated(ctx, state.ringMiddle.color) // 薬指＿統合
+    genuineEmbroideryForRingFinger(ctx, state.ringMiddle, false, 0, 0)
   } else {
     ringFingerRight(ctx, state.ringMiddle.color) // 薬指＿右
     ringFingerLeft(ctx, state.ringLittle.color) // 薬指＿左
