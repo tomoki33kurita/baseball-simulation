@@ -29,6 +29,7 @@ const standInTenjin = { name: 'スタンドイン天神店', email: 'tenjin@hasp
 const bandaiSports = { name: 'バンダイスポーツ', email: 'bandai3kobayashi@gmail.com', selectableBrands: [FIVE] }
 const fiveMain = { name: 'FIVE本社用', email: '20kaikai04@gmail.com', selectableBrands: [FIVE] }
 const aobaya = { name: 'アオバヤスポーツ', email: 'front.aobaya@gmail.com', selectableBrands: [FIVE] }
+const ojivaInternational = { name: 'Ojiva international Ltd.', email: 'yoshio.ojiva@gmail.com', selectableBrands: [FIVE] } // 台湾
 // const a = { name: '', email: '', selectableBrands: [FIVE] }
 
 export const retailShops: Retail[] = [
@@ -59,5 +60,6 @@ export const retailShops: Retail[] = [
   standInTenjin,
   bandaiSports,
   aobaya,
+  ojivaInternational,
   fiveMain
 ]
