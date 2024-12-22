@@ -7,7 +7,7 @@ const leftLace1 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, 
   ctx.strokeStyle = '#383838'
   ctx.fillStyle = laceColor
   ctx.beginPath()
-  ctx.lineWidth = 1.0
+  ctx.lineWidth = 0.8
   ctx.moveTo(615, 86) // 右上
   ctx.quadraticCurveTo(582, 86, 558, 105) // 左上
   ctx.quadraticCurveTo(551, 113, 565, 114) // 左下
@@ -26,7 +26,7 @@ const leftLace2 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, 
   // laceここから
   ctx.strokeStyle = '#383838'
   ctx.fillStyle = laceColor
-  ctx.lineWidth = 1.0
+  ctx.lineWidth = 0.8
   if (numerator !== undefined && numerator !== 0) {
     ctx.save()
     ctx.rotate((numerator * Math.PI) / 180)
@@ -79,7 +79,7 @@ const rightLace1 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number,
   ctx.strokeStyle = '#383838'
   ctx.fillStyle = laceColor
   ctx.beginPath()
-  ctx.lineWidth = 1.0
+  ctx.lineWidth = 0.8
   ctx.moveTo(692, 195) // 右上
   ctx.quadraticCurveTo(675, 263, 675, 263) //
   ctx.quadraticCurveTo(677, 278, 682, 273) //
@@ -98,7 +98,7 @@ const rightLace2 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number,
   // laceここから
   ctx.strokeStyle = '#383838'
   ctx.fillStyle = laceColor
-  ctx.lineWidth = 1.0
+  ctx.lineWidth = 0.8
   if (numerator !== undefined && numerator !== 0) {
     ctx.save()
     ctx.rotate((numerator * Math.PI) / 180)
@@ -242,6 +242,7 @@ export const flat2Web = (ctx: CanvasRenderingContext2D, webColor: string, laceCo
   ctx.setLineDash([])
   ctx.closePath()
   // stitchここまで
+  ctx.lineWidth = 0.8
 
   // // laceここから
   // ctx.strokeStyle = laceColor

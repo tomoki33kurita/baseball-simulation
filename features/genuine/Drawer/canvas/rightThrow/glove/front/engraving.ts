@@ -1,5 +1,13 @@
 import { ColorItem } from '@/types'
 import { genuineEngraved } from '../../../label'
+// import localFont from 'next/font/local'
+
+// import { Alex_Brush } from 'next/font/google'
+// const alexBrush = Alex_Brush({
+//   weight: '400',
+//   subsets: ['latin'],
+//   variable: '--font-alex-brush'
+// })
 
 // 捕球面の刻印
 export const genuineEngravedOfPalm = (ctx: CanvasRenderingContext2D, palm: ColorItem, x: number, y: number): void => {
@@ -41,10 +49,13 @@ export const genuineEmbroideryForRingFinger = (ctx: CanvasRenderingContext2D, ri
   ctx.save()
   // ctx.translate(263, 238)
   ctx.rotate((86 * Math.PI) / 180)
-
   ctx.beginPath()
+  const isReady = document.fonts.check('56px Alex Brush')
+  console.log({ isReady })
   // ctx.font = isMobile ? '30px cursive' : '56px Brush Script MT'
-  ctx.font = '48px Alex Brush'
+  // ctx.font = '48px Alex Brush'
+  ctx.font = '30px cursive'
+  // ctx.font = `48px ${alexBrush.style.fontFamily}`
   ctx.strokeStyle = color
   ctx.strokeText(`genuine`, 200, -242)
   ctx.stroke()
