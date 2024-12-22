@@ -62,15 +62,5 @@ export const flat6Web = (ctx: CanvasRenderingContext2D, webColor: string, laceCo
   ctx.stroke()
   ctx.closePath()
 
-  // 補助線
-  // ctx.strokeStyle = 'red'
-  // ctx.beginPath()
-  // ctx.moveTo(277, 178) // 左下
-  // ctx.quadraticCurveTo(336, 312, 336, 312) // 右下
-  // ctx.moveTo(265, 310) // 左下
-  // ctx.quadraticCurveTo(303, 234, 362, 183) // 右下
-  // ctx.stroke()
-  // ctx.closePath()
-
   ctx.strokeStyle = '#383838'
 }
