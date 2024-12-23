@@ -29,6 +29,7 @@ export const getGenuineBaseCells = (
   const isSelectableWebLaceStyle = ['basket2', 'tNet3'].includes(state.webParts.value) || isCatcher
   const isYT22 = productNumber === 'YT-22'
   const isSelectableLeatherIntegratedRing = isGlove && !isFirstBackStyle && !isCrownBackStyle && !isMesh
+  const isSelectableLeatherIntegratedRingColor = state.leatherIntegratedRing.value === 'atRingFinger'
 
   switch (state) {
     default:
@@ -49,7 +50,8 @@ export const getGenuineBaseCells = (
         genGloveBaseCell('芯材の硬さ', state.coreHardness),
         isMitt ? dummy : genGloveBaseCell('手口巻スタイル', state.bankLaceDirection),
         isLoopOfRingFinger ? genGloveBaseCell('薬指リング', state.loopOfRingFinger) : dummy,
-        isSelectableLeatherIntegratedRing ? genGloveBaseCell('薬指革一体型仕様', state.leatherIntegratedRing) : dummy
+        isSelectableLeatherIntegratedRing ? genGloveBaseCell('薬指革一体型仕様', state.leatherIntegratedRing) : dummy,
+        isSelectableLeatherIntegratedRingColor ? genGloveBaseCell('薬指革一体部刺繍カラー', state.leatherIntegratedRingColor) : dummy
       ].filter((cell) => cell.value !== dummy.value)
   }
 }
