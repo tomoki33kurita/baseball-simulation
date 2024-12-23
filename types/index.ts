@@ -84,7 +84,7 @@ export type SavedData<T> = {
 export type Supplier = {
   name: string
   email: string
-  brands: Brand[]
+  brand: Brand
 }
 
 export type DocumentContent = {

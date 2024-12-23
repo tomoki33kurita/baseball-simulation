@@ -1,6 +1,6 @@
 import { BrandOption } from '@/types'
 
 export const FIVE: BrandOption = { value: 'five', label: 'FIVE' }
-// const GORILLA = { value: 'gorilla', label: 'ごりら印の野球用具' }
+export const GENUINE: BrandOption = { value: 'genuine', label: 'GENUINE' }
 
-export const ALL_BRANDS = [FIVE]
+export const ALL_BRANDS = [FIVE, GENUINE]

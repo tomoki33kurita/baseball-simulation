@@ -14,7 +14,8 @@ export async function POST(req: Request) {
 
   const createdAt = Timestamp.fromDate(new Date())
   const state = await req.json()
-  await setDoc(doc(db, 'five', id), { state, createdAt })
+  const brand = state.baseModel.brand
+  await setDoc(doc(db, brand, id), { state, createdAt })
   return NextResponse.json(
     {
       success: true,
