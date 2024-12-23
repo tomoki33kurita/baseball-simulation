@@ -9,6 +9,7 @@ import { thumbHook } from './rightThrow/firstMitt/front/hook'
 import { binding } from './rightThrow/firstMitt/front/binding'
 import { stitch } from './rightThrow/firstMitt/front/stitch'
 import { laces } from './rightThrow/firstMitt/front/lace'
+import { paisleySelected } from './paisleySelected'
 
 export const drawGenuineFirstMittPalmSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
   if (!state.underWeb) return
@@ -29,4 +30,5 @@ export const drawGenuineFirstMittPalmSurface = (ctx: CanvasRenderingContext2D | 
   stitch(ctx, state.stitch.color) // ステッチ
   laces(ctx, state) // 革紐
   genuineEngravedOfPalm(ctx, state.palm, 0, 0) // メーカー捕球面の刻印
+  paisleySelected(ctx, state)
 }

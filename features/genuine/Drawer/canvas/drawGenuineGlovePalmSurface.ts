@@ -14,6 +14,7 @@ import { backLaceDrawerOfFront } from './rightThrow/glove/front/lace/backLace'
 import { genuineEngravedOfPalm } from './rightThrow/glove/front/engraving'
 import { GenuineState } from '../../types'
 import { getBankLaceDirection, getFingerColor } from '../../Components/Setters/logic'
+import { paisleySelected } from './paisleySelected'
 
 export const drawGenuineGlovePalmSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
   if (!ctx) return
@@ -50,4 +51,5 @@ export const drawGenuineGlovePalmSurface = (ctx: CanvasRenderingContext2D | null
   topLaceDrawer(ctx, state) // トップレース
   lace(ctx, laceColor, state) // 革紐
   genuineEngravedOfPalm(ctx, palmState, 0, 0) // メーカー捕球面の刻印
+  paisleySelected(ctx, state)
 }

@@ -11,6 +11,7 @@ import { laceOfWristBeltCrossDrawer } from './rightThrow/glove/back/lace/laceOfW
 import { lining } from './rightThrow/glove/back/lining'
 import { webOfGloveBackDrawer } from './rightThrow/glove/back/web/webOfGloveBackDrawer'
 import { loopOfRingFingerDrawer } from './rightThrow/glove/back/loopOfFingerDrawer'
+import { paisleySelected } from './paisleySelected'
 // import { meshDrawer } from './rightThrow/glove/back/mesh'
 
 // const drawPaisley = (ctx: CanvasRenderingContext2D, state: GenuineState) => {
@@ -51,6 +52,8 @@ export const drawGenuineGloveRearSurface = (ctx: CanvasRenderingContext2D | null
     // console.log('メッシュ指定されている')
     // meshDrawer(ctx, 'red')
   }
+
+  paisleySelected(ctx, state)
 
   // drawPaisley(ctx, state)
 }

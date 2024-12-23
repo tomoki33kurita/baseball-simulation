@@ -16,6 +16,7 @@ import { laces } from './rightThrow/firstMitt/back/lace'
 import { genuineLabel } from './label'
 import { loopOfRingFingerDrawer } from './rightThrow/glove/back/loopOfFingerDrawer'
 import { webDrawerOfFirstMitt } from './rightThrow/firstMitt/back/webDrawer'
+import { paisleySelected } from './paisleySelected'
 
 export const drawGenuineFirstMittRearSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
   if (!ctx) return
@@ -89,4 +90,5 @@ export const drawGenuineFirstMittRearSurface = (ctx: CanvasRenderingContext2D | 
   genuineLabel(ctx, state, 40, 85, 0, 0.9)
   webDrawerOfFirstMitt(ctx, state) // ウェブ
   laces(ctx, state.lace.color) // 革紐
+  paisleySelected(ctx, state)
 }

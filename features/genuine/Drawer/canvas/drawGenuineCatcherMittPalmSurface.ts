@@ -10,6 +10,7 @@ import { edgeDrawer } from './rightThrow/catcherMitt/front/binding'
 import { stitch } from './rightThrow/catcherMitt/front/stitch'
 import { laceDrawer } from './rightThrow/catcherMitt/front/lace'
 import { webDrawer } from './rightThrow/catcherMitt/front/web'
+import { paisleySelected } from './paisleySelected'
 
 export const drawGenuineCatcherMittPalmSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
   if (!ctx) return
@@ -35,4 +36,5 @@ export const drawGenuineCatcherMittPalmSurface = (ctx: CanvasRenderingContext2D 
   laceDrawer(ctx, state)
 
   genuineEngravedOfPalm(ctx, palmState, 0, 0) // メーカー捕球面の刻印
+  paisleySelected(ctx, state)
 }
