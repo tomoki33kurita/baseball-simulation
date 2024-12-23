@@ -54,7 +54,7 @@ const connectBackBandParts = (ctx: CanvasRenderingContext2D, color: string, stit
 }
 
 export const connectBackStyleDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState, needPalmWrap: boolean): void => {
-  if (state.backStyle.value !== 'connect') return
+  if (state.backStyle.value !== 'rn') return
   const isIndexFingerPad = ['indexPad'].includes(state.fingerGuard.value)
   const isMiddleFingerPad = ['middlePad'].includes(state.fingerGuard.value)
   const isIntegratedRing = state.leatherIntegratedRing.value === 'atRingFinger'

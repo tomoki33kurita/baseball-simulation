@@ -335,7 +335,7 @@ export const fontImageResolver = (embroidery: Embroidery) => {
 export const getBackStyle = (state: GenuineState) => {
   // const isFirstBackStyle = ['firstBackStyle'].includes(state.backStyle.value)
   const isCrownBackStyle = ['crown', 'crownMesh'].includes(state.backStyle.value)
-  const isConnectBackStyle = ['connect'].includes(state.backStyle.value)
+  const isConnectBackStyle = ['rn'].includes(state.backStyle.value)
   const isMIUT4Model = state.baseModel.productNumber === 'MIU-T4' && state.backStyle.value === 'unselected'
   const isBeltBackStyle = ['belt'].includes(state.backStyle.value)
   const isRegularBackStyle = ['regular'].includes(state.backStyle.value)
