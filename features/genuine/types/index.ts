@@ -65,6 +65,7 @@ export type GenuineState = {
   loopOfRingFinger: BaseItemWithPrice
   loopOfRingFingerColor: ColorItem
   leatherIntegratedRing: BaseItemWithPrice
+  leatherIntegratedRingColor: ColorItem
 
   fingerGuard: BaseItem
   materialPack: BaseItem

@@ -42,7 +42,8 @@ import {
   SET_LOOP_OF_RING_FINGER,
   SET_GENUINE_LABEL,
   SET_PALM_TO_WEB_CONNECT_LACE_STYLE,
-  SET_LEATHER_INTEGRATED_RING
+  SET_LEATHER_INTEGRATED_RING,
+  SET_LEATHER_INTEGRATED_RING_COLOR
 } from '@/features/genuine/Constants/action'
 import { BINDINGS, GENUINE_LABELS, LACES, MOUTON_COLORS, STITCHES, WELTINGS } from '@/features/genuine/Constants/color'
 
@@ -61,6 +62,7 @@ const dispatchBaseStore = {
   bankLaceDirection: { objects: BANK_LACE_DIRECTIONS, actionType: SET_BANK_LACE_DIRECTION },
   loopOfRingFinger: { objects: LOOP_OF_RING_FINGERS, actionType: SET_LOOP_OF_RING_FINGER },
   leatherIntegratedRing: { objects: LEATHER_INTEGRATED_RINGS, actionType: SET_LEATHER_INTEGRATED_RING },
+  leatherIntegratedRingColor: { objects: STITCHES, actionType: SET_LEATHER_INTEGRATED_RING_COLOR },
   materialPack: { objects: MATERIAL_PACKS, actionType: SET_MATERIAL_PACK },
   fingerGuard: { objects: FINGER_GUARDS, actionType: SET_FINGER_GUARD },
   webParts: { objects: WEB_PARTS, actionType: SET_WEB_PARTS },

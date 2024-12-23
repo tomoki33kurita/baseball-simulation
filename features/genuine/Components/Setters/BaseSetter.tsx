@@ -32,6 +32,7 @@ import { TabPanel } from '@/components/TabPanel'
 import { dispatcher } from './dispatcher'
 import { positionChecker } from '@/util/logic'
 import { getGenuineBackStyle, getGenuineWebParts } from './logic'
+import { STITCHES } from '../../Constants/color'
 
 type Props = {
   state: GenuineState
@@ -58,7 +59,8 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
     loopOfRingFinger,
     materialPack,
     webParts,
-    leatherIntegratedRing
+    leatherIntegratedRing,
+    leatherIntegratedRingColor
   } = state
   const handle = {
     dominantArm: dispatcher('dominantArm', dispatch),
@@ -74,6 +76,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
     bankLaceDirection: dispatcher('bankLaceDirection', dispatch),
     loopOfRingFinger: dispatcher('loopOfRingFinger', dispatch),
     leatherIntegratedRing: dispatcher('leatherIntegratedRing', dispatch),
+    leatherIntegratedRingColor: dispatcher('leatherIntegratedRingColor', dispatch),
     materialPack: dispatcher('materialPack', dispatch),
     fingerGuard: dispatcher('fingerGuard', dispatch),
     webParts: dispatcher('webParts', dispatch)
@@ -84,6 +87,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
   const isSelectableWebLaceStyle = ['basket2', 'tNet3'].includes(state.webParts.value)
   const isLoopOfRingFinger = (isGlove && !isFirstBackStyle) || isFirstBaseman
   const isSelectableLeatherIntegratedRing = isGlove && !isFirstBackStyle && !isCrownBackStyle && !isMesh
+  const isSelectableLeatherIntegratedRingColor = state.leatherIntegratedRing.value === 'atRingFinger'
 
   return (
     <TabPanel selectedIndex={selectedIndex} index={0}>
@@ -230,6 +234,15 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         isDisplay={isSelectableLeatherIntegratedRing}
         defaultExpanded={leatherIntegratedRing.value === 'unselected'}
         handleChange={handle.leatherIntegratedRing}
+      />
+      <SelectCard
+        summary={'薬指一体仕様'} //  ringIntegratedColor
+        selectedLabel={leatherIntegratedRingColor.label}
+        objects={STITCHES}
+        isError={leatherIntegratedRingColor.value === 'unselected'}
+        isDisplay={isSelectableLeatherIntegratedRingColor}
+        defaultExpanded={leatherIntegratedRingColor.value === 'unselected'}
+        handleChange={handle.leatherIntegratedRingColor}
       />
     </TabPanel>
   )

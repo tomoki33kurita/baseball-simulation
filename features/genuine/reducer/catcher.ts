@@ -160,6 +160,7 @@ export const initialState: GenuineState = {
   loopOfRingFinger: unselectedStateWithPrice,
   loopOfRingFingerColor: unselectedColorState,
   leatherIntegratedRing: unselectedStateWithPrice,
+  leatherIntegratedRingColor: unselectedColorState,
   size: unselectedStateWithPrice,
   backStyle: unselectedStateWithPrice,
   embroideries: [initialEmbroideryState],

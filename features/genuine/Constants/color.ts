@@ -290,7 +290,8 @@ export const LEATHER_COLORS_BY_PARTS: LeatherColorsByPartsOfGenuine = {
   thumbIndexMiddleRight: LEATHER_COLORS, // only for catcher of first back style
   middleLeftRingRight: LEATHER_COLORS, // only for first back style
   ringLeftLittleRight: LEATHER_COLORS, // only for first back style
-  indexLeftMiddleRight: LEATHER_COLORS // crown back style glove
+  indexLeftMiddleRight: LEATHER_COLORS, // crown back style glove
+  leatherIntegratedRingColor: STITCHES
 }
 
 // export const PARTS_BUTTON_OPTION = 'genuine-parts-button-option'

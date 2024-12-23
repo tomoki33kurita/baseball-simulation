@@ -14,5 +14,5 @@ export const backStyleOfGloveBackDrawer = (ctx: CanvasRenderingContext2D, state:
   connectBackStyleDrawer(ctx, state, needPalmWrap)
   backLaceDrawer(ctx, state)
   const isIntegratedRing = state.leatherIntegratedRing.value === 'atRingFinger'
-  if (isIntegratedRing) genuineEmbroideryForRingFinger(ctx, state.ringMiddle, 'silver')
+  if (isIntegratedRing) genuineEmbroideryForRingFinger(ctx, state.ringMiddle, state.leatherIntegratedRingColor.color)
 }

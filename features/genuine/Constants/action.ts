@@ -19,6 +19,7 @@ export const SET_BANK_LACE_DIRECTION = 'setBankLaceDirection'
 export const SET_LOOP_OF_RING_FINGER = 'setLoopOfRingFinger'
 
 // COLOR
+export const SET_LEATHER_INTEGRATED_RING_COLOR = 'setLeatherIntegratedRingColor'
 export const SET_LOOP_OF_RING_FINGER_COLOR = 'setLoopOfRingFingerColor'
 export const SET_MESH_COLOR = 'setMeshColor'
 export const SET_SELECTED_PARTS = 'setSelectedParts'
@@ -93,6 +94,7 @@ export const DISPATCHER = {
   palmToWebConnectLaceStyle: SET_PALM_TO_WEB_CONNECT_LACE_STYLE,
   leatherThickness: SET_LEATHER_THICKNESS,
   leatherIntegratedRing: SET_LEATHER_INTEGRATED_RING,
+  leatherIntegratedRingColor: SET_LEATHER_INTEGRATED_RING_COLOR,
   coreHardness: SET_CORE_HARDNESS,
   gloveSize: SET_GLOVE_SIZE,
   bankLaceDirection: SET_BANK_LACE_DIRECTION,

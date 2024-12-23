@@ -61,8 +61,7 @@ export const genuineEmbroideryForRingFinger = (ctx: CanvasRenderingContext2D, ri
   ctx.beginPath()
   const isReady = document.fonts.check('56px Alex Brush')
   // ctx.font = isMobile ? '30px cursive' : '56px Brush Script MT'
-  // ctx.font = '48px Alex Brush'
-  ctx.font = '30px cursive'
+  ctx.font = '48px Alex Brush'
   // ctx.font = `48px ${alexBrush.style.fontFamily}`
   ctx.strokeStyle = color
   if (isReady) {
