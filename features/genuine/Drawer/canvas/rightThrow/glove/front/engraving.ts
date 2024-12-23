@@ -9,6 +9,14 @@ import { genuineEngraved } from '../../../label'
 //   variable: '--font-alex-brush'
 // })
 
+export const pseudoDrawingEngraved = (ctx: CanvasRenderingContext2D): void => {
+  // google web font を事前に読み込むためのダミー描画
+  const isReady = document.fonts.check('56px Alex Brush')
+  const isNotReady = !isReady
+  ctx.font = '56px Alex Brush'
+  isNotReady && ctx.strokeText(``, 0, 0)
+}
+
 // 捕球面の刻印
 export const genuineEngravedOfPalm = (ctx: CanvasRenderingContext2D, palm: ColorItem, x: number, y: number): void => {
   ctx.lineWidth = 1.0
@@ -32,18 +40,15 @@ export const genuineEngravedOfPalm = (ctx: CanvasRenderingContext2D, palm: Color
     'wine'
   ].includes(palm.value)
   ctx.strokeStyle = isBright ? '#eee' : '#6d6d6d'
-  const isReady = document.fonts.check('56px Alex Brush')
 
   ctx.beginPath()
   // ctx.font = isMobile ? '30px cursive' : '56px Brush Script MT'
   ctx.font = '56px Alex Brush'
-  if (isReady) {
-    ctx.strokeText(`genuine`, 415 + x, 450 + y)
-  }
+  const isReady = document.fonts.check('56px Alex Brush')
+  ctx.strokeText(isReady ? `genuine` : ``, 415 + x, 450 + y)
   ctx.stroke()
 
   const strokeStyle = isBright ? '#eee' : '#6d6d6d'
-
   genuineEngraved(ctx, 190, -60, 0.8, strokeStyle)
   ctx.closePath()
 }

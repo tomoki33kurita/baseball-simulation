@@ -12,6 +12,7 @@ import { lining } from './rightThrow/glove/back/lining'
 import { webOfGloveBackDrawer } from './rightThrow/glove/back/web/webOfGloveBackDrawer'
 import { loopOfRingFingerDrawer } from './rightThrow/glove/back/loopOfFingerDrawer'
 import { paisleySelected } from './paisleySelected'
+import { pseudoDrawingEngraved } from './rightThrow/glove/front/engraving'
 // import { meshDrawer } from './rightThrow/glove/back/mesh'
 
 // const drawPaisley = (ctx: CanvasRenderingContext2D, state: GenuineState) => {
@@ -30,6 +31,7 @@ export const drawGenuineGloveRearSurface = (ctx: CanvasRenderingContext2D | null
 
   const baseModel = state.baseModel
 
+  pseudoDrawingEngraved(ctx)
   canvasResetter(ctx) // リセット
   ctx.font = '40px serif'
   ctx.strokeStyle = '#383838'

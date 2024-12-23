@@ -10,9 +10,11 @@ import { liningDrawer } from './rightThrow/catcherMitt/back/liningDrawer'
 import { littleHook } from './rightThrow/catcherMitt/back/littleHook'
 import { thumbHook } from './rightThrow/catcherMitt/back/thumbHook'
 import { webDrawer } from './rightThrow/catcherMitt/back/webDrawer'
+import { pseudoDrawingEngraved } from './rightThrow/glove/front/engraving'
 
 export const drawGenuineCatcherMittRearSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
   if (!ctx) return
+  pseudoDrawingEngraved(ctx)
 
   const baseModel = state.baseModel
   canvasResetter(ctx) // リセット

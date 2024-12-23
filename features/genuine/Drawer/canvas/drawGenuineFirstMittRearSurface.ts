@@ -17,12 +17,14 @@ import { genuineLabel } from './label'
 import { loopOfRingFingerDrawer } from './rightThrow/glove/back/loopOfFingerDrawer'
 import { webDrawerOfFirstMitt } from './rightThrow/firstMitt/back/webDrawer'
 import { paisleySelected } from './paisleySelected'
+import { pseudoDrawingEngraved } from './rightThrow/glove/front/engraving'
 
 export const drawGenuineFirstMittRearSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
   if (!ctx) return
 
   const baseModel = state.baseModel
 
+  pseudoDrawingEngraved(ctx)
   canvasResetter(ctx) // リセット
   ctx.font = '40px serif'
   ctx.strokeStyle = '#383838'

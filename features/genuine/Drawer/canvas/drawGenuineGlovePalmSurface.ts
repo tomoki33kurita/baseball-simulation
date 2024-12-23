@@ -11,7 +11,7 @@ import { bindings } from './rightThrow/glove/front/bindings'
 import { rightLaceOfNetWebDrawer, topLaceDrawer, webOfGloveFrontDrawer } from './rightThrow/glove/front/web/webOfGloveFrontDrawer'
 import { lace } from './rightThrow/glove/front/lace'
 import { backLaceDrawerOfFront } from './rightThrow/glove/front/lace/backLace'
-import { genuineEngravedOfPalm } from './rightThrow/glove/front/engraving'
+import { genuineEngravedOfPalm, pseudoDrawingEngraved } from './rightThrow/glove/front/engraving'
 import { GenuineState } from '../../types'
 import { getBankLaceDirection, getFingerColor } from '../../Components/Setters/logic'
 import { paisleySelected } from './paisleySelected'
@@ -22,6 +22,7 @@ export const drawGenuineGlovePalmSurface = (ctx: CanvasRenderingContext2D | null
   const { thumbWebColor, indexWebColor, indexMiddleColor, middleIndexColor, middleRingColor, ringLittleColor } = getFingerColor(state)
   const { bankLaceDirection } = getBankLaceDirection(state)
 
+  pseudoDrawingEngraved(ctx)
   // リセット
   canvasResetter(ctx)
   ctx.font = '40px serif'

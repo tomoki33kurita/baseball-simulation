@@ -1,5 +1,5 @@
 import { canvasResetter } from './canvasResetter'
-import { genuineEngravedOfPalm } from './rightThrow/glove/front/engraving'
+import { genuineEngravedOfPalm, pseudoDrawingEngraved } from './rightThrow/glove/front/engraving'
 import { GenuineState } from '../../types'
 import { laceOfKnots } from './rightThrow/catcherMitt/front/lace/knots'
 import { laceOfBackOfAroundWebDrawer } from './rightThrow/catcherMitt/front/lace/aroundWeb'
@@ -15,6 +15,7 @@ import { paisleySelected } from './paisleySelected'
 export const drawGenuineCatcherMittPalmSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
   if (!ctx) return
 
+  pseudoDrawingEngraved(ctx)
   const baseModel = state.baseModel
   canvasResetter(ctx) // リセット
   ctx.font = '40px serif'

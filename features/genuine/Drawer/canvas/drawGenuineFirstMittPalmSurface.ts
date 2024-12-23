@@ -1,5 +1,5 @@
 import { canvasResetter } from './canvasResetter'
-import { genuineEngravedOfPalm } from './rightThrow/glove/front/engraving'
+import { genuineEngravedOfPalm, pseudoDrawingEngraved } from './rightThrow/glove/front/engraving'
 import { GenuineState } from '../../types'
 import { webCross } from './rightThrow/firstMitt/front/lace/webCross'
 import { palm } from './rightThrow/firstMitt/front/palm'
@@ -15,6 +15,7 @@ export const drawGenuineFirstMittPalmSurface = (ctx: CanvasRenderingContext2D | 
   if (!state.underWeb) return
   if (!state.thumb) return
   if (!ctx) return
+  pseudoDrawingEngraved(ctx)
   canvasResetter(ctx) // リセット
   webCross(ctx, state.lace.color, 0, 0) // 革紐＿ウェブ間クロス＿上段
   webCross(ctx, state.lace.color, 60, -50)
