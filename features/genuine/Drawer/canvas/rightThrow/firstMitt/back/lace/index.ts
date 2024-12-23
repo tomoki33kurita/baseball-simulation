@@ -19,12 +19,6 @@ export const laces = (ctx: CanvasRenderingContext2D, color: string): void => {
   onTheBoomerang2(ctx, color, -440, 310, -43)
   onTheBoomerang3(ctx, color)
 
-  // ウェブとウェブを結ぶバツ紐
-  webCross(ctx, color, 0, 0) // 左下
-  webCross(ctx, color, 62, 70) // 右下
-  webCross(ctx, color, 50, -70) // 左上
-  webCross(ctx, color, 100, 10) // 右上
-
   // ブーメラン左下の結び目
   webKnots(ctx, color, -220, -650, 90, 0.6)
 
@@ -82,7 +76,4 @@ export const laces = (ctx: CanvasRenderingContext2D, color: string): void => {
   aroundEdge6(ctx, color, 0, 0)
   aroundEdge6(ctx, color, 9, -27)
   aroundEdge6(ctx, color, 25, 290, -20, 0.8)
-  // ウェブ上の結び目
-  webKnots(ctx, color, -20, -25)
-  webKnots(ctx, color, -80, 35)
 }

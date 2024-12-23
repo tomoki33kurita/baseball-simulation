@@ -13,6 +13,16 @@ import { webOfGloveBackDrawer } from './rightThrow/glove/back/web/webOfGloveBack
 import { loopOfRingFingerDrawer } from './rightThrow/glove/back/loopOfFingerDrawer'
 // import { meshDrawer } from './rightThrow/glove/back/mesh'
 
+// const drawPaisley = (ctx: CanvasRenderingContext2D, state: GenuineState) => {
+//   ctx.strokeStyle = 'red'
+//   ctx.beginPath()
+//   ctx.moveTo(225, 145)
+//   // ctx.quadraticCurveTo()
+//   // ctx.quadraticCurveTo()
+//   ctx.stroke()
+//   ctx.closePath()
+// }
+
 export const drawGenuineGloveRearSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
   const { isFirstBackStyle, isConnectBackStyle } = getBackStyle(state)
   if (!ctx) return
@@ -41,4 +51,6 @@ export const drawGenuineGloveRearSurface = (ctx: CanvasRenderingContext2D | null
     // console.log('メッシュ指定されている')
     // meshDrawer(ctx, 'red')
   }
+
+  // drawPaisley(ctx, state)
 }

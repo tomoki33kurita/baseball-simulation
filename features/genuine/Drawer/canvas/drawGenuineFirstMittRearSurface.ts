@@ -8,7 +8,6 @@ import { liningLeather } from './rightThrow/firstMitt/back/liningLeather'
 import { backOfThumbDrawer } from './rightThrow/firstMitt/back/thumbDrawer'
 import { thumbHook } from './rightThrow/firstMitt/back/thumbHook'
 import { littleHook } from './rightThrow/firstMitt/back/littleHook'
-import { webBottom, webTop } from './rightThrow/firstMitt/back/web'
 import { wristBeltDrawer } from './rightThrow/firstMitt/back/wristBeltDrawer'
 import { backAroundWeb } from './rightThrow/firstMitt/back/backAroundWeb'
 import { edgeDrawer } from './rightThrow/firstMitt/back/edgeDrawer'
@@ -16,6 +15,7 @@ import { stitch } from './rightThrow/firstMitt/back/stitch'
 import { laces } from './rightThrow/firstMitt/back/lace'
 import { genuineLabel } from './label'
 import { loopOfRingFingerDrawer } from './rightThrow/glove/back/loopOfFingerDrawer'
+import { webDrawerOfFirstMitt } from './rightThrow/firstMitt/back/webDrawer'
 
 export const drawGenuineFirstMittRearSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
   if (!ctx) return
@@ -51,9 +51,7 @@ export const drawGenuineFirstMittRearSurface = (ctx: CanvasRenderingContext2D | 
   //   )
   // }
 
-  palm(ctx, state.palm.color) // 捕球面
-  webTop(ctx, state.web.color, state.baseModel) // ウェブ先端側
-  webBottom(ctx, state.web.color, state.baseModel) // ウェブ捕球面側
+  palm(ctx, state.palm.color, state.stitch.color) // 捕球面
   boomerang(ctx, state.boomerang.color) // ブーメラン部分
   backOfIndexToLittle(ctx, state.boomerang.color) //  // 背面＿人差し指-小指
 
@@ -89,5 +87,6 @@ export const drawGenuineFirstMittRearSurface = (ctx: CanvasRenderingContext2D | 
   fingerGuardDrawer(ctx, state) // 指カバー
 
   genuineLabel(ctx, state, 40, 85, 0, 0.9)
+  webDrawerOfFirstMitt(ctx, state) // ウェブ
   laces(ctx, state.lace.color) // 革紐
 }
