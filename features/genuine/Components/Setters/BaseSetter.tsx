@@ -85,6 +85,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
   const isLoopOfRingFinger = (isGlove && !isFirstBackStyle) || isFirstBaseman
   const isSelectableGenuineMark = isGlove && !isFirstBackStyle && !isCrownBackStyle && !isMesh
   const isSelectableGenuineMarkColor = state.genuineBrandMark.value === 'atRingFinger'
+  console.log({ isSelectableGenuineMark })
 
   const backStyleOptions = getBackStyleOptions(position, baseModel.productNumber)
 
@@ -132,7 +133,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         isError={backStyle.value === 'unselected'}
         isDisplay={(isGlove && !isFirstBackStyle) || isCatcher}
         handleChange={handle.backStyle}
-        disabled={isSelectableGenuineMark}
+        disabled={isSelectableGenuineMarkColor}
         description={isSelectableGenuineMarkColor ? '変更するには、薬指一体仕様を解除してください。' : ''}
         defaultExpanded={backStyle.value === 'unselected'}
         className={BACK_STYLE_BUTTON_OPTION}
