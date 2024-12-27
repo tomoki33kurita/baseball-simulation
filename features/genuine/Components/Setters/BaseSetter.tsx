@@ -85,8 +85,6 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
   const isLoopOfRingFinger = (isGlove && !isFirstBackStyle) || isFirstBaseman
   const isSelectableGenuineMark = isGlove && !isFirstBackStyle && !isCrownBackStyle && !isMesh
   const isSelectableGenuineMarkColor = state.genuineBrandMark.value === 'atRingFinger'
-  console.log({ isSelectableGenuineMark })
-
   const backStyleOptions = getBackStyleOptions(position, baseModel.productNumber)
 
   return (
