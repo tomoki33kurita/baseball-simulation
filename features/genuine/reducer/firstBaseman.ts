@@ -179,11 +179,9 @@ export const reducer = (state: any, action: any) => {
         binding: action.all,
         fingerGuardColor: action.all,
         listBelt: action.all,
-        linings: action.all,
         thumb: action.all,
         boomerang: action.all,
-        underWeb: action.all,
-        loopOfRingFingerColor: action.all
+        underWeb: action.all
       }
     case SET_BASE_MODEL:
       return { ...state, baseModel: action.baseModel }

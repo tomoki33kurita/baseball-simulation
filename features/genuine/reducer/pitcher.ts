@@ -184,7 +184,6 @@ export const reducer = (state: any, action: any) => {
         binding: action.all,
         fingerGuardColor: action.all,
         listBelt: action.all,
-        linings: action.all,
         // 内野手用グラブ
         thumbOut: action.all,
         thumbWeb: action.all,
@@ -200,8 +199,7 @@ export const reducer = (state: any, action: any) => {
         thumbIndexMiddleRight: action.all,
         indexLeftMiddleRight: action.all, // crown back style glove
         middleLeftRingRight: action.all,
-        ringLeftLittleRight: action.all,
-        loopOfRingFingerColor: action.all
+        ringLeftLittleRight: action.all
       }
     case SET_BASE_MODEL:
       return { ...state, baseModel: action.baseModel }

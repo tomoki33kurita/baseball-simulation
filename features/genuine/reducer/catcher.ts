@@ -43,7 +43,6 @@ import {
   SET_CORE_HARDNESS,
   SET_GLOVE_SIZE,
   SET_BANK_LACE_DIRECTION,
-  SET_LOOP_OF_RING_FINGER,
   SET_GENUINE_LABEL,
   SET_WEB2_COLOR,
   SET_PALM_TO_WEB_CONNECT_LACE_STYLE,
@@ -184,7 +183,6 @@ export const reducer = (state: any, action: any) => {
         binding: action.all,
         fingerGuardColor: action.all,
         listBelt: action.all,
-        linings: action.all,
         // 内野手用グラブ
         thumbOut: action.all,
         thumbWeb: action.all,
@@ -231,8 +229,6 @@ export const reducer = (state: any, action: any) => {
       return { ...state, gloveSize: action.gloveSize }
     case SET_BANK_LACE_DIRECTION:
       return { ...state, bankLaceDirection: action.bankLaceDirection, drawerIndex: 1 }
-    case SET_LOOP_OF_RING_FINGER:
-      return { ...state, loopOfRingFinger: action.loopOfRingFinger, drawerIndex: 0 }
     case SET_MATERIAL_PACK:
       return { ...state, materialPack: action.materialPack, drawerIndex: 1 }
     case SET_FINGER_GUARD:

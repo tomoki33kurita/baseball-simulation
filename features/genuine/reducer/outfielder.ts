@@ -179,7 +179,6 @@ export const reducer = (state: any, action: any) => {
         binding: action.all,
         fingerGuardColor: action.all,
         listBelt: action.all,
-        linings: action.all,
         // 内野手用グラブ
         thumbOut: action.all,
         thumbWeb: action.all,
@@ -191,8 +190,7 @@ export const reducer = (state: any, action: any) => {
         ringLittle: action.all,
         littleRing: action.all,
         littleOut: action.all,
-        labelStand: action.all,
-        loopOfRingFingerColor: action.all
+        labelStand: action.all
       }
     case SET_BACK_STYLE:
       return { ...state, backStyle: action.backStyle }

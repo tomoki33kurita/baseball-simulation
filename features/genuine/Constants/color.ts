@@ -20,15 +20,36 @@ export const LEATHER_COLORS: ColorItem[] = [
   { label: 'Lブラウン', value: 'lBrown', color: '#60311A' },
   { label: 'Dブラウン', value: 'dBrown', color: '#70352e' },
   { label: 'ブルー', value: 'blue', color: '#0d42b5' },
-  { label: 'ネイビー', value: 'navy', color: '#0d194a' },
   { label: 'ブラック', value: 'black', color: '#1E1E1E' },
   { label: 'サックス', value: 'sax', color: '#3a8daa' },
-  { label: 'インペリアルブラック', value: 'imperialNavy', color: '#06090f' },
+  { label: 'インペリアルブラック', value: 'imperialNavy', color: '#0d194a' },
   { label: 'アベンチュリンブラウン', value: 'aventurineBrown', color: '#420011' },
   { label: 'ブラックペイズリー', value: 'blackPaisley', color: '#1E1E1E' },
   { label: 'Dブラウンペイズリー', value: 'dBrownPaisley', color: '#70352e' }
 ]
-export const LININGS: ColorItem[] = [...LEATHER_COLORS]
+export const LININGS: ColorItem[] = [
+  { label: 'ホワイト', value: 'white', color: '#fff' },
+  { label: 'グレー', value: 'gray', color: '#8A8C8C' },
+  { label: 'キャメル', value: 'camel', color: '#D7CEA5' },
+  { label: 'ライムイエロー', value: 'limeYellow', color: '#D9D943' },
+  { label: 'イエロー', value: 'yellow', color: '#E8C84B' },
+  { label: 'Lオレンジ', value: 'lOrange', color: '#FF6C23' },
+  { label: 'Rオレンジ', value: 'rOrange', color: '#FF6C23' },
+  { label: 'オレンジ', value: 'orange', color: '#FF6C23' },
+  { label: 'レッド', value: 'red', color: '#CB1527' },
+  { label: 'ピンク', value: 'pink', color: '#F94C97' },
+  { label: 'パープル', value: 'purple', color: '#664785' },
+  { label: 'グリーン', value: 'green', color: '#4e734c' },
+  { label: 'ワイン', value: 'wine', color: '#b33e5c' },
+  { label: 'コルク', value: 'cork', color: '#CE7220' },
+  { label: 'Lブラウン', value: 'lBrown', color: '#60311A' },
+  { label: 'Dブラウン', value: 'dBrown', color: '#70352e' },
+  { label: 'ブルー', value: 'blue', color: '#0d42b5' },
+  { label: 'ブラック', value: 'black', color: '#1E1E1E' },
+  { label: 'サックス', value: 'sax', color: '#3a8daa' },
+  { label: 'インペリアルブラック', value: 'imperialNavy', color: '#0d194a' },
+  { label: 'アベンチュリンブラウン', value: 'aventurineBrown', color: '#420011' }
+]
 
 export const BINDINGS: ColorItem[] = [
   { label: 'ホワイト', value: 'white', color: '#fff' },
@@ -48,10 +69,9 @@ export const BINDINGS: ColorItem[] = [
   { label: 'Lブラウン', value: 'lBrown', color: '#60311A' },
   { label: 'Dブラウン', value: 'dBrown', color: '#70352e' },
   { label: 'ブルー', value: 'blue', color: '#0d42b5' },
-  { label: 'ネイビー', value: 'navy', color: '#0d194a' },
   { label: 'ブラック', value: 'black', color: '#1E1E1E' },
   { label: 'サックス', value: 'sax', color: '#3a8daa' },
-  { label: 'インペリアルブラック', value: 'imperialNavy', color: '#06090f' },
+  { label: 'インペリアルブラック', value: 'imperialNavy', color: '#0d194a' },
   { label: 'アベンチュリンブラウン', value: 'aventurineBrown', color: '#420011' }
 ]
 
@@ -76,10 +96,9 @@ export const WELTINGS: ColorItem[] = [
   { label: '玉ハミ(Lブラウン)', value: 'ballLBrown', color: '#60311A' },
   { label: '玉ハミ(Dブラウン)', value: 'ballDBrown', color: '#70352e' },
   { label: '玉ハミ(ブルー)', value: 'ballBlue', color: '#0d42b5' },
-  { label: '玉ハミ(ネイビー)', value: 'ballNavy', color: '#0d194a' },
   { label: '玉ハミ(ブラック)', value: 'ballBlack', color: '#1E1E1E' },
   { label: '玉ハミ(サックス)', value: 'ballSax', color: '#3a8daa' },
-  { label: '玉ハミ(インペリアルブラック)', value: 'ballImperialNavy', color: '#06090f' },
+  { label: '玉ハミ(インペリアルブラック)', value: 'ballImperialNavy', color: '#0d194a' },
   { label: '玉ハミ(アベンチュリンブラウン)', value: 'ballAventurineBrown', color: '#420011' }
 ]
 
@@ -93,7 +112,7 @@ export const STITCHES: ColorItem[] = [
   { label: 'サックス', value: 'sax', color: '#3A7993' },
   { label: 'レッド', value: 'red', color: '#BD313F' },
   { label: 'イエロー', value: 'yellow', color: '#C1BB32' },
-  { label: 'ブルー', value: 'blue', color: '#2C338B' },
+  { label: 'ブルー', value: 'blue', color: '#1623c9' },
   { label: 'パープル', value: 'purple', color: '#7f00ff' },
   { label: 'グリーン', value: 'green', color: '#2A4029' },
   { label: 'ピンク', value: 'pink', color: '#B9527D' },
@@ -152,7 +171,8 @@ const commonPartsObjs: PartsItem[] = [
   { label: '親指掛け紐', value: 'thumbHook' },
   { label: '小指掛け紐', value: 'littleHook' },
   { label: '指カバー/指当て', value: 'fingerGuardColor' },
-  { label: '薬指リング', value: 'loopOfRingFingerColor' }
+  { label: '薬指リング', value: 'loopOfRingFingerColor' },
+  { label: '裏革', value: 'linings' }
 ]
 const backGloveObjs: PartsItem[] = [
   { label: '親指1', value: 'thumbOut' },
@@ -169,7 +189,7 @@ const backGloveObjs: PartsItem[] = [
 ]
 export const PALM_PARTS = [...commonPartsObjs]
 
-export const BACK_PARTS: PartsItem[] = [...commonPartsObjs, ...backGloveObjs, { label: '裏革', value: 'linings' }]
+export const BACK_PARTS: PartsItem[] = [...commonPartsObjs, ...backGloveObjs]
 
 export const CATCHER_MITT_REGULAR_BACK_PARTS: PartsItem[] = [
   ...commonPartsObjs,
@@ -180,8 +200,7 @@ export const CATCHER_MITT_REGULAR_BACK_PARTS: PartsItem[] = [
   { label: '中指6・薬指', value: 'middleLeftRing' },
   { label: '小指10', value: 'littleOut' },
   { label: '指出し', value: 'indexFingerTipOut' },
-  { label: 'バンド', value: 'listBelt' },
-  { label: '裏革', value: 'linings' }
+  { label: 'バンド', value: 'listBelt' }
 ]
 
 export const CATCHER_MITT_TM_BACK_PARTS: PartsItem[] = [
@@ -191,8 +210,7 @@ export const CATCHER_MITT_TM_BACK_PARTS: PartsItem[] = [
   { label: '土台', value: 'fingerStand' },
   { label: '親指', value: 'thumb' },
   { label: '人差指・中指・薬指・小指', value: 'indexMiddleRingLittle' },
-  { label: 'バンド', value: 'listBelt' },
-  { label: '裏革', value: 'linings' }
+  { label: 'バンド', value: 'listBelt' }
 ]
 
 export const CATCHER_MITT_BELT_BACK_PARTS: PartsItem[] = [
@@ -203,8 +221,7 @@ export const CATCHER_MITT_BELT_BACK_PARTS: PartsItem[] = [
   { label: '親指・人差指・中指5', value: 'thumbIndexMiddleRight' },
   { label: '中指6・薬指', value: 'middleLeftRing' },
   { label: '小指10', value: 'littleOut' },
-  { label: 'バンド', value: 'listBelt' },
-  { label: '裏革', value: 'linings' }
+  { label: 'バンド', value: 'listBelt' }
 ]
 
 export const FIRST_BACK_PARTS: PartsItem[] = [
@@ -214,8 +231,7 @@ export const FIRST_BACK_PARTS: PartsItem[] = [
   { label: '中指6・薬指7', value: 'middleLeftRingRight' },
   { label: '薬指8・小指9', value: 'ringLeftLittleRight' },
   { label: '小指10', value: 'littleOut' },
-  { label: 'バンド', value: 'listBelt' },
-  { label: '裏革', value: 'linings' }
+  { label: 'バンド', value: 'listBelt' }
 ]
 
 export const CROWN_BACK_PARTS: PartsItem[] = [
@@ -275,7 +291,7 @@ export const LEATHER_COLORS_BY_PARTS: LeatherColorsByPartsOfGenuine = {
   littleRing: LEATHER_COLORS,
   littleOut: LEATHER_COLORS,
   listBelt: LEATHER_COLORS,
-  loopOfRingFingerColor: LEATHER_COLORS,
+  loopOfRingFingerColor: LININGS, // 裏革と同じ
   thumb: LEATHER_COLORS, // only for firstMitt
   boomerang: LEATHER_COLORS, // only for firstMitt
   underWeb: LEATHER_COLORS, // only for firstMitt
