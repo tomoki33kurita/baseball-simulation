@@ -36,6 +36,12 @@ export const genuineLabelDrawer = (ctx: CanvasRenderingContext2D | null, state: 
   }
 
   if (isFirstBackStyle) {
+    const isThumbSide = ['thumbSideNormal', 'thumbSideEmbroidery'].includes(state.genuineLabel.value)
+    if (isThumbSide) {
+      genuineLabel(ctx, state, 130, 70, -8, 0.85)
+      return
+    }
+    // little finger side
     genuineLabel(ctx, state, -80, 170, -8, 0.7)
     return
   }
