@@ -4,7 +4,7 @@ import { firstBackStyleDrawer } from './firstBackStyleDrawer'
 import { crownBackStyleDrawer } from './crownBackStyleDrawer'
 import { backLaceDrawer } from '../lace/backLaceDrawer'
 import { connectBackStyleDrawer } from './connectBackStyleDrawer'
-import { genuineEmbroideryForRingFinger } from '../../front/engraving'
+import { genuineBrandMarkEmbroideryDrawer } from '../../front/engraving'
 
 export const backStyleOfGloveBackDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
   const needPalmWrap = !state.baseModel.isUBack || false
@@ -13,6 +13,5 @@ export const backStyleOfGloveBackDrawer = (ctx: CanvasRenderingContext2D, state:
   crownBackStyleDrawer(ctx, state)
   connectBackStyleDrawer(ctx, state, needPalmWrap)
   backLaceDrawer(ctx, state)
-  const isIntegratedRing = state.genuineBrandMark.value === 'atRingFinger'
-  if (isIntegratedRing) genuineEmbroideryForRingFinger(ctx, state.ringMiddle, state.genuineBrandMarkColor.color)
+  genuineBrandMarkEmbroideryDrawer(ctx, state)
 }
