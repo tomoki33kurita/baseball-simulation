@@ -15,7 +15,8 @@ import {
   LOOP_OF_RING_FINGERS,
   ALL_BACK_STYLES,
   PALM_TO_WEB_CONNECT_LACE_STYLE,
-  LEATHER_INTEGRATED_RINGS
+  GENUINE_EMBROIDERIES,
+  GENUINE_ENGRAVINGS
 } from '@/features/genuine/Constants/base'
 import { objectsFilter } from '@/util/logic'
 import { ResponseDispatch } from '@/features/genuine/types'
@@ -60,7 +61,7 @@ const dispatchBaseStore = {
   gloveSize: { objects: GLOVE_SIZES, actionType: SET_GLOVE_SIZE },
   bankLaceDirection: { objects: BANK_LACE_DIRECTIONS, actionType: SET_BANK_LACE_DIRECTION },
   loopOfRingFinger: { objects: LOOP_OF_RING_FINGERS, actionType: SET_LOOP_OF_RING_FINGER },
-  genuineBrandMark: { objects: LEATHER_INTEGRATED_RINGS, actionType: SET_GENUINE_BRAND_MARK },
+  genuineBrandMark: { objects: [...GENUINE_EMBROIDERIES, ...GENUINE_ENGRAVINGS], actionType: SET_GENUINE_BRAND_MARK },
   genuineBrandMarkColor: { objects: STITCHES, actionType: SET_GENUINE_BRAND_MARK_COLOR },
   materialPack: { objects: MATERIAL_PACKS, actionType: SET_MATERIAL_PACK },
   fingerGuard: { objects: FINGER_GUARDS, actionType: SET_FINGER_GUARD },

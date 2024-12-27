@@ -2,6 +2,7 @@ import { ColorItem } from '@/types'
 import { genuineEngraved } from '../../../label'
 import { getGenuineBackStyle } from '@/features/genuine/Components/Setters/logic'
 import { GenuineState } from '@/features/genuine/types'
+import { positionChecker } from '@/util/logic'
 // import localFont from 'next/font/local'
 
 // import { Alex_Brush } from 'next/font/google'
@@ -93,9 +94,29 @@ const genuineEmbroideryForCrownBack = (ctx: CanvasRenderingContext2D, color: str
   ctx.restore()
 }
 
+const genuineEmbroideryForFirstMitt = (ctx: CanvasRenderingContext2D, color: string): void => {
+  ctx.lineWidth = 0.8
+  ctx.save()
+  ctx.rotate((-30 * Math.PI) / 180)
+  ctx.beginPath()
+  const isReady = document.fonts.check('56px Alex Brush')
+  // ctx.font = isMobile ? '30px cursive' : '56px Brush Script MT'
+  ctx.font = '48px Alex Brush'
+  // ctx.font = `48px ${alexBrush.style.fontFamily}`
+  ctx.strokeStyle = color
+  if (isReady) {
+    ctx.strokeText(`genuine`, 10, 470)
+  }
+  ctx.stroke()
+  ctx.closePath()
+  ctx.restore()
+}
+
 export const genuineBrandMarkEmbroideryDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState) => {
   const { isCrownBackStyle } = getGenuineBackStyle(state)
-  const isIntegratedRing = state.genuineBrandMark.value === 'atRingFinger'
-  if (isIntegratedRing && !isCrownBackStyle) genuineEmbroideryForRingFinger(ctx, state.genuineBrandMarkColor.color)
-  if (isIntegratedRing && isCrownBackStyle) genuineEmbroideryForCrownBack(ctx, state.genuineBrandMarkColor.color)
+  const { isGlove, isFirstBaseman } = positionChecker(state.baseModel.position)
+  const isRequiredGenuineBrandMark = ['genuineEngraving', 'atRingFinger'].includes(state.genuineBrandMark.value)
+  if (isRequiredGenuineBrandMark && !isCrownBackStyle && isGlove) genuineEmbroideryForRingFinger(ctx, state.genuineBrandMarkColor.color)
+  if (isRequiredGenuineBrandMark && isCrownBackStyle && isGlove) genuineEmbroideryForCrownBack(ctx, state.genuineBrandMarkColor.color)
+  if (isRequiredGenuineBrandMark && isFirstBaseman) genuineEmbroideryForFirstMitt(ctx, 'gray')
 }

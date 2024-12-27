@@ -46,7 +46,8 @@ import {
   SET_GENUINE_LABEL,
   SET_WEB2_COLOR,
   SET_LOOP_OF_RING_FINGER_COLOR,
-  SET_GENUINE_BRAND_MARK_COLOR
+  SET_GENUINE_BRAND_MARK_COLOR,
+  SET_GENUINE_BRAND_MARK
 } from '@/features/genuine/Constants/action'
 import { GenuineState } from '../types'
 import { Embroidery } from '@/types'
@@ -279,13 +280,15 @@ export const reducer = (state: any, action: any) => {
     case SET_FINGER_GUARD_COLOR:
       return { ...state, fingerGuardColor: action.fingerGuardColor, drawerIndex: 0 }
     case SET_THUMB_COLOR:
-      return { ...state, thumb: action.thumb, drawerIndex: 0 }
+      return { ...state, thumb: action.thumb, drawerIndFex: 0 }
     case SET_GENUINE_LABEL:
       return { ...state, genuineLabel: action.genuineLabel, drawerIndex: 0 }
     case SET_UNDER_WEB_COLOR:
       return { ...state, underWeb: action.underWeb, drawerIndex: 0 }
     case SET_BOOMERANG_COLOR:
       return { ...state, boomerang: action.boomerang, drawerIndex: 0 }
+    case SET_GENUINE_BRAND_MARK:
+      return { ...state, genuineBrandMark: action.genuineBrandMark, drawerIndex: 0 }
     case SET_GENUINE_BRAND_MARK_COLOR:
       return { ...state, genuineBrandMarkColor: action.genuineBrandMarkColor, drawerIndex: 0 }
     case SET_PERSONAL:

@@ -24,11 +24,11 @@ export const getGenuineBaseCells = (
   }
   const { isGlove, isMitt, isCatcher, isFirstBaseman } = positionChecker(state.baseModel.position)
   const isMeshSpecified = ['normalMesh', 'crownMesh'].includes(state.backStyle.value)
-  const { isFirstBackStyle, isCrownBackStyle, isMesh } = getGenuineBackStyle(state)
+  const { isFirstBackStyle, isMesh } = getGenuineBackStyle(state)
   const isLoopOfRingFinger = (isGlove && !isFirstBackStyle) || isFirstBaseman
   const isSelectableWebLaceStyle = ['basket2', 'tNet3'].includes(state.webParts.value) || isCatcher
   const isYT22 = productNumber === 'YT-22'
-  const isSelectableGenuineBrandMark = isGlove && !isFirstBackStyle && !isCrownBackStyle && !isMesh
+  const isSelectableGenuineBrandMark = (isGlove && !isFirstBackStyle && !isMesh) || isCatcher
   const isSelectableGenuineBrandMarkColor = state.genuineBrandMark.value === 'atRingFinger'
 
   switch (state) {
@@ -50,9 +50,9 @@ export const getGenuineBaseCells = (
         genGloveBaseCell('芯材の硬さ', state.coreHardness),
         isMitt ? dummy : genGloveBaseCell('手口巻スタイル', state.bankLaceDirection),
         isLoopOfRingFinger ? genGloveBaseCell('薬指リング', state.loopOfRingFinger) : dummy,
-        isSelectableGenuineBrandMark ? genGloveBaseCell('薬指革一体型仕様', state.genuineBrandMark) : dummy,
-        isSelectableGenuineBrandMarkColor ? genGloveBaseCell('薬指革一体部刺繍カラー', state.genuineBrandMarkColor) : dummy,
-        isCrownBackStyle || isMitt ? genGloveBaseCell('Genuine刺繍', state.genuineBrandMark) : dummy
+        isSelectableGenuineBrandMark ? genGloveBaseCell('Genuine刺繍', state.genuineBrandMark) : dummy,
+        isSelectableGenuineBrandMarkColor ? genGloveBaseCell('Genuine刺繍カラー', state.genuineBrandMarkColor) : dummy,
+        isFirstBaseman ? genGloveBaseCell('Genuine刻印', state.genuineBrandMark) : dummy
       ].filter((cell) => cell.value !== dummy.value)
   }
 }

@@ -273,7 +273,6 @@ export const rightLaceOfNetWebDrawer = (ctx: CanvasRenderingContext2D, state: Ge
     laceParts1(ctx, laceColor, 28, 50) // 上3
     laceParts1(ctx, laceColor, 16, 30) // 上2
     laceParts1(ctx, laceColor, -6, -5) // 上1
-
     return
   }
 
@@ -284,13 +283,22 @@ export const rightLaceOfNetWebDrawer = (ctx: CanvasRenderingContext2D, state: Ge
     indexWrapBack(ctx, laceColor, 0, 0) // 下
     return
   }
-  if (webMatcher(['flat', 'flat2', 'basket', 'basket2', 'genuine'])) {
-    underWeb(ctx, laceColor, 10, 0) // ウェブ下＿右
-    underWeb(ctx, laceColor, -11, 32) // ウェブ下＿中央
-    underWeb(ctx, laceColor, -32, 64) // ウェブ下＿左
+  if (webMatcher(['flat', 'flat2', 'flat3', 'flat4', 'flat5', 'basket', 'basket2', 'genuine'])) {
+    underWeb(ctx, laceColor, 27, -24) // ウェブ下＿右
+    underWeb(ctx, laceColor, -2, 28) // ウェブ下＿中
+    underWeb(ctx, laceColor, -35, 72) // ウェブ下＿左
     indexWrapBack(ctx, laceColor, -10, -100) // 上
     indexWrapBack(ctx, laceColor, -5, -35) // 上
     indexWrapBack(ctx, laceColor, 0, 30) // 下
+    return
+  }
+  if (webMatcher(['twoPeace', 'twoPeace2'])) {
+    underWeb(ctx, laceColor, 17, -10) // ウェブ下＿右
+    underWeb(ctx, laceColor, -5, 28) // ウェブ下＿中
+    underWeb(ctx, laceColor, -28, 65) // ウェブ下＿左
+    indexWrapBack(ctx, laceColor, -10, -100) // 上
+    indexWrapBack(ctx, laceColor, -4, -40) // 中
+    indexWrapBack(ctx, laceColor, 3, 20) // 下
     return
   }
   underWeb(ctx, laceColor, 10, 0) // ウェブ下＿右

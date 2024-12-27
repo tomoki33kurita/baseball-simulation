@@ -21,7 +21,8 @@ import {
   LOOP_OF_RING_FINGERS,
   MATERIAL_PACKS_FOR_FIRST_BASEMAN,
   PALM_TO_WEB_CONNECT_LACE_STYLE,
-  LEATHER_INTEGRATED_RINGS
+  GENUINE_EMBROIDERIES,
+  GENUINE_ENGRAVINGS
 } from '@/features/genuine/Constants/base'
 import { SelectCard } from '@/components/Setters/SelectCard'
 import { SelectCardWithImage } from '@/components/Setters/SelectCardWithImage'
@@ -83,7 +84,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
   const { selectableWebParts } = getGenuineWebParts(isFirstBaseman)
   const isSelectableWebLaceStyle = ['basket2', 'tNet3'].includes(state.webParts.value)
   const isLoopOfRingFinger = (isGlove && !isFirstBackStyle) || isFirstBaseman
-  const isSelectableGenuineMark = isGlove && !isFirstBackStyle && !isMesh
+  const isSelectableGenuineMark = !isFirstBaseman && !isFirstBackStyle && !isMesh
   const isSelectableGenuineMarkColor = state.genuineBrandMark.value === 'atRingFinger'
   const backStyleOptions = getBackStyleOptions(position, baseModel.productNumber)
 
@@ -228,9 +229,9 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         handleChange={handle.loopOfRingFinger}
       />
       <SelectCard
-        summary={'薬指一体仕様'} //  ringIntegrated
+        summary={'Genuine刺繍'} //  ringIntegrated
         selectedLabel={genuineBrandMark.label}
-        objects={LEATHER_INTEGRATED_RINGS}
+        objects={GENUINE_EMBROIDERIES}
         isError={genuineBrandMark.value === 'unselected'}
         isDisplay={isSelectableGenuineMark}
         disabled={isUnselectedBackStyle}
@@ -239,13 +240,22 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         handleChange={handle.genuineBrandMark}
       />
       <SelectCard
-        summary={'薬指一体仕様カラー'} //  ringIntegratedColor
+        summary={'Genuine刺繍カラー'} //  ringIntegratedColor
         selectedLabel={genuineBrandMarkColor.label}
         objects={STITCHES}
         isError={genuineBrandMarkColor.value === 'unselected'}
         isDisplay={isSelectableGenuineMarkColor}
         defaultExpanded={genuineBrandMarkColor.value === 'unselected'}
         handleChange={handle.genuineBrandMarkColor}
+      />
+      <SelectCard
+        summary={'Genuine刻印'} //  ringIntegrated
+        selectedLabel={genuineBrandMark.label}
+        objects={GENUINE_ENGRAVINGS}
+        isError={genuineBrandMark.value === 'unselected'}
+        isDisplay={isFirstBaseman}
+        defaultExpanded={genuineBrandMark.value === 'unselected'}
+        handleChange={handle.genuineBrandMark}
       />
     </TabPanel>
   )

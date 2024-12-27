@@ -12,7 +12,6 @@ import { ringFingerIntegrated, ringFingerLeft, ringFingerRight } from '../ringFi
 import { weltingOfNormal } from '../welting/normal'
 import { GenuineState } from '@/features/genuine/types'
 import { getBackStyle } from '@/features/genuine/Components/Setters/logic'
-import { genuineEmbroideryForRingFinger } from '../../front/engraving'
 
 // ※オーダータイプ：basicの場合はこの関数は呼ばれない想定
 export const beltBackStyleDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState, needPalmWrap: boolean): void => {

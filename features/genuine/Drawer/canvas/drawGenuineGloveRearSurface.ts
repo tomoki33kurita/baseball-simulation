@@ -56,6 +56,5 @@ export const drawGenuineGloveRearSurface = (ctx: CanvasRenderingContext2D | null
   }
 
   paisleySelected(ctx, state)
-
   // drawPaisley(ctx, state)
 }

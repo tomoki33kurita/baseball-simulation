@@ -3,11 +3,12 @@ import { BaseItem, BaseModel, ChoiceItem, ColorItem, Position } from '@/types'
 
 export const positionChecker = (position: Position) => {
   const isPitcher = position === 'pitcher'
+  const isInfielder = position === 'infielder'
+  const isOutfielder = position === 'outfielder'
   const isCatcher = position === 'catcher'
   const isFirstBaseman = position === 'firstBaseman'
-  const isOutfielder = position === 'outfielder'
-  const isGlove = ['pitcher', 'infielder', 'outfielder'].includes(position)
-  const isMitt = ['catcher', 'firstBaseman'].includes(position)
+  const isGlove = isPitcher || isInfielder || isOutfielder
+  const isMitt = isCatcher || isFirstBaseman
 
   return {
     isPitcher,

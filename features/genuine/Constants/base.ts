@@ -105,8 +105,13 @@ export const FINGER_GUARDS: BaseItem[] = [
   { label: '無し', value: 'none' }
 ]
 
-export const LEATHER_INTEGRATED_RINGS: BaseItemWithPrice[] = [
+export const GENUINE_EMBROIDERIES: BaseItemWithPrice[] = [
   { label: '薬指一体型', value: 'atRingFinger', price: 4400 },
+  { label: '無し', value: 'none', price: 0 }
+]
+
+export const GENUINE_ENGRAVINGS: BaseItemWithPrice[] = [
+  { label: 'あり', value: 'genuineEngraving', price: 4400 },
   { label: '無し', value: 'none', price: 0 }
 ]
 

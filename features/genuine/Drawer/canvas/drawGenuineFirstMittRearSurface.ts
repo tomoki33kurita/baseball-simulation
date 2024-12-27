@@ -17,7 +17,7 @@ import { genuineLabel } from './label'
 import { loopOfRingFingerDrawer } from './rightThrow/glove/back/loopOfFingerDrawer'
 import { webDrawerOfFirstMitt } from './rightThrow/firstMitt/back/webDrawer'
 import { paisleySelected } from './paisleySelected'
-import { pseudoDrawingEngraved } from './rightThrow/glove/front/engraving'
+import { genuineBrandMarkEmbroideryDrawer, pseudoDrawingEngraved } from './rightThrow/glove/front/engraving'
 
 export const drawGenuineFirstMittRearSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
   if (!ctx) return
@@ -93,4 +93,5 @@ export const drawGenuineFirstMittRearSurface = (ctx: CanvasRenderingContext2D | 
   webDrawerOfFirstMitt(ctx, state) // ウェブ
   laces(ctx, state.lace.color) // 革紐
   paisleySelected(ctx, state)
+  genuineBrandMarkEmbroideryDrawer(ctx, state)
 }
