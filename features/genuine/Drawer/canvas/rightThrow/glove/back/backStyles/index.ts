@@ -13,6 +13,6 @@ export const backStyleOfGloveBackDrawer = (ctx: CanvasRenderingContext2D, state:
   crownBackStyleDrawer(ctx, state)
   connectBackStyleDrawer(ctx, state, needPalmWrap)
   backLaceDrawer(ctx, state)
-  const isIntegratedRing = state.leatherIntegratedRing.value === 'atRingFinger'
-  if (isIntegratedRing) genuineEmbroideryForRingFinger(ctx, state.ringMiddle, state.leatherIntegratedRingColor.color)
+  const isIntegratedRing = state.genuineBrandMark.value === 'atRingFinger'
+  if (isIntegratedRing) genuineEmbroideryForRingFinger(ctx, state.ringMiddle, state.genuineBrandMarkColor.color)
 }

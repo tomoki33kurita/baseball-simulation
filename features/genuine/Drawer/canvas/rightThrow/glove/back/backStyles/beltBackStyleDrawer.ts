@@ -21,7 +21,7 @@ export const beltBackStyleDrawer = (ctx: CanvasRenderingContext2D, state: Genuin
   const isIndexFingerPad = ['indexPad'].includes(state.fingerGuard.value)
   const isMiddleFingerPad = ['middlePad'].includes(state.fingerGuard.value)
   const stitchColor = state.stitch.color
-  const isIntegratedRing = state.leatherIntegratedRing.value === 'atRingFinger'
+  const isIntegratedRing = state.genuineBrandMark.value === 'atRingFinger'
 
   thumbAndWristBelt(ctx, state.thumbWeb.color, stitchColor)
   thumbOut(ctx, state.thumbOut.color) // 親指＿外

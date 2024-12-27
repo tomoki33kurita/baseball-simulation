@@ -11,9 +11,9 @@ export const calculateGenuineOptionCost = (state: GenuineState): number => {
   const loopOfRingFingerCost = state.loopOfRingFinger.price
   const sizeCost = state.size.price
   const meshCost = state.backStyle.price
-  const leatherIntegratedRingCost = state.leatherIntegratedRing.price
+  const genuineBrandMarkCost = state.genuineBrandMark.price
 
-  const optionCost = labelCost + deerSkinCost + loopOfRingFingerCost + sizeCost + meshCost + leatherIntegratedRingCost
+  const optionCost = labelCost + deerSkinCost + loopOfRingFingerCost + sizeCost + meshCost + genuineBrandMarkCost
   return optionCost
 }
 

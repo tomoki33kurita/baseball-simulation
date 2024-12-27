@@ -12,14 +12,14 @@ export const SET_WEB_LACE_STYLE = 'setWebLaceStyle'
 export const SET_PALM_TO_WEB_CONNECT_LACE_STYLE = 'setPalmToWebConnectLaceStyle'
 export const SET_BACK_LACE_STYLE = 'setBackLaceStyle'
 export const SET_LEATHER_THICKNESS = 'setLeatherThickness'
-export const SET_LEATHER_INTEGRATED_RING = 'setLeatherIntegratedRing'
+export const SET_GENUINE_BRAND_MARK = 'setGenuineBrandMark'
 export const SET_CORE_HARDNESS = 'setCoreHardness'
 export const SET_GLOVE_SIZE = 'setGloveSize'
 export const SET_BANK_LACE_DIRECTION = 'setBankLaceDirection'
 export const SET_LOOP_OF_RING_FINGER = 'setLoopOfRingFinger'
 
 // COLOR
-export const SET_LEATHER_INTEGRATED_RING_COLOR = 'setLeatherIntegratedRingColor'
+export const SET_GENUINE_BRAND_MARK_COLOR = 'setGenuineBrandMarkColor'
 export const SET_LOOP_OF_RING_FINGER_COLOR = 'setLoopOfRingFingerColor'
 export const SET_MESH_COLOR = 'setMeshColor'
 export const SET_SELECTED_PARTS = 'setSelectedParts'
@@ -93,8 +93,8 @@ export const DISPATCHER = {
   backLaceStyle: SET_BACK_LACE_STYLE,
   palmToWebConnectLaceStyle: SET_PALM_TO_WEB_CONNECT_LACE_STYLE,
   leatherThickness: SET_LEATHER_THICKNESS,
-  leatherIntegratedRing: SET_LEATHER_INTEGRATED_RING,
-  leatherIntegratedRingColor: SET_LEATHER_INTEGRATED_RING_COLOR,
+  genuineBrandMark: SET_GENUINE_BRAND_MARK,
+  genuineBrandMarkColor: SET_GENUINE_BRAND_MARK_COLOR,
   coreHardness: SET_CORE_HARDNESS,
   gloveSize: SET_GLOVE_SIZE,
   bankLaceDirection: SET_BANK_LACE_DIRECTION,

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useDebounce } from 'use-debounce'
 import { Embroidery, EmbroideryKey, Position, WebParts } from '@/types'
-import { DrawerIndex, GenuineState, PartsItem, PartsKey } from '@/features/genuine/types'
+import { GenuineState, PartsItem, PartsKey } from '@/features/genuine/types'
 import {
   BACK_PARTS,
   CATCHER_MITT_BELT_BACK_PARTS,
@@ -176,7 +176,7 @@ export const filterSelectableParts = (state: GenuineState, selectableParts: Part
   const filtered1 = isSideLabel ? selectableParts.filter((p) => p.value !== 'listBelt') : selectableParts
   const isLoopOfRingFinger = state.loopOfRingFinger.value === 'loopOfRingFinger'
   const filtered2 = isLoopOfRingFinger ? filtered1 : filtered1.filter((p) => p.value !== 'loopOfRingFingerColor')
-  const isIntegratedRing = state.leatherIntegratedRing.value === 'atRingFinger'
+  const isIntegratedRing = state.genuineBrandMark.value === 'atRingFinger'
   const filtered3 = isIntegratedRing ? filtered2.filter((p) => p.value !== 'ringLittle') : filtered2
   return filtered3
 }
@@ -185,10 +185,12 @@ export const getGenuineBackStyle = (state: GenuineState) => {
   const isMesh = ['normalMesh', 'crownMesh'].includes(state.backStyle.value)
   const isFirstBackStyle = ['MIU-T4'].includes(state.baseModel.productNumber)
   const isCrownBackStyle = ['crown', 'crownMesh'].includes(state.backStyle.value)
+  const isUnselectedBackStyle = state.backStyle.value === 'unselected'
   return {
     isMesh,
     isFirstBackStyle,
-    isCrownBackStyle
+    isCrownBackStyle,
+    isUnselectedBackStyle
   }
 }
 
@@ -365,12 +367,12 @@ export const getBackStyle = (state: GenuineState) => {
   // const isFirstBackStyle = ['firstBackStyle'].includes(state.backStyle.value)
   const isCrownBackStyle = ['crown', 'crownMesh'].includes(state.backStyle.value)
   const isConnectBackStyle = ['rn'].includes(state.backStyle.value)
-  const isMIUT4Model = state.baseModel.productNumber === 'MIU-T4' && state.backStyle.value === 'unselected'
+  const isMIU_T4Model = state.baseModel.productNumber === 'MIU-T4' && state.backStyle.value === 'unselected'
   const isBeltBackStyle = ['belt'].includes(state.backStyle.value)
   const isRegularBackStyle = ['regular'].includes(state.backStyle.value)
   const isTMBackStyle = ['tmBack'].includes(state.backStyle.value)
   return {
-    isFirstBackStyle: isMIUT4Model, //|| isFirstBackStyle
+    isFirstBackStyle: isMIU_T4Model, //|| isFirstBackStyle
     isCrownBackStyle,
     isBeltBackStyle,
     isConnectBackStyle,
@@ -381,7 +383,7 @@ export const getBackStyle = (state: GenuineState) => {
 
 export const getFingerColor = (state: GenuineState) => {
   const { isFirstBackStyle, isCrownBackStyle } = getBackStyle(state)
-  const isIntegratedRing = state.leatherIntegratedRing.value === 'atRingFinger'
+  const isIntegratedRing = state.genuineBrandMark.value === 'atRingFinger'
   if (isFirstBackStyle) {
     return {
       thumbWebColor: state.thumbIndexMiddleRight.color,

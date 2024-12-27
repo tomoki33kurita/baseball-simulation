@@ -56,8 +56,8 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
     loopOfRingFinger,
     materialPack,
     webParts,
-    leatherIntegratedRing,
-    leatherIntegratedRingColor
+    genuineBrandMark,
+    genuineBrandMarkColor
   } = state
   const handle = {
     dominantArm: dispatcher('dominantArm', dispatch),
@@ -72,19 +72,20 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
     gloveSize: dispatcher('gloveSize', dispatch),
     bankLaceDirection: dispatcher('bankLaceDirection', dispatch),
     loopOfRingFinger: dispatcher('loopOfRingFinger', dispatch),
-    leatherIntegratedRing: dispatcher('leatherIntegratedRing', dispatch),
-    leatherIntegratedRingColor: dispatcher('leatherIntegratedRingColor', dispatch),
+    genuineBrandMark: dispatcher('genuineBrandMark', dispatch),
+    genuineBrandMarkColor: dispatcher('genuineBrandMarkColor', dispatch),
     materialPack: dispatcher('materialPack', dispatch),
     fingerGuard: dispatcher('fingerGuard', dispatch),
     webParts: dispatcher('webParts', dispatch)
   }
-  const { isGlove, isMitt, isPitcher, isCatcher, isFirstBaseman } = positionChecker(position)
-  const { isMesh, isFirstBackStyle, isCrownBackStyle } = getGenuineBackStyle(state)
+  const { isGlove, isMitt, isCatcher, isFirstBaseman } = positionChecker(position)
+  const { isMesh, isFirstBackStyle, isCrownBackStyle, isUnselectedBackStyle } = getGenuineBackStyle(state)
   const { selectableWebParts } = getGenuineWebParts(isFirstBaseman)
   const isSelectableWebLaceStyle = ['basket2', 'tNet3'].includes(state.webParts.value)
   const isLoopOfRingFinger = (isGlove && !isFirstBackStyle) || isFirstBaseman
-  const isSelectableLeatherIntegratedRing = isGlove && !isFirstBackStyle && !isCrownBackStyle && !isMesh
-  const isSelectableLeatherIntegratedRingColor = state.leatherIntegratedRing.value === 'atRingFinger'
+  const isSelectableGenuineMark = isGlove && !isFirstBackStyle && !isCrownBackStyle && !isMesh
+  const isSelectableGenuineMarkColor = state.genuineBrandMark.value === 'atRingFinger'
+
   const backStyleOptions = getBackStyleOptions(position, baseModel.productNumber)
 
   return (
@@ -131,6 +132,8 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         isError={backStyle.value === 'unselected'}
         isDisplay={(isGlove && !isFirstBackStyle) || isCatcher}
         handleChange={handle.backStyle}
+        disabled={isSelectableGenuineMark}
+        description={isSelectableGenuineMarkColor ? '変更するには、薬指一体仕様を解除してください。' : ''}
         defaultExpanded={backStyle.value === 'unselected'}
         className={BACK_STYLE_BUTTON_OPTION}
       />
@@ -143,7 +146,6 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         defaultExpanded={palmToWebConnectLaceStyle.value === 'unselected'}
         handleChange={handle.palmToWebConnectLaceStyle}
       />
-
       <SelectCard
         summary={'背面メッシュカラー'} // fingerGuard
         selectedLabel={meshColor.label}
@@ -228,21 +230,23 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
       />
       <SelectCard
         summary={'薬指一体仕様'} //  ringIntegrated
-        selectedLabel={leatherIntegratedRing.label}
+        selectedLabel={genuineBrandMark.label}
         objects={LEATHER_INTEGRATED_RINGS}
-        isError={leatherIntegratedRing.value === 'unselected'}
-        isDisplay={isSelectableLeatherIntegratedRing}
-        defaultExpanded={leatherIntegratedRing.value === 'unselected'}
-        handleChange={handle.leatherIntegratedRing}
+        isError={genuineBrandMark.value === 'unselected'}
+        isDisplay={isSelectableGenuineMark}
+        disabled={isUnselectedBackStyle}
+        description={isUnselectedBackStyle ? '背面デザインを先に選択してください' : ''}
+        defaultExpanded={genuineBrandMark.value === 'unselected'}
+        handleChange={handle.genuineBrandMark}
       />
       <SelectCard
-        summary={'薬指一体仕様'} //  ringIntegratedColor
-        selectedLabel={leatherIntegratedRingColor.label}
+        summary={'薬指一体仕様カラー'} //  ringIntegratedColor
+        selectedLabel={genuineBrandMarkColor.label}
         objects={STITCHES}
-        isError={leatherIntegratedRingColor.value === 'unselected'}
-        isDisplay={isSelectableLeatherIntegratedRingColor}
-        defaultExpanded={leatherIntegratedRingColor.value === 'unselected'}
-        handleChange={handle.leatherIntegratedRingColor}
+        isError={genuineBrandMarkColor.value === 'unselected'}
+        isDisplay={isSelectableGenuineMarkColor}
+        defaultExpanded={genuineBrandMarkColor.value === 'unselected'}
+        handleChange={handle.genuineBrandMarkColor}
       />
     </TabPanel>
   )

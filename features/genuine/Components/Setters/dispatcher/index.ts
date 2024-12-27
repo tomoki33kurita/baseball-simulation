@@ -1,6 +1,5 @@
 import React from 'react'
 import {
-  BACK_STYLES,
   MATERIAL_PACKS,
   WEB_PARTS,
   DOMINANT_ARMS,
@@ -42,8 +41,8 @@ import {
   SET_LOOP_OF_RING_FINGER,
   SET_GENUINE_LABEL,
   SET_PALM_TO_WEB_CONNECT_LACE_STYLE,
-  SET_LEATHER_INTEGRATED_RING,
-  SET_LEATHER_INTEGRATED_RING_COLOR
+  SET_GENUINE_BRAND_MARK,
+  SET_GENUINE_BRAND_MARK_COLOR
 } from '@/features/genuine/Constants/action'
 import { BINDINGS, FIRST_BACK_GENUINE_LABELS, GENUINE_LABELS, LACES, MOUTON_COLORS, STITCHES, WELTINGS } from '@/features/genuine/Constants/color'
 
@@ -61,8 +60,8 @@ const dispatchBaseStore = {
   gloveSize: { objects: GLOVE_SIZES, actionType: SET_GLOVE_SIZE },
   bankLaceDirection: { objects: BANK_LACE_DIRECTIONS, actionType: SET_BANK_LACE_DIRECTION },
   loopOfRingFinger: { objects: LOOP_OF_RING_FINGERS, actionType: SET_LOOP_OF_RING_FINGER },
-  leatherIntegratedRing: { objects: LEATHER_INTEGRATED_RINGS, actionType: SET_LEATHER_INTEGRATED_RING },
-  leatherIntegratedRingColor: { objects: STITCHES, actionType: SET_LEATHER_INTEGRATED_RING_COLOR },
+  genuineBrandMark: { objects: LEATHER_INTEGRATED_RINGS, actionType: SET_GENUINE_BRAND_MARK },
+  genuineBrandMarkColor: { objects: STITCHES, actionType: SET_GENUINE_BRAND_MARK_COLOR },
   materialPack: { objects: MATERIAL_PACKS, actionType: SET_MATERIAL_PACK },
   fingerGuard: { objects: FINGER_GUARDS, actionType: SET_FINGER_GUARD },
   webParts: { objects: WEB_PARTS, actionType: SET_WEB_PARTS },

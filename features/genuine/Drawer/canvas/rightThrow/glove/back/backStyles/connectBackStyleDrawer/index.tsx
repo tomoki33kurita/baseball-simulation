@@ -57,7 +57,7 @@ export const connectBackStyleDrawer = (ctx: CanvasRenderingContext2D, state: Gen
   if (state.backStyle.value !== 'rn') return
   const isIndexFingerPad = ['indexPad'].includes(state.fingerGuard.value)
   const isMiddleFingerPad = ['middlePad'].includes(state.fingerGuard.value)
-  const isIntegratedRing = state.leatherIntegratedRing.value === 'atRingFinger'
+  const isIntegratedRing = state.genuineBrandMark.value === 'atRingFinger'
 
   const stitchColor = state.stitch.color
 

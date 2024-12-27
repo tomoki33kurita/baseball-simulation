@@ -22,7 +22,7 @@ const getFingerParts = (state: GenuineState) => {
   const backStyle = state.backStyle.value
   const productNumber = state.baseModel.productNumber
   const { isFirstBaseman, isCatcher } = positionChecker(state.baseModel.position)
-  const isIntegratedRing = state.leatherIntegratedRing.value === 'atRingFinger'
+  const isIntegratedRing = state.genuineBrandMark.value === 'atRingFinger'
 
   if (productNumber === 'MIU-T4') {
     // firstBackStyle

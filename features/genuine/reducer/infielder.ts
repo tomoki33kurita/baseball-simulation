@@ -43,8 +43,8 @@ import {
   SET_GENUINE_LABEL,
   SET_WEB2_COLOR,
   SET_LOOP_OF_RING_FINGER_COLOR,
-  SET_LEATHER_INTEGRATED_RING,
-  SET_LEATHER_INTEGRATED_RING_COLOR
+  SET_GENUINE_BRAND_MARK,
+  SET_GENUINE_BRAND_MARK_COLOR
 } from '@/features/genuine/Constants/action'
 import { GenuineState } from '../types'
 import { NORMAL_BACK_STYLE } from '../Constants/base'
@@ -153,8 +153,8 @@ export const initialState: GenuineState = {
   mouton: unselectedStateWithPrice,
   loopOfRingFinger: unselectedStateWithPrice,
   loopOfRingFingerColor: unselectedColorState,
-  leatherIntegratedRing: unselectedStateWithPrice,
-  leatherIntegratedRingColor: unselectedColorState,
+  genuineBrandMark: unselectedStateWithPrice,
+  genuineBrandMarkColor: unselectedColorState,
   size: unselectedStateWithPrice,
   backStyle: unselectedStateWithPrice,
   embroideries: [initialEmbroideryState],
@@ -217,10 +217,10 @@ export const reducer = (state: any, action: any) => {
       return { ...state, loopOfRingFinger: action.loopOfRingFinger, drawerIndex: 0 }
     case SET_LOOP_OF_RING_FINGER_COLOR:
       return { ...state, loopOfRingFingerColor: action.loopOfRingFingerColor }
-    case SET_LEATHER_INTEGRATED_RING:
-      return { ...state, leatherIntegratedRing: action.leatherIntegratedRing, drawerIndex: 0 }
-    case SET_LEATHER_INTEGRATED_RING_COLOR:
-      return { ...state, leatherIntegratedRingColor: action.leatherIntegratedRingColor, drawerIndex: 0 }
+    case SET_GENUINE_BRAND_MARK:
+      return { ...state, genuineBrandMark: action.genuineBrandMark, drawerIndex: 0 }
+    case SET_GENUINE_BRAND_MARK_COLOR:
+      return { ...state, genuineBrandMarkColor: action.genuineBrandMarkColor, drawerIndex: 0 }
     case SET_MATERIAL_PACK:
       return { ...state, materialPack: action.materialPack, drawerIndex: 1 }
     case SET_FINGER_GUARD:

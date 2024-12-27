@@ -34,7 +34,7 @@ export type PartsItem = {
     | 'bankLaceDirection'
     | 'loopOfRingFinger'
     | 'palmToWebConnectLaceStyle'
-    | 'leatherIntegratedRing'
+    | 'genuineBrandMark'
   >
   // value: keyof typeof LEATHER_COLORS_BY_PARTS
 }
@@ -64,8 +64,8 @@ export type GenuineState = {
   bankLaceDirection: BankLaceDirectionItem
   loopOfRingFinger: BaseItemWithPrice
   loopOfRingFingerColor: ColorItem
-  leatherIntegratedRing: BaseItemWithPrice
-  leatherIntegratedRingColor: ColorItem
+  genuineBrandMark: BaseItemWithPrice
+  genuineBrandMarkColor: ColorItem
 
   fingerGuard: BaseItem
   materialPack: BaseItem
