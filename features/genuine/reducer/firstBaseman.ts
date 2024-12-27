@@ -280,7 +280,7 @@ export const reducer = (state: any, action: any) => {
     case SET_THUMB_COLOR:
       return { ...state, thumb: action.thumb, drawerIndex: 0 }
     case SET_GENUINE_LABEL:
-      return { ...state, genuineLabel: action.genuineLabel }
+      return { ...state, genuineLabel: action.genuineLabel, drawerIndex: 0 }
     case SET_UNDER_WEB_COLOR:
       return { ...state, underWeb: action.underWeb, drawerIndex: 0 }
     case SET_BOOMERANG_COLOR:

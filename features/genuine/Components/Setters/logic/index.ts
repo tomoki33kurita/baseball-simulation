@@ -8,8 +8,11 @@ import {
   CATCHER_MITT_REGULAR_BACK_PARTS,
   CATCHER_MITT_TM_BACK_PARTS,
   CROWN_BACK_PARTS,
+  FIRST_BACK_GENUINE_LABELS,
   FIRST_BACK_PARTS,
   FIRST_MITT_PARTS,
+  FRONT_GENUINE_LABELS,
+  GENUINE_LABELS,
   LEATHER_COLORS_BY_PARTS,
   PALM_PARTS
 } from '@/features/genuine/Constants/color'
@@ -150,6 +153,20 @@ export const getBackStyleOptions = (position: Position, productNumber: string) =
       return BACK_STYLES.filter((b) => b.value !== RN_BACK_STYLE.value)
     default:
       return [NORMAL_BACK_STYLE]
+  }
+}
+
+export const getGenuineLabelOptions = (state: GenuineState) => {
+  const { isConnectBackStyle, isFirstBackStyle } = getBackStyle(state)
+  const { position } = state.baseModel
+  switch (position) {
+    case 'pitcher':
+      if (isConnectBackStyle) return FRONT_GENUINE_LABELS
+      if (isFirstBackStyle) return FIRST_BACK_GENUINE_LABELS
+    case 'catcher':
+      return FRONT_GENUINE_LABELS
+    default:
+      return GENUINE_LABELS
   }
 }
 

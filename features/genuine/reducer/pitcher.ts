@@ -312,7 +312,7 @@ export const reducer = (state: any, action: any) => {
     case SET_LITTLE_HOOK:
       return { ...state, littleHook: action.littleHook }
     case SET_GENUINE_LABEL:
-      return { ...state, genuineLabel: action.genuineLabel }
+      return { ...state, genuineLabel: action.genuineLabel, drawerIndex: 0 }
     case SET_FINGER_GUARD_COLOR:
       return { ...state, fingerGuardColor: action.fingerGuardColor, drawerIndex: 0 }
     case SET_PERSONAL:

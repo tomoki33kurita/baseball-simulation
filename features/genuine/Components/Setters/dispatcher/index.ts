@@ -45,7 +45,7 @@ import {
   SET_LEATHER_INTEGRATED_RING,
   SET_LEATHER_INTEGRATED_RING_COLOR
 } from '@/features/genuine/Constants/action'
-import { BINDINGS, GENUINE_LABELS, LACES, MOUTON_COLORS, STITCHES, WELTINGS } from '@/features/genuine/Constants/color'
+import { BINDINGS, FIRST_BACK_GENUINE_LABELS, GENUINE_LABELS, LACES, MOUTON_COLORS, STITCHES, WELTINGS } from '@/features/genuine/Constants/color'
 
 // ここはブランドのドメイン
 const dispatchBaseStore = {
@@ -71,7 +71,7 @@ const dispatchBaseStore = {
   stitch: { objects: STITCHES, actionType: SET_STITCH_COLOR },
   welting: { objects: WELTINGS, actionType: SET_WELTING },
   mouton: { objects: MOUTON_COLORS, actionType: SET_MOUTON_COLOR },
-  genuineLabel: { objects: GENUINE_LABELS, actionType: SET_GENUINE_LABEL }
+  genuineLabel: { objects: [...GENUINE_LABELS, ...FIRST_BACK_GENUINE_LABELS], actionType: SET_GENUINE_LABEL }
 }
 
 type DispatchKey = keyof typeof dispatchBaseStore

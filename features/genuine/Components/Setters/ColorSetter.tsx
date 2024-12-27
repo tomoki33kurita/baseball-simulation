@@ -3,7 +3,7 @@ import { GenuineState } from '@/features/genuine/types'
 import { Position } from '@/types'
 import { TabPanel } from '@/components/TabPanel'
 import { dispatcher } from './dispatcher'
-import { getColorOptionsByParts, getSelectableParts, getComponentParts, getBackStyle, filterSelectableParts } from './logic'
+import { getColorOptionsByParts, getSelectableParts, getComponentParts, getBackStyle, filterSelectableParts, getGenuineLabelOptions } from './logic'
 import {
   BINDING_COLOR_BUTTON_OPTION,
   WELTING_COLOR_BUTTON_OPTION,
@@ -18,7 +18,8 @@ import {
   STITCHES,
   BINDINGS,
   GENUINE_LABELS,
-  FRONT_GENUINE_LABELS
+  FRONT_GENUINE_LABELS,
+  FIRST_BACK_GENUINE_LABELS
 } from '../../Constants/color'
 import { originDispatcher, positionChecker } from '@/util/logic'
 import { DISPATCHER } from '@/features/genuine/Constants/action'
@@ -34,13 +35,14 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
   const { parts, lace, binding, stitch, welting, mouton, genuineLabel } = state
   const partsKey = parts.value
   const partsLabel = parts.label
-  const { isMitt, isFirstBaseman } = positionChecker(state.baseModel.position)
-  const { isConnectBackStyle } = getBackStyle(state)
+  const { isFirstBaseman } = positionChecker(state.baseModel.position)
   const componentParts = getComponentParts(state)
   const selectedParts = componentParts[partsKey as keyof typeof componentParts]
   const selectableParts = getSelectableParts(state)
   const filteredParts = filterSelectableParts(state, selectableParts)
   const colorsByParts = getColorOptionsByParts(partsKey)
+  const genuineLabelOptions = getGenuineLabelOptions(state)
+
   const handle = {
     [partsKey]: originDispatcher(DISPATCHER, partsKey, dispatch, colorsByParts),
     parts: originDispatcher(DISPATCHER, 'parts', dispatch, PARTS),
@@ -118,7 +120,7 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
       <SelectCard
         summary={'ラベル'} //
         selectedLabel={genuineLabel.label}
-        objects={isMitt || isConnectBackStyle ? FRONT_GENUINE_LABELS : GENUINE_LABELS}
+        objects={genuineLabelOptions}
         isError={genuineLabel.value === 'unselected'}
         defaultExpanded={genuineLabel.value === 'unselected'}
         handleChange={handle.genuineLabel}
