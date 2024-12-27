@@ -122,6 +122,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         isError={leatherThickness.value === 'unselected'}
         defaultExpanded={leatherThickness.value === 'unselected'}
         handleChange={handle.leatherThickness}
+        description={"Genuineでは'薄く'を推奨しております。"}
       />
       <SelectCard
         summary={'背面デザイン'} // backStyle
@@ -204,6 +205,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         objects={CORE_HARDNESSES}
         isError={coreHardness.value === 'unselected'}
         defaultExpanded={coreHardness.value === 'unselected'}
+        description={"Genuineでは'硬め'を推奨しております。"}
         handleChange={handle.coreHardness}
       />
       <SelectCard
