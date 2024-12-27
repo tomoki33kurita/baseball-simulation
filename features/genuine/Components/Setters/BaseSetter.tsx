@@ -1,6 +1,6 @@
 import React from 'react'
 import { GenuineState } from '@/features/genuine/types'
-import { Position, WebParts } from '@/types'
+import { Position } from '@/types'
 import {
   DOMINANT_ARM_BUTTON_OPTION,
   DOMINANT_ARMS,
@@ -8,10 +8,8 @@ import {
   MATERIAL_PACK_BUTTON_OPTION,
   MATERIAL_PACKS,
   WEB_PARTS_BUTTON_OPTION,
-  WEB_PARTS,
   FINGER_GUARDS,
   BACK_STYLE_BUTTON_OPTION,
-  BACK_STYLES,
   MESH_COLORS,
   SIZES,
   WEB_LACE_STYLES,
@@ -22,7 +20,6 @@ import {
   BANK_LACE_DIRECTIONS,
   LOOP_OF_RING_FINGERS,
   MATERIAL_PACKS_FOR_FIRST_BASEMAN,
-  BACK_STYLES_CATCHER,
   PALM_TO_WEB_CONNECT_LACE_STYLE,
   LEATHER_INTEGRATED_RINGS
 } from '@/features/genuine/Constants/base'
@@ -31,7 +28,7 @@ import { SelectCardWithImage } from '@/components/Setters/SelectCardWithImage'
 import { TabPanel } from '@/components/TabPanel'
 import { dispatcher } from './dispatcher'
 import { positionChecker } from '@/util/logic'
-import { getGenuineBackStyle, getGenuineWebParts } from './logic'
+import { getBackStyleOptions, getGenuineBackStyle, getGenuineWebParts } from './logic'
 import { STITCHES } from '../../Constants/color'
 
 type Props = {
@@ -88,6 +85,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
   const isLoopOfRingFinger = (isGlove && !isFirstBackStyle) || isFirstBaseman
   const isSelectableLeatherIntegratedRing = isGlove && !isFirstBackStyle && !isCrownBackStyle && !isMesh
   const isSelectableLeatherIntegratedRingColor = state.leatherIntegratedRing.value === 'atRingFinger'
+  const backStyleOptions = getBackStyleOptions(position, baseModel.productNumber)
 
   return (
     <TabPanel selectedIndex={selectedIndex} index={0}>
@@ -128,7 +126,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
       <SelectCard
         summary={'背面デザイン'} // backStyle
         selectedLabel={backStyle.label}
-        objects={isCatcher ? BACK_STYLES_CATCHER : BACK_STYLES.filter((o) => (isPitcher ? true : o.value !== 'crown' && o.value !== 'crownMesh'))}
+        objects={backStyleOptions}
         isError={backStyle.value === 'unselected'}
         isDisplay={(isGlove && !isFirstBackStyle) || isCatcher}
         handleChange={handle.backStyle}

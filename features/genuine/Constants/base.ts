@@ -5,12 +5,15 @@ export const DOMINANT_ARMS: BaseItem[] = [
   { label: '左投げ', value: 'leftThrow' }
 ]
 
+export const NORMAL_BACK_STYLE: BaseItemWithPrice = { label: 'ノーマル', value: 'normal', price: 0 }
+export const CROWN_BACK_STYLE: BaseItemWithPrice = { label: '王冠スタイル', value: 'crown', price: 0 }
+export const RN_BACK_STYLE: BaseItemWithPrice = { label: 'RNスタイル', value: 'rn', price: 0 }
 export const BACK_STYLES: BaseItemWithPrice[] = [
-  { label: 'ノーマル', value: 'normal', price: 0 },
-  { label: '王冠スタイル', value: 'crown', price: 0 },
+  NORMAL_BACK_STYLE,
+  CROWN_BACK_STYLE,
+  RN_BACK_STYLE
   // { label: 'ノーマルメッシュ', value: 'normalMesh', price: 3300 },
   // { label: '王冠メッシュ', value: 'crownMesh', price: 3300 },
-  { label: 'RNスタイル', value: 'rn', price: 0 }
 ]
 
 export const BACK_STYLES_CATCHER: BaseItemWithPrice[] = [

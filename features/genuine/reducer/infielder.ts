@@ -47,6 +47,7 @@ import {
   SET_LEATHER_INTEGRATED_RING_COLOR
 } from '@/features/genuine/Constants/action'
 import { GenuineState } from '../types'
+import { NORMAL_BACK_STYLE } from '../Constants/base'
 
 const initialPersonalState = {
   userName: '',
@@ -191,7 +192,7 @@ export const reducer = (state: any, action: any) => {
         labelStand: action.all
       }
     case SET_BASE_MODEL:
-      return { ...state, baseModel: action.baseModel }
+      return { ...state, baseModel: action.baseModel, backStyle: NORMAL_BACK_STYLE }
     case SET_DOMINANT_ARM:
       return { ...state, dominantArm: action.dominantArm }
     case SET_BACK_STYLE:

@@ -18,7 +18,7 @@ import { isHalfWidthCharChecker } from '@/features/genuine/Drawer/canvas/back/us
 import { SET_EMBROIDERIES } from '@/Constants'
 import { unselectedState } from '@/features/genuine/reducer/infielder'
 import { positionChecker } from '@/util/logic'
-import { WEB_PARTS } from '@/features/genuine/Constants/base'
+import { BACK_STYLES, BACK_STYLES_CATCHER, NORMAL_BACK_STYLE, RN_BACK_STYLE, WEB_PARTS } from '@/features/genuine/Constants/base'
 
 export const getComponentParts = (state: GenuineState) => {
   const {
@@ -138,6 +138,18 @@ export const getSelectableParts = (state: GenuineState): PartsItem[] => {
     return BACK_PARTS
   } else {
     return PALM_PARTS
+  }
+}
+
+export const getBackStyleOptions = (position: Position, productNumber: string) => {
+  switch (position) {
+    case 'catcher':
+      return BACK_STYLES_CATCHER
+    case 'pitcher':
+      if (productNumber === 'MIU-T1') return BACK_STYLES
+      return BACK_STYLES.filter((b) => b.value !== RN_BACK_STYLE.value)
+    default:
+      return [NORMAL_BACK_STYLE]
   }
 }
 

@@ -47,6 +47,7 @@ import {
 } from '@/features/genuine/Constants/action'
 import { ADD_EMBROIDERY, REMOVE_EMBROIDERY, SET_DRAWER_INDEX, SET_EMBROIDERIES, SET_PERSONAL } from '@/Constants'
 import { GenuineState } from '../types'
+import { NORMAL_BACK_STYLE } from '../Constants/base'
 
 const initialPersonalState = {
   userName: '',
@@ -219,7 +220,8 @@ export const reducer = (state: any, action: any) => {
     case SET_LEATHER_INTEGRATED_RING_COLOR:
       return { ...state, leatherIntegratedRingColor: action.leatherIntegratedRingColor, drawerIndex: 0 }
     case SET_BASE_MODEL:
-      return { ...state, baseModel: action.baseModel }
+      return { ...state, baseModel: action.baseModel, backStyle: NORMAL_BACK_STYLE }
+
     case SET_DOMINANT_ARM:
       return { ...state, dominantArm: action.dominantArm }
     case SET_MATERIAL_PACK:
