@@ -44,7 +44,8 @@ import {
   SET_WEB2_COLOR,
   SET_LOOP_OF_RING_FINGER_COLOR,
   SET_GENUINE_BRAND_MARK,
-  SET_GENUINE_BRAND_MARK_COLOR
+  SET_GENUINE_BRAND_MARK_COLOR,
+  SET_TWO_FINGER_IN_LITTLE_SLOT
 } from '@/features/genuine/Constants/action'
 import { GenuineState } from '../types'
 import { NORMAL_BACK_STYLE } from '../Constants/base'
@@ -97,6 +98,7 @@ export const initialState: GenuineState = {
       height: 0
     }
   },
+  twoFingerInLittleSlot: unselectedState,
   dominantArm: unselectedState,
   fingerGuard: unselectedState,
   fingerGuardColor: unselectedColorState,
@@ -211,6 +213,8 @@ export const reducer = (state: any, action: any) => {
       return { ...state, coreHardness: action.coreHardness }
     case SET_GLOVE_SIZE:
       return { ...state, gloveSize: action.gloveSize }
+    case SET_TWO_FINGER_IN_LITTLE_SLOT:
+      return { ...state, twoFingerInLittleSlot: action.twoFingerInLittleSlot }
     case SET_BANK_LACE_DIRECTION:
       return { ...state, bankLaceDirection: action.bankLaceDirection, drawerIndex: 1 }
     case SET_LOOP_OF_RING_FINGER:

@@ -18,7 +18,8 @@ import {
   GENUINE_EMBROIDERIES,
   GENUINE_ENGRAVINGS,
   FINGER_GUARDS_CATCHER,
-  JUNIOR_GLOVE_SIZES
+  JUNIOR_GLOVE_SIZES,
+  TWO_FINGER_LITTLE_SLOTS
 } from '@/features/genuine/Constants/base'
 import { objectsFilter } from '@/util/logic'
 import { ResponseDispatch } from '@/features/genuine/types'
@@ -45,7 +46,8 @@ import {
   SET_GENUINE_LABEL,
   SET_PALM_TO_WEB_CONNECT_LACE_STYLE,
   SET_GENUINE_BRAND_MARK,
-  SET_GENUINE_BRAND_MARK_COLOR
+  SET_GENUINE_BRAND_MARK_COLOR,
+  SET_TWO_FINGER_IN_LITTLE_SLOT
 } from '@/features/genuine/Constants/action'
 import { BINDINGS, FIRST_BACK_GENUINE_LABELS, GENUINE_LABELS, LACES, MOUTON_COLORS, STITCHES, WELTINGS } from '@/features/genuine/Constants/color'
 
@@ -61,6 +63,7 @@ const dispatchBaseStore = {
   leatherThickness: { objects: LEATHER_THICKNESS, actionType: SET_LEATHER_THICKNESS },
   coreHardness: { objects: CORE_HARDNESSES, actionType: SET_CORE_HARDNESS },
   gloveSize: { objects: [...JUNIOR_GLOVE_SIZES, ...GLOVE_SIZES], actionType: SET_GLOVE_SIZE },
+  twoFingerInLittleSlot: { objects: TWO_FINGER_LITTLE_SLOTS, actionType: SET_TWO_FINGER_IN_LITTLE_SLOT },
   bankLaceDirection: { objects: BANK_LACE_DIRECTIONS, actionType: SET_BANK_LACE_DIRECTION },
   loopOfRingFinger: { objects: LOOP_OF_RING_FINGERS, actionType: SET_LOOP_OF_RING_FINGER },
   genuineBrandMark: { objects: [...GENUINE_EMBROIDERIES, ...GENUINE_ENGRAVINGS], actionType: SET_GENUINE_BRAND_MARK },

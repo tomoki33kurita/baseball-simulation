@@ -13,6 +13,7 @@ import { webOfGloveBackDrawer } from './rightThrow/glove/back/web/webOfGloveBack
 import { loopOfRingFingerDrawer } from './rightThrow/glove/back/loopOfFingerDrawer'
 import { paisleySelected } from './paisleySelected'
 import { pseudoDrawingEngraved } from './rightThrow/glove/front/engraving'
+import { littleHookDrawer } from './rightThrow/glove/back/fingerHooks'
 // import { meshDrawer } from './rightThrow/glove/back/mesh'
 
 // const drawPaisley = (ctx: CanvasRenderingContext2D, state: GenuineState) => {
@@ -48,7 +49,7 @@ export const drawGenuineGloveRearSurface = (ctx: CanvasRenderingContext2D | null
   lace(ctx, laceColor) // 革紐
   !isFirstBackStyle && !isConnectBackStyle && laceOfWristBeltCrossDrawer(ctx, laceColor)
   genuineLabelDrawer(ctx, state) // ラベル描画
-  littleHook(ctx, state.littleHook.color, 15, 240, -10, 0.7) // 小指掛け紐
+  littleHookDrawer(ctx, state) // 小指掛け紐
   thumbHook(ctx, state.thumbHook.color, -14, 30, 0) //手元
   if (['normalMesh', 'crownMesh'].includes(state.backStyle.value)) {
     // console.log('メッシュ指定されている')

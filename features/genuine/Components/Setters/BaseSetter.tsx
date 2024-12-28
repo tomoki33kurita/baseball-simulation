@@ -24,7 +24,8 @@ import {
   GENUINE_EMBROIDERIES,
   GENUINE_ENGRAVINGS,
   FINGER_GUARDS_CATCHER,
-  JUNIOR_GLOVE_SIZES
+  JUNIOR_GLOVE_SIZES,
+  TWO_FINGER_LITTLE_SLOTS
 } from '@/features/genuine/Constants/base'
 import { SelectCard } from '@/components/Setters/SelectCard'
 import { SelectCardWithImage } from '@/components/Setters/SelectCardWithImage'
@@ -56,6 +57,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
     fingerGuard,
     coreHardness,
     gloveSize,
+    twoFingerInLittleSlot,
     bankLaceDirection,
     loopOfRingFinger,
     materialPack,
@@ -74,6 +76,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
     leatherThickness: dispatcher('leatherThickness', dispatch),
     coreHardness: dispatcher('coreHardness', dispatch),
     gloveSize: dispatcher('gloveSize', dispatch),
+    twoFingerInLittleSlot: dispatcher('twoFingerInLittleSlot', dispatch),
     bankLaceDirection: dispatcher('bankLaceDirection', dispatch),
     loopOfRingFinger: dispatcher('loopOfRingFinger', dispatch),
     genuineBrandMark: dispatcher('genuineBrandMark', dispatch),
@@ -110,6 +113,15 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         isError={gloveSize.value === 'unselected'}
         defaultExpanded={gloveSize.value === 'unselected'}
         handleChange={handle.gloveSize}
+      />
+      <SelectCard
+        summary={'小指二本入れ仕様'} // gloveSize
+        selectedLabel={twoFingerInLittleSlot.label}
+        objects={TWO_FINGER_LITTLE_SLOTS}
+        isError={twoFingerInLittleSlot.value === 'unselected'}
+        isDisplay={!isCatcher}
+        defaultExpanded={twoFingerInLittleSlot.value === 'unselected'}
+        handleChange={handle.twoFingerInLittleSlot}
       />
       <SelectCard
         summary={'指カバー/指当て'} // fingerGuard

@@ -105,6 +105,7 @@ export const initialState: GenuineState = {
       height: 0
     }
   },
+  twoFingerInLittleSlot: unselectedState,
   dominantArm: unselectedState,
   meshColor: unselectedColorState,
   webLaceStyle: unselectedState,

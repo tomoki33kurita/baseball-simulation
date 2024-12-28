@@ -35,6 +35,7 @@ export type PartsItem = {
     | 'loopOfRingFinger'
     | 'palmToWebConnectLaceStyle'
     | 'genuineBrandMark'
+    | 'twoFingerInLittleSlot'
   >
   // value: keyof typeof LEATHER_COLORS_BY_PARTS
 }
@@ -76,6 +77,7 @@ export type GenuineState = {
   drawerIndex: DrawerIndex
   genuineLabel: BaseItemWithPrice
   palmToWebConnectLaceStyle: BaseItem
+  twoFingerInLittleSlot: BaseItem
 
   all: ColorItem
   lace: ColorItem

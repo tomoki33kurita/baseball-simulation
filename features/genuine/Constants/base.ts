@@ -77,6 +77,12 @@ export const JUNIOR_GLOVE_SIZES: BaseItem[] = [
   { label: '22~23cm', value: 'between22and23' }
 ]
 
+// twoFingerInLittleSlot
+export const TWO_FINGER_LITTLE_SLOTS: BaseItem[] = [
+  { label: '通常仕様', value: 'normal' },
+  { label: '小指二本入れ仕様', value: 'twoFingerInLittleSlot' }
+]
+
 export const BANK_LACE_DIRECTIONS: BankLaceDirectionItem[] = [
   { label: 'レギュラー巻き', value: 'sequentialRoll' },
   { label: '逆巻き', value: 'reverseRoll' }

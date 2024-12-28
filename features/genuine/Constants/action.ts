@@ -15,6 +15,7 @@ export const SET_LEATHER_THICKNESS = 'setLeatherThickness'
 export const SET_GENUINE_BRAND_MARK = 'setGenuineBrandMark'
 export const SET_CORE_HARDNESS = 'setCoreHardness'
 export const SET_GLOVE_SIZE = 'setGloveSize'
+export const SET_TWO_FINGER_IN_LITTLE_SLOT = 'setTwoFingerInLittleSlot'
 export const SET_BANK_LACE_DIRECTION = 'setBankLaceDirection'
 export const SET_LOOP_OF_RING_FINGER = 'setLoopOfRingFinger'
 
@@ -98,6 +99,7 @@ export const DISPATCHER = {
   genuineBrandMarkColor: SET_GENUINE_BRAND_MARK_COLOR,
   coreHardness: SET_CORE_HARDNESS,
   gloveSize: SET_GLOVE_SIZE,
+  twoFingerInLittleSlot: SET_TWO_FINGER_IN_LITTLE_SLOT,
   bankLaceDirection: SET_BANK_LACE_DIRECTION,
   loopOfRingFinger: SET_LOOP_OF_RING_FINGER,
   loopOfRingFingerColor: SET_LOOP_OF_RING_FINGER_COLOR,
