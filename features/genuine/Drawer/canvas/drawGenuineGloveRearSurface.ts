@@ -51,11 +51,6 @@ export const drawGenuineGloveRearSurface = (ctx: CanvasRenderingContext2D | null
   genuineLabelDrawer(ctx, state) // ラベル描画
   littleHookDrawer(ctx, state) // 小指掛け紐
   thumbHook(ctx, state.thumbHook.color, -14, 30, 0) //手元
-  if (['normalMesh', 'crownMesh'].includes(state.backStyle.value)) {
-    // console.log('メッシュ指定されている')
-    // meshDrawer(ctx, 'red')
-  }
-
   paisleySelected(ctx, state)
   // drawPaisley(ctx, state)
 }

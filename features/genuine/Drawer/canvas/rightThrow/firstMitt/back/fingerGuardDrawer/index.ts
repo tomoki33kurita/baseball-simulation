@@ -1,6 +1,7 @@
 import { GenuineState } from '@/features/genuine/types'
-import { indexFingerCover } from './indexFingerCover'
-import { indexFingerPad, indexFingerPadWithNoEdge } from './indexFingerPad'
+import { indexFingerCover, indexFingerPad } from './indexFinger'
+import {} from './indexFinger'
+import { middleFingerCover, middleFingerPad } from './middleFinger'
 
 export const fingerGuardDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
   const fingerGuardType = state.fingerGuard.value
@@ -9,10 +10,13 @@ export const fingerGuardDrawer = (ctx: CanvasRenderingContext2D, state: GenuineS
   if (fingerGuardType === 'indexPad') {
     indexFingerPad(ctx, fingerGuardColor, stitchColor)
   }
-  if (fingerGuardType === 'indexPadWithNoEdge') {
-    indexFingerPadWithNoEdge(ctx, fingerGuardColor, stitchColor)
-  }
   if (fingerGuardType === 'indexCover') {
     indexFingerCover(ctx, fingerGuardColor, stitchColor)
+  }
+  if (fingerGuardType === 'middlePad') {
+    middleFingerPad(ctx, fingerGuardColor, stitchColor)
+  }
+  if (fingerGuardType === 'middleCover') {
+    middleFingerCover(ctx, fingerGuardColor, stitchColor)
   }
 }
