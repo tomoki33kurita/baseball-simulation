@@ -6,6 +6,7 @@ import { regularBackStyleWristBelt } from '../regularBackWristBelt'
 import { ringRightMiddleLeftFingerOfRegularBackStyle } from '../ringMiddleFinger'
 import { thumbFingerOfRegularBackStyle } from '../thumbFinger'
 import { GenuineState } from '@/features/genuine/types'
+import { fingerGuardDrawer } from '../fingerGuardDrawer'
 
 export const regularStyleDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
   const isRegularBack = state.backStyle.value === 'regular'
@@ -26,6 +27,7 @@ export const regularStyleDrawer = (ctx: CanvasRenderingContext2D, state: Genuine
   // ヘリ革
   edgeOfCommon(ctx, state.binding.color)
   edgeOfRegularBackStyle(ctx, state.binding.color, state.fingerGuard.value, state.linings.color)
+  fingerGuardDrawer(ctx, state) // 指カバー・指当て
   // 人差し指の指だし周りパーツ部分
   indexFingerTipOutDrawer(ctx, state?.indexFingerTipOut.color, state.fingerGuard.value)
   // バックルベルト

@@ -22,7 +22,8 @@ import {
   MATERIAL_PACKS_FOR_FIRST_BASEMAN,
   PALM_TO_WEB_CONNECT_LACE_STYLE,
   GENUINE_EMBROIDERIES,
-  GENUINE_ENGRAVINGS
+  GENUINE_ENGRAVINGS,
+  FINGER_GUARDS_CATCHER
 } from '@/features/genuine/Constants/base'
 import { SelectCard } from '@/components/Setters/SelectCard'
 import { SelectCardWithImage } from '@/components/Setters/SelectCardWithImage'
@@ -110,7 +111,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
       <SelectCard
         summary={'指カバー/指当て'} // fingerGuard
         selectedLabel={fingerGuard.label}
-        objects={FINGER_GUARDS}
+        objects={isCatcher ? FINGER_GUARDS_CATCHER : FINGER_GUARDS}
         isError={fingerGuard.value === 'unselected'}
         defaultExpanded={fingerGuard.value === 'unselected'}
         className={FINGER_GUARD_TYPE_BUTTON_OPTION}

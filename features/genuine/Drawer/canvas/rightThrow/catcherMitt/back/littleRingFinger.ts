@@ -206,9 +206,9 @@ export const otherThanThumbFingerOfTMBackStyle = (ctx: CanvasRenderingContext2D,
   ctx.quadraticCurveTo(363, 177, 382, 251) //
   ctx.quadraticCurveTo(404, 356, 467, 391) // 人差し指袋と親指袋のつなぎ目部分
   ctx.moveTo(461, 387) // 人差し指袋と親指袋のつなぎ目部分＿上
-  ctx.quadraticCurveTo(435, 434, 435, 434) // // 人差し指袋と親指袋のつなぎ目部分＿下
-  ctx.moveTo(454, 383) // 人差し指袋と親指袋のつなぎ目部分＿上
-  ctx.quadraticCurveTo(428, 430, 428, 430) // // 人差し指袋と親指袋のつなぎ目部分＿下
+  ctx.lineTo(432, 440) // // 人差し指袋と親指袋のつなぎ目部分＿下
+  ctx.moveTo(456, 383) // 人差し指袋と親指袋のつなぎ目部分＿上
+  ctx.lineTo(426, 439) // // 人差し指袋と親指袋のつなぎ目部分＿下
 
   // 中指袋_左
   // // 外側

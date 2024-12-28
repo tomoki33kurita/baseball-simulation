@@ -16,7 +16,8 @@ import {
   ALL_BACK_STYLES,
   PALM_TO_WEB_CONNECT_LACE_STYLE,
   GENUINE_EMBROIDERIES,
-  GENUINE_ENGRAVINGS
+  GENUINE_ENGRAVINGS,
+  FINGER_GUARDS_CATCHER
 } from '@/features/genuine/Constants/base'
 import { objectsFilter } from '@/util/logic'
 import { ResponseDispatch } from '@/features/genuine/types'
@@ -64,7 +65,7 @@ const dispatchBaseStore = {
   genuineBrandMark: { objects: [...GENUINE_EMBROIDERIES, ...GENUINE_ENGRAVINGS], actionType: SET_GENUINE_BRAND_MARK },
   genuineBrandMarkColor: { objects: STITCHES, actionType: SET_GENUINE_BRAND_MARK_COLOR },
   materialPack: { objects: MATERIAL_PACKS, actionType: SET_MATERIAL_PACK },
-  fingerGuard: { objects: FINGER_GUARDS, actionType: SET_FINGER_GUARD },
+  fingerGuard: { objects: [...FINGER_GUARDS, ...FINGER_GUARDS_CATCHER], actionType: SET_FINGER_GUARD },
   webParts: { objects: WEB_PARTS, actionType: SET_WEB_PARTS },
   lace: { objects: LACES, actionType: SET_LACE_COLOR },
   binding: { objects: BINDINGS, actionType: SET_BINDING_COLOR },

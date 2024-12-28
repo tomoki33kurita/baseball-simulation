@@ -4,6 +4,7 @@ import { weltingOfMiddleFingerBeltBackStyle } from '../welting'
 import { littleRingMergedFingerOfBeltBackStyle } from '../littleRingFinger'
 import { thumbFingerOfBeltBackStyle } from '../thumbFinger'
 import { beltTypeDrawer } from './beltTypeDrawer'
+import { fingerGuardDrawer } from '../fingerGuardDrawer'
 
 export const beltStyleDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
   const isBeltBack = ['belt'].includes(state.backStyle.value)
@@ -16,4 +17,5 @@ export const beltStyleDrawer = (ctx: CanvasRenderingContext2D, state: GenuineSta
   weltingOfMiddleFingerBeltBackStyle(ctx, state.welting) // ベルトスタイルのハミダシ
   edgeOfCommon(ctx, state.binding.color) // ヘリ革
   beltTypeDrawer(ctx, state) // ベルトタイプ別の描画
+  fingerGuardDrawer(ctx, state) // 指カバー・指当て
 }

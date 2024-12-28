@@ -21,12 +21,12 @@ export const drawGenuineCatcherMittRearSurface = (ctx: CanvasRenderingContext2D 
   ctx.font = '40px serif'
   ctx.strokeStyle = '#383838'
   ctx.fillStyle = '#383838'
-  ctx.strokeText('型番：' + baseModel.productNumber, 50, 70)
-  canvasResetter(ctx)
+  ctx.strokeText('型番：' + baseModel.productNumber, 50, 50)
+  pseudoDrawingEngraved(ctx)
+
   liningDrawer(ctx, state) // 裏革
   backStyleDrawer(ctx, state) // バックスタイル
   catchFaceDrawer(ctx, state.palm.color, state.stitch.color, state.baseModel.productNumber) // 捕球面側
-  fingerGuardDrawer(ctx, state) // 指カバー・指当て
   webDrawer(ctx, state) // ウェブ
   laceDrawer(ctx, state.lace.color) // 革紐
   thumbHook(ctx, state.thumbHook.color) // かけ紐

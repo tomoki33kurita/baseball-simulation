@@ -99,8 +99,16 @@ export const MATERIAL_PACKS_FOR_FIRST_BASEMAN: BaseItem[] = [
 ]
 
 export const FINGER_GUARDS: BaseItem[] = [
+  { label: '指カバー', value: 'indexCover' },
+  { label: '指アテ', value: 'indexPad' },
+  // { label: '指アテ有り(中指)', value: 'middlePad' },
+  { label: '無し', value: 'none' }
+]
+
+export const FINGER_GUARDS_CATCHER: BaseItem[] = [
   { label: '指カバー有り', value: 'indexCover' },
-  { label: '指アテ有り', value: 'indexPad' },
+  { label: '指アテ1', value: 'indexPad1' },
+  { label: '指アテ2', value: 'indexPad2' },
   // { label: '指アテ有り(中指)', value: 'middlePad' },
   { label: '無し', value: 'none' }
 ]
