@@ -1,4 +1,4 @@
-export const fingerHole = (ctx: CanvasRenderingContext2D, liningsColor: string, edgeColor: string): void => {
+export const indexFingerHole = (ctx: CanvasRenderingContext2D, liningsColor: string, edgeColor: string): void => {
   ctx.lineWidth = 0.8
   ctx.strokeStyle = '#383838'
   ctx.fillStyle = liningsColor
@@ -32,6 +32,44 @@ export const fingerHole = (ctx: CanvasRenderingContext2D, liningsColor: string, 
   laceOfAroundFingerHoleWide1(ctx, edgeColor, 203, -296, 30)
   laceOfAroundFingerHoleWide1(ctx, edgeColor, 210, -281, 30)
   laceOfAroundFingerHole1(ctx, edgeColor, -82, 64, -10) // 真下
+}
+
+export const middleFingerHole = (ctx: CanvasRenderingContext2D, liningsColor: string, bindingColor: string): void => {
+  ctx.lineWidth = 0.8
+  ctx.strokeStyle = '#383838'
+
+  ctx.save()
+  ctx.rotate((-5 * Math.PI) / 180)
+  ctx.fillStyle = liningsColor
+  ctx.beginPath()
+  ctx.moveTo(310, 390) // 上
+  ctx.quadraticCurveTo(295, 389, 288, 399) //左
+  ctx.quadraticCurveTo(290, 495, 305, 506) //左下
+  ctx.quadraticCurveTo(310, 514, 318, 505) //右下
+  ctx.quadraticCurveTo(330, 457, 325, 395) //右
+  ctx.quadraticCurveTo(318, 390, 310, 390) //上
+  ctx.fill()
+  ctx.stroke()
+  ctx.closePath()
+  ctx.restore()
+
+  laceOfAroundFingerHole1(ctx, bindingColor, -65, 7, 0) // 真下
+  laceOfAroundFingerHole1(ctx, bindingColor, 134, -278, 35) // 真下＿左
+  laceOfAroundFingerHoleWide1(ctx, bindingColor, -60, 0, 0)
+  laceOfAroundFingerHoleWide1(ctx, bindingColor, -41, -40, 3)
+  laceOfAroundFingerHoleWide1(ctx, bindingColor, -32, -72, 5)
+  laceOfAroundFingerHoleWide1(ctx, bindingColor, 31, -173, 17)
+  laceOfAroundFingerHoleWide1(ctx, bindingColor, 38, -210, 20)
+  laceOfAroundFingerHole1(ctx, bindingColor, -242, -23, -20) //
+  laceOfAroundFingerHole1(ctx, bindingColor, -84, -120, 0) // 真上
+  laceOfAroundFingerHole1(ctx, bindingColor, 13, -223, 15) // 真上＿右
+  laceOfAroundFingerHole1(ctx, bindingColor, 89, -381, 35) //
+  laceOfAroundFingerHoleWide1(ctx, bindingColor, 88, -218, 20)
+  laceOfAroundFingerHoleWide1(ctx, bindingColor, 97, -200, 20)
+  laceOfAroundFingerHoleWide1(ctx, bindingColor, 104, -182, 20)
+  laceOfAroundFingerHoleWide1(ctx, bindingColor, 111, -164, 20)
+  laceOfAroundFingerHoleWide1(ctx, bindingColor, 162, -244, 30)
+  laceOfAroundFingerHole1(ctx, bindingColor, -142, 59, -10) // 真下
 }
 
 const laceOfAroundFingerHole1 = (ctx: CanvasRenderingContext2D, edgeColor: string, x: number, y: number, numerator: number): void => {

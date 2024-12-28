@@ -10,6 +10,7 @@ import {
   CROWN_BACK_PARTS,
   FIRST_BACK_GENUINE_LABELS,
   FIRST_BACK_PARTS,
+  FIRST_BACK_WITH_MIDDLE_HOLE_GENUINE_LABELS,
   FIRST_MITT_PARTS,
   FRONT_GENUINE_LABELS,
   GENUINE_LABELS,
@@ -162,7 +163,11 @@ export const getGenuineLabelOptions = (state: GenuineState) => {
   switch (position) {
     case 'pitcher':
       if (isConnectBackStyle) return FRONT_GENUINE_LABELS
-      if (isFirstBackStyle) return FIRST_BACK_GENUINE_LABELS
+      if (isFirstBackStyle) {
+        const isMiddleHole = ['middleHole', 'middleCover', 'middlePad'].includes(state.fingerGuard.value)
+        if (isMiddleHole) return FIRST_BACK_WITH_MIDDLE_HOLE_GENUINE_LABELS
+        return FIRST_BACK_GENUINE_LABELS
+      }
     case 'catcher':
       return FRONT_GENUINE_LABELS
     default:

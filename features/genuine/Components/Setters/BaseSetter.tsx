@@ -94,6 +94,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
   const isSelectableGenuineMarkColor = state.genuineBrandMark.value === 'genuineEmbroidery'
   const isJuniorModel = JUNIOR_LIST.includes(baseModel.productNumber)
   const backStyleOptions = getBackStyleOptions(position, baseModel.productNumber)
+  const isSpecifiedLittleFingerSideLabel = ['littleFingerSideEmbroidery', 'littleFingerSideNormal'].includes(state.genuineLabel.value)
 
   return (
     <TabPanel selectedIndex={selectedIndex} index={0}>
@@ -129,6 +130,8 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         objects={isCatcher ? FINGER_GUARDS_CATCHER : FINGER_GUARDS}
         isError={fingerGuard.value === 'unselected'}
         defaultExpanded={fingerGuard.value === 'unselected'}
+        disabled={isSpecifiedLittleFingerSideLabel}
+        description={isSpecifiedLittleFingerSideLabel ? '変更するには、先に"ラベル"を親指側に再選択してください。' : ''}
         className={FINGER_GUARD_TYPE_BUTTON_OPTION}
         handleChange={handle.fingerGuard}
       />
