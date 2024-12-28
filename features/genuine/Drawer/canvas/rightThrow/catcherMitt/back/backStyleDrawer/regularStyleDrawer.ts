@@ -1,4 +1,4 @@
-import { edgeOfCommon, edgeOfRegularBackStyle } from '../edge'
+import { bindingOfCommon, bindingOfRegularBackStyle } from '../edge'
 import { weltingOfMiddleFingerRegularBackStyle } from '../welting'
 import { indexFingerTipOutDrawer } from '../indexFingerTipOut'
 import { littleFingerOfRegularBackStyle } from '../littleFinger'
@@ -25,8 +25,8 @@ export const regularStyleDrawer = (ctx: CanvasRenderingContext2D, state: Genuine
   // ハミダシ
   weltingOfMiddleFingerRegularBackStyle(ctx, state.welting)
   // ヘリ革
-  edgeOfCommon(ctx, state.binding.color)
-  edgeOfRegularBackStyle(ctx, state.binding.color, state.fingerGuard.value, state.linings.color)
+  bindingOfCommon(ctx, state.binding.color)
+  bindingOfRegularBackStyle(ctx, state.binding.color, state.fingerGuard.value, state.linings.color)
   fingerGuardDrawer(ctx, state) // 指カバー・指当て
   // 人差し指の指だし周りパーツ部分
   indexFingerTipOutDrawer(ctx, state?.indexFingerTipOut.color, state.fingerGuard.value)

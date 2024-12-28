@@ -226,8 +226,8 @@ export const CATCHER_MITT_BELT_BACK_PARTS: PartsItem[] = [
   { label: '小指マチ', value: 'littleMachi' },
   { label: '土台', value: 'fingerStand' },
   { label: '親指・人差指・中指5', value: 'thumbIndexMiddleRight' },
-  { label: '中指6・薬指', value: 'middleLeftRing' },
-  { label: '小指10', value: 'littleOut' },
+  { label: '中指6・薬指・小指', value: 'middleLeftRingLittle' },
+  // { label: '小指10', value: 'littleOut' },
   { label: 'バンド', value: 'listBelt' }
 ]
 

@@ -58,6 +58,7 @@ export const SET_THUMB_INDEX_MIDDLE_RIGHT_COLOR = 'setThumbIndexMiddleRight'
 export const SET_INDEX_LEFT_MIDDLE_RIGHT_COLOR = 'setIndexLeftMiddleRight' // indexLeftMiddleRight
 export const SET_INDEX_MIDDLE_RING_LITTLE_COLOR = 'setIndexMiddleRingLittle'
 export const SET_MIDDLE_LEFT_RING_RIGHT_COLOR = 'setMiddleLeftRingRight'
+export const SET_MIDDLE_LEFT_RING_CHILD_COLOR = 'setMiddleLeftRingChild'
 export const SET_RING_LEFT_LITTLE_RIGHT_COLOR = 'setRingLeftLittleRight'
 export const SET_MIDDLE_LEFT_RING_COLOR = 'setMiddleLeftRing'
 export const SET_MIDDLE_LEFT_RING_LITTLE_COLOR = 'setMiddleLeftRingLittle'
@@ -129,6 +130,7 @@ export const DISPATCHER = {
   indexMiddleRingLittle: SET_INDEX_MIDDLE_RING_LITTLE_COLOR,
   middleLeftRingRight: SET_MIDDLE_LEFT_RING_RIGHT_COLOR,
   middleLeftRingLittle: SET_MIDDLE_LEFT_RING_LITTLE_COLOR,
+  middleLeftRingChild: SET_MIDDLE_LEFT_RING_CHILD_COLOR,
   ringLeftLittleRight: SET_RING_LEFT_LITTLE_RIGHT_COLOR,
   thumbMachi: SET_THUMB_MACHI_COLOR,
   littleMachi: SET_LITTLE_MACHI_COLOR

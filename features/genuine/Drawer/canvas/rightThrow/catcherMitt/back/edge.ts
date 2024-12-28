@@ -1,4 +1,4 @@
-export const edgeOfRegularBackStyle = (ctx: CanvasRenderingContext2D, color: string, fingerType: string, liningLeatherColor: string): void => {
+export const bindingOfRegularBackStyle = (ctx: CanvasRenderingContext2D, color: string, fingerType: string, liningLeatherColor: string): void => {
   ctx.lineWidth = 0.8
   ctx.strokeStyle = '#383838'
   ctx.fillStyle = color
@@ -70,7 +70,7 @@ export const edgeOfRegularBackStyle = (ctx: CanvasRenderingContext2D, color: str
   ctx.closePath()
 }
 
-export const edgeOfBeltBackStyle = (ctx: CanvasRenderingContext2D, color: string, stitchColor: string): void => {
+export const bindingOfBeltBackStyle = (ctx: CanvasRenderingContext2D, color: string, stitchColor: string): void => {
   ctx.lineWidth = 0.8
   ctx.strokeStyle = '#383838'
   ctx.fillStyle = color
@@ -269,7 +269,7 @@ export const bindingOfTMBackStyle = (ctx: CanvasRenderingContext2D, color: strin
   ctx.strokeStyle = '#383838'
 }
 
-export const edgeOfCommon = (ctx: CanvasRenderingContext2D, color: string): void => {
+export const bindingOfCommon = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 0.8
   ctx.strokeStyle = '#383838'
   ctx.fillStyle = color

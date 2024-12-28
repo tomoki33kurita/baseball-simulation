@@ -16,10 +16,7 @@ import {
   PARTS,
   STITCH_COLOR_BUTTON_OPTION,
   STITCHES,
-  BINDINGS,
-  GENUINE_LABELS,
-  FRONT_GENUINE_LABELS,
-  FIRST_BACK_GENUINE_LABELS
+  BINDINGS
 } from '../../Constants/color'
 import { originDispatcher, positionChecker } from '@/util/logic'
 import { DISPATCHER } from '@/features/genuine/Constants/action'

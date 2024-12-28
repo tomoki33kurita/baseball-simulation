@@ -1,5 +1,5 @@
 import { GenuineState } from '@/features/genuine/types'
-import { edgeOfBeltBackStyle } from '../../edge'
+import { bindingOfBeltBackStyle } from '../../edge'
 import { verticalKnotForCatcher } from '@/util/canvas/lace/webKnots'
 import { listCross } from '../../lace/listCross'
 import { ColorItem } from '@/types'
@@ -53,7 +53,7 @@ const beltBand = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchCol
   ctx.strokeStyle = '#383838'
 }
 
-const bindingOfMiddleFingerBeltBackStyle = (ctx: CanvasRenderingContext2D, hamidashi: ColorItem): void => {
+const weltingOfMiddleFingerBeltBackStyle = (ctx: CanvasRenderingContext2D, hamidashi: ColorItem): void => {
   if (hamidashi?.value === 'none') return
   ctx.lineWidth = 0.8
   ctx.strokeStyle = '#383838'
@@ -69,26 +69,13 @@ const bindingOfMiddleFingerBeltBackStyle = (ctx: CanvasRenderingContext2D, hamid
   ctx.fill()
   ctx.stroke()
   ctx.closePath()
-
-  // 小指・薬指袋
-  ctx.beginPath()
-  ctx.moveTo(196, 177) // 左上
-  ctx.quadraticCurveTo(157, 310, 237, 529) //
-  ctx.quadraticCurveTo(244, 572, 253, 615) // 左下
-  ctx.quadraticCurveTo(257, 616, 257, 616) // 右下
-  ctx.quadraticCurveTo(248, 577, 241, 529) //
-  ctx.quadraticCurveTo(162, 308, 200, 177) //
-  ctx.quadraticCurveTo(196, 177, 196, 177) //
-  ctx.fill()
-  ctx.stroke()
-  ctx.closePath()
 }
 
 export const beltTypeDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
   const stitchColor = state.stitch.color
   beltBand(ctx, state.listBelt.color, stitchColor) // バンド
-  bindingOfMiddleFingerBeltBackStyle(ctx, state.binding) // ベルトスタイルのハミダシ
-  edgeOfBeltBackStyle(ctx, state.binding.color, stitchColor)
+  weltingOfMiddleFingerBeltBackStyle(ctx, state.welting) // ベルトスタイルのハミダシ
+  bindingOfBeltBackStyle(ctx, state.binding.color, stitchColor)
   listCross(ctx, state.lace.color)
   verticalKnotForCatcher(ctx, state.lace.color, 105, 185, 1) // ベルト結び目
 }

@@ -132,8 +132,6 @@ export const thumbFingerOfBeltBackStyle = (ctx: CanvasRenderingContext2D, color:
   ctx.arc(277, 255, 4, 0, 2 * Math.PI)
   ctx.moveTo(283, 316)
   ctx.arc(283, 316, 4, 0, 2 * Math.PI)
-  ctx.moveTo(292, 374)
-  ctx.arc(292, 374, 4, 0, 2 * Math.PI)
   ctx.stroke()
   ctx.fill()
   ctx.closePath()
