@@ -15,7 +15,7 @@ export const beltStyleDrawer = (ctx: CanvasRenderingContext2D, state: GenuineSta
   littleRingMergedFingerOfBeltBackStyle(ctx, state) // 小指側の指袋
   thumbFingerOfBeltBackStyle(ctx, state?.thumbIndexMiddleRight.color, state.stitch.color) // 親指側の指袋
   weltingOfMiddleFingerBeltBackStyle(ctx, state.welting) // ベルトスタイルのハミダシ
+  fingerGuardDrawer(ctx, state) // 指カバー・指当て
   edgeOfCommon(ctx, state.binding.color) // ヘリ革
   beltTypeDrawer(ctx, state) // ベルトタイプ別の描画
-  fingerGuardDrawer(ctx, state) // 指カバー・指当て
 }
