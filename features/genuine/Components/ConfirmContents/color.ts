@@ -22,7 +22,7 @@ const getFingerParts = (state: GenuineState) => {
   const backStyle = state.backStyle.value
   const productNumber = state.baseModel.productNumber
   const { isFirstBaseman, isCatcher } = positionChecker(state.baseModel.position)
-  const isIntegratedRing = state.genuineBrandMark.value === 'atRingFinger'
+  const isRequiredGenuineBrandMark = state.genuineBrandMark.value === 'genuineEmbroidery'
 
   if (productNumber === 'MIU-T4') {
     // firstBackStyle
@@ -94,7 +94,7 @@ const getFingerParts = (state: GenuineState) => {
     genGloveColorCell('中指5', state.middleIndex, 'middleIndex'),
     genGloveColorCell('中指6', state.middleRing, 'middleRing'),
     genGloveColorCell('薬指7', state.ringMiddle, 'ringMiddle'),
-    isIntegratedRing ? dummy : genGloveColorCell('薬指8', state.ringLittle, 'ringLittle'),
+    isRequiredGenuineBrandMark ? dummy : genGloveColorCell('薬指8', state.ringLittle, 'ringLittle'),
     genGloveColorCell('小指9', state.littleRing, 'littleRing'),
     genGloveColorCell('小指10', state.littleOut, 'littleOut')
   ]

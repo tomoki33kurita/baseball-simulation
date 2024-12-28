@@ -10,7 +10,7 @@ import { liningDrawer } from './rightThrow/catcherMitt/back/liningDrawer'
 import { littleHook } from './rightThrow/catcherMitt/back/littleHook'
 import { thumbHook } from './rightThrow/catcherMitt/back/thumbHook'
 import { webDrawer } from './rightThrow/catcherMitt/back/webDrawer'
-import { pseudoDrawingEngraved } from './rightThrow/glove/front/engraving'
+import { genuineBrandMarkEmbroideryDrawer, pseudoDrawingEngraved } from './rightThrow/glove/front/engraving'
 
 export const drawGenuineCatcherMittRearSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
   if (!ctx) return
@@ -33,4 +33,5 @@ export const drawGenuineCatcherMittRearSurface = (ctx: CanvasRenderingContext2D 
   littleHook(ctx, state.littleHook.color) // かけ紐
   genuineLabelDrawer(ctx, state) // ラベル描画
   paisleySelected(ctx, state)
+  genuineBrandMarkEmbroideryDrawer(ctx, state)
 }

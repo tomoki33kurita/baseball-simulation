@@ -29,7 +29,7 @@ export const getGenuineBaseCells = (
   const isSelectableWebLaceStyle = ['basket2', 'tNet3'].includes(state.webParts.value) || isCatcher
   const isYT22 = productNumber === 'YT-22'
   const isSelectableGenuineBrandMark = (isGlove && !isFirstBackStyle && !isMesh) || isCatcher
-  const isSelectableGenuineBrandMarkColor = state.genuineBrandMark.value === 'atRingFinger'
+  const isSelectableGenuineBrandMarkColor = state.genuineBrandMark.value === 'genuineEmbroidery'
 
   switch (state) {
     default:

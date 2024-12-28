@@ -112,11 +112,33 @@ const genuineEmbroideryForFirstMitt = (ctx: CanvasRenderingContext2D, color: str
   ctx.restore()
 }
 
+const genuineEmbroideryForCatcherMitt = (ctx: CanvasRenderingContext2D, color: string): void => {
+  ctx.lineWidth = 1.0
+  ctx.save()
+  // ctx.translate(263, 238)
+  ctx.rotate((86 * Math.PI) / 180)
+  ctx.beginPath()
+  const isReady = document.fonts.check('56px Alex Brush')
+  // ctx.font = isMobile ? '30px cursive' : '56px Brush Script MT'
+  ctx.font = '48px Alex Brush'
+  // ctx.font = `48px ${alexBrush.style.fontFamily}`
+  ctx.strokeStyle = color
+
+  if (isReady) {
+    ctx.strokeText(`genuine`, 250, -160)
+  }
+  ctx.stroke()
+  ctx.closePath()
+
+  ctx.restore()
+}
+
 export const genuineBrandMarkEmbroideryDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState) => {
   const { isCrownBackStyle } = getGenuineBackStyle(state)
-  const { isGlove, isFirstBaseman } = positionChecker(state.baseModel.position)
-  const isRequiredGenuineBrandMark = ['genuineEngraving', 'atRingFinger'].includes(state.genuineBrandMark.value)
+  const { isGlove, isFirstBaseman, isCatcher } = positionChecker(state.baseModel.position)
+  const isRequiredGenuineBrandMark = ['genuineEngraving', 'genuineEmbroidery'].includes(state.genuineBrandMark.value)
   if (isRequiredGenuineBrandMark && !isCrownBackStyle && isGlove) genuineEmbroideryForRingFinger(ctx, state.genuineBrandMarkColor.color)
   if (isRequiredGenuineBrandMark && isCrownBackStyle && isGlove) genuineEmbroideryForCrownBack(ctx, state.genuineBrandMarkColor.color)
   if (isRequiredGenuineBrandMark && isFirstBaseman) genuineEmbroideryForFirstMitt(ctx, 'gray')
+  if (isRequiredGenuineBrandMark && isCatcher) genuineEmbroideryForCatcherMitt(ctx, state.genuineBrandMarkColor.color)
 }

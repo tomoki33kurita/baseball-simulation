@@ -81,12 +81,12 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
     webParts: dispatcher('webParts', dispatch)
   }
   const { isGlove, isMitt, isCatcher, isFirstBaseman } = positionChecker(position)
-  const { isMesh, isFirstBackStyle, isCrownBackStyle, isUnselectedBackStyle } = getGenuineBackStyle(state)
+  const { isMesh, isFirstBackStyle, isUnselectedBackStyle } = getGenuineBackStyle(state)
   const { selectableWebParts } = getGenuineWebParts(isFirstBaseman)
   const isSelectableWebLaceStyle = ['basket2', 'tNet3'].includes(state.webParts.value)
   const isLoopOfRingFinger = (isGlove && !isFirstBackStyle) || isFirstBaseman
   const isSelectableGenuineMark = !isFirstBaseman && !isFirstBackStyle && !isMesh
-  const isSelectableGenuineMarkColor = state.genuineBrandMark.value === 'atRingFinger'
+  const isSelectableGenuineMarkColor = state.genuineBrandMark.value === 'genuineEmbroidery'
   const backStyleOptions = getBackStyleOptions(position, baseModel.productNumber)
 
   return (

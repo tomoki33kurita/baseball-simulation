@@ -51,7 +51,8 @@ import {
   SET_INDEX_FINGER_TIP_OUT_COLOR,
   SET_INDEX_MIDDLE_RING_LITTLE_COLOR,
   SET_THUMB_COLOR,
-  SET_GENUINE_BRAND_MARK_COLOR
+  SET_GENUINE_BRAND_MARK_COLOR,
+  SET_GENUINE_BRAND_MARK
 } from '@/features/genuine/Constants/action'
 import { GenuineState } from '../types'
 import { Embroidery } from '@/types'
@@ -319,6 +320,8 @@ export const reducer = (state: any, action: any) => {
       return { ...state, indexFingerTipOut: action.indexFingerTipOut }
     case SET_INDEX_MIDDLE_RING_LITTLE_COLOR:
       return { ...state, indexMiddleRingLittle: action.indexMiddleRingLittle }
+    case SET_GENUINE_BRAND_MARK:
+      return { ...state, genuineBrandMark: action.genuineBrandMark, drawerIndex: 0 }
     case SET_GENUINE_BRAND_MARK_COLOR:
       return { ...state, genuineBrandMarkColor: action.genuineBrandMarkColor, drawerIndex: 0 }
     case SET_PERSONAL:

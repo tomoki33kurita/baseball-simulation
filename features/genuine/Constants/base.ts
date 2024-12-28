@@ -114,7 +114,7 @@ export const FINGER_GUARDS_CATCHER: BaseItem[] = [
 ]
 
 export const GENUINE_EMBROIDERIES: BaseItemWithPrice[] = [
-  { label: '薬指一体型', value: 'atRingFinger', price: 4400 },
+  { label: 'あり', value: 'genuineEmbroidery', price: 4400 },
   { label: '無し', value: 'none', price: 0 }
 ]
 

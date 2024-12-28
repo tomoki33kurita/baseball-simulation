@@ -176,7 +176,7 @@ export const filterSelectableParts = (state: GenuineState, selectableParts: Part
   const filtered1 = isSideLabel ? selectableParts.filter((p) => p.value !== 'listBelt') : selectableParts
   const isLoopOfRingFinger = state.loopOfRingFinger.value === 'loopOfRingFinger'
   const filtered2 = isLoopOfRingFinger ? filtered1 : filtered1.filter((p) => p.value !== 'loopOfRingFingerColor')
-  const isIntegratedRing = state.genuineBrandMark.value === 'atRingFinger'
+  const isIntegratedRing = state.genuineBrandMark.value === 'genuineEmbroidery'
   const filtered3 = isIntegratedRing ? filtered2.filter((p) => p.value !== 'ringLittle') : filtered2
   return filtered3
 }
@@ -383,7 +383,7 @@ export const getBackStyle = (state: GenuineState) => {
 
 export const getFingerColor = (state: GenuineState) => {
   const { isFirstBackStyle, isCrownBackStyle } = getBackStyle(state)
-  const isIntegratedRing = state.genuineBrandMark.value === 'atRingFinger'
+  const isIntegratedRing = state.genuineBrandMark.value === 'genuineEmbroidery'
   if (isFirstBackStyle) {
     return {
       thumbWebColor: state.thumbIndexMiddleRight.color,
