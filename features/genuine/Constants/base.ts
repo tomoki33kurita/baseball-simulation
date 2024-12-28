@@ -72,6 +72,11 @@ export const GLOVE_SIZES: BaseItem[] = [
   { label: '27cm以上', value: 'over27' }
 ]
 
+export const JUNIOR_GLOVE_SIZES: BaseItem[] = [
+  { label: '21cm以下', value: 'under21' },
+  { label: '22~23cm', value: 'between22and23' }
+]
+
 export const BANK_LACE_DIRECTIONS: BankLaceDirectionItem[] = [
   { label: 'レギュラー巻き', value: 'sequentialRoll' },
   { label: '逆巻き', value: 'reverseRoll' }

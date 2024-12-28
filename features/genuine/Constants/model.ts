@@ -6,6 +6,34 @@ const gloveImageHeight = 200
 const SEQUENTIAL_ROLL = 'sequentialRoll'
 const REVERSE_ROLL = 'reverseRoll'
 
+const JUNIOR_PITCHER = 'junior-pitcher'
+const JUNIOR_CATCHER = 'junior-catcher'
+const JUNIOR_FIRST_BASEMAN = 'junior-firstBaseman'
+const JUNIOR_INFIELDER = 'junior-infielder'
+const JUNIOR_OUTFIELDER = 'junior-outfielder'
+
+export const JUNIOR_LIST = [JUNIOR_PITCHER, JUNIOR_CATCHER, JUNIOR_FIRST_BASEMAN, JUNIOR_INFIELDER, JUNIOR_OUTFIELDER]
+
+const JUNIOR_MODEL: GenuineBaseModel = {
+  productNumber: '',
+  position: 'pitcher',
+  size: {
+    value: 0,
+    unit: 'cm'
+  },
+  webParts: 'genuine',
+  description: '少年用モデル',
+  isFingerCrotch: false,
+  isUBack: false,
+  brand: 'genuine',
+  bankLaceDirection: SEQUENTIAL_ROLL,
+  image: {
+    url: `${imageBaseUrl}/junior.jpg`,
+    width: gloveImageWidth,
+    height: gloveImageHeight
+  }
+}
+
 export const models: GenuineBaseModel[] = [
   {
     productNumber: 'MIU-T1',
@@ -84,6 +112,10 @@ export const models: GenuineBaseModel[] = [
     }
   },
   {
+    ...JUNIOR_MODEL,
+    productNumber: JUNIOR_PITCHER
+  },
+  {
     productNumber: 'MIU-S4',
     position: 'infielder',
     size: {
@@ -141,6 +173,11 @@ export const models: GenuineBaseModel[] = [
     }
   },
   {
+    ...JUNIOR_MODEL,
+    productNumber: JUNIOR_INFIELDER,
+    position: 'infielder'
+  },
+  {
     productNumber: 'MIU-M8',
     position: 'outfielder',
     size: {
@@ -179,6 +216,11 @@ export const models: GenuineBaseModel[] = [
     }
   },
   {
+    ...JUNIOR_MODEL,
+    productNumber: JUNIOR_OUTFIELDER,
+    position: 'outfielder'
+  },
+  {
     productNumber: 'MIU-N10',
     position: 'firstBaseman',
     size: {
@@ -197,6 +239,12 @@ export const models: GenuineBaseModel[] = [
       height: gloveImageHeight
     }
   },
+  {
+    ...JUNIOR_MODEL,
+    productNumber: JUNIOR_FIRST_BASEMAN,
+    position: 'firstBaseman'
+  },
+
   {
     productNumber: 'HM-37',
     position: 'catcher',
@@ -253,5 +301,10 @@ export const models: GenuineBaseModel[] = [
       width: gloveImageWidth,
       height: gloveImageHeight
     }
+  },
+  {
+    ...JUNIOR_MODEL,
+    productNumber: JUNIOR_CATCHER,
+    position: 'catcher'
   }
 ]

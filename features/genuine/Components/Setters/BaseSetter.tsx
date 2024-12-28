@@ -23,7 +23,8 @@ import {
   PALM_TO_WEB_CONNECT_LACE_STYLE,
   GENUINE_EMBROIDERIES,
   GENUINE_ENGRAVINGS,
-  FINGER_GUARDS_CATCHER
+  FINGER_GUARDS_CATCHER,
+  JUNIOR_GLOVE_SIZES
 } from '@/features/genuine/Constants/base'
 import { SelectCard } from '@/components/Setters/SelectCard'
 import { SelectCardWithImage } from '@/components/Setters/SelectCardWithImage'
@@ -32,6 +33,7 @@ import { dispatcher } from './dispatcher'
 import { positionChecker } from '@/util/logic'
 import { getBackStyleOptions, getGenuineBackStyle, getGenuineWebParts } from './logic'
 import { STITCHES } from '../../Constants/color'
+import { JUNIOR_LIST } from '../../Constants/model'
 
 type Props = {
   state: GenuineState
@@ -87,6 +89,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
   const isLoopOfRingFinger = (isGlove && !isFirstBackStyle) || isFirstBaseman
   const isSelectableGenuineMark = !isFirstBaseman && !isFirstBackStyle && !isMesh
   const isSelectableGenuineMarkColor = state.genuineBrandMark.value === 'genuineEmbroidery'
+  const isJuniorModel = JUNIOR_LIST.includes(baseModel.productNumber)
   const backStyleOptions = getBackStyleOptions(position, baseModel.productNumber)
 
   return (
@@ -103,7 +106,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
       <SelectCard
         summary={'手袋サイズ'} // gloveSize
         selectedLabel={gloveSize.label}
-        objects={GLOVE_SIZES}
+        objects={isJuniorModel ? JUNIOR_GLOVE_SIZES : GLOVE_SIZES}
         isError={gloveSize.value === 'unselected'}
         defaultExpanded={gloveSize.value === 'unselected'}
         handleChange={handle.gloveSize}
