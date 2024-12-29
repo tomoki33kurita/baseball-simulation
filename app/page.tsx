@@ -13,9 +13,9 @@ const Home = () => {
           {/* <Box>これから始まるシミュレーションシステム</Box>
           <Box>この配下にブランドが集まるイメージ</Box> */}
           <Box m={2}>
-            <Button size={'large'} variant={'outlined'} color={'primary'} href={'/brands'}>
-              シミュレーションを開始
-            </Button>
+            {/* <Button size={'large'} variant={'outlined'} color={'primary'} href={'/brands'}> */}
+            Not Found
+            {/* </Button> */}
           </Box>
         </Box>
       </Box>
