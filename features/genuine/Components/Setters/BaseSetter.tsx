@@ -189,8 +189,8 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         objects={selectableWebParts}
         isError={webParts.value === 'unselected'}
         defaultExpanded={webParts.value === 'unselected'}
-        isDisplay={!isCatcher}
-        // isDisplay={isGlove}
+        // isDisplay={!isCatcher}
+        isDisplay={isGlove}
         handleChange={handle.webParts}
         className={WEB_PARTS_BUTTON_OPTION}
       />
