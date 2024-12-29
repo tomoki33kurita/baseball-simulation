@@ -10,7 +10,7 @@ export const deepWeb = (ctx: CanvasRenderingContext2D, state: GenuineState): voi
   laceOfWebTopToIndexFinger(ctx, state.lace.color)
   laceOfWebTopToThumbFinger(ctx, state.lace.color)
 
-  webTop(ctx, state.web.color, state.stitch.color)
+  webTop(ctx, state.web2.color, state.stitch.color)
   web(ctx, state.web.color, state.stitch.color)
 
   if (state.webLaceStyle.value === 'cross') {

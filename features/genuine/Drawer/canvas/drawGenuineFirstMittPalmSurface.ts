@@ -22,7 +22,7 @@ export const drawGenuineFirstMittPalmSurface = (ctx: CanvasRenderingContext2D | 
   webCross(ctx, state.lace.color, -40, -75) // 革紐＿ウェブ間クロス＿下段
   webCross(ctx, state.lace.color, 20, -120)
   palm(ctx, state.palm.color) // 捕球面
-  webTop(ctx, state.web.color) // ウェブ先端側
+  webTop(ctx, state.web2.color) // ウェブ先端側
   webBottom(ctx, state.web.color) // ウェブ捕球面側
   backAroundWeb(ctx, state.underWeb.color) // 背面＿ウェブ周り
   thumbBackOut(ctx, state.thumb.color) // 親指背面＿外側

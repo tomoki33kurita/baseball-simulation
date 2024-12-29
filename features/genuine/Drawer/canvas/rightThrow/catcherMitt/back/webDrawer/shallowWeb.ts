@@ -17,7 +17,7 @@ export const shallowWeb = (ctx: CanvasRenderingContext2D, state: GenuineState): 
   laceOfWebTopToThumbFinger(ctx, state.lace.color) //
 
   // 本体パーツ
-  webTop(ctx, state.web.color, state.stitch.color) // 残す
+  webTop(ctx, state.web2.color, state.stitch.color) // 残す
   webOfShallowPocket(ctx, state.web.color, state.stitch.color) // 変更
 
   const isYT22Default = state.baseModel.productNumber === 'YT-22' && state.webLaceStyle.value === 'unselected'

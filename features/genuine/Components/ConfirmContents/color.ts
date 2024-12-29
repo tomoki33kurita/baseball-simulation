@@ -124,7 +124,7 @@ export const getGenuineColorCells = (state: GenuineState) => {
   return [
     genGloveColorCell('捕球面', state.palm, 'palm'),
     genGloveColorCell('ウェブ', state.web, 'web'),
-    isINet ? dummy : genGloveColorCell('ウェブ2', state.web, 'web2'),
+    isINet ? dummy : genGloveColorCell('ウェブ2', state.web2, 'web2'),
     genGloveColorCell('親指かけ紐', state.thumbHook, 'thumbHook'),
     genGloveColorCell('小指かけ紐', state.littleHook, 'littleHook'),
     needFingerCoverOrPad ? genGloveColorCell('指カバー/指あて', state.fingerGuardColor, 'fingerGuardColor') : dummy,

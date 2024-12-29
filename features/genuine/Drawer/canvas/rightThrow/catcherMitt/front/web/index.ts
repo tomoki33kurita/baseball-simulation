@@ -9,11 +9,11 @@ export const webDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState): v
   const isShallowWebModel = ['YT-22'].includes(state.baseModel.productNumber)
   if (isShallowWebModel) {
     webOfShallowPocket(ctx, state.web.color, state.stitch.color)
-    webTop(ctx, state.web.color, state.stitch.color)
+    webTop(ctx, state.web2.color, state.stitch.color)
   }
 
   if (!isShallowWebModel) {
     webOfNormalPocket(ctx, state.web.color, state.stitch.color)
-    webTop(ctx, state.web.color, state.stitch.color)
+    webTop(ctx, state.web2.color, state.stitch.color)
   }
 }

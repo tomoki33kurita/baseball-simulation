@@ -4,7 +4,7 @@ import { webCross } from '../lace/webCross'
 import { webKnots } from '@/util/canvas/lace/webKnots'
 
 export const normalWeb = (ctx: CanvasRenderingContext2D, state: GenuineState) => {
-  webTop(ctx, state.web.color, state.baseModel) // ウェブ先端側
+  webTop(ctx, state.web2.color, state.baseModel) // ウェブ先端側
   webBottom(ctx, state.web.color, state.baseModel) // ウェブ捕球面側
   const laceColor = state.lace.color
   // ウェブとウェブを結ぶバツ紐
