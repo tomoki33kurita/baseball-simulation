@@ -48,9 +48,19 @@ import {
   SET_PALM_TO_WEB_CONNECT_LACE_STYLE,
   SET_GENUINE_BRAND_MARK,
   SET_GENUINE_BRAND_MARK_COLOR,
-  SET_TWO_FINGER_IN_LITTLE_SLOT
+  SET_TWO_FINGER_IN_LITTLE_SLOT,
+  SET_LININGS
 } from '@/features/genuine/Constants/action'
-import { BINDINGS, FIRST_BACK_GENUINE_LABELS, GENUINE_LABELS, LACES, MOUTON_COLORS, STITCHES, WELTINGS } from '@/features/genuine/Constants/color'
+import {
+  BINDINGS,
+  FIRST_BACK_GENUINE_LABELS,
+  GENUINE_LABELS,
+  LACES,
+  LININGS,
+  MOUTON_COLORS,
+  STITCHES,
+  WELTINGS
+} from '@/features/genuine/Constants/color'
 
 // ここはブランドのドメイン
 const dispatchBaseStore = {
@@ -73,6 +83,7 @@ const dispatchBaseStore = {
   fingerGuard: { objects: [...FINGER_GUARDS, ...FINGER_GUARDS_CATCHER, ...FIRST_BACK_FINGER_GUARDS], actionType: SET_FINGER_GUARD },
   webParts: { objects: WEB_PARTS, actionType: SET_WEB_PARTS },
   lace: { objects: LACES, actionType: SET_LACE_COLOR },
+  linings: { objects: LININGS, actionType: SET_LININGS },
   binding: { objects: BINDINGS, actionType: SET_BINDING_COLOR },
   stitch: { objects: STITCHES, actionType: SET_STITCH_COLOR },
   welting: { objects: WELTINGS, actionType: SET_WELTING },

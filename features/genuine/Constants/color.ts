@@ -338,6 +338,7 @@ export const LEATHER_COLORS_BY_PARTS: LeatherColorsByPartsOfGenuine = {
 // export const PARTS_BUTTON_OPTION = 'genuine-parts-button-option'
 export const LEATHER_COLOR_BUTTON_OPTION = 'genuine-leather-color-button-option'
 export const LACE_COLOR_BUTTON_OPTION = 'genuine-lace-color-button-option'
+export const LININGS_COLOR_BUTTON_OPTION = 'genuine-linings-color-button-option'
 export const BINDING_COLOR_BUTTON_OPTION = 'genuine-binding-color-button-option'
 export const STITCH_COLOR_BUTTON_OPTION = 'genuine-stitch-color-button-option'
 export const WELTING_COLOR_BUTTON_OPTION = 'genuine-welting-color-button-option'

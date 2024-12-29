@@ -16,7 +16,9 @@ import {
   PARTS,
   STITCH_COLOR_BUTTON_OPTION,
   STITCHES,
-  BINDINGS
+  BINDINGS,
+  LININGS,
+  LININGS_COLOR_BUTTON_OPTION
 } from '../../Constants/color'
 import { originDispatcher, positionChecker } from '@/util/logic'
 import { DISPATCHER } from '@/features/genuine/Constants/action'
@@ -29,7 +31,7 @@ type Props = {
 }
 
 export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch }) => {
-  const { parts, lace, binding, stitch, welting, mouton, genuineLabel } = state
+  const { parts, lace, linings, binding, stitch, welting, mouton, genuineLabel } = state
   const partsKey = parts.value
   const partsLabel = parts.label
   const { isFirstBaseman } = positionChecker(state.baseModel.position)
@@ -45,6 +47,7 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
     parts: originDispatcher(DISPATCHER, 'parts', dispatch, PARTS),
     lace: dispatcher('lace', dispatch),
     binding: dispatcher('binding', dispatch),
+    linings: dispatcher('linings', dispatch),
     stitch: dispatcher('stitch', dispatch),
     welting: dispatcher('welting', dispatch),
     mouton: dispatcher('mouton', dispatch),
@@ -63,6 +66,17 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
         handleChange={handle[partsKey]}
         className={LEATHER_COLOR_BUTTON_OPTION}
       />
+      <SelectCard
+        summary={'裏革'}
+        selectedLabel={linings.label}
+        selectedColor={linings.color}
+        objects={LININGS}
+        defaultExpanded={linings.value === 'unselected'}
+        handleChange={handle.linings}
+        isError={linings.value === 'unselected'}
+        className={LININGS_COLOR_BUTTON_OPTION}
+      />
+
       <SelectCard
         summary={'ヘリ革'}
         selectedLabel={binding.label}
