@@ -1,6 +1,7 @@
 import { ColorItem } from '@/types'
 import { GenuineState } from '@/features/genuine/types'
 import { positionChecker } from '@/util/logic'
+import { getFingerGuardType } from '../Setters/logic'
 
 const dummy = {
   head: 'dummy',
@@ -26,7 +27,7 @@ const getFingerParts = (state: GenuineState) => {
 
   if (productNumber === 'MIU-T4') {
     // firstBackStyle
-    const isMiddleHole = ['middleHole', 'middlePad', 'middleCover'].includes(state.fingerGuard.value)
+    const { isMiddleHole } = getFingerGuardType(state)
     if (isMiddleHole) {
       return [
         genGloveColorCell('親指1', state.thumbOut, 'thumbOut'),

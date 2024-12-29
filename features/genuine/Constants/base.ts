@@ -116,7 +116,6 @@ export const FINGER_GUARDS: BaseItem[] = [
   { label: '中指カバー', value: 'middleCover' },
   { label: '中指アテ', value: 'middlePad' },
   { label: '中指穴のみ', value: 'middleHole' },
-  // { label: '指アテ有り(中指)', value: 'middlePad' },
   { label: '無し', value: 'none' }
 ]
 
@@ -124,7 +123,6 @@ export const FINGER_GUARDS_CATCHER: BaseItem[] = [
   { label: '指カバー', value: 'indexCover' },
   { label: '指アテ1', value: 'indexPad1' },
   { label: '指アテ2', value: 'indexPad2' },
-  // { label: '指アテ有り(中指)', value: 'middlePad' },
   { label: '無し', value: 'none' }
 ]
 

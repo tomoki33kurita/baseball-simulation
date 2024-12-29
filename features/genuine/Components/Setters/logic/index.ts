@@ -123,7 +123,6 @@ export const getSelectableParts = (state: GenuineState): PartsItem[] => {
   const { drawerIndex } = state
   const { isFirstBackStyle, isCrownBackStyle } = getBackStyle(state)
   const { isFirstBaseman, isCatcher } = positionChecker(state.baseModel.position)
-  const isMiddleHole = ['middleHole', 'middleCover', 'middlePad'].includes(state.fingerGuard.value)
   if (isCatcher) {
     switch (state.backStyle.value) {
       case 'regular':
@@ -139,6 +138,7 @@ export const getSelectableParts = (state: GenuineState): PartsItem[] => {
     return FIRST_MITT_PARTS
   }
   if (drawerIndex === 0) {
+    const { isMiddleHole } = getFingerGuardType(state)
     if (isFirstBackStyle) {
       if (isMiddleHole) {
         return FIRST_BACK_MIDDLE_HOLE_PARTS
@@ -173,7 +173,7 @@ export const getGenuineLabelOptions = (state: GenuineState) => {
     case 'pitcher':
       if (isConnectBackStyle) return FRONT_GENUINE_LABELS
       if (isFirstBackStyle) {
-        const isMiddleHole = ['middleHole', 'middleCover', 'middlePad'].includes(state.fingerGuard.value)
+        const { isMiddleHole } = getFingerGuardType(state)
         if (isMiddleHole) return FIRST_BACK_WITH_MIDDLE_HOLE_GENUINE_LABELS
         return FIRST_BACK_GENUINE_LABELS
       }
@@ -399,7 +399,7 @@ export const getFingerColor = (state: GenuineState) => {
   const { isFirstBackStyle, isCrownBackStyle } = getBackStyle(state)
   const isIntegratedRing = state.genuineBrandMark.value === 'genuineEmbroidery'
   if (isFirstBackStyle) {
-    const isMiddleHole = ['middleHole', 'middleCover', 'middlePad'].includes(state.fingerGuard.value)
+    const { isMiddleHole } = getFingerGuardType(state)
     if (isMiddleHole) {
       return {
         thumbWebColor: state.thumbLeftIndexRight.color,
@@ -444,5 +444,12 @@ export const getBankLaceDirection = (state: GenuineState) => {
   const bankLaceDirection = state.bankLaceDirection.value === 'unselected' ? state.baseModel.bankLaceDirection : state.bankLaceDirection.value
   return {
     bankLaceDirection
+  }
+}
+
+export const getFingerGuardType = (state: GenuineState) => {
+  const isMiddleHole = ['middleHole', 'middlePad', 'middleCover'].includes(state.fingerGuard.value)
+  return {
+    isMiddleHole
   }
 }
