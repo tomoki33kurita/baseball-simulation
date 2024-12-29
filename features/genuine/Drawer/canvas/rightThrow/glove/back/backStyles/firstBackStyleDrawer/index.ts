@@ -18,7 +18,7 @@ import { weltingOfFirstBackWithMiddleHole } from './weltings/middle'
 const fingerHoleDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
   const { fingerGuard } = state
   if (fingerGuard.value === 'none') return
-  const isIndex = ['indexCover', 'indexPad', 'indexHole'].includes(fingerGuard.value)
+  const isIndex = ['indexCover', 'indexPad', 'indexHole', 'unselected'].includes(fingerGuard.value)
   const isMiddle = ['middleCover', 'middlePad', 'middleHole'].includes(fingerGuard.value)
   const liningsColor = state.linings.color
   const laceColor = state.lace.color
@@ -40,14 +40,14 @@ export const firstBackStyleDrawer = (ctx: CanvasRenderingContext2D, state: Genui
   thumbOut(ctx, state.thumbOut.color) // 親指外
   ringLittleFinger(ctx, state.ringLeftLittleRight.color) // 薬指左_小指右
   firstBackLittleFinger(ctx, state.littleOut.color) // 小指外
-  if (['indexPad', 'indexCover', 'indexHole', 'none'].includes(fingerGuard)) {
-    thumbIndexMiddleFinger(ctx, state.thumbIndexMiddle.color) // 親指内_人差し指_中指右
+  if (['indexPad', 'indexCover', 'indexHole', 'none', 'unselected'].includes(fingerGuard)) {
+    thumbIndexMiddleFinger(ctx, state.thumbIndexMiddleRight.color) // 親指内_人差し指_中指右
     middleRingFinger(ctx, state.middleLeftRingRight.color) // 中指左_薬指右
     weltingOfFirstBackWithIndexHole(ctx, state.welting.color) // ハミダシ
   }
   if (['middlePad', 'middleCover', 'middleHole'].includes(fingerGuard)) {
-    thumbIndexMiddleRightFinger(ctx, state.thumbIndexMiddleRight.color) // 親指内_人差し指_中指右
-    indexLeftMiddleRingRightFinger(ctx, 'orange') // 親指内_人差し指_中指右
+    thumbIndexMiddleRightFinger(ctx, state.thumbLeftIndexRight.color) // 親指内_人差し指_中指右
+    indexLeftMiddleRingRightFinger(ctx, state.indexLeftMiddleRingRight.color) // 親指内_人差し指_中指右
     weltingOfFirstBackWithMiddleHole(ctx, state.welting.color) // ハミダシ
   }
 

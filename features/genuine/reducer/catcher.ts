@@ -153,7 +153,9 @@ export const initialState: GenuineState = {
   littleMachi: unselectedColorState, // catcher
   indexFingerTipOut: unselectedColorState, // catcher
   indexMiddleRingLittle: unselectedColorState, // catcher
+  indexLeftMiddleRingRight: unselectedColorState, // first back style glove
   thumbIndexMiddle: unselectedColorState, // first back style glove
+  thumbLeftIndexRight: unselectedColorState, // first back style glove
   middleLeftRingRight: unselectedColorState, // first back style glove
   ringLeftLittleRight: unselectedColorState, // first back style glove
   indexLeftMiddleRight: unselectedColorState, // crown back style glove
@@ -202,6 +204,7 @@ export const reducer = (state: any, action: any) => {
         middleLeftRight: action.all,
         middleLeftRing: action.all,
         indexMiddleRingLittle: action.all,
+        indexLeftMiddleRingRight: action.all, // first back style glove
         middleLeftRingLittle: action.all,
         thumbMachi: action.all,
         littleMachi: action.all,

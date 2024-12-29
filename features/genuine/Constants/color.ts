@@ -246,6 +246,16 @@ export const FIRST_BACK_PARTS: PartsItem[] = [
   { label: 'バンド', value: 'listBelt' }
 ]
 
+export const FIRST_BACK_MIDDLE_HOLE_PARTS: PartsItem[] = [
+  ...commonPartsObjs,
+  { label: '親指1', value: 'thumbOut' },
+  { label: '親指2・人差指3', value: 'thumbLeftIndexRight' },
+  { label: '人差指4・中指・薬指7', value: 'indexLeftMiddleRingRight' },
+  { label: '薬指8・小指9', value: 'ringLeftLittleRight' },
+  { label: '小指10', value: 'littleOut' },
+  { label: 'バンド', value: 'listBelt' }
+]
+
 export const CROWN_BACK_PARTS: PartsItem[] = [
   ...commonPartsObjs,
   { label: '親指1', value: 'thumbOut' },
@@ -271,6 +281,7 @@ export const PARTS = [
   ...PALM_PARTS,
   ...BACK_PARTS,
   ...FIRST_BACK_PARTS,
+  ...FIRST_BACK_MIDDLE_HOLE_PARTS,
   ...CROWN_BACK_PARTS,
   ...FIRST_MITT_PARTS,
   ...CATCHER_MITT_REGULAR_BACK_PARTS,
@@ -319,6 +330,8 @@ export const LEATHER_COLORS_BY_PARTS: LeatherColorsByPartsOfGenuine = {
   middleLeftRingRight: LEATHER_COLORS, // only for first back style
   ringLeftLittleRight: LEATHER_COLORS, // only for first back style
   indexLeftMiddleRight: LEATHER_COLORS, // crown back style glove
+  thumbLeftIndexRight: LEATHER_COLORS, // crown back style glove
+  indexLeftMiddleRingRight: LEATHER_COLORS, // crown back style glove
   genuineBrandMarkColor: STITCHES
 }
 

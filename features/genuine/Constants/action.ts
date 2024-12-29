@@ -56,6 +56,9 @@ export const SET_BOOMERANG_COLOR = 'setBoomerangColor'
 export const SET_UNDER_WEB_COLOR = 'setUnderWebColor'
 export const SET_FINGER_STAND_COLOR = 'setFingerStandColor'
 export const SET_THUMB_INDEX_MIDDLE_RIGHT_COLOR = 'setThumbIndexMiddleRight'
+export const SET_THUMB_LEFT_INDEX_RIGHT_COLOR = 'thumbLeftIndexRight' // first back model with middle hole
+export const SET_INDEX_LEFT_MIDDLE_RING_RIGHT_COLOR = 'indexLeftMiddleRingRight' // first back model with middle hole
+
 export const SET_INDEX_LEFT_MIDDLE_RIGHT_COLOR = 'setIndexLeftMiddleRight' // indexLeftMiddleRight
 export const SET_INDEX_MIDDLE_RING_LITTLE_COLOR = 'setIndexMiddleRingLittle'
 export const SET_MIDDLE_LEFT_RING_RIGHT_COLOR = 'setMiddleLeftRingRight'
@@ -135,5 +138,8 @@ export const DISPATCHER = {
   middleLeftRingChild: SET_MIDDLE_LEFT_RING_CHILD_COLOR,
   ringLeftLittleRight: SET_RING_LEFT_LITTLE_RIGHT_COLOR,
   thumbMachi: SET_THUMB_MACHI_COLOR,
-  littleMachi: SET_LITTLE_MACHI_COLOR
+  littleMachi: SET_LITTLE_MACHI_COLOR,
+  // 中指穴のあるファーストバック
+  thumbLeftIndexRight: SET_THUMB_LEFT_INDEX_RIGHT_COLOR,
+  indexLeftMiddleRingRight: SET_INDEX_LEFT_MIDDLE_RING_RIGHT_COLOR
 }

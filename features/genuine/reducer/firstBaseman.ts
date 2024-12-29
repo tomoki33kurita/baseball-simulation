@@ -147,6 +147,8 @@ export const initialState: GenuineState = {
   middleLeftRingLittle: unselectedColorState,
   indexFingerTipOut: unselectedColorState, // catcher
   indexMiddleRingLittle: unselectedColorState, // catcher
+  indexLeftMiddleRingRight: unselectedColorState, // first back style glove
+  thumbLeftIndexRight: unselectedColorState, // first back style glove
   thumbIndexMiddle: unselectedColorState, // first back style glove
   middleLeftRingRight: unselectedColorState, // first back style glove
   ringLeftLittleRight: unselectedColorState, // first back style glove

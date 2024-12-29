@@ -41,6 +41,8 @@ import {
   SET_BANK_LACE_DIRECTION,
   SET_LOOP_OF_RING_FINGER,
   SET_THUMB_INDEX_MIDDLE_RIGHT_COLOR,
+  SET_THUMB_LEFT_INDEX_RIGHT_COLOR,
+  SET_INDEX_LEFT_MIDDLE_RING_RIGHT_COLOR,
   SET_MIDDLE_LEFT_RING_RIGHT_COLOR,
   SET_RING_LEFT_LITTLE_RIGHT_COLOR,
   SET_INDEX_LEFT_MIDDLE_RIGHT_COLOR,
@@ -52,7 +54,6 @@ import {
   SET_TWO_FINGER_IN_LITTLE_SLOT
 } from '@/features/genuine/Constants/action'
 import { GenuineState } from '../types'
-import { genuineLabel } from '../Drawer/canvas/label'
 
 const initialPersonalState = {
   userName: '',
@@ -154,6 +155,8 @@ export const initialState: GenuineState = {
   palmToWebConnectLaceStyle: unselectedState,
   indexFingerTipOut: unselectedColorState, // catcher
   indexMiddleRingLittle: unselectedColorState, // catcher
+  thumbLeftIndexRight: unselectedColorState, // first back style glove
+  indexLeftMiddleRingRight: unselectedColorState, // catcher
   thumbMachi: unselectedColorState,
   littleMachi: unselectedColorState,
   genuineLabel: unselectedStateWithPrice,
@@ -201,7 +204,8 @@ export const reducer = (state: any, action: any) => {
         thumbIndexMiddleRight: action.all,
         indexLeftMiddleRight: action.all, // crown back style glove
         middleLeftRingRight: action.all,
-        ringLeftLittleRight: action.all
+        ringLeftLittleRight: action.all,
+        indexLeftMiddleRingRight: action.all
       }
     case SET_BASE_MODEL:
       return { ...state, baseModel: action.baseModel }
@@ -273,6 +277,10 @@ export const reducer = (state: any, action: any) => {
     // ringLeftLittleRight // first back style
     case SET_THUMB_INDEX_MIDDLE_RIGHT_COLOR:
       return { ...state, thumbIndexMiddleRight: action.thumbIndexMiddleRight }
+    case SET_THUMB_LEFT_INDEX_RIGHT_COLOR:
+      return { ...state, thumbLeftIndexRight: action.thumbLeftIndexRight }
+    case SET_INDEX_LEFT_MIDDLE_RING_RIGHT_COLOR:
+      return { ...state, indexLeftMiddleRingRight: action.indexLeftMiddleRingRight }
     case SET_INDEX_LEFT_MIDDLE_RIGHT_COLOR:
       return { ...state, indexLeftMiddleRight: action.indexLeftMiddleRight }
     case SET_MIDDLE_LEFT_RING_RIGHT_COLOR:

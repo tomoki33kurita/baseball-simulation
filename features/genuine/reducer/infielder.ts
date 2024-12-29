@@ -151,6 +151,8 @@ export const initialState: GenuineState = {
   palmToWebConnectLaceStyle: unselectedState,
   indexFingerTipOut: unselectedColorState, // catcher
   indexMiddleRingLittle: unselectedColorState, // catcher
+  indexLeftMiddleRingRight: unselectedColorState, // first back style glove
+  thumbLeftIndexRight: unselectedColorState, // first back style glove
   genuineLabel: unselectedStateWithPrice,
   mouton: unselectedStateWithPrice,
   loopOfRingFinger: unselectedStateWithPrice,
@@ -191,7 +193,9 @@ export const reducer = (state: any, action: any) => {
         ringLittle: action.all,
         littleRing: action.all,
         littleOut: action.all,
-        labelStand: action.all
+        labelStand: action.all,
+        indexMiddleRingLittle: action.all, // catcher
+        indexLeftMiddleRingRight: action.all
       }
     case SET_BASE_MODEL:
       return { ...state, baseModel: action.baseModel, backStyle: NORMAL_BACK_STYLE }

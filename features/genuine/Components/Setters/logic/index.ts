@@ -9,6 +9,7 @@ import {
   CATCHER_MITT_TM_BACK_PARTS,
   CROWN_BACK_PARTS,
   FIRST_BACK_GENUINE_LABELS,
+  FIRST_BACK_MIDDLE_HOLE_PARTS,
   FIRST_BACK_PARTS,
   FIRST_BACK_WITH_MIDDLE_HOLE_GENUINE_LABELS,
   FIRST_MITT_PARTS,
@@ -44,6 +45,8 @@ export const getComponentParts = (state: GenuineState) => {
     thumbWeb,
     thumbIndexMiddle, // first back style no finger hole
     thumbIndexMiddleRight, // first back style or catcher
+    thumbLeftIndexRight, // first back style glove
+    indexLeftMiddleRingRight, // first back style glove
     indexWeb,
     indexMiddle,
     indexLeftMiddleRight, // crown back style
@@ -108,7 +111,9 @@ export const getComponentParts = (state: GenuineState) => {
     indexMiddleRingLittle,
     middleLeftRingLittle, // catcher
     middleLeftRingRight, // first back style
-    ringLeftLittleRight // first back style
+    ringLeftLittleRight, // first back style
+    thumbLeftIndexRight, // first back style glove
+    indexLeftMiddleRingRight // first back style glove
   }
 }
 
@@ -118,6 +123,7 @@ export const getSelectableParts = (state: GenuineState): PartsItem[] => {
   const { drawerIndex } = state
   const { isFirstBackStyle, isCrownBackStyle } = getBackStyle(state)
   const { isFirstBaseman, isCatcher } = positionChecker(state.baseModel.position)
+  const isMiddleHole = ['middleHole', 'middleCover', 'middlePad'].includes(state.fingerGuard.value)
   if (isCatcher) {
     switch (state.backStyle.value) {
       case 'regular':
@@ -134,6 +140,9 @@ export const getSelectableParts = (state: GenuineState): PartsItem[] => {
   }
   if (drawerIndex === 0) {
     if (isFirstBackStyle) {
+      if (isMiddleHole) {
+        return FIRST_BACK_MIDDLE_HOLE_PARTS
+      }
       return FIRST_BACK_PARTS
     }
     if (isCrownBackStyle) {
@@ -390,6 +399,17 @@ export const getFingerColor = (state: GenuineState) => {
   const { isFirstBackStyle, isCrownBackStyle } = getBackStyle(state)
   const isIntegratedRing = state.genuineBrandMark.value === 'genuineEmbroidery'
   if (isFirstBackStyle) {
+    const isMiddleHole = ['middleHole', 'middleCover', 'middlePad'].includes(state.fingerGuard.value)
+    if (isMiddleHole) {
+      return {
+        thumbWebColor: state.thumbLeftIndexRight.color,
+        indexWebColor: state.thumbLeftIndexRight.color,
+        indexMiddleColor: state.indexLeftMiddleRingRight.color,
+        middleIndexColor: state.indexLeftMiddleRingRight.color,
+        middleRingColor: state.indexLeftMiddleRingRight.color,
+        ringLittleColor: state.ringLeftLittleRight.color
+      }
+    }
     return {
       thumbWebColor: state.thumbIndexMiddleRight.color,
       indexWebColor: state.thumbIndexMiddleRight.color,
