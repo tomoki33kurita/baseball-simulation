@@ -23,7 +23,16 @@ import { isHalfWidthCharChecker } from '@/features/genuine/Drawer/canvas/back/us
 import { SET_EMBROIDERIES } from '@/Constants'
 import { unselectedState } from '@/features/genuine/reducer/infielder'
 import { positionChecker } from '@/util/logic'
-import { BACK_STYLES, BACK_STYLES_CATCHER, NORMAL_BACK_STYLE, RN_BACK_STYLE, WEB_PARTS } from '@/features/genuine/Constants/base'
+import {
+  BACK_STYLES,
+  BACK_STYLES_CATCHER,
+  FINGER_GUARDS,
+  FINGER_GUARDS_CATCHER,
+  FIRST_BACK_FINGER_GUARDS,
+  NORMAL_BACK_STYLE,
+  RN_BACK_STYLE,
+  WEB_PARTS
+} from '@/features/genuine/Constants/base'
 
 export const getComponentParts = (state: GenuineState) => {
   const {
@@ -215,6 +224,18 @@ export const getGenuineWebParts = (isFirstBaseman: boolean) => {
   return {
     selectableWebParts
   }
+}
+
+export const getFingerGuardOptions = (state: GenuineState) => {
+  const { isFirstBackStyle } = getBackStyle(state)
+  const { isCatcher } = positionChecker(state.baseModel.position)
+  if (isCatcher) {
+    return FINGER_GUARDS_CATCHER
+  }
+  if (isFirstBackStyle) {
+    return FIRST_BACK_FINGER_GUARDS
+  }
+  return FINGER_GUARDS
 }
 
 export const characterCheckHelper = (embroidery: Embroidery) => {

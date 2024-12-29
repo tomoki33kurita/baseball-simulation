@@ -19,7 +19,8 @@ import {
   GENUINE_ENGRAVINGS,
   FINGER_GUARDS_CATCHER,
   JUNIOR_GLOVE_SIZES,
-  TWO_FINGER_LITTLE_SLOTS
+  TWO_FINGER_LITTLE_SLOTS,
+  FIRST_BACK_FINGER_GUARDS
 } from '@/features/genuine/Constants/base'
 import { objectsFilter } from '@/util/logic'
 import { ResponseDispatch } from '@/features/genuine/types'
@@ -69,7 +70,7 @@ const dispatchBaseStore = {
   genuineBrandMark: { objects: [...GENUINE_EMBROIDERIES, ...GENUINE_ENGRAVINGS], actionType: SET_GENUINE_BRAND_MARK },
   genuineBrandMarkColor: { objects: STITCHES, actionType: SET_GENUINE_BRAND_MARK_COLOR },
   materialPack: { objects: MATERIAL_PACKS, actionType: SET_MATERIAL_PACK },
-  fingerGuard: { objects: [...FINGER_GUARDS, ...FINGER_GUARDS_CATCHER], actionType: SET_FINGER_GUARD },
+  fingerGuard: { objects: [...FINGER_GUARDS, ...FINGER_GUARDS_CATCHER, ...FIRST_BACK_FINGER_GUARDS], actionType: SET_FINGER_GUARD },
   webParts: { objects: WEB_PARTS, actionType: SET_WEB_PARTS },
   lace: { objects: LACES, actionType: SET_LACE_COLOR },
   binding: { objects: BINDINGS, actionType: SET_BINDING_COLOR },

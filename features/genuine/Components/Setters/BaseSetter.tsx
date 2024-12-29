@@ -32,7 +32,7 @@ import { SelectCardWithImage } from '@/components/Setters/SelectCardWithImage'
 import { TabPanel } from '@/components/TabPanel'
 import { dispatcher } from './dispatcher'
 import { positionChecker } from '@/util/logic'
-import { getBackStyleOptions, getGenuineBackStyle, getGenuineWebParts } from './logic'
+import { getBackStyleOptions, getFingerGuardOptions, getGenuineBackStyle, getGenuineWebParts } from './logic'
 import { STITCHES } from '../../Constants/color'
 import { JUNIOR_LIST } from '../../Constants/model'
 
@@ -95,6 +95,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
   const isJuniorModel = JUNIOR_LIST.includes(baseModel.productNumber)
   const backStyleOptions = getBackStyleOptions(position, baseModel.productNumber)
   const isSpecifiedLittleFingerSideLabel = ['littleFingerSideEmbroidery', 'littleFingerSideNormal'].includes(state.genuineLabel.value)
+  const fingerGuardOptions = getFingerGuardOptions(state)
 
   return (
     <TabPanel selectedIndex={selectedIndex} index={0}>
@@ -127,7 +128,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
       <SelectCard
         summary={'指カバー/指当て'} // fingerGuard
         selectedLabel={fingerGuard.label}
-        objects={isCatcher ? FINGER_GUARDS_CATCHER : FINGER_GUARDS}
+        objects={fingerGuardOptions}
         isError={fingerGuard.value === 'unselected'}
         defaultExpanded={fingerGuard.value === 'unselected'}
         disabled={isSpecifiedLittleFingerSideLabel}
@@ -188,7 +189,8 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         objects={selectableWebParts}
         isError={webParts.value === 'unselected'}
         defaultExpanded={webParts.value === 'unselected'}
-        isDisplay={!isCatcher}
+        // isDisplay={!isCatcher}
+        isDisplay={isGlove}
         handleChange={handle.webParts}
         className={WEB_PARTS_BUTTON_OPTION}
       />
