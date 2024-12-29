@@ -64,7 +64,7 @@ const genuineEmbroideryForRingFinger = (ctx: CanvasRenderingContext2D, color: st
   ctx.beginPath()
   const isReady = document.fonts.check('56px Alex Brush')
   // ctx.font = isMobile ? '30px cursive' : '56px Brush Script MT'
-  ctx.font = '48px Alex Brush'
+  ctx.font = '40px Alex Brush'
   // ctx.font = `48px ${alexBrush.style.fontFamily}`
   ctx.strokeStyle = color
   if (isReady) {
@@ -83,11 +83,11 @@ const genuineEmbroideryForCrownBack = (ctx: CanvasRenderingContext2D, color: str
   ctx.beginPath()
   const isReady = document.fonts.check('56px Alex Brush')
   // ctx.font = isMobile ? '30px cursive' : '56px Brush Script MT'
-  ctx.font = '48px Alex Brush'
+  ctx.font = '40px Alex Brush'
   // ctx.font = `48px ${alexBrush.style.fontFamily}`
   ctx.strokeStyle = color
   if (isReady) {
-    ctx.strokeText(`genuine`, 10, 470)
+    ctx.strokeText(`genuine`, -10, 470)
   }
   ctx.stroke()
   ctx.closePath()
@@ -120,7 +120,7 @@ const genuineEmbroideryForCatcherMitt = (ctx: CanvasRenderingContext2D, color: s
   ctx.beginPath()
   const isReady = document.fonts.check('56px Alex Brush')
   // ctx.font = isMobile ? '30px cursive' : '56px Brush Script MT'
-  ctx.font = '48px Alex Brush'
+  ctx.font = '40px Alex Brush'
   // ctx.font = `48px ${alexBrush.style.fontFamily}`
   ctx.strokeStyle = color
 
