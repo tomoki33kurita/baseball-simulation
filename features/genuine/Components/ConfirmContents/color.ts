@@ -1,7 +1,7 @@
 import { ColorItem } from '@/types'
 import { GenuineState } from '@/features/genuine/types'
 import { positionChecker } from '@/util/logic'
-import { getFingerGuardType } from '../Setters/logic'
+import { getBackStyle, getFingerGuardType } from '../Setters/logic'
 
 const dummy = {
   head: 'dummy',
@@ -119,6 +119,7 @@ export const getGenuineColorCells = (state: GenuineState) => {
   const isLoopOfRingFinger = state.loopOfRingFinger.value === 'loopOfRingFinger'
   const isINet = state.webParts.value === 'iNet'
   const { isFirstBaseman } = positionChecker(state.baseModel.position)
+  const { isTMBackStyle } = getBackStyle(state)
 
   return [
     genGloveColorCell('捕球面', state.palm, 'palm'),
@@ -131,7 +132,7 @@ export const getGenuineColorCells = (state: GenuineState) => {
     ...getFingerParts(state),
     isSideLabel ? dummy : genGloveColorCell('バンド', state.listBelt, 'listBelt'),
     isLoopOfRingFinger ? genGloveColorCell('薬指リング', state.loopOfRingFingerColor, 'loopOfRingFingerColor') : dummy,
-    isFirstBaseman ? dummy : genGloveColorCell('ハミダシ', state.welting, 'welting'),
+    isFirstBaseman || isTMBackStyle ? dummy : genGloveColorCell('ハミダシ', state.welting, 'welting'),
     genGloveColorCell('ヘリ革', state.binding, 'binding'),
     genGloveColorCell('ステッチ', state.stitch, 'stitch'),
     genGloveColorCell('革紐', state.lace, 'lace'),

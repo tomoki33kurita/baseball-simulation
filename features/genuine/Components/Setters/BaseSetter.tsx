@@ -153,7 +153,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         isDisplay={(isGlove && !isFirstBackStyle) || isCatcher}
         handleChange={handle.backStyle}
         disabled={isSelectableGenuineMarkColor}
-        description={isSelectableGenuineMarkColor ? '変更するには、薬指一体仕様を解除してください。' : ''}
+        description={isSelectableGenuineMarkColor ? '変更するには、Genuine刺繍・刻印を解除してください。' : ''}
         defaultExpanded={backStyle.value === 'unselected'}
         className={BACK_STYLE_BUTTON_OPTION}
       />
@@ -166,7 +166,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         defaultExpanded={palmToWebConnectLaceStyle.value === 'unselected'}
         handleChange={handle.palmToWebConnectLaceStyle}
       />
-      <SelectCard
+      {/* <SelectCard
         summary={'背面メッシュカラー'} // fingerGuard
         selectedLabel={meshColor.label}
         objects={MESH_COLORS}
@@ -174,7 +174,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         defaultExpanded={meshColor.value === 'unselected'}
         isDisplay={isMesh}
         handleChange={handle.meshColor}
-      />
+      /> */}
       <SelectCard
         summary={'サイズ'} // size
         selectedLabel={size.label}

@@ -35,6 +35,7 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
   const partsKey = parts.value
   const partsLabel = parts.label
   const { isFirstBaseman } = positionChecker(state.baseModel.position)
+  const { isTMBackStyle } = getBackStyle(state)
   const componentParts = getComponentParts(state)
   const selectedParts = componentParts[partsKey as keyof typeof componentParts]
   const selectableParts = getSelectableParts(state)
@@ -95,7 +96,7 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
         defaultExpanded={welting.value === 'unselected'}
         handleChange={handle.welting}
         isError={welting.value === 'unselected'}
-        isDisplay={!isFirstBaseman}
+        isDisplay={!isFirstBaseman && !isTMBackStyle}
         className={WELTING_COLOR_BUTTON_OPTION}
       />
       <SelectCard

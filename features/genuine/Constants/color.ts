@@ -77,7 +77,7 @@ export const BINDINGS: ColorItem[] = [
 
 export const WELTINGS: ColorItem[] = [
   { label: 'キリハミ(ブラック)', value: 'cutWeltingBlack', color: '#1E1E1E' },
-  { label: 'キリハミ(ホワイト)', value: 'cutWeltingWhite', color: '#AFB3B1' },
+  { label: 'キリハミ(ホワイト)', value: 'cutWeltingWhite', color: '#fff' },
 
   { label: '玉ハミ(ホワイト)', value: 'ballWhite', color: '#fff' },
   { label: '玉ハミ(グレー)', value: 'ballGray', color: '#8A8C8C' },
