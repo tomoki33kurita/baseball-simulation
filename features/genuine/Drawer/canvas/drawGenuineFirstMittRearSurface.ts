@@ -26,7 +26,7 @@ export const drawGenuineFirstMittRearSurface = (ctx: CanvasRenderingContext2D | 
 
   pseudoDrawingEngraved(ctx)
   canvasResetter(ctx) // リセット
-  ctx.font = '40px serif'
+  ctx.font = '24px serif'
   ctx.strokeStyle = '#383838'
   ctx.fillStyle = '#383838'
   ctx.strokeText('型番：' + baseModel.productNumber, 50, 70)
