@@ -13,7 +13,7 @@ export const initialPersonal: Personal = {
 export const POSITION_OPTIONS = [
   { label: '投手用', value: 'pitcher', attribute: 'pitcher' },
   { label: '捕手用', value: 'catcher', attribute: 'catcher' },
-  { label: '一塁手', value: 'firstBaseman', attribute: 'first' },
+  { label: '一塁手', value: 'firstBaseman', attribute: 'firstBaseman' },
   { label: '二塁手', value: 'secondBaseman', attribute: 'infielder' },
   { label: '三塁手', value: 'thirdBaseman', attribute: 'infielder' },
   { label: '遊撃手', value: 'shortStop', attribute: 'infielder' },
