@@ -239,7 +239,7 @@ export const CATCHER_MITT_BELT_BACK_PARTS: PartsItem[] = [
 export const FIRST_BACK_PARTS: PartsItem[] = [
   ...commonPartsObjs,
   { label: '親指1', value: 'thumbOut' },
-  { label: '親指・人差指・中指5', value: 'thumbIndexMiddleRight' },
+  { label: '親指2・人差指・中指5', value: 'thumbIndexMiddleRight' },
   { label: '中指6・薬指7', value: 'middleLeftRingRight' },
   { label: '薬指8・小指9', value: 'ringLeftLittleRight' },
   { label: '小指10', value: 'littleOut' },

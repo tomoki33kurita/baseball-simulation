@@ -26,6 +26,17 @@ const getFingerParts = (state: GenuineState) => {
 
   if (productNumber === 'MIU-T4') {
     // firstBackStyle
+    const isMiddleHole = ['middleHole', 'middlePad', 'middleCover'].includes(state.fingerGuard.value)
+    if (isMiddleHole) {
+      return [
+        genGloveColorCell('親指1', state.thumbOut, 'thumbOut'),
+        genGloveColorCell('親指2・人差指3', state.thumbLeftIndexRight, 'thumbLeftIndexRight'),
+        genGloveColorCell('人差指4・中指・薬指7', state.indexLeftMiddleRingRight, 'indexLeftMiddleRingRight'),
+        genGloveColorCell('薬指8・小指9', state.ringLeftLittleRight, 'ringLeftLittleRight'),
+        genGloveColorCell('小指10', state.littleOut, 'littleOut')
+      ]
+    }
+
     return [
       genGloveColorCell('親指1', state.thumbOut, 'thumbOut'),
       genGloveColorCell('親指2・人差指・中指5', state.thumbIndexMiddleRight, 'thumbIndexMiddleRight'),
