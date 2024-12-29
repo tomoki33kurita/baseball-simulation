@@ -173,7 +173,7 @@ export const WEB_PARTS: WebParts[] = [
   { label: 'Tネット', value: 'tNet', positions: ['outfielder'], imageUrl: `${webImageBaseUrl}/tNet.jpg` },
   { label: 'Tネット2', value: 'tNet2', positions: ['outfielder', 'firstBaseman'], imageUrl: `${webImageBaseUrl}/tNet2.jpg` },
   { label: 'Tネット3', value: 'tNet3', positions: ['outfielder', 'firstBaseman'], imageUrl: `${webImageBaseUrl}/tNet3.jpg` },
-  { label: 'Tネット4', value: 'tNet4', positions: ['firstBaseman'], imageUrl: `${webImageBaseUrl}/iNet.jpg` },
+  // { label: 'Tネット4', value: 'tNet4', positions: ['firstBaseman'], imageUrl: `${webImageBaseUrl}/iNet.jpg` },
   { label: 'Iネット', value: 'iNet', positions: ['outfielder'], imageUrl: `${webImageBaseUrl}/iNet.jpg` },
   { label: 'バスネット', value: 'basNet', positions: ['outfielder'], imageUrl: `${webImageBaseUrl}/basNet.jpg` },
   { label: 'トンボ', value: 'dragonfly', positions: ['outfielder'], imageUrl: `${webImageBaseUrl}/dragonfly.jpg` },

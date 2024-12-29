@@ -13,11 +13,11 @@ import { backAroundWeb } from './rightThrow/firstMitt/back/backAroundWeb'
 import { edgeDrawer } from './rightThrow/firstMitt/back/edgeDrawer'
 import { stitch } from './rightThrow/firstMitt/back/stitch'
 import { laces } from './rightThrow/firstMitt/back/lace'
-import { genuineLabel } from './label'
 import { loopOfRingFingerDrawer } from './rightThrow/glove/back/loopOfFingerDrawer'
 import { webDrawerOfFirstMitt } from './rightThrow/firstMitt/back/webDrawer'
 import { paisleySelected } from './paisleySelected'
 import { genuineBrandMarkEmbroideryDrawer, pseudoDrawingEngraved } from './rightThrow/glove/front/engraving'
+import { genuineLabelDrawer } from './label/drawer'
 
 export const drawGenuineFirstMittRearSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
   if (!ctx) return
@@ -69,8 +69,10 @@ export const drawGenuineFirstMittRearSurface = (ctx: CanvasRenderingContext2D | 
   //   )
   // }
   backOfThumbDrawer(ctx, state.thumb.color, state.stitch.color) // 背面＿親指_
-
-  wristBeltDrawer(ctx, state) // 手首ベルト
+  const isFrontSide = ['normalFront', 'directEmbroideryFront'].includes(state.genuineLabel.value)
+  if (isFrontSide) {
+    wristBeltDrawer(ctx, state) // 手首ベルト
+  }
   littleHook(ctx, state.littleHook.color) // 小指掛け紐
   thumbHook(ctx, state.thumbHook.color) // 親指掛け紐
   // // 親指への刺繍
@@ -89,7 +91,7 @@ export const drawGenuineFirstMittRearSurface = (ctx: CanvasRenderingContext2D | 
   stitch(ctx, state.stitch.color) // ステッチ
   fingerGuardDrawer(ctx, state) // 指カバー
 
-  genuineLabel(ctx, state, 40, 85, 0, 0.9)
+  genuineLabelDrawer(ctx, state)
   webDrawerOfFirstMitt(ctx, state) // ウェブ
   laces(ctx, state.lace.color) // 革紐
   paisleySelected(ctx, state)

@@ -205,6 +205,7 @@ export const reducer = (state: any, action: any) => {
         indexLeftMiddleRight: action.all, // crown back style glove
         middleLeftRingRight: action.all,
         ringLeftLittleRight: action.all,
+        thumbLeftIndexRight: action.all,
         indexLeftMiddleRingRight: action.all
       }
     case SET_BASE_MODEL:
