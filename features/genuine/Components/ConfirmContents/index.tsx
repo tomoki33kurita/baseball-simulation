@@ -29,7 +29,7 @@ export const GenuineConfirmContents: React.FC<Props> = ({ state, position }) => 
   useDrawGenuineCatcherMittRearSurface(rearSurfaceId, state)
   useDrawGenuineCatcherMittPalmSurface(palmSurfaceId, state)
   useDrawGenuineFirstMittRearSurface(rearSurfaceId, state)
-  useDrawGenuineFirstMittPalmSurface(palmSurfaceId, state)
+  useDrawGenuineFirstMittPalmSurface3(palmSurfaceId, state)
 
   const basePrice = 0
   const baseCells = getGenuineBaseCells(state)
