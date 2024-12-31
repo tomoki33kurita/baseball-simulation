@@ -1,5 +1,5 @@
 import { Brand, Embroidery, State } from '@/types'
-import { calculateFiveBaseCost, calculateFiveEmbroideryCost, calculateFiveOptionCost } from '../five/Cost'
+import { calculateFiveEmbroideryCost, calculateFiveOptionCost } from '../five/Cost'
 import { FiveState } from '../five/types'
 import { getFiveColorCells } from '../five/Components/ConfirmContents/color'
 import { getGenuineColorCells } from '../genuine/Components/ConfirmContents/color'
@@ -9,39 +9,6 @@ import { getGenuineBaseCells } from '../genuine/Components/ConfirmContents/base'
 import { getFiveEmbroideryCells } from '../five/Components/ConfirmContents/embroidery'
 import { getOrderType } from '../five/Components/Setters/logic'
 import { getGenuineEmbroideryCells } from '../genuine/Components/ConfirmContents/embroidery'
-
-export const calculateBaseCost = (brand: Brand, state: FiveState): number => {
-  switch (brand) {
-    case 'five':
-      const baseCost = calculateFiveBaseCost(state)
-      return baseCost
-    case 'genuine':
-    default:
-      return 0
-  }
-}
-
-export const calculateOptionCost = (brand: Brand, state: FiveState): number => {
-  switch (brand) {
-    case 'five':
-      const optionCost = calculateFiveOptionCost(state)
-      return optionCost
-    case 'genuine':
-    default:
-      return 0
-  }
-}
-
-export const calculateEmbroideryCost = (brand: Brand, state: FiveState): number => {
-  switch (brand) {
-    case 'five':
-      const embroideryCost = calculateFiveEmbroideryCost(state)
-      return embroideryCost
-    case 'genuine':
-    default:
-      return 0
-  }
-}
 
 export const getColorCells = (state: State) => {
   switch (state.baseModel.brand) {
