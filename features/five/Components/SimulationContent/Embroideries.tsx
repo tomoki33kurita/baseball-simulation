@@ -3,7 +3,7 @@ import { Box } from '@mui/material'
 import { getFiveEmbroideryCells } from '@/features/five/Components/ConfirmContents/embroidery'
 import { getOrderType } from '@/features/five/Components/Setters/logic'
 import { FiveState } from '../../types'
-import { ItemCell } from '@/Components/ItemCell'
+import { ItemCell } from '@/components/ItemCell'
 
 const cellColor = (cellValue: string) => (cellValue === 'unselected' ? 'red' : '#383838')
 

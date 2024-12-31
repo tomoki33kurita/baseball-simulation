@@ -15,9 +15,9 @@ import {
   WEB_PARTS,
   FINGER_GUARDS
 } from '@/features/five/Constants/base'
-import { SelectCard } from '@/Components/Setters/SelectCard'
-import { SelectCardWithImage } from '@/Components/Setters/SelectCardWithImage'
-import { TabPanel } from '@/Components/TabPanel'
+import { SelectCard } from '@/components/Setters/SelectCard'
+import { SelectCardWithImage } from '@/components/Setters/SelectCardWithImage'
+import { TabPanel } from '@/components/TabPanel'
 import { dispatcher } from './dispatcher'
 import { checkEmbroidery, getOrderType } from './logic'
 // import { Box } from '@mui/material'

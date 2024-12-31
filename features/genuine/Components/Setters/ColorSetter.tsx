@@ -1,7 +1,7 @@
-import { SelectCard } from '@/Components/Setters/SelectCard'
+import { SelectCard } from '@/components/Setters/SelectCard'
 import { GenuineState } from '@/features/genuine/types'
 import { Position } from '@/types'
-import { TabPanel } from '@/Components/TabPanel'
+import { TabPanel } from '@/components/TabPanel'
 import { dispatcher } from './dispatcher'
 import { getColorOptionsByParts, getSelectableParts, getComponentParts, getBackStyle, filterSelectableParts, getGenuineLabelOptions } from './logic'
 import {

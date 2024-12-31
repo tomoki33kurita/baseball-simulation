@@ -1,8 +1,8 @@
-import { SelectCard } from '@/Components/Setters/SelectCard'
+import { SelectCard } from '@/components/Setters/SelectCard'
 import { FiveState } from '@/features/five/types'
 import { Position } from '@/types'
-import { TabPanel } from '@/Components/TabPanel'
-import { SelectCardWithImage } from '@/Components/Setters/SelectCardWithImage'
+import { TabPanel } from '@/components/TabPanel'
+import { SelectCardWithImage } from '@/components/Setters/SelectCardWithImage'
 import { dispatcher } from './dispatcher'
 import { getColorOptionsByParts, getSelectableParts, getComponentParts, getOrderType } from './logic'
 import {

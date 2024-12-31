@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Button } from '@mui/material'
 import { useConfirm } from './hooks/useConfirm'
-import { ConfirmDialog } from '@/Components/ConfirmDialog'
+import { ConfirmDialog } from '@/components/ConfirmDialog'
 
 type Props = {
   toTopPath: string

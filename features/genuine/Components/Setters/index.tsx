@@ -3,10 +3,10 @@ import { Position } from '@/types'
 import { BaseSetter } from './BaseSetter'
 import { ColorSetter } from './ColorSetter'
 import { EmbroiderySetter } from './EmbroiderySetter'
-import { SimulationConfirmDialog } from '@/Components/SimulationConfirmDialog'
+import { SimulationConfirmDialog } from '@/components/SimulationConfirmDialog'
 import { GenuineConfirmContents } from '../ConfirmContents'
-import { SettingTabs } from '@/Components/SettingFrame/SettingTabs'
-import { SettingButtons } from '@/Components/SettingFrame/SettingButtons'
+import { SettingTabs } from '@/components/SettingFrame/SettingTabs'
+import { SettingButtons } from '@/components/SettingFrame/SettingButtons'
 import { GenuineState } from '../../types'
 
 type Props = {

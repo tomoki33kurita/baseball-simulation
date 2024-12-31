@@ -3,7 +3,7 @@ import { Box } from '@mui/material'
 import { GenuineState } from '../../types'
 import { getEmbroideryCells } from '@/features/Logic'
 import { Embroidery } from '@/types'
-import { ItemCell } from '@/Components/ItemCell'
+import { ItemCell } from '@/components/ItemCell'
 
 const cellColor = (cellValue: string) => (cellValue === 'unselected' ? 'red' : '#383838')
 
