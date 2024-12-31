@@ -61,7 +61,7 @@ export const models: GenuineBaseModel[] = [
       value: 30.0,
       unit: 'cm'
     },
-    webParts: 'twoPeace2',
+    webParts: 'flat5',
     description: '完全横型投手用グラブを握り潰し投球したい投手仕様',
     isFingerCrotch: false,
     isUBack: false,
