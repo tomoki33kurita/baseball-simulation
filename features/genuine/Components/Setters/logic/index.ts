@@ -186,6 +186,7 @@ export const getGenuineLabelOptions = (state: GenuineState) => {
         if (isMiddleHole) return FIRST_BACK_WITH_MIDDLE_HOLE_GENUINE_LABELS
         return FIRST_BACK_GENUINE_LABELS
       }
+      return GENUINE_LABELS
     case 'catcher':
       return FRONT_GENUINE_LABELS
     default:

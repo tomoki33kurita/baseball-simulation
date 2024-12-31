@@ -55,7 +55,7 @@ export const genuineLabelDrawer = (ctx: CanvasRenderingContext2D | null, state: 
       return
     }
     // little finger side
-    genuineLabel(ctx, state, -80, 170, -8, 0.7)
+    genuineLabel(ctx, state, -80, 185, -8, 0.7)
     return
   }
   if (isConnectBackStyle) {
