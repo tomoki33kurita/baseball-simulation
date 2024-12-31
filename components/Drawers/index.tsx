@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { Box, AppBar, Tabs, Tab } from '@mui/material'
-import { RearSurface } from './RearSurface'
+import { RearSurface } from './RearSurface2'
 import { PalmSurface } from './PalmSurface'
 import { TabPanel } from '@/Components/TabPanel'
 import { a11yProps, tabStyle } from '@/util/drawer/tab'
