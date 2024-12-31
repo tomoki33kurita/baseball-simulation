@@ -5,7 +5,7 @@ import { BaseSetter } from './BaseSetter'
 import { ColorSetter } from './ColorSetter'
 import { EmbroiderySetter } from './EmbroiderySetter'
 import { SimulationConfirmDialog } from '@/Components/SimulationConfirmDialog'
-import { FiveConfirmContents } from '../ConfirmContents'
+import { FiveConfirmContents } from '../ConfirmContents/index2'
 import { SettingTabs } from '@/Components/SettingFrame/SettingTabs'
 import { SettingButtons } from '@/Components/SettingFrame/SettingButtons'
 
