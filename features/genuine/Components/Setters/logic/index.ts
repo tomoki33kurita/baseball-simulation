@@ -20,7 +20,7 @@ import {
 } from '@/features/genuine/Constants/color'
 import { EMBROIDERY_POSITIONS, EMBROIDERY_ITEMS, SHADOW_EDGE_COLORS, TYPE_FACES } from '@/features/genuine/Constants/embroidery'
 import { isHalfWidthCharChecker } from '@/features/genuine/Drawer/canvas/back/useCanvasEmbroideries'
-import { SET_EMBROIDERIES } from '@/constants/constatns'
+import { SET_EMBROIDERIES } from '@/constants'
 import { unselectedState } from '@/features/genuine/reducer/infielder'
 import { positionChecker } from '@/util/logic'
 import {

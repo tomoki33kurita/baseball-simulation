@@ -36,7 +36,7 @@ import {
   SET_SPECIFIED_LOGO,
   SET_SPECIFIED_LOGO_POSITION
 } from '../Constants/action'
-import { ADD_EMBROIDERY, REMOVE_EMBROIDERY, SET_DRAWER_INDEX, SET_EMBROIDERIES, SET_PERSONAL } from '@/constants/constatns'
+import { ADD_EMBROIDERY, REMOVE_EMBROIDERY, SET_DRAWER_INDEX, SET_EMBROIDERIES, SET_PERSONAL } from '@/constants'
 import { FiveState } from '../types'
 
 const initialPersonalState = {

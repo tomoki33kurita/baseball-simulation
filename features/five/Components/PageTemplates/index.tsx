@@ -10,7 +10,7 @@ import { Setters } from '../Setters'
 import { SurfaceDrawers } from '@/components/Drawers'
 import { Position } from '@/types'
 import { models } from '@/features/five/Constants/model'
-import { SET_DRAWER_INDEX } from '@/constants/constatns'
+import { SET_DRAWER_INDEX } from '@/constants'
 
 type Props = {
   state: FiveState

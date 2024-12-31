@@ -46,7 +46,7 @@ import {
   SET_GENUINE_BRAND_MARK_COLOR,
   SET_TWO_FINGER_IN_LITTLE_SLOT
 } from '@/features/genuine/Constants/action'
-import { ADD_EMBROIDERY, REMOVE_EMBROIDERY, SET_DRAWER_INDEX, SET_EMBROIDERIES, SET_PERSONAL } from '@/constants/constatns'
+import { ADD_EMBROIDERY, REMOVE_EMBROIDERY, SET_DRAWER_INDEX, SET_EMBROIDERIES, SET_PERSONAL } from '@/constants'
 import { GenuineState } from '../types'
 import { NORMAL_BACK_STYLE } from '../Constants/base'
 
