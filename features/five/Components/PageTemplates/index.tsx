@@ -2,7 +2,7 @@
 
 import { Box, Grid, Theme } from '@mui/material'
 import { Dispatch, FC } from 'react'
-import { BaseModelSelector } from '@/Components/BaseModelSelector/index2'
+import { BaseModelSelector } from '@/Components/BaseModelSelector'
 import { ThemeProvider } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 import { DrawerIndex, FiveState } from '@/features/five/types'

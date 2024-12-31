@@ -5,7 +5,7 @@ import { Box, Button } from '@mui/material'
 import { BrandOption, SavedData, State } from '@/types'
 import { useForm, Controller } from 'react-hook-form'
 import { borderStyle as border } from '@/styles'
-import { ControlledTextField } from '@/Components/ControlledTextField/index2'
+import { ControlledTextField } from '@/Components/ControlledTextField'
 import { RetailContext } from '../hooks/useRetailContext'
 
 const GET_DOCUMENT_PATH = '/api/server/getDocument'
