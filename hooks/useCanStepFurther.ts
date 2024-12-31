@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { UseFormWatch } from 'react-hook-form'
 import { Embroidery, Personal, State } from '@/types'
 import { CanStepFurther } from '@/types'
-import { getBaseCells, getColorCells, getEmbroideryCells } from '../Logic'
+import { getBaseCells, getColorCells, getEmbroideryCells } from '../features/Logic'
 
 type CompareEmailWatch = UseFormWatch<{
   mailAddress: string
