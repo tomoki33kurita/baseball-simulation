@@ -2,7 +2,7 @@ import React from 'react'
 import { Box, Card, Button } from '@mui/material'
 import { EMBROIDERY_POSITIONS } from '../../../features/five/Constants/embroidery'
 import { Embroidery } from '@/types'
-import { ADD_EMBROIDERY, REMOVE_EMBROIDERY } from '@/Constants'
+import { ADD_EMBROIDERY, REMOVE_EMBROIDERY } from '@/constants/constatns'
 
 const initialEmbroideryState = {
   id: 0,

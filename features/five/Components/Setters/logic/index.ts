@@ -5,7 +5,7 @@ import { DrawerIndex, PartsItem, PartsKey, FiveState } from '@/features/five/typ
 import { BACK_PARTS, LEATHER_COLORS_BY_PARTS, PALM_PARTS } from '@/features/five/Constants/color'
 import { EMBROIDERY_POSITIONS, EMBROIDERY_ITEMS, SHADOW_EDGE_COLORS, TYPE_FACES } from '@/features/five/Constants/embroidery'
 import { isHalfWidthCharChecker } from '@/features/five/Drawer/canvas/back/useCanvasEmbroideries'
-import { SET_EMBROIDERIES } from '@/Constants'
+import { SET_EMBROIDERIES } from '@/constants/constatns'
 import { unselectedState } from '@/features/five/reducer/infielder'
 
 export const getComponentParts = (state: FiveState) => {
