@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box } from '@mui/material'
 import { PriceDisplay } from './PriceDisplay'
-import { calculateBaseCost, calculateEmbroideryCost, calculateOptionCost } from '@/features/cost'
+import { calculateBaseCost, calculateEmbroideryCost, calculateOptionCost } from '@/features/Logic/cost'
 import { State } from '@/types'
 
 type Props = {
