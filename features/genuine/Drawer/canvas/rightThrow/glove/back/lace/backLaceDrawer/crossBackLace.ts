@@ -4,20 +4,6 @@ export const crossBackLace = (ctx: CanvasRenderingContext2D, laceColor: string):
   ctx.strokeStyle = '#383838'
   ctx.lineWidth = 0.8
   ctx.fillStyle = laceColor
-  // 人指し指＿縦(紐の折り返し部分)
-  ctx.beginPath()
-  ctx.moveTo(480, 105) // 左上奥
-  ctx.quadraticCurveTo(483, 117, 470, 139) // 左下
-  ctx.quadraticCurveTo(474, 141, 480, 139) // 右下
-  ctx.quadraticCurveTo(493, 125, 492, 107) // 右上
-  ctx.quadraticCurveTo(487, 103, 485, 104) // 左上
-  ctx.quadraticCurveTo(480, 105, 480, 105) // 左上奥
-  ctx.fill()
-  ctx.moveTo(483, 104)
-  ctx.quadraticCurveTo(485, 117, 473, 139) // 左上奥
-  ctx.stroke()
-  ctx.closePath()
-
   // 人指し指ー中指繋ぎ
   // 左上-右下
   ctx.beginPath()
