@@ -5,7 +5,7 @@ import { initialState, reducer } from '@/features/five/reducer/infielder'
 import { fiveTheme } from '@/features/five/Styles'
 import { useDrawFiveGloveRearSurface } from '@/features/five/Drawer/hooks/useDrawFiveGloveRearSurface'
 import { useDrawFiveGlovePalmSurface } from '@/features/five/Drawer/hooks/useDrawFiveGlovePalmSurface'
-import { FivePageTemplates } from '@/features/five/Components/PageTemplates/index2'
+import { FivePageTemplates } from '@/features/five/Components/PageTemplates'
 
 const FiveInfielder = () => {
   const position = 'infielder'
