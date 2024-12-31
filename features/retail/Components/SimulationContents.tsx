@@ -6,7 +6,7 @@ import { FiveEmbroideries } from '@/features/five/Components/SimulationContent/E
 import { GenuineEmbroideries } from '@/features/genuine/Components/SimulationContent/Embroideries'
 import { GenuineState } from '@/features/genuine/types'
 import { FiveState } from '@/features/five/types'
-import { ItemCell } from '@/components/ItemCell'
+import { ItemCell } from '@/Components/ItemCell'
 
 export const cellColor = (cellValue: string) => (cellValue === 'unselected' ? 'red' : muiGrey)
 

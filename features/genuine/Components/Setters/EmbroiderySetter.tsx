@@ -1,12 +1,12 @@
 import React from 'react'
 import { Box, Accordion, AccordionDetails } from '@mui/material'
 import { GenuineState } from '@/features/genuine/types'
-import { TabPanel } from '@/components/TabPanel'
-import { SelectCard } from '@/components/Setters/SelectCard'
-import { EmbroideryFormUpDown } from '@/components/Setters/Embroidery/EmbroideryFormUpDown'
+import { TabPanel } from '@/Components/TabPanel'
+import { SelectCard } from '@/Components/Setters/SelectCard'
+import { EmbroideryFormUpDown } from '@/Components/Setters/Embroidery/EmbroideryFormUpDown'
 import { EMBROIDERY_COLORS, TYPE_FACES } from '@/features/genuine/Constants/embroidery'
-import { EmbroideryAccordionSummary } from '@/components/Setters/Embroidery/EmbroideryAccordionSummary'
-import { EmbroideryContent } from '@/components/Setters/Embroidery/EmbroideryContent'
+import { EmbroideryAccordionSummary } from '@/Components/Setters/Embroidery/EmbroideryAccordionSummary'
+import { EmbroideryContent } from '@/Components/Setters/Embroidery/EmbroideryContent'
 import {
   characterCheckHelper,
   embroideryFlagGenerator,

@@ -27,9 +27,9 @@ import {
   JUNIOR_GLOVE_SIZES,
   TWO_FINGER_LITTLE_SLOTS
 } from '@/features/genuine/Constants/base'
-import { SelectCard } from '@/components/Setters/SelectCard'
-import { SelectCardWithImage } from '@/components/Setters/SelectCardWithImage'
-import { TabPanel } from '@/components/TabPanel'
+import { SelectCard } from '@/Components/Setters/SelectCard'
+import { SelectCardWithImage } from '@/Components/Setters/SelectCardWithImage'
+import { TabPanel } from '@/Components/TabPanel'
 import { dispatcher } from './dispatcher'
 import { positionChecker } from '@/util/logic'
 import { getBackStyleOptions, getFingerGuardOptions, getGenuineBackStyle, getGenuineWebParts } from './logic'

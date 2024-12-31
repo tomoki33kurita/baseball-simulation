@@ -1,7 +1,7 @@
 import { Grid, Box } from '@mui/material'
 import { GenuineEmbroideries } from './Embroideries'
 import { GenuineState } from '../../types'
-import { ItemCell } from '@/components/ItemCell'
+import { ItemCell } from '@/Components/ItemCell'
 
 export const cellColor = (cellValue: string) => (cellValue === 'unselected' ? 'red' : '#383838')
 

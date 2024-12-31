@@ -4,10 +4,10 @@ import { FiveState } from '@/features/five/types'
 import { BaseSetter } from './BaseSetter'
 import { ColorSetter } from './ColorSetter'
 import { EmbroiderySetter } from './EmbroiderySetter'
-import { SimulationConfirmDialog } from '@/components/SimulationConfirmDialog'
+import { SimulationConfirmDialog } from '@/Components/SimulationConfirmDialog'
 import { FiveConfirmContents } from '../ConfirmContents'
-import { SettingTabs } from '@/components/SettingFrame/SettingTabs'
-import { SettingButtons } from '@/components/SettingFrame/SettingButtons'
+import { SettingTabs } from '@/Components/SettingFrame/SettingTabs'
+import { SettingButtons } from '@/Components/SettingFrame/SettingButtons'
 
 type Props = {
   state: FiveState

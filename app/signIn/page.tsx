@@ -10,7 +10,7 @@ import { browserSessionPersistence, setPersistence, signInWithEmailAndPassword }
 import Link from 'next/link'
 import { auth } from '../api/server/firebase'
 import { commonTheme } from '@/styles/themes'
-import { ControlledTextField } from '@/components/ControlledTextField'
+import { ControlledTextField } from '@/Components/ControlledTextField'
 
 const SignIn: React.FC = () => {
   const [isLoggingIn, setIsLoggingIn] = React.useState(false)
