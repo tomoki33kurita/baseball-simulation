@@ -58,6 +58,14 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
   if (!componentParts || !selectableParts) return <></>
   return (
     <TabPanel selectedIndex={selectedIndex} index={1}>
+      <SelectCard
+        summary={'ラベル'} //
+        selectedLabel={genuineLabel.label}
+        objects={genuineLabelOptions}
+        isError={genuineLabel.value === 'unselected'}
+        defaultExpanded={genuineLabel.value === 'unselected'}
+        handleChange={handle.genuineLabel}
+      />
       <SelectCard summary={'パーツ'} selectedLabel={partsLabel} objects={filteredParts} handleChange={handle.parts} />
       <SelectCard
         summary={`${partsLabel}カラー`}
@@ -128,14 +136,6 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
         handleChange={handle.mouton}
         isError={mouton.value === 'unselected'}
         className={MOUTON_BUTTON_OPTION}
-      />
-      <SelectCard
-        summary={'ラベル'} //
-        selectedLabel={genuineLabel.label}
-        objects={genuineLabelOptions}
-        isError={genuineLabel.value === 'unselected'}
-        defaultExpanded={genuineLabel.value === 'unselected'}
-        handleChange={handle.genuineLabel}
       />
     </TabPanel>
   )
