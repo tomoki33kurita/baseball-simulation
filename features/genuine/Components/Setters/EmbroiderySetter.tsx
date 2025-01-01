@@ -15,7 +15,6 @@ import {
   selectablePositionGenerator,
   useEmbroideriesDispatchGenerator
 } from './logic'
-import Image from 'next/image'
 
 type Props = {
   state: GenuineState
@@ -34,10 +33,8 @@ export const EmbroiderySetter: React.FC<Props> = ({ state, selectedIndex, dispat
         const { shadowColorLabel, edgeColorLabel, disabledShadowColor, disabledEdgeColor, isSelectedTypeFace } = embroideryFlagGenerator(e)
         const { contentMaxLength, existsContent, characterType } = characterCheckHelper(e)
         const selectablePosition = selectablePositionGenerator(embroideries, i)
-
         const shadowColors = generateSubColors(disabledShadowColor)
         const edgeColors = generateSubColors(disabledEdgeColor)
-        const { typeFace } = fontImageResolver(e)
 
         return (
           <Box key={`${e.id}`} my={1}>

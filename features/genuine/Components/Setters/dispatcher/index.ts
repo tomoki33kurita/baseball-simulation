@@ -93,11 +93,13 @@ const dispatchBaseStore = {
 
 type DispatchKey = keyof typeof dispatchBaseStore
 
-export const dispatcher = (key: DispatchKey, dispatch: React.Dispatch<unknown>): ResponseDispatch => {
-  const item = dispatchBaseStore[key]
-  return (selected: string) =>
-    dispatch({
-      type: item.actionType,
-      [key]: objectsFilter(selected, item.objects)
-    })
-}
+export const handleGenuine =
+  (dispatch: React.Dispatch<unknown>) =>
+  (key: DispatchKey): ResponseDispatch => {
+    const item = dispatchBaseStore[key]
+    return (selected: string) =>
+      dispatch({
+        type: item.actionType,
+        [key]: objectsFilter(selected, item.objects)
+      })
+  }

@@ -8,9 +8,7 @@ import {
   MATERIAL_PACK_BUTTON_OPTION,
   MATERIAL_PACKS,
   WEB_PARTS_BUTTON_OPTION,
-  FINGER_GUARDS,
   BACK_STYLE_BUTTON_OPTION,
-  MESH_COLORS,
   SIZES,
   WEB_LACE_STYLES,
   BACK_LACE_STYLES,
@@ -23,14 +21,13 @@ import {
   PALM_TO_WEB_CONNECT_LACE_STYLE,
   GENUINE_EMBROIDERIES,
   GENUINE_ENGRAVINGS,
-  FINGER_GUARDS_CATCHER,
   JUNIOR_GLOVE_SIZES,
   TWO_FINGER_LITTLE_SLOTS
 } from '@/features/genuine/Constants/base'
 import { SelectCard } from '@/components/Setters/SelectCard'
 import { SelectCardWithImage } from '@/components/Setters/SelectCardWithImage'
 import { TabPanel } from '@/components/TabPanel'
-import { dispatcher } from './dispatcher'
+import { handleGenuine } from './dispatcher'
 import { positionChecker } from '@/util/logic'
 import { getBackStyleOptions, getFingerGuardOptions, getGenuineBackStyle, getGenuineWebParts } from './logic'
 import { STITCHES } from '../../Constants/color'
@@ -49,7 +46,6 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
     backStyle,
     palmToWebConnectLaceStyle,
     baseModel,
-    meshColor,
     size,
     webLaceStyle,
     backLaceStyle,
@@ -66,24 +62,24 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
     genuineBrandMarkColor
   } = state
   const handle = {
-    dominantArm: dispatcher('dominantArm', dispatch),
-    backStyle: dispatcher('backStyle', dispatch),
-    palmToWebConnectLaceStyle: dispatcher('palmToWebConnectLaceStyle', dispatch),
-    meshColor: dispatcher('meshColor', dispatch),
-    size: dispatcher('size', dispatch),
-    webLaceStyle: dispatcher('webLaceStyle', dispatch),
-    backLaceStyle: dispatcher('backLaceStyle', dispatch),
-    leatherThickness: dispatcher('leatherThickness', dispatch),
-    coreHardness: dispatcher('coreHardness', dispatch),
-    gloveSize: dispatcher('gloveSize', dispatch),
-    twoFingerInLittleSlot: dispatcher('twoFingerInLittleSlot', dispatch),
-    bankLaceDirection: dispatcher('bankLaceDirection', dispatch),
-    loopOfRingFinger: dispatcher('loopOfRingFinger', dispatch),
-    genuineBrandMark: dispatcher('genuineBrandMark', dispatch),
-    genuineBrandMarkColor: dispatcher('genuineBrandMarkColor', dispatch),
-    materialPack: dispatcher('materialPack', dispatch),
-    fingerGuard: dispatcher('fingerGuard', dispatch),
-    webParts: dispatcher('webParts', dispatch)
+    dominantArm: handleGenuine(dispatch)('dominantArm'),
+    backStyle: handleGenuine(dispatch)('backStyle'),
+    palmToWebConnectLaceStyle: handleGenuine(dispatch)('palmToWebConnectLaceStyle'),
+    meshColor: handleGenuine(dispatch)('meshColor'),
+    size: handleGenuine(dispatch)('size'),
+    webLaceStyle: handleGenuine(dispatch)('webLaceStyle'),
+    backLaceStyle: handleGenuine(dispatch)('backLaceStyle'),
+    leatherThickness: handleGenuine(dispatch)('leatherThickness'),
+    coreHardness: handleGenuine(dispatch)('coreHardness'),
+    gloveSize: handleGenuine(dispatch)('gloveSize'),
+    twoFingerInLittleSlot: handleGenuine(dispatch)('twoFingerInLittleSlot'),
+    bankLaceDirection: handleGenuine(dispatch)('bankLaceDirection'),
+    loopOfRingFinger: handleGenuine(dispatch)('loopOfRingFinger'),
+    genuineBrandMark: handleGenuine(dispatch)('genuineBrandMark'),
+    genuineBrandMarkColor: handleGenuine(dispatch)('genuineBrandMarkColor'),
+    materialPack: handleGenuine(dispatch)('materialPack'),
+    fingerGuard: handleGenuine(dispatch)('fingerGuard'),
+    webParts: handleGenuine(dispatch)('webParts')
   }
   const { isGlove, isMitt, isCatcher, isFirstBaseman } = positionChecker(position)
   const { isMesh, isFirstBackStyle, isUnselectedBackStyle } = getGenuineBackStyle(state)

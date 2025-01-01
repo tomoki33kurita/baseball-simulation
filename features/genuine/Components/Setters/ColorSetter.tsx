@@ -2,7 +2,7 @@ import { SelectCard } from '@/components/Setters/SelectCard'
 import { GenuineState } from '@/features/genuine/types'
 import { Position } from '@/types'
 import { TabPanel } from '@/components/TabPanel'
-import { dispatcher } from './dispatcher'
+import { handleGenuine } from './dispatcher'
 import { getColorOptionsByParts, getSelectableParts, getComponentParts, getBackStyle, filterSelectableParts, getGenuineLabelOptions } from './logic'
 import {
   BINDING_COLOR_BUTTON_OPTION,
@@ -19,9 +19,9 @@ import {
   BINDINGS,
   LININGS,
   LININGS_COLOR_BUTTON_OPTION
-} from '../../Constants/color'
-import { originDispatcher, positionChecker } from '@/util/logic'
+} from '@/features/genuine/Constants/color'
 import { DISPATCHER } from '@/features/genuine/Constants/action'
+import { originDispatcher, positionChecker } from '@/util/logic'
 
 type Props = {
   state: GenuineState
@@ -46,13 +46,13 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
   const handle = {
     [partsKey]: originDispatcher(DISPATCHER, partsKey, dispatch, colorsByParts),
     parts: originDispatcher(DISPATCHER, 'parts', dispatch, PARTS),
-    lace: dispatcher('lace', dispatch),
-    binding: dispatcher('binding', dispatch),
-    linings: dispatcher('linings', dispatch),
-    stitch: dispatcher('stitch', dispatch),
-    welting: dispatcher('welting', dispatch),
-    mouton: dispatcher('mouton', dispatch),
-    genuineLabel: dispatcher('genuineLabel', dispatch)
+    lace: handleGenuine(dispatch)('lace'),
+    binding: handleGenuine(dispatch)('binding'),
+    linings: handleGenuine(dispatch)('linings'),
+    stitch: handleGenuine(dispatch)('stitch'),
+    welting: handleGenuine(dispatch)('welting'),
+    mouton: handleGenuine(dispatch)('mouton'),
+    genuineLabel: handleGenuine(dispatch)('genuineLabel')
   }
 
   if (!componentParts || !selectableParts) return <></>
@@ -85,7 +85,6 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
         isError={linings.value === 'unselected'}
         className={LININGS_COLOR_BUTTON_OPTION}
       />
-
       <SelectCard
         summary={'ヘリ革'}
         selectedLabel={binding.label}
