@@ -31,6 +31,7 @@ import {
   FIRST_BACK_FINGER_GUARDS,
   NORMAL_BACK_STYLE,
   RN_BACK_STYLE,
+  TM_BACK_STYLE,
   WEB_PARTS
 } from '@/features/genuine/Constants/base'
 
@@ -166,6 +167,9 @@ export const getSelectableParts = (state: GenuineState): PartsItem[] => {
 export const getBackStyleOptions = (position: Position, productNumber: string) => {
   switch (position) {
     case 'catcher':
+      if (productNumber === 'YT-22') {
+        return BACK_STYLES_CATCHER.filter((b) => b.value !== TM_BACK_STYLE.value)
+      }
       return BACK_STYLES_CATCHER
     case 'pitcher':
       if (productNumber === 'MIU-T1') return BACK_STYLES

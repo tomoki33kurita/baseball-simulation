@@ -151,7 +151,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         selectedLabel={backStyle.label}
         objects={backStyleOptions}
         isError={backStyle.value === 'unselected'}
-        isDisplay={(isGlove && !isFirstBackStyle) || (isCatcher && !isYT22)}
+        isDisplay={(isGlove && !isFirstBackStyle) || isCatcher}
         handleChange={handle.backStyle}
         disabled={isSelectableGenuineMarkColor}
         description={isSelectableGenuineMarkColor ? '変更するには、Genuine刺繍・刻印を解除してください。' : ''}

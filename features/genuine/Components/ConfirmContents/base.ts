@@ -40,7 +40,7 @@ export const getGenuineBaseCells = (
         isCatcher ? dummy : genGloveBaseCell('小指の仕様', state.twoFingerInLittleSlot),
         genGloveBaseCell('利き腕', state.dominantArm),
         genGloveBaseCell('指カバー/指当て', state.fingerGuard),
-        (isGlove && !isFirstBackStyle) || (isCatcher && !isYT22) ? genGloveBaseCell('背面デザイン', state.backStyle) : dummy,
+        (isGlove && !isFirstBackStyle) || isCatcher ? genGloveBaseCell('背面デザイン', state.backStyle) : dummy,
         isYT22 ? genGloveBaseCell('ウェブ-捕球面紐通し', state.palmToWebConnectLaceStyle) : dummy,
         isMeshSpecified ? genGloveBaseCell('背面メッシュカラー', state.meshColor) : dummy,
         genGloveBaseCell('サイズ', state.size),
