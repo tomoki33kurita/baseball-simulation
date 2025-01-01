@@ -70,9 +70,7 @@ export const drawGenuineFirstMittRearSurface = (ctx: CanvasRenderingContext2D | 
   // }
   backOfThumbDrawer(ctx, state.thumb.color, state.stitch.color) // 背面＿親指_
   const isFrontSide = ['normalFront', 'directEmbroideryFront'].includes(state.genuineLabel.value)
-  if (isFrontSide) {
-    wristBeltDrawer(ctx, state) // 手首ベルト
-  }
+  if (isFrontSide) wristBeltDrawer(ctx, state) // 手首ベルト
   littleHook(ctx, state.littleHook.color) // 小指掛け紐
   thumbHook(ctx, state.thumbHook.color) // 親指掛け紐
   // // 親指への刺繍
