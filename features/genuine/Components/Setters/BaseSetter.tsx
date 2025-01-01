@@ -93,6 +93,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
   const isSelectableGenuineMark = !isFirstBaseman && !isFirstBackStyle && !isMesh
   const isSelectableGenuineMarkColor = state.genuineBrandMark.value === 'genuineEmbroidery'
   const isJuniorModel = JUNIOR_LIST.includes(baseModel.productNumber)
+  const isYT22 = baseModel.productNumber === 'YT-22'
   const backStyleOptions = getBackStyleOptions(position, baseModel.productNumber)
   const isSpecifiedLittleFingerSideLabel = ['littleFingerSideEmbroidery', 'littleFingerSideNormal'].includes(state.genuineLabel.value)
   const fingerGuardOptions = getFingerGuardOptions(state)
@@ -150,7 +151,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         selectedLabel={backStyle.label}
         objects={backStyleOptions}
         isError={backStyle.value === 'unselected'}
-        isDisplay={(isGlove && !isFirstBackStyle) || isCatcher}
+        isDisplay={(isGlove && !isFirstBackStyle) || (isCatcher && !isYT22)}
         handleChange={handle.backStyle}
         disabled={isSelectableGenuineMarkColor}
         description={isSelectableGenuineMarkColor ? '変更するには、Genuine刺繍・刻印を解除してください。' : ''}
@@ -162,7 +163,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         selectedLabel={palmToWebConnectLaceStyle.label}
         objects={PALM_TO_WEB_CONNECT_LACE_STYLE}
         isError={palmToWebConnectLaceStyle.value === 'unselected'}
-        isDisplay={baseModel.productNumber === 'YT-22'}
+        isDisplay={isYT22}
         defaultExpanded={palmToWebConnectLaceStyle.value === 'unselected'}
         handleChange={handle.palmToWebConnectLaceStyle}
       />
