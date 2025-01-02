@@ -79,3 +79,18 @@ export const webTop3 = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.stroke()
   ctx.closePath()
 }
+
+export const webTopLaces = (ctx: CanvasRenderingContext2D, color: string): void => {
+  webTop3(ctx, color) // 一番右
+  webTop2(ctx, color, 17, -8) //
+  webTop2(ctx, color, 0, 0) //
+  webTop2(ctx, color, -20, 10) //
+  webTop2(ctx, color, -34, 20) //
+  webTop2(ctx, color, -46, 28) //
+  webTop(ctx, color, 39, -41) //
+  webTop(ctx, color, 29, -33) //
+  webTop(ctx, color, 22, -26) //
+  webTop(ctx, color, 13, -17) //
+  webTop(ctx, color, 8, -10) //
+  webTop(ctx, color, 0, 0) // 一番左
+}
