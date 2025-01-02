@@ -63,3 +63,48 @@ export const topLaces = (ctx: CanvasRenderingContext2D, laceColor: string) => {
   webTop(ctx, laceColor, 0, -2) // 左から2番目
   webTop0(ctx, laceColor)
 }
+
+const webTopCross = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number, rotate: number): void => {
+  ctx.save()
+  ctx.rotate((rotate * Math.PI) / 180)
+  // 左上-右下
+  ctx.fillStyle = color
+  ctx.strokeStyle = '#383838'
+  ctx.beginPath()
+  ctx.moveTo(590 + x, 62 + y) // 左下
+  ctx.quadraticCurveTo(594 + x, 68 + y, 598 + x, 62 + y) // 右下
+  ctx.quadraticCurveTo(598 + x, 45 + y, 591 + x, 41 + y) // 右上
+  ctx.quadraticCurveTo(588 + x, 42 + y, 588 + x, 42 + y) // 左上
+  ctx.quadraticCurveTo(583 + x, 50 + y, 590 + x, 62 + y) // 左下
+  ctx.moveTo(588 + x, 46 + y) // 左上
+  ctx.quadraticCurveTo(592 + x, 58 + y, 590 + x, 62 + y)
+  // ctx.quadraticCurveTo()
+  ctx.fill()
+  ctx.stroke()
+  ctx.closePath()
+
+  // 右上-左下
+  ctx.beginPath()
+  ctx.moveTo(583 + x, 51 + y) // 左上
+  ctx.quadraticCurveTo(577 + x, 55 + y, 586 + x, 59 + y) // 左下
+  ctx.quadraticCurveTo(603 + x, 54 + y, 603 + x, 54 + y) // 右下
+  ctx.quadraticCurveTo(608 + x, 48 + y, 598 + x, 45 + y) // 右上
+  ctx.quadraticCurveTo(594 + x, 48 + y, 583 + x, 51 + y) // 左上
+  // ctx.quadraticCurveTo()
+  ctx.moveTo(586 + x, 59 + y) // 左下
+  ctx.quadraticCurveTo(595 + x, 51 + y, 603 + x, 54 + y) // 右下
+  ctx.fill()
+  ctx.stroke()
+  ctx.closePath()
+
+  ctx.restore()
+}
+
+export const topCrossLaces = (ctx: CanvasRenderingContext2D, laceColor: string) => {
+  webTop(ctx, laceColor, 400, -98, 20, 0.7) // 左から12番目
+  webTop0(ctx, laceColor)
+  webTopCross(ctx, laceColor, 20, -20, 3)
+  webTopCross(ctx, laceColor, 55, -35, 7)
+  webTopCross(ctx, laceColor, 73, -145, 20)
+  webTopCross(ctx, laceColor, 32, -339, 40)
+}

@@ -1,10 +1,11 @@
 import { GenuineState } from '@/features/genuine/types'
 import { allowLace } from '../../../../glove/back/lace/allowCenterOfCrossWeb'
+import { ColorItem } from '@/types'
 
 export const verticalParts = (ctx: CanvasRenderingContext2D, state: GenuineState) => {
   ctx.lineWidth = 0.8
   ctx.strokeStyle = '#383838'
-  ctx.fillStyle = state.web.color
+  ctx.fillStyle = state.web2.color
   ctx.beginPath()
   ctx.moveTo(615, 98)
   ctx.quadraticCurveTo(505, 238, 505, 238)
@@ -59,7 +60,7 @@ export const verticalParts = (ctx: CanvasRenderingContext2D, state: GenuineState
 export const verticalParts2 = (ctx: CanvasRenderingContext2D, state: GenuineState) => {
   ctx.lineWidth = 0.8
   ctx.strokeStyle = '#383838'
-  ctx.fillStyle = state.web.color
+  ctx.fillStyle = state.web2.color
   ctx.beginPath()
   ctx.moveTo(615, 98) // 左上
   ctx.quadraticCurveTo(505, 238, 505, 238) // 左下
@@ -119,10 +120,10 @@ export const verticalParts2 = (ctx: CanvasRenderingContext2D, state: GenuineStat
   allowLace(ctx, laceColor, -55, -40, 10, 1)
 }
 
-export const verticalParts3 = (ctx: CanvasRenderingContext2D, state: GenuineState) => {
+export const verticalParts3 = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchColor: string, laceColor: string) => {
   ctx.lineWidth = 0.8
   ctx.strokeStyle = '#383838'
-  ctx.fillStyle = state.web.color
+  ctx.fillStyle = leatherColor
   ctx.beginPath()
   ctx.moveTo(615, 98) // 左上
   ctx.quadraticCurveTo(505, 238, 505, 238) // 左下
@@ -135,7 +136,7 @@ export const verticalParts3 = (ctx: CanvasRenderingContext2D, state: GenuineStat
   ctx.closePath()
 
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = state.stitch.color
+  ctx.strokeStyle = stitchColor
   ctx.beginPath()
   ctx.setLineDash([3, 3])
   ctx.moveTo(616, 103)
@@ -184,7 +185,6 @@ export const verticalParts3 = (ctx: CanvasRenderingContext2D, state: GenuineStat
   ctx.setLineDash([])
   ctx.closePath()
 
-  const laceColor = state.lace.color
   // laceここから
   allowLace(ctx, laceColor, -5, -130, 10, 1)
   allowLace(ctx, laceColor, -15, -112, 10, 1)

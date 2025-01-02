@@ -6,6 +6,7 @@ import { cross2Web } from './cross2Web'
 import { cross3Web } from './cross3Web'
 import { crossV2Web } from './crossV2Web'
 import { tNet2Web } from './tNet2Web'
+import { tNet3Web } from './tNet3Web'
 
 export const webDrawerOfFirstMitt = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
   const { webMatcher } = webDrawUtil(state)
@@ -15,4 +16,5 @@ export const webDrawerOfFirstMitt = (ctx: CanvasRenderingContext2D, state: Genui
   if (webMatcher(['cross3'])) cross3Web(ctx, state)
   if (webMatcher(['crossV2'])) crossV2Web(ctx, state)
   if (webMatcher(['tNet2'])) tNet2Web(ctx, state)
+  if (webMatcher(['tNet3'])) tNet3Web(ctx, state)
 }

@@ -6,7 +6,7 @@ import { topLaces } from '../lace/webTop'
 const verticalPartsLeft = (ctx: CanvasRenderingContext2D, state: GenuineState) => {
   ctx.lineWidth = 0.8
   ctx.strokeStyle = '#383838'
-  ctx.fillStyle = state.web.color
+  ctx.fillStyle = state.web2.color
   ctx.beginPath()
   ctx.moveTo(578, 65) // 左上
   ctx.quadraticCurveTo(502, 203, 502, 203) // 左下
@@ -37,7 +37,7 @@ const verticalPartsLeft = (ctx: CanvasRenderingContext2D, state: GenuineState) =
 const verticalPartsRight = (ctx: CanvasRenderingContext2D, state: GenuineState) => {
   ctx.lineWidth = 0.8
   ctx.strokeStyle = '#383838'
-  ctx.fillStyle = state.web.color
+  ctx.fillStyle = state.web2.color
   ctx.beginPath()
   ctx.moveTo(638, 134) // 左上
   ctx.quadraticCurveTo(557, 271, 557, 271) // 左下

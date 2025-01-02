@@ -1,8 +1,8 @@
 import { webKnots } from '@/util/canvas/lace/webKnots'
-import { webTop2 } from '../web'
+import { webTop2, webTopJoint } from '../web'
 import { GenuineState } from '@/features/genuine/types'
-import { verticalParts2, verticalParts3 } from './parts/vertical'
-import { topLaces } from '../lace/webTop'
+import { verticalParts3 } from './parts/vertical'
+import { topCrossLaces } from '../lace/webTop'
 
 const stitchOfTNet2Web = (ctx: CanvasRenderingContext2D, color: string) => {
   ctx.lineWidth = 1.5
@@ -58,13 +58,13 @@ const stitchOfTNet2Web = (ctx: CanvasRenderingContext2D, color: string) => {
   ctx.closePath()
 }
 
-export const tNet2Web = (ctx: CanvasRenderingContext2D, state: GenuineState) => {
-  webTop2(ctx, state.web.color, state.stitch.color) // ウェブ先端側
+export const tNet3Web = (ctx: CanvasRenderingContext2D, state: GenuineState) => {
+  webTopJoint(ctx, state.web.color, state.web2.color, state.stitch.color) // ウェブ先端側
   stitchOfTNet2Web(ctx, state.stitch.color)
 
-  verticalParts3(ctx, state.web2.color, state.stitch.color, state.lace.color)
+  verticalParts3(ctx, state.web.color, state.stitch.color, state.lace.color)
 
-  topLaces(ctx, state.lace.color)
+  topCrossLaces(ctx, state.lace.color)
 
   //   // ウェブ上の結び目
   const laceColor = state.lace.color
