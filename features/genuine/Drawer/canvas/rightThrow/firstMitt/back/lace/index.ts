@@ -1,6 +1,4 @@
 import { webKnots } from '@/util/canvas/lace/webKnots'
-import { webCross } from './webCross'
-import { webTop, webTop0 } from './webTop'
 import { listKnot } from './listKnot'
 import { underBoomerang } from './underBoomerang'
 import { webKnotDownward, webKnotUpward } from '@/util/canvas/lace/webKnotSingle'
@@ -32,19 +30,6 @@ export const laces = (ctx: CanvasRenderingContext2D, color: string): void => {
 
   webKnotUpward(ctx, color, -465, -20, -15)
   webKnotUpward(ctx, color, -690, 40, -40)
-
-  webTop(ctx, color, 400, -98, 20, 0.7) // 左から12番目
-  webTop(ctx, color, 390, -115, 20, 0.7) // 左から11番目
-  webTop(ctx, color, 383, -133, 20, 0.7) // 左から10番目
-  webTop(ctx, color, 377, -154, 20, 0.7) // 左から9番目
-  webTop(ctx, color, 225, -275, 28, 0.8) // 左から8番目
-  webTop(ctx, color, 50, -242, 28) // 左から7番目
-  webTop(ctx, color, 52, -200, 23) // 左から6番目
-  webTop(ctx, color, 45, -180, 20) // 左から5番目
-  webTop(ctx, color, 36, 28) // 左から4番目
-  webTop(ctx, color, 18, 15) // 左から3番目
-  webTop(ctx, color, 0, -2) // 左から2番目
-  webTop0(ctx, color)
 
   connectWeb(ctx, color)
   connectWeb2(ctx, color)

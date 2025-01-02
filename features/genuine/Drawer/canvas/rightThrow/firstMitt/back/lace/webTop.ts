@@ -48,3 +48,18 @@ export const webTop0 = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.stroke()
   ctx.closePath()
 }
+
+export const topLaces = (ctx: CanvasRenderingContext2D, laceColor: string) => {
+  webTop(ctx, laceColor, 400, -98, 20, 0.7) // 左から12番目
+  webTop(ctx, laceColor, 390, -115, 20, 0.7) // 左から11番目
+  webTop(ctx, laceColor, 383, -133, 20, 0.7) // 左から10番目
+  webTop(ctx, laceColor, 377, -154, 20, 0.7) // 左から9番目
+  webTop(ctx, laceColor, 225, -275, 28, 0.8) // 左から8番目
+  webTop(ctx, laceColor, 50, -242, 28) // 左から7番目
+  webTop(ctx, laceColor, 52, -200, 23) // 左から6番目
+  webTop(ctx, laceColor, 45, -180, 20) // 左から5番目
+  webTop(ctx, laceColor, 36, 28) // 左から4番目
+  webTop(ctx, laceColor, 18, 15) // 左から3番目
+  webTop(ctx, laceColor, 0, -2) // 左から2番目
+  webTop0(ctx, laceColor)
+}

@@ -118,3 +118,78 @@ export const verticalParts2 = (ctx: CanvasRenderingContext2D, state: GenuineStat
   allowLace(ctx, laceColor, -45, -58, 10, 1)
   allowLace(ctx, laceColor, -55, -40, 10, 1)
 }
+
+export const verticalParts3 = (ctx: CanvasRenderingContext2D, state: GenuineState) => {
+  ctx.lineWidth = 0.8
+  ctx.strokeStyle = '#383838'
+  ctx.fillStyle = state.web.color
+  ctx.beginPath()
+  ctx.moveTo(615, 98) // 左上
+  ctx.quadraticCurveTo(505, 238, 505, 238) // 左下
+  ctx.quadraticCurveTo(496, 294, 546, 285) // 右下
+  ctx.quadraticCurveTo(647, 158, 647, 158) // 右上
+  ctx.quadraticCurveTo(639, 123, 615, 98)
+  // ctx.quadraticCurveTo()
+  ctx.fill()
+  ctx.stroke()
+  ctx.closePath()
+
+  ctx.lineWidth = 1.0
+  ctx.strokeStyle = state.stitch.color
+  ctx.beginPath()
+  ctx.setLineDash([3, 3])
+  ctx.moveTo(616, 103)
+  ctx.quadraticCurveTo(508, 240, 508, 240)
+  ctx.quadraticCurveTo(500, 290, 544, 282)
+  ctx.quadraticCurveTo(644, 158, 644, 158)
+  ctx.stroke()
+  ctx.setLineDash([])
+  ctx.closePath()
+
+  ctx.beginPath()
+  ctx.setLineDash([3, 3])
+  ctx.moveTo(618, 106)
+  ctx.quadraticCurveTo(510, 243, 510, 243)
+  ctx.quadraticCurveTo(505, 285, 544, 279)
+  ctx.quadraticCurveTo(641, 156, 641, 156)
+
+  // //   ctx.quadraticCurveTo()
+  ctx.stroke()
+  ctx.setLineDash([])
+  ctx.closePath()
+
+  ctx.beginPath()
+  ctx.setLineDash([3, 3])
+  ctx.moveTo(614, 101)
+  ctx.quadraticCurveTo(638, 126, 645, 160)
+  //   ctx.quadraticCurveTo()
+  ctx.moveTo(628, 145)
+  ctx.quadraticCurveTo(541, 256, 541, 256)
+  // ctx.quadraticCurveTo()
+  ctx.stroke()
+  ctx.closePath()
+
+  ctx.setLineDash([])
+  ctx.closePath()
+
+  ctx.beginPath()
+  ctx.setLineDash([3, 3])
+  ctx.moveTo(627, 125)
+  ctx.quadraticCurveTo(540, 240, 540, 240)
+  ctx.moveTo(627, 125)
+  // ctx.quadraticCurveTo()
+  ctx.stroke()
+  ctx.closePath()
+
+  ctx.setLineDash([])
+  ctx.closePath()
+
+  const laceColor = state.lace.color
+  // laceここから
+  allowLace(ctx, laceColor, -5, -130, 10, 1)
+  allowLace(ctx, laceColor, -15, -112, 10, 1)
+  allowLace(ctx, laceColor, -25, -94, 10, 1)
+  allowLace(ctx, laceColor, -35, -76, 10, 1)
+  allowLace(ctx, laceColor, -45, -58, 10, 1)
+  allowLace(ctx, laceColor, -55, -40, 10, 1)
+}

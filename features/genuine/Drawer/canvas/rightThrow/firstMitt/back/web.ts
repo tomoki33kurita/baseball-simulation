@@ -1,6 +1,6 @@
 import { BaseModel } from '@/types'
 
-export const webTop = (ctx: CanvasRenderingContext2D, color: string, baseModel: BaseModel): void => {
+export const webTop = (ctx: CanvasRenderingContext2D, color: string, stitchColor: string): void => {
   ctx.lineWidth = 1.0
   ctx.strokeStyle = '#383838'
   ctx.fillStyle = color
@@ -19,25 +19,44 @@ export const webTop = (ctx: CanvasRenderingContext2D, color: string, baseModel: 
   ctx.fill()
   ctx.stroke()
   ctx.closePath()
-  if (baseModel.productNumber === 'AKG-GT33') {
-    ctx.lineWidth = 1.5
-    ctx.strokeStyle = '#383838'
-    ctx.beginPath()
-    ctx.moveTo(566, 94) //
-    ctx.quadraticCurveTo(562, 102, 560, 110) //
-    ctx.moveTo(609, 142) //
-    ctx.quadraticCurveTo(608, 151, 600, 155) //
-    ctx.moveTo(660, 226) //
-    ctx.quadraticCurveTo(648, 237, 648, 237)
-    ctx.stroke()
-    ctx.closePath()
-  }
+
+  ctx.lineWidth = 1.5
+  ctx.strokeStyle = stitchColor
+  ctx.beginPath()
+  ctx.setLineDash([3, 3])
+
+  // webTop部分
+  // 左辺
+  ctx.moveTo(555, 52) // 上
+  ctx.quadraticCurveTo(547, 61, 546, 73) // 下
+  // 右辺
+  ctx.moveTo(660, 222) // 上
+  ctx.quadraticCurveTo(664, 238, 660, 243) // 下
+  // 上辺＿上
+  ctx.moveTo(555, 52) // 上
+  ctx.quadraticCurveTo(617, 92, 632, 121) //
+  ctx.quadraticCurveTo(655, 164, 660, 222) // 右下
+  // 上辺＿下
+  ctx.moveTo(551, 56) // 上
+  ctx.quadraticCurveTo(588, 74, 624, 117) //
+  ctx.quadraticCurveTo(651, 159, 659, 225) // 右下
+  // 下辺＿上
+  ctx.moveTo(547, 67) // 上
+  ctx.quadraticCurveTo(625, 135, 646, 216) //
+  ctx.quadraticCurveTo(648, 226, 660, 243) // 右下
+  // 下辺＿下
+  ctx.moveTo(545, 72) // 上
+  ctx.quadraticCurveTo(615, 130, 644, 220) // 右下
+
+  ctx.stroke()
+  ctx.setLineDash([])
+  ctx.closePath()
 }
 
-export const webTop2 = (ctx: CanvasRenderingContext2D, color: string, baseModel: BaseModel): void => {
+export const webTop2 = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchColor: string): void => {
   ctx.lineWidth = 1.0
   ctx.strokeStyle = '#383838'
-  ctx.fillStyle = color
+  ctx.fillStyle = leatherColor
 
   ctx.beginPath()
   ctx.moveTo(555, 31) // 左上
@@ -54,12 +73,95 @@ export const webTop2 = (ctx: CanvasRenderingContext2D, color: string, baseModel:
   ctx.fill()
   ctx.stroke()
   ctx.closePath()
+
+  ctx.lineWidth = 1.5
+  ctx.strokeStyle = stitchColor
+  ctx.beginPath()
+  ctx.setLineDash([3, 3])
+
+  // webTop部分
+  // 左辺
+  ctx.moveTo(555, 52) // 上
+  ctx.quadraticCurveTo(547, 61, 546, 73) // 下
+  // 右辺
+  ctx.moveTo(660, 222) // 上
+  ctx.quadraticCurveTo(664, 238, 660, 243) // 下
+  // 上辺＿上
+  ctx.moveTo(555, 52) // 上
+  ctx.quadraticCurveTo(617, 92, 632, 121) //
+  ctx.quadraticCurveTo(655, 164, 660, 222) // 右下
+  // 上辺＿下
+  ctx.moveTo(551, 56) // 上
+  ctx.quadraticCurveTo(588, 74, 624, 117) //
+  ctx.quadraticCurveTo(651, 159, 659, 225) // 右下
+  // 下辺＿上
+  ctx.moveTo(547, 67) // 上
+  ctx.quadraticCurveTo(640, 122, 651, 216) //
+  ctx.quadraticCurveTo(648, 226, 665, 243) // 右下
+  // 下辺＿下
+  ctx.moveTo(545, 72) // 上
+  ctx.quadraticCurveTo(635, 125, 648, 220) // 右下
+
+  ctx.stroke()
+  ctx.setLineDash([])
+  ctx.closePath()
 }
 
-export const webBottom = (ctx: CanvasRenderingContext2D, color: string, baseModel: BaseModel): void => {
+export const webTopJoint = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchColor: string): void => {
   ctx.lineWidth = 1.0
   ctx.strokeStyle = '#383838'
-  ctx.fillStyle = color
+  ctx.fillStyle = leatherColor
+
+  ctx.beginPath()
+  // ctx.moveTo() // 左上
+  // ctx.quadraticCurveTo() // 左下
+  // ctx.quadraticCurveTo()
+  // ctx.quadraticCurveTo()
+  // ctx.quadraticCurveTo()
+  // ctx.quadraticCurveTo()
+  // ctx.quadraticCurveTo()
+  // ctx.quadraticCurveTo()
+  // ctx.fill()
+  ctx.stroke()
+  ctx.closePath()
+
+  // // stitch
+  // ctx.lineWidth = 1.5
+  // ctx.strokeStyle = stitchColor
+  // ctx.beginPath()
+  // ctx.setLineDash([3, 3])
+
+  // // 左辺
+  // ctx.moveTo(555, 52) // 上
+  // ctx.quadraticCurveTo(547, 61, 546, 73) // 下
+  // // 右辺
+  // ctx.moveTo(660, 222) // 上
+  // ctx.quadraticCurveTo(664, 238, 660, 243) // 下
+  // // 上辺＿上
+  // ctx.moveTo(555, 52) // 上
+  // ctx.quadraticCurveTo(617, 92, 632, 121) //
+  // ctx.quadraticCurveTo(655, 164, 660, 222) // 右下
+  // // 上辺＿下
+  // ctx.moveTo(551, 56) // 上
+  // ctx.quadraticCurveTo(588, 74, 624, 117) //
+  // ctx.quadraticCurveTo(651, 159, 659, 225) // 右下
+  // // 下辺＿上
+  // ctx.moveTo(547, 67) // 上
+  // ctx.quadraticCurveTo(625, 135, 646, 216) //
+  // ctx.quadraticCurveTo(648, 226, 660, 243) // 右下
+  // // 下辺＿下
+  // ctx.moveTo(545, 72) // 上
+  // ctx.quadraticCurveTo(615, 130, 644, 220) // 右下
+
+  // ctx.stroke()
+  // ctx.setLineDash([])
+  // ctx.closePath()
+}
+
+export const webBottom = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchColor: string): void => {
+  ctx.lineWidth = 1.0
+  ctx.strokeStyle = '#383838'
+  ctx.fillStyle = leatherColor
 
   // 手入れ口部分
   ctx.beginPath()
@@ -90,12 +192,42 @@ export const webBottom = (ctx: CanvasRenderingContext2D, color: string, baseMode
   ctx.quadraticCurveTo(505, 125, 503, 135) //
   ctx.stroke()
   ctx.closePath()
+
+  // stitch
+  ctx.lineWidth = 1.5
+  ctx.strokeStyle = stitchColor
+  ctx.beginPath()
+  ctx.setLineDash([3, 3])
+
+  // webBottom部分
+  // 左辺
+  ctx.moveTo(515, 102) // 上
+  ctx.lineTo(506, 129) // 下
+  // 右辺
+  ctx.moveTo(645, 273) // 上
+  ctx.lineTo(638, 295) // 下
+  // 上辺＿上
+  ctx.moveTo(515, 102) // 上
+  ctx.quadraticCurveTo(573, 166, 645, 273) // 右下
+  // 上辺＿下
+  ctx.moveTo(512, 108) // 上
+  ctx.quadraticCurveTo(553, 145, 644, 277) // 右下
+  // 下辺＿上
+  ctx.moveTo(507, 126) // 上
+  ctx.quadraticCurveTo(531, 146, 638, 290) // 右下
+  // 下辺＿下
+  ctx.moveTo(505, 129) // 上
+  ctx.quadraticCurveTo(537, 158, 637, 294) // 右下
+
+  ctx.stroke()
+  ctx.setLineDash([])
+  ctx.closePath()
 }
 
-export const webBottom2 = (ctx: CanvasRenderingContext2D, color: string, baseModel: BaseModel): void => {
+export const webBottom2 = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchColor: string): void => {
   ctx.lineWidth = 1.0
   ctx.strokeStyle = '#383838'
-  ctx.fillStyle = color
+  ctx.fillStyle = leatherColor
 
   // 手入れ口部分
   ctx.beginPath()
@@ -127,5 +259,34 @@ export const webBottom2 = (ctx: CanvasRenderingContext2D, color: string, baseMod
   ctx.quadraticCurveTo(503, 120, 503, 120) //
   ctx.quadraticCurveTo(505, 125, 503, 135) //
   ctx.stroke()
+  ctx.closePath()
+
+  ctx.lineWidth = 1.5
+  ctx.strokeStyle = stitchColor
+  ctx.beginPath()
+  ctx.setLineDash([3, 3])
+
+  // webBottom部分
+  // 左辺
+  ctx.moveTo(523, 93) // 上
+  ctx.lineTo(514, 119) // 下
+  // 右辺
+  ctx.moveTo(655, 269) // 上
+  ctx.lineTo(640, 292) // 下
+  // 上辺＿上
+  ctx.moveTo(523, 93) // 上
+  ctx.quadraticCurveTo(611, 167, 655, 269) // 右下
+  // 上辺＿下
+  ctx.moveTo(520, 98) // 上
+  ctx.quadraticCurveTo(610, 171, 651, 273) // 右下
+  // 下辺＿上
+  ctx.moveTo(514, 119) // 上
+  ctx.quadraticCurveTo(593, 193, 640, 292) // 右下
+  // 下辺＿下
+  ctx.moveTo(517, 113) // 上
+  ctx.quadraticCurveTo(597, 190, 645, 285) // 右下
+
+  ctx.stroke()
+  ctx.setLineDash([])
   ctx.closePath()
 }

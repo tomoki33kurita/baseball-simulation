@@ -1,11 +1,11 @@
 import { GenuineState } from '@/features/genuine/types'
-import { webBottom, webTop } from '../web'
+import { webBottom, webTop, webTopJoint } from '../web'
 import { webCross } from '../lace/webCross'
 import { webKnots } from '@/util/canvas/lace/webKnots'
 import { topLaces } from '../lace/webTop'
 
-export const normalWeb = (ctx: CanvasRenderingContext2D, state: GenuineState) => {
-  webTop(ctx, state.web2.color, state.stitch.color) // ウェブ先端側
+export const normalJointWeb = (ctx: CanvasRenderingContext2D, state: GenuineState) => {
+  webTopJoint(ctx, state.web2.color, state.stitch.color) // ウェブ先端側
   webBottom(ctx, state.web.color, state.stitch.color) // ウェブ捕球面側
   const laceColor = state.lace.color
 
