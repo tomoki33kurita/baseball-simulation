@@ -8,7 +8,7 @@ import { crossV2Web } from './crossV2Web'
 import { tNet2Web } from './tNet2Web'
 import { tNet3Web } from './tNet3Web'
 
-export const webDrawerOfFirstMitt = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
+export const webPalmDrawerOfFirstMitt = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
   const { webMatcher } = webDrawUtil(state)
   if (webMatcher(['normal', 'unselected'])) normalWeb(ctx, state)
   if (webMatcher(['normal2'])) normalJointWeb(ctx, state)

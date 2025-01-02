@@ -14,7 +14,7 @@ import { edgeDrawer } from './rightThrow/firstMitt/back/edgeDrawer'
 import { stitch } from './rightThrow/firstMitt/back/stitch'
 import { laces } from './rightThrow/firstMitt/back/lace'
 import { loopOfRingFingerDrawer } from './rightThrow/glove/back/loopOfFingerDrawer'
-import { webDrawerOfFirstMitt } from './rightThrow/firstMitt/back/webDrawer'
+import { webRearDrawerOfFirstMitt } from './rightThrow/firstMitt/back/webRearDrawer'
 import { paisleySelected } from './paisleySelected'
 import { genuineBrandMarkEmbroideryDrawer, pseudoDrawingEngraved } from './rightThrow/glove/front/engraving'
 import { genuineLabelDrawer } from './label/drawer'
@@ -90,7 +90,7 @@ export const drawGenuineFirstMittRearSurface = (ctx: CanvasRenderingContext2D | 
   fingerGuardDrawer(ctx, state) // 指カバー
 
   genuineLabelDrawer(ctx, state)
-  webDrawerOfFirstMitt(ctx, state) // ウェブ
+  webRearDrawerOfFirstMitt(ctx, state) // ウェブ
   laces(ctx, state.lace.color) // 革紐
   paisleySelected(ctx, state)
   genuineBrandMarkEmbroideryDrawer(ctx, state)
