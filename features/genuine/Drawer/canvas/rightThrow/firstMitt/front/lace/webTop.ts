@@ -80,6 +80,24 @@ export const webTop3 = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.closePath()
 }
 
+const webTop4 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number): void => {
+  ctx.lineWidth = 1.0
+  ctx.strokeStyle = '#383838'
+  ctx.fillStyle = color
+  ctx.beginPath()
+
+  ctx.moveTo(315 + x, 74 + y) // 左上
+  ctx.quadraticCurveTo(309 + x, 83 + y, 305 + x, 95 + y) // 左下
+  ctx.quadraticCurveTo(307 + x, 105 + y, 315 + x, 102 + y) // 右下
+  ctx.quadraticCurveTo(320 + x, 95 + y, 324 + x, 82 + y) // 右上
+  ctx.quadraticCurveTo(327 + x, 69 + y, 315 + x, 74 + y) // 左上
+  ctx.fill()
+  ctx.moveTo(315 + x, 74 + y) // 左上
+  ctx.quadraticCurveTo(313 + x, 86 + y, 307 + x, 100 + y) // 左下
+  ctx.stroke()
+  ctx.closePath()
+}
+
 export const webTopLaces = (ctx: CanvasRenderingContext2D, color: string): void => {
   webTop3(ctx, color) // 一番右
   webTop2(ctx, color, 17, -8) //
@@ -93,4 +111,20 @@ export const webTopLaces = (ctx: CanvasRenderingContext2D, color: string): void 
   webTop(ctx, color, 13, -17) //
   webTop(ctx, color, 8, -10) //
   webTop(ctx, color, 0, 0) // 一番左
+}
+
+export const webTopCrossLaces = (ctx: CanvasRenderingContext2D, color: string): void => {
+  webTop3(ctx, color) // 一番右
+  webTop2(ctx, color, 5, -4) //
+  webTop4(ctx, color, 0, 0) //
+  webTop2(ctx, color, -22, 12) //
+  webTop4(ctx, color, -28, 15) //
+  webTop2(ctx, color, -43, 28) //
+  webTop4(ctx, color, -50, 30) //
+  webTop(ctx, color, 29, -33) //
+  webTop4(ctx, color, -75, 45) //
+  webTop(ctx, color, 12, -13) //
+  webTop4(ctx, color, -94, 65) //
+
+  webTop(ctx, color, -3, 5) // 一番左
 }
