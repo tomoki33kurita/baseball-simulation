@@ -17,7 +17,7 @@ export const drawGenuineFirstMittPalmSurface = (ctx: CanvasRenderingContext2D | 
   pseudoDrawingEngraved(ctx)
   canvasResetter(ctx) // リセット
   webPalmDrawerOfFirstMitt(ctx, state) // ウェブ捕球面側
-  palm(ctx, state.palm.color) // 捕球面
+  palm(ctx, state) // 捕球面
   backAroundWeb(ctx, state.underWeb.color) // 背面＿ウェブ周り
   thumbBackOut(ctx, state.thumb.color) // 親指背面＿外側
   thumbHook(ctx, state.thumbHook.color) // 親指掛け紐

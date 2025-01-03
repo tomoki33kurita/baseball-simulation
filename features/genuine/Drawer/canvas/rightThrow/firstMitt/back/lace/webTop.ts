@@ -72,8 +72,8 @@ const webTopCross = (ctx: CanvasRenderingContext2D, color: string, x: number, y:
   ctx.strokeStyle = '#383838'
   ctx.beginPath()
   ctx.moveTo(590 + x, 62 + y) // 左下
-  ctx.quadraticCurveTo(594 + x, 68 + y, 598 + x, 62 + y) // 右下
-  ctx.quadraticCurveTo(598 + x, 45 + y, 591 + x, 41 + y) // 右上
+  ctx.quadraticCurveTo(594 + x, 68 + y, 602 + x, 62 + y) // 右下
+  ctx.quadraticCurveTo(598 + x, 45 + y, 595 + x, 41 + y) // 右上
   ctx.quadraticCurveTo(588 + x, 42 + y, 588 + x, 42 + y) // 左上
   ctx.quadraticCurveTo(583 + x, 50 + y, 590 + x, 62 + y) // 左下
   ctx.moveTo(588 + x, 46 + y) // 左上
@@ -89,7 +89,7 @@ const webTopCross = (ctx: CanvasRenderingContext2D, color: string, x: number, y:
   ctx.quadraticCurveTo(577 + x, 55 + y, 586 + x, 59 + y) // 左下
   ctx.quadraticCurveTo(603 + x, 54 + y, 603 + x, 54 + y) // 右下
   ctx.quadraticCurveTo(608 + x, 48 + y, 598 + x, 45 + y) // 右上
-  ctx.quadraticCurveTo(594 + x, 48 + y, 583 + x, 51 + y) // 左上
+  ctx.quadraticCurveTo(594 + x, 44 + y, 583 + x, 51 + y) // 左上
   // ctx.quadraticCurveTo()
   ctx.moveTo(586 + x, 59 + y) // 左下
   ctx.quadraticCurveTo(595 + x, 51 + y, 603 + x, 54 + y) // 右下

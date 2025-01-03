@@ -1,6 +1,6 @@
 import { laceOfLiningAllow } from '../lace/arrow'
 import { laceOfVerticalPartsRight, laceParts1, laceParts7 } from './parts/laceParts'
-import { middleSidePartOfWeb, topSidePartOfWeb, topSidePartOfWebWithJoint2 } from './parts/sideParts'
+import { topSidePartOfWebWithJoint2 } from './parts/sideParts'
 
 const laceOfVerticalPartsLeft = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
   ctx.strokeStyle = '#383838'

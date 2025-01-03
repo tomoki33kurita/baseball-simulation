@@ -1,5 +1,5 @@
 import { GenuineState } from '@/features/genuine/types'
-import { webBottom2, webTop2 } from '../web'
+import { webBottom2, webTop2, webTopJoint } from '../web'
 import { webKnots } from '@/util/canvas/lace/webKnots'
 import { topLaces } from '../lace/webTop'
 
@@ -8,11 +8,11 @@ const verticalPartsLeft = (ctx: CanvasRenderingContext2D, state: GenuineState) =
   ctx.strokeStyle = '#383838'
   ctx.fillStyle = state.web2.color
   ctx.beginPath()
-  ctx.moveTo(578, 65) // 左上
+  ctx.moveTo(562, 100) // 左上
   ctx.quadraticCurveTo(502, 203, 502, 203) // 左下
   ctx.quadraticCurveTo(527, 233, 527, 233) // 右下
-  ctx.quadraticCurveTo(605, 88, 605, 88) // 右上
-  ctx.quadraticCurveTo(605, 88, 578, 65)
+  ctx.quadraticCurveTo(584, 128, 584, 128) // 右上
+  ctx.quadraticCurveTo(562, 100, 562, 100)
   // ctx.quadraticCurveTo()
   ctx.fill()
   ctx.stroke()
@@ -23,12 +23,10 @@ const verticalPartsLeft = (ctx: CanvasRenderingContext2D, state: GenuineState) =
   ctx.beginPath()
   ctx.setLineDash([3, 3])
   ctx.lineWidth = 1.0
-  ctx.moveTo(580, 69)
+  ctx.moveTo(565, 102)
   ctx.quadraticCurveTo(507, 202, 507, 202) // 左下
-  ctx.quadraticCurveTo(525, 226, 525, 226) // 右下
-  ctx.quadraticCurveTo(600, 89, 600, 89) // 右上
-  ctx.quadraticCurveTo(580, 69, 580, 69)
-  // ctx.quadraticCurveTo()
+  ctx.moveTo(580, 128)
+  ctx.quadraticCurveTo(526, 225, 526, 225)
   ctx.stroke()
   ctx.setLineDash([])
   ctx.closePath()
@@ -39,11 +37,11 @@ const verticalPartsRight = (ctx: CanvasRenderingContext2D, state: GenuineState) 
   ctx.strokeStyle = '#383838'
   ctx.fillStyle = state.web2.color
   ctx.beginPath()
-  ctx.moveTo(638, 134) // 左上
+  ctx.moveTo(616, 179) // 左上
   ctx.quadraticCurveTo(557, 271, 557, 271) // 左下
   ctx.quadraticCurveTo(576, 296, 576, 296) // 右下
-  ctx.quadraticCurveTo(653, 172, 653, 172) // 右上
-  ctx.quadraticCurveTo(648, 154, 638, 134) // 左上
+  ctx.quadraticCurveTo(633, 211, 633, 211) // 右上
+  ctx.quadraticCurveTo(616, 179, 616, 179) // 左上
   // ctx.quadraticCurveTo()
   ctx.fill()
   ctx.stroke()
@@ -53,11 +51,10 @@ const verticalPartsRight = (ctx: CanvasRenderingContext2D, state: GenuineState) 
   ctx.strokeStyle = state.stitch.color
   ctx.beginPath()
   ctx.setLineDash([3, 3])
-  ctx.moveTo(638, 144)
+  ctx.moveTo(615, 186)
   ctx.quadraticCurveTo(560, 271, 560, 271) // 左下
-  ctx.quadraticCurveTo(574, 290, 574, 290) // 右下
-  ctx.quadraticCurveTo(649, 171, 649, 171) // 右上
-  ctx.quadraticCurveTo(638, 144, 638, 144)
+  ctx.moveTo(630, 211)
+  ctx.quadraticCurveTo(578, 288, 578, 288) // 左下
   ctx.stroke()
   ctx.setLineDash([])
   ctx.closePath()
@@ -68,11 +65,12 @@ const rootLeather = (ctx: CanvasRenderingContext2D, state: GenuineState) => {
   ctx.strokeStyle = '#383838'
   ctx.fillStyle = state.web.color
   ctx.beginPath()
-  ctx.moveTo(470, 132) // 左上
-  ctx.quadraticCurveTo(445, 190, 491, 244) // 左下
-  ctx.quadraticCurveTo(523, 285, 523, 285) // 中央
-  ctx.quadraticCurveTo(606, 367, 623, 322) // 右下
-  ctx.quadraticCurveTo(470, 132, 470, 132) // 右上
+  ctx.moveTo(455, 125) // 左上
+  ctx.quadraticCurveTo(436, 169, 451, 206) // 左下
+  ctx.quadraticCurveTo(457, 240, 506, 293) // 中央
+  ctx.quadraticCurveTo(560, 345, 582, 351) // 右下
+  ctx.quadraticCurveTo(623, 371, 643, 336) // 右上
+  ctx.quadraticCurveTo(455, 125, 455, 125) // 左上
   //   ctx.quadraticCurveTo() // 左上
   // ctx.quadraticCurveTo()
   ctx.fill()
@@ -85,10 +83,15 @@ const rootLeather = (ctx: CanvasRenderingContext2D, state: GenuineState) => {
   ctx.setLineDash([3, 3])
 
   // root
-  ctx.moveTo(466, 164)
-  ctx.quadraticCurveTo(457, 203, 522, 274) // 中央
-  ctx.quadraticCurveTo(594, 351, 607, 334) // 右
-  ctx.quadraticCurveTo(466, 164, 466, 164) // 中央
+  ctx.moveTo(454, 151) // 左上
+  ctx.quadraticCurveTo(437, 218, 508, 287) // 中央
+  ctx.quadraticCurveTo(583, 365, 628, 347) // 右
+  ctx.quadraticCurveTo(454, 151, 454, 151) // 左上
+
+  ctx.moveTo(455, 160) // 左上
+  ctx.quadraticCurveTo(440, 216, 511, 284) // 中央
+  ctx.quadraticCurveTo(580, 356, 622, 346) // 右
+  ctx.quadraticCurveTo(455, 160, 455, 160) // 左上
   //   ctx.quadraticCurveTo() // 中央
 
   ctx.stroke()
@@ -97,7 +100,7 @@ const rootLeather = (ctx: CanvasRenderingContext2D, state: GenuineState) => {
 }
 
 export const crossV2Web = (ctx: CanvasRenderingContext2D, state: GenuineState) => {
-  webTop2(ctx, state.web.color, state.stitch.color) // ウェブ先端側
+  webTopJoint(ctx, state.web.color, state.web2.color, state.stitch.color) // ウェブ先端側
   webBottom2(ctx, state.web.color, state.stitch.color) // ウェブ捕球面側
   topLaces(ctx, state.lace.color)
   rootLeather(ctx, state)
@@ -105,6 +108,6 @@ export const crossV2Web = (ctx: CanvasRenderingContext2D, state: GenuineState) =
   verticalPartsRight(ctx, state)
   // ウェブ上の結び目
   const laceColor = state.lace.color
-  webKnots(ctx, laceColor, -85, 30)
+  webKnots(ctx, laceColor, -95, 50)
   //   webKnots(ctx, laceColor, -100, 45)
 }

@@ -9,7 +9,7 @@ export const cross2Web = (ctx: CanvasRenderingContext2D, state: GenuineState) =>
   webBottom2(ctx, state.web.color, state.stitch.color) // ウェブ捕球面側
   topLaces(ctx, state.lace.color)
 
-  verticalParts(ctx, state)
+  verticalParts(ctx, state.web2.color, state.stitch.color)
   // ウェブ上の結び目
   const laceColor = state.lace.color
   webKnots(ctx, laceColor, -40, -25)

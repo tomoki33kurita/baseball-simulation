@@ -97,3 +97,25 @@ export const underWebRight = (ctx: CanvasRenderingContext2D, color: string, loca
   }
   ctx.closePath()
 }
+
+export const underWeb = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number, rotate: number): void => {
+  ctx.save()
+  ctx.rotate((rotate * Math.PI) / 180)
+  ctx.lineWidth = 0.8
+  ctx.strokeStyle = '#383838'
+  ctx.fillStyle = color
+  // 小指芯固定用の紐
+  ctx.beginPath()
+  ctx.moveTo(345 + x, 306 + y) // 左下
+  ctx.quadraticCurveTo(349 + x, 315 + y, 353 + x, 311 + y) // 右下
+  ctx.quadraticCurveTo(366 + x, 297 + y, 372 + x, 280 + y) // 右上
+  ctx.quadraticCurveTo(372 + x, 268 + y, 364 + x, 275 + y) // 左上
+  ctx.quadraticCurveTo(356 + x, 289 + y, 344 + x, 306 + y) // 左下
+  ctx.fill()
+  ctx.moveTo(366 + x, 275 + y) // 左下
+  ctx.quadraticCurveTo(362 + x, 289 + y, 345 + x, 308 + y) // 右下
+  ctx.stroke()
+  ctx.closePath()
+
+  ctx.restore()
+}

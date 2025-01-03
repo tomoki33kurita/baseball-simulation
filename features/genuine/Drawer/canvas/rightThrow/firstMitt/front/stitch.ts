@@ -14,15 +14,6 @@ export const stitch = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.quadraticCurveTo(226, 209, 244, 256)
   ctx.quadraticCurveTo(271, 303, 291, 350)
 
-  // ウェブ直下の捕球面
-  ctx.moveTo(319, 349) // 左下
-  ctx.quadraticCurveTo(366, 305, 424, 250)
-  ctx.moveTo(325, 351) // 左下
-  ctx.quadraticCurveTo(428, 254, 428, 254)
-  // 右辺
-  ctx.moveTo(424, 250) // 右上
-  ctx.quadraticCurveTo(428, 254, 428, 254) // 右下
-
   // ウェブ隣接のブーメラン部分_上から下
   ctx.moveTo(383, 88) //
   ctx.quadraticCurveTo(373, 113, 389, 139) //

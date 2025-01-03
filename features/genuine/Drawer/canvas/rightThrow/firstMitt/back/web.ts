@@ -282,8 +282,8 @@ export const webBottom2 = (ctx: CanvasRenderingContext2D, leatherColor: string, 
   ctx.quadraticCurveTo(566, 195, 628, 318) //
   ctx.quadraticCurveTo(644, 318, 641, 304) //
   ctx.quadraticCurveTo(651, 292, 663, 270) //
-  ctx.quadraticCurveTo(637, 206, 605, 167) //
-  ctx.quadraticCurveTo(573, 112, 515, 77) // 左上
+  ctx.quadraticCurveTo(644, 236, 605, 167) //
+  ctx.quadraticCurveTo(573, 119, 515, 77) // 左上
 
   ctx.fill()
   ctx.stroke()

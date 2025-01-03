@@ -6,10 +6,11 @@ import { boomerang, boomerang2 } from './boomerang'
 import { hingeUpper, hingeUpper2, hingeLower, hingeLower2, hingeLower3 } from './hinge'
 import { bankMaterial, bankMaterial2 } from './bankMaterial'
 import { connectCross } from './connectCross'
-import { underLeft, underCenter, underRight, underWebRight } from './underWeb'
+import { underWebRight } from './underWeb'
 import { webConnectTopUpper, webConnectTopLower } from './webConnect'
 import { knot, singleKnot } from './knot'
 import { GenuineState } from '@/features/genuine/types'
+import { webDrawUtil } from '@/util/canvas'
 
 export const laces = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
   const color = state.lace.color
@@ -105,12 +106,6 @@ export const laces = (ctx: CanvasRenderingContext2D, state: GenuineState): void 
     ctx.fill()
     ctx.closePath()
   }
-
-  underLeft(ctx, color, 0, 0)
-  underLeft(ctx, color, 25, -12)
-  underCenter(ctx, color)
-  underRight(ctx, color, 0, 0)
-  underRight(ctx, color, 15, -27)
   // ブーメラン下捕球面の左側面
   underWebRight(ctx, color, 0, 0)
   underWebRight(ctx, color, -47, 45, -10)
@@ -130,8 +125,13 @@ export const laces = (ctx: CanvasRenderingContext2D, state: GenuineState): void 
   // web -> ブーメラン
   webConnectTopUpper(ctx, color)
   webConnectTopLower(ctx, color)
-  underWebRight(ctx, color, -254, 180, -40)
 
+  const { webMatcher } = webDrawUtil(state)
+  const isOmission = webMatcher(['crossV2', 'tNet2', 'tNet3']) // このウェブの場合、捕球面を狭くする
+  if (!isOmission) {
+    underWebRight(ctx, color, -254, 180, -40)
+  }
+  //
   // 結び目
   knot(ctx, color, 0, 0)
   knot(ctx, color, 50, 200, -5)

@@ -54,7 +54,7 @@ export const drawGenuineFirstMittRearSurface = (ctx: CanvasRenderingContext2D | 
   //   )
   // }
 
-  palm(ctx, state.palm.color, state.stitch.color) // 捕球面
+  palm(ctx, state) // 捕球面
   boomerang(ctx, state.boomerang.color) // ブーメラン部分
   backOfIndexToLittle(ctx, state.boomerang.color) //  // 背面＿人差し指-小指
 
@@ -90,8 +90,8 @@ export const drawGenuineFirstMittRearSurface = (ctx: CanvasRenderingContext2D | 
   fingerGuardDrawer(ctx, state) // 指カバー
 
   genuineLabelDrawer(ctx, state)
+  laces(ctx, state) // 革紐
   webRearDrawerOfFirstMitt(ctx, state) // ウェブ
-  laces(ctx, state.lace.color) // 革紐
   paisleySelected(ctx, state)
   genuineBrandMarkEmbroideryDrawer(ctx, state)
 }

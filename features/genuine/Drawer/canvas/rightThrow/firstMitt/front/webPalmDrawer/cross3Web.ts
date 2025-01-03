@@ -4,8 +4,8 @@ import { verticalParts2 } from './parts/vertical'
 import { webTopLaces } from '../lace/webTop'
 
 export const cross3Web = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
-  verticalParts2(ctx, state.web.color, state.stitch.color) // 縦部分
-  webTop2(ctx, state.web2.color, state.stitch.color) // ウェブ先端側
+  verticalParts2(ctx, state.web2.color, state.stitch.color) // 縦部分
+  webTop2(ctx, state.web.color, state.stitch.color) // ウェブ先端側
   webTopLaces(ctx, state.lace.color) // 革紐＿ウェブ先端側
-  webBottom2(ctx, state.web.color, state.stitch.color) // ウェブ捕球面側
+  webBottom2(ctx, state.web.color, state.stitch.color, 0, 0) // ウェブ捕球面側
 }

@@ -189,20 +189,19 @@ export const webBottom = (ctx: CanvasRenderingContext2D, leatherColor: string, s
   ctx.closePath()
 }
 
-export const webBottom2 = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchColor: string): void => {
+export const webBottom2 = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchColor: string, x: number, y: number): void => {
   ctx.lineWidth = 1.0
   ctx.strokeStyle = '#383838'
   ctx.fillStyle = leatherColor
 
   ctx.beginPath()
-  ctx.moveTo(267, 254) // 左上
-  ctx.quadraticCurveTo(277, 265, 293, 296) // 左下
-  ctx.quadraticCurveTo(351, 263, 416, 204) // 右下
-  ctx.quadraticCurveTo(411, 207, 406, 204) //
-  ctx.quadraticCurveTo(400, 170, 400, 170) //
-  ctx.quadraticCurveTo(405, 152, 395, 160) // 右上
-  ctx.quadraticCurveTo(343, 185, 332, 200) // 上辺中央
-  ctx.quadraticCurveTo(283, 238, 267, 254) // 左上
+  ctx.moveTo(267 + x, 254 + y) // 左上
+  ctx.quadraticCurveTo(277 + x, 265 + y, 293 + x, 296 + y) // 左下
+  ctx.quadraticCurveTo(351 + x, 263 + y, 424 + x, 201 + y) // 右下
+  ctx.quadraticCurveTo(420 + x, 170 + y, 410 + x, 170 + y) //
+  ctx.quadraticCurveTo(405 + x, 152 + y, 395 + x, 160 + y) // 右上
+  ctx.quadraticCurveTo(350 + x, 185 + y, 332 + x, 205 + y) // 上辺中央
+  ctx.quadraticCurveTo(300 + x, 230 + y, 267 + x, 254 + y) // 左上
   ctx.fill()
   ctx.stroke()
   ctx.closePath()
@@ -212,18 +211,51 @@ export const webBottom2 = (ctx: CanvasRenderingContext2D, leatherColor: string, 
   ctx.setLineDash([3, 3])
 
   // webBottom
-  ctx.moveTo(281, 266) // 左下
-  ctx.quadraticCurveTo(320, 241, 394, 179)
-  ctx.moveTo(284, 271) // 左下
-  ctx.quadraticCurveTo(396, 186, 396, 182)
-  ctx.moveTo(290, 287) // 左下
-  ctx.quadraticCurveTo(399, 202, 399, 202)
-  ctx.moveTo(294, 290) // 左下
-  ctx.quadraticCurveTo(335, 263, 401, 207)
-  // 右辺
-  ctx.moveTo(394, 181) // 右上
-  ctx.quadraticCurveTo(401, 206, 401, 206) // 右下
+  ctx.moveTo(281 + x, 266 + y) // 左下
+  ctx.quadraticCurveTo(320 + x, 241 + y, 394 + x, 179 + y)
+  ctx.moveTo(284 + x, 271 + y) // 左下
+  ctx.quadraticCurveTo(396 + x, 186 + y, 396 + x, 182 + y)
+
+  ctx.moveTo(290 + x, 277 + y) // 左下
+  ctx.quadraticCurveTo(399 + x, 192 + y, 399 + x, 192 + y)
+  ctx.moveTo(294 + x, 280 + y) // 左下
+  ctx.quadraticCurveTo(335 + x, 253 + y, 401 + x, 197 + y)
   ctx.stroke()
   ctx.setLineDash([])
   ctx.closePath()
+}
+
+export const webBottom3 = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchColor: string): void => {
+  ctx.lineWidth = 1.0
+  ctx.strokeStyle = '#383838'
+  ctx.fillStyle = leatherColor
+
+  ctx.beginPath()
+  ctx.moveTo(312, 335) // 左上
+  ctx.quadraticCurveTo(297, 358, 336, 358) // 左下
+  ctx.quadraticCurveTo(397, 319, 397, 319) // 中央下
+  ctx.quadraticCurveTo(440, 250, 440, 250) // 右下
+  ctx.quadraticCurveTo(312, 335, 312, 335)
+  // ctx.quadraticCurveTo()
+  ctx.fill()
+  ctx.stroke()
+  ctx.closePath()
+
+  // ctx.strokeStyle = stitchColor
+  // ctx.beginPath()
+  // ctx.setLineDash([3, 3])
+
+  // // webBottom
+  // ctx.moveTo(281, 266) // 左下
+  // ctx.quadraticCurveTo(320, 241, 394, 179)
+  // ctx.moveTo(284, 271) // 左下
+  // ctx.quadraticCurveTo(396, 186, 396, 182)
+
+  // ctx.moveTo(290, 277) // 左下
+  // ctx.quadraticCurveTo(399, 192, 399, 192)
+  // ctx.moveTo(294, 280) // 左下
+  // ctx.quadraticCurveTo(335, 253, 401, 197)
+  // ctx.stroke()
+  // ctx.setLineDash([])
+  // ctx.closePath()
 }
