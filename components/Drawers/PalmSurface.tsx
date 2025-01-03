@@ -19,7 +19,7 @@ export const PalmSurface: FC<Props> = ({ palmSurfaceId, maxWidth = '100%' }) => 
   const { devFlg, devTools, handleCoordinate } = useDevelopmentHooks()
   return (
     <>
-      {devFlg ? (
+      {devFlg === 'true' ? (
         <div>
           <canvas width={880} height={680} id={palmSurfaceId} style={{ ...devToolStyle }} onClick={(e) => handleCoordinate(e)} />
           <DevTool devTools={devTools} />

@@ -18,9 +18,8 @@ export const useDevelopmentHooks = () => {
     setCopy(false)
   }
 
-  const devFlg = false
   return {
-    devFlg,
+    devFlg: process.env.NEXT_PUBLIC_DEV_MODE,
     devTools,
     handleCoordinate
   }

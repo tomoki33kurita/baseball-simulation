@@ -22,7 +22,7 @@ export const RearSurface: FC<Props> = ({ rearSurfaceId, maxWidth = '100%' }) => 
   const { devFlg, devTools, handleCoordinate } = useDevelopmentHooks()
   return (
     <>
-      {devFlg ? (
+      {devFlg === 'true' ? (
         <div>
           <canvas width={880} height={680} id={rearSurfaceId} style={{ ...devToolStyle }} onClick={(e) => handleCoordinate(e)} />
           <DevTool devTools={devTools} />
