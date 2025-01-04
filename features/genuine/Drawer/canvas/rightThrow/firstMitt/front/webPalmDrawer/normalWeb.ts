@@ -10,7 +10,7 @@ export const normalWeb = (ctx: CanvasRenderingContext2D, state: GenuineState): v
   webCross(ctx, laceColor, -40, -75) // 革紐＿ウェブ間クロス＿下段
   webCross(ctx, laceColor, 20, -120)
 
-  webTop(ctx, state.web2.color, state.stitch.color) // ウェブ先端側
+  webTop(ctx, state.web.color, state.stitch.color) // ウェブ先端側
   webTopLaces(ctx, laceColor) // 革紐＿ウェブ先端側
-  webBottom(ctx, state.web.color, state.stitch.color) // ウェブ捕球面側
+  webBottom(ctx, state.web2.color, state.stitch.color) // ウェブ捕球面側
 }

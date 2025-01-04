@@ -5,8 +5,8 @@ import { webKnots } from '@/util/canvas/lace/webKnots'
 import { topLaces } from '../lace/webTop'
 
 export const normalWeb = (ctx: CanvasRenderingContext2D, state: GenuineState) => {
-  webTop(ctx, state.web2.color, state.stitch.color) // ウェブ先端側
-  webBottom(ctx, state.web.color, state.stitch.color) // ウェブ捕球面側
+  webTop(ctx, state.web.color, state.stitch.color) // ウェブ先端側
+  webBottom(ctx, state.web2.color, state.stitch.color) // ウェブ捕球面側
   const laceColor = state.lace.color
 
   topLaces(ctx, laceColor)
