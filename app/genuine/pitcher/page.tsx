@@ -4,8 +4,8 @@ import { useReducer } from 'react'
 import { initialState, reducer } from '@/features/genuine/reducer/pitcher'
 import { genuineTheme } from '@/features/genuine/Styles'
 import { GenuinePageTemplates } from '@/features/genuine/Components/PageTemplates'
-import { useDrawGenuineGloveRearSurface } from '@/features/genuine/Drawer/hooks/glove/useDrawGenuineGloveRearSurface'
-import { useDrawGenuineGlovePalmSurface } from '@/features/genuine/Drawer/hooks/glove/useDrawGenuineGlovePalmSurface'
+import { useDrawGenuineGloveRearSurface } from '@/features/genuine/Drawer/hooks/glove/useRearSurface'
+import { useDrawGenuineGlovePalmSurface } from '@/features/genuine/Drawer/hooks/glove/usePalmSurface'
 
 const GenuinePitcher = () => {
   const position = 'pitcher'

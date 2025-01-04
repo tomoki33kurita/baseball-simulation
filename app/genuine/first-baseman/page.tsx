@@ -4,8 +4,8 @@ import { useReducer } from 'react'
 import { initialState, reducer } from '@/features/genuine/reducer/firstBaseman'
 import { genuineTheme } from '@/features/genuine/Styles'
 import { GenuinePageTemplates } from '@/features/genuine/Components/PageTemplates'
-import { useDrawGenuineFirstMittRearSurface } from '@/features/genuine/Drawer/hooks/firstMitt/useDrawGenuineFIrstMittRearSurface'
-import { useDrawGenuineFirstMittPalmSurface } from '@/features/genuine/Drawer/hooks/firstMitt/useDrawGenuineFIrstMittPalmSurface'
+import { useDrawGenuineFirstMittRearSurface } from '@/features/genuine/Drawer/hooks/firstMitt/useRearSurface'
+import { useDrawGenuineFirstMittPalmSurface } from '@/features/genuine/Drawer/hooks/firstMitt/usePalmSurface'
 
 const GenuineFirstBaseman = () => {
   const position = 'firstBaseman'
