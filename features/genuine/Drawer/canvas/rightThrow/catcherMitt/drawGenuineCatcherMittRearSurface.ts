@@ -1,5 +1,4 @@
 import { GenuineState } from '@/features/genuine/types'
-import { genuineBrandMarkEmbroideryDrawer } from '../glove/front/engraving'
 import { canvasResetter } from '../../canvasResetter'
 import { liningDrawer } from './back/liningDrawer'
 import { backStyleDrawer } from './back/backStyleDrawer'
@@ -11,6 +10,7 @@ import { littleHook } from './back/littleHook'
 import { genuineLabelDrawer } from '../../label/drawer'
 import { paisleySelected } from '../../paisleySelected'
 import { pseudoDrawingEngraved } from '@/util/canvas'
+import { genuineBrandMarkEmbroideryDrawer } from '../../genuineMark'
 
 export const drawGenuineCatcherMittRearSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
   if (!ctx) return

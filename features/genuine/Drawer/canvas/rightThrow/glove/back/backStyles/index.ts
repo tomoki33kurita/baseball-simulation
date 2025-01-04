@@ -4,7 +4,7 @@ import { firstBackStyleDrawer } from './firstBackStyleDrawer'
 import { crownBackStyleDrawer } from './crownBackStyleDrawer'
 import { backLaceDrawer } from '../lace/backLaceDrawer'
 import { connectBackStyleDrawer } from './connectBackStyleDrawer'
-import { genuineBrandMarkEmbroideryDrawer } from '../../front/engraving'
+import { genuineBrandMarkEmbroideryDrawer } from '../../../../genuineMark'
 
 export const backStyleOfGloveBackDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
   const needPalmWrap = !state.baseModel.isUBack || false
