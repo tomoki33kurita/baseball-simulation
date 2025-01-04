@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { getCtx } from '@/util/canvas/ctx'
 import { GenuineState } from '@/features/genuine/types'
-import { drawGenuineCatcherMittPalmSurface } from '../../canvas/drawGenuineCatcherMittPalmSurface'
+import { drawGenuineCatcherMittPalmSurface } from '../../canvas/rightThrow/catcherMitt/drawGenuineCatcherMittPalmSurface'
 
 export const useDrawGenuineCatcherMittPalmSurface = (id: string, state: GenuineState): void => {
   useEffect(() => {

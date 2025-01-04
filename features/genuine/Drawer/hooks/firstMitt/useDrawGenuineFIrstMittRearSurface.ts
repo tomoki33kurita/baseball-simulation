@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { getCtx } from '@/util/canvas/ctx'
 import { GenuineState } from '@/features/genuine/types'
-import { drawGenuineFirstMittRearSurface } from '../../canvas/drawGenuineFirstMittRearSurface'
+import { drawGenuineFirstMittRearSurface } from '../../canvas/rightThrow/firstMitt/drawGenuineFirstMittRearSurface'
 
 export const useDrawGenuineFirstMittRearSurface = (id: string, state: GenuineState): void => {
   useEffect(() => {
