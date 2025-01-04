@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { getCtx } from '@/util/canvas/ctx'
 import { GenuineState } from '@/features/genuine/types'
-import { drawGenuineGloveRearSurface } from '../../canvas/rightThrow/glove/drawGenuineGloveRearSurface'
+import { drawGenuineGloveRearSurface } from '../../canvas/rightThrow/glove/drawRearSurface'
 
 export const useDrawGenuineGloveRearSurface = (id: string, state: GenuineState): void => {
   useEffect(() => {

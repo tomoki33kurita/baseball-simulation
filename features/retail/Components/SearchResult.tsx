@@ -17,12 +17,12 @@ import { drawFivePalmSurface } from '@/features/five/Drawer/canvas/drawFivePalmS
 import { getCtx } from '@/util/canvas/ctx'
 import { FiveState } from '@/features/five/types'
 import { GenuineState } from '@/features/genuine/types'
-import { drawGenuineGlovePalmSurface } from '@/features/genuine/Drawer/canvas/rightThrow/glove/drawGenuineGlovePalmSurface'
-import { drawGenuineGloveRearSurface } from '@/features/genuine/Drawer/canvas/rightThrow/glove/drawGenuineGloveRearSurface'
-import { drawGenuineCatcherMittPalmSurface } from '@/features/genuine/Drawer/canvas/rightThrow/catcherMitt/drawGenuineCatcherMittPalmSurface'
-import { drawGenuineFirstMittRearSurface } from '@/features/genuine/Drawer/canvas/rightThrow/firstMitt/drawGenuineFirstMittRearSurface'
-import { drawGenuineCatcherMittRearSurface } from '@/features/genuine/Drawer/canvas/rightThrow/catcherMitt/drawGenuineCatcherMittRearSurface'
-import { drawGenuineFirstMittPalmSurface } from '@/features/genuine/Drawer/canvas/rightThrow/firstMitt/drawGenuineFirstMittPalmSurface'
+import { drawGenuineGlovePalmSurface } from '@/features/genuine/Drawer/canvas/rightThrow/glove/drawPalmSurface'
+import { drawGenuineGloveRearSurface } from '@/features/genuine/Drawer/canvas/rightThrow/glove/drawRearSurface'
+import { drawGenuineCatcherMittPalmSurface } from '@/features/genuine/Drawer/canvas/rightThrow/catcherMitt/drawPalmSurface'
+import { drawGenuineFirstMittRearSurface } from '@/features/genuine/Drawer/canvas/rightThrow/firstMitt/drawRearSurface'
+import { drawGenuineCatcherMittRearSurface } from '@/features/genuine/Drawer/canvas/rightThrow/catcherMitt/drawRearSurface'
+import { drawGenuineFirstMittPalmSurface } from '@/features/genuine/Drawer/canvas/rightThrow/firstMitt/drawPalmSurface'
 
 const supplierFilter = (brand: Brand) => (supplier: Supplier) => supplier.brand === brand
 const Alert = forwardRef<HTMLDivElement, AlertProps>(function Alert(props, ref) {

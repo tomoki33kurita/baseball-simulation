@@ -1,8 +1,5 @@
 import { ColorItem } from '@/types'
 import { genuineEngraved } from '../../../label'
-import { getGenuineBackStyle } from '@/features/genuine/Components/Setters/logic'
-import { GenuineState } from '@/features/genuine/types'
-import { positionChecker } from '@/util/logic'
 // import localFont from 'next/font/local'
 
 // import { Alex_Brush } from 'next/font/google'

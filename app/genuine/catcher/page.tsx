@@ -4,8 +4,8 @@ import { useReducer } from 'react'
 import { initialState, reducer } from '@/features/genuine/reducer/catcher'
 import { genuineTheme } from '@/features/genuine/Styles'
 import { GenuinePageTemplates } from '@/features/genuine/Components/PageTemplates'
-import { useDrawGenuineCatcherMittRearSurface } from '@/features/genuine/Drawer/hooks/catcherMitt/useDrawGenuineCatcherMittRearSurface'
-import { useDrawGenuineCatcherMittPalmSurface } from '@/features/genuine/Drawer/hooks/catcherMitt/useDrawGenuineCatcherMittPalmSurface'
+import { useDrawGenuineCatcherMittRearSurface } from '@/features/genuine/Drawer/hooks/catcherMitt/useRearSurface'
+import { useDrawGenuineCatcherMittPalmSurface } from '@/features/genuine/Drawer/hooks/catcherMitt/usePalmSurface'
 
 const GenuineCatcher = () => {
   const position = 'catcher'
