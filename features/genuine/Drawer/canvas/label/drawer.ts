@@ -49,7 +49,7 @@ export const genuineLabelDrawer = (ctx: CanvasRenderingContext2D | null, state: 
       return
     }
     if (isConnectBackStyle) {
-      genuineLabel(ctx, state, -30, 60, -2, 0.9)
+      genuineLabel(ctx, state, 150, 65, -2, 0.9)
       return
     }
     const label = state.genuineLabel
