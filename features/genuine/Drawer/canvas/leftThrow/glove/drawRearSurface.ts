@@ -1,6 +1,6 @@
 import { getBackStyle } from '@/features/genuine/Components/Setters/logic'
 import { GenuineState } from '@/features/genuine/types'
-import { pseudoDrawingEngraved } from '@/util/canvas'
+import { pseudoDrawingEngraved, startInversion, undoInversion } from '@/util/canvas'
 import { canvasResetter } from '../../canvasResetter'
 import { lining } from '../../rightThrow/glove/back/lining'
 import { loopOfRingFingerDrawer } from '../../rightThrow/glove/back/loopOfFingerDrawer'
@@ -13,8 +13,9 @@ import { laceOfWristBeltCrossDrawer } from '../../rightThrow/glove/back/lace/lac
 import { genuineLabelDrawer } from '../../label/drawer'
 import { littleHookDrawer } from '../../rightThrow/glove/back/fingerHooks'
 import { paisleySelected } from '../../paisleySelected'
+import { genuineLeftThrowBrandMarkEmbroideryDrawer } from '../../genuineMark'
 
-export const drawLeftThrowGenuineGloveRearSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
+export const drawLeftThrowGenuineGloveRearSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState, width: number): void => {
   const { isFirstBackStyle, isConnectBackStyle } = getBackStyle(state)
   if (!ctx) return
 
@@ -28,6 +29,8 @@ export const drawLeftThrowGenuineGloveRearSurface = (ctx: CanvasRenderingContext
   ctx.strokeText('型番：' + baseModel.productNumber, 50, 70)
 
   const laceColor = state.lace.color
+
+  startInversion(ctx, width)
   lining(ctx, state.linings.color) // 裏革
   loopOfRingFingerDrawer(ctx, state)
   backStyleOfGloveBackDrawer(ctx, state) // バックスタイルの描画(ハミダシ,親指刺繍含)
@@ -36,9 +39,16 @@ export const drawLeftThrowGenuineGloveRearSurface = (ctx: CanvasRenderingContext
   webOfGloveBackDrawer(ctx, state)
   lace(ctx, laceColor) // 革紐
   !isFirstBackStyle && !isConnectBackStyle && laceOfWristBeltCrossDrawer(ctx, laceColor)
-  genuineLabelDrawer(ctx, state) // ラベル描画
+
+  undoInversion(ctx, width)
+  genuineLeftThrowBrandMarkEmbroideryDrawer(ctx, state)
+  genuineLabelDrawer(ctx, state, width) // ラベル描画
+
+  startInversion(ctx, width)
   littleHookDrawer(ctx, state) // 小指掛け紐
   thumbHook(ctx, state.thumbHook.color, -14, 30, 0) //手元
+
+  undoInversion(ctx, width)
   paisleySelected(ctx, state)
   // drawPaisley(ctx, state)
 }

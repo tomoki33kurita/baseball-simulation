@@ -1,5 +1,5 @@
 import { GenuineState } from '@/features/genuine/types'
-import { pseudoDrawingEngraved } from '@/util/canvas'
+import { pseudoDrawingEngraved, startInversion, undoInversion } from '@/util/canvas'
 import { canvasResetter } from '../../canvasResetter'
 import { liningLeather } from '../../rightThrow/firstMitt/back/liningLeather'
 import { loopOfRingFingerDrawer } from '../../rightThrow/glove/back/loopOfFingerDrawer'
@@ -14,13 +14,13 @@ import { backAroundWeb } from '../../rightThrow/firstMitt/back/backAroundWeb'
 import { edgeDrawer } from '../../rightThrow/firstMitt/back/edgeDrawer'
 import { stitch } from '../../rightThrow/firstMitt/back/stitch'
 import { fingerGuardDrawer } from '../../rightThrow/firstMitt/back/fingerGuardDrawer'
-import { genuineLabelDrawer } from '../../label/drawer'
+import { genuineFirstMittLabelDrawer } from '../../label/drawer'
 import { laces } from '../../rightThrow/firstMitt/back/lace'
 import { webRearDrawerOfFirstMitt } from '../../rightThrow/firstMitt/back/webRearDrawer'
 import { paisleySelected } from '../../paisleySelected'
-import { genuineBrandMarkEmbroideryDrawer } from '../../genuineMark'
+import { genuineLeftThrowBrandMarkEmbroideryDrawer } from '../../genuineMark'
 
-export const drawLeftThrowGenuineFirstMittRearSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
+export const drawLeftThrowGenuineFirstMittRearSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState, canvasWidth: number): void => {
   if (!ctx) return
 
   const baseModel = state.baseModel
@@ -31,6 +31,8 @@ export const drawLeftThrowGenuineFirstMittRearSurface = (ctx: CanvasRenderingCon
   ctx.strokeStyle = '#383838'
   ctx.fillStyle = '#383838'
   ctx.strokeText('型番：' + baseModel.productNumber, 50, 70)
+
+  startInversion(ctx, canvasWidth)
 
   liningLeather(ctx, state.linings.color)
   loopOfRingFingerDrawer(ctx, state) // 薬指ループ
@@ -90,9 +92,15 @@ export const drawLeftThrowGenuineFirstMittRearSurface = (ctx: CanvasRenderingCon
   stitch(ctx, state.stitch.color) // ステッチ
   fingerGuardDrawer(ctx, state) // 指カバー
 
-  genuineLabelDrawer(ctx, state)
+  undoInversion(ctx, canvasWidth)
+
+  genuineFirstMittLabelDrawer(ctx, state)
+
+  startInversion(ctx, canvasWidth)
   laces(ctx, state) // 革紐
   webRearDrawerOfFirstMitt(ctx, state) // ウェブ
+
+  undoInversion(ctx, canvasWidth)
   paisleySelected(ctx, state)
-  genuineBrandMarkEmbroideryDrawer(ctx, state)
+  genuineLeftThrowBrandMarkEmbroideryDrawer(ctx, state)
 }

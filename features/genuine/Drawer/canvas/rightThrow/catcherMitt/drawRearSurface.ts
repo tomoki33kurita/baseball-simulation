@@ -7,7 +7,7 @@ import { webDrawer } from './back/webDrawer'
 import { laceDrawer } from './back/lace'
 import { thumbHook } from './back/thumbHook'
 import { littleHook } from './back/littleHook'
-import { genuineLabelDrawer } from '../../label/drawer'
+import { genuineCatcherMittLabelDrawer, genuineLabelDrawer } from '../../label/drawer'
 import { paisleySelected } from '../../paisleySelected'
 import { pseudoDrawingEngraved } from '@/util/canvas'
 import { genuineBrandMarkEmbroideryDrawer } from '../../genuineMark'
@@ -31,7 +31,7 @@ export const drawGenuineCatcherMittRearSurface = (ctx: CanvasRenderingContext2D 
   laceDrawer(ctx, state.lace.color) // 革紐
   thumbHook(ctx, state.thumbHook.color) // かけ紐
   littleHook(ctx, state.littleHook.color) // かけ紐
-  genuineLabelDrawer(ctx, state) // ラベル描画
+  genuineCatcherMittLabelDrawer(ctx, state) // ラベル描画
   paisleySelected(ctx, state)
   genuineBrandMarkEmbroideryDrawer(ctx, state)
 }

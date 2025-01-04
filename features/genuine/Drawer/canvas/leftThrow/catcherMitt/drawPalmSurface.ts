@@ -1,5 +1,5 @@
 import { GenuineState } from '@/features/genuine/types'
-import { pseudoDrawingEngraved } from '@/util/canvas'
+import { pseudoDrawingEngraved, startInversion, undoInversion } from '@/util/canvas'
 import { canvasResetter } from '../../canvasResetter'
 import { laceOfKnots } from '../../rightThrow/catcherMitt/front/lace/knots'
 import { laceOfBackOfAroundWebDrawer } from '../../rightThrow/catcherMitt/front/lace/aroundWeb'
@@ -13,7 +13,7 @@ import { laceDrawer } from '../../rightThrow/catcherMitt/front/lace'
 import { paisleySelected } from '../../paisleySelected'
 import { genuineEngravedOfPalm } from '../../genuineMark'
 
-export const drawLeftThrowGenuineCatcherMittPalmSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
+export const drawLeftThrowGenuineCatcherMittPalmSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState, width: number): void => {
   if (!ctx) return
 
   pseudoDrawingEngraved(ctx)
@@ -25,6 +25,8 @@ export const drawLeftThrowGenuineCatcherMittPalmSurface = (ctx: CanvasRenderingC
   ctx.strokeText('型番：' + baseModel.productNumber, 50, 70)
 
   const palmState = state.palm
+
+  startInversion(ctx, width)
   laceOfKnots(ctx, state.lace.color, 0, 0)
   laceOfBackOfAroundWebDrawer(ctx, state)
   webDrawer(ctx, state)
@@ -37,6 +39,7 @@ export const drawLeftThrowGenuineCatcherMittPalmSurface = (ctx: CanvasRenderingC
   stitch(ctx, state.stitch.color)
   laceDrawer(ctx, state)
 
-  genuineEngravedOfPalm(ctx, palmState, 0, 0) // メーカー捕球面の刻印
+  undoInversion(ctx, width)
+  genuineEngravedOfPalm(ctx, palmState, -50, 0) // メーカー捕球面の刻印
   paisleySelected(ctx, state)
 }

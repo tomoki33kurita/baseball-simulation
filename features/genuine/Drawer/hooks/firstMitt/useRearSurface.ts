@@ -6,14 +6,18 @@ import { drawLeftThrowGenuineFirstMittRearSurface } from '../../canvas/leftThrow
 
 export const useDrawGenuineFirstMittRearSurface = (id: string, state: GenuineState): void => {
   useEffect(() => {
-    const { ctx } = getCtx(id)
+    const { ctx, canvasWidth } = getCtx(id)
     if (ctx === null) return
     if (state.baseModel.productNumber === '') return
     if (['firstBaseman'].includes(state.baseModel.position)) {
-      if (['rightThrow', 'unselected'].includes(state.dominantArm.value)) {
-        drawGenuineFirstMittRearSurface(ctx, state)
-      } else {
-        drawLeftThrowGenuineFirstMittRearSurface(ctx, state)
+      switch (state.dominantArm.value) {
+        case 'rightThrow':
+        case 'unselected':
+          drawGenuineFirstMittRearSurface(ctx, state)
+          break
+        case 'leftThrow':
+          drawLeftThrowGenuineFirstMittRearSurface(ctx, state, canvasWidth)
+          break
       }
     }
   }, [id, state])

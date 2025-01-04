@@ -16,7 +16,7 @@ import { laces } from './back/lace'
 import { loopOfRingFingerDrawer } from '../glove/back/loopOfFingerDrawer'
 import { webRearDrawerOfFirstMitt } from './back/webRearDrawer'
 import { paisleySelected } from '../../paisleySelected'
-import { genuineLabelDrawer } from '../../label/drawer'
+import { genuineFirstMittLabelDrawer, genuineLabelDrawer } from '../../label/drawer'
 import { pseudoDrawingEngraved } from '@/util/canvas'
 import { genuineBrandMarkEmbroideryDrawer } from '../../genuineMark'
 
@@ -90,7 +90,7 @@ export const drawGenuineFirstMittRearSurface = (ctx: CanvasRenderingContext2D | 
   stitch(ctx, state.stitch.color) // ステッチ
   fingerGuardDrawer(ctx, state) // 指カバー
 
-  genuineLabelDrawer(ctx, state)
+  genuineFirstMittLabelDrawer(ctx, state)
   laces(ctx, state) // 革紐
   webRearDrawerOfFirstMitt(ctx, state) // ウェブ
   paisleySelected(ctx, state)

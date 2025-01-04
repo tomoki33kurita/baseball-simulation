@@ -1,5 +1,5 @@
 import { GenuineState } from '@/features/genuine/types'
-import { pseudoDrawingEngraved } from '@/util/canvas'
+import { pseudoDrawingEngraved, startInversion, undoInversion } from '@/util/canvas'
 import { canvasResetter } from '../../canvasResetter'
 import { webPalmDrawerOfFirstMitt } from '../../rightThrow/firstMitt/front/webPalmDrawer'
 import { palm } from '../../rightThrow/firstMitt/front/palm'
@@ -11,10 +11,12 @@ import { laces } from '../../rightThrow/firstMitt/front/lace'
 import { genuineEngravedOfPalm } from '../../genuineMark'
 import { paisleySelected } from '../../paisleySelected'
 
-export const drawLeftThrowGenuineFirstMittPalmSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
+export const drawLeftThrowGenuineFirstMittPalmSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState, canvasWidth: number): void => {
   if (!state.underWeb) return
   if (!state.thumb) return
   if (!ctx) return
+  startInversion(ctx, canvasWidth)
+
   pseudoDrawingEngraved(ctx)
   canvasResetter(ctx) // リセット
   webPalmDrawerOfFirstMitt(ctx, state) // ウェブ捕球面側
@@ -25,6 +27,9 @@ export const drawLeftThrowGenuineFirstMittPalmSurface = (ctx: CanvasRenderingCon
   binding(ctx, state.binding.color) // ヘリ革
   stitch(ctx, state.stitch.color) // ステッチ
   laces(ctx, state) // 革紐
-  genuineEngravedOfPalm(ctx, state.palm, 0, 0) // メーカー捕球面の刻印
+
+  undoInversion(ctx, canvasWidth)
+
+  genuineEngravedOfPalm(ctx, state.palm, -80, 0) // メーカー捕球面の刻印
   paisleySelected(ctx, state)
 }

@@ -12,9 +12,9 @@ import { pseudoDrawingEngraved } from '@/util/canvas'
 import { genuineEngravedOfPalm } from '../../genuineMark'
 
 export const drawGenuineFirstMittPalmSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
-  if (!state.underWeb) return
-  if (!state.thumb) return
   if (!ctx) return
+  if (state.dominantArm.value === 'leftThrow') return
+
   pseudoDrawingEngraved(ctx)
   canvasResetter(ctx) // リセット
   webPalmDrawerOfFirstMitt(ctx, state) // ウェブ捕球面側

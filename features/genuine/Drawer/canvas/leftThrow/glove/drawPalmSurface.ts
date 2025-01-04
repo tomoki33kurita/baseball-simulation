@@ -1,6 +1,6 @@
 import { getBankLaceDirection, getFingerColor } from '@/features/genuine/Components/Setters/logic'
 import { GenuineState } from '@/features/genuine/types'
-import { pseudoDrawingEngraved } from '@/util/canvas'
+import { pseudoDrawingEngraved, startInversion, undoInversion } from '@/util/canvas'
 import { canvasResetter } from '../../canvasResetter'
 import { listLining } from '../../rightThrow/glove/front/listLining'
 import { backLaceDrawerOfFront } from '../../rightThrow/glove/front/lace/backLace'
@@ -14,10 +14,10 @@ import { littleBackOut, littleBackRingSide } from '../../rightThrow/glove/front/
 import { welting } from '../../rightThrow/glove/front/welting'
 import { bindings } from '../../rightThrow/glove/front/bindings'
 import { lace } from '../../rightThrow/glove/front/lace'
-import { genuineEngravedOfPalm } from '../../genuineMark'
+import { genuineEngravedOfPalm, genuineLeftThrowBrandMarkEmbroideryDrawer } from '../../genuineMark'
 import { paisleySelected } from '../../paisleySelected'
 
-export const drawLeftThrowGenuineGlovePalmSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
+export const drawLeftThrowGenuineGlovePalmSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState, width: number): void => {
   if (!ctx) return
   const baseModel = state.baseModel
   const { thumbWebColor, indexWebColor, indexMiddleColor, middleIndexColor, middleRingColor, ringLittleColor } = getFingerColor(state)
@@ -30,6 +30,8 @@ export const drawLeftThrowGenuineGlovePalmSurface = (ctx: CanvasRenderingContext
   ctx.strokeStyle = '#383838'
   ctx.fillStyle = '#383838'
   ctx.strokeText('型番：' + baseModel.productNumber, 50, 70)
+
+  startInversion(ctx, width)
 
   const laceColor = state.lace.color
   const stitchColor = state.stitch.color
@@ -52,6 +54,9 @@ export const drawLeftThrowGenuineGlovePalmSurface = (ctx: CanvasRenderingContext
   rightLaceOfNetWebDrawer(ctx, state) // ネットウェブのみの革紐
   topLaceDrawer(ctx, state) // トップレース
   lace(ctx, laceColor, state) // 革紐
-  genuineEngravedOfPalm(ctx, palmState, 0, 0) // メーカー捕球面の刻印
+
+  undoInversion(ctx, width)
+
+  genuineEngravedOfPalm(ctx, palmState, -70, 0) // メーカー捕球面の刻印
   paisleySelected(ctx, state)
 }
