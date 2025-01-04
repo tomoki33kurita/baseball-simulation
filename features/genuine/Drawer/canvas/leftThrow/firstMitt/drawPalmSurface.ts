@@ -11,7 +11,7 @@ import { laces } from '../../rightThrow/firstMitt/front/lace'
 import { genuineEngravedOfPalm } from '../../genuineMark'
 import { paisleySelected } from '../../paisleySelected'
 
-export const drawGenuineFirstMittPalmSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
+export const drawLeftThrowGenuineFirstMittPalmSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
   if (!state.underWeb) return
   if (!state.thumb) return
   if (!ctx) return

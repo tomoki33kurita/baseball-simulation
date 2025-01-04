@@ -14,7 +14,7 @@ import { genuineLabelDrawer } from '../../label/drawer'
 import { littleHookDrawer } from '../../rightThrow/glove/back/fingerHooks'
 import { paisleySelected } from '../../paisleySelected'
 
-export const drawLeftGenuineGloveRearSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
+export const drawLeftThrowGenuineGloveRearSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
   const { isFirstBackStyle, isConnectBackStyle } = getBackStyle(state)
   if (!ctx) return
 

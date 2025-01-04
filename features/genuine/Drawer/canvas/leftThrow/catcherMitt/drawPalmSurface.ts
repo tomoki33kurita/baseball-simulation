@@ -13,7 +13,7 @@ import { laceDrawer } from '../../rightThrow/catcherMitt/front/lace'
 import { paisleySelected } from '../../paisleySelected'
 import { genuineEngravedOfPalm } from '../../genuineMark'
 
-export const drawLeftGenuineCatcherMittPalmSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
+export const drawLeftThrowGenuineCatcherMittPalmSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
   if (!ctx) return
 
   pseudoDrawingEngraved(ctx)

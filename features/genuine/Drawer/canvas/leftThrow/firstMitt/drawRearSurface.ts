@@ -20,7 +20,7 @@ import { webRearDrawerOfFirstMitt } from '../../rightThrow/firstMitt/back/webRea
 import { paisleySelected } from '../../paisleySelected'
 import { genuineBrandMarkEmbroideryDrawer } from '../../genuineMark'
 
-export const drawGenuineFirstMittRearSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
+export const drawLeftThrowGenuineFirstMittRearSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
   if (!ctx) return
 
   const baseModel = state.baseModel

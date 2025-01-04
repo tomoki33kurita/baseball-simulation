@@ -12,7 +12,7 @@ import { paisleySelected } from '../../paisleySelected'
 import { GenuineState } from '@/features/genuine/types'
 import { genuineBrandMarkEmbroideryDrawer } from '../../genuineMark'
 
-export const drawLeftGenuineCatcherMittRearSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
+export const drawLeftThrowGenuineCatcherMittRearSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
   if (!ctx) return
   pseudoDrawingEngraved(ctx)
 

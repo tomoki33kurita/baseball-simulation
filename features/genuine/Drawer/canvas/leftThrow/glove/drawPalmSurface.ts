@@ -17,7 +17,7 @@ import { lace } from '../../rightThrow/glove/front/lace'
 import { genuineEngravedOfPalm } from '../../genuineMark'
 import { paisleySelected } from '../../paisleySelected'
 
-export const drawLeftGenuineGlovePalmSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
+export const drawLeftThrowGenuineGlovePalmSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
   if (!ctx) return
   const baseModel = state.baseModel
   const { thumbWebColor, indexWebColor, indexMiddleColor, middleIndexColor, middleRingColor, ringLittleColor } = getFingerColor(state)
