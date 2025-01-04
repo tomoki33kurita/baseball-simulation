@@ -10,6 +10,7 @@ type Props = {
   color?: Color
   variant?: 'outlined' | 'contained'
   disabled?: boolean
+  isDark?: boolean
   handleOkButton: () => void
   handleCancelButton: () => void
   handleExecuteButton: () => void
@@ -22,13 +23,20 @@ export const ConfirmDialog: React.FC<Props> = ({
   color = 'inherit',
   variant = 'outlined',
   disabled,
+  isDark,
   handleOkButton,
   handleCancelButton,
   handleExecuteButton
 }) => {
   return (
     <Box>
-      <Button color={color} variant={variant} onClick={handleOkButton} disabled={disabled}>
+      <Button
+        color={color}
+        variant={variant}
+        onClick={handleOkButton}
+        disabled={disabled}
+        style={{ color: isDark ? 'white' : 'black', backgroundColor: isDark ? '#737373' : 'black', fontWeight: 'bold' }}
+      >
         {openButtonLabel}
       </Button>
       <Dialog open={isConfirmOpen} onClose={handleCancelButton} aria-labelledby="alert-dialog-title" aria-describedby="alert-dialog-description">
@@ -36,10 +44,20 @@ export const ConfirmDialog: React.FC<Props> = ({
           {dialogMessage}
         </DialogTitle>
         <DialogActions>
-          <Button variant={'outlined'} onClick={handleCancelButton}>
+          <Button
+            variant={'outlined'}
+            onClick={handleCancelButton}
+            style={{ color: isDark ? 'black' : 'white', backgroundColor: isDark ? 'white' : 'black' }}
+          >
             Cancel
           </Button>
-          <Button color={'primary'} variant={'contained'} onClick={handleExecuteButton} autoFocus>
+          <Button
+            color={'primary'}
+            variant={'contained'}
+            onClick={handleExecuteButton}
+            autoFocus
+            style={{ color: isDark ? 'black' : 'white', backgroundColor: isDark ? 'white' : 'black' }}
+          >
             OK
           </Button>
         </DialogActions>

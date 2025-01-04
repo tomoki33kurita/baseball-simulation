@@ -28,7 +28,7 @@ export const Setters: React.FC<Props> = ({ state, position, dispatch }) => {
       <ColorSetter {...{ state, selectedIndex, position, dispatch }} />
       <EmbroiderySetter {...{ state, selectedIndex, dispatch }} isDark />
       <SettingTabs {...{ selectedIndex, setSelectedIndex }} />
-      <SettingButtons {...{ toTopPath, handleDialogOpen }} />
+      <SettingButtons {...{ toTopPath, handleDialogOpen }} isDark />
       <SimulationConfirmDialog {...{ state, position, isDialogOpen, handleDialogClose, dispatch }}>
         <GenuineConfirmContents {...{ state, position }} />
       </SimulationConfirmDialog>

@@ -5,10 +5,11 @@ import { ConfirmDialog } from '@/components/ConfirmDialog'
 
 type Props = {
   toTopPath: string
+  isDark?: boolean
   handleDialogOpen: () => void
 }
 
-export const SettingButtons: React.FC<Props> = ({ toTopPath, handleDialogOpen }) => {
+export const SettingButtons: React.FC<Props> = ({ toTopPath, isDark, handleDialogOpen }) => {
   const {
     isConfirmOpen: isConfirmOpenToTop,
     // setIsConfirmOpen: setIsConfirmOpenToTop,
@@ -43,6 +44,7 @@ export const SettingButtons: React.FC<Props> = ({ toTopPath, handleDialogOpen })
         handleCancelButton={handleConfirmCloseToTop}
         handleExecuteButton={handleLinkToTop}
         color={'primary'}
+        isDark={isDark}
       />
       <ConfirmDialog
         key={'confirm-dialog-reset'}
@@ -53,8 +55,14 @@ export const SettingButtons: React.FC<Props> = ({ toTopPath, handleDialogOpen })
         handleCancelButton={handleConfirmCloseReset}
         handleExecuteButton={handleReset}
         color={'primary'}
+        isDark={isDark}
       />
-      <Button variant="contained" color="primary" onClick={handleDialogOpen}>
+      <Button
+        variant={isDark ? 'outlined' : 'contained'}
+        color={isDark ? 'inherit' : 'primary'}
+        onClick={handleDialogOpen}
+        style={{ color: isDark ? 'white' : 'black', backgroundColor: isDark ? '#737373' : 'black', border: 'unset', fontWeight: 'bold' }}
+      >
         確認
       </Button>
     </Box>
