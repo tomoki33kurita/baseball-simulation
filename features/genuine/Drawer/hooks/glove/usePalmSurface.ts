@@ -6,7 +6,8 @@ import { drawLeftThrowGenuineGlovePalmSurface } from '../../canvas/leftThrow/glo
 
 export const useDrawGenuineGlovePalmSurface = (id: string, state: GenuineState): void => {
   useEffect(() => {
-    const ctx = getCtx(id)
+    const { ctx } = getCtx(id)
+    if (ctx === null) return
     if (state.baseModel.productNumber === '') return
     if (['pitcher', 'infielder', 'outfielder'].includes(state.baseModel.position)) {
       if (['rightThrow', 'unselected'].includes(state.dominantArm.value)) {

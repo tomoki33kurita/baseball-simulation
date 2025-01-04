@@ -63,3 +63,13 @@ export const pseudoDrawingEngraved = (ctx: CanvasRenderingContext2D): void => {
   ctx.font = '56px Alex Brush'
   isNotReady && ctx.strokeText(``, 0, 0)
 }
+
+export const startInversion = (ctx: CanvasRenderingContext2D, canvasWidth: number) => {
+  ctx.translate(canvasWidth, 0)
+  ctx.scale(-1, 1)
+}
+
+export const undoInversion = (ctx: CanvasRenderingContext2D, canvasWidth: number) => {
+  ctx.scale(-1, 1) // 元に戻す
+  ctx.translate(-canvasWidth, 0)
+}

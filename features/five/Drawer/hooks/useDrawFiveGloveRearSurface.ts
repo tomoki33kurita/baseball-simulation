@@ -5,7 +5,8 @@ import { FiveState } from '../../types'
 
 export const useDrawFiveGloveRearSurface = (id: string, state: FiveState) => {
   useEffect(() => {
-    const ctx = getCtx(id) // useEventEffect使って見える
+    const { ctx } = getCtx(id)
+    if (ctx === null) return
     if (state.baseModel.productNumber === '') return
     drawFiveRearSurface(ctx, state)
   }, [id, state])

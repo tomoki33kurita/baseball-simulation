@@ -5,7 +5,8 @@ import { FiveState } from '../../types'
 
 export const useDrawFiveGlovePalmSurface = (id: string, state: FiveState) => {
   useEffect(() => {
-    const ctx = getCtx(id)
+    const { ctx } = getCtx(id)
+    if (ctx === null) return
     if (state.baseModel.productNumber === '') return
     drawFivePalmSurface(ctx, state)
   }, [id, state])

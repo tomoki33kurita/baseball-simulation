@@ -53,8 +53,8 @@ export const SearchResult: React.FC<Props> = ({ response }) => {
   const rearSurfaceId = 'rearSurfaceOnDialog'
   const palmSurfaceId = 'palmSurfaceOnDialog'
   useEffect(() => {
-    const rearCtx = getCtx(rearSurfaceId) // useEventEffect使って見える
-    const palmCtx = getCtx(palmSurfaceId)
+    const { ctx: rearCtx } = getCtx(rearSurfaceId) // useEventEffect使って見える
+    const { ctx: palmCtx } = getCtx(palmSurfaceId)
     switch (state.baseModel.brand) {
       case 'five':
         drawFiveRearSurface(rearCtx, state as FiveState)

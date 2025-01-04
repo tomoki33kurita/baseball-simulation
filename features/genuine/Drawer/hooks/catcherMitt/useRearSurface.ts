@@ -6,7 +6,8 @@ import { drawLeftThrowGenuineCatcherMittRearSurface } from '../../canvas/leftThr
 
 export const useDrawGenuineCatcherMittRearSurface = (id: string, state: GenuineState): void => {
   useEffect(() => {
-    const ctx = getCtx(id) // useEventEffect使って見える
+    const { ctx } = getCtx(id)
+    if (ctx === null) return
     if (state.baseModel.productNumber === '') return
     if (['catcher'].includes(state.baseModel.position)) {
       if (['rightThrow', 'unselected'].includes(state.dominantArm.value)) {
