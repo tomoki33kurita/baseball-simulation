@@ -361,5 +361,5 @@ export const tNet3Web = (ctx: CanvasRenderingContext2D, state: GenuineState) => 
   //   // ウェブ上の結び目
   webKnots(ctx, laceColor, -100, 50)
   webKnots(ctx, laceColor, -120, 80)
-  webKnots(ctx, laceColor, -20, -45)
+  webKnots(ctx, laceColor, -30, -45)
 }
