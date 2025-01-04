@@ -16,8 +16,9 @@ import { laces } from './back/lace'
 import { loopOfRingFingerDrawer } from '../glove/back/loopOfFingerDrawer'
 import { webRearDrawerOfFirstMitt } from './back/webRearDrawer'
 import { paisleySelected } from '../../paisleySelected'
-import { genuineBrandMarkEmbroideryDrawer, pseudoDrawingEngraved } from '../glove/front/engraving'
+import { genuineBrandMarkEmbroideryDrawer } from '../glove/front/engraving'
 import { genuineLabelDrawer } from '../../label/drawer'
+import { pseudoDrawingEngraved } from '@/util/canvas'
 
 export const drawGenuineFirstMittRearSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
   if (!ctx) return

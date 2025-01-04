@@ -56,3 +56,10 @@ export const webDrawUtil = (state: State) => {
   const webMatcher = (webs: string[]) => webs.some((web) => [webParts.value, defaultWeb].includes(web))
   return { webMatcher, webColor, /*web2Color,*/ laceColor, stitchColor, webParts, defaultWeb, productNumber }
 }
+export const pseudoDrawingEngraved = (ctx: CanvasRenderingContext2D): void => {
+  // google web font を事前に読み込むためのダミー描画
+  const isReady = document.fonts.check('56px Alex Brush')
+  const isNotReady = !isReady
+  ctx.font = '56px Alex Brush'
+  isNotReady && ctx.strokeText(``, 0, 0)
+}

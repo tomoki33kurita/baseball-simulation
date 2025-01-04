@@ -11,8 +11,8 @@ import { lining } from './back/lining'
 import { webOfGloveBackDrawer } from './back/web/webOfGloveBackDrawer'
 import { loopOfRingFingerDrawer } from './back/loopOfFingerDrawer'
 import { paisleySelected } from '../../paisleySelected'
-import { pseudoDrawingEngraved } from './front/engraving'
 import { littleHookDrawer } from './back/fingerHooks'
+import { pseudoDrawingEngraved } from '@/util/canvas'
 // import { meshDrawer } from './rightThrow/glove/back/mesh'
 
 // const drawPaisley = (ctx: CanvasRenderingContext2D, state: GenuineState) => {

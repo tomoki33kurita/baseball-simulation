@@ -1,6 +1,6 @@
 import { GenuineState } from '@/features/genuine/types'
 import { canvasResetter } from '../../canvasResetter'
-import { genuineEngravedOfPalm, pseudoDrawingEngraved } from '../glove/front/engraving'
+import { genuineEngravedOfPalm } from '../glove/front/engraving'
 import { palm } from './front/palm'
 import { thumbHook } from './front/hook'
 import { binding } from './front/binding'
@@ -9,6 +9,7 @@ import { webPalmDrawerOfFirstMitt } from './front/webPalmDrawer'
 import { stitch } from './front/stitch'
 import { laces } from './front/lace'
 import { paisleySelected } from '../../paisleySelected'
+import { pseudoDrawingEngraved } from '@/util/canvas'
 
 export const drawGenuineFirstMittPalmSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
   if (!state.underWeb) return

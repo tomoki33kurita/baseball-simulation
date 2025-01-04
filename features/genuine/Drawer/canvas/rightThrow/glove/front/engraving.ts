@@ -12,14 +12,6 @@ import { positionChecker } from '@/util/logic'
 //   variable: '--font-alex-brush'
 // })
 
-export const pseudoDrawingEngraved = (ctx: CanvasRenderingContext2D): void => {
-  // google web font を事前に読み込むためのダミー描画
-  const isReady = document.fonts.check('56px Alex Brush')
-  const isNotReady = !isReady
-  ctx.font = '56px Alex Brush'
-  isNotReady && ctx.strokeText(``, 0, 0)
-}
-
 // 捕球面の刻印
 export const genuineEngravedOfPalm = (ctx: CanvasRenderingContext2D, palm: ColorItem, x: number, y: number): void => {
   ctx.lineWidth = 1.0

@@ -11,10 +11,11 @@ import { bindings } from './front/bindings'
 import { rightLaceOfNetWebDrawer, topLaceDrawer, webOfGloveFrontDrawer } from './front/web/webOfGloveFrontDrawer'
 import { lace } from './front/lace'
 import { backLaceDrawerOfFront } from './front/lace/backLace'
-import { genuineEngravedOfPalm, pseudoDrawingEngraved } from './front/engraving'
+import { genuineEngravedOfPalm } from './front/engraving'
 import { GenuineState } from '../../../../types'
 import { getBankLaceDirection, getFingerColor } from '../../../../Components/Setters/logic'
 import { paisleySelected } from '../../paisleySelected'
+import { pseudoDrawingEngraved } from '@/util/canvas'
 
 export const drawGenuineGlovePalmSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
   if (!ctx) return
