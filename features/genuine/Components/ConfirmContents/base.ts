@@ -45,7 +45,7 @@ export const getGenuineBaseCells = (
         isMeshSpecified ? genGloveBaseCell('背面メッシュカラー', state.meshColor) : dummy,
         genGloveBaseCell('サイズ', state.size),
         // isCatcher ? dummy : genGloveBaseCell('ウェブパーツ', state.webParts),
-        isMitt ? dummy : genGloveBaseCell('ウェブパーツ', state.webParts),
+        isCatcher ? dummy : genGloveBaseCell('ウェブパーツ', state.webParts),
         isSelectableWebLaceStyle ? genGloveBaseCell('ウェブ紐スタイル', state.webLaceStyle) : dummy,
         isGlove ? genGloveBaseCell('背面紐通し', state.backLaceStyle) : dummy,
         isGlove ? genGloveBaseCell('土手芯', state.materialPack) : dummy,
