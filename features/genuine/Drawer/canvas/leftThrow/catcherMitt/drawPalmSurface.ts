@@ -10,8 +10,8 @@ import { littleMachi } from '../../rightThrow/catcherMitt/front/littleMachi'
 import { edgeDrawer } from '../../rightThrow/catcherMitt/front/binding'
 import { stitch } from '../../rightThrow/catcherMitt/front/stitch'
 import { laceDrawer } from '../../rightThrow/catcherMitt/front/lace'
-import { genuineEngravedOfPalm } from '../../rightThrow/glove/front/engraving'
 import { paisleySelected } from '../../paisleySelected'
+import { genuineEngravedOfPalm } from '../../genuineMark'
 
 export const drawLeftGenuineCatcherMittPalmSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
   if (!ctx) return
