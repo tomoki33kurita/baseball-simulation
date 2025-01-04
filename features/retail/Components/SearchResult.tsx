@@ -53,7 +53,7 @@ export const SearchResult: React.FC<Props> = ({ response }) => {
   const rearSurfaceId = 'rearSurfaceOnDialog'
   const palmSurfaceId = 'palmSurfaceOnDialog'
   useEffect(() => {
-    const { ctx: rearCtx } = getCtx(rearSurfaceId) // useEventEffect使って見える
+    const { ctx: rearCtx, canvasWidth } = getCtx(rearSurfaceId) // useEventEffect使って見える
     const { ctx: palmCtx } = getCtx(palmSurfaceId)
     switch (state.baseModel.brand) {
       case 'five':
@@ -71,7 +71,7 @@ export const SearchResult: React.FC<Props> = ({ response }) => {
             drawGenuineFirstMittPalmSurface(palmCtx, state as GenuineState)
             break
           default:
-            drawGenuineGloveRearSurface(rearCtx, state as GenuineState)
+            drawGenuineGloveRearSurface(rearCtx, state as GenuineState, canvasWidth)
             drawGenuineGlovePalmSurface(palmCtx, state as GenuineState)
             break
         }
