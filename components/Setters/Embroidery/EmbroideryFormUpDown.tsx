@@ -16,10 +16,11 @@ const initialEmbroideryState = {
 
 type Props = {
   embroideries: Embroidery[]
+  isDark?: boolean
   dispatch: React.Dispatch<unknown>
 }
 
-export const EmbroideryFormUpDown: React.FC<Props> = ({ embroideries, dispatch }) => {
+export const EmbroideryFormUpDown: React.FC<Props> = ({ embroideries, isDark, dispatch }) => {
   const handleAddForm = () =>
     dispatch({
       type: ADD_EMBROIDERY,
@@ -35,12 +36,22 @@ export const EmbroideryFormUpDown: React.FC<Props> = ({ embroideries, dispatch }
 
   return (
     <Box mb={2}>
-      <Card>
-        <Box display="flex" justifyContent="center" my={1}>
-          <Button onClick={handleAddForm} disabled={!canIncrease || existEmptyContentsEmbroidery} variant="outlined" style={{ marginRight: '4px' }}>
+      <Card style={{ backgroundColor: isDark ? 'black' : '#eee' }}>
+        <Box display="flex" justifyContent="center" my={1} py={1} border={isDark ? '1px solid #383838' : 'unset'}>
+          <Button
+            onClick={handleAddForm}
+            disabled={!canIncrease || existEmptyContentsEmbroidery}
+            variant={isDark ? 'contained' : 'outlined'}
+            style={{ marginRight: '4px', color: isDark ? '#fff' : 'unset', backgroundColor: isDark ? '#737373' : 'unset' }}
+          >
             ＋
           </Button>
-          <Button onClick={handleRemoveForm} disabled={embroideries.length === 0} variant="outlined" style={{ marginLeft: '4px' }}>
+          <Button
+            onClick={handleRemoveForm}
+            disabled={embroideries.length === 0}
+            variant={isDark ? 'contained' : 'outlined'}
+            style={{ marginLeft: '4px', color: isDark ? '#fff' : 'unset', backgroundColor: isDark ? '#737373' : 'unset' }}
+          >
             ー
           </Button>
         </Box>

@@ -8,13 +8,23 @@ type Props = {
   caution?: string
   description?: string
   disabled?: boolean
+  isDark?: boolean
   handleContent: (selected: string, i?: number) => void
 }
 
-export const EmbroideryContent: React.FC<Props> = ({ content, contentMaxLength, embroideryIndex, caution, description, disabled, handleContent }) => {
+export const EmbroideryContent: React.FC<Props> = ({
+  content,
+  contentMaxLength,
+  embroideryIndex,
+  caution,
+  description,
+  disabled,
+  isDark,
+  handleContent
+}) => {
   return (
-    <Card>
-      <Box fontSize={14} textAlign={'left'} pl={2} pb={1} fontWeight={'bold'}>
+    <Card style={{ background: isDark ? '#383838' : 'unset' }}>
+      <Box fontSize={14} textAlign={'left'} pl={2} py={1} fontWeight={'bold'} color={isDark ? 'white' : 'black'}>
         刺繍内容
       </Box>
       <Box display="flex" alignItems="center" mx={1}>
@@ -22,7 +32,11 @@ export const EmbroideryContent: React.FC<Props> = ({ content, contentMaxLength, 
           maxRows={1}
           onChange={(event) => handleContent(event.target.value.trim(), embroideryIndex)}
           variant="outlined"
-          style={{ width: '100%', background: disabled ? 'gainsboro' : '#fff' }}
+          style={{ width: '100%', background: disabled ? 'gainsboro' : isDark ? '#737373' : '#fff' }}
+          sx={{
+            input: { color: isDark ? 'white' : 'unset' }, // 入力文字の色を白に
+            '& .MuiInputBase-input::placeholder': { color: isDark ? 'white' : 'unset' } // placeholderの色を白に
+          }}
           defaultValue={content}
           placeholder={'刺繍内容を入力してください'}
           inputProps={{ maxLength: contentMaxLength }}

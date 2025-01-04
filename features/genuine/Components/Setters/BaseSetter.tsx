@@ -95,7 +95,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
   const fingerGuardOptions = getFingerGuardOptions(state)
 
   return (
-    <TabPanel selectedIndex={selectedIndex} index={0}>
+    <TabPanel selectedIndex={selectedIndex} index={0} isDark>
       <SelectCard
         summary={'利き腕'} // dominantArm
         selectedLabel={dominantArm.label}
@@ -104,14 +104,16 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         handleChange={handle.dominantArm}
         defaultExpanded={dominantArm.value === 'unselected'}
         className={DOMINANT_ARM_BUTTON_OPTION}
+        isDark
       />
       <SelectCard
         summary={'手袋サイズ'} // gloveSize
         selectedLabel={gloveSize.label}
         objects={isJuniorModel ? JUNIOR_GLOVE_SIZES : GLOVE_SIZES}
         isError={gloveSize.value === 'unselected'}
-        defaultExpanded={gloveSize.value === 'unselected'}
         handleChange={handle.gloveSize}
+        defaultExpanded={gloveSize.value === 'unselected'}
+        isDark
       />
       <SelectCard
         summary={'小指二本入れ仕様'} // gloveSize
@@ -121,6 +123,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         isDisplay={!isCatcher}
         defaultExpanded={twoFingerInLittleSlot.value === 'unselected'}
         handleChange={handle.twoFingerInLittleSlot}
+        isDark
       />
       <SelectCard
         summary={'指カバー/指当て'} // fingerGuard
@@ -132,6 +135,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         description={isSpecifiedLittleFingerSideLabel ? '変更するには、先に"ラベル"を親指側に再選択してください。' : ''}
         className={FINGER_GUARD_TYPE_BUTTON_OPTION}
         handleChange={handle.fingerGuard}
+        isDark
       />
       <SelectCard
         summary={'革の厚さ'} // leatherThickness
@@ -141,6 +145,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         defaultExpanded={leatherThickness.value === 'unselected'}
         handleChange={handle.leatherThickness}
         description={"Genuineでは'薄く'を推奨しております。"}
+        isDark
       />
       <SelectCard
         summary={'背面デザイン'} // backStyle
@@ -153,6 +158,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         description={isSelectableGenuineMarkColor ? '変更するには、Genuine刺繍・刻印を解除してください。' : ''}
         defaultExpanded={backStyle.value === 'unselected'}
         className={BACK_STYLE_BUTTON_OPTION}
+        isDark
       />
       <SelectCard
         summary={'ウェブ-捕球面紐通し'}
@@ -162,6 +168,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         isDisplay={isYT22}
         defaultExpanded={palmToWebConnectLaceStyle.value === 'unselected'}
         handleChange={handle.palmToWebConnectLaceStyle}
+        isDark
       />
       {/* <SelectCard
         summary={'背面メッシュカラー'} // fingerGuard
@@ -179,6 +186,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         isError={size.value === 'unselected'}
         defaultExpanded={size.value === 'unselected'}
         handleChange={handle.size}
+        isDark
       />
       <SelectCardWithImage
         summary={'ウェブパーツ'} // webParts
@@ -189,6 +197,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         isDisplay={!isCatcher}
         handleChange={handle.webParts}
         className={WEB_PARTS_BUTTON_OPTION}
+        isDark
       />
       <SelectCard
         summary={'ウェブ紐スタイル'} // webLaceStyle
@@ -198,6 +207,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         defaultExpanded={webLaceStyle.value === 'unselected'}
         isDisplay={isSelectableWebLaceStyle || isCatcher}
         handleChange={handle.webLaceStyle}
+        isDark
       />
       <SelectCard
         summary={'背面紐通し'} // backLaceStyle
@@ -207,6 +217,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         isDisplay={isGlove}
         defaultExpanded={backLaceStyle.value === 'unselected'}
         handleChange={handle.backLaceStyle}
+        isDark
       />
       <SelectCard
         summary={'土手芯'} // materialPack
@@ -217,6 +228,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         isDisplay={!isCatcher}
         defaultExpanded={materialPack.value === 'unselected'}
         className={MATERIAL_PACK_BUTTON_OPTION}
+        isDark
       />
       <SelectCard
         summary={'芯材の硬さ'} // coreHardness
@@ -226,6 +238,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         defaultExpanded={coreHardness.value === 'unselected'}
         description={"Genuineでは'硬め'を推奨しております。"}
         handleChange={handle.coreHardness}
+        isDark
       />
       <SelectCard
         summary={'手口巻スタイル'} //  bankLaceDirection
@@ -235,6 +248,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         isDisplay={!isMitt}
         defaultExpanded={bankLaceDirection.value === 'unselected'}
         handleChange={handle.bankLaceDirection}
+        isDark
       />
       <SelectCard
         summary={'薬指リング'} //  loopOfRingFinger
@@ -244,6 +258,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         isDisplay={isLoopOfRingFinger}
         defaultExpanded={loopOfRingFinger.value === 'unselected'}
         handleChange={handle.loopOfRingFinger}
+        isDark
       />
       <SelectCard
         summary={'Genuine刺繍'} //  ringIntegrated
@@ -255,6 +270,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         description={isUnselectedBackStyle ? '背面デザインを先に選択してください' : ''}
         defaultExpanded={genuineBrandMark.value === 'unselected'}
         handleChange={handle.genuineBrandMark}
+        isDark
       />
       <SelectCard
         summary={'Genuine刺繍カラー'} //  ringIntegratedColor
@@ -264,6 +280,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         isDisplay={isSelectableGenuineMarkColor}
         defaultExpanded={genuineBrandMarkColor.value === 'unselected'}
         handleChange={handle.genuineBrandMarkColor}
+        isDark
       />
       <SelectCard
         summary={'Genuine刻印'} //  ringIntegrated
@@ -273,6 +290,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         isDisplay={isFirstBaseman}
         defaultExpanded={genuineBrandMark.value === 'unselected'}
         handleChange={handle.genuineBrandMark}
+        isDark
       />
     </TabPanel>
   )

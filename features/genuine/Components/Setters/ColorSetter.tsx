@@ -57,7 +57,7 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
 
   if (!componentParts || !selectableParts) return <></>
   return (
-    <TabPanel selectedIndex={selectedIndex} index={1}>
+    <TabPanel selectedIndex={selectedIndex} index={1} isDark>
       <SelectCard
         summary={'ラベル'} //
         selectedLabel={genuineLabel.label}
@@ -65,8 +65,9 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
         isError={genuineLabel.value === 'unselected'}
         defaultExpanded={genuineLabel.value === 'unselected'}
         handleChange={handle.genuineLabel}
+        isDark
       />
-      <SelectCard summary={'パーツ'} selectedLabel={partsLabel} objects={filteredParts} handleChange={handle.parts} />
+      <SelectCard summary={'パーツ'} selectedLabel={partsLabel} objects={filteredParts} handleChange={handle.parts} isDark />
       <SelectCard
         summary={`${partsLabel}カラー`}
         selectedLabel={selectedParts.label}
@@ -74,6 +75,7 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
         objects={colorsByParts}
         handleChange={handle[partsKey]}
         className={LEATHER_COLOR_BUTTON_OPTION}
+        isDark
       />
       <SelectCard
         summary={'裏革'}
@@ -84,6 +86,7 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
         handleChange={handle.linings}
         isError={linings.value === 'unselected'}
         className={LININGS_COLOR_BUTTON_OPTION}
+        isDark
       />
       <SelectCard
         summary={'ヘリ革'}
@@ -94,6 +97,7 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
         handleChange={handle.binding}
         isError={binding.value === 'unselected'}
         className={BINDING_COLOR_BUTTON_OPTION}
+        isDark
       />
       <SelectCard
         summary={'ハミダシ'}
@@ -105,6 +109,7 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
         isError={welting.value === 'unselected'}
         isDisplay={!isFirstBaseman && !isTMBackStyle}
         className={WELTING_COLOR_BUTTON_OPTION}
+        isDark
       />
       <SelectCard
         summary={'ステッチ'}
@@ -115,6 +120,7 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
         handleChange={handle.stitch}
         isError={stitch.value === 'unselected'}
         className={STITCH_COLOR_BUTTON_OPTION}
+        isDark
       />
       <SelectCard
         summary={'革紐'}
@@ -125,6 +131,7 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
         handleChange={handle.lace}
         isError={lace.value === 'unselected'}
         className={LACE_COLOR_BUTTON_OPTION}
+        isDark
       />
       <SelectCard
         summary={'ムートン'}
@@ -135,6 +142,7 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
         handleChange={handle.mouton}
         isError={mouton.value === 'unselected'}
         className={MOUTON_BUTTON_OPTION}
+        isDark
       />
     </TabPanel>
   )
