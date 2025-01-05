@@ -24,7 +24,9 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin={'anonymous'} />
         <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet" />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className} style={{ margin: 0 }}>
+        {children}
+      </body>
     </html>
   )
 }

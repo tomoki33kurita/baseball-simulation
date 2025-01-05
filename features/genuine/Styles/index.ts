@@ -2,7 +2,9 @@ import { createTheme } from '@mui/material/styles'
 
 export const GENUINE_COLOR = {
   primary: '#080704',
-  secondary: '#f5bd05'
+  secondary: '#f5bd05',
+  thirdly: '#fff',
+  backgroundColor: '#737373'
 }
 
 export const genuineTheme = createTheme({
