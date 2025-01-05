@@ -17,5 +17,5 @@ export default function Layout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  return <main>{children}</main>
+  return <main style={{ background: '#383838' }}>{children}</main>
 }

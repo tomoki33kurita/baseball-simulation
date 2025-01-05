@@ -3,7 +3,7 @@ import { GenuineEmbroideries } from './Embroideries'
 import { GenuineState } from '../../types'
 import { ItemCell } from '@/components/ItemCell'
 
-export const cellColor = (cellValue: string) => (cellValue === 'unselected' ? 'red' : '#383838')
+const cellColor = (cellValue: string, isDark?: boolean) => (cellValue === 'unselected' ? (isDark ? 'orange' : 'red') : isDark ? '#fff' : '#383838')
 
 type Props = {
   state: GenuineState
@@ -17,9 +17,10 @@ type Props = {
     label: string
     value: string
   }[]
+  isDark?: boolean
 }
 
-export const SimulationContent: React.FC<Props> = ({ state, baseCells, colorCells }) => {
+export const SimulationContent: React.FC<Props> = ({ state, baseCells, colorCells, isDark }) => {
   const colorCellStartCount = baseCells.length + 1
   const colorCellCount = colorCells.length
   const embroideryCellStartCount = baseCells.length + colorCellCount + 1
@@ -28,21 +29,21 @@ export const SimulationContent: React.FC<Props> = ({ state, baseCells, colorCell
     <Grid container>
       <Grid item xs={12} sm={4}>
         <Box pt={2}>
-          <Box fontWeight="bold" fontSize="16px" color={'#383838'}>
+          <Box fontWeight="bold" fontSize="16px" color={isDark ? '#fff' : '#383838'}>
             基本項目
           </Box>
           {baseCells?.map((cell, i) => (
-            <ItemCell key={cell.head} itemIndex={i + 1} cell={cell} color={cellColor(cell.value)} />
+            <ItemCell key={cell.head} itemIndex={i + 1} cell={cell} color={cellColor(cell.value, isDark)} isDark />
           ))}
         </Box>
       </Grid>
       <Grid item xs={12} sm={4}>
         <Box pt={2}>
-          <Box fontWeight="bold" fontSize="16px" color={'#383838'}>
+          <Box fontWeight="bold" fontSize="16px" color={isDark ? '#fff' : '#383838'}>
             カラー項目
           </Box>
           {colorCells?.map((cell, i) => (
-            <ItemCell key={cell.head} itemIndex={colorCellStartCount + i} cell={cell} color={cellColor(cell.value)} />
+            <ItemCell key={cell.head} itemIndex={colorCellStartCount + i} cell={cell} color={cellColor(cell.value, isDark)} isDark />
           ))}
         </Box>
       </Grid>

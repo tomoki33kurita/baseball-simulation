@@ -13,10 +13,11 @@ const SET_BASE_MODEL = 'setBaseModel'
 type Props = {
   models: FiveBaseModel[] | GenuineBaseModel[]
   position: Position
+  isDark?: boolean
   dispatch: React.Dispatch<any>
 }
 
-export const BaseModelSelector: React.FC<Props> = ({ models, position, dispatch }) => {
+export const BaseModelSelector: React.FC<Props> = ({ models, position, isDark, dispatch }) => {
   const [isDialogOpen, setIsDialogOpen] = React.useState<boolean>(true)
   const { isConfirmOpen, handleConfirmOpen, handleConfirmClose } = useConfirm()
   const { selectedModel, handleBaseModel } = useSelectBaseModel()
@@ -30,17 +31,17 @@ export const BaseModelSelector: React.FC<Props> = ({ models, position, dispatch 
   return (
     <Box>
       <Dialog open={isDialogOpen} maxWidth={'lg'}>
-        <DialogContent>
-          <Box position={'sticky'} left={0}>
+        <DialogContent style={isDark ? { backgroundColor: '#383838' } : {}}>
+          <Box position={'sticky'} left={0} color={isDark ? '#fff' : 'inherit'} fontWeight={isDark ? 'bold' : 'inherit'}>
             基本モデルを選択してください
           </Box>
           <Box display={'flex'}>
             {models.filter(modelFilter).map((model) => (
-              <ModelCard {...{ selectedModel, model, handleBaseModel }} key={model.productNumber} />
+              <ModelCard {...{ selectedModel, model, isDark, handleBaseModel }} key={model.productNumber} />
             ))}
           </Box>
         </DialogContent>
-        <DialogActions>
+        <DialogActions style={isDark ? { backgroundColor: '#383838' } : {}}>
           <ConfirmDialog
             isConfirmOpen={isConfirmOpen}
             openButtonLabel={'シミュレーションを開始'}
@@ -51,6 +52,7 @@ export const BaseModelSelector: React.FC<Props> = ({ models, position, dispatch 
             handleCancelButton={handleConfirmClose}
             handleExecuteButton={handleStartSimulation}
             disabled={!selectedModel}
+            isDark={isDark}
           />
         </DialogActions>
       </Dialog>

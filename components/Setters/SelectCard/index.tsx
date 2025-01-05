@@ -22,6 +22,7 @@ type Props = {
   isError?: boolean
   index?: number // for embroidery
   className?: string
+  isDark?: boolean
   handleChange: (selected: string, i?: number) => void
 }
 
@@ -38,35 +39,57 @@ export const SelectCard: React.FC<Props> = ({
   isError,
   index,
   className,
+  isDark,
   handleChange
 }) => {
   if (!isDisplay) return <></>
   return (
-    <Accordion style={{ marginBottom: '16px' }} defaultExpanded={defaultExpanded}>
+    <Accordion style={isDark ? { marginBottom: '16px', background: '#383838' } : { marginBottom: '16px' }} defaultExpanded={defaultExpanded}>
       <AccordionSummary
         expandIcon={
-          <Fab size="small" tabIndex={-1} style={{ boxShadow: 'unset' }}>
+          <Fab
+            size="small"
+            tabIndex={-1}
+            style={
+              isDark
+                ? {
+                    boxShadow: 'unset',
+                    background: '#383838',
+                    color: 'white',
+                    border: '1px solid white'
+                  }
+                : {}
+            }
+          >
             <ExpandLessIcon />
           </Fab>
         }
       >
         <Box display="flex">
-          <Box fontSize={14} fontWeight="bold" color={muiGrey}>
+          <Box fontSize={14} fontWeight="bold" color={isDark ? '#fff' : muiGrey}>
             {summary}
           </Box>
-          <Box component="span" display="inherit" color={isError ? 'red' : muiGrey} fontSize={15} alignItems="center" ml={2}>
+          <Box
+            component="span"
+            display="inherit"
+            color={isError ? (isDark ? 'orange' : 'red') : isDark ? 'white' : muiGrey}
+            fontSize={15}
+            alignItems="center"
+            ml={2}
+            fontWeight={isDark ? 'bold' : 'normal'}
+          >
             {selectedColor && <ColorBox bgcolor={selectedColor} />}
             {selectedLabel}
           </Box>
         </Box>
       </AccordionSummary>
       {caution && (
-        <Box pl={3} textAlign="left" color={'red'} fontSize={'12px'}>
+        <Box pl={3} textAlign="left" color={isDark ? 'orange' : 'red'} fontSize={'12px'} fontWeight={isDark ? 'bold' : 'unset'} mb={1}>
           {caution}
         </Box>
       )}
       {description && (
-        <Box pl={3} textAlign="left" color={'blue'} fontSize={'12px'}>
+        <Box pl={3} textAlign="left" color={isDark ? '#2ebdff' : 'blue'} fontSize={'12px'} fontWeight={isDark ? 'bold' : 'normal'}>
           {description}
         </Box>
       )}
@@ -79,7 +102,20 @@ export const SelectCard: React.FC<Props> = ({
               onClick={() => handleChange(obj.value, index)}
               variant={obj.label === selectedLabel ? 'contained' : 'outlined'}
               disabled={disabled}
-              style={{ marginRight: '8px', marginBottom: '4px', textTransform: 'none', padding: '15px' }}
+              style={
+                isDark
+                  ? {
+                      marginRight: '8px',
+                      marginBottom: '4px',
+                      textTransform: 'none',
+                      padding: '15px',
+                      color: '#fff',
+                      borderColor: 'black',
+                      backgroundColor: obj.label === selectedLabel ? 'black' : '#737373',
+                      fontWeight: 'bold'
+                    }
+                  : { marginRight: '8px', marginBottom: '4px', textTransform: 'none', padding: '15px' }
+              }
               className={className}
             >
               {obj.color && <ColorBox bgcolor={obj.color} />}

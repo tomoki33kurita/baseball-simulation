@@ -26,10 +26,10 @@ export const Setters: React.FC<Props> = ({ state, position, dispatch }) => {
       <SettingTabs {...{ selectedIndex, setSelectedIndex }} />
       <BaseSetter {...{ state, selectedIndex, position, dispatch }} />
       <ColorSetter {...{ state, selectedIndex, position, dispatch }} />
-      <EmbroiderySetter {...{ state, selectedIndex, dispatch }} />
+      <EmbroiderySetter {...{ state, selectedIndex, dispatch }} isDark />
       <SettingTabs {...{ selectedIndex, setSelectedIndex }} />
-      <SettingButtons {...{ toTopPath, handleDialogOpen }} />
-      <SimulationConfirmDialog {...{ state, position, isDialogOpen, handleDialogClose, dispatch }}>
+      <SettingButtons {...{ toTopPath, handleDialogOpen }} isDark />
+      <SimulationConfirmDialog {...{ state, position, isDialogOpen, handleDialogClose, dispatch }} isDark>
         <GenuineConfirmContents {...{ state, position }} />
       </SimulationConfirmDialog>
     </>

@@ -19,16 +19,17 @@ import {
 type Props = {
   state: GenuineState
   selectedIndex: number
+  isDark?: boolean
   dispatch: React.Dispatch<unknown>
 }
 
-export const EmbroiderySetter: React.FC<Props> = ({ state, selectedIndex, dispatch }) => {
+export const EmbroiderySetter: React.FC<Props> = ({ state, selectedIndex, isDark, dispatch }) => {
   const { embroideries } = state
   const { handle } = useEmbroideriesDispatchGenerator(dispatch, embroideries)
 
   return (
-    <TabPanel selectedIndex={selectedIndex} index={2}>
-      <EmbroideryFormUpDown embroideries={embroideries} dispatch={dispatch} />
+    <TabPanel selectedIndex={selectedIndex} index={2} isDark>
+      <EmbroideryFormUpDown embroideries={embroideries} dispatch={dispatch} isDark />
       {embroideries.map((e, i) => {
         const { shadowColorLabel, edgeColorLabel, disabledShadowColor, disabledEdgeColor, isSelectedTypeFace } = embroideryFlagGenerator(e)
         const { contentMaxLength, existsContent, characterType } = characterCheckHelper(e)
@@ -38,8 +39,8 @@ export const EmbroiderySetter: React.FC<Props> = ({ state, selectedIndex, dispat
 
         return (
           <Box key={`${e.id}`} my={1}>
-            <Accordion defaultExpanded>
-              <EmbroideryAccordionSummary embroideryIndex={i} />
+            <Accordion defaultExpanded style={{ background: isDark ? 'black' : 'unset' }}>
+              <EmbroideryAccordionSummary embroideryIndex={i} isDark />
               <AccordionDetails style={{ flexWrap: 'wrap' }}>
                 <Box width={'100%'}>
                   <SelectCard
@@ -49,10 +50,17 @@ export const EmbroiderySetter: React.FC<Props> = ({ state, selectedIndex, dispat
                     index={i}
                     handleChange={handle.position}
                     disabled={existsContent}
+                    isDark
                   />
                 </Box>
                 <Box width={'100%'}>
-                  <EmbroideryContent content={e.content} contentMaxLength={contentMaxLength} embroideryIndex={i} handleContent={handle.content} />
+                  <EmbroideryContent
+                    content={e.content}
+                    contentMaxLength={contentMaxLength}
+                    embroideryIndex={i}
+                    handleContent={handle.content}
+                    isDark
+                  />
                 </Box>
                 <Box width={'100%'} mt={2}>
                   <SelectCard
@@ -63,6 +71,7 @@ export const EmbroiderySetter: React.FC<Props> = ({ state, selectedIndex, dispat
                     handleChange={handle.typeFace}
                     isError={e.typeFace.value === 'unselected'}
                     disabled={!existsContent}
+                    isDark
                   />
                 </Box>
                 <Box width={'100%'}>
@@ -75,6 +84,7 @@ export const EmbroiderySetter: React.FC<Props> = ({ state, selectedIndex, dispat
                     handleChange={handle.color}
                     isError={e.color.value === 'unselected'}
                     disabled={!isSelectedTypeFace}
+                    isDark
                   />
                 </Box>
                 <Box width={'100%'}>
@@ -87,6 +97,7 @@ export const EmbroiderySetter: React.FC<Props> = ({ state, selectedIndex, dispat
                     index={i}
                     handleChange={handle.shadowColor}
                     isError={e.shadowColor.value === 'unselected'}
+                    isDark
                   />
                 </Box>
                 <Box width={'100%'}>
@@ -99,6 +110,7 @@ export const EmbroiderySetter: React.FC<Props> = ({ state, selectedIndex, dispat
                     index={i}
                     handleChange={handle.edgeColor}
                     isError={e.edgeColor.value === 'unselected'}
+                    isDark
                   />
                 </Box>
               </AccordionDetails>

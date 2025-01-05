@@ -20,12 +20,13 @@ type Props = {
   state: State
   position: Position
   isDialogOpen: boolean
+  isDark?: boolean
   children: React.ReactNode
   handleDialogClose: () => void
   dispatch: React.Dispatch<unknown>
 }
 
-export const SimulationConfirmDialog: React.FC<Props> = ({ state, position, isDialogOpen, children, handleDialogClose, dispatch }) => {
+export const SimulationConfirmDialog: React.FC<Props> = ({ state, position, isDialogOpen, isDark, children, handleDialogClose, dispatch }) => {
   const { watch, register } = useForm(watchFormDefaultValue)
   const email = watch('mailAddress')
   const [isCopied, setCopied] = useState<boolean>(false)
@@ -55,11 +56,11 @@ export const SimulationConfirmDialog: React.FC<Props> = ({ state, position, isDi
         }
       }}
     >
-      <DialogContent style={{ padding: '16px 16px' }}>
+      <DialogContent style={{ padding: '16px 16px', backgroundColor: isDark ? '#383838' : '' }}>
         {children}
-        <ConsumerForm {...{ position, dispatch, register }} isDisabled={!canInputConsumer} />
+        <ConsumerForm {...{ position, dispatch, register, isDark }} isDisabled={!canInputConsumer} />
       </DialogContent>
-      <DialogActions style={{ flex: 'unset', display: 'unset' }}>
+      <DialogActions style={{ flex: 'unset', display: 'unset', backgroundColor: isDark ? '#383838' : '' }}>
         <SavedIdDisplay savedId={savedId} isCopied={isCopied} setCopied={setCopied} />
         <Box display={'flex'} justifyContent={'space-around'}>
           <ConfirmDialog
@@ -72,8 +73,14 @@ export const SimulationConfirmDialog: React.FC<Props> = ({ state, position, isDi
             handleOkButton={handleConfirmOpen}
             handleCancelButton={handleConfirmClose}
             handleExecuteButton={handleExecute}
+            isDark={isDark}
           />
-          <Button variant="outlined" onClick={handleClear} disabled={!canClose}>
+          <Button
+            variant="outlined"
+            onClick={handleClear}
+            disabled={!canClose}
+            style={isDark ? { backgroundColor: '#737373', color: 'white', fontWeight: 'bold' } : {}}
+          >
             閉じる
           </Button>
         </Box>

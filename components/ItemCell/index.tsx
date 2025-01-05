@@ -9,11 +9,12 @@ type Props = {
     value?: string
   }
   color?: string
+  isDark?: boolean
 }
 
-export const ItemCell: React.FC<Props> = ({ itemIndex, cell, color }) => {
+export const ItemCell: React.FC<Props> = ({ itemIndex, cell, color, isDark }) => {
   return (
-    <Box ml={1} color={'#383838'}>
+    <Box ml={1} color={isDark ? '#fff' : '#383838'}>
       {`(${itemIndex}) ${cell.head}: `}
       <Box component="span" fontWeight="bold" color={color}>
         {cell.label}
