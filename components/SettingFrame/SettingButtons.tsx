@@ -61,7 +61,7 @@ export const SettingButtons: React.FC<Props> = ({ toTopPath, isDark, handleDialo
         variant={isDark ? 'outlined' : 'contained'}
         color={isDark ? 'inherit' : 'primary'}
         onClick={handleDialogOpen}
-        style={{ color: isDark ? 'white' : 'black', backgroundColor: isDark ? '#737373' : 'black', border: 'unset', fontWeight: 'bold' }}
+        style={isDark ? { color: 'white', backgroundColor: 'black', border: 'unset', fontWeight: 'bold' } : {}}
       >
         確認
       </Button>

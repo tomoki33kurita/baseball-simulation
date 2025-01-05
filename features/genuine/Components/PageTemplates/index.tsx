@@ -27,7 +27,7 @@ export const GenuinePageTemplates: FC<Props> = ({ state, position, theme, rearSu
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <BaseModelSelector {...{ models, position, dispatch }} />
+      <BaseModelSelector {...{ models, position, dispatch }} isDark />
       <Box display={'flex'}>
         <Grid container>
           <Grid item xs={12} md={7} zIndex={20} position={'sticky'} top={0}>

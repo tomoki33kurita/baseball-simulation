@@ -37,16 +37,16 @@ export const GenuineConfirmContents: React.FC<Props> = ({ state, position }) => 
 
   const props = { state, position }
   return (
-    <>
+    <Box bgcolor={'#383838'}>
       <Box display={'flex'}>
         <RearSurface rearSurfaceId={rearSurfaceId} maxWidth={'50%'} />
         <PalmSurface palmSurfaceId={palmSurfaceId} maxWidth={'50%'} />
       </Box>
-      <Box px={1} textAlign="left" color={'red'} bgcolor={'white'} fontSize={14}>
+      <Box px={1} textAlign="left" color={'orange'} fontWeight={'bold'} fontSize={14}>
         ※グラブ・ミットの描画、刺繍の位置・書体はイメージであり、実際とは異なる場合があります。
       </Box>
-      <SimulationContent {...{ ...props, baseCells, colorCells }} />
-      <Prices {...{ ...props, basePrice }} />
-    </>
+      <SimulationContent {...{ ...props, baseCells, colorCells }} isDark />
+      <Prices {...{ ...props, basePrice }} isDark />
+    </Box>
   )
 }

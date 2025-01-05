@@ -40,7 +40,7 @@ export const EmbroiderySetter: React.FC<Props> = ({ state, selectedIndex, isDark
         return (
           <Box key={`${e.id}`} my={1}>
             <Accordion defaultExpanded style={{ background: isDark ? 'black' : 'unset' }}>
-              <EmbroideryAccordionSummary embroideryIndex={i} />
+              <EmbroideryAccordionSummary embroideryIndex={i} isDark />
               <AccordionDetails style={{ flexWrap: 'wrap' }}>
                 <Box width={'100%'}>
                   <SelectCard

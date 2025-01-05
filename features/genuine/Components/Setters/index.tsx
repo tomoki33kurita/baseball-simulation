@@ -29,7 +29,7 @@ export const Setters: React.FC<Props> = ({ state, position, dispatch }) => {
       <EmbroiderySetter {...{ state, selectedIndex, dispatch }} isDark />
       <SettingTabs {...{ selectedIndex, setSelectedIndex }} />
       <SettingButtons {...{ toTopPath, handleDialogOpen }} isDark />
-      <SimulationConfirmDialog {...{ state, position, isDialogOpen, handleDialogClose, dispatch }}>
+      <SimulationConfirmDialog {...{ state, position, isDialogOpen, handleDialogClose, dispatch }} isDark>
         <GenuineConfirmContents {...{ state, position }} />
       </SimulationConfirmDialog>
     </>

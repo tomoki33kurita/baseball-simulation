@@ -44,18 +44,22 @@ export const SelectCard: React.FC<Props> = ({
 }) => {
   if (!isDisplay) return <></>
   return (
-    <Accordion style={{ marginBottom: '16px', background: isDark ? '#383838' : 'unset' }} defaultExpanded={defaultExpanded}>
+    <Accordion style={isDark ? { marginBottom: '16px', background: '#383838' } : { marginBottom: '16px' }} defaultExpanded={defaultExpanded}>
       <AccordionSummary
         expandIcon={
           <Fab
             size="small"
             tabIndex={-1}
-            style={{
-              boxShadow: 'unset',
-              background: isDark ? '#383838' : 'unset',
-              color: isDark ? 'white' : 'black',
-              border: isDark ? '1px solid white' : '1px solid black'
-            }}
+            style={
+              isDark
+                ? {
+                    boxShadow: 'unset',
+                    background: '#383838',
+                    color: 'white',
+                    border: '1px solid white'
+                  }
+                : {}
+            }
           >
             <ExpandLessIcon />
           </Fab>
@@ -80,7 +84,7 @@ export const SelectCard: React.FC<Props> = ({
         </Box>
       </AccordionSummary>
       {caution && (
-        <Box pl={3} textAlign="left" color={isDark ? 'orange' : 'red'} fontSize={'12px'}>
+        <Box pl={3} textAlign="left" color={isDark ? 'orange' : 'red'} fontSize={'12px'} fontWeight={isDark ? 'bold' : 'unset'} mb={1}>
           {caution}
         </Box>
       )}
@@ -98,16 +102,20 @@ export const SelectCard: React.FC<Props> = ({
               onClick={() => handleChange(obj.value, index)}
               variant={obj.label === selectedLabel ? 'contained' : 'outlined'}
               disabled={disabled}
-              style={{
-                marginRight: '8px',
-                marginBottom: '4px',
-                textTransform: 'none',
-                padding: '15px',
-                color: isDark ? '#fff' : 'unset',
-                borderColor: isDark ? 'black' : 'unset',
-                backgroundColor: isDark ? (obj.label === selectedLabel ? 'black' : '#737373') : 'unset',
-                fontWeight: isDark ? 'bold' : 'unset'
-              }}
+              style={
+                isDark
+                  ? {
+                      marginRight: '8px',
+                      marginBottom: '4px',
+                      textTransform: 'none',
+                      padding: '15px',
+                      color: '#fff',
+                      borderColor: 'black',
+                      backgroundColor: obj.label === selectedLabel ? 'black' : '#737373',
+                      fontWeight: 'bold'
+                    }
+                  : { marginRight: '8px', marginBottom: '4px', textTransform: 'none', padding: '15px' }
+              }
               className={className}
             >
               {obj.color && <ColorBox bgcolor={obj.color} />}

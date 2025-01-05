@@ -52,10 +52,27 @@ export const SelectCardWithImage: React.FC<Props> = ({
 }) => {
   if (!isDisplay) return <></>
   return (
-    <Accordion disabled={disabled} style={{ marginBottom: '16px', background: isDark ? '#383838' : 'unset' }} defaultExpanded={defaultExpanded}>
+    <Accordion
+      disabled={disabled}
+      style={isDark ? { marginBottom: '16px', background: '#383838' } : { marginBottom: '16px' }}
+      defaultExpanded={defaultExpanded}
+    >
       <AccordionSummary
         expandIcon={
-          <Fab size="small" tabIndex={-1} style={{ boxShadow: 'unset' }}>
+          <Fab
+            size="small"
+            tabIndex={-1}
+            style={
+              isDark
+                ? {
+                    boxShadow: 'unset',
+                    background: '#383838',
+                    color: 'white',
+                    border: '1px solid white'
+                  }
+                : {}
+            }
+          >
             <ExpandLessIcon />
           </Fab>
         }
@@ -93,7 +110,7 @@ export const SelectCardWithImage: React.FC<Props> = ({
           {!disabled &&
             objects?.map((obj, i) => {
               return (
-                <Box key={`${obj.label}-${i}`} px={0.3} className={className}>
+                <Box key={`${obj.label}-${i}`} px={0.3} className={className} bgcolor={isDark ? '#737373' : ''}>
                   <Button
                     variant={obj.label === selectedLabel ? 'contained' : 'outlined'}
                     color={obj.label === selectedLabel ? 'primary' : 'inherit'}

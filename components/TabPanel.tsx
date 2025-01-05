@@ -11,7 +11,7 @@ type Props = {
 export const TabPanel: React.FC<Props> = ({ selectedIndex, index, children, isDark }) => {
   if (index !== selectedIndex) return <></>
   return (
-    <Box border={'solid 1px #eee'} bgcolor={isDark ? 'black' : '#eee'} textAlign="center">
+    <Box border={`solid 1px ${isDark ? 'black' : '#eee'}`} bgcolor={isDark ? 'black' : '#eee'} textAlign="center">
       {children}
     </Box>
   )
