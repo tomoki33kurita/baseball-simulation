@@ -65,7 +65,7 @@ export const LEATHER_THICKNESS: BaseItem[] = [
 
 export const CORE_HARDNESSES: BaseItem[] = [
   { label: '普通', value: 'normal' },
-  { label: '硬め', value: 'hard' }
+  { label: '硬く', value: 'hard' }
 ]
 
 export const GLOVE_SIZES: BaseItem[] = [
