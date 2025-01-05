@@ -236,7 +236,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         objects={CORE_HARDNESSES}
         isError={coreHardness.value === 'unselected'}
         defaultExpanded={coreHardness.value === 'unselected'}
-        description={"Genuineでは'硬め'を推奨しております。"}
+        description={"Genuineでは'硬く'を推奨しております。"}
         handleChange={handle.coreHardness}
         isDark
       />
