@@ -35,6 +35,7 @@ export const getGenuineBaseCells = (
     default:
       return [
         genGloveBaseCell('基本モデル', baseModelStateObj),
+        genGloveBaseCell('種目', state.ballType),
         genGloveBaseCell('革の厚さ', state.leatherThickness),
         genGloveBaseCell('手袋サイズ', state.gloveSize),
         isCatcher ? dummy : genGloveBaseCell('小指の仕様', state.twoFingerInLittleSlot),
@@ -44,7 +45,6 @@ export const getGenuineBaseCells = (
         isYT22 ? genGloveBaseCell('ウェブ-捕球面紐通し', state.palmToWebConnectLaceStyle) : dummy,
         isMeshSpecified ? genGloveBaseCell('背面メッシュカラー', state.meshColor) : dummy,
         genGloveBaseCell('サイズ', state.size),
-        // isCatcher ? dummy : genGloveBaseCell('ウェブパーツ', state.webParts),
         isCatcher ? dummy : genGloveBaseCell('ウェブパーツ', state.webParts),
         isSelectableWebLaceStyle ? genGloveBaseCell('ウェブ紐スタイル', state.webLaceStyle) : dummy,
         isGlove ? genGloveBaseCell('背面紐通し', state.backLaceStyle) : dummy,

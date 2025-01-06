@@ -36,6 +36,7 @@ export type PartsItem = {
     | 'palmToWebConnectLaceStyle'
     | 'genuineBrandMark'
     | 'twoFingerInLittleSlot'
+    | 'ballType'
   >
   // value: keyof typeof LEATHER_COLORS_BY_PARTS
 }
@@ -52,6 +53,7 @@ export type DrawerIndex = 0 | 1
 export type GenuineBaseModel = {} & BaseModel
 
 export type GenuineState = {
+  ballType: BaseItemWithPrice
   baseModel: GenuineBaseModel
   dominantArm: BaseItem
   backStyle: BaseItemWithPrice

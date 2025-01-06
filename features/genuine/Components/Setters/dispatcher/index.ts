@@ -20,7 +20,8 @@ import {
   FINGER_GUARDS_CATCHER,
   JUNIOR_GLOVE_SIZES,
   TWO_FINGER_LITTLE_SLOTS,
-  FIRST_BACK_FINGER_GUARDS
+  FIRST_BACK_FINGER_GUARDS,
+  BALL_TYPES
 } from '@/features/genuine/Constants/base'
 import { objectsFilter } from '@/util/logic'
 import { ResponseDispatch } from '@/features/genuine/types'
@@ -49,7 +50,8 @@ import {
   SET_GENUINE_BRAND_MARK,
   SET_GENUINE_BRAND_MARK_COLOR,
   SET_TWO_FINGER_IN_LITTLE_SLOT,
-  SET_LININGS
+  SET_LININGS,
+  SET_BALL_TYPE
 } from '@/features/genuine/Constants/action'
 import {
   BINDINGS,
@@ -64,6 +66,7 @@ import {
 
 // ここはブランドのドメイン
 const dispatchBaseStore = {
+  ballType: { objects: BALL_TYPES, actionType: SET_BALL_TYPE },
   dominantArm: { objects: DOMINANT_ARMS, actionType: SET_DOMINANT_ARM },
   backStyle: { objects: ALL_BACK_STYLES, actionType: SET_BACK_STYLE },
   meshColor: { objects: MESH_COLORS, actionType: SET_MESH_COLOR },

@@ -52,7 +52,8 @@ import {
   SET_INDEX_MIDDLE_RING_LITTLE_COLOR,
   SET_THUMB_COLOR,
   SET_GENUINE_BRAND_MARK_COLOR,
-  SET_GENUINE_BRAND_MARK
+  SET_GENUINE_BRAND_MARK,
+  SET_BALL_TYPE
 } from '@/features/genuine/Constants/action'
 import { GenuineState } from '../types'
 import { Embroidery } from '@/types'
@@ -105,6 +106,7 @@ export const initialState: GenuineState = {
       height: 0
     }
   },
+  ballType: unselectedStateWithPrice,
   twoFingerInLittleSlot: unselectedState,
   dominantArm: unselectedState,
   meshColor: unselectedColorState,
@@ -213,6 +215,8 @@ export const reducer = (state: any, action: any) => {
       }
     case SET_BASE_MODEL:
       return { ...state, baseModel: action.baseModel }
+    case SET_BALL_TYPE:
+      return { ...state, ballType: action.ballType }
     case SET_DOMINANT_ARM:
       return { ...state, dominantArm: action.dominantArm }
     case SET_BACK_STYLE:

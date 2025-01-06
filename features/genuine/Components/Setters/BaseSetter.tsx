@@ -22,7 +22,8 @@ import {
   GENUINE_EMBROIDERIES,
   GENUINE_ENGRAVINGS,
   JUNIOR_GLOVE_SIZES,
-  TWO_FINGER_LITTLE_SLOTS
+  TWO_FINGER_LITTLE_SLOTS,
+  BALL_TYPES
 } from '@/features/genuine/Constants/base'
 import { SelectCard } from '@/components/Setters/SelectCard'
 import { SelectCardWithImage } from '@/components/Setters/SelectCardWithImage'
@@ -42,6 +43,7 @@ type Props = {
 
 export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, dispatch }) => {
   const {
+    ballType,
     dominantArm,
     backStyle,
     palmToWebConnectLaceStyle,
@@ -62,6 +64,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
     genuineBrandMarkColor
   } = state
   const handle = {
+    ballType: handleGenuine(dispatch)('ballType'),
     dominantArm: handleGenuine(dispatch)('dominantArm'),
     backStyle: handleGenuine(dispatch)('backStyle'),
     palmToWebConnectLaceStyle: handleGenuine(dispatch)('palmToWebConnectLaceStyle'),
@@ -96,6 +99,15 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
 
   return (
     <TabPanel selectedIndex={selectedIndex} index={0} isDark>
+      <SelectCard
+        summary={'種目'} // ballType
+        selectedLabel={ballType.label}
+        objects={BALL_TYPES}
+        isError={ballType.value === 'unselected'}
+        handleChange={handle.ballType}
+        defaultExpanded={ballType.value === 'unselected'}
+        isDark
+      />
       <SelectCard
         summary={'利き腕'} // dominantArm
         selectedLabel={dominantArm.label}

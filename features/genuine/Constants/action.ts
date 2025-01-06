@@ -1,5 +1,6 @@
 // BASE SET
 export const SET_BASE_MODEL = 'setBaseModel'
+export const SET_BALL_TYPE = 'setBallType'
 export const SET_DOMINANT_ARM = 'setDominantArm'
 export const SET_BACK_STYLE = 'setBackStyle'
 export const SET_LININGS = 'setLinings'
@@ -72,6 +73,7 @@ export const SET_INDEX_FINGER_TIP_OUT_COLOR = 'setIndexFingerTipOutColor'
 
 // これはカラーだけに関するconstantsなので、別ファイルにあるべき
 export const DISPATCHER = {
+  ballType: SET_BALL_TYPE,
   dominantArm: SET_DOMINANT_ARM,
   backStyle: SET_BACK_STYLE,
   fingerGuard: SET_FINGER_GUARD,

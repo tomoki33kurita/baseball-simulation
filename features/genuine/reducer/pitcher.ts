@@ -51,7 +51,8 @@ import {
   SET_LOOP_OF_RING_FINGER_COLOR,
   SET_GENUINE_BRAND_MARK,
   SET_GENUINE_BRAND_MARK_COLOR,
-  SET_TWO_FINGER_IN_LITTLE_SLOT
+  SET_TWO_FINGER_IN_LITTLE_SLOT,
+  SET_BALL_TYPE
 } from '@/features/genuine/Constants/action'
 import { GenuineState } from '../types'
 
@@ -103,6 +104,7 @@ export const initialState: GenuineState = {
       height: 0
     }
   },
+  ballType: unselectedStateWithPrice,
   twoFingerInLittleSlot: unselectedState,
   dominantArm: unselectedState,
   fingerGuard: unselectedState,
@@ -210,6 +212,8 @@ export const reducer = (state: any, action: any) => {
       }
     case SET_BASE_MODEL:
       return { ...state, baseModel: action.baseModel }
+    case SET_BALL_TYPE:
+      return { ...state, ballType: action.ballType }
     case SET_BACK_STYLE:
       return { ...state, backStyle: action.backStyle, drawerIndex: 0 }
     case SET_MESH_COLOR:

@@ -1,5 +1,10 @@
 import { BankLaceDirectionItem, BaseItem, BaseItemWithPrice, ColorItem, WebParts } from '@/types'
 
+export const BALL_TYPES: BaseItemWithPrice[] = [
+  { label: '硬式', value: 'hard', price: 0 },
+  { label: '軟式', value: 'rubber', price: 0 }
+]
+
 export const DOMINANT_ARMS: BaseItem[] = [
   { label: '右投げ', value: 'rightThrow' },
   { label: '左投げ', value: 'leftThrow' }
