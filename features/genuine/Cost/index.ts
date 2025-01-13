@@ -4,9 +4,11 @@ import { JUNIOR_LIST } from '../Constants/model'
 import { positionChecker } from '@/util/logic'
 import { getColorCells } from '@/features/Logic'
 
-const getMultiColorsCost = (state: GenuineState): number => {
+export const getMultiColorsCost = (state: GenuineState): number => {
   const multiColors = getColorCells(state).filter(
-    (o) => !['linings', 'binding', 'lace', 'welting', 'stitch', 'mouton', 'genuineBrandMarkColor', 'genuineLabel'].includes(o.partsKey)
+    (o) =>
+      !['linings', 'binding', 'lace', 'welting', 'stitch', 'mouton', 'genuineBrandMarkColor', 'genuineLabel'].includes(o.partsKey) &&
+      o.value !== 'unselected'
   )
   const multiColorsCount = multiColors.reduce((a: string[], c) => {
     if (a.includes(c.label)) return a

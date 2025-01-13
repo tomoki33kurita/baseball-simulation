@@ -1,4 +1,4 @@
-import { BaseItem } from '@/types'
+import { BaseItem, BaseItemWithPrice } from '@/types'
 import { GenuineState } from '@/features/genuine/types'
 import { positionChecker } from '@/util/logic'
 import { getGenuineBackStyle } from '../Setters/logic'
@@ -16,7 +16,12 @@ export const getGenuineBaseCells = (
   label: string
   value: string
 }[] => {
-  const genGloveBaseCell = (head: string, item: BaseItem) => ({ head, label: item.label, value: item.value })
+  const genGloveBaseCell = (head: string, item: BaseItem | BaseItemWithPrice) => {
+    if ('price' in item) {
+      return { head, label: `${item.label} (+${item.price.toLocaleString()}円)`, value: item.value }
+    }
+    return { head, label: item.label, value: item.value }
+  }
   const productNumber = state.baseModel.productNumber
   const baseModelStateObj = {
     label: productNumber,

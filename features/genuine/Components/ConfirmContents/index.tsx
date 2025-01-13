@@ -15,6 +15,7 @@ import { useDrawGenuineCatcherMittRearSurface } from '../../Drawer/hooks/catcher
 import { useDrawGenuineFirstMittRearSurface } from '../../Drawer/hooks/firstMitt/useRearSurface'
 import { useDrawGenuineFirstMittPalmSurface } from '../../Drawer/hooks/firstMitt/usePalmSurface'
 import { SimulationContent } from '../SimulationContent'
+import { getMultiColorsCost } from '../../Cost'
 
 type Props = {
   state: GenuineState
@@ -31,9 +32,9 @@ export const GenuineConfirmContents: React.FC<Props> = ({ state, position }) => 
   useDrawGenuineFirstMittRearSurface(rearSurfaceId, state)
   useDrawGenuineFirstMittPalmSurface(palmSurfaceId, state)
 
-  const basePrice = 0
   const baseCells = getGenuineBaseCells(state)
   const colorCells = getGenuineColorCells(state)
+  const multiColorsCost = getMultiColorsCost(state)
 
   const props = { state, position }
   return (
@@ -45,7 +46,7 @@ export const GenuineConfirmContents: React.FC<Props> = ({ state, position }) => 
       <Box px={1} textAlign="left" color={'orange'} fontWeight={'bold'} fontSize={14}>
         ※グラブ・ミットの描画、刺繍の位置・書体はイメージであり、実際とは異なる場合があります。
       </Box>
-      <SimulationContent {...{ ...props, baseCells, colorCells }} isDark />
+      <SimulationContent {...{ ...props, baseCells, colorCells, multiColorsCost }} isDark />
       <Prices {...{ state }} isDark />
     </Box>
   )
