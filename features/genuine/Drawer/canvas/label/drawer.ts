@@ -99,11 +99,10 @@ export const genuineFirstMittLabelDrawer = (ctx: CanvasRenderingContext2D | null
 
 export const genuineCatcherMittLabelDrawer = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
   if (!ctx) return
-  const { isCatcher } = positionChecker(state.baseModel.position)
   const isUnselectedBackStyle = state.backStyle.value === 'unselected'
   if (state.genuineLabel.value === 'unselected') return
 
-  if (state.dominantArm.value === 'rightThrow') {
+  if (['rightThrow', 'unselected'].includes(state.dominantArm.value)) {
     if (isUnselectedBackStyle) {
       switch (state.baseModel.productNumber) {
         case 'TM-411':

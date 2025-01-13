@@ -13,8 +13,7 @@ export const Prices: React.FC<Props> = ({ state, isDark }) => {
   const basePrice = calculateBaseCost(brand, state)
   const optionPrice = calculateOptionCost(brand, state)
   const embroideryPrice = calculateEmbroideryCost(brand, state)
-  const totalPrice = basePrice + embroideryPrice + (optionPrice || 0)
-
+  const totalPrice = basePrice + embroideryPrice + optionPrice
   return (
     <Box border={`solid 1px ${isDark ? '#fff' : '#eee'}`} p={1} my={1}>
       <PriceDisplay label={'基本金額'} amount={basePrice} {...{ isDark }} />

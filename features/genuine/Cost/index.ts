@@ -2,6 +2,21 @@ import { Embroidery } from '@/types'
 import { GenuineState } from '../types'
 import { JUNIOR_LIST } from '../Constants/model'
 import { positionChecker } from '@/util/logic'
+import { getColorCells } from '@/features/Logic'
+
+const getMultiColorsCost = (state: GenuineState): number => {
+  const multiColors = getColorCells(state).filter(
+    (o) => !['linings', 'binding', 'lace', 'welting', 'stitch', 'mouton', 'genuineBrandMarkColor', 'genuineLabel'].includes(o.partsKey)
+  )
+  const multiColorsCount = multiColors.reduce((a: string[], c) => {
+    if (a.includes(c.label)) return a
+    return c.label ? [...a, c.label] : a
+  }, [])
+  const multiColorsCost = multiColorsCount.length < 2 ? 0 : multiColorsCount.length * 1100
+  return multiColorsCost
+}
+
+const sum = (targets: number[]): number => targets.reduce((a: number, c: number) => a + c, 0)
 
 export const calculateGenuineBaseCost = (state: GenuineState): number => {
   const isJuniorModel = JUNIOR_LIST.includes(state.baseModel.productNumber)
@@ -48,8 +63,9 @@ export const calculateGenuineOptionCost = (state: GenuineState): number => {
   const sizeCost = state.size.price
   const meshCost = state.backStyle.price
   const genuineBrandMarkCost = state.genuineBrandMark.price
+  const multiColorsCost = getMultiColorsCost(state)
 
-  const optionCost = labelCost + deerSkinCost + loopOfRingFingerCost + sizeCost + meshCost + genuineBrandMarkCost
+  const optionCost = sum([labelCost, deerSkinCost, loopOfRingFingerCost, sizeCost, meshCost, genuineBrandMarkCost, multiColorsCost])
   return optionCost
 }
 

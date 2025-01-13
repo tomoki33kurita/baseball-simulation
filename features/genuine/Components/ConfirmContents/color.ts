@@ -11,13 +11,15 @@ const dummy = {
   partsKey: 'dummy'
 }
 
-const genGloveColorCell = (head: string, item: ColorItem, partsKey: string) => ({
-  head,
-  label: item.label,
-  color: item.color,
-  value: item.value,
-  partsKey
-})
+const genGloveColorCell = (head: string, item: ColorItem, partsKey: string) => {
+  return {
+    head,
+    label: item.label,
+    color: item.color,
+    value: item.value,
+    partsKey
+  }
+}
 
 const getFingerParts = (state: GenuineState) => {
   const backStyle = state.backStyle.value

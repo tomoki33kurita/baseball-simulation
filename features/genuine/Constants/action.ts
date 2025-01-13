@@ -5,7 +5,6 @@ export const SET_DOMINANT_ARM = 'setDominantArm'
 export const SET_BACK_STYLE = 'setBackStyle'
 export const SET_LININGS = 'setLinings'
 export const SET_WEB_PARTS = 'setWebParts'
-export const SET_LABEL_STAND = 'setLabelStand'
 export const SET_FINGER_GUARD = 'setFingerGuardType'
 export const SET_MATERIAL_PACK = 'setMaterialPack'
 export const SET_SIZE = 'setSize'
@@ -93,7 +92,6 @@ export const DISPATCHER = {
   linings: SET_LININGS,
   welting: SET_WELTING,
   mouton: SET_MOUTON_COLOR,
-  labelStand: SET_LABEL_STAND,
   meshColor: SET_MESH_COLOR,
   size: SET_SIZE,
   webLaceStyle: SET_WEB_LACE_STYLE,

@@ -46,7 +46,7 @@ export const GenuineConfirmContents: React.FC<Props> = ({ state, position }) => 
         ※グラブ・ミットの描画、刺繍の位置・書体はイメージであり、実際とは異なる場合があります。
       </Box>
       <SimulationContent {...{ ...props, baseCells, colorCells }} isDark />
-      <Prices {...{ ...props, basePrice }} isDark />
+      <Prices {...{ state }} isDark />
     </Box>
   )
 }
