@@ -28,7 +28,6 @@ import {
   SET_MOUTON_COLOR,
   SET_BASE_MODEL,
   SET_BINDING_COLOR,
-  SET_LABEL_STAND,
   SET_FINGER_GUARD_COLOR,
   SET_BACK_STYLE,
   SET_MESH_COLOR,
@@ -113,7 +112,7 @@ export const initialState: GenuineState = {
   bankLaceDirection: unselectedState,
 
   materialPack: unselectedState,
-  webParts: unselectedColorState,
+  webParts: unselectedState,
   parts: { label: '全体', value: 'all' },
   all: unselectedColorState,
   palm: unselectedColorState,
@@ -195,7 +194,6 @@ export const reducer = (state: any, action: any) => {
         ringLittle: action.all,
         littleRing: action.all,
         littleOut: action.all,
-        labelStand: action.all,
         indexMiddleRingLittle: action.all, // catcher
         indexLeftMiddleRingRight: action.all
       }
@@ -247,8 +245,6 @@ export const reducer = (state: any, action: any) => {
         return { ...state, webParts: action.webParts, webLaceStyle: { label: '通常', value: 'normal' } }
       }
       return { ...state, webParts: action.webParts }
-    case SET_LABEL_STAND:
-      return { ...state, labelStand: action.labelStand, drawerIndex: 0 }
     case SET_LEATHER_COLOR:
       return { ...state, palm: action.palm }
     case SET_BINDING_COLOR:

@@ -28,7 +28,6 @@ import {
   SET_MOUTON_COLOR,
   SET_BASE_MODEL,
   SET_BINDING_COLOR,
-  SET_LABEL_STAND,
   SET_FINGER_GUARD_COLOR,
   SET_FINGER_STAND_COLOR,
   SET_THUMB_INDEX_MIDDLE_RIGHT_COLOR,
@@ -120,7 +119,7 @@ export const initialState: GenuineState = {
   fingerGuard: unselectedState,
   fingerGuardColor: unselectedColorState,
   materialPack: unselectedState,
-  webParts: unselectedColorState,
+  webParts: unselectedState,
   parts: { label: '全体', value: 'all' },
   all: unselectedColorState,
   palm: unselectedColorState,
@@ -249,8 +248,6 @@ export const reducer = (state: any, action: any) => {
       }
     case SET_WEB_PARTS:
       return { ...state, webParts: action.webParts }
-    case SET_LABEL_STAND:
-      return { ...state, labelStand: action.labelStand, drawerIndex: 0 }
     case SET_LEATHER_COLOR:
       return { ...state, palm: action.palm }
     case SET_BINDING_COLOR:
