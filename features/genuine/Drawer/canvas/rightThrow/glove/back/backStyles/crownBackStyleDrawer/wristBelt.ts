@@ -7,7 +7,8 @@ export const wristBelt = (ctx: CanvasRenderingContext2D, leatherColor: string, s
   ctx.quadraticCurveTo(319, 538, 340, 588) // ベルト左下
   ctx.quadraticCurveTo(428, 599, 528, 586) // ベルト右下
   ctx.quadraticCurveTo(560, 508, 499, 434) // ベルト右上
-  ctx.quadraticCurveTo(486, 476, 291, 488) // ベルト左上
+  ctx.quadraticCurveTo(485, 470, 447, 474) // ベルト上辺_中間
+  ctx.quadraticCurveTo(348, 486, 291, 488) // ベルト左上
   ctx.fill()
   ctx.stroke()
   ctx.closePath()
@@ -23,6 +24,14 @@ export const wristBelt = (ctx: CanvasRenderingContext2D, leatherColor: string, s
   // 手口ベルト縦＿内側
   ctx.moveTo(496, 448) // 上
   ctx.quadraticCurveTo(547, 511, 520, 587) // 折り返し左下_外
+  // 手口ベルト横＿上辺
+  ctx.moveTo(292, 492) // 左
+  ctx.quadraticCurveTo(442, 478, 442, 478) // 中間
+  ctx.quadraticCurveTo(490, 472, 499, 440) // 右
+  // 手口ベルト横＿可変
+  ctx.moveTo(339, 586) // 左
+  ctx.quadraticCurveTo(420, 596, 519, 585) // 右
+
   ctx.stroke()
   ctx.setLineDash([])
   ctx.lineWidth = 0.8

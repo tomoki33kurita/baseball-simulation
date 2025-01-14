@@ -72,7 +72,9 @@ export const BINDINGS: ColorItem[] = [
   { label: 'ブラック', value: 'black', color: '#1E1E1E' },
   { label: 'サックス', value: 'sax', color: '#3a8daa' },
   { label: 'インペリアルブラック', value: 'imperialNavy', color: '#0d194a' },
-  { label: 'アベンチュリンブラウン', value: 'aventurineBrown', color: '#420011' }
+  { label: 'アベンチュリンブラウン', value: 'aventurineBrown', color: '#420011' },
+  { label: 'シルバー', value: 'silver', color: '#cfcfcf' },
+  { label: 'ゴールド', value: 'gold', color: '#fccd32' }
 ]
 
 export const WELTINGS: ColorItem[] = [
@@ -99,7 +101,9 @@ export const WELTINGS: ColorItem[] = [
   { label: '玉ハミ(ブラック)', value: 'ballBlack', color: '#1E1E1E' },
   { label: '玉ハミ(サックス)', value: 'ballSax', color: '#3a8daa' },
   { label: '玉ハミ(インペリアルブラック)', value: 'ballImperialNavy', color: '#0d194a' },
-  { label: '玉ハミ(アベンチュリンブラウン)', value: 'ballAventurineBrown', color: '#420011' }
+  { label: '玉ハミ(アベンチュリンブラウン)', value: 'ballAventurineBrown', color: '#420011' },
+  { label: '玉ハミ(シルバー)', value: 'silver', color: '#cfcfcf' },
+  { label: '玉ハミ(ゴールド)', value: 'gold', color: '#fccd32' }
 ]
 
 export const STITCHES: ColorItem[] = [

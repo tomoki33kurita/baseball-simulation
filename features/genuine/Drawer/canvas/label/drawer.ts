@@ -2,7 +2,6 @@ import { getBackStyle } from '@/features/genuine/Components/Setters/logic'
 import { GenuineState } from '@/features/genuine/types'
 import { genuineLabel } from '.'
 import { wristBelt } from '../rightThrow/glove/back/backStyles/crownBackStyleDrawer/wristBelt'
-import { positionChecker } from '@/util/logic'
 import { startInversion, undoInversion } from '@/util/canvas'
 
 export const genuineLabelDrawer = (ctx: CanvasRenderingContext2D | null, state: GenuineState, width: number): void => {

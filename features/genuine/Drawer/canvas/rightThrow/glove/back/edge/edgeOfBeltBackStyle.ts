@@ -11,7 +11,7 @@ export const bindingOfBeltBackStyle = (ctx: CanvasRenderingContext2D, leatherCol
   ctx.quadraticCurveTo(298, 389, 341, 369) // 中指ハミダシ
   ctx.quadraticCurveTo(411, 340, 467, 375) // 折り返し中間
   ctx.quadraticCurveTo(500, 395, 499, 432) // 折り返し右下
-  ctx.quadraticCurveTo(490, 468, 440, 476) // ラベル左六角形頂点
+  ctx.quadraticCurveTo(490, 468, 440, 476) //
   ctx.quadraticCurveTo(291, 489, 291, 489) // 左側面ヘリ革合流地点下
   ctx.quadraticCurveTo(285, 478, 285, 478) // 左側面ヘリ革合流地点上 / ベルト内側直線左
   ctx.quadraticCurveTo(290, 470, 295, 473) // ベルト内側直線右
