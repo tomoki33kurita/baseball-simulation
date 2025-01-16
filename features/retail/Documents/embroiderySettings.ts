@@ -2,6 +2,7 @@ import { DocumentContentGenerator, Embroidery, State } from '@/types'
 import { getFiveEmbroideryCells } from '@/features/five/Components/ConfirmContents/embroidery'
 import { getOrderType } from '@/features/five/Components/Setters/logic'
 import { FiveState } from '@/features/five/types'
+import { getGenuineEmbroideryCells } from '@/features/genuine/Components/ConfirmContents/embroidery'
 
 const genEmbroideryPdfHeader = (index: number) => ({
   text: `刺繍設定${index + 1}`,
@@ -16,6 +17,8 @@ export const switchEmbroideryCells = (state: State) => (e: Embroidery) => {
       const fiveState = state as FiveState
       const { isCustomOrder } = getOrderType(fiveState.orderType)
       return getFiveEmbroideryCells(e, isCustomOrder)
+    case 'genuine':
+      return getGenuineEmbroideryCells(e)
     default:
       return []
   }
