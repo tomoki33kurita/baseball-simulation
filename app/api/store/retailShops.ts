@@ -1,4 +1,4 @@
-import { ALL_BRANDS, FIVE } from '@/features/retail/Constants/brands'
+import { ALL_BRANDS, FIVE, GENUINE } from '@/features/retail/Constants/brands'
 import { Retail } from '@/types'
 
 const demoKurita = { name: 'くりたデモ', email: 'tomoki_kurita@b-ridge.org', selectableBrands: ALL_BRANDS }
@@ -30,6 +30,7 @@ const bandaiSports = { name: 'バンダイスポーツ', email: 'bandai3kobayash
 const fiveMain = { name: 'FIVE本社用', email: '20kaikai04@gmail.com', selectableBrands: [FIVE] }
 const aobaya = { name: 'アオバヤスポーツ', email: 'front.aobaya@gmail.com', selectableBrands: [FIVE] }
 const ojivaInternational = { name: 'Ojiva international Ltd.', email: 'yoshio.ojiva@gmail.com', selectableBrands: [FIVE] } // 台湾
+const miuraMain = { name: 'Genuine 三浦知晃', email: 'genuine.japan.2023@gmail.com', selectableBrands: [GENUINE] }
 // const a = { name: '', email: '', selectableBrands: [FIVE] }
 
 export const retailShops: Retail[] = [
@@ -61,5 +62,6 @@ export const retailShops: Retail[] = [
   bandaiSports,
   aobaya,
   ojivaInternational,
-  fiveMain
+  fiveMain,
+  miuraMain
 ]
