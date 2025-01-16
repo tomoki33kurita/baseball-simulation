@@ -1,4 +1,7 @@
-export const littleFingerOfRegularBackStyle = (ctx: CanvasRenderingContext2D, color: string, stitchColor: string): void => {
+import { GenuineState } from '@/features/genuine/types'
+
+export const littleFingerOfRegularBackStyle = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
+  const color = state.littleOut.color
   ctx.lineWidth = 0.8
   ctx.strokeStyle = '#383838'
   ctx.fillStyle = color
@@ -19,24 +22,22 @@ export const littleFingerOfRegularBackStyle = (ctx: CanvasRenderingContext2D, co
   ctx.beginPath()
   ctx.lineWidth = 1.4
   ctx.fillStyle = '#fff'
-  // 左列
-  ctx.moveTo(174, 261)
-  ctx.arc(174, 261, 4, 0, 2 * Math.PI)
-  ctx.moveTo(170, 321)
-  ctx.arc(170, 321, 4, 0, 2 * Math.PI)
-  ctx.moveTo(175, 379)
-  ctx.arc(175, 379, 4, 0, 2 * Math.PI)
-  // 右列
-  ctx.moveTo(212, 238)
-  ctx.arc(212, 238, 4, 0, 2 * Math.PI)
-  ctx.moveTo(216, 306)
-  ctx.arc(216, 306, 4, 0, 2 * Math.PI)
-  ctx.moveTo(223, 364)
-  ctx.arc(223, 364, 4, 0, 2 * Math.PI)
+
+  if (state.genuineBrandMark.value !== 'genuineEmbroidery') {
+    // 左列
+    ctx.moveTo(174, 261)
+    ctx.arc(174, 261, 4, 0, 2 * Math.PI)
+    ctx.moveTo(170, 321)
+    ctx.arc(170, 321, 4, 0, 2 * Math.PI)
+    ctx.moveTo(175, 379)
+    ctx.arc(175, 379, 4, 0, 2 * Math.PI)
+  }
   ctx.stroke()
   ctx.fill()
   ctx.closePath()
+
   // stitch
+  const stitchColor = state.stitch.color
   ctx.strokeStyle = stitchColor
   ctx.beginPath()
   ctx.setLineDash([3, 3])

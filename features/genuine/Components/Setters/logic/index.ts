@@ -213,11 +213,18 @@ export const getGenuineBackStyle = (state: GenuineState) => {
   const isMesh = ['normalMesh', 'crownMesh'].includes(state.backStyle.value)
   const isFirstBackStyle = ['MIU-T4'].includes(state.baseModel.productNumber)
   const isCrownBackStyle = ['crown', 'crownMesh'].includes(state.backStyle.value)
+  const isTMBackStyle = ['tmBack'].includes(state.backStyle.value) // catcher
+  const isRegularBackStyle = ['regular'].includes(state.backStyle.value)
+  const isBeltBackStyle = ['belt'].includes(state.backStyle.value) // catcher
   const isUnselectedBackStyle = state.backStyle.value === 'unselected'
+
   return {
     isMesh,
     isFirstBackStyle,
     isCrownBackStyle,
+    isTMBackStyle,
+    isRegularBackStyle,
+    isBeltBackStyle,
     isUnselectedBackStyle
   }
 }

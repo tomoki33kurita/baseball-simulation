@@ -20,13 +20,14 @@ export const ringRightMiddleLeftFingerOfRegularBackStyle = (ctx: CanvasRendering
   ctx.beginPath()
   ctx.lineWidth = 1.4
   ctx.fillStyle = '#fff'
-  // 中指＿左列
-  ctx.moveTo(251, 183)
-  ctx.arc(251, 183, 4, 0, 2 * Math.PI)
-  ctx.moveTo(245, 248)
-  ctx.arc(245, 248, 4, 0, 2 * Math.PI)
-  ctx.moveTo(247, 306)
-  ctx.arc(247, 306, 4, 0, 2 * Math.PI)
+
+  // 右列
+  ctx.moveTo(212, 238)
+  ctx.arc(212, 238, 4, 0, 2 * Math.PI)
+  ctx.moveTo(216, 306)
+  ctx.arc(216, 306, 4, 0, 2 * Math.PI)
+  ctx.moveTo(223, 364)
+  ctx.arc(223, 364, 4, 0, 2 * Math.PI)
   ctx.stroke()
   ctx.fill()
   ctx.closePath()

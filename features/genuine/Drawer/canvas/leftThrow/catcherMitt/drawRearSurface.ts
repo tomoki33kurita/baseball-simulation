@@ -7,10 +7,10 @@ import { webDrawer } from '../../rightThrow/catcherMitt/back/webDrawer'
 import { laceDrawer } from '../../rightThrow/catcherMitt/back/lace'
 import { thumbHook } from '../../rightThrow/catcherMitt/back/thumbHook'
 import { littleHook } from '../../rightThrow/catcherMitt/back/littleHook'
-import { genuineCatcherMittLabelDrawer, genuineLabelDrawer } from '../../label/drawer'
+import { genuineCatcherMittLabelDrawer } from '../../label/drawer'
 import { paisleySelected } from '../../paisleySelected'
 import { GenuineState } from '@/features/genuine/types'
-import { genuineBrandMarkEmbroideryDrawer, genuineLeftThrowBrandMarkEmbroideryDrawer } from '../../genuineMark'
+import { genuineLeftThrowBrandMarkEmbroideryDrawer } from '../../genuineMark'
 
 export const drawLeftThrowGenuineCatcherMittRearSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState, width: number): void => {
   if (!ctx) return

@@ -11,7 +11,7 @@ export const tmBackStyleDrawer = (ctx: CanvasRenderingContext2D, state: GenuineS
   const isUnselectedBackStyle = state.backStyle.value === 'unselected'
   const isDefaultTMBack = isUnselectedBackStyle && state.baseModel.productNumber === 'TM-411'
   if (!isTMBack && !isDefaultTMBack) return
-  otherThanThumbFingerOfTMBackStyle(ctx, state.indexMiddleRingLittle.color, state.stitch.color) // 小指側の指袋
+  otherThanThumbFingerOfTMBackStyle(ctx, state) // 小指側の指袋
   thumbFingerOfTMBackStyle(ctx, state?.thumb.color, state.stitch.color) // 親指側の指袋
   bindingOfCommon(ctx, state.binding.color) // ヘリ革
   tmBackTypeDrawer(ctx, state) // ベルトタイプ別の描画

@@ -21,7 +21,7 @@ export const regularStyleDrawer = (ctx: CanvasRenderingContext2D, state: Genuine
   // 薬指
   ringRightMiddleLeftFingerOfRegularBackStyle(ctx, state.middleLeftRing.color, state.stitch.color)
   // 小指袋
-  littleFingerOfRegularBackStyle(ctx, state.littleOut.color, state.stitch.color)
+  littleFingerOfRegularBackStyle(ctx, state)
   // ハミダシ
   weltingOfMiddleFingerRegularBackStyle(ctx, state.welting)
   // ヘリ革
