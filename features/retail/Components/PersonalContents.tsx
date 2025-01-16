@@ -12,7 +12,13 @@ type Props = {
 export const PersonalContents: React.FC<Props> = ({ personal, register }) => {
   return (
     <Box pt={2}>
-      <Box pt={2} width={'50%'} mx={'auto'}>
+      <Box
+        pt={2}
+        sx={{
+          width: { xs: '100%', sm: '50%' },
+          mx: { xs: 'auto', sm: '0' }
+        }}
+      >
         <Box fontWeight="bold" fontSize="16px">
           お客様情報
         </Box>

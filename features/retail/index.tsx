@@ -1,5 +1,5 @@
 'use client'
-import { Box, AppBar, Toolbar, ThemeProvider } from '@mui/material'
+import { Box, AppBar, Toolbar, ThemeProvider, Grid } from '@mui/material'
 import { FC, useState } from 'react'
 import { SavedData, State } from '@/types'
 import { Auth } from '../auth'
@@ -32,8 +32,10 @@ const Retail: FC = () => {
                 <RetailInfo {...{ retail, handleToTop, handleSignOut }} />
               </Toolbar>
             </AppBar>
-            <SearchForm {...{ disabled, setResponse }} />
-            {response !== null && <SearchResult {...{ response }} />}
+            <Grid container>
+              <SearchForm {...{ disabled, setResponse }} />
+              {response !== null && <SearchResult {...{ response }} />}
+            </Grid>
           </Box>
         </Auth>
       </RetailContext.Provider>
