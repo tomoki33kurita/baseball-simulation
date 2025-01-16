@@ -105,7 +105,7 @@ export const WELTINGS: ColorItem[] = [
 export const STITCHES: ColorItem[] = [
   { label: 'ブラック', value: 'black', color: '#1A1919' },
   { label: 'ホワイト', value: 'white', color: '#FFFFFF' },
-  { label: '金茶', value: 'GoldBrown', color: '#B2A666' },
+  { label: 'ゴールド', value: 'GoldBrown', color: '#B2A666' },
   { label: 'ネイビー', value: 'navy', color: '#2D2B54' },
   { label: 'グレー', value: 'gray', color: '#646464' },
   { label: 'オレンジ', value: 'orange', color: '#DF572C' },

@@ -81,7 +81,10 @@ const dispatchBaseStore = {
   bankLaceDirection: { objects: BANK_LACE_DIRECTIONS, actionType: SET_BANK_LACE_DIRECTION },
   loopOfRingFinger: { objects: LOOP_OF_RING_FINGERS, actionType: SET_LOOP_OF_RING_FINGER },
   genuineBrandMark: { objects: [...GENUINE_EMBROIDERIES, ...GENUINE_ENGRAVINGS], actionType: SET_GENUINE_BRAND_MARK },
-  genuineBrandMarkColor: { objects: STITCHES, actionType: SET_GENUINE_BRAND_MARK_COLOR },
+  genuineBrandMarkColor: {
+    objects: [...STITCHES, { label: 'シルバー', value: 'sliver', color: '#b8b8b8' }],
+    actionType: SET_GENUINE_BRAND_MARK_COLOR
+  },
   materialPack: { objects: MATERIAL_PACKS, actionType: SET_MATERIAL_PACK },
   fingerGuard: { objects: [...FINGER_GUARDS, ...FINGER_GUARDS_CATCHER, ...FIRST_BACK_FINGER_GUARDS], actionType: SET_FINGER_GUARD },
   webParts: { objects: WEB_PARTS, actionType: SET_WEB_PARTS },

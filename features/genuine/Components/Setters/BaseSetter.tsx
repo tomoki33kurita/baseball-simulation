@@ -287,7 +287,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
       <SelectCard
         summary={'Genuine刺繍カラー'} //  ringIntegratedColor
         selectedLabel={genuineBrandMarkColor.label}
-        objects={STITCHES}
+        objects={[...STITCHES, { label: 'シルバー', value: 'sliver', color: '#b8b8b8' }]}
         isError={genuineBrandMarkColor.value === 'unselected'}
         isDisplay={isSelectableGenuineMarkColor}
         defaultExpanded={genuineBrandMarkColor.value === 'unselected'}

@@ -116,7 +116,7 @@ export const SearchResult: React.FC<Props> = ({ response }) => {
           {supplierList.filter(supplierFilter(state.baseModel.brand)).map((supplier) => (
             <Box px={1} key={supplier.name}>
               <Button variant="contained" disabled={isProgress} onClick={() => handleSupplier(supplier)} type="submit">
-                {isProgress ? '送信中' : `${supplier.name}`}
+                {isProgress ? '送信中' : `${supplier.name}に発注`}
               </Button>
             </Box>
           ))}
