@@ -10,7 +10,7 @@ export const customerRemarks = (remarks: string, genCellContent: DocumentContent
     {
       table: {
         widths: ['100%'],
-        body: [[genCellContent('備考欄', remarks || '')]]
+        body: [[genCellContent('備考欄', remarks, 'left')]]
       }
     }
   ]
