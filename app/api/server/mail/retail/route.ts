@@ -82,8 +82,8 @@ const mailTextGenerator = (data: any) => {
             <img width=300 src="cid:palmImage"/>
           </div>
   
-          <div style="display:flex;width:600px;justify-content:space-between;">
-            <div>
+          <div style="display:flex; width:600px; justify-content:space-between;">
+            <div style="max-width:33%;">
               <div>
                 <h4 ${htmlH3Style}>基本設定</h4>
                 ${data.baseSettings.map((x: any, i: number) => `<div ${defaultFontSize}>(${i + 1}) ${x.head}：${x.label}</div>`).join('')}
@@ -102,7 +102,7 @@ const mailTextGenerator = (data: any) => {
               </div>
             </div>
   
-            <div ${flexMarginLeft}>
+            <div ${flexMarginLeft}  style="max-width:33%;">
               ${
                 data.colorSettings1.length > 0
                   ? `
@@ -125,7 +125,7 @@ const mailTextGenerator = (data: any) => {
               }
             </div>
   
-            <div ${flexMarginLeft}>
+            <div ${flexMarginLeft}  style="max-width:33%;">
               ${
                 data.embroideries.length > 0
                   ? data.embroideries
