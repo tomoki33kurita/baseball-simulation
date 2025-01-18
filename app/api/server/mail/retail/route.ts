@@ -96,7 +96,7 @@ const mailTextGenerator = (data: any) => {
                   <div ${defaultFontSize}>お名前(カナ)：${data.personal.userNameKana}</div>
                   <div ${defaultFontSize}>Email：${data.personal.mailAddress}</div>
                   <div ${defaultFontSize}>電話番号：${data.personal.phoneNumber}</div>
-                  <div ${defaultFontSize}>住所：${data.personal.address}</div>
+                  <div ${defaultFontSize}>住所：${data.personal.zipCode}</div>
                   <div ${defaultFontSize}>リーグ：${data.personal.league}</div>
                   <div ${defaultFontSize}>ポジション：${data.personal.position}</div>
                   <div ${defaultFontSize}>備考：${data.personal.remarks}</div>
