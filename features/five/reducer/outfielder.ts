@@ -44,6 +44,7 @@ const initialPersonalState = {
   userNameKana: '',
   phoneNumber: '',
   mailAddress: '',
+  zipCode: '',
   league: '',
   position: '',
   remarks: ''

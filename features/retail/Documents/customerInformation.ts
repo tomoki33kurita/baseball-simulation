@@ -40,7 +40,7 @@ export const customerInformation2 = (personal: Personal, genCellContent: Documen
     {
       table: {
         widths: ['100%'],
-        body: [personal.address.length > 0 ? [genCellContent('住所', personal.address, 'left')] : []].filter(Boolean)
+        body: [personal.zipCode.length > 0 ? [genCellContent('住所', personal.zipCode, 'left')] : []].filter(Boolean)
       }
     },
     {

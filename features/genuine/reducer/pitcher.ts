@@ -61,6 +61,7 @@ const initialPersonalState = {
   phoneNumber: '',
   mailAddress: '',
   league: '',
+  zipCode: '',
   position: '',
   remarks: ''
 }

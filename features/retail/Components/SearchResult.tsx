@@ -44,7 +44,7 @@ export const SearchResult: React.FC<Props> = ({ response }) => {
       userNameKana: '',
       mailAddress: '',
       phoneNumber: '',
-      address: '',
+      zipCode: '',
       league,
       position,
       remarks: ''

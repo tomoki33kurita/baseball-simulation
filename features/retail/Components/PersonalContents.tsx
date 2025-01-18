@@ -50,7 +50,7 @@ export const PersonalContents: React.FC<Props> = ({ personal, register }) => {
           <InputLabel htmlFor="phone-label" style={{ color: fontColor }}>
             住所：
           </InputLabel>
-          <OutlinedInput type={'textArea'} multiline rows={3} autoComplete={'off'} {...register('address')} />
+          <OutlinedInput type={'textArea'} multiline rows={3} autoComplete={'off'} {...register('zipCode')} />
         </Box>
         <Box pb={1} display={'flex'} alignItems={'center'}>
           <InputLabel htmlFor="league-label" style={{ color: fontColor }}>
