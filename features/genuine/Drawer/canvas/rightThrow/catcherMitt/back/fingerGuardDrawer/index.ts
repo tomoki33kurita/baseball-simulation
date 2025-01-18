@@ -91,8 +91,10 @@ const specialIndexFingerPadOfFTypeOnIndexFinger = (ctx: CanvasRenderingContext2D
   ctx.moveTo(336, 516) // 左下
   ctx.quadraticCurveTo(383, 540, 425, 512) // 右下1
   ctx.quadraticCurveTo(417, 440, 417, 440) // 右下2
-  ctx.quadraticCurveTo(431, 375, 443, 360) // 右上1
-  ctx.quadraticCurveTo(405, 329, 389, 269) // 右上2
+  ctx.quadraticCurveTo(431, 375, 464, 328) // 右上1
+  ctx.quadraticCurveTo(447, 317, 421, 269) // 右上2
+  // ctx.quadraticCurveTo(431, 375, 443, 360) // 右上1
+  // ctx.quadraticCurveTo(405, 329, 389, 269) // 右上2
   ctx.quadraticCurveTo(378, 265, 300, 293) // 左上
   ctx.quadraticCurveTo(307, 372, 336, 516) // 左下
   ctx.fill()
@@ -108,13 +110,13 @@ const specialIndexFingerPadOfFTypeOnIndexFinger = (ctx: CanvasRenderingContext2D
   ctx.quadraticCurveTo(317, 407, 338, 512) // 右下
   // 上側面
   ctx.moveTo(307, 296) // 左下
-  ctx.quadraticCurveTo(370, 270, 385, 272) // 右下
+  ctx.quadraticCurveTo(370, 270, 420, 272) // 右下
   // 右上側面
-  ctx.moveTo(385, 272) // 左下
-  ctx.quadraticCurveTo(400, 334, 438, 360) // 右下
+  ctx.moveTo(420, 272) // 左下
+  ctx.quadraticCurveTo(438, 315, 476, 339) // 右下
   // 右下側面
-  ctx.moveTo(439, 361) // 右上
-  ctx.quadraticCurveTo(425, 382, 413, 437) // 左下
+  ctx.moveTo(460, 329) // 左下
+  ctx.quadraticCurveTo(425, 382, 413, 438) // 左下
   ctx.quadraticCurveTo(420, 508, 420, 508) // 左下
   // 下辺
   ctx.moveTo(338, 512) // 左
