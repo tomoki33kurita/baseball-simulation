@@ -67,7 +67,7 @@ export const useSendOrder = () => {
       try {
         executeRef.current = true
         const state = savedData.state
-        const docDefine = getPdfDocDefine({ ...state, personal }, retail)
+        const docDefine = getPdfDocDefine(savedData.savedId, { ...state, personal }, retail)
         pdfMake.createPdf(docDefine).getBase64((pdfBase64: string) => {
           const payload = getPayload(pdfBase64, orderData, retail)
           axios.post(RETAIL_EMAIL_PATH, payload).then((x) => {

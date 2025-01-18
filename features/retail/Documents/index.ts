@@ -16,12 +16,11 @@ const genCellContent = (head: string, content: string, alignment?: string, color
   }
 ]
 
-export const getPdfDocDefine = (state: State, retail: Retail): any => {
+export const getPdfDocDefine = (id: string, state: State, retail: Retail): any => {
   const personal = state.personal
-  const remarks = personal.remarks
   return {
     content: [
-      { text: 'オーダー仕様書', style: { fontSize: 16 } },
+      { text: `オーダー仕様書 (${id})`, style: { fontSize: 16 } },
       ...drawImages(),
       ...customerInformation(personal, retail, genCellContent),
       ...customerInformation2(personal, genCellContent),
