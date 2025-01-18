@@ -27,9 +27,9 @@ export const regularStyleDrawer = (ctx: CanvasRenderingContext2D, state: Genuine
   // ヘリ革
   bindingOfCommon(ctx, state.binding.color)
   bindingOfRegularBackStyle(ctx, state.binding.color, state.fingerGuard.value, state.linings.color)
-  fingerGuardDrawer(ctx, state) // 指カバー・指当て
   // 人差し指の指だし周りパーツ部分
   indexFingerTipOutDrawer(ctx, state?.indexFingerTipOut.color, state.fingerGuard.value)
+  fingerGuardDrawer(ctx, state) // 指カバー・指当て
   // バックルベルト
   regularBackStyleWristBelt(ctx, state.listBelt.color, -70, 50)
 }

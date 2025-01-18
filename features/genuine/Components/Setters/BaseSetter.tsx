@@ -93,7 +93,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
   const isSelectableGenuineMarkColor = state.genuineBrandMark.value === 'genuineEmbroidery'
   const isJuniorModel = JUNIOR_LIST.includes(baseModel.productNumber)
   const isYT22 = baseModel.productNumber === 'YT-22'
-  const backStyleOptions = getBackStyleOptions(position, baseModel.productNumber)
+  const backStyleOptions = getBackStyleOptions(state)
   const isSpecifiedLittleFingerSideLabel = ['littleFingerSideEmbroidery', 'littleFingerSideNormal'].includes(state.genuineLabel.value)
   const fingerGuardOptions = getFingerGuardOptions(state)
 
@@ -138,18 +138,6 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         isDark
       />
       <SelectCard
-        summary={'指カバー/指当て'} // fingerGuard
-        selectedLabel={fingerGuard.label}
-        objects={fingerGuardOptions}
-        isError={fingerGuard.value === 'unselected'}
-        defaultExpanded={fingerGuard.value === 'unselected'}
-        disabled={isSpecifiedLittleFingerSideLabel}
-        description={isSpecifiedLittleFingerSideLabel ? '変更するには、先に"ラベル"を親指側に再選択してください。' : ''}
-        className={FINGER_GUARD_TYPE_BUTTON_OPTION}
-        handleChange={handle.fingerGuard}
-        isDark
-      />
-      <SelectCard
         summary={'革の厚さ'} // leatherThickness
         selectedLabel={leatherThickness.label}
         objects={LEATHER_THICKNESS}
@@ -170,6 +158,18 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         description={isSelectableGenuineMarkColor ? '変更するには、Genuine刺繍・刻印を解除してください。' : ''}
         defaultExpanded={backStyle.value === 'unselected'}
         className={BACK_STYLE_BUTTON_OPTION}
+        isDark
+      />
+      <SelectCard
+        summary={'指カバー/指当て'} // fingerGuard
+        selectedLabel={fingerGuard.label}
+        objects={fingerGuardOptions}
+        isError={fingerGuard.value === 'unselected'}
+        defaultExpanded={fingerGuard.value === 'unselected'}
+        disabled={isSpecifiedLittleFingerSideLabel}
+        description={isSpecifiedLittleFingerSideLabel ? '変更するには、先に"ラベル"を親指側に再選択してください。' : ''}
+        className={FINGER_GUARD_TYPE_BUTTON_OPTION}
+        handleChange={handle.fingerGuard}
         isDark
       />
       <SelectCard

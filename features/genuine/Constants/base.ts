@@ -13,6 +13,9 @@ export const DOMINANT_ARMS: BaseItem[] = [
 export const NORMAL_BACK_STYLE: BaseItemWithPrice = { label: 'ノーマル', value: 'normal', price: 0 }
 export const CROWN_BACK_STYLE: BaseItemWithPrice = { label: '王冠スタイル', value: 'crown', price: 0 }
 export const RN_BACK_STYLE: BaseItemWithPrice = { label: 'RNスタイル', value: 'rn', price: 0 }
+export const BELT_BACK_STYLE: BaseItemWithPrice = { label: 'ベルト', value: 'belt', price: 0 }
+export const REGULAR_BACK_STYLE: BaseItemWithPrice = { label: 'レギュラー', value: 'regular', price: 0 }
+export const TM_BACK_STYLE: BaseItemWithPrice = { label: 'TMバック', value: 'tmBack', price: 0 }
 
 export const BACK_STYLES: BaseItemWithPrice[] = [
   NORMAL_BACK_STYLE,
@@ -22,12 +25,7 @@ export const BACK_STYLES: BaseItemWithPrice[] = [
   // { label: '王冠メッシュ', value: 'crownMesh', price: 3300 },
 ]
 
-export const TM_BACK_STYLE: BaseItemWithPrice = { label: 'TMバック', value: 'tmBack', price: 0 }
-export const BACK_STYLES_CATCHER: BaseItemWithPrice[] = [
-  { label: 'ベルト', value: 'belt', price: 0 },
-  { label: 'レギュラー', value: 'regular', price: 0 },
-  TM_BACK_STYLE
-]
+export const BACK_STYLES_CATCHER: BaseItemWithPrice[] = [BELT_BACK_STYLE, REGULAR_BACK_STYLE, TM_BACK_STYLE]
 
 export const ALL_BACK_STYLES: BaseItemWithPrice[] = [...BACK_STYLES, ...BACK_STYLES_CATCHER]
 

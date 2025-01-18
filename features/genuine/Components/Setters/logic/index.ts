@@ -26,6 +26,7 @@ import { positionChecker } from '@/util/logic'
 import {
   BACK_STYLES,
   BACK_STYLES_CATCHER,
+  BELT_BACK_STYLE,
   FINGER_GUARDS,
   FINGER_GUARDS_CATCHER,
   FIRST_BACK_FINGER_GUARDS,
@@ -164,9 +165,13 @@ export const getSelectableParts = (state: GenuineState): PartsItem[] => {
   }
 }
 
-export const getBackStyleOptions = (position: Position, productNumber: string) => {
+export const getBackStyleOptions = (state: GenuineState) => {
+  const { position, productNumber } = state.baseModel
   switch (position) {
     case 'catcher':
+      if (state.fingerGuard.value === 'specialIndexPad') {
+        return BACK_STYLES_CATCHER.filter((b) => b.value === BELT_BACK_STYLE.value)
+      }
       if (productNumber === 'YT-22') {
         return BACK_STYLES_CATCHER.filter((b) => b.value !== TM_BACK_STYLE.value)
       }
@@ -239,9 +244,12 @@ export const getGenuineWebParts = (isFirstBaseman: boolean) => {
 }
 
 export const getFingerGuardOptions = (state: GenuineState) => {
-  const { isFirstBackStyle } = getBackStyle(state)
+  const { isFirstBackStyle, isRegularBackStyle } = getBackStyle(state)
   const { isCatcher } = positionChecker(state.baseModel.position)
   if (isCatcher) {
+    if (isRegularBackStyle) {
+      return FINGER_GUARDS_CATCHER.filter((f) => f.value !== 'specialIndexPad')
+    }
     return FINGER_GUARDS_CATCHER
   }
   if (isFirstBackStyle) {
