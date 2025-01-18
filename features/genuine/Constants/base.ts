@@ -132,12 +132,12 @@ export const FIRST_BACK_FINGER_GUARDS: BaseItem[] = [
   { label: '無し', value: 'none' }
 ]
 
-export const FINGER_GUARDS_CATCHER: BaseItem[] = [
-  { label: '指カバー', value: 'indexCover' },
-  { label: '指アテ1', value: 'indexPad1' },
-  { label: '指アテ2', value: 'indexPad2' },
-  { label: '特殊指アテ', value: 'specialIndexPad' },
-  { label: '無し', value: 'none' }
+export const FINGER_GUARDS_CATCHER: BaseItemWithPrice[] = [
+  { label: '指カバー', value: 'indexCover', price: 0 },
+  { label: '指アテ1', value: 'indexPad1', price: 0 },
+  { label: '指アテ2', value: 'indexPad2', price: 0 },
+  { label: '特殊指アテ', value: 'specialIndexPad', price: 5500 },
+  { label: '無し', value: 'none', price: 0 }
 ]
 
 export const GENUINE_EMBROIDERIES: BaseItemWithPrice[] = [

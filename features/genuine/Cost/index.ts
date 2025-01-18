@@ -65,9 +65,10 @@ export const calculateGenuineOptionCost = (state: GenuineState): number => {
   const sizeCost = state.size.price
   const meshCost = state.backStyle.price
   const genuineBrandMarkCost = state.genuineBrandMark.price
+  const fingerGuardCost = state.fingerGuard.price
   const multiColorsCost = getMultiColorsCost(state)
 
-  const optionCost = sum([labelCost, deerSkinCost, loopOfRingFingerCost, sizeCost, meshCost, genuineBrandMarkCost, multiColorsCost])
+  const optionCost = sum([labelCost, deerSkinCost, loopOfRingFingerCost, sizeCost, meshCost, genuineBrandMarkCost, fingerGuardCost, multiColorsCost])
   return optionCost
 }
 

@@ -70,7 +70,7 @@ export type GenuineState = {
   genuineBrandMark: BaseItemWithPrice
   genuineBrandMarkColor: ColorItem
 
-  fingerGuard: BaseItem
+  fingerGuard: BaseItemWithPrice
   materialPack: BaseItem
   webParts: BaseItem
   parts: PartsItem

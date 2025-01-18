@@ -107,7 +107,7 @@ export const initialState: GenuineState = {
   ballType: unselectedStateWithPrice,
   twoFingerInLittleSlot: unselectedState,
   dominantArm: unselectedState,
-  fingerGuard: unselectedState,
+  fingerGuard: unselectedStateWithPrice,
   fingerGuardColor: unselectedColorState,
   meshColor: unselectedColorState,
   webLaceStyle: unselectedState,

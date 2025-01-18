@@ -117,7 +117,7 @@ export const initialState: GenuineState = {
   gloveSize: unselectedState,
   bankLaceDirection: unselectedState,
   palmToWebConnectLaceStyle: unselectedState,
-  fingerGuard: unselectedState,
+  fingerGuard: unselectedStateWithPrice,
   fingerGuardColor: unselectedColorState,
   materialPack: unselectedState,
   webParts: unselectedState,
