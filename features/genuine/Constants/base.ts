@@ -138,6 +138,7 @@ export const FINGER_GUARDS_CATCHER: BaseItem[] = [
   { label: '指カバー', value: 'indexCover' },
   { label: '指アテ1', value: 'indexPad1' },
   { label: '指アテ2', value: 'indexPad2' },
+  { label: '特殊指アテ', value: 'specialIndexPad' },
   { label: '無し', value: 'none' }
 ]
 
