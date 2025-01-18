@@ -244,10 +244,10 @@ export const getGenuineWebParts = (isFirstBaseman: boolean) => {
 }
 
 export const getFingerGuardOptions = (state: GenuineState) => {
-  const { isFirstBackStyle, isRegularBackStyle } = getBackStyle(state)
+  const { isFirstBackStyle, isRegularBackStyle, isTMBackStyle } = getBackStyle(state)
   const { isCatcher } = positionChecker(state.baseModel.position)
   if (isCatcher) {
-    if (isRegularBackStyle) {
+    if (isRegularBackStyle || isTMBackStyle) {
       return FINGER_GUARDS_CATCHER.filter((f) => f.value !== 'specialIndexPad')
     }
     return FINGER_GUARDS_CATCHER
