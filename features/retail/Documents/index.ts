@@ -1,6 +1,5 @@
 import { drawImages } from './drawImages'
-import { customerInformation } from './customerInformation'
-import { customerRemarks } from './customerRemarks'
+import { customerInformation, customerInformation2 } from './customerInformation'
 import { priceInformation } from './priceInformation'
 import { baseSettings } from './baseSettings'
 import { colorSettings } from './colorSettings'
@@ -25,7 +24,7 @@ export const getPdfDocDefine = (state: State, retail: Retail): any => {
       { text: 'オーダー仕様書', style: { fontSize: 16 } },
       ...drawImages(),
       ...customerInformation(personal, retail, genCellContent),
-      remarks.length > 0 && customerRemarks(remarks, genCellContent),
+      ...customerInformation2(personal, genCellContent),
       ...priceInformation(state, genCellContent),
       ...baseSettings(state),
       ...colorSettings(state),

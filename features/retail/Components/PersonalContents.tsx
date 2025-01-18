@@ -47,6 +47,12 @@ export const PersonalContents: React.FC<Props> = ({ personal, register }) => {
           <OutlinedInput type={'tel'} autoComplete={'off'} {...register('phoneNumber')} />
         </Box>
         <Box pb={1} display={'flex'} alignItems={'center'}>
+          <InputLabel htmlFor="phone-label" style={{ color: fontColor }}>
+            住所：
+          </InputLabel>
+          <OutlinedInput type={'textArea'} multiline rows={3} autoComplete={'off'} {...register('address')} />
+        </Box>
+        <Box pb={1} display={'flex'} alignItems={'center'}>
           <InputLabel htmlFor="league-label" style={{ color: fontColor }}>
             リーグ：
           </InputLabel>

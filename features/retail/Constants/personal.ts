@@ -5,6 +5,7 @@ export const initialPersonal: Personal = {
   userNameKana: '',
   mailAddress: '',
   phoneNumber: '',
+  address: '',
   league: '',
   position: '',
   remarks: ''

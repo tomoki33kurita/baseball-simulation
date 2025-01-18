@@ -35,6 +35,7 @@ export type Personal = {
   userNameKana: string
   phoneNumber: string
   mailAddress: string
+  address: string
   league: string
   position: string | string[]
   remarks: string

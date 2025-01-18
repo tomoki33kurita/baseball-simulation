@@ -1,5 +1,6 @@
 import nodemailer from 'nodemailer'
 import { NextResponse } from 'next/server'
+import { Embroidery } from '@/types'
 
 export async function POST(req: Request) {
   try {
@@ -95,6 +96,7 @@ const mailTextGenerator = (data: any) => {
                   <div ${defaultFontSize}>お名前(カナ)：${data.personal.userNameKana}</div>
                   <div ${defaultFontSize}>Email：${data.personal.mailAddress}</div>
                   <div ${defaultFontSize}>電話番号：${data.personal.phoneNumber}</div>
+                  <div ${defaultFontSize}>住所：${data.personal.address}</div>
                   <div ${defaultFontSize}>リーグ：${data.personal.league}</div>
                   <div ${defaultFontSize}>ポジション：${data.personal.position}</div>
                   <div ${defaultFontSize}>備考：${data.personal.remarks}</div>
@@ -127,7 +129,7 @@ const mailTextGenerator = (data: any) => {
   
             <div ${flexMarginLeft}  style="max-width:33%;">
               ${
-                data.embroideries.length > 0
+                data.embroideries.some((e: any) => e.head === '刺繍内容' && e.label.trim().length > 0)
                   ? data.embroideries
                       .map(
                         (embroidery: any, i: number) =>

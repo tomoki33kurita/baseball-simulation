@@ -28,3 +28,31 @@ export const customerInformation = (personal: Personal, retail: Retail, genCellC
     }
   ]
 }
+
+// 命名悩んでる
+export const customerInformation2 = (personal: Personal, genCellContent: DocumentContentGenerator): any[] => {
+  return [
+    {
+      text: '',
+      style: { fontSize: 11 },
+      margin: [0, 1, 0, 2]
+    },
+    {
+      table: {
+        widths: ['100%'],
+        body: [personal.address.length > 0 ? [genCellContent('住所', personal.address, 'left')] : []].filter(Boolean)
+      }
+    },
+    {
+      text: '',
+      style: { fontSize: 11 },
+      margin: [0, 1, 0, 2]
+    },
+    {
+      table: {
+        widths: ['100%'],
+        body: [personal.remarks.length > 0 ? [genCellContent('備考欄', personal?.remarks, 'left')] : []].filter(Boolean)
+      }
+    }
+  ]
+}
