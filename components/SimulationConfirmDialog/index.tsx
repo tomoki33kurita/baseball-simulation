@@ -61,7 +61,7 @@ export const SimulationConfirmDialog: React.FC<Props> = ({ state, position, isDi
         <ConsumerForm {...{ position, dispatch, register, isDark }} isDisabled={!canInputConsumer} />
       </DialogContent>
       <DialogActions style={{ flex: 'unset', display: 'unset', backgroundColor: isDark ? '#383838' : '' }}>
-        <SavedIdDisplay savedId={savedId} isCopied={isCopied} setCopied={setCopied} />
+        <SavedIdDisplay savedId={savedId} isCopied={isCopied} isDark={isDark} setCopied={setCopied} />
         <Box display={'flex'} justifyContent={'space-around'}>
           <ConfirmDialog
             isConfirmOpen={isConfirmOpen}
