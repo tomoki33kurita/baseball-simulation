@@ -10,17 +10,18 @@ const cellColor = (cellValue: string, isDark?: boolean) => (cellValue === 'unsel
 type Props = {
   state: GenuineState
   previousIndex: number
+  isDark?: boolean
 }
 
-export const GenuineEmbroideries: React.FC<Props> = ({ state, previousIndex }) => {
+export const GenuineEmbroideries: React.FC<Props> = ({ state, previousIndex, isDark }) => {
   const { embroideries } = state
   return (
     <>
-      <Box fontWeight="bold" fontSize="16px" color={'#ffffff'}>
+      <Box fontWeight="bold" fontSize="16px" color={isDark ? '#ffffff' : '#383838'}>
         刺繍項目
       </Box>
       {embroideries.every((e) => e.content.length === 0) ? (
-        <Box ml={1} fontWeight="bold" fontSize="16px" color={'#ffffff'}>
+        <Box ml={1} fontWeight="bold" fontSize="16px" color={isDark ? '#ffffff' : '#383838'}>
           (0) 通常刺繍なし
         </Box>
       ) : (
@@ -33,11 +34,17 @@ export const GenuineEmbroideries: React.FC<Props> = ({ state, previousIndex }) =
               return (
                 <React.Fragment key={`${e.content}_${index}`}>
                   <Box mb={2}>
-                    <Box fontWeight="bold" fontSize="16px" color={'#ffffff'}>
+                    <Box fontWeight="bold" fontSize="16px" color={isDark ? '#ffffff' : '#383838'}>
                       刺繍項目{index + 1}
                     </Box>
                     {embroideryCells.map((cell, i) => (
-                      <ItemCell key={cell.head} itemIndex={i + previousIndex + index * 6} cell={cell} color={cellColor(cell.value, true)} isDark />
+                      <ItemCell
+                        key={cell.head}
+                        itemIndex={i + previousIndex + index * 6}
+                        cell={cell}
+                        color={cellColor(cell.value, isDark)}
+                        isDark={isDark}
+                      />
                     ))}
                   </Box>
                 </React.Fragment>

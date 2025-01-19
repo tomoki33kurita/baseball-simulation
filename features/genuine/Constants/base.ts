@@ -114,22 +114,22 @@ export const MATERIAL_PACKS_FOR_FIRST_BASEMAN: BaseItem[] = [
   { label: 'ヨコトジ(紐抜き)', value: 'sideDoubleNoLace' }
 ]
 
-export const FINGER_GUARDS: BaseItem[] = [
-  { label: '指カバー', value: 'indexCover' },
-  { label: '指アテ', value: 'indexPad' },
-  { label: '中指カバー', value: 'middleCover' },
-  { label: '中指アテ', value: 'middlePad' },
-  { label: '無し', value: 'none' }
+export const FINGER_GUARDS: BaseItemWithPrice[] = [
+  { label: '指カバー', value: 'indexCover', price: 0 },
+  { label: '指アテ', value: 'indexPad', price: 0 },
+  { label: '中指カバー', value: 'middleCover', price: 0 },
+  { label: '中指アテ', value: 'middlePad', price: 0 },
+  { label: '無し', value: 'none', price: 0 }
 ]
 
-export const FIRST_BACK_FINGER_GUARDS: BaseItem[] = [
-  { label: '指カバー', value: 'indexCover' },
-  { label: '指アテ', value: 'indexPad' },
-  { label: '指穴のみ', value: 'indexHole' },
-  { label: '中指カバー', value: 'middleCover' },
-  { label: '中指アテ', value: 'middlePad' },
-  { label: '中指穴のみ', value: 'middleHole' },
-  { label: '無し', value: 'none' }
+export const FIRST_BACK_FINGER_GUARDS: BaseItemWithPrice[] = [
+  { label: '指カバー', value: 'indexCover', price: 0 },
+  { label: '指アテ', value: 'indexPad', price: 0 },
+  { label: '指穴のみ', value: 'indexHole', price: 0 },
+  { label: '中指カバー', value: 'middleCover', price: 0 },
+  { label: '中指アテ', value: 'middlePad', price: 0 },
+  { label: '中指穴のみ', value: 'middleHole', price: 0 },
+  { label: '無し', value: 'none', price: 0 }
 ]
 
 export const FINGER_GUARDS_CATCHER: BaseItemWithPrice[] = [
