@@ -1,6 +1,5 @@
 import nodemailer from 'nodemailer'
 import { NextResponse } from 'next/server'
-import { Embroidery } from '@/types'
 
 export async function POST(req: Request) {
   try {
