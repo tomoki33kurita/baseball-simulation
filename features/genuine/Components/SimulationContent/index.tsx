@@ -53,7 +53,7 @@ export const SimulationContent: React.FC<Props> = ({ state, baseCells, colorCell
       </Grid>
       <Grid item xs={12} sm={4}>
         <Box mt={2}>
-          <GenuineEmbroideries state={state} previousIndex={embroideryCellStartCount + 1} />
+          <GenuineEmbroideries state={state} previousIndex={embroideryCellStartCount + 1} isDark />
         </Box>
       </Grid>
     </Grid>

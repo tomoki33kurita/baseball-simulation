@@ -45,14 +45,12 @@ export const SimulationContents: React.FC<Props> = ({ state }) => {
       </Grid>
       <Grid item xs={12} sm={4}>
         <Box pt={2}>
-          <Box mt={2}>
-            <>
-              {state.baseModel.brand === 'five' && <FiveEmbroideries state={state as FiveState} previousIndex={baseCellCount + colorCellCount} />}
-              {state.baseModel.brand === 'genuine' && (
-                <GenuineEmbroideries state={state as GenuineState} previousIndex={baseCellCount + colorCellCount} />
-              )}
-            </>
-          </Box>
+          <>
+            {state.baseModel.brand === 'five' && <FiveEmbroideries state={state as FiveState} previousIndex={baseCellCount + colorCellCount} />}
+            {state.baseModel.brand === 'genuine' && (
+              <GenuineEmbroideries state={state as GenuineState} previousIndex={baseCellCount + colorCellCount} />
+            )}
+          </>
         </Box>
       </Grid>
     </Grid>

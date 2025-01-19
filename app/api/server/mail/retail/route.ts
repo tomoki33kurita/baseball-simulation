@@ -1,6 +1,5 @@
 import nodemailer from 'nodemailer'
 import { NextResponse } from 'next/server'
-import { Embroidery } from '@/types'
 
 export async function POST(req: Request) {
   try {
@@ -66,6 +65,7 @@ export async function POST(req: Request) {
 const htmlH3Style = `style="margin-bottom:0"`
 const defaultFontSize = `style="font-size:11px;"`
 const flexMarginLeft = `style="margin-left:8px;"`
+const maxWidth31 = `style="max-width:31%;"`
 
 const mailTextGenerator = (data: any) => {
   switch (data.locale) {
@@ -84,7 +84,7 @@ const mailTextGenerator = (data: any) => {
           </div>
   
           <div style="display:flex; width:600px; justify-content:space-between;">
-            <div style="max-width:33%;">
+            <div ${maxWidth31}>
               <div>
                 <h4 ${htmlH3Style}>基本設定</h4>
                 ${data.baseSettings.map((x: any, i: number) => `<div ${defaultFontSize}>(${i + 1}) ${x.head}：${x.label}</div>`).join('')}
@@ -104,7 +104,7 @@ const mailTextGenerator = (data: any) => {
               </div>
             </div>
   
-            <div ${flexMarginLeft}  style="max-width:33%;">
+            <div ${flexMarginLeft} ${maxWidth31}>
               ${
                 data.colorSettings1.length > 0
                   ? `
@@ -127,9 +127,9 @@ const mailTextGenerator = (data: any) => {
               }
             </div>
   
-            <div ${flexMarginLeft}  style="max-width:33%;">
+            <div ${flexMarginLeft} ${maxWidth31}>
               ${
-                data.embroideries.some((e: any) => e.head === '刺繍内容' && e.label.trim().length > 0)
+                data.embroideries.some((array: any) => array.some((e: any) => e.head === '刺繍内容' && e.label.trim().length > 0))
                   ? data.embroideries
                       .map(
                         (embroidery: any, i: number) =>
