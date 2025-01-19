@@ -12,6 +12,7 @@ import {
   embroideryFlagGenerator,
   fontImageResolver,
   generateSubColors,
+  getBackStyle,
   selectablePositionGenerator,
   useEmbroideriesDispatchGenerator
 } from './logic'
@@ -36,6 +37,8 @@ export const EmbroiderySetter: React.FC<Props> = ({ state, selectedIndex, isDark
         const selectablePosition = selectablePositionGenerator(embroideries, i)
         const shadowColors = generateSubColors(disabledShadowColor)
         const edgeColors = generateSubColors(disabledEdgeColor)
+        const { isFirstBackStyle } = getBackStyle(state)
+        const isLiningsEmbroidery = embroideries.some((e) => ['leatherLiningFirst', 'leatherLiningSecond'].includes(e.position.value))
 
         return (
           <Box key={`${e.id}`} my={1}>
@@ -49,7 +52,8 @@ export const EmbroiderySetter: React.FC<Props> = ({ state, selectedIndex, isDark
                     objects={selectablePosition}
                     index={i}
                     handleChange={handle.position}
-                    // disabled={existsContent}
+                    description={isFirstBackStyle && isLiningsEmbroidery ? '※シミュレーションには描画されません。' : ''}
+                    disabled={existsContent}
                     isDark
                   />
                 </Box>
