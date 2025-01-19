@@ -19,6 +19,7 @@ export const EmbroideryAccordionSummary: React.FC<{ embroideryIndex: number; isD
           <ExpandLessIcon />
         </Fab>
       }
+      style={{ background: isDark ? '#383838' : 'unset', color: isDark ? 'white' : 'black' }}
     >
       {`刺繍設定 ${embroideryIndex + 1}`}
     </AccordionSummary>
