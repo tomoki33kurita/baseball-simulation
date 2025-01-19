@@ -1,4 +1,3 @@
-import { FiveState } from '@/features/five/types'
 import { State } from '@/types'
 
 const darkenColor = (colorCode: string, ratio: number) => {
