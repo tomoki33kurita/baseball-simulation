@@ -1,4 +1,5 @@
 import { State } from '@/types'
+import { fontFamilySetter } from './embroidery'
 
 const darkenColor = (colorCode: string, ratio: number) => {
   if (colorCode === '#fff') return colorCode
@@ -58,6 +59,8 @@ export const webDrawUtil = (state: State) => {
 export const pseudoDrawingEngraved = (ctx: CanvasRenderingContext2D): void => {
   // google web font を事前に読み込むためのダミー描画
   const isReady = document.fonts.check('56px Alex Brush')
+  fontFamilySetter(ctx, 'cursiveJa')
+  fontFamilySetter(ctx, 'oldEnglish')
   const isNotReady = !isReady
   ctx.font = '56px Alex Brush'
   isNotReady && ctx.strokeText(``, 0, 0)

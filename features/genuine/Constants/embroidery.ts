@@ -4,9 +4,9 @@ export const TYPE_FACES = [
   { label: 'ローマ字活字体', value: 'sanserif', selectable: ['en'] }, //ゴシック体
   { label: '筆記体', value: 'cursive', selectable: ['en'] }, // 筆記体
   { label: 'ブラッシュ体', value: 'Brush Script MT', selectable: ['en'] }, // ブラッシュ体
-  { label: 'オールドイングリッシュ体', value: 'MariageD', selectable: ['en'] }, // オールドイングリッシュ体
-  { label: '漢字(楷書体)', value: 'monospacePrintedScript', selectable: ['ja'] }, // 行書
-  { label: '漢字(行書体)', value: 'monospaceCursiveWriting', selectable: ['ja'] } // 行書
+  { label: 'オールドイングリッシュ体', value: 'oldEnglish', selectable: ['en'] }, // オールドイングリッシュ体
+  { label: '漢字(楷書体)', value: 'serif', selectable: ['ja'] }, // 行書
+  { label: '漢字(行書体)', value: 'cursiveJa', selectable: ['ja'] } // 行書
 ]
 
 export const EMBROIDERY_POSITIONS = [

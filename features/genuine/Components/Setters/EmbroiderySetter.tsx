@@ -49,7 +49,7 @@ export const EmbroiderySetter: React.FC<Props> = ({ state, selectedIndex, isDark
                     objects={selectablePosition}
                     index={i}
                     handleChange={handle.position}
-                    disabled={existsContent}
+                    // disabled={existsContent}
                     isDark
                   />
                 </Box>
@@ -70,6 +70,7 @@ export const EmbroiderySetter: React.FC<Props> = ({ state, selectedIndex, isDark
                     index={i}
                     handleChange={handle.typeFace}
                     isError={e.typeFace.value === 'unselected'}
+                    caution={'反映フォントはイメージです。実際のフォントと異なる場合があります。カタログをご確認ください。'}
                     disabled={!existsContent}
                     isDark
                   />
