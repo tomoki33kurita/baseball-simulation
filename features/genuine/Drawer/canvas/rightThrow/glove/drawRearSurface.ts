@@ -31,7 +31,6 @@ export const drawGenuineGloveRearSurface = (ctx: CanvasRenderingContext2D | null
   if (!ctx) return
 
   const baseModel = state.baseModel
-
   pseudoDrawingEngraved(ctx)
   canvasResetter(ctx) // リセット
   ctx.font = '24px serif'

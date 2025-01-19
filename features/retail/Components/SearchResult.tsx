@@ -23,6 +23,7 @@ import { drawGenuineCatcherMittPalmSurface } from '@/features/genuine/Drawer/can
 import { drawGenuineFirstMittRearSurface } from '@/features/genuine/Drawer/canvas/rightThrow/firstMitt/drawRearSurface'
 import { drawGenuineCatcherMittRearSurface } from '@/features/genuine/Drawer/canvas/rightThrow/catcherMitt/drawRearSurface'
 import { drawGenuineFirstMittPalmSurface } from '@/features/genuine/Drawer/canvas/rightThrow/firstMitt/drawPalmSurface'
+import { pseudoDrawingEngraved } from '@/util/canvas'
 
 const supplierFilter = (brand: Brand) => (supplier: Supplier) => supplier.brand === brand
 const Alert = forwardRef<HTMLDivElement, AlertProps>(function Alert(props, ref) {
@@ -56,6 +57,8 @@ export const SearchResult: React.FC<Props> = ({ response }) => {
   useEffect(() => {
     const { ctx: rearCtx, canvasWidth } = getCtx(rearSurfaceId) // useEventEffect使って見える
     const { ctx: palmCtx } = getCtx(palmSurfaceId)
+    if (palmCtx !== null) pseudoDrawingEngraved(palmCtx) // genuineのフォントを読み込みたいので、ここで準備
+
     switch (state.baseModel.brand) {
       case 'five':
         drawFiveRearSurface(rearCtx, state as FiveState)
