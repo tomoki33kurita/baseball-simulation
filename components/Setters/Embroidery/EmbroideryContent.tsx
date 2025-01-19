@@ -43,7 +43,7 @@ export const EmbroideryContent: React.FC<Props> = ({
           disabled={disabled}
         />
       </Box>
-      <Box pl={3} fontSize={'12px'} textAlign={'right'} pr={2}>
+      <Box pl={3} fontSize={'12px'} textAlign={'right'} pr={2} color={isDark ? 'white' : 'black'}>
         最大文字数：{contentMaxLength}
         文字
       </Box>
