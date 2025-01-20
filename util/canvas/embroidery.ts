@@ -104,7 +104,7 @@ const notThumbEmbroidery = (ctx: CanvasRenderingContext2D, embroidery: Embroider
   ctx.restore()
 }
 
-const thumbEmbroidery = (ctx: CanvasRenderingContext2D, embroidery: Embroidery, x: number, y: number, numerator?: number): void => {
+const drawThumbEmbroidery = (ctx: CanvasRenderingContext2D, embroidery: Embroidery, x: number, y: number, numerator?: number): void => {
   ctx.lineWidth = 0.8
   ctx.fillStyle = embroidery.color.color // '#383838'
   ctx.textAlign = 'start'
@@ -202,13 +202,13 @@ export const sideOfBeltEmbroideryDrawer = (ctx: CanvasRenderingContext2D, embroi
 export const thumbEmbroideryDrawer = (ctx: CanvasRenderingContext2D, embroideries: Embroidery[]): void => {
   const isEmbroideryDraw = embroideries?.some((x) => x.position.value === 'thumbFinger')
   const embroidery = embroideries.find((embroidery) => embroidery.position.value === 'thumbFinger')
-  if (isEmbroideryDraw && embroidery) thumbEmbroidery(ctx, embroidery, -115, 30, -15)
+  if (isEmbroideryDraw && embroidery) drawThumbEmbroidery(ctx, embroidery, -115, 30, -15)
 }
 
 export const firstMittThumbEmbroideryDrawer = (ctx: CanvasRenderingContext2D, embroideries: Embroidery[]): void => {
   const isEmbroideryDraw = embroideries?.some((x) => x.position.value === 'thumbFinger')
   const embroidery = embroideries.find((embroidery) => embroidery.position.value === 'thumbFinger')
-  if (isEmbroideryDraw && embroidery) thumbEmbroidery(ctx, embroidery, -250, 35, -20)
+  if (isEmbroideryDraw && embroidery) drawThumbEmbroidery(ctx, embroidery, -250, 35, -20)
 }
 
 // 親指以外の刺繍
@@ -261,9 +261,10 @@ export const liningEmbroideryDrawer = (ctx: CanvasRenderingContext2D, embroideri
       position: 'leatherLiningSecond'
     }
   }
-  const isEmbroideryOfLining = embroideries?.some((x) => x.position.value === liningEmbroideryObject[step].position)
-  const embroidery = embroideries.find((embroidery) => embroidery.position.value === liningEmbroideryObject[step].position)
+  const isEmbroideryOfLining = embroideries.some((e) => e.position.value === liningEmbroideryObject[step].position)
+  const embroidery = embroideries.find((e) => e.position.value === liningEmbroideryObject[step].position)
   if (isEmbroideryOfLining && embroidery) {
+    console.log({ isEmbroideryOfLining, embroidery, hoge: liningEmbroideryObject[step].position })
     liningEmbroidery(ctx, embroidery, liningEmbroideryObject[step].x, liningEmbroideryObject[step].y)
   }
 }
@@ -315,5 +316,40 @@ export const firstMittChildFingerEmbroideryDrawer = (ctx: CanvasRenderingContext
   const embroidery = embroideries.find((embroidery) => embroidery.position.value === 'childFinger')
   if (isEmbroidery && embroidery) {
     firstMittChildFingerEmbroidery(ctx, embroidery, -100, 580)
+  }
+}
+
+export const fingerEmbroideryDrawer = (ctx: CanvasRenderingContext2D, embroideries: Embroidery[]): void => {
+  // 親指への刺繍
+  const isEmbroideryOfThumb = embroideries.some((x) => x.position.value === 'thumbFinger')
+  const thumbEmbroidery = embroideries.find((embroidery) => embroidery.position.value === 'thumbFinger')
+  if (isEmbroideryOfThumb && thumbEmbroidery) {
+    drawThumbEmbroidery(ctx, thumbEmbroidery, -20, 20, -5)
+  }
+  // 小指への刺繍
+  const isEmbroideryOfChild = embroideries.some((x) => x.position.value === 'childFinger')
+  const childEmbroidery = embroideries.find((embroidery) => embroidery.position.value === 'childFinger')
+  if (isEmbroideryOfChild && childEmbroidery) {
+    notThumbEmbroidery(ctx, childEmbroidery, 0, 10, -5)
+  }
+}
+
+export const catcherLiningEmbroideryDrawer = (ctx: CanvasRenderingContext2D, embroideries: Embroidery[], step: 'first' | 'second'): void => {
+  const liningEmbroideryObject = {
+    first: {
+      x: 95,
+      y: -25,
+      position: 'leatherLiningFirst'
+    },
+    second: {
+      x: 100,
+      y: 20,
+      position: 'leatherLiningSecond'
+    }
+  }
+  const isEmbroideryOfLining = embroideries.some((e) => e.position.value === liningEmbroideryObject[step].position)
+  const embroidery = embroideries.find((e) => e.position.value === liningEmbroideryObject[step].position)
+  if (isEmbroideryOfLining && embroidery) {
+    liningEmbroidery(ctx, embroidery, liningEmbroideryObject[step].x, liningEmbroideryObject[step].y)
   }
 }

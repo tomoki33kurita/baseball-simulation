@@ -11,6 +11,7 @@ import { genuineCatcherMittLabelDrawer } from '../../label/drawer'
 import { paisleySelected } from '../../paisleySelected'
 import { pseudoDrawingEngraved } from '@/util/canvas'
 import { genuineBrandMarkEmbroideryDrawer } from '../../genuineMark'
+import { fingerEmbroideryDrawer, liningEmbroideryDrawer } from '@/util/canvas/embroidery'
 
 export const drawGenuineCatcherMittRearSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
   if (!ctx) return
@@ -28,6 +29,7 @@ export const drawGenuineCatcherMittRearSurface = (ctx: CanvasRenderingContext2D 
   backStyleDrawer(ctx, state) // バックスタイル
   catchFaceDrawer(ctx, state.palm.color, state.stitch.color, state.baseModel.productNumber) // 捕球面側
   webDrawer(ctx, state) // ウェブ
+  fingerEmbroideryDrawer(ctx, state.embroideries) // 刺繍
   laceDrawer(ctx, state.lace.color) // 革紐
   thumbHook(ctx, state.thumbHook.color) // かけ紐
   littleHook(ctx, state.littleHook.color) // かけ紐
