@@ -205,6 +205,12 @@ export const thumbEmbroideryDrawer = (ctx: CanvasRenderingContext2D, embroiderie
   if (isEmbroideryDraw && embroidery) thumbEmbroidery(ctx, embroidery, -115, 30, -15)
 }
 
+export const firstMittThumbEmbroideryDrawer = (ctx: CanvasRenderingContext2D, embroideries: Embroidery[]): void => {
+  const isEmbroideryDraw = embroideries?.some((x) => x.position.value === 'thumbFinger')
+  const embroidery = embroideries.find((embroidery) => embroidery.position.value === 'thumbFinger')
+  if (isEmbroideryDraw && embroidery) thumbEmbroidery(ctx, embroidery, -250, 35, -20)
+}
+
 // 親指以外の刺繍
 export const nonThumbEmbroideryDrawer = (
   ctx: CanvasRenderingContext2D,
@@ -259,5 +265,55 @@ export const liningEmbroideryDrawer = (ctx: CanvasRenderingContext2D, embroideri
   const embroidery = embroideries.find((embroidery) => embroidery.position.value === liningEmbroideryObject[step].position)
   if (isEmbroideryOfLining && embroidery) {
     liningEmbroidery(ctx, embroidery, liningEmbroideryObject[step].x, liningEmbroideryObject[step].y)
+  }
+}
+
+const firstMittChildFingerEmbroidery = (ctx: CanvasRenderingContext2D, embroidery: Embroidery, x: number, y: number): void => {
+  fontFamilySetter(ctx, embroidery.typeFace.value)
+  const typeFace = embroidery.typeFace.value
+  const fontSize = typeFace === 'Brush Script MT' ? '30px' : typeFace === 'Zapfino, cursive' ? '14px' : '20px'
+  ctx.font = `${fontSize} ${embroidery.typeFace.value}`
+  ctx.textAlign = 'start'
+  ctx.lineWidth = 0.8
+  ctx.fillStyle = embroidery.color.color // '#383838'
+  // 手入れ口部分
+  ctx.save()
+  ctx.rotate((-10 * Math.PI) / 180)
+  ctx.beginPath()
+
+  // 影カラー
+  if (embroidery?.shadowColor?.value !== 'none') {
+    ctx.shadowColor = embroidery?.shadowColor?.color
+    ctx.shadowOffsetX = 3
+    ctx.shadowOffsetY = 3
+    ctx.shadowBlur = 3
+  }
+  // フチカラー
+  if (embroidery?.edgeColor?.value !== 'none') {
+    ctx.lineWidth = 2.5
+    ctx.strokeStyle = embroidery.edgeColor.color
+  }
+  ctx.strokeText(embroidery.content, 265 + x, -160 + y)
+  ctx.fillText(embroidery.content, 265 + x, -160 + y)
+  ctx.closePath()
+  // 影カラーリセット
+  if (embroidery?.shadowColor?.value !== 'none') {
+    ctx.shadowOffsetX = 0
+    ctx.shadowOffsetY = 0
+    ctx.shadowBlur = 0
+  }
+  // フチカラーリセット
+  if (embroidery?.edgeColor?.value !== 'none') {
+    ctx.lineWidth = 0.8
+    ctx.strokeStyle = '#383838'
+  }
+  ctx.restore()
+}
+
+export const firstMittChildFingerEmbroideryDrawer = (ctx: CanvasRenderingContext2D, embroideries: Embroidery[]): void => {
+  const isEmbroidery = embroideries?.some((x) => x.position.value === 'childFinger')
+  const embroidery = embroideries.find((embroidery) => embroidery.position.value === 'childFinger')
+  if (isEmbroidery && embroidery) {
+    firstMittChildFingerEmbroidery(ctx, embroidery, -100, 580)
   }
 }
