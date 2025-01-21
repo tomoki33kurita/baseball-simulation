@@ -9,10 +9,6 @@ export const twoPeaceWeb2Web = (ctx: CanvasRenderingContext2D, webColor: string,
 
   topSidePartOfWebForPitcher(ctx, webColor, laceColor, stitchColor) // ウェブ先端
   ctx.fillStyle = webColor
-  jointOfIndexFinger(ctx, webColor, laceColor, 6, 30)
-  jointOfIndexFinger(ctx, webColor, laceColor, -20, 90)
-  jointOfThumbFinger2(ctx, webColor, laceColor, 55, -67)
-  jointOfThumbFinger2(ctx, webColor, laceColor, 15, -22)
 
   // ウェブパーツ // 先端側
   ctx.fillStyle = webColor
@@ -65,11 +61,11 @@ export const twoPeaceWeb2Web = (ctx: CanvasRenderingContext2D, webColor: string,
   ctx.quadraticCurveTo(581, 254, 633, 324) // 右下
   ctx.moveTo(511, 200) // 左上
   ctx.quadraticCurveTo(581, 261, 633, 331) // 右下
-  // V部分＿左＿外
-  ctx.moveTo(572, 74) // 左上
-  ctx.quadraticCurveTo(559, 236, 559, 236) // 左下
-  ctx.moveTo(575, 76) // 左上
-  ctx.quadraticCurveTo(562, 238, 562, 238) // 左下
+  // // V部分＿左＿外
+  // ctx.moveTo(572, 74) // 左上
+  // ctx.quadraticCurveTo(559, 236, 559, 236) // 左下
+  // ctx.moveTo(575, 76) // 左上
+  // ctx.quadraticCurveTo(562, 238, 562, 238) // 左下
   // V部分＿内
   ctx.moveTo(624, 132) // 左上
   ctx.quadraticCurveTo(620, 200, 620, 200) // 下
@@ -77,11 +73,11 @@ export const twoPeaceWeb2Web = (ctx: CanvasRenderingContext2D, webColor: string,
   ctx.moveTo(620, 128) // 左上
   ctx.quadraticCurveTo(617, 205, 617, 205) // 下
   ctx.quadraticCurveTo(663, 184, 663, 184) // 右上
-  // V部分＿右＿外
-  ctx.moveTo(694, 241) // 上
-  ctx.quadraticCurveTo(599, 281, 599, 281) // 下
-  ctx.moveTo(696, 243) // 上
-  ctx.quadraticCurveTo(601, 283, 601, 283) // 下
+  // // V部分＿右＿外
+  // ctx.moveTo(694, 241) // 上
+  // ctx.quadraticCurveTo(599, 281, 599, 281) // 下
+  // ctx.moveTo(696, 243) // 上
+  // ctx.quadraticCurveTo(601, 283, 601, 283) // 下
 
   // ツーピース部分_外側
   ctx.moveTo(485, 233) // 左上
@@ -143,15 +139,17 @@ export const twoPeaceWeb2Web = (ctx: CanvasRenderingContext2D, webColor: string,
   allowLaneLeft(ctx, laceColor, 3, 28)
   allowLaneLeft(ctx, laceColor, 2, 50)
   allowLaneLeft(ctx, laceColor, 2, 75)
+  allowLaneLeft(ctx, laceColor, 2, 100)
   // V部分＿右
   allowLaneRight(ctx, laceColor, 3, 3)
   allowLaneRight(ctx, laceColor, -9, 8)
   allowLaneRight(ctx, laceColor, -21, 13)
   allowLaneRight(ctx, laceColor, -33, 18)
-  // 矢印レーす先端
-  allowLaneCenter(ctx, laceColor, 2, 5)
+  allowLaneRight(ctx, laceColor, -47, 29)
+  // 矢印レース中央
+  allowLaneCenter(ctx, laceColor, -5, 20)
 
-  webKnots(ctx, laceColor, -40, 40) // ツーピースの間
+  webKnots(ctx, laceColor, 30, -60) // ツーピースの間
   webKnots(ctx, laceColor, -65, 65) // ツーピースの間
   webKnots(ctx, laceColor, -120, 120) // ツーピース下
 }

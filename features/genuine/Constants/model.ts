@@ -249,7 +249,7 @@ export const models: GenuineBaseModel[] = [
     productNumber: 'HM-37',
     position: 'catcher',
     size: {
-      value: 31.5,
+      value: 0,
       unit: 'cm'
     },
     webParts: '',
@@ -268,7 +268,7 @@ export const models: GenuineBaseModel[] = [
     productNumber: 'TM-411',
     position: 'catcher',
     size: {
-      value: 31.5,
+      value: 0,
       unit: 'cm'
     },
     webParts: '',
@@ -287,7 +287,7 @@ export const models: GenuineBaseModel[] = [
     productNumber: 'YT-22',
     position: 'catcher',
     size: {
-      value: 31.5,
+      value: 0,
       unit: 'cm'
     },
     webParts: '',

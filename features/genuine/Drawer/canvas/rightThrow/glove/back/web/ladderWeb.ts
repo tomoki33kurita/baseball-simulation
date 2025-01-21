@@ -9,7 +9,8 @@ export const ladderWeb = (ctx: CanvasRenderingContext2D, webColor: string, web2C
   // 横上パーツ
   topSidePartOfWeb2(ctx, webColor, laceColor, stitchColor)
   // 横下パーツ
-  middleSidePartOfWeb(ctx, webColor, laceColor, stitchColor, -10, 20, 1, 1)
+  middleSidePartOfWeb(ctx, webColor, laceColor, stitchColor, -20, 35, -5, 1.02)
+  middleSidePartOfWeb(ctx, webColor, laceColor, stitchColor, 70, 175, -5, 0.8)
   // 捕球面＿折り返し上パーツ
   // onCatchFaceParts(ctx, webColor, stitchColor)
   // 縦パーツ
