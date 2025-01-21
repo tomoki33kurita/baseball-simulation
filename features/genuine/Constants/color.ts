@@ -31,7 +31,7 @@ export const LEATHER_COLORS_FOR_CATCHER: ColorItem[] = [
   { label: 'レッドオレンジ(和牛)', value: 'rOrange', color: '#FF362E' },
   { label: 'タン(和牛)', value: 'tan', color: '#D2B48C' },
   { label: 'ライムイエロー(和牛)', value: 'limeYellow', color: '#D9D943' },
-  { label: 'ローズブラウン(和牛)', value: 'roseBrown', color: '' },
+  { label: 'ローズブラウン(和牛)', value: 'roseBrown', color: '#b8123c' },
   { label: 'ダークブラウン(和牛)', value: 'darkBrown', color: '#70352e' },
   { label: 'インペリアルブラック(和牛)', value: 'imperialNavy', color: '#0d194a' },
   { label: 'ホワイト(キップ)', value: 'white', color: '#fff' },
