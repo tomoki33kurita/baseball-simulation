@@ -198,6 +198,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         isError={size.value === 'unselected'}
         defaultExpanded={size.value === 'unselected'}
         handleChange={handle.size}
+        isDisplay={!isCatcher}
         isDark
       />
       <SelectCardWithImage
