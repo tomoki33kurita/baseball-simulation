@@ -40,7 +40,7 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
   const selectedParts = componentParts[partsKey as keyof typeof componentParts]
   const selectableParts = getSelectableParts(state)
   const filteredParts = filterSelectableParts(state, selectableParts)
-  const colorsByParts = getColorOptionsByParts(partsKey)
+  const colorsByParts = getColorOptionsByParts(partsKey, state)
   const genuineLabelOptions = getGenuineLabelOptions(state)
 
   const handle = {

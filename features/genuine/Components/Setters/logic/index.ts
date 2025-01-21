@@ -16,6 +16,7 @@ import {
   FRONT_GENUINE_LABELS,
   GENUINE_LABELS,
   LEATHER_COLORS_BY_PARTS,
+  LEATHER_COLORS_BY_PARTS_FOR_CATCHER,
   PALM_PARTS
 } from '@/features/genuine/Constants/color'
 import { EMBROIDERY_POSITIONS, EMBROIDERY_ITEMS, SHADOW_EDGE_COLORS, TYPE_FACES } from '@/features/genuine/Constants/embroidery'
@@ -128,7 +129,15 @@ export const getComponentParts = (state: GenuineState) => {
   }
 }
 
-export const getColorOptionsByParts = (partsKey: PartsKey) => LEATHER_COLORS_BY_PARTS[partsKey]
+export const getColorOptionsByParts = (partsKey: PartsKey, state: GenuineState) => {
+  const { isCatcher } = positionChecker(state.baseModel.position)
+
+  if (isCatcher) {
+    return LEATHER_COLORS_BY_PARTS_FOR_CATCHER[partsKey]
+  }
+
+  return LEATHER_COLORS_BY_PARTS[partsKey]
+}
 
 export const getSelectableParts = (state: GenuineState): PartsItem[] => {
   const { drawerIndex } = state

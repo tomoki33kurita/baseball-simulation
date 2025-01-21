@@ -26,6 +26,33 @@ export const LEATHER_COLORS: ColorItem[] = [
   { label: 'ブラックペイズリー', value: 'blackPaisley', color: '#1E1E1E' },
   { label: 'Dブラウンペイズリー', value: 'dBrownPaisley', color: '#70352e' }
 ]
+export const LEATHER_COLORS_FOR_CATCHER: ColorItem[] = [
+  { label: 'ブラック(和牛)', value: 'black', color: '#1E1E1E' },
+  { label: 'レッドオレンジ(和牛)', value: 'rOrange', color: '#FF362E' },
+  { label: 'タン(和牛)', value: 'tan', color: '#D2B48C' },
+  { label: 'ライムイエロー(和牛)', value: 'limeYellow', color: '#D9D943' },
+  { label: 'ローズブラウン(和牛)', value: 'roseBrown', color: '' },
+  { label: 'ダークブラウン(和牛)', value: 'darkBrown', color: '#70352e' },
+  { label: 'インペリアルブラック(和牛)', value: 'imperialNavy', color: '#0d194a' },
+  { label: 'ホワイト(キップ)', value: 'white', color: '#fff' },
+  { label: 'グレー(キップ)', value: 'gray', color: '#8A8C8C' },
+  { label: 'キャメル(キップ)', value: 'camel', color: '#D7CEA5' },
+  { label: 'コルク(キップ)', value: 'cork', color: '#CE7220' },
+  { label: 'Lオレンジ(キップ)', value: 'lOrange', color: '#FF6C23' },
+  { label: 'オレンジ(キップ)', value: 'orange', color: '#FF6C23' },
+  { label: 'レッド(キップ)', value: 'red', color: '#CB1527' },
+  { label: 'ピンク(キップ)', value: 'pink', color: '#F94C97' },
+  { label: 'パープル(キップ)', value: 'purple', color: '#664785' },
+  { label: 'グリーン(キップ)', value: 'green', color: '#4e734c' },
+  { label: 'ライトグリーン(キップ)', value: 'lightGreen', color: '#70B247' },
+  { label: 'エメラルドグリーン(キップ)', value: 'emeraldGreen', color: '#47946E' },
+  { label: 'アベンチュリンブラウン(キップ)', value: 'aventurineBrown', color: '#731222' },
+  { label: 'ブルー(キップ)', value: 'blue', color: '#0d42b5' },
+  { label: 'サックス(キップ)', value: 'sax', color: '#3a8daa' }
+  // { label: 'ブラックペイズリー', value: 'blackPaisley', color: '#1E1E1E' },
+  // { label: 'Dブラウンペイズリー', value: 'dBrownPaisley', color: '#70352e' }
+]
+
 export const LININGS: ColorItem[] = [
   { label: 'ホワイト', value: 'white', color: '#fff' },
   { label: 'グレー', value: 'gray', color: '#8A8C8C' },
@@ -333,6 +360,52 @@ export const LEATHER_COLORS_BY_PARTS: LeatherColorsByPartsOfGenuine = {
   thumbLeftIndexRight: LEATHER_COLORS, // crown back style glove
   indexLeftMiddleRingRight: LEATHER_COLORS, // crown back style glove
   genuineBrandMarkColor: STITCHES
+}
+
+export const LEATHER_COLORS_BY_PARTS_FOR_CATCHER: LeatherColorsByPartsOfGenuine = {
+  lace: LACES,
+  binding: BINDINGS,
+  meshColor: MESH_COLORS,
+  stitch: STITCHES,
+  welting: WELTINGS,
+  linings: LININGS,
+  loopOfRingFingerColor: LININGS, // 裏革と同じ
+  genuineBrandMarkColor: STITCHES,
+  all: LEATHER_COLORS_FOR_CATCHER,
+  palm: LEATHER_COLORS_FOR_CATCHER,
+  web: LEATHER_COLORS_FOR_CATCHER,
+  web2: LEATHER_COLORS_FOR_CATCHER,
+  thumbHook: LEATHER_COLORS_FOR_CATCHER,
+  littleHook: LEATHER_COLORS_FOR_CATCHER,
+  fingerGuardColor: LEATHER_COLORS_FOR_CATCHER,
+  thumbOut: LEATHER_COLORS_FOR_CATCHER,
+  thumbWeb: LEATHER_COLORS_FOR_CATCHER,
+  indexWeb: LEATHER_COLORS_FOR_CATCHER,
+  indexMiddle: LEATHER_COLORS_FOR_CATCHER,
+  middleIndex: LEATHER_COLORS_FOR_CATCHER,
+  middleRing: LEATHER_COLORS_FOR_CATCHER,
+  ringMiddle: LEATHER_COLORS_FOR_CATCHER,
+  ringLittle: LEATHER_COLORS_FOR_CATCHER,
+  littleRing: LEATHER_COLORS_FOR_CATCHER,
+  littleOut: LEATHER_COLORS_FOR_CATCHER,
+  listBelt: LEATHER_COLORS_FOR_CATCHER,
+  thumb: LEATHER_COLORS_FOR_CATCHER, // only for firstMitt
+  boomerang: LEATHER_COLORS_FOR_CATCHER, // only for firstMitt
+  underWeb: LEATHER_COLORS_FOR_CATCHER, // only for firstMitt
+  fingerStand: LEATHER_COLORS_FOR_CATCHER, // only for catcher
+  middleLeftRing: LEATHER_COLORS_FOR_CATCHER, // only for catcher
+  middleLeftRingLittle: LEATHER_COLORS_FOR_CATCHER, // only for catcher
+  thumbMachi: LEATHER_COLORS_FOR_CATCHER, // only for catcher
+  littleMachi: LEATHER_COLORS_FOR_CATCHER, // only for catcher
+  indexFingerTipOut: LEATHER_COLORS_FOR_CATCHER, // only for catcher
+  thumbIndexMiddle: LEATHER_COLORS_FOR_CATCHER, // only for catcher
+  indexMiddleRingLittle: LEATHER_COLORS_FOR_CATCHER, // only for catcher
+  thumbIndexMiddleRight: LEATHER_COLORS_FOR_CATCHER, // only for catcher of first back style
+  middleLeftRingRight: LEATHER_COLORS_FOR_CATCHER, // only for first back style
+  ringLeftLittleRight: LEATHER_COLORS_FOR_CATCHER, // only for first back style
+  indexLeftMiddleRight: LEATHER_COLORS_FOR_CATCHER, // crown back style glove
+  thumbLeftIndexRight: LEATHER_COLORS_FOR_CATCHER, // crown back style glove
+  indexLeftMiddleRingRight: LEATHER_COLORS_FOR_CATCHER // crown back style glove
 }
 
 // export const PARTS_BUTTON_OPTION = 'genuine-parts-button-option'
