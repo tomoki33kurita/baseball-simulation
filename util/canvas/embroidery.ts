@@ -569,12 +569,7 @@ export const firstMittThumbFingerEmbroideryDrawerLeftThrow = (
   startInversion(ctx, canvasWidth)
 }
 
-export const liningEmbroideryDrawerLeftThrow = (
-  ctx: CanvasRenderingContext2D,
-  embroideries: Embroidery[],
-  step: 'first' | 'second',
-  fontSize?: string
-): void => {
+export const liningEmbroideryDrawerLeftThrow = (ctx: CanvasRenderingContext2D, embroideries: Embroidery[], step: 'first' | 'second'): void => {
   const liningEmbroideryObjectLeftThrow = {
     first: {
       x: 210,
