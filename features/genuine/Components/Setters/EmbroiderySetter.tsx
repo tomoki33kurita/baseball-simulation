@@ -45,6 +45,7 @@ export const EmbroiderySetter: React.FC<Props> = ({ state, selectedIndex, isDark
             const edgeColors = generateSubColors(disabledEdgeColor)
             const { isFirstBackStyle } = getBackStyle(state)
             const isLiningsEmbroidery = embroideries.some((e) => ['leatherLiningFirst', 'leatherLiningSecond'].includes(e.position.value))
+            const isEngraving = e.typeFace.value === 'engraving'
 
             return (
               <Box key={`${e.id}`} my={1}>
@@ -94,7 +95,7 @@ export const EmbroiderySetter: React.FC<Props> = ({ state, selectedIndex, isDark
                         index={i}
                         handleChange={handle.color}
                         isError={e.color.value === 'unselected'}
-                        disabled={!isSelectedTypeFace}
+                        disabled={!isSelectedTypeFace || isEngraving}
                         isDark
                       />
                     </Box>
@@ -105,6 +106,7 @@ export const EmbroiderySetter: React.FC<Props> = ({ state, selectedIndex, isDark
                         selectedColor={e.shadowColor.color}
                         objects={shadowColors}
                         defaultExpanded={false}
+                        disabled={isEngraving}
                         index={i}
                         handleChange={handle.shadowColor}
                         isError={e.shadowColor.value === 'unselected'}
@@ -120,6 +122,7 @@ export const EmbroiderySetter: React.FC<Props> = ({ state, selectedIndex, isDark
                         defaultExpanded={false}
                         index={i}
                         handleChange={handle.edgeColor}
+                        disabled={isEngraving}
                         isError={e.edgeColor.value === 'unselected'}
                         isDark
                       />

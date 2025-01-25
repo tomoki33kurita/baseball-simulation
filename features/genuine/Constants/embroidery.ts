@@ -6,7 +6,8 @@ export const TYPE_FACES = [
   { label: 'ブラッシュ体', value: 'Brush Script MT', selectable: ['en'] }, // ブラッシュ体
   { label: 'オールドイングリッシュ体', value: 'oldEnglish', selectable: ['en'] }, // オールドイングリッシュ体
   { label: '漢字(楷書体)', value: 'serif', selectable: ['ja'] }, // 行書
-  { label: '漢字(行書体)', value: 'cursiveJa', selectable: ['ja'] } // 行書
+  { label: '漢字(行書体)', value: 'cursiveJa', selectable: ['ja'] }, // 行書
+  { label: '刻印', value: 'engraving', selectable: ['ja', 'en'] } //
 ]
 
 export const EMBROIDERY_POSITIONS = [

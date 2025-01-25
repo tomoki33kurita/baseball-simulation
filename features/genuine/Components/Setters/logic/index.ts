@@ -343,13 +343,42 @@ interface ObjectKey {
   edgeColor: string
 }
 
+const unselectedColorState = {
+  label: '未選択',
+  value: 'unselected',
+  color: '#fff'
+}
+
 const updateEmbroideries = (embroideries: Embroidery[], selected: string, type: EmbroideryKey, i: number): Embroidery[] => {
   const objectKey = type as keyof ObjectKey
-  const newEmbroideries = {
-    ...embroideries[i],
+  const isEngraving = selected === 'engraving'
+  const isTypeFace = objectKey === 'typeFace'
+  const wasEngraving = embroideries[i].typeFace.value === 'engraving'
+  const embroidery = isEngraving
+    ? {
+        color: { label: '刻印（色指定不可）', value: 'engraving', color: 'gray' },
+        shadowColor: { label: '刻印（色指定不可）', value: 'none', color: 'gray' },
+        edgeColor: { label: '刻印（色指定不可）', value: 'none', color: 'gray' },
+        typeFace: { label: '刻印（色指定不可）', value: 'engraving' },
+        position: embroideries[i].position,
+        id: embroideries[i].id,
+        content: embroideries[i].content
+      }
+    : isTypeFace && wasEngraving
+    ? {
+        ...embroideries[i],
+        color: unselectedColorState,
+        shadowColor: unselectedColorState,
+        edgeColor: unselectedColorState,
+        typeFace: EMBROIDERY_ITEMS[objectKey].filter((prev) => prev.value === selected)[0]
+      }
+    : embroideries[i]
+
+  const newEmbroidery: Embroidery = {
+    ...embroidery,
     [type]: EMBROIDERY_ITEMS[objectKey].filter((prev) => prev.value === selected)[0]
   }
-  return embroideriesReducer(embroideries, newEmbroideries, i)
+  return embroideriesReducer(embroideries, newEmbroidery, i)
 }
 
 const embroideriesDispatcher = (
