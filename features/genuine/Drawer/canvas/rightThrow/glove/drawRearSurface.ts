@@ -14,7 +14,7 @@ import { paisleySelected } from '../../paisleySelected'
 import { littleHookDrawer } from './back/fingerHooks'
 import { pseudoDrawingEngraved } from '@/util/canvas'
 import { genuineBrandMarkEmbroideryDrawer } from '../../genuineMark'
-import { liningEmbroideryDrawer, nonThumbEmbroideryDrawer, thumbEmbroideryDrawer } from '@/util/canvas/embroidery'
+import { bandSideEmbroideryDrawer, liningEmbroideryDrawer, nonThumbEmbroideryDrawer, thumbEmbroideryDrawer } from '@/util/canvas/embroidery'
 // import { meshDrawer } from './rightThrow/glove/back/mesh'
 
 // const drawPaisley = (ctx: CanvasRenderingContext2D, state: GenuineState) => {
@@ -55,6 +55,7 @@ export const drawGenuineGloveRearSurface = (ctx: CanvasRenderingContext2D | null
   !isFirstBackStyle && !isConnectBackStyle && laceOfWristBeltCrossDrawer(ctx, laceColor)
   genuineLabelDrawer(ctx, state, width) // ラベル描画
   littleHookDrawer(ctx, state) // 小指掛け紐
+  bandSideEmbroideryDrawer(ctx, state) // サイドの刺繍
   thumbHook(ctx, state.thumbHook.color, -14, 30, 0) //手元
   paisleySelected(ctx, state)
   // drawPaisley(ctx, state)

@@ -27,7 +27,7 @@ const Brands = () => {
           <Grid item width={isMobile ? '100%' : 'unset'}>
             <Box m={2}>
               <Button size={'large'} variant={'contained'} href={'/genuine/pitcher'} style={{ color, border, backgroundColor }} fullWidth={isMobile}>
-                投手1
+                投手
               </Button>
             </Box>
           </Grid>

@@ -14,7 +14,12 @@ import { genuineLabelDrawer } from '../../label/drawer'
 import { littleHookDrawer } from '../../rightThrow/glove/back/fingerHooks'
 import { paisleySelected } from '../../paisleySelected'
 import { genuineLeftThrowBrandMarkEmbroideryDrawer } from '../../genuineMark'
-import { liningEmbroideryDrawerLeftThrow, nonThumbEmbroideryDrawerLeftThrow, thumbEmbroideryDrawerLeftThrow } from '@/util/canvas/embroidery'
+import {
+  bandSideEmbroideryDrawer,
+  liningEmbroideryDrawerLeftThrow,
+  nonThumbEmbroideryDrawerLeftThrow,
+  thumbEmbroideryDrawerLeftThrow
+} from '@/util/canvas/embroidery'
 
 export const drawLeftThrowGenuineGloveRearSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState, width: number): void => {
   const { isFirstBackStyle, isConnectBackStyle } = getBackStyle(state)
@@ -55,6 +60,8 @@ export const drawLeftThrowGenuineGloveRearSurface = (ctx: CanvasRenderingContext
   thumbEmbroideryDrawerLeftThrow(ctx, state) // 親指への刺繍
   genuineLeftThrowBrandMarkEmbroideryDrawer(ctx, state)
   genuineLabelDrawer(ctx, state, width) // ラベル描画
+
+  bandSideEmbroideryDrawer(ctx, state) // バンド横の刺繍
 
   startInversion(ctx, width)
   littleHookDrawer(ctx, state) // 小指掛け紐

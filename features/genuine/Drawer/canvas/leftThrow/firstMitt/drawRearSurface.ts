@@ -20,7 +20,7 @@ import { webRearDrawerOfFirstMitt } from '../../rightThrow/firstMitt/back/webRea
 import { paisleySelected } from '../../paisleySelected'
 import { genuineLeftThrowBrandMarkEmbroideryDrawer } from '../../genuineMark'
 import {
-  fingerEmbroideryDrawerLeftThrow,
+  bandSideEmbroideryDrawer,
   firstBasemanLiningDrawerLeftThrow,
   firstMittChildFingerEmbroideryDrawerLeftThrow,
   firstMittThumbFingerEmbroideryDrawerLeftThrow
@@ -61,6 +61,7 @@ export const drawLeftThrowGenuineFirstMittRearSurface = (ctx: CanvasRenderingCon
   undoInversion(ctx, canvasWidth)
 
   genuineFirstMittLabelDrawer(ctx, state)
+  bandSideEmbroideryDrawer(ctx, state) // バンド横の刺繍
 
   startInversion(ctx, canvasWidth)
   laces(ctx, state) // 革紐

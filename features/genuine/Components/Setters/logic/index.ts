@@ -263,7 +263,7 @@ export const characterCheckHelper = (embroidery: Embroidery) => {
   const isHalfWidthChar = isHalfWidthCharChecker(contentStr)
   const normalContentMaxLength = isHalfWidthChar ? 16 : 8
   const bandContentMaxLength = isHalfWidthChar ? 2 : 1
-  const contentMaxLength = embroidery.position.value === 'band' ? bandContentMaxLength : normalContentMaxLength
+  const contentMaxLength = embroidery.position.value === 'bandSide' ? bandContentMaxLength : normalContentMaxLength
   const characterType = contentStr.charCodeAt(0) >= 256 ? 'ja' : 'en'
 
   return {
@@ -285,10 +285,11 @@ const embroideryPositionListGenerator = (embroideries: Embroidery[], overAllInde
 const embroideryPositionFilter = (selectedPosition: string[]) => EMBROIDERY_POSITIONS.filter((p) => !selectedPosition.includes(p.value))
 
 export const selectablePositionGenerator = (state: GenuineState, index: number) => {
-  const { embroideries } = state
+  const { embroideries, genuineLabel } = state
   const selectedPosition = embroideryPositionListGenerator(embroideries, index)
   const selectablePositionBase = embroideryPositionFilter(selectedPosition)
   const overAllSelectedPositions = embroideries.map((e) => e.position.value)
+  const canSelectBandSide = ['normalSide', 'directEmbroiderySide'].includes(genuineLabel.value)
 
   // 裏平1段目が選択可能かどうか→可能な時は、2段目は選択できないようにしておきたい
   const isSelectableOfLiningFirst = selectablePositionBase.some((p) => p.value === 'leatherLiningFirst')
@@ -298,7 +299,8 @@ export const selectablePositionGenerator = (state: GenuineState, index: number) 
 
   const isGenuineBrandMark = state.genuineBrandMark.value === 'genuineEmbroidery'
   const selectablePosition2 = isGenuineBrandMark ? selectablePosition1.filter((p) => p.value !== 'childFinger') : selectablePosition1
-  return selectablePosition2
+  const selectablePosition3 = canSelectBandSide ? selectablePosition2 : selectablePosition2.filter((p) => p.value !== 'bandSide')
+  return selectablePosition3
 }
 
 export const generateSubColors = (shouldFiltering: boolean) => {

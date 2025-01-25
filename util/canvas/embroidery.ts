@@ -1,4 +1,4 @@
-import { Embroidery, State } from '@/types'
+import { Embroidery, Position, State } from '@/types'
 import { startInversion, undoInversion } from '.'
 
 export const fontFamilySetter = (ctx: CanvasRenderingContext2D, selectedFontValue: string): void => {
@@ -643,5 +643,93 @@ export const thumbEmbroideryDrawerLeftThrow = (ctx: CanvasRenderingContext2D, st
     } else {
       thumbEmbroideryLeftThrow(ctx, embroidery, 0, 0, 0)
     }
+  }
+}
+
+const drawBandSideEmbroidery = (ctx: CanvasRenderingContext2D, embroidery: Embroidery, x: number, y: number, numerator?: number): void => {
+  ctx.lineWidth = 0.8
+  ctx.fillStyle = embroidery.color.color // '#383838'
+  ctx.textAlign = 'start'
+  ctx.save()
+  ctx.rotate(((numerator || 0) * Math.PI) / 180)
+  ctx.beginPath()
+
+  const isShadowColor = !['none', 'unselected'].includes(embroidery.shadowColor.value)
+  const isEdgeColor = !['none', 'unselected'].includes(embroidery.edgeColor.value)
+
+  // 影カラー
+  if (isShadowColor) {
+    ctx.shadowColor = embroidery.shadowColor.color
+    ctx.shadowOffsetX = 3
+    ctx.shadowOffsetY = 3
+    ctx.shadowBlur = 3
+  }
+  // フチカラー
+  if (isEdgeColor) {
+    ctx.lineWidth = 2.5
+    ctx.strokeStyle = embroidery.edgeColor.color
+  }
+  fontFamilySetter(ctx, embroidery.typeFace.value)
+  const typeFace = embroidery.typeFace.value
+  const fontSize = typeFace === 'sanserif' ? '48px' : '60px'
+  ctx.font = `${fontSize} ${embroidery.typeFace.value}`
+  ctx.strokeText(embroidery.content, 360 + x, 555 + y)
+  ctx.fillText(embroidery.content, 360 + x, 555 + y)
+  ctx.closePath()
+  // 影カラーリセット
+  if (isShadowColor) {
+    ctx.shadowOffsetX = 0
+    ctx.shadowOffsetY = 0
+    ctx.shadowBlur = 0
+  }
+  // フチカラーリセット
+  if (isEdgeColor) {
+    ctx.lineWidth = 0.8
+    ctx.strokeStyle = '#383838'
+  }
+  ctx.restore()
+}
+
+export const bandSideEmbroideryDrawer = (ctx: CanvasRenderingContext2D, state: State): void => {
+  const defaultLocale = { x: 0, y: 0, numerator: 0 }
+  const defaultThrowLocale = { rightThrow: defaultLocale, leftThrow: defaultLocale }
+  const gloveLeftThrow = { x: 120, y: 0, numerator: 0 }
+
+  type SecondKey = 'rightThrow' | 'leftThrow'
+  const object: {
+    [key in Position]: {
+      [key in SecondKey]: {
+        x: number
+        y: number
+        numerator: number
+      }
+    }
+  } = {
+    firstBaseman: {
+      rightThrow: {
+        x: -30,
+        y: 20,
+        numerator: 0
+      },
+      leftThrow: {
+        x: 140,
+        y: 20,
+        numerator: 0
+      }
+    },
+    catcher: defaultThrowLocale,
+    pitcher: { ...defaultThrowLocale, leftThrow: gloveLeftThrow },
+    infielder: { ...defaultThrowLocale, leftThrow: gloveLeftThrow },
+    outfielder: { ...defaultThrowLocale, leftThrow: gloveLeftThrow }
+  }
+  console.log({ object })
+  const { embroideries, dominantArm, baseModel } = state
+  const isEmbroidery = embroideries.some((x) => x.position.value === 'bandSide')
+  const embroidery = embroideries.find((e) => e.position.value === 'bandSide')
+  if (isEmbroidery && embroidery) {
+    const throwHand = dominantArm.value as SecondKey
+    const position = baseModel.position
+    const locale = object[position][throwHand]
+    drawBandSideEmbroidery(ctx, embroidery, locale.x, locale.y, locale.numerator)
   }
 }

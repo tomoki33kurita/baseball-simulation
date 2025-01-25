@@ -91,6 +91,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
   const isLoopOfRingFinger = (isGlove && !isFirstBackStyle) || isFirstBaseman
   const isSelectableGenuineMark = !isFirstBaseman && !isFirstBackStyle && !isMesh
   const isSelectableGenuineMarkColor = state.genuineBrandMark.value === 'genuineEmbroidery'
+  const isSelectedBandSideEmbroidery = state.embroideries.some((e) => e.position.value === 'bandSide')
   const isJuniorModel = JUNIOR_LIST.includes(baseModel.productNumber)
   const isYT22 = baseModel.productNumber === 'YT-22'
   const backStyleOptions = getBackStyleOptions(state)
@@ -155,8 +156,14 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         isError={backStyle.value === 'unselected'}
         isDisplay={(isGlove && !isFirstBackStyle) || isCatcher}
         handleChange={handle.backStyle}
-        disabled={isSelectableGenuineMarkColor}
-        description={isSelectableGenuineMarkColor ? '変更するには、Genuine刺繍・刻印を解除してください。' : ''}
+        disabled={isSelectableGenuineMarkColor || isSelectedBandSideEmbroidery}
+        description={
+          isSelectableGenuineMarkColor
+            ? '変更するには、Genuine刺繍・刻印を解除してください。'
+            : isSelectedBandSideEmbroidery
+            ? '変更するには、"バンド横"の刺繍を解除してください。'
+            : ''
+        }
         defaultExpanded={backStyle.value === 'unselected'}
         className={BACK_STYLE_BUTTON_OPTION}
         isDark

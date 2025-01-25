@@ -13,8 +13,8 @@ export const EMBROIDERY_POSITIONS = [
   { label: '親指', value: 'thumbFinger' },
   { label: '小指', value: 'childFinger' },
   { label: '平裏', value: 'leatherLiningFirst' },
-  { label: '平裏(2段目)', value: 'leatherLiningSecond' }
-  // { label: 'バンド部', value: 'band' }
+  { label: '平裏(2段目)', value: 'leatherLiningSecond' },
+  { label: 'バンド横', value: 'bandSide' }
 ]
 
 export const EMBROIDERY_COLORS = [

@@ -19,7 +19,12 @@ import { paisleySelected } from '../../paisleySelected'
 import { genuineFirstMittLabelDrawer } from '../../label/drawer'
 import { pseudoDrawingEngraved } from '@/util/canvas'
 import { genuineBrandMarkEmbroideryDrawer } from '../../genuineMark'
-import { firstMittChildFingerEmbroideryDrawer, firstMittThumbEmbroideryDrawer, liningEmbroideryDrawer } from '@/util/canvas/embroidery'
+import {
+  bandSideEmbroideryDrawer,
+  firstMittChildFingerEmbroideryDrawer,
+  firstMittThumbEmbroideryDrawer,
+  liningEmbroideryDrawer
+} from '@/util/canvas/embroidery'
 
 export const drawGenuineFirstMittRearSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
   if (!ctx) return
@@ -55,6 +60,7 @@ export const drawGenuineFirstMittRearSurface = (ctx: CanvasRenderingContext2D | 
   edgeDrawer(ctx, state) // ヘリ革
   stitch(ctx, state.stitch.color) // ステッチ
   fingerGuardDrawer(ctx, state) // 指カバー
+  bandSideEmbroideryDrawer(ctx, state) // バンド横の刺繍
 
   genuineFirstMittLabelDrawer(ctx, state)
   laces(ctx, state) // 革紐

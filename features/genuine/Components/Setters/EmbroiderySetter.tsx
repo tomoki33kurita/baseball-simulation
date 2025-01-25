@@ -10,7 +10,6 @@ import { EmbroideryContent } from '@/components/Setters/Embroidery/EmbroideryCon
 import {
   characterCheckHelper,
   embroideryFlagGenerator,
-  fontImageResolver,
   generateSubColors,
   getBackStyle,
   selectablePositionGenerator,
@@ -25,8 +24,26 @@ type Props = {
 }
 
 export const EmbroiderySetter: React.FC<Props> = ({ state, selectedIndex, isDark, dispatch }) => {
-  const { embroideries } = state
+  const { embroideries, genuineLabel } = state
   const { handle } = useEmbroideriesDispatchGenerator(dispatch, embroideries)
+  const isUnselectedLabel = genuineLabel.value === 'unselected'
+  const isUnselectedDominantArm = state.dominantArm.value === 'unselected'
+
+  if (isUnselectedDominantArm) {
+    return (
+      <Box pl={3} my={3} textAlign={'center'} color={isDark ? '#2ebdff' : 'blue'} fontSize={'12px'} fontWeight={isDark ? 'bold' : 'normal'}>
+        利き手を先に選択してください。
+      </Box>
+    )
+  }
+
+  if (isUnselectedLabel) {
+    return (
+      <Box pl={3} my={3} textAlign={'center'} color={isDark ? '#2ebdff' : 'blue'} fontSize={'12px'} fontWeight={isDark ? 'bold' : 'normal'}>
+        ラベルを先に選択してください。
+      </Box>
+    )
+  }
 
   return (
     <TabPanel selectedIndex={selectedIndex} index={2} isDark>
@@ -53,7 +70,7 @@ export const EmbroiderySetter: React.FC<Props> = ({ state, selectedIndex, isDark
                     index={i}
                     handleChange={handle.position}
                     description={isFirstBackStyle && isLiningsEmbroidery ? '※シミュレーションには描画されません。' : ''}
-                    disabled={existsContent}
+                    disabled={existsContent || isUnselectedLabel}
                     isDark
                   />
                 </Box>
