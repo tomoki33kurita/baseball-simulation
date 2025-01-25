@@ -55,19 +55,6 @@ export const bindingOfRegularBackStyle = (ctx: CanvasRenderingContext2D, color: 
   ctx.fill()
   ctx.stroke()
   ctx.closePath()
-
-  // 裏革
-  ctx.fillStyle = liningLeatherColor
-  ctx.beginPath()
-  ctx.strokeStyle = '#383838'
-  ctx.moveTo(312, 450) //左
-  ctx.quadraticCurveTo(313, 451, 313, 451) // 左下
-  ctx.quadraticCurveTo(427, 442, 427, 442) // 右下
-  ctx.quadraticCurveTo(426, 439, 426, 439) // 右上
-  ctx.quadraticCurveTo(356, 438, 312, 450) // 左上
-  ctx.fill()
-  ctx.stroke()
-  ctx.closePath()
 }
 
 export const bindingOfBeltBackStyle = (ctx: CanvasRenderingContext2D, color: string, stitchColor: string): void => {
