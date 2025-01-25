@@ -1,4 +1,4 @@
-import { ColorItem } from '@/types'
+import { BaseItem, BaseItemWithPrice, ColorItem } from '@/types'
 import { GenuineState } from '@/features/genuine/types'
 import { positionChecker } from '@/util/logic'
 import { getBackStyle, getFingerGuardType } from '../Setters/logic'
@@ -19,6 +19,13 @@ const genGloveColorCell = (head: string, item: ColorItem, partsKey: string) => {
     value: item.value,
     partsKey
   }
+}
+
+const genGloveBaseCell = (head: string, item: BaseItem | BaseItemWithPrice) => {
+  if ('price' in item) {
+    return { head, label: `${item.label} (+${item.price.toLocaleString()}円)`, value: item.value }
+  }
+  return { head, label: item.label, value: item.value }
 }
 
 const getFingerParts = (state: GenuineState) => {
@@ -139,6 +146,6 @@ export const getGenuineColorCells = (state: GenuineState) => {
     genGloveColorCell('ステッチ', state.stitch, 'stitch'),
     genGloveColorCell('革紐', state.lace, 'lace'),
     genGloveColorCell('ムートン', { label: state.mouton.label, color: state.mouton.value, value: state.mouton.value }, 'mouton'),
-    genGloveColorCell('ラベル', { label: state.genuineLabel.label, color: state.genuineLabel.value, value: state.genuineLabel.value }, 'genuineLabel')
+    genGloveBaseCell('ラベル', state.genuineLabel)
   ].filter((item) => item.value !== dummy.value)
 }
