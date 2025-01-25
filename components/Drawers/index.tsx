@@ -11,12 +11,13 @@ type Props = {
   palmSurfaceId: string
   state: State
   drawerIndex: number
+  isDark?: boolean
   handleDrawerIndex: (_: unknown, newValue: 0 | 1) => void
 }
 
-export const SurfaceDrawers: FC<Props> = ({ rearSurfaceId, palmSurfaceId, drawerIndex, handleDrawerIndex }) => {
+export const SurfaceDrawers: FC<Props> = ({ rearSurfaceId, palmSurfaceId, drawerIndex, isDark, handleDrawerIndex }) => {
   return (
-    <Box position={'sticky'} top={0}>
+    <Box position={'sticky'} top={0} bgcolor={isDark ? '#383838' : '#fff'} height={'100vh'}>
       <TabPanel selectedIndex={drawerIndex} index={0}>
         <RearSurface rearSurfaceId={rearSurfaceId} />
       </TabPanel>
