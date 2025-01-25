@@ -2,6 +2,22 @@ import nodemailer from 'nodemailer'
 import { NextResponse } from 'next/server'
 import { Brand } from '@/types'
 
+const getBrandName = (brand: Brand) => {
+  switch (brand) {
+    case 'five':
+      return 'FIVE'
+    case 'genuine':
+      return 'Genuine'
+    default:
+      return '--'
+  }
+}
+
+const getSubject = (savedId: number, brand: Brand) => {
+  const brandName = getBrandName(brand)
+  return `【${brandName} オーダーシミュレーション】保存IDが発行されました ${savedId}`
+}
+
 export async function POST(req: Request) {
   try {
     const data = await req.json()
@@ -17,7 +33,7 @@ export async function POST(req: Request) {
       from: process.env.SMTP_AUTH_USER,
       to: receiverEmailAddress,
       bcc: process.env.SMTP_AUTH_USER,
-      subject: data.subject,
+      subject: getSubject(data.savedId, data.brand),
       attachments: [
         {
           filename: 'simulation-rear.png',
@@ -66,7 +82,7 @@ const mailTextGenerator = (locale = 'ja', savedId: string, brand: Brand) => {
         <head></head>
         <body>
           <div style="margin-bottom:8px">
-            <div>${brand}オーダーシミュレーションをご利用頂きありがとうございます。</div>
+            <div>${getBrandName(brand)} オーダーシミュレーションをご利用頂きありがとうございます。</div>
           </div>
       
           <div style="display:flex; margin-bottom:8px">
