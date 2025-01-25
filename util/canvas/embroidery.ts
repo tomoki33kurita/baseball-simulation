@@ -671,10 +671,10 @@ const drawBandSideEmbroidery = (ctx: CanvasRenderingContext2D, embroidery: Embro
   }
   fontFamilySetter(ctx, embroidery.typeFace.value)
   const typeFace = embroidery.typeFace.value
-  const fontSize = typeFace === 'sanserif' ? '48px' : '60px'
+  const fontSize = typeFace === 'sanserif' ? '48px' : typeFace === 'engraving' ? '54px' : '60px'
   ctx.font = `${fontSize} ${embroidery.typeFace.value}`
-  ctx.strokeText(embroidery.content, 360 + x, 555 + y)
-  ctx.fillText(embroidery.content, 360 + x, 555 + y)
+  ctx.strokeText(embroidery.content, 355 + x, 555 + y)
+  ctx.fillText(embroidery.content, 355 + x, 555 + y)
   ctx.closePath()
   // 影カラーリセット
   if (isShadowColor) {
@@ -693,7 +693,7 @@ const drawBandSideEmbroidery = (ctx: CanvasRenderingContext2D, embroidery: Embro
 export const bandSideEmbroideryDrawer = (ctx: CanvasRenderingContext2D, state: State): void => {
   const defaultLocale = { x: 0, y: 0, numerator: 0 }
   const defaultThrowLocale = { rightThrow: defaultLocale, leftThrow: defaultLocale }
-  const gloveLeftThrow = { x: 120, y: 0, numerator: 0 }
+  const gloveLeftThrow = { x: 110, y: 0, numerator: 0 }
 
   type SecondKey = 'rightThrow' | 'leftThrow'
   const object: {
@@ -708,12 +708,12 @@ export const bandSideEmbroideryDrawer = (ctx: CanvasRenderingContext2D, state: S
     firstBaseman: {
       rightThrow: {
         x: -30,
-        y: 20,
+        y: 25,
         numerator: 0
       },
       leftThrow: {
         x: 140,
-        y: 20,
+        y: 25,
         numerator: 0
       }
     },
