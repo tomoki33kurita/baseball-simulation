@@ -25,7 +25,7 @@ export const drawGenuineCatcherMittRearSurface = (ctx: CanvasRenderingContext2D 
   ctx.strokeText('型番：' + baseModel.productNumber, 50, 50)
   pseudoDrawingEngraved(ctx)
 
-  liningDrawer(ctx, state) // 裏革
+  liningDrawer(ctx, state, 0) // 裏革
   backStyleDrawer(ctx, state) // バックスタイル
   catchFaceDrawer(ctx, state.palm.color, state.stitch.color, state.baseModel.productNumber) // 捕球面側
   webDrawer(ctx, state) // ウェブ
