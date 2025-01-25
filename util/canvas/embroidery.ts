@@ -594,3 +594,54 @@ export const liningEmbroideryDrawerLeftThrow = (
     liningEmbroidery(ctx, embroidery, liningEmbroideryObjectLeftThrow[step].x, liningEmbroideryObjectLeftThrow[step].y)
   }
 }
+
+export const nonThumbEmbroideryDrawerLeftThrow = (
+  ctx: CanvasRenderingContext2D,
+  fingerType: 'middleFinger' | 'ringFinger' | 'childFinger',
+  embroideries: Embroidery[]
+): void => {
+  const nonThumbEmbroideryObjectLeftThrow = {
+    middleFinger: {
+      x: 0,
+      y: 0,
+      numerator: 1
+    },
+    ringFinger: {
+      x: 0,
+      y: 0,
+      numerator: 1
+    },
+    childFinger: {
+      x: 10,
+      y: -20,
+      numerator: -3
+    }
+  }
+
+  const isEmbroideryDraw = embroideries?.some((x) => x.position.value === fingerType)
+  const embroidery = embroideries.find((embroidery) => embroidery.position.value === fingerType)
+  if (isEmbroideryDraw && embroidery) {
+    notThumbEmbroideryLeftThrow(
+      ctx,
+      embroidery,
+      nonThumbEmbroideryObjectLeftThrow[fingerType].x,
+      nonThumbEmbroideryObjectLeftThrow[fingerType].y,
+      nonThumbEmbroideryObjectLeftThrow[fingerType].numerator
+    )
+  }
+}
+
+const positionCompare = (e: Embroidery) => (target: string) => e.position.value === target
+export const thumbEmbroideryDrawerLeftThrow = (ctx: CanvasRenderingContext2D, state: State): void => {
+  const embroideries = state.embroideries
+  const matcher = (e: Embroidery) => positionCompare(e)('thumbFinger')
+  const embroidery = embroideries?.find(matcher)
+  if (!embroidery) return
+  if (state.baseModel.brand === 'genuine') {
+    if (state.baseModel.productNumber === 'MIU-T4') {
+      thumbEmbroideryLeftThrow(ctx, embroidery, -95, 0, 0)
+    } else {
+      thumbEmbroideryLeftThrow(ctx, embroidery, 0, 0, 0)
+    }
+  }
+}
