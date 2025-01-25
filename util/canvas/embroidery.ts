@@ -441,7 +441,8 @@ const notThumbEmbroideryLeftThrow = (ctx: CanvasRenderingContext2D, embroidery: 
   ctx.restore()
 }
 
-export const fingerEmbroideryDrawerLeftThrow = (ctx: CanvasRenderingContext2D, embroideries: Embroidery[]): void => {
+export const fingerEmbroideryDrawerLeftThrow = (ctx: CanvasRenderingContext2D, embroideries: Embroidery[], canvasWidth: number): void => {
+  undoInversion(ctx, canvasWidth)
   // 親指への刺繍
   const isEmbroideryOfThumb = embroideries.some((x) => x.position.value === 'thumbFinger')
   const thumbEmbroidery = embroideries.find((embroidery) => embroidery.position.value === 'thumbFinger')
@@ -454,6 +455,7 @@ export const fingerEmbroideryDrawerLeftThrow = (ctx: CanvasRenderingContext2D, e
   if (isEmbroideryOfChild && childEmbroidery) {
     notThumbEmbroideryLeftThrow(ctx, childEmbroidery, -20, 50, 3)
   }
+  startInversion(ctx, canvasWidth)
 }
 
 export const catcherLiningDrawerLeftThrow = (ctx: CanvasRenderingContext2D, state: State): void => {
@@ -468,5 +470,127 @@ export const catcherLiningDrawerLeftThrow = (ctx: CanvasRenderingContext2D, stat
   // 平裏への刺繍
   if (isEmbroideryOfLiningSecond && liningEmbroiderySecond) {
     liningEmbroidery(ctx, liningEmbroiderySecond, 255, 30)
+  }
+}
+
+export const firstBasemanLiningDrawerLeftThrow = (ctx: CanvasRenderingContext2D, state: State, width: number): void => {
+  undoInversion(ctx, width)
+  const isEmbroideryOfLiningFirst = state.embroideries.some((x) => x.position.value === 'leatherLiningFirst')
+  // 平裏への刺繍
+  const liningEmbroideryFirst = state.embroideries.find((x) => x.position.value === 'leatherLiningFirst')
+  if (isEmbroideryOfLiningFirst && liningEmbroideryFirst) {
+    liningEmbroidery(ctx, liningEmbroideryFirst, 210, -65)
+  }
+  const isEmbroideryOfLiningSecond = state.embroideries.some((x) => x.position.value === 'leatherLiningSecond')
+  const liningEmbroiderySecond = state.embroideries.find((x) => x.position.value === 'leatherLiningSecond')
+  // 平裏への刺繍
+  if (isEmbroideryOfLiningSecond && liningEmbroiderySecond) {
+    liningEmbroidery(ctx, liningEmbroiderySecond, 215, -25)
+  }
+  startInversion(ctx, width)
+}
+
+const firstMittChildFingerEmbroideryLeftThrow = (
+  ctx: CanvasRenderingContext2D,
+  embroidery: Embroidery,
+  x: number,
+  y: number,
+  numerator?: number
+): void => {
+  fontFamilySetter(ctx, embroidery.typeFace.value)
+  // 以下の font 再宣言必須
+  const fontSize = embroidery.typeFace.value === 'Brush Script MT' ? '25px' : '18px'
+  ctx.font = `${fontSize} ${embroidery.typeFace.value}`
+  ctx.textAlign = 'start'
+  ctx.lineWidth = 0.8
+  ctx.fillStyle = embroidery.color.color // '#383838'
+  // 手入れ口部分
+  ctx.save()
+  ctx.rotate(((10 + (numerator || 0)) * Math.PI) / 180)
+  ctx.beginPath()
+
+  // 影カラー
+  if (embroidery?.shadowColor?.value !== 'none') {
+    ctx.shadowColor = embroidery?.shadowColor?.color
+    ctx.shadowOffsetX = 3
+    ctx.shadowOffsetY = 3
+    ctx.shadowBlur = 3
+  }
+  // フチカラー
+  if (embroidery?.edgeColor?.value !== 'none') {
+    ctx.lineWidth = 2.5
+    ctx.strokeStyle = embroidery.edgeColor.color
+  }
+  ctx.strokeText(embroidery.content, -300 + x, 710 + y)
+  ctx.fillText(embroidery.content, -300 + x, 710 + y)
+  ctx.closePath()
+  // 影カラーリセット
+  if (embroidery?.shadowColor?.value !== 'none') {
+    ctx.shadowOffsetX = 0
+    ctx.shadowOffsetY = 0
+    ctx.shadowBlur = 0
+  }
+  // フチカラーリセット
+  if (embroidery?.edgeColor?.value !== 'none') {
+    ctx.lineWidth = 0.8
+    ctx.strokeStyle = '#383838'
+  }
+  ctx.restore()
+}
+
+export const firstMittChildFingerEmbroideryDrawerLeftThrow = (
+  ctx: CanvasRenderingContext2D,
+  embroideries: Embroidery[],
+  canvasWidth: number
+): void => {
+  undoInversion(ctx, canvasWidth)
+  // 小指への刺繍
+  const isEmbroideryOfChild = embroideries.some((x) => x.position.value === 'childFinger')
+  const embroidery = embroideries.find((embroidery) => embroidery.position.value === 'childFinger')
+  if (isEmbroideryOfChild && embroidery) {
+    firstMittChildFingerEmbroideryLeftThrow(ctx, embroidery, 890, -440)
+  }
+
+  startInversion(ctx, canvasWidth)
+}
+
+export const firstMittThumbFingerEmbroideryDrawerLeftThrow = (
+  ctx: CanvasRenderingContext2D,
+  embroideries: Embroidery[],
+  canvasWidth: number
+): void => {
+  undoInversion(ctx, canvasWidth)
+  // 親指への刺繍
+  const isEmbroideryOfThumb = embroideries.some((x) => x.position.value === 'thumbFinger')
+  const thumbEmbroidery = embroideries.find((embroidery) => embroidery.position.value === 'thumbFinger')
+  if (isEmbroideryOfThumb && thumbEmbroidery) {
+    thumbEmbroideryLeftThrow(ctx, thumbEmbroidery, -5, -70, 8)
+  }
+  startInversion(ctx, canvasWidth)
+}
+
+export const liningEmbroideryDrawerLeftThrow = (
+  ctx: CanvasRenderingContext2D,
+  embroideries: Embroidery[],
+  step: 'first' | 'second',
+  fontSize?: string
+): void => {
+  const liningEmbroideryObjectLeftThrow = {
+    first: {
+      x: 210,
+      y: -75,
+      position: 'leatherLiningFirst'
+    },
+    second: {
+      x: 215,
+      y: -35,
+      position: 'leatherLiningSecond'
+    }
+  }
+
+  const isEmbroideryOfLining = embroideries?.some((x) => x.position.value === liningEmbroideryObjectLeftThrow[step].position)
+  const embroidery = embroideries.find((x) => x.position.value === liningEmbroideryObjectLeftThrow[step].position)
+  if (isEmbroideryOfLining && embroidery) {
+    liningEmbroidery(ctx, embroidery, liningEmbroideryObjectLeftThrow[step].x, liningEmbroideryObjectLeftThrow[step].y)
   }
 }

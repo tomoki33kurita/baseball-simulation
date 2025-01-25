@@ -14,6 +14,7 @@ import { genuineLabelDrawer } from '../../label/drawer'
 import { littleHookDrawer } from '../../rightThrow/glove/back/fingerHooks'
 import { paisleySelected } from '../../paisleySelected'
 import { genuineLeftThrowBrandMarkEmbroideryDrawer } from '../../genuineMark'
+import { liningEmbroideryDrawerLeftThrow } from '@/util/canvas/embroidery'
 
 export const drawLeftThrowGenuineGloveRearSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState, width: number): void => {
   const { isFirstBackStyle, isConnectBackStyle } = getBackStyle(state)
@@ -32,6 +33,11 @@ export const drawLeftThrowGenuineGloveRearSurface = (ctx: CanvasRenderingContext
 
   startInversion(ctx, width)
   lining(ctx, state.linings.color) // 裏革
+  undoInversion(ctx, width)
+  liningEmbroideryDrawerLeftThrow(ctx, state.embroideries, 'first') // 平裏の刺繍描画1段目
+  liningEmbroideryDrawerLeftThrow(ctx, state.embroideries, 'second') // 平裏の刺繍描画2段目
+  startInversion(ctx, width)
+
   loopOfRingFingerDrawer(ctx, state)
   backStyleOfGloveBackDrawer(ctx, state) // バックスタイルの描画(ハミダシ,親指刺繍含)
   fingerGuardDrawer(ctx, state) // 指カバー・パッド

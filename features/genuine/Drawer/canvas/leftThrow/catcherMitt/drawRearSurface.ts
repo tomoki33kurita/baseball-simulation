@@ -33,8 +33,8 @@ export const drawLeftThrowGenuineCatcherMittRearSurface = (ctx: CanvasRenderingC
   laceDrawer(ctx, state.lace.color) // 革紐
   thumbHook(ctx, state.thumbHook.color) // かけ紐
   littleHook(ctx, state.littleHook.color) // かけ紐
+  fingerEmbroideryDrawerLeftThrow(ctx, state.embroideries, width) // 刺繍
   undoInversion(ctx, width)
-  fingerEmbroideryDrawerLeftThrow(ctx, state.embroideries) // 刺繍
   genuineCatcherMittLabelDrawer(ctx, state) // ラベル描画
   paisleySelected(ctx, state)
   genuineLeftThrowBrandMarkEmbroideryDrawer(ctx, state)
