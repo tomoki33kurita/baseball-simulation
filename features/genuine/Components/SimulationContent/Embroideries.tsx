@@ -1,9 +1,8 @@
 import React from 'react'
 import { Box } from '@mui/material'
 import { GenuineState } from '../../types'
-import { getEmbroideryCells } from '@/features/Logic'
-import { Embroidery } from '@/types'
 import { ItemCell } from '@/components/ItemCell'
+import { getGenuineEmbroideryCells } from '../ConfirmContents/embroidery'
 
 const cellColor = (cellValue: string, isDark?: boolean) => (cellValue === 'unselected' ? (isDark ? 'orange' : 'red') : isDark ? '#fff' : '#383838')
 
@@ -29,8 +28,7 @@ export const GenuineEmbroideries: React.FC<Props> = ({ state, previousIndex, isD
           {embroideries
             .filter((e) => e.content.trim().length > 0)
             .map((e, index) => {
-              const existEmbroidery = state.embroideries.filter((e: Embroidery) => e.content.trim().length > 0).length > 0
-              const embroideryCells = getEmbroideryCells(state, existEmbroidery)
+              const embroideryCells = getGenuineEmbroideryCells(e)
               return (
                 <React.Fragment key={`${e.content}_${index}`}>
                   <Box mb={2}>

@@ -1,28 +1,18 @@
-// import { liningEmbroidery } from 'src/features/brands/atoms/canvas/common/back/embroidery'
 import { GenuineState } from '@/features/genuine/types'
 import { lining } from '../lining'
+import { catcherLiningDrawerLeftThrow, catcherLiningEmbroideryDrawer } from '@/util/canvas/embroidery'
+import { startInversion, undoInversion } from '@/util/canvas'
 
-export const liningDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
+export const liningDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState, width: number): void => {
   lining(ctx, state.linings.color)
 
-  // const isEmbroideryOfLiningFirst = state.embroideries.some((x) => x.position.value === 'leatherLiningFirst')
-  // // 平裏への刺繍
-  // if (isEmbroideryOfLiningFirst) {
-  //   liningEmbroidery(
-  //     ctx,
-  //     state.embroideries.find((embroidery) => embroidery.position.value === 'leatherLiningFirst'),
-  //     100,
-  //     -15
-  //   )
-  // }
-  // const isEmbroideryOfLiningSecond = state.embroideries.some((x) => x.position.value === 'leatherLiningSecond')
-  // // 平裏への刺繍
-  // if (isEmbroideryOfLiningSecond) {
-  //   liningEmbroidery(
-  //     ctx,
-  //     state.embroideries.find((embroidery) => embroidery.position.value === 'leatherLiningSecond'),
-  //     100,
-  //     30
-  //   )
-  // }
+  if (state.dominantArm.value === 'rightThrow') {
+    catcherLiningEmbroideryDrawer(ctx, state.embroideries, 'first') // 裏革の刺繍
+    catcherLiningEmbroideryDrawer(ctx, state.embroideries, 'second') // 裏革の刺繍
+  }
+  if (state.dominantArm.value === 'leftThrow') {
+    undoInversion(ctx, width)
+    catcherLiningDrawerLeftThrow(ctx, state) // 裏革
+    startInversion(ctx, width)
+  }
 }

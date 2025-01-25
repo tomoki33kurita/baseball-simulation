@@ -31,7 +31,7 @@ export const GenuinePageTemplates: FC<Props> = ({ state, position, theme, rearSu
       <Box display={'flex'}>
         <Grid container>
           <Grid item xs={12} md={7} zIndex={20} position={'sticky'} top={0}>
-            <SurfaceDrawers {...{ rearSurfaceId, palmSurfaceId, state, drawerIndex, handleDrawerIndex }} />
+            <SurfaceDrawers {...{ rearSurfaceId, palmSurfaceId, state, drawerIndex, handleDrawerIndex }} isDark />
           </Grid>
           <Grid item xs={12} md={5} zIndex={10}>
             <Setters {...{ state, dispatch, position }} />

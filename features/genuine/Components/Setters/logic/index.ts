@@ -272,7 +272,7 @@ export const characterCheckHelper = (embroidery: Embroidery) => {
   const isHalfWidthChar = isHalfWidthCharChecker(contentStr)
   const normalContentMaxLength = isHalfWidthChar ? 16 : 8
   const bandContentMaxLength = isHalfWidthChar ? 2 : 1
-  const contentMaxLength = embroidery.position.value === 'band' ? bandContentMaxLength : normalContentMaxLength
+  const contentMaxLength = ['bandSide', 'onWeb'].includes(embroidery.position.value) ? bandContentMaxLength : normalContentMaxLength
   const characterType = contentStr.charCodeAt(0) >= 256 ? 'ja' : 'en'
 
   return {
@@ -293,17 +293,24 @@ const embroideryPositionListGenerator = (embroideries: Embroidery[], overAllInde
 
 const embroideryPositionFilter = (selectedPosition: string[]) => EMBROIDERY_POSITIONS.filter((p) => !selectedPosition.includes(p.value))
 
-export const selectablePositionGenerator = (embroideries: Embroidery[], index: number) => {
+export const selectablePositionGenerator = (state: GenuineState, index: number) => {
+  const { embroideries, genuineLabel } = state
   const selectedPosition = embroideryPositionListGenerator(embroideries, index)
   const selectablePositionBase = embroideryPositionFilter(selectedPosition)
   const overAllSelectedPositions = embroideries.map((e) => e.position.value)
+  const canSelectBandSide = ['normalSide', 'directEmbroiderySide'].includes(genuineLabel.value)
 
   // 裏平1段目が選択可能かどうか→可能な時は、2段目は選択できないようにしておきたい
   const isSelectableOfLiningFirst = selectablePositionBase.some((p) => p.value === 'leatherLiningFirst')
-  const selectablePosition = (
+  const selectablePosition1 = (
     isSelectableOfLiningFirst ? selectablePositionBase.filter((p) => p.value !== 'leatherLiningSecond') : selectablePositionBase
   ).filter((p) => !overAllSelectedPositions.includes(p.value) || p.value === embroideries[index].position?.value)
-  return selectablePosition
+
+  const isGenuineBrandMark = state.genuineBrandMark.value === 'genuineEmbroidery'
+  const selectablePosition2 = isGenuineBrandMark ? selectablePosition1.filter((p) => p.value !== 'childFinger') : selectablePosition1
+  const selectablePosition3 = canSelectBandSide ? selectablePosition2 : selectablePosition2.filter((p) => p.value !== 'bandSide')
+  const selectablePosition4 = state.baseModel.productNumber === 'YT-22' ? selectablePosition3 : selectablePosition3.filter((p) => p.value !== 'onWeb')
+  return selectablePosition4
 }
 
 export const generateSubColors = (shouldFiltering: boolean) => {
@@ -345,13 +352,42 @@ interface ObjectKey {
   edgeColor: string
 }
 
+const unselectedColorState = {
+  label: '未選択',
+  value: 'unselected',
+  color: '#fff'
+}
+
 const updateEmbroideries = (embroideries: Embroidery[], selected: string, type: EmbroideryKey, i: number): Embroidery[] => {
   const objectKey = type as keyof ObjectKey
-  const newEmbroideries = {
-    ...embroideries[i],
+  const isEngraving = selected === 'engraving'
+  const isTypeFace = objectKey === 'typeFace'
+  const wasEngraving = embroideries[i].typeFace.value === 'engraving'
+  const embroidery = isEngraving
+    ? {
+        color: { label: '刻印（色指定不可）', value: 'engraving', color: 'gray' },
+        shadowColor: { label: '刻印（色指定不可）', value: 'none', color: 'gray' },
+        edgeColor: { label: '刻印（色指定不可）', value: 'none', color: 'gray' },
+        typeFace: { label: '刻印（色指定不可）', value: 'engraving' },
+        position: embroideries[i].position,
+        id: embroideries[i].id,
+        content: embroideries[i].content
+      }
+    : isTypeFace && wasEngraving
+    ? {
+        ...embroideries[i],
+        color: unselectedColorState,
+        shadowColor: unselectedColorState,
+        edgeColor: unselectedColorState,
+        typeFace: EMBROIDERY_ITEMS[objectKey].filter((prev) => prev.value === selected)[0]
+      }
+    : embroideries[i]
+
+  const newEmbroidery: Embroidery = {
+    ...embroidery,
     [type]: EMBROIDERY_ITEMS[objectKey].filter((prev) => prev.value === selected)[0]
   }
-  return embroideriesReducer(embroideries, newEmbroideries, i)
+  return embroideriesReducer(embroideries, newEmbroidery, i)
 }
 
 const embroideriesDispatcher = (

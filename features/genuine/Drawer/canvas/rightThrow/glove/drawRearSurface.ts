@@ -14,6 +14,7 @@ import { paisleySelected } from '../../paisleySelected'
 import { littleHookDrawer } from './back/fingerHooks'
 import { pseudoDrawingEngraved } from '@/util/canvas'
 import { genuineBrandMarkEmbroideryDrawer } from '../../genuineMark'
+import { bandSideEmbroideryDrawer, liningEmbroideryDrawer, nonThumbEmbroideryDrawer, thumbEmbroideryDrawer } from '@/util/canvas/embroidery'
 // import { meshDrawer } from './rightThrow/glove/back/mesh'
 
 // const drawPaisley = (ctx: CanvasRenderingContext2D, state: GenuineState) => {
@@ -40,8 +41,12 @@ export const drawGenuineGloveRearSurface = (ctx: CanvasRenderingContext2D | null
 
   const laceColor = state.lace.color
   lining(ctx, state.linings.color) // 裏革
+  liningEmbroideryDrawer(ctx, state.embroideries, 'first') // 裏革の刺繍
+  liningEmbroideryDrawer(ctx, state.embroideries, 'second') // 裏革の刺繍
   loopOfRingFingerDrawer(ctx, state)
-  backStyleOfGloveBackDrawer(ctx, state) // バックスタイルの描画(ハミダシ,親指刺繍含)
+  backStyleOfGloveBackDrawer(ctx, state) // バックスタイルの描画(ハミダシ,)
+  thumbEmbroideryDrawer(ctx, state.embroideries) // 親指の刺繍
+  nonThumbEmbroideryDrawer(ctx, 'childFinger', state.embroideries) // 小指の刺繍
   genuineBrandMarkEmbroideryDrawer(ctx, state)
   fingerGuardDrawer(ctx, state) // 指カバー・パッド
   thumbHook(ctx, state.thumbHook.color, 110, -310, 15) // 先端 // 親指掛け紐_上
@@ -50,6 +55,7 @@ export const drawGenuineGloveRearSurface = (ctx: CanvasRenderingContext2D | null
   !isFirstBackStyle && !isConnectBackStyle && laceOfWristBeltCrossDrawer(ctx, laceColor)
   genuineLabelDrawer(ctx, state, width) // ラベル描画
   littleHookDrawer(ctx, state) // 小指掛け紐
+  bandSideEmbroideryDrawer(ctx, state) // サイドの刺繍
   thumbHook(ctx, state.thumbHook.color, -14, 30, 0) //手元
   paisleySelected(ctx, state)
   // drawPaisley(ctx, state)

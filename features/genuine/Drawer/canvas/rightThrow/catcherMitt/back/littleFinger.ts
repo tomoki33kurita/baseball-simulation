@@ -23,7 +23,9 @@ export const littleFingerOfRegularBackStyle = (ctx: CanvasRenderingContext2D, st
   ctx.lineWidth = 1.4
   ctx.fillStyle = '#fff'
 
-  if (state.genuineBrandMark.value !== 'genuineEmbroidery') {
+  const isChildEmbroidery = state.embroideries.some((embroidery) => embroidery.position.value === 'childFinger')
+  const isGenuineBrandMark = state.genuineBrandMark.value === 'genuineEmbroidery'
+  if (!isChildEmbroidery && !isGenuineBrandMark) {
     // 左列
     ctx.moveTo(174, 261)
     ctx.arc(174, 261, 4, 0, 2 * Math.PI)

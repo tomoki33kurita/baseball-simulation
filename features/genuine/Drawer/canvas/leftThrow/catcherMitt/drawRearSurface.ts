@@ -11,6 +11,7 @@ import { genuineCatcherMittLabelDrawer } from '../../label/drawer'
 import { paisleySelected } from '../../paisleySelected'
 import { GenuineState } from '@/features/genuine/types'
 import { genuineLeftThrowBrandMarkEmbroideryDrawer } from '../../genuineMark'
+import { fingerEmbroideryDrawerLeftThrow, onWebEmbroideryDrawer } from '@/util/canvas/embroidery'
 
 export const drawLeftThrowGenuineCatcherMittRearSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState, width: number): void => {
   if (!ctx) return
@@ -25,15 +26,17 @@ export const drawLeftThrowGenuineCatcherMittRearSurface = (ctx: CanvasRenderingC
   pseudoDrawingEngraved(ctx)
 
   startInversion(ctx, width)
-  liningDrawer(ctx, state) // 裏革
+  liningDrawer(ctx, state, width) // 裏革
   backStyleDrawer(ctx, state) // バックスタイル
   catchFaceDrawer(ctx, state.palm.color, state.stitch.color, state.baseModel.productNumber) // 捕球面側
   webDrawer(ctx, state) // ウェブ
   laceDrawer(ctx, state.lace.color) // 革紐
   thumbHook(ctx, state.thumbHook.color) // かけ紐
   littleHook(ctx, state.littleHook.color) // かけ紐
+  fingerEmbroideryDrawerLeftThrow(ctx, state.embroideries, width) // 刺繍
   undoInversion(ctx, width)
   genuineCatcherMittLabelDrawer(ctx, state) // ラベル描画
   paisleySelected(ctx, state)
   genuineLeftThrowBrandMarkEmbroideryDrawer(ctx, state)
+  onWebEmbroideryDrawer(ctx, state)
 }

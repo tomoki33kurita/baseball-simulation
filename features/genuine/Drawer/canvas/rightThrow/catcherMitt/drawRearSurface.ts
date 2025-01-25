@@ -11,6 +11,7 @@ import { genuineCatcherMittLabelDrawer } from '../../label/drawer'
 import { paisleySelected } from '../../paisleySelected'
 import { pseudoDrawingEngraved } from '@/util/canvas'
 import { genuineBrandMarkEmbroideryDrawer } from '../../genuineMark'
+import { fingerEmbroideryDrawer, onWebEmbroideryDrawer } from '@/util/canvas/embroidery'
 
 export const drawGenuineCatcherMittRearSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
   if (!ctx) return
@@ -24,14 +25,16 @@ export const drawGenuineCatcherMittRearSurface = (ctx: CanvasRenderingContext2D 
   ctx.strokeText('型番：' + baseModel.productNumber, 50, 50)
   pseudoDrawingEngraved(ctx)
 
-  liningDrawer(ctx, state) // 裏革
+  liningDrawer(ctx, state, 0) // 裏革
   backStyleDrawer(ctx, state) // バックスタイル
   catchFaceDrawer(ctx, state.palm.color, state.stitch.color, state.baseModel.productNumber) // 捕球面側
   webDrawer(ctx, state) // ウェブ
+  fingerEmbroideryDrawer(ctx, state.embroideries) // 刺繍
   laceDrawer(ctx, state.lace.color) // 革紐
   thumbHook(ctx, state.thumbHook.color) // かけ紐
   littleHook(ctx, state.littleHook.color) // かけ紐
   genuineCatcherMittLabelDrawer(ctx, state) // ラベル描画
   paisleySelected(ctx, state)
   genuineBrandMarkEmbroideryDrawer(ctx, state)
+  onWebEmbroideryDrawer(ctx, state)
 }

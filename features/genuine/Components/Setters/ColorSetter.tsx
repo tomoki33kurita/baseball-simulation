@@ -31,7 +31,7 @@ type Props = {
 }
 
 export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch }) => {
-  const { parts, lace, linings, binding, stitch, welting, mouton, genuineLabel } = state
+  const { parts, lace, linings, binding, stitch, welting, mouton, genuineLabel, embroideries } = state
   const partsKey = parts.value
   const partsLabel = parts.label
   const { isFirstBaseman } = positionChecker(state.baseModel.position)
@@ -42,6 +42,7 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
   const filteredParts = filterSelectableParts(state, selectableParts)
   const colorsByParts = getColorOptionsByParts(partsKey, state)
   const genuineLabelOptions = getGenuineLabelOptions(state)
+  const isBandSideEmbroiderySelected = embroideries.some((e) => e.position.value === 'bandSide')
 
   const handle = {
     [partsKey]: originDispatcher(DISPATCHER, partsKey, dispatch, colorsByParts),
@@ -64,6 +65,8 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
         objects={genuineLabelOptions}
         isError={genuineLabel.value === 'unselected'}
         defaultExpanded={genuineLabel.value === 'unselected'}
+        disabled={isBandSideEmbroiderySelected}
+        description={isBandSideEmbroiderySelected ? '※変更するには、"バンド横"への刺繍を解除してください。' : ''}
         handleChange={handle.genuineLabel}
         isDark
       />

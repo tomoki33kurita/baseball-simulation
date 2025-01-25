@@ -1,6 +1,19 @@
-export const indexFingerTipOutDrawer = (ctx: CanvasRenderingContext2D, color: string, fingerType: string): void => {
+export const indexFingerTipOutDrawer = (ctx: CanvasRenderingContext2D, tipOutColor: string, liningLeatherColor: string, fingerType: string): void => {
+  // 裏革
+  ctx.fillStyle = liningLeatherColor
+  ctx.beginPath()
+  ctx.strokeStyle = '#383838'
+  ctx.moveTo(312, 452) //左
+  ctx.quadraticCurveTo(313, 455, 313, 455) // 左下
+  ctx.quadraticCurveTo(428, 450, 428, 450) // 右下
+  ctx.quadraticCurveTo(426, 445, 426, 445) // 右上
+  ctx.quadraticCurveTo(356, 440, 312, 452) // 左上
+  ctx.fill()
+  ctx.stroke()
+  ctx.closePath()
+
   // 人差し指の穴周り＿上
-  ctx.fillStyle = color
+  ctx.fillStyle = tipOutColor
   if (fingerType !== 'indexPad') {
     ctx.beginPath()
     ctx.strokeStyle = '#383838'

@@ -4,17 +4,19 @@ export const TYPE_FACES = [
   { label: 'ローマ字活字体', value: 'sanserif', selectable: ['en'] }, //ゴシック体
   { label: '筆記体', value: 'cursive', selectable: ['en'] }, // 筆記体
   { label: 'ブラッシュ体', value: 'Brush Script MT', selectable: ['en'] }, // ブラッシュ体
-  { label: 'オールドイングリッシュ体', value: 'MariageD', selectable: ['en'] }, // オールドイングリッシュ体
-  { label: '漢字(楷書体)', value: 'monospacePrintedScript', selectable: ['ja'] }, // 行書
-  { label: '漢字(行書体)', value: 'monospaceCursiveWriting', selectable: ['ja'] } // 行書
+  { label: 'オールドイングリッシュ体', value: 'oldEnglish', selectable: ['en'] }, // オールドイングリッシュ体
+  { label: '漢字(楷書体)', value: 'serif', selectable: ['ja'] }, // 行書
+  { label: '漢字(行書体)', value: 'cursiveJa', selectable: ['ja'] }, // 行書
+  { label: '刻印', value: 'engraving', selectable: ['ja', 'en'] } //
 ]
 
 export const EMBROIDERY_POSITIONS = [
   { label: '親指', value: 'thumbFinger' },
   { label: '小指', value: 'childFinger' },
   { label: '平裏', value: 'leatherLiningFirst' },
-  { label: '平裏(2段目)', value: 'leatherLiningSecond' }
-  // { label: 'バンド部', value: 'band' }
+  { label: '平裏(2段目)', value: 'leatherLiningSecond' },
+  { label: 'バンド横', value: 'bandSide' },
+  { label: 'ウェブ', value: 'onWeb' }
 ]
 
 export const EMBROIDERY_COLORS = [
@@ -25,7 +27,7 @@ export const EMBROIDERY_COLORS = [
   { label: 'ゴールド', value: 'gold', color: '#B7AF75' },
   { label: 'シルバー', value: 'silver', color: '#B5B5B5' },
   { label: 'ネイビー', value: 'navy', color: '#2D2B54' },
-  { label: 'ホワイト', value: 'white', color: '#FFFFFF' },
+  { label: 'ホワイト', value: 'white', color: '#dedede' },
   { label: 'ブルー', value: 'blue', color: '#2C338B' },
   { label: 'グリーン', value: 'green', color: '#0d6b15' },
   { label: 'イエロー', value: 'yellow', color: '#C1BB32' },

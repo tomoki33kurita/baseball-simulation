@@ -10,8 +10,6 @@ import { fingerGuardDrawer } from '../fingerGuardDrawer'
 
 export const regularStyleDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
   const isRegularBack = state.backStyle.value === 'regular'
-  // [state.backStyle?.value].includes('regularBackStyle') ||
-  // (state.baseModel.backStyle === 'regularBackStyle' && state.backStyle.value === 'unselected')
   if (!isRegularBack) return
   // 親指
   // 人差指
@@ -28,7 +26,7 @@ export const regularStyleDrawer = (ctx: CanvasRenderingContext2D, state: Genuine
   bindingOfCommon(ctx, state.binding.color)
   bindingOfRegularBackStyle(ctx, state.binding.color, state.fingerGuard.value, state.linings.color)
   // 人差し指の指だし周りパーツ部分
-  indexFingerTipOutDrawer(ctx, state?.indexFingerTipOut.color, state.fingerGuard.value)
+  indexFingerTipOutDrawer(ctx, state?.indexFingerTipOut.color, state.linings.color, state.fingerGuard.value)
   fingerGuardDrawer(ctx, state) // 指カバー・指当て
   // バックルベルト
   regularBackStyleWristBelt(ctx, state.listBelt.color, -70, 50)

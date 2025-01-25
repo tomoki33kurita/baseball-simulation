@@ -12,7 +12,7 @@ const Brands = () => {
   const imageWidth = isMobile ? 390 : 460
   const imageHeight = isMobile ? 390 : 460
   return (
-    <Box display={'flex'} justifyContent={'center'} pt={8} bgcolor={'#383838'}>
+    <Box display={'flex'} justifyContent={'center'} pt={8} bgcolor={'#383838'} height={'100vh'}>
       <Box>
         <Box mb={4} textAlign={'center'}>
           <Image
@@ -27,7 +27,7 @@ const Brands = () => {
           <Grid item width={isMobile ? '100%' : 'unset'}>
             <Box m={2}>
               <Button size={'large'} variant={'contained'} href={'/genuine/pitcher'} style={{ color, border, backgroundColor }} fullWidth={isMobile}>
-                投手1
+                投手
               </Button>
             </Box>
           </Grid>
