@@ -284,17 +284,21 @@ const embroideryPositionListGenerator = (embroideries: Embroidery[], overAllInde
 
 const embroideryPositionFilter = (selectedPosition: string[]) => EMBROIDERY_POSITIONS.filter((p) => !selectedPosition.includes(p.value))
 
-export const selectablePositionGenerator = (embroideries: Embroidery[], index: number) => {
+export const selectablePositionGenerator = (state: GenuineState, index: number) => {
+  const { embroideries } = state
   const selectedPosition = embroideryPositionListGenerator(embroideries, index)
   const selectablePositionBase = embroideryPositionFilter(selectedPosition)
   const overAllSelectedPositions = embroideries.map((e) => e.position.value)
 
   // 裏平1段目が選択可能かどうか→可能な時は、2段目は選択できないようにしておきたい
   const isSelectableOfLiningFirst = selectablePositionBase.some((p) => p.value === 'leatherLiningFirst')
-  const selectablePosition = (
+  const selectablePosition1 = (
     isSelectableOfLiningFirst ? selectablePositionBase.filter((p) => p.value !== 'leatherLiningSecond') : selectablePositionBase
   ).filter((p) => !overAllSelectedPositions.includes(p.value) || p.value === embroideries[index].position?.value)
-  return selectablePosition
+
+  const isGenuineBrandMark = state.genuineBrandMark.value === 'genuineEmbroidery'
+  const selectablePosition2 = isGenuineBrandMark ? selectablePosition1.filter((p) => p.value !== 'childFinger') : selectablePosition1
+  return selectablePosition2
 }
 
 export const generateSubColors = (shouldFiltering: boolean) => {

@@ -96,6 +96,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
   const backStyleOptions = getBackStyleOptions(state)
   const isSpecifiedLittleFingerSideLabel = ['littleFingerSideEmbroidery', 'littleFingerSideNormal'].includes(state.genuineLabel.value)
   const fingerGuardOptions = getFingerGuardOptions(state)
+  const isChildFingerEmbroidery = state.embroideries.some((e) => e.position.value === 'childFinger')
 
   return (
     <TabPanel selectedIndex={selectedIndex} index={0} isDark>
@@ -278,8 +279,14 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         objects={GENUINE_EMBROIDERIES}
         isError={genuineBrandMark.value === 'unselected'}
         isDisplay={isSelectableGenuineMark}
-        disabled={isUnselectedBackStyle}
-        description={isUnselectedBackStyle ? '背面デザインを先に選択してください' : ''}
+        disabled={isUnselectedBackStyle || isChildFingerEmbroidery}
+        description={
+          isUnselectedBackStyle
+            ? '背面デザインを先に選択してください'
+            : isChildFingerEmbroidery
+            ? '小指に刺繍が入っているため、Genuine刺繍は選択できません'
+            : ''
+        }
         defaultExpanded={genuineBrandMark.value === 'unselected'}
         handleChange={handle.genuineBrandMark}
         isDark

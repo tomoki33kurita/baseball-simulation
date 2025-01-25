@@ -38,7 +38,9 @@ export const littleRingMergedFingerOfBeltBackStyle = (ctx: CanvasRenderingContex
   ctx.lineWidth = 1.4
   ctx.fillStyle = '#fff'
 
-  if (state.genuineBrandMark.value !== 'genuineEmbroidery') {
+  const isChildEmbroidery = state.embroideries.some((embroidery) => embroidery.position.value === 'childFinger')
+  const isGenuineBrandMark = state.genuineBrandMark.value === 'genuineEmbroidery'
+  if (!isChildEmbroidery && !isGenuineBrandMark) {
     // 小指 // 右列
     ctx.moveTo(209, 231)
     ctx.arc(209, 231, 4, 0, 2 * Math.PI)
@@ -162,7 +164,9 @@ export const otherThanThumbFingerOfTMBackStyle = (ctx: CanvasRenderingContext2D,
   ctx.lineWidth = 1.4
   ctx.fillStyle = '#fff'
 
-  if (state.genuineBrandMark.value !== 'genuineEmbroidery') {
+  const isChildEmbroidery = state.embroideries.some((embroidery) => embroidery.position.value === 'childFinger')
+  const isGenuineBrandMark = state.genuineBrandMark.value === 'genuineEmbroidery'
+  if (!isChildEmbroidery && !isGenuineBrandMark) {
     // 小指
     ctx.moveTo(194, 231)
     ctx.arc(194, 231, 4, 0, 2 * Math.PI)

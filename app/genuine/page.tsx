@@ -12,7 +12,7 @@ const Brands = () => {
   const imageWidth = isMobile ? 390 : 460
   const imageHeight = isMobile ? 390 : 460
   return (
-    <Box display={'flex'} justifyContent={'center'} pt={8} bgcolor={'#383838'}>
+    <Box display={'flex'} justifyContent={'center'} pt={8} bgcolor={'#383838'} height={'100vh'}>
       <Box>
         <Box mb={4} textAlign={'center'}>
           <Image
