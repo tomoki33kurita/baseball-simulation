@@ -722,7 +722,6 @@ export const bandSideEmbroideryDrawer = (ctx: CanvasRenderingContext2D, state: S
     infielder: { ...defaultThrowLocale, leftThrow: gloveLeftThrow },
     outfielder: { ...defaultThrowLocale, leftThrow: gloveLeftThrow }
   }
-  console.log({ object })
   const { embroideries, dominantArm, baseModel } = state
   const isEmbroidery = embroideries.some((x) => x.position.value === 'bandSide')
   const embroidery = embroideries.find((e) => e.position.value === 'bandSide')
@@ -731,5 +730,61 @@ export const bandSideEmbroideryDrawer = (ctx: CanvasRenderingContext2D, state: S
     const position = baseModel.position
     const locale = object[position][throwHand]
     drawBandSideEmbroidery(ctx, embroidery, locale.x, locale.y, locale.numerator)
+  }
+}
+
+const drawOnWebEmbroidery = (ctx: CanvasRenderingContext2D, embroidery: Embroidery, x: number, y: number, numerator: number): void => {
+  ctx.lineWidth = 0.8
+  ctx.fillStyle = embroidery.color.color // '#383838'
+  ctx.strokeStyle = embroidery.color.color
+  ctx.textAlign = 'start'
+  ctx.save()
+  ctx.rotate((numerator * Math.PI) / 180)
+  ctx.beginPath()
+
+  const isShadowColor = !['none', 'unselected'].includes(embroidery.shadowColor.value)
+  const isEdgeColor = !['none', 'unselected'].includes(embroidery.edgeColor.value)
+
+  // 影カラー
+  if (isShadowColor) {
+    ctx.strokeStyle = embroidery.shadowColor.color
+    ctx.shadowOffsetX = 3
+    ctx.shadowOffsetY = 3
+    ctx.shadowBlur = 3
+  }
+  // フチカラー
+  if (isEdgeColor) {
+    ctx.lineWidth = 2.5
+    ctx.strokeStyle = embroidery.edgeColor.color
+  }
+  fontFamilySetter(ctx, embroidery.typeFace.value)
+  const typeFace = embroidery.typeFace.value
+  const fontSize = typeFace === 'sanserif' ? '48px' : '60px'
+  ctx.font = `${fontSize} ${embroidery.typeFace.value}`
+  ctx.strokeText(embroidery.content, 0 + x, 0 + y)
+  ctx.fillText(embroidery.content, 0 + x, 0 + y)
+  ctx.closePath()
+  // 影カラーリセット
+  if (isShadowColor) {
+    ctx.shadowOffsetX = 0
+    ctx.shadowOffsetY = 0
+    ctx.shadowBlur = 0
+  }
+  // フチカラーリセット
+  if (isEdgeColor) {
+    ctx.lineWidth = 0.8
+    ctx.strokeStyle = '#383838'
+  }
+  ctx.restore()
+}
+
+export const onWebEmbroideryDrawer = (ctx: CanvasRenderingContext2D, state: State): void => {
+  const embroidery = state.embroideries.find((e) => e.position.value === 'onWeb')
+  const dominantArm = state.dominantArm.value
+  if (!embroidery) return
+  if (dominantArm === 'rightThrow') {
+    drawOnWebEmbroidery(ctx, embroidery, 580, -185, 35)
+  } else {
+    drawOnWebEmbroidery(ctx, embroidery, 105, 320, -35)
   }
 }

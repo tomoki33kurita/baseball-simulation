@@ -14,7 +14,8 @@ export const EMBROIDERY_POSITIONS = [
   { label: '小指', value: 'childFinger' },
   { label: '平裏', value: 'leatherLiningFirst' },
   { label: '平裏(2段目)', value: 'leatherLiningSecond' },
-  { label: 'バンド横', value: 'bandSide' }
+  { label: 'バンド横', value: 'bandSide' },
+  { label: 'ウェブ', value: 'onWeb' }
 ]
 
 export const EMBROIDERY_COLORS = [
@@ -25,7 +26,7 @@ export const EMBROIDERY_COLORS = [
   { label: 'ゴールド', value: 'gold', color: '#B7AF75' },
   { label: 'シルバー', value: 'silver', color: '#B5B5B5' },
   { label: 'ネイビー', value: 'navy', color: '#2D2B54' },
-  { label: 'ホワイト', value: 'white', color: '#FFFFFF' },
+  { label: 'ホワイト', value: 'white', color: '#dedede' },
   { label: 'ブルー', value: 'blue', color: '#2C338B' },
   { label: 'グリーン', value: 'green', color: '#0d6b15' },
   { label: 'イエロー', value: 'yellow', color: '#C1BB32' },

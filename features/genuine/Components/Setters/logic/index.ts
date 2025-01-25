@@ -263,7 +263,7 @@ export const characterCheckHelper = (embroidery: Embroidery) => {
   const isHalfWidthChar = isHalfWidthCharChecker(contentStr)
   const normalContentMaxLength = isHalfWidthChar ? 16 : 8
   const bandContentMaxLength = isHalfWidthChar ? 2 : 1
-  const contentMaxLength = embroidery.position.value === 'bandSide' ? bandContentMaxLength : normalContentMaxLength
+  const contentMaxLength = ['bandSide', 'onWeb'].includes(embroidery.position.value) ? bandContentMaxLength : normalContentMaxLength
   const characterType = contentStr.charCodeAt(0) >= 256 ? 'ja' : 'en'
 
   return {
@@ -300,7 +300,8 @@ export const selectablePositionGenerator = (state: GenuineState, index: number) 
   const isGenuineBrandMark = state.genuineBrandMark.value === 'genuineEmbroidery'
   const selectablePosition2 = isGenuineBrandMark ? selectablePosition1.filter((p) => p.value !== 'childFinger') : selectablePosition1
   const selectablePosition3 = canSelectBandSide ? selectablePosition2 : selectablePosition2.filter((p) => p.value !== 'bandSide')
-  return selectablePosition3
+  const selectablePosition4 = state.baseModel.productNumber === 'YT-22' ? selectablePosition3 : selectablePosition3.filter((p) => p.value !== 'onWeb')
+  return selectablePosition4
 }
 
 export const generateSubColors = (shouldFiltering: boolean) => {

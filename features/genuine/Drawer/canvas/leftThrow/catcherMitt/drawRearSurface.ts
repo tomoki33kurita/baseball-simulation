@@ -11,7 +11,7 @@ import { genuineCatcherMittLabelDrawer } from '../../label/drawer'
 import { paisleySelected } from '../../paisleySelected'
 import { GenuineState } from '@/features/genuine/types'
 import { genuineLeftThrowBrandMarkEmbroideryDrawer } from '../../genuineMark'
-import { fingerEmbroideryDrawerLeftThrow } from '@/util/canvas/embroidery'
+import { fingerEmbroideryDrawerLeftThrow, onWebEmbroideryDrawer } from '@/util/canvas/embroidery'
 
 export const drawLeftThrowGenuineCatcherMittRearSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState, width: number): void => {
   if (!ctx) return
@@ -38,4 +38,5 @@ export const drawLeftThrowGenuineCatcherMittRearSurface = (ctx: CanvasRenderingC
   genuineCatcherMittLabelDrawer(ctx, state) // ラベル描画
   paisleySelected(ctx, state)
   genuineLeftThrowBrandMarkEmbroideryDrawer(ctx, state)
+  onWebEmbroideryDrawer(ctx, state)
 }
