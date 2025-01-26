@@ -17,7 +17,14 @@ type Props = {
 
 export const SurfaceDrawers: FC<Props> = ({ rearSurfaceId, palmSurfaceId, drawerIndex, isDark, handleDrawerIndex }) => {
   return (
-    <Box position={'sticky'} top={0} bgcolor={isDark ? '#383838' : '#fff'} height={'100vh'}>
+    <Box
+      position={'sticky'}
+      top={0}
+      bgcolor={isDark ? '#383838' : '#fff'}
+      sx={{
+        height: { xs: 'unset', md: '100vh' }
+      }}
+    >
       <TabPanel selectedIndex={drawerIndex} index={0}>
         <RearSurface rearSurfaceId={rearSurfaceId} />
       </TabPanel>

@@ -18,7 +18,7 @@ type Props = {
 export const Setters: React.FC<Props> = ({ state, position, dispatch }) => {
   const [selectedIndex, setSelectedIndex] = React.useState(0)
   const [isDialogOpen, setIsDialogOpen] = React.useState<boolean>(false)
-  const toTopPath = '/genuine'
+  const toTopPath = '/hatakeyama/catcher'
   const handleDialogOpen = () => setIsDialogOpen(true)
   const handleDialogClose = () => setIsDialogOpen(false)
   return (
