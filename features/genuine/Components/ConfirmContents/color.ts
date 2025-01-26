@@ -21,11 +21,11 @@ const genGloveColorCell = (head: string, item: ColorItem, partsKey: string) => {
   }
 }
 
-const genGloveBaseCell = (head: string, item: BaseItem | BaseItemWithPrice) => {
+const genGloveBaseCell = (head: string, item: BaseItem | BaseItemWithPrice, partsKey: string) => {
   if ('price' in item) {
-    return { head, label: `${item.label} (+${item.price.toLocaleString()}円)`, value: item.value }
+    return { head, label: `${item.label} (+${item.price.toLocaleString()}円)`, value: item.value, partsKey }
   }
-  return { head, label: item.label, value: item.value }
+  return { head, label: item.label, value: item.value, partsKey }
 }
 
 const getFingerParts = (state: GenuineState) => {
@@ -146,6 +146,6 @@ export const getGenuineColorCells = (state: GenuineState) => {
     genGloveColorCell('ステッチ', state.stitch, 'stitch'),
     genGloveColorCell('革紐', state.lace, 'lace'),
     genGloveColorCell('ムートン', { label: state.mouton.label, color: state.mouton.value, value: state.mouton.value }, 'mouton'),
-    genGloveBaseCell('ラベル', state.genuineLabel)
+    genGloveBaseCell('ラベル', state.genuineLabel, 'genuineLabel')
   ].filter((item) => item.value !== dummy.value)
 }
