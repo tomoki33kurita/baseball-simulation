@@ -120,9 +120,9 @@ export const FRONT_GENUINE_LABELS: BaseItemWithPrice[] = [
 
 export const FIRST_BACK_GENUINE_LABELS: BaseItemWithPrice[] = [
   { label: '親指側(通常)', value: 'thumbSideNormal', price: 0 },
-  { label: '小指側(通常)', value: 'littleFingerSideNormal', price: 0 },
-  { label: '親指側(直刺繍)', value: 'thumbSideEmbroidery', price: 5500 },
-  { label: '小指側(直刺繍)', value: 'littleFingerSideEmbroidery', price: 5500 }
+  { label: '小指側(通常)', value: 'littleFingerSideNormal', price: 0 }
+  // { label: '親指側(直刺繍)', value: 'thumbSideEmbroidery', price: 5500 },
+  // { label: '小指側(直刺繍)', value: 'littleFingerSideEmbroidery', price: 5500 }
 ]
 
 export const FIRST_BACK_WITH_MIDDLE_HOLE_GENUINE_LABELS: BaseItemWithPrice[] = [
@@ -136,6 +136,7 @@ const commonPartsObjs: PartsItem[] = [
   { label: '捕球面', value: 'palm' },
   { label: 'ウェブ', value: 'web' },
   { label: 'ウェブ2', value: 'web2' },
+  { label: 'ウェブ3', value: 'web3' },
   { label: 'ヘリ革', value: 'binding' },
   { label: '親指掛け紐', value: 'thumbHook' },
   { label: '小指掛け紐', value: 'littleHook' },
@@ -187,8 +188,9 @@ export const CATCHER_MITT_BELT_BACK_PARTS: PartsItem[] = [
   { label: '親指マチ', value: 'thumbMachi' },
   { label: '小指マチ', value: 'littleMachi' },
   { label: '土台', value: 'fingerStand' },
-  { label: '親指・人差指・中指5', value: 'thumbIndexMiddleRight' },
-  { label: '中指6・薬指・小指', value: 'middleLeftRingLittle' },
+  { label: '親指', value: 'thumb' },
+  { label: '人差指', value: 'thumbIndexMiddleRight' },
+  { label: '中指・薬指・小指', value: 'middleLeftRingLittle' },
   // { label: '小指10', value: 'littleOut' },
   { label: 'バンド', value: 'listBelt' }
 ]
@@ -256,6 +258,7 @@ export const LEATHER_COLORS_BY_PARTS: LeatherColorsByPartsOfGenuine = {
   palm: LEATHER_COLORS,
   web: LEATHER_COLORS,
   web2: LEATHER_COLORS,
+  web3: LEATHER_COLORS,
   thumbHook: LEATHER_COLORS,
   littleHook: LEATHER_COLORS,
   fingerGuardColor: LEATHER_COLORS,
@@ -305,6 +308,7 @@ export const LEATHER_COLORS_BY_PARTS_FOR_CATCHER: LeatherColorsByPartsOfGenuine 
   palm: LEATHER_COLORS_FOR_CATCHER,
   web: LEATHER_COLORS_FOR_CATCHER,
   web2: LEATHER_COLORS_FOR_CATCHER,
+  web3: LEATHER_COLORS_FOR_CATCHER,
   thumbHook: LEATHER_COLORS_FOR_CATCHER,
   littleHook: LEATHER_COLORS_FOR_CATCHER,
   fingerGuardColor: LEATHER_COLORS_FOR_CATCHER,

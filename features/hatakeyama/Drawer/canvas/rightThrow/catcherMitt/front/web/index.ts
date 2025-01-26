@@ -6,13 +6,18 @@ export const webDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState): v
   ctx.strokeStyle = '#383838'
   ctx.fillStyle = state.palm.color
 
-  const isShallowWebModel = ['YT-22'].includes(state.baseModel.productNumber)
-  if (isShallowWebModel) {
+  const isShallowWeb = ['onePeaceShallow'].includes(state.coreHardness.value)
+  if (isShallowWeb) {
     webOfShallowPocket(ctx, state.web.color, state.stitch.color)
     webTop(ctx, state.web2.color, state.stitch.color)
   }
-
-  if (!isShallowWebModel) {
+  const isOnePeace = ['onePeace'].includes(state.coreHardness.value)
+  if (isOnePeace) {
+    webOfNormalPocket(ctx, state.web.color, state.stitch.color)
+    webTop(ctx, state.web2.color, state.stitch.color)
+  }
+  const isTwoPeace = ['twoPeace'].includes(state.coreHardness.value)
+  if (isTwoPeace) {
     webOfNormalPocket(ctx, state.web.color, state.stitch.color)
     webTop(ctx, state.web2.color, state.stitch.color)
   }

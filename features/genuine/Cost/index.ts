@@ -7,6 +7,7 @@ import { getColorCells } from '@/features/Logic'
 export const getMultiColorsCost = (state: GenuineState): number => {
   const multiColors = getColorCells(state).filter(
     (o) =>
+      // @ts-ignore
       !['linings', 'binding', 'lace', 'welting', 'stitch', 'mouton', 'genuineBrandMarkColor', 'genuineLabel'].includes(o.partsKey) &&
       o.value !== 'unselected'
   )

@@ -4,7 +4,7 @@ import { laceOfKnots } from './front/lace/knots'
 import { laceOfBackOfAroundWebDrawer } from './front/lace/aroundWeb'
 import { palmDrawer } from './front/palm'
 import { thumbMachi } from './front/thumbMachi'
-import { littleMachi } from './front/littleMachi'
+import { littleMachi, littleTarget } from './front/littleMachi'
 import { edgeDrawer } from './front/binding'
 import { stitch } from './front/stitch'
 import { laceDrawer } from './front/lace'
@@ -30,6 +30,9 @@ export const drawHatakeyamaCatcherMittPalmSurface = (ctx: CanvasRenderingContext
 
   thumbMachi(ctx, state.thumbMachi.color)
   littleMachi(ctx, state.littleMachi.color)
+  if (state.leatherThickness.value === 'thin') {
+    littleTarget(ctx, state.littleMachi.color)
+  }
 
   edgeDrawer(ctx, state)
   stitch(ctx, state.stitch.color)

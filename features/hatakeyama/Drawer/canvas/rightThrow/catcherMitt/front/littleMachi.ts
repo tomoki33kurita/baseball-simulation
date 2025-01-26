@@ -16,3 +16,21 @@ export const littleMachi = (ctx: CanvasRenderingContext2D, color: string): void 
   ctx.stroke()
   ctx.closePath()
 }
+
+export const littleTarget = (ctx: CanvasRenderingContext2D, color: string): void => {
+  ctx.lineWidth = 0.8
+  ctx.strokeStyle = '#383838'
+  ctx.fillStyle = color
+
+  ctx.beginPath()
+  ctx.moveTo(346, 119) // 左下
+  ctx.quadraticCurveTo(449, 111, 613, 130) // 右下
+  ctx.quadraticCurveTo(605, 94, 605, 94) // 右上
+  ctx.quadraticCurveTo(495, 66, 368, 88) // 左上
+  // ctx.quadraticCurveTo() //
+  // ctx.quadraticCurveTo() //
+  ctx.quadraticCurveTo(344, 100, 346, 119) // 上
+  ctx.fill()
+  ctx.stroke()
+  ctx.closePath()
+}

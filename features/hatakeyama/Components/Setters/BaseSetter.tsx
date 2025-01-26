@@ -2,6 +2,7 @@ import React from 'react'
 import { HatakeyamaState } from '@/features/hatakeyama/types'
 import { Position } from '@/types'
 import {
+  BACK_STYLES_CATCHER,
   FINGER_GUARD_TYPE_BUTTON_OPTION,
   SIZES,
   WEB_LACE_STYLES,
@@ -23,7 +24,7 @@ type Props = {
 }
 
 export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, dispatch }) => {
-  const { size, webLaceStyle, leatherThickness, fingerGuard, coreHardness, bankLaceDirection } = state
+  const { size, webLaceStyle, backStyle, leatherThickness, fingerGuard, coreHardness, bankLaceDirection } = state
   const handle = {
     backStyle: handleGenuine(dispatch)('backStyle'),
     size: handleGenuine(dispatch)('size'),
@@ -39,13 +40,23 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
   }
   const { isMitt, isCatcher } = positionChecker(position)
   const isSelectableWebLaceStyle = ['basket2', 'tNet3'].includes(state.webParts.value)
-  const isSpecifiedLittleFingerSideLabel = ['littleFingerSideEmbroidery', 'littleFingerSideNormal'].includes(state.genuineLabel.value)
   const fingerGuardOptions = getFingerGuardOptions(state)
 
   return (
     <TabPanel selectedIndex={selectedIndex} index={0} isDark>
       <SelectCard
-        summary={'革の厚さ'} // leatherThickness
+        summary={'バックスタイル'} // leatherThickness
+        selectedLabel={backStyle.label}
+        objects={BACK_STYLES_CATCHER}
+        isError={backStyle.value === 'unselected'}
+        defaultExpanded={backStyle.value === 'unselected'}
+        handleChange={handle.backStyle}
+        description={"Genuineでは'薄く'を推奨しております。"}
+        isDark
+      />
+
+      <SelectCard
+        summary={'小指ターゲット加工'} // leatherThickness
         selectedLabel={leatherThickness.label}
         objects={LEATHER_THICKNESS}
         isError={leatherThickness.value === 'unselected'}
@@ -60,8 +71,6 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         objects={fingerGuardOptions}
         isError={fingerGuard.value === 'unselected'}
         defaultExpanded={fingerGuard.value === 'unselected'}
-        disabled={isSpecifiedLittleFingerSideLabel}
-        description={isSpecifiedLittleFingerSideLabel ? '変更するには、先に"ラベル"を親指側に再選択してください。' : ''}
         className={FINGER_GUARD_TYPE_BUTTON_OPTION}
         handleChange={handle.fingerGuard}
         isDark
@@ -87,12 +96,11 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         isDark
       />
       <SelectCard
-        summary={'芯材の硬さ'} // coreHardness
+        summary={'ウェブの種類'} // coreHardness
         selectedLabel={coreHardness.label}
         objects={CORE_HARDNESSES}
         isError={coreHardness.value === 'unselected'}
         defaultExpanded={coreHardness.value === 'unselected'}
-        description={"Genuineでは'硬く'を推奨しております。"}
         handleChange={handle.coreHardness}
         isDark
       />

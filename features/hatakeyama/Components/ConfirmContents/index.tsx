@@ -11,9 +11,10 @@ import { getGenuineColorCells } from './color'
 import { useDrawHatakeyamaCatcherMittPalmSurface } from '../../Drawer/hooks/catcherMitt/usePalmSurface'
 import { useDrawHatakeyamaCatcherMittRearSurface } from '../../Drawer/hooks/catcherMitt/useRearSurface'
 import { SimulationContent } from '../SimulationContent'
+import { HatakeyamaState } from '../../types'
 
 type Props = {
-  state: GenuineState
+  state: HatakeyamaState
   position: Position
 }
 

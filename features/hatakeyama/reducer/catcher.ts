@@ -44,6 +44,7 @@ import {
   SET_BANK_LACE_DIRECTION,
   SET_GENUINE_LABEL,
   SET_WEB2_COLOR,
+  SET_WEB3_COLOR,
   SET_PALM_TO_WEB_CONNECT_LACE_STYLE,
   SET_LITTLE_MACHI_COLOR,
   SET_THUMB_MACHI_COLOR,
@@ -53,8 +54,8 @@ import {
   SET_GENUINE_BRAND_MARK_COLOR,
   SET_GENUINE_BRAND_MARK,
   SET_BALL_TYPE
-} from '@/features/genuine/Constants/action'
-import { GenuineState } from '../types'
+} from '@/features/hatakeyama/Constants/action'
+import { HatakeyamaState } from '../types'
 import { Embroidery } from '@/types'
 
 const initialPersonalState = {
@@ -86,7 +87,7 @@ const initialEmbroideryState: Embroidery = {
   content: ''
 }
 
-export const initialState: GenuineState = {
+export const initialState: HatakeyamaState = {
   baseModel: {
     productNumber: '',
     position: 'catcher',
@@ -131,6 +132,7 @@ export const initialState: GenuineState = {
   stitch: { label: '未選択', value: 'unselected', color: '#eee' },
   web: unselectedColorState,
   web2: unselectedColorState,
+  web3: unselectedColorState,
   thumbHook: unselectedColorState,
   littleHook: unselectedColorState,
   listBelt: unselectedColorState,
@@ -185,6 +187,7 @@ export const reducer = (state: any, action: any) => {
         palm: action.all,
         web: action.all,
         web2: action.all,
+        web3: action.all,
         thumbHook: action.all,
         littleHook: action.all,
         binding: action.all,
@@ -257,9 +260,14 @@ export const reducer = (state: any, action: any) => {
       if (state.web2.value === 'unselected') {
         return { ...state, web: action.web, web2: action.web }
       }
+      if (state.web3.value === 'unselected') {
+        return { ...state, web: action.web, web3: action.web }
+      }
       return { ...state, web: action.web }
     case SET_WEB2_COLOR:
       return { ...state, web2: action.web2 }
+    case SET_WEB3_COLOR:
+      return { ...state, web3: action.web3 }
     case SET_MOUTON_COLOR:
       return { ...state, mouton: action.mouton }
     // 内野手用グラブ
@@ -310,6 +318,8 @@ export const reducer = (state: any, action: any) => {
     // catchersMitt
     case SET_FINGER_STAND_COLOR:
       return { ...state, fingerStand: action.fingerStand }
+    case SET_THUMB_COLOR:
+      return { ...state, thumb: action.thumb }
     case SET_THUMB_INDEX_MIDDLE_RIGHT_COLOR:
       return { ...state, thumbIndexMiddleRight: action.thumbIndexMiddleRight }
     case SET_MIDDLE_LEFT_RING_COLOR:

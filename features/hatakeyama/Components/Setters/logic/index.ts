@@ -33,9 +33,8 @@ import {
   FIRST_BACK_FINGER_GUARDS,
   NORMAL_BACK_STYLE,
   RN_BACK_STYLE,
-  TM_BACK_STYLE,
   WEB_PARTS
-} from '@/features/genuine/Constants/base'
+} from '@/features/hatakeyama/Constants/base'
 
 export const getComponentParts = (state: GenuineState) => {
   const {
@@ -43,6 +42,7 @@ export const getComponentParts = (state: GenuineState) => {
     palm,
     web,
     web2,
+    web3,
     binding,
     thumbHook,
     littleHook,
@@ -88,6 +88,7 @@ export const getComponentParts = (state: GenuineState) => {
     palm,
     web,
     web2,
+    web3,
     binding,
     thumbHook,
     littleHook,
@@ -180,9 +181,6 @@ export const getBackStyleOptions = (state: GenuineState) => {
     case 'catcher':
       if (state.fingerGuard.value === 'specialIndexPad') {
         return BACK_STYLES_CATCHER.filter((b) => b.value === BELT_BACK_STYLE.value)
-      }
-      if (productNumber === 'YT-22') {
-        return BACK_STYLES_CATCHER.filter((b) => b.value !== TM_BACK_STYLE.value)
       }
       return BACK_STYLES_CATCHER
     case 'pitcher':

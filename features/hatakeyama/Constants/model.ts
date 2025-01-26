@@ -1,4 +1,4 @@
-import { GenuineBaseModel } from '../types'
+import { HatakeyamaBaseModel } from '../types'
 
 const imageBaseUrl = '/genuine/baseModels'
 const gloveImageWidth = 200
@@ -14,7 +14,7 @@ const JUNIOR_OUTFIELDER = 'junior-outfielder'
 
 export const JUNIOR_LIST = [JUNIOR_PITCHER, JUNIOR_CATCHER, JUNIOR_FIRST_BASEMAN, JUNIOR_INFIELDER, JUNIOR_OUTFIELDER]
 
-const JUNIOR_MODEL: GenuineBaseModel = {
+const JUNIOR_MODEL: HatakeyamaBaseModel = {
   productNumber: '',
   position: 'pitcher',
   size: {
@@ -34,7 +34,7 @@ const JUNIOR_MODEL: GenuineBaseModel = {
   }
 }
 
-export const models: GenuineBaseModel[] = [
+export const models: HatakeyamaBaseModel[] = [
   {
     productNumber: 'MIU-T1',
     position: 'pitcher',

@@ -90,6 +90,7 @@ export type HatakeyamaState = {
   palm: ColorItem
   web: ColorItem
   web2: ColorItem
+  web3: ColorItem
   thumbHook: ColorItem
   littleHook: ColorItem
   fingerGuardColor: ColorItem

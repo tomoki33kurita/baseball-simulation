@@ -5,7 +5,9 @@ export const colorCells2Condition = ['lace', 'stitch', 'binding', 'welting', 'mo
 
 export const colorSettings = (state: State): any => {
   const colorCells = getColorCells(state)
+  // @ts-ignore
   const colorCells1 = colorCells.filter((x) => !colorCells2Condition.includes(x.partsKey))
+  // @ts-ignore
   const colorCells2 = colorCells.filter((x) => colorCells2Condition.includes(x.partsKey))
 
   const DUMMY = { head: '', label: '', value: '' }

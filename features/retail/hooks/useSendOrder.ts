@@ -20,7 +20,9 @@ type OrderData<T> = {
 
 const divideColorSettings = (state: State) => {
   const settings = getColorCells(state)
+  // @ts-ignore
   const settings1 = settings.filter((x) => !colorCells2Condition.includes(x.partsKey)).map((x) => ({ head: x.head, label: x.label }))
+  // @ts-ignore
   const settings2 = settings.filter((x) => colorCells2Condition.includes(x.partsKey)).map((x) => ({ head: x.head, label: x.label }))
   return { colorSettings1: settings1, colorSettings2: settings2 }
 }

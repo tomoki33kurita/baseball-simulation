@@ -18,7 +18,8 @@ import {
   STITCHES,
   BINDINGS,
   LININGS,
-  LININGS_COLOR_BUTTON_OPTION
+  LININGS_COLOR_BUTTON_OPTION,
+  FIRST_BACK_GENUINE_LABELS
 } from '@/features/hatakeyama/Constants/color'
 import { DISPATCHER } from '@/features/hatakeyama/Constants/action'
 import { originDispatcher, positionChecker } from '@/util/logic'
@@ -41,7 +42,6 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
   const selectableParts = getSelectableParts(state)
   const filteredParts = filterSelectableParts(state, selectableParts)
   const colorsByParts = getColorOptionsByParts(partsKey, state)
-  const genuineLabelOptions = getGenuineLabelOptions(state)
   const isBandSideEmbroiderySelected = embroideries.some((e) => e.position.value === 'bandSide')
 
   const handle = {
@@ -59,17 +59,6 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
   if (!componentParts || !selectableParts) return <></>
   return (
     <TabPanel selectedIndex={selectedIndex} index={1} isDark>
-      <SelectCard
-        summary={'ラベル'} //
-        selectedLabel={genuineLabel.label}
-        objects={genuineLabelOptions}
-        isError={genuineLabel.value === 'unselected'}
-        defaultExpanded={genuineLabel.value === 'unselected'}
-        disabled={isBandSideEmbroiderySelected}
-        description={isBandSideEmbroiderySelected ? '※変更するには、"バンド横"への刺繍を解除してください。' : ''}
-        handleChange={handle.genuineLabel}
-        isDark
-      />
       <SelectCard summary={'パーツ'} selectedLabel={partsLabel} objects={filteredParts} handleChange={handle.parts} isDark />
       <SelectCard
         summary={`${partsLabel}カラー`}
@@ -145,6 +134,17 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
         handleChange={handle.mouton}
         isError={mouton.value === 'unselected'}
         className={MOUTON_BUTTON_OPTION}
+        isDark
+      />
+      <SelectCard
+        summary={'ラベル'} //
+        selectedLabel={genuineLabel.label}
+        objects={FIRST_BACK_GENUINE_LABELS}
+        isError={genuineLabel.value === 'unselected'}
+        defaultExpanded={genuineLabel.value === 'unselected'}
+        disabled={isBandSideEmbroiderySelected}
+        description={isBandSideEmbroiderySelected ? '※変更するには、"バンド横"への刺繍を解除してください。' : ''}
+        handleChange={handle.genuineLabel}
         isDark
       />
     </TabPanel>

@@ -1,13 +1,19 @@
-import { GenuineState } from '@/features/genuine/types'
 import { shallowWeb } from './shallowWeb'
 import { deepWeb } from './deepWeb'
+import { towPeaceWeb } from './twoPeaceWeb'
+import { HatakeyamaState } from '@/features/hatakeyama/types'
 
-export const webDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
-  const isShallowWebModel = ['YT-22'].includes(state.baseModel.productNumber)
-  if (isShallowWebModel) {
+export const webDrawer = (ctx: CanvasRenderingContext2D, state: HatakeyamaState): void => {
+  const isShallowWeb = ['onePeaceShallow'].includes(state.coreHardness.value)
+  if (isShallowWeb) {
     shallowWeb(ctx, state) // 浅めのウェブ
   }
-  if (!isShallowWebModel) {
+  const isOnePeace = ['onePeace'].includes(state.coreHardness.value)
+  if (isOnePeace) {
     deepWeb(ctx, state) // 普通・深めのウェブ
+  }
+  const isTwoPeace = ['twoPeace'].includes(state.coreHardness.value)
+  if (isTwoPeace) {
+    towPeaceWeb(ctx, state) // 普通・深めのウェブ
   }
 }

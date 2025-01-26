@@ -2,10 +2,12 @@ import { webKnotDownward, webKnotUpward } from '@/util/canvas/lace/webKnotSingle
 import { tiedLittleMachiMaterialDiagonal, tiedLittleMachiMaterialSide } from './tiedLittleMachi'
 import { verticalKnotForCatcher } from '@/util/canvas/lace/webKnots'
 import { aroundEdge1, aroundEdge10, aroundEdge11, aroundEdge12, aroundEdge13, aroundEdge2, aroundEdge3, aroundEdge7, aroundEdge9 } from './aroundEdge'
+import { HatakeyamaState } from '@/features/hatakeyama/types'
 
-export const laceDrawer = (ctx: CanvasRenderingContext2D, color: string): void => {
+export const laceDrawer = (ctx: CanvasRenderingContext2D, state: HatakeyamaState): void => {
   ctx.lineWidth = 0.8
   ctx.strokeStyle = '#383838'
+  const color = state.lace.color
   ctx.fillStyle = color
 
   webKnotDownward(ctx, color, -560, 211, 0, 0.8) // 小指掛け紐の右下
@@ -17,17 +19,20 @@ export const laceDrawer = (ctx: CanvasRenderingContext2D, color: string): void =
   tiedLittleMachiMaterialDiagonal(ctx, color, -130, 85, -20, 1.1)
   tiedLittleMachiMaterialDiagonal(ctx, color, -47, 140, -35, 1.2)
 
-  // 捕球面＿真下＿右
-  aroundEdge1(ctx, color, 0, 0)
-  aroundEdge1(ctx, color, 33, 18)
-  aroundEdge2(ctx, color)
-  aroundEdge3(ctx, color, 0, 0, 0)
+  if (state.coreHardness.value !== 'twoPeace') {
+    // 捕球面＿真下＿右
+    aroundEdge1(ctx, color, 0, 0)
+    aroundEdge1(ctx, color, 33, 18)
+    aroundEdge2(ctx, color)
+    aroundEdge3(ctx, color, 0, 0, 0)
 
-  // 捕球面＿真下＿左
-  aroundEdge7(ctx, color, 0, 0, 0)
-  aroundEdge7(ctx, color, 48, -195, 20)
-  aroundEdge7(ctx, color, 17, -234, 20)
-  aroundEdge7(ctx, color, -15, -430, 40)
+    // 捕球面＿真下＿左
+    aroundEdge7(ctx, color, 0, 0, 0)
+    aroundEdge7(ctx, color, 48, -195, 20)
+    aroundEdge7(ctx, color, 17, -234, 20)
+    aroundEdge7(ctx, color, -15, -430, 40)
+  }
+
   aroundEdge9(ctx, color, 0, 0)
   aroundEdge9(ctx, color, -17, -12)
   aroundEdge10(ctx, color, 68, -253, 35)

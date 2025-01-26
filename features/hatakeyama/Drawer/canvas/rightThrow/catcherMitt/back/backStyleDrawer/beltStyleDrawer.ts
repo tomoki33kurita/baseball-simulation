@@ -5,8 +5,9 @@ import { littleRingMergedFingerOfBeltBackStyle } from '../littleRingFinger'
 import { thumbFingerOfBeltBackStyle } from '../thumbFinger'
 import { beltTypeDrawer } from './beltTypeDrawer'
 import { fingerGuardDrawer } from '../fingerGuardDrawer'
+import { HatakeyamaState } from '@/features/hatakeyama/types'
 
-export const beltStyleDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
+export const beltStyleDrawer = (ctx: CanvasRenderingContext2D, state: HatakeyamaState): void => {
   const isBeltBack = ['belt'].includes(state.backStyle.value)
   const isUnselectedBackStyle = state.backStyle.value === 'unselected'
   const isDefaultBeltBack = isUnselectedBackStyle && state.baseModel.productNumber !== 'TM-411'

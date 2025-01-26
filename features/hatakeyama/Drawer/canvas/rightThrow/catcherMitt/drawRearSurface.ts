@@ -28,7 +28,7 @@ export const drawHatakeyamaCatcherMittRearSurface = (ctx: CanvasRenderingContext
   catchFaceDrawer(ctx, state.palm.color, state.stitch.color, state.baseModel.productNumber) // 捕球面側
   webDrawer(ctx, state) // ウェブ
   fingerEmbroideryDrawer(ctx, state.embroideries) // 刺繍
-  laceDrawer(ctx, state.lace.color) // 革紐
+  laceDrawer(ctx, state) // 革紐
   thumbHook(ctx, state.thumbHook.color) // かけ紐
   littleHook(ctx, state.littleHook.color) // かけ紐
   hatakeyamaCatcherMittLabelDrawer(ctx, state) // ラベル描画

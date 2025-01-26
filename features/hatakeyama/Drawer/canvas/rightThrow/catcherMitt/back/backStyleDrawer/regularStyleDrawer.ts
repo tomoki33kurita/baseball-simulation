@@ -7,8 +7,9 @@ import { ringRightMiddleLeftFingerOfRegularBackStyle } from '../ringMiddleFinger
 import { thumbFingerOfRegularBackStyle } from '../thumbFinger'
 import { GenuineState } from '@/features/genuine/types'
 import { fingerGuardDrawer } from '../fingerGuardDrawer'
+import { HatakeyamaState } from '@/features/hatakeyama/types'
 
-export const regularStyleDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
+export const regularStyleDrawer = (ctx: CanvasRenderingContext2D, state: HatakeyamaState): void => {
   const isRegularBack = state.backStyle.value === 'regular'
   if (!isRegularBack) return
   // 親指

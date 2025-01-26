@@ -15,7 +15,7 @@ export const CROWN_BACK_STYLE: BaseItemWithPrice = { label: '王冠スタイル'
 export const RN_BACK_STYLE: BaseItemWithPrice = { label: 'RNスタイル', value: 'rn', price: 0 }
 export const BELT_BACK_STYLE: BaseItemWithPrice = { label: 'ベルト', value: 'belt', price: 0 }
 export const REGULAR_BACK_STYLE: BaseItemWithPrice = { label: 'レギュラー', value: 'regular', price: 0 }
-export const TM_BACK_STYLE: BaseItemWithPrice = { label: 'TMバック', value: 'tmBack', price: 0 }
+export const AS_BACK_STYLE: BaseItemWithPrice = { label: 'ASバック', value: 'asBack', price: 0 }
 
 export const BACK_STYLES: BaseItemWithPrice[] = [
   NORMAL_BACK_STYLE,
@@ -25,7 +25,7 @@ export const BACK_STYLES: BaseItemWithPrice[] = [
   // { label: '王冠メッシュ', value: 'crownMesh', price: 3300 },
 ]
 
-export const BACK_STYLES_CATCHER: BaseItemWithPrice[] = [BELT_BACK_STYLE, REGULAR_BACK_STYLE, TM_BACK_STYLE]
+export const BACK_STYLES_CATCHER: BaseItemWithPrice[] = [BELT_BACK_STYLE, REGULAR_BACK_STYLE, AS_BACK_STYLE]
 
 export const ALL_BACK_STYLES: BaseItemWithPrice[] = [...BACK_STYLES, ...BACK_STYLES_CATCHER]
 
@@ -63,12 +63,13 @@ export const BACK_LACE_STYLES: BaseItem[] = [
 
 export const LEATHER_THICKNESS: BaseItem[] = [
   { label: '普通', value: 'normal' },
-  { label: '薄く', value: 'thin' }
+  { label: '加工する', value: 'thin' }
 ]
 
 export const CORE_HARDNESSES: BaseItem[] = [
-  { label: '普通', value: 'normal' },
-  { label: '硬く', value: 'hard' }
+  { label: 'ワンピース', value: 'onePeace' },
+  { label: 'ツーピース', value: 'twoPeace' },
+  { label: '浅め', value: 'onePeaceShallow' }
 ]
 
 export const GLOVE_SIZES: BaseItem[] = [
@@ -133,9 +134,8 @@ export const FIRST_BACK_FINGER_GUARDS: BaseItemWithPrice[] = [
 ]
 
 export const FINGER_GUARDS_CATCHER: BaseItemWithPrice[] = [
-  { label: '指カバー', value: 'indexCover', price: 0 },
-  { label: '指アテ1', value: 'indexPad1', price: 0 },
-  { label: '指アテ2', value: 'indexPad2', price: 0 },
+  { label: 'スタンダード', value: 'indexCoverStandard', price: 0 },
+  { label: 'ロングタイプ', value: 'indexCoverLong', price: 0 },
   { label: '特殊指アテ', value: 'specialIndexPad', price: 5500 },
   { label: '無し', value: 'none', price: 0 }
 ]

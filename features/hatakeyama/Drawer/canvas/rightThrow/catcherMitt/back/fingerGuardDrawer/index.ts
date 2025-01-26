@@ -1,5 +1,5 @@
 import { GenuineState } from '@/features/genuine/types'
-import { indexFingerCover } from '../indexFinger'
+import { indexFingerCover, indexFingerCoverLong } from '../indexFinger'
 
 const indexFingerPadOfFTypeOnStand = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchColor: string): void => {
   ctx.lineWidth = 0.8
@@ -130,17 +130,13 @@ const specialIndexFingerPadOfFTypeOnIndexFinger = (ctx: CanvasRenderingContext2D
 
 export const fingerGuardDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
   switch (state.fingerGuard.value) {
-    case 'indexCover':
+    case 'indexCoverStandard':
       // 指カバー
       indexFingerCover(ctx, state.fingerGuardColor.color, state.stitch.color)
       break
-    case 'indexPad1':
+    case 'indexCoverLong':
       // 指当て // 台まで
-      indexFingerPadOfFTypeOnStand(ctx, state.fingerGuardColor.color, state.stitch.color)
-      break
-    case 'indexPad2':
-      // 指当て
-      indexFingerPadOfFTypeOnIndexFinger(ctx, state.fingerGuardColor.color, state.stitch.color)
+      indexFingerCoverLong(ctx, state.fingerGuardColor.color, state.stitch.color)
       break
     case 'specialIndexPad':
       // 指当て

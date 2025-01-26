@@ -2,7 +2,7 @@ import { GenuineState } from '@/features/genuine/types'
 import { bindingOfTMBackStyle, bindingOfCommon } from '../edge'
 import { otherThanThumbFingerOfTMBackStyle } from '../littleRingFinger'
 import { thumbFingerOfTMBackStyle } from '../thumbFinger'
-import { tmBackTypeDrawer } from './tmBackTypeDrawr'
+import { tmBackTypeDrawer } from './tmBackTypeDrawer'
 import { verticalKnotForCatcher } from '@/util/canvas/lace/webKnots'
 import { fingerGuardDrawer } from '../fingerGuardDrawer'
 

@@ -7,10 +7,10 @@ import { SimulationConfirmDialog } from '@/components/SimulationConfirmDialog'
 import { GenuineConfirmContents } from '../ConfirmContents'
 import { SettingTabs } from '@/components/SettingFrame/SettingTabs'
 import { SettingButtons } from '@/components/SettingFrame/SettingButtons'
-import { GenuineState } from '../../types'
+import { HatakeyamaState } from '../../types'
 
 type Props = {
-  state: GenuineState
+  state: HatakeyamaState
   position: Position
   dispatch: React.Dispatch<unknown>
 }

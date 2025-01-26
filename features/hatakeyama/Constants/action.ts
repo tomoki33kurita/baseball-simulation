@@ -31,6 +31,7 @@ export const SET_BINDING_COLOR = 'setBindingColor'
 export const SET_STITCH_COLOR = 'setStitchColor'
 export const SET_WEB_COLOR = 'setWebColor'
 export const SET_WEB2_COLOR = 'setWeb2Color'
+export const SET_WEB3_COLOR = 'setWeb3Color'
 export const SET_MOUTON_COLOR = 'setMoutonColor'
 export const SET_THUMB_HOOK = 'setThumbHook'
 export const SET_LITTLE_HOOK = 'setLittleHook'
@@ -83,6 +84,7 @@ export const DISPATCHER = {
   palm: SET_LEATHER_COLOR,
   web: SET_WEB_COLOR,
   web2: SET_WEB2_COLOR,
+  web3: SET_WEB3_COLOR,
   binding: SET_BINDING_COLOR,
   thumbHook: SET_THUMB_HOOK,
   littleHook: SET_LITTLE_HOOK,

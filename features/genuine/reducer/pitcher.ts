@@ -130,6 +130,7 @@ export const initialState: GenuineState = {
   stitch: { label: '未選択', value: 'unselected', color: '#eee' },
   web: unselectedColorState,
   web2: unselectedColorState,
+  web3: unselectedColorState,
   thumbHook: unselectedColorState,
   littleHook: unselectedColorState,
   listBelt: unselectedColorState,

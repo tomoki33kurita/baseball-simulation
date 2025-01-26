@@ -8,10 +8,10 @@ import {
   laceOfWebTopToIndexFinger,
   laceOfWebTopToThumbFinger
 } from '../lace/connectWeb'
-import { GenuineState } from '@/features/genuine/types'
 import { aroundEdge3, aroundEdge4, aroundEdge5, aroundEdge6, aroundEdge8 } from '../lace/aroundEdge'
+import { HatakeyamaState } from '@/features/hatakeyama/types'
 
-export const shallowWeb = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
+export const shallowWeb = (ctx: CanvasRenderingContext2D, state: HatakeyamaState): void => {
   // 革紐パーツ
   laceOfWebTopToIndexFinger(ctx, state.lace.color) //
   laceOfWebTopToThumbFinger(ctx, state.lace.color) //

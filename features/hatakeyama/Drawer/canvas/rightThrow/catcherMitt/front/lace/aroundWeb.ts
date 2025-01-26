@@ -237,7 +237,7 @@ const laceOfUnderShallowWeb2 = (ctx: CanvasRenderingContext2D, x: number, y: num
 }
 
 export const laceOfBackOfAroundWebDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
-  const isShallowWebModel = ['YT-22'].includes(state.baseModel.productNumber)
+  const isShallowWebModel = ['onePeaceShallow'].includes(state.coreHardness.value)
   const isStraightLace = state.palmToWebConnectLaceStyle.value === 'straight'
 
   ctx.lineWidth = 0.8

@@ -1,13 +1,13 @@
 import React from 'react'
 import { Box } from '@mui/material'
-import { GenuineState } from '../../types'
+import { HatakeyamaState } from '../../types'
 import { ItemCell } from '@/components/ItemCell'
 import { getGenuineEmbroideryCells } from '../ConfirmContents/embroidery'
 
 const cellColor = (cellValue: string, isDark?: boolean) => (cellValue === 'unselected' ? (isDark ? 'orange' : 'red') : isDark ? '#fff' : '#383838')
 
 type Props = {
-  state: GenuineState
+  state: HatakeyamaState
   previousIndex: number
   isDark?: boolean
 }
