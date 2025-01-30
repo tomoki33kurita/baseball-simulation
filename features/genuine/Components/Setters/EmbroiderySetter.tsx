@@ -32,7 +32,7 @@ export const EmbroiderySetter: React.FC<Props> = ({ state, selectedIndex, isDark
 
   return (
     <TabPanel selectedIndex={selectedIndex} index={2} isDark>
-      {isUnselectedDominantArm && <BrockCard message={'聞き手を先に選択してください。'} isDark={isDark} />}
+      {isUnselectedDominantArm && <BrockCard message={'利き手を先に選択してください。'} isDark={isDark} />}
       {!isUnselectedDominantArm && isUnselectedLabel && <BrockCard message={'ラベルを先に選択してください。'} isDark={isDark} />}
       {isUnselectedDominantArm || isUnselectedLabel ? null : (
         <>
