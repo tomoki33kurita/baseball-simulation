@@ -165,6 +165,7 @@ export const LACES: ColorItem[] = [
   { label: 'ブルー', value: 'blue', color: '#0d42b5' },
   { label: 'ネイビー', value: 'navy', color: '#0d194a' },
   { label: 'ブラック', value: 'black', color: '#1E1E1E' },
+  { label: 'ブラック(半通し)', value: 'blackMaterial', color: '#1E1E1E' },
   { label: 'サックス', value: 'sax', color: '#3a8daa' },
   { label: 'タン', value: 'tan', color: '#b08030' }
 ]
