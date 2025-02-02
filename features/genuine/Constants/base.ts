@@ -165,6 +165,7 @@ export const WEB_PARTS: WebParts[] = [
   { label: 'ツーピース', value: 'twoPeace', positions: ['pitcher'], imageUrl: `${webImageBaseUrl}/twoPeace.jpg` },
   { label: 'ツーピース2', value: 'twoPeace2', positions: ['pitcher'], imageUrl: `${webImageBaseUrl}/twoPeace2.jpg` },
   { label: 'Genuine', value: 'genuine', positions: ['pitcher'], imageUrl: `${webImageBaseUrl}/genuine.jpg` },
+  { label: 'ファイア', value: 'fire', positions: ['pitcher'], imageUrl: `${webImageBaseUrl}/fire.jpg` },
 
   { label: 'クロス', value: 'cross', positions: ['infielder'], imageUrl: `${webImageBaseUrl}/cross.jpg` },
   { label: 'クロス2', value: 'cross2', positions: ['infielder', 'firstBaseman'], imageUrl: `${webImageBaseUrl}/cross2.jpg` },

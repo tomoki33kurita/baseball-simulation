@@ -32,6 +32,7 @@ import { flat3Web } from './flat3Web'
 import { flat4Web } from './flat4Web'
 import { flat5Web } from './flat5Web'
 import { flat6Web } from './flat6Web'
+import { fireWeb } from './fireWeb'
 
 export const webOfGloveBackDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
   const laceColor = state.lace.color
@@ -51,6 +52,7 @@ export const webOfGloveBackDrawer = (ctx: CanvasRenderingContext2D, state: Genui
   if (webMatcher(['twoPeace'])) twoPeaceWeb(ctx, webColor, laceColor, stitchColor)
   if (webMatcher(['twoPeace2'])) twoPeaceWeb2Web(ctx, webColor, laceColor, stitchColor)
   if (webMatcher(['genuine'])) genuineWeb(ctx, webColor, laceColor, stitchColor)
+  if (webMatcher(['fire'])) fireWeb(ctx, webColor, laceColor, stitchColor)
 
   if (webMatcher(['cross'])) crossWeb(ctx, webColor, web2Color, laceColor, stitchColor)
   if (webMatcher(['cross2'])) cross2Web(ctx, webColor, web2Color, laceColor, stitchColor)

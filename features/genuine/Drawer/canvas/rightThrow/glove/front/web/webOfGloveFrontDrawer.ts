@@ -34,6 +34,7 @@ import { flat3Web } from './flat3Web'
 import { flat4Web } from './flat4Web'
 import { flat5Web } from './flat5Web'
 import { flat6Web } from './flat6Web'
+import { fireWeb } from './fireWeb'
 
 export const webOfGloveFrontDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
   const webColor = state.web.color
@@ -52,6 +53,7 @@ export const webOfGloveFrontDrawer = (ctx: CanvasRenderingContext2D, state: Genu
   if (webMatcher(['twoPeace'])) twoPeaceWeb(ctx, webColor, laceColor, stitchColor)
   if (webMatcher(['twoPeace2'])) twoPeace2Web(ctx, webColor, laceColor, stitchColor)
   if (webMatcher(['genuine'])) genuineWeb(ctx, webColor, laceColor, stitchColor)
+  if (webMatcher(['fire'])) fireWeb(ctx, webColor, laceColor, stitchColor)
 
   if (webMatcher(['cross'])) crossWeb(ctx, webColor, web2Color, laceColor, stitchColor)
   if (webMatcher(['cross2'])) cross2Web(ctx, webColor, web2Color, laceColor, stitchColor)
@@ -283,7 +285,7 @@ export const rightLaceOfNetWebDrawer = (ctx: CanvasRenderingContext2D, state: Ge
     indexWrapBack(ctx, laceColor, 0, 0) // 下
     return
   }
-  if (webMatcher(['flat', 'flat2', 'flat3', 'flat4', 'flat5', 'basket', 'basket2', 'genuine'])) {
+  if (webMatcher(['flat', 'flat2', 'flat3', 'flat4', 'flat5', 'basket', 'basket2', 'genuine', 'fire'])) {
     underWeb(ctx, laceColor, 27, -24) // ウェブ下＿右
     underWeb(ctx, laceColor, -2, 28) // ウェブ下＿中
     underWeb(ctx, laceColor, -35, 72) // ウェブ下＿左
