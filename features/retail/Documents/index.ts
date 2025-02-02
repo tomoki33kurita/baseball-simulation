@@ -1,4 +1,4 @@
-import { drawImages } from './drawImages'
+import { drawHeader, drawImages } from './drawImages'
 import { customerInformation, customerInformation2 } from './customerInformation'
 import { priceInformation } from './priceInformation'
 import { baseSettings } from './baseSettings'
@@ -19,6 +19,7 @@ const genCellContent = (head: string, content: string, alignment?: string, color
 export const getPdfDocDefine = (id: string, state: State, retail: Retail): any => {
   const personal = state.personal
   return {
+    ...drawHeader(state),
     content: [
       { text: `オーダー仕様書 (${id})`, style: { fontSize: 16 } },
       ...drawImages(),

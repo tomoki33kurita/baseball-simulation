@@ -24,5 +24,5 @@ const kuritaDEMO: Supplier = {
   brand: 'genuine'
 }
 
-// export const supplierList = [kuritaMainOffice, fiveMainOffice]
+// export const supplierList = [kuritaDEMO]
 export const supplierList = [fiveMainOffice, genuineMainOffice]

@@ -1,3 +1,6 @@
+import { State } from '@/types'
+import { genuineHeader } from '@/public/genuine/pdf/genuineHeader'
+
 export const drawImages = () => {
   const canvasBack = document.getElementById('rearSurfaceOnDialog') as HTMLCanvasElement
   const canvasFront = document.getElementById('palmSurfaceOnDialog') as HTMLCanvasElement
@@ -21,4 +24,21 @@ export const drawImages = () => {
       }
     }
   ]
+}
+
+export const drawHeader = (state: State) => {
+  if (state.baseModel.brand !== 'genuine') return {}
+  return {
+    header: {
+      columns: [
+        [
+          {
+            image: genuineHeader,
+            width: 150,
+            height: 30
+          }
+        ]
+      ]
+    }
+  }
 }
