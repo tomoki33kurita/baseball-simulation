@@ -74,7 +74,7 @@ export const calculateGenuineOptionCost = (state: GenuineState): number => {
 
 export const calculateGenuineEmbroideryCost = (state: GenuineState): number => {
   const embroideries = state.embroideries
-  const embroideriesOfFiltered = embroideries.filter((e: Embroidery) => e.content.trim()?.length > 0)
+  const embroideriesOfFiltered = embroideries.filter((e: Embroidery) => e.content.trim().length > 0)
   const singlePrice = 220
   const shadowPrice = 330
   const edgePrice = 440
@@ -83,7 +83,7 @@ export const calculateGenuineEmbroideryCost = (state: GenuineState): number => {
       const isEdge = e.edgeColor.value !== 'none' //フチ付きかどうか
       const isShadow = e.shadowColor.value !== 'none' //カゲ付きかどうか
       const cost = isEdge ? edgePrice : isShadow ? shadowPrice : singlePrice
-      return cost * e.content.length
+      return cost * e.content.replace(/\s/g, '').length
     }) // [2750, 2200, ...]
     .reduce((a: number, c: number) => a + c, 0) //
   return costsOfEmbroideries
