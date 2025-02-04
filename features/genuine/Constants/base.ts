@@ -159,7 +159,7 @@ export const WEB_PARTS: WebParts[] = [
   { label: 'フラット3', value: 'flat3', positions: ['pitcher'], imageUrl: `${webImageBaseUrl}/flat3.jpg` },
   { label: 'フラット4', value: 'flat4', positions: ['pitcher'], imageUrl: `${webImageBaseUrl}/flat4.jpg` },
   { label: 'フラット5', value: 'flat5', positions: ['pitcher'], imageUrl: `${webImageBaseUrl}/flat5.jpg` },
-  { label: 'フラット6', value: 'flat6', positions: ['pitcher'], imageUrl: `${webImageBaseUrl}/flat6.jpg` },
+  { label: 'クローバー', value: 'clover', positions: ['pitcher'], imageUrl: `${webImageBaseUrl}/flat6.jpg` },
   { label: 'バスケット', value: 'basket', positions: ['pitcher'], imageUrl: `${webImageBaseUrl}/basket.jpg` },
   { label: 'バスケット2', value: 'basket2', positions: ['pitcher', 'infielder'], imageUrl: `${webImageBaseUrl}/basket2.jpg` },
   { label: 'ツーピース', value: 'twoPeace', positions: ['pitcher'], imageUrl: `${webImageBaseUrl}/twoPeace.jpg` },

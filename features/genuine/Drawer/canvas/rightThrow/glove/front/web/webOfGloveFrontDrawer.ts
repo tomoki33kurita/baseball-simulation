@@ -47,7 +47,7 @@ export const webOfGloveFrontDrawer = (ctx: CanvasRenderingContext2D, state: Genu
   if (webMatcher(['flat3'])) flat3Web(ctx, webColor, laceColor, stitchColor)
   if (webMatcher(['flat4'])) flat4Web(ctx, webColor, laceColor, stitchColor)
   if (webMatcher(['flat5'])) flat5Web(ctx, webColor, laceColor, stitchColor)
-  if (webMatcher(['flat6'])) flat6Web(ctx, webColor, laceColor, stitchColor)
+  if (webMatcher(['clover'])) flat6Web(ctx, webColor, laceColor, stitchColor)
   if (webMatcher(['basket'])) basketWeb(ctx, webColor, web2Color, laceColor, stitchColor)
   if (webMatcher(['basket2'])) basket2Web(ctx, webColor, web2Color, laceColor, stitchColor)
   if (webMatcher(['twoPeace'])) twoPeaceWeb(ctx, webColor, laceColor, stitchColor)
