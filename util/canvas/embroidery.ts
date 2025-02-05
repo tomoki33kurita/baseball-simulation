@@ -265,7 +265,6 @@ export const liningEmbroideryDrawer = (ctx: CanvasRenderingContext2D, embroideri
   const isEmbroideryOfLining = embroideries.some((e) => e.position.value === liningEmbroideryObject[step].position)
   const embroidery = embroideries.find((e) => e.position.value === liningEmbroideryObject[step].position)
   if (isEmbroideryOfLining && embroidery) {
-    console.log({ isEmbroideryOfLining, embroidery, hoge: liningEmbroideryObject[step].position })
     liningEmbroidery(ctx, embroidery, liningEmbroideryObject[step].x, liningEmbroideryObject[step].y)
   }
 }
