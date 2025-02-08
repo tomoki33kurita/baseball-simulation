@@ -187,6 +187,7 @@ export const getBackStyleOptions = (state: GenuineState) => {
       return BACK_STYLES_CATCHER
     case 'pitcher':
       if (productNumber === 'MIU-T1') return BACK_STYLES
+      if (productNumber === 'MIU-T2') return [NORMAL_BACK_STYLE]
       return BACK_STYLES.filter((b) => b.value !== RN_BACK_STYLE.value)
     default:
       return [NORMAL_BACK_STYLE]
