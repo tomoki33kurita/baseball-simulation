@@ -21,7 +21,7 @@ const genuineMainOffice: Supplier = {
 const kuritaDEMO: Supplier = {
   name: 'DEMO 栗田',
   email: 'tomoki_kurita@b-ridge.org',
-  brand: 'genuine'
+  brand: 'five'
 }
 
 // export const supplierList = [kuritaDEMO]

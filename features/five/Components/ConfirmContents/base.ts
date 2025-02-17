@@ -16,9 +16,20 @@ export const getFiveBaseCells = (
   }
   switch (state.orderType.value) {
     case 'basic':
-    // case 'basicWithEmbroidery':
+      // case 'basicWithEmbroidery':
+      return [
+        genGloveBaseCell('基本モデル', baseModelStateObj),
+        genGloveBaseCell('オーダータイプ', state.orderType),
+        genGloveBaseCell('利き腕', state.dominantArm)
+      ]
+
     case 'colorSelect':
-      return [genGloveBaseCell('基本モデル', baseModelStateObj), genGloveBaseCell('利き腕', state.dominantArm)]
+      return [
+        genGloveBaseCell('基本モデル', baseModelStateObj),
+        genGloveBaseCell('オーダータイプ', state.orderType),
+        genGloveBaseCell('利き腕', state.dominantArm),
+        genGloveBaseCell('バンド部F・レックス刻印', state.fLexEngraving)
+      ]
 
     case 'custom':
       return [
