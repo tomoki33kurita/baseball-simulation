@@ -142,7 +142,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
       <SelectCard
         summary={'革の厚さ'} // leatherThickness
         selectedLabel={leatherThickness.label}
-        objects={LEATHER_THICKNESS}
+        objects={LEATHER_THICKNESS.filter((lt) => (isMitt ? true : lt.value !== 'extremelyThin'))}
         isError={leatherThickness.value === 'unselected'}
         defaultExpanded={leatherThickness.value === 'unselected'}
         handleChange={handle.leatherThickness}
