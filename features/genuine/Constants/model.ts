@@ -154,6 +154,25 @@ export const models: GenuineBaseModel[] = [
     }
   },
   {
+    productNumber: 'MIU-S6',
+    position: 'infielder',
+    size: {
+      value: 0,
+      unit: 'cm'
+    },
+    webParts: 'h',
+    description: 'ポケットをウェブ下に少し深く作りやすいような形状どんな選手にも使いやすいオーソドックスな内野手用',
+    isFingerCrotch: false,
+    isUBack: false,
+    brand: 'genuine',
+    bankLaceDirection: SEQUENTIAL_ROLL,
+    image: {
+      url: `${imageBaseUrl}/s6.jpg`,
+      width: gloveImageWidth,
+      height: gloveImageHeight
+    }
+  },
+  {
     productNumber: 'MIU-S7',
     position: 'infielder',
     size: {
