@@ -36,6 +36,7 @@ import {
   TM_BACK_STYLE,
   WEB_PARTS
 } from '@/features/genuine/Constants/base'
+import { JUNIOR_PITCHER } from '@/features/genuine/Constants/model'
 
 export const getComponentParts = (state: GenuineState) => {
   const {
@@ -187,7 +188,7 @@ export const getBackStyleOptions = (state: GenuineState) => {
       return BACK_STYLES_CATCHER
     case 'pitcher':
       if (productNumber === 'MIU-T1') return BACK_STYLES
-      if (productNumber === 'MIU-T2') return [NORMAL_BACK_STYLE]
+      if (['MIU-T2', JUNIOR_PITCHER].includes(productNumber)) return [NORMAL_BACK_STYLE]
       return BACK_STYLES.filter((b) => b.value !== RN_BACK_STYLE.value)
     default:
       return [NORMAL_BACK_STYLE]

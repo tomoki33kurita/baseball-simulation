@@ -6,7 +6,7 @@ const gloveImageHeight = 200
 const SEQUENTIAL_ROLL = 'sequentialRoll'
 const REVERSE_ROLL = 'reverseRoll'
 
-const JUNIOR_PITCHER = 'junior-pitcher'
+export const JUNIOR_PITCHER = 'junior-pitcher'
 const JUNIOR_CATCHER = 'junior-catcher'
 const JUNIOR_FIRST_BASEMAN = 'junior-firstBaseman'
 const JUNIOR_INFIELDER = 'junior-infielder'
@@ -157,7 +157,7 @@ export const models: GenuineBaseModel[] = [
     productNumber: 'MIU-S6',
     position: 'infielder',
     size: {
-      value: 0,
+      value: 28.5,
       unit: 'cm'
     },
     webParts: 'h',
