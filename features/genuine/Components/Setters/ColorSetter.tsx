@@ -35,7 +35,7 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
   const partsKey = parts.value
   const partsLabel = parts.label
   const { isFirstBaseman } = positionChecker(state.baseModel.position)
-  const { isTMBackStyle } = getBackStyle(state)
+  const { isTMBackStyle, isFirstBackStyle } = getBackStyle(state)
   const componentParts = getComponentParts(state)
   const selectedParts = componentParts[partsKey as keyof typeof componentParts]
   const selectableParts = getSelectableParts(state)
@@ -143,6 +143,7 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
         objects={MOUTON_COLORS}
         defaultExpanded={mouton.value === 'unselected'}
         handleChange={handle.mouton}
+        isDisplay={!isFirstBackStyle}
         isError={mouton.value === 'unselected'}
         className={MOUTON_BUTTON_OPTION}
         isDark

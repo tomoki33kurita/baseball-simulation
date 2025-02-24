@@ -128,7 +128,7 @@ export const getGenuineColorCells = (state: GenuineState) => {
   const isLoopOfRingFinger = state.loopOfRingFinger.value === 'loopOfRingFinger'
   const isINet = state.webParts.value === 'iNet'
   const { isFirstBaseman } = positionChecker(state.baseModel.position)
-  const { isTMBackStyle } = getBackStyle(state)
+  const { isTMBackStyle, isFirstBackStyle } = getBackStyle(state)
 
   return [
     genGloveColorCell('捕球面', state.palm, 'palm'),
@@ -145,7 +145,9 @@ export const getGenuineColorCells = (state: GenuineState) => {
     genGloveColorCell('ヘリ革', state.binding, 'binding'),
     genGloveColorCell('ステッチ', state.stitch, 'stitch'),
     genGloveColorCell('革紐', state.lace, 'lace'),
-    genGloveColorCell('ムートン', { label: state.mouton.label, color: state.mouton.value, value: state.mouton.value }, 'mouton'),
+    isFirstBackStyle
+      ? dummy
+      : genGloveColorCell('ムートン', { label: state.mouton.label, color: state.mouton.value, value: state.mouton.value }, 'mouton'),
     genGloveBaseCell('ラベル', state.genuineLabel, 'genuineLabel')
   ].filter((item) => item.value !== dummy.value)
 }
