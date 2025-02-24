@@ -25,4 +25,4 @@ const kuritaDEMO: Supplier = {
 }
 
 // export const supplierList = [kuritaDEMO]
-export const supplierList = [fiveMainOffice, genuineMainOffice, kuritaDEMO]
+export const supplierList = [fiveMainOffice, genuineMainOffice]
