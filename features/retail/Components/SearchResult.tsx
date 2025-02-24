@@ -24,6 +24,12 @@ import { drawGenuineFirstMittRearSurface } from '@/features/genuine/Drawer/canva
 import { drawGenuineCatcherMittRearSurface } from '@/features/genuine/Drawer/canvas/rightThrow/catcherMitt/drawRearSurface'
 import { drawGenuineFirstMittPalmSurface } from '@/features/genuine/Drawer/canvas/rightThrow/firstMitt/drawPalmSurface'
 import { pseudoDrawingEngraved } from '@/util/canvas'
+import { drawLeftThrowGenuineCatcherMittRearSurface } from '@/features/genuine/Drawer/canvas/leftThrow/catcherMitt/drawRearSurface'
+import { drawLeftThrowGenuineCatcherMittPalmSurface } from '@/features/genuine/Drawer/canvas/leftThrow/catcherMitt/drawPalmSurface'
+import { drawLeftThrowGenuineFirstMittRearSurface } from '@/features/genuine/Drawer/canvas/leftThrow/firstMitt/drawRearSurface'
+import { drawLeftThrowGenuineFirstMittPalmSurface } from '@/features/genuine/Drawer/canvas/leftThrow/firstMitt/drawPalmSurface'
+import { drawLeftThrowGenuineGloveRearSurface } from '@/features/genuine/Drawer/canvas/leftThrow/glove/drawRearSurface'
+import { drawLeftThrowGenuineGlovePalmSurface } from '@/features/genuine/Drawer/canvas/leftThrow/glove/drawPalmSurface'
 
 const supplierFilter = (brand: Brand) => (supplier: Supplier) => supplier.brand === brand
 const Alert = forwardRef<HTMLDivElement, AlertProps>(function Alert(props, ref) {
@@ -60,6 +66,7 @@ export const SearchResult: React.FC<Props> = ({ response }) => {
     if (palmCtx !== null) pseudoDrawingEngraved(palmCtx) // genuineのフォントを事前読み込み
     if (rearCtx !== null) pseudoDrawingEngraved(rearCtx) // genuineのフォントを事前読み込み
 
+    const isRightThrow = state.dominantArm.value === 'rightThrow'
     switch (state.baseModel.brand) {
       case 'five':
         drawFiveRearSurface(rearCtx, state as FiveState)
@@ -70,16 +77,31 @@ export const SearchResult: React.FC<Props> = ({ response }) => {
         setTimeout(() => {
           switch (state.baseModel.position) {
             case 'catcher':
-              drawGenuineCatcherMittRearSurface(rearCtx, state as GenuineState)
-              drawGenuineCatcherMittPalmSurface(palmCtx, state as GenuineState)
+              if (isRightThrow) {
+                drawGenuineCatcherMittRearSurface(rearCtx, state as GenuineState)
+                drawGenuineCatcherMittPalmSurface(palmCtx, state as GenuineState)
+              } else {
+                drawLeftThrowGenuineCatcherMittRearSurface(rearCtx, state as GenuineState, canvasWidth)
+                drawLeftThrowGenuineCatcherMittPalmSurface(palmCtx, state as GenuineState, canvasWidth)
+              }
               break
             case 'firstBaseman':
-              drawGenuineFirstMittRearSurface(rearCtx, state as GenuineState)
-              drawGenuineFirstMittPalmSurface(palmCtx, state as GenuineState)
+              if (isRightThrow) {
+                drawGenuineFirstMittRearSurface(rearCtx, state as GenuineState)
+                drawGenuineFirstMittPalmSurface(palmCtx, state as GenuineState)
+              } else {
+                drawLeftThrowGenuineFirstMittRearSurface(rearCtx, state as GenuineState, canvasWidth)
+                drawLeftThrowGenuineFirstMittPalmSurface(palmCtx, state as GenuineState, canvasWidth)
+              }
               break
             default:
-              drawGenuineGloveRearSurface(rearCtx, state as GenuineState, canvasWidth)
-              drawGenuineGlovePalmSurface(palmCtx, state as GenuineState)
+              if (isRightThrow) {
+                drawGenuineGloveRearSurface(rearCtx, state as GenuineState, canvasWidth)
+                drawGenuineGlovePalmSurface(palmCtx, state as GenuineState)
+              } else {
+                drawLeftThrowGenuineGloveRearSurface(rearCtx, state as GenuineState, canvasWidth)
+                drawLeftThrowGenuineGlovePalmSurface(palmCtx, state as GenuineState, canvasWidth)
+              }
               break
           }
         }, 100)
