@@ -201,6 +201,11 @@ export const FIRST_BACK_WITH_MIDDLE_HOLE_GENUINE_LABELS: BaseItemWithPrice[] = [
   { label: '親指側(直刺繍)', value: 'thumbSideEmbroidery', price: 5500 }
 ]
 
+export const FIRST_BACK_WITH_UNDER_WEB_EMBROIDERY_GENUINE_LABELS: BaseItemWithPrice[] = [
+  { label: '小指側(通常)', value: 'littleFingerSideNormal', price: 0 },
+  { label: '小指側(直刺繍)', value: 'littleFingerSideEmbroidery', price: 5500 }
+]
+
 const commonPartsObjs: PartsItem[] = [
   // 共通
   { label: '全体', value: 'all' },

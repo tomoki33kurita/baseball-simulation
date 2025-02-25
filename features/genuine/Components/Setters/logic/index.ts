@@ -12,6 +12,7 @@ import {
   FIRST_BACK_MIDDLE_HOLE_PARTS,
   FIRST_BACK_PARTS,
   FIRST_BACK_WITH_MIDDLE_HOLE_GENUINE_LABELS,
+  FIRST_BACK_WITH_UNDER_WEB_EMBROIDERY_GENUINE_LABELS,
   FIRST_MITT_PARTS,
   FRONT_GENUINE_LABELS,
   GENUINE_LABELS,
@@ -204,6 +205,9 @@ export const getGenuineLabelOptions = (state: GenuineState) => {
       if (isFirstBackStyle) {
         const { isMiddleHole } = getFingerGuardType(state)
         if (isMiddleHole) return FIRST_BACK_WITH_MIDDLE_HOLE_GENUINE_LABELS
+        if (state.embroideries.some((e) => e.position.value === 'underWeb')) {
+          return FIRST_BACK_WITH_UNDER_WEB_EMBROIDERY_GENUINE_LABELS
+        }
         return FIRST_BACK_GENUINE_LABELS
       }
       return GENUINE_LABELS
@@ -301,6 +305,8 @@ export const selectablePositionGenerator = (state: GenuineState, index: number) 
   const selectablePositionBase = embroideryPositionFilter(selectedPosition)
   const overAllSelectedPositions = embroideries.map((e) => e.position.value)
   const canSelectBandSide = ['normalSide', 'directEmbroiderySide'].includes(genuineLabel.value)
+  const { isFirstBackStyle } = getBackStyle(state)
+  const isFirstBackWithLittleSideLabel = ['littleFingerSideNormal', 'littleFingerSideEmbroidery'].includes(genuineLabel.value) && isFirstBackStyle
 
   // 裏平1段目が選択可能かどうか→可能な時は、2段目は選択できないようにしておきたい
   const isSelectableOfLiningFirst = selectablePositionBase.some((p) => p.value === 'leatherLiningFirst')
@@ -312,7 +318,8 @@ export const selectablePositionGenerator = (state: GenuineState, index: number) 
   const selectablePosition2 = isGenuineBrandMark ? selectablePosition1.filter((p) => p.value !== 'childFinger') : selectablePosition1
   const selectablePosition3 = canSelectBandSide ? selectablePosition2 : selectablePosition2.filter((p) => p.value !== 'bandSide')
   const selectablePosition4 = state.baseModel.productNumber === 'YT-22' ? selectablePosition3 : selectablePosition3.filter((p) => p.value !== 'onWeb')
-  return selectablePosition4
+  const selectablePosition5 = isFirstBackWithLittleSideLabel ? selectablePosition4 : selectablePosition4.filter((p) => p.value !== 'underWeb')
+  return selectablePosition5
 }
 
 export const generateSubColors = (shouldFiltering: boolean) => {

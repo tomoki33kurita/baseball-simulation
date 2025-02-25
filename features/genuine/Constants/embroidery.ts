@@ -13,6 +13,7 @@ export const TYPE_FACES = [
 export const EMBROIDERY_POSITIONS = [
   { label: '親指', value: 'thumbFinger' },
   { label: '小指', value: 'childFinger' },
+  { label: 'ウェブ下', value: 'underWeb' },
   { label: '平裏', value: 'leatherLiningFirst' },
   { label: '平裏(2段目)', value: 'leatherLiningSecond' },
   { label: 'バンド横', value: 'bandSide' },

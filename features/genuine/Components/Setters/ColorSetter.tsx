@@ -60,7 +60,7 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
   return (
     <TabPanel selectedIndex={selectedIndex} index={1} isDark>
       <SelectCard
-        summary={'ラベル'} //
+        summary={'ラベル'}
         selectedLabel={genuineLabel.label}
         objects={genuineLabelOptions}
         isError={genuineLabel.value === 'unselected'}

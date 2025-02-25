@@ -149,6 +149,53 @@ const drawThumbEmbroidery = (ctx: CanvasRenderingContext2D, embroidery: Embroide
   ctx.restore()
 }
 
+const underWebEmbroidery = (ctx: CanvasRenderingContext2D, embroidery: Embroidery, x: number, y: number, numerator = 0): void => {
+  fontFamilySetter(ctx, embroidery.typeFace.value)
+  // 以下の font 再宣言必須
+  const typeFace = embroidery.typeFace.value
+  const fontSize = typeFace === 'Brush Script MT' ? '39px' : typeFace === 'cursive' ? '18px' : '24px'
+  ctx.font = `${fontSize} ${embroidery.typeFace.value}`
+  ctx.textAlign = 'center'
+  ctx.lineWidth = 0.8
+  ctx.fillStyle = embroidery.color.color // '#383838'
+  ctx.save()
+  ctx.rotate((numerator * Math.PI) / 180)
+
+  // 手入れ口部分
+  ctx.beginPath()
+  // 影カラー
+  const isShadowColor = !['none', 'unselected'].includes(embroidery.shadowColor.value)
+  const isEdgeColor = !['none', 'unselected'].includes(embroidery.edgeColor.value)
+  if (isShadowColor) {
+    ctx.shadowColor = embroidery?.shadowColor?.color
+    ctx.shadowOffsetX = 3
+    ctx.shadowOffsetY = 3
+    ctx.shadowBlur = 3
+  }
+  // フチカラー
+  if (isEdgeColor) {
+    ctx.lineWidth = 3.0
+    ctx.strokeStyle = embroidery.edgeColor.color
+  }
+  ctx.strokeText(embroidery.content, 280 + x, 500 + y)
+  ctx.fillText(embroidery.content, 280 + x, 500 + y)
+  ctx.closePath()
+  // 影カラーリセット
+  if (isShadowColor) {
+    ctx.shadowOffsetX = 0
+    ctx.shadowOffsetY = 0
+    ctx.shadowBlur = 0
+  }
+  // フチカラーリセット
+  if (isEdgeColor) {
+    ctx.lineWidth = 0.8
+    ctx.strokeStyle = '#383838'
+  }
+  ctx.textAlign = 'start'
+
+  ctx.restore()
+}
+
 const liningEmbroidery = (ctx: CanvasRenderingContext2D, embroidery: Embroidery, x: number, y: number): void => {
   fontFamilySetter(ctx, embroidery.typeFace.value)
   // 以下の font 再宣言必須
@@ -203,7 +250,13 @@ export const sideOfBeltEmbroideryDrawer = (ctx: CanvasRenderingContext2D, embroi
 export const thumbEmbroideryDrawer = (ctx: CanvasRenderingContext2D, embroideries: Embroidery[]): void => {
   const isEmbroideryDraw = embroideries?.some((x) => x.position.value === 'thumbFinger')
   const embroidery = embroideries.find((embroidery) => embroidery.position.value === 'thumbFinger')
-  if (isEmbroideryDraw && embroidery) drawThumbEmbroidery(ctx, embroidery, -115, 30, -15)
+  if (isEmbroideryDraw && embroidery) drawThumbEmbroidery(ctx, embroidery, -145, 47, -17)
+}
+
+export const underWebEmbroideryDrawer = (ctx: CanvasRenderingContext2D, embroideries: Embroidery[]): void => {
+  const isEmbroideryDraw = embroideries.some((x) => x.position.value === 'underWeb')
+  const embroidery = embroideries.find((embroidery) => embroidery.position.value === 'underWeb')
+  if (isEmbroideryDraw && embroidery) underWebEmbroidery(ctx, embroidery, 315, -170, 12)
 }
 
 export const firstMittThumbEmbroideryDrawer = (ctx: CanvasRenderingContext2D, embroideries: Embroidery[]): void => {
@@ -395,6 +448,51 @@ const thumbEmbroideryLeftThrow = (ctx: CanvasRenderingContext2D, embroidery: Emb
     ctx.lineWidth = 0.8
     ctx.strokeStyle = '#383838'
   }
+  ctx.restore()
+}
+
+const underWebEmbroideryLeftThrow = (ctx: CanvasRenderingContext2D, embroidery: Embroidery, x: number, y: number, numerator: number = 0): void => {
+  fontFamilySetter(ctx, embroidery.typeFace.value)
+  // 以下の font 再宣言必須
+  const typeFace = embroidery.typeFace.value
+  const fontSize = typeFace === 'Brush Script MT' ? '39px' : typeFace === 'cursive' ? '18px' : '24px'
+  ctx.font = `${fontSize} ${embroidery.typeFace.value}`
+  ctx.textAlign = 'center'
+  ctx.lineWidth = 0.8
+  ctx.fillStyle = embroidery.color.color // '#383838'
+
+  ctx.save()
+  ctx.rotate((numerator * Math.PI) / 180)
+  ctx.beginPath()
+  // 影カラー
+  const isShadowColor = !['none', 'unselected'].includes(embroidery.shadowColor.value)
+  const isEdgeColor = !['none', 'unselected'].includes(embroidery.edgeColor.value)
+  if (isShadowColor) {
+    ctx.shadowColor = embroidery?.shadowColor?.color
+    ctx.shadowOffsetX = 3
+    ctx.shadowOffsetY = 3
+    ctx.shadowBlur = 3
+  }
+  // フチカラー
+  if (isEdgeColor) {
+    ctx.lineWidth = 3.0
+    ctx.strokeStyle = embroidery.edgeColor.color
+  }
+  ctx.strokeText(embroidery.content, 280 + x, 500 + y)
+  ctx.fillText(embroidery.content, 280 + x, 500 + y)
+  ctx.closePath()
+  // 影カラーリセット
+  if (isShadowColor) {
+    ctx.shadowOffsetX = 0
+    ctx.shadowOffsetY = 0
+    ctx.shadowBlur = 0
+  }
+  // フチカラーリセット
+  if (isEdgeColor) {
+    ctx.lineWidth = 0.8
+    ctx.strokeStyle = '#383838'
+  }
+  ctx.textAlign = 'start'
   ctx.restore()
 }
 
@@ -638,6 +736,12 @@ export const thumbEmbroideryDrawerLeftThrow = (ctx: CanvasRenderingContext2D, st
       thumbEmbroideryLeftThrow(ctx, embroidery, 0, 0, 0)
     }
   }
+}
+
+export const underWebEmbroideryDrawerLeftThrow = (ctx: CanvasRenderingContext2D, embroideries: Embroidery[]): void => {
+  const isEmbroideryDraw = embroideries.some((x) => x.position.value === 'underWeb')
+  const embroidery = embroideries.find((embroidery) => embroidery.position.value === 'underWeb')
+  if (isEmbroideryDraw && embroidery) underWebEmbroideryLeftThrow(ctx, embroidery, 10, 0, -8)
 }
 
 const drawBandSideEmbroidery = (ctx: CanvasRenderingContext2D, embroidery: Embroidery, x: number, y: number, numerator?: number): void => {

@@ -18,7 +18,8 @@ import {
   bandSideEmbroideryDrawer,
   liningEmbroideryDrawerLeftThrow,
   nonThumbEmbroideryDrawerLeftThrow,
-  thumbEmbroideryDrawerLeftThrow
+  thumbEmbroideryDrawerLeftThrow,
+  underWebEmbroideryDrawerLeftThrow
 } from '@/util/canvas/embroidery'
 
 export const drawLeftThrowGenuineGloveRearSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState, width: number): void => {
@@ -58,6 +59,7 @@ export const drawLeftThrowGenuineGloveRearSurface = (ctx: CanvasRenderingContext
 
   undoInversion(ctx, width)
   thumbEmbroideryDrawerLeftThrow(ctx, state) // 親指への刺繍
+  underWebEmbroideryDrawerLeftThrow(ctx, state.embroideries) // ウェブ下の刺繍... ファーストバックのみ
   genuineLeftThrowBrandMarkEmbroideryDrawer(ctx, state)
   genuineLabelDrawer(ctx, state, width) // ラベル描画
 
