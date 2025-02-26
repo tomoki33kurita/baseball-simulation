@@ -249,10 +249,12 @@ export const getGenuineBackStyle = (state: GenuineState) => {
   }
 }
 
-export const getGenuineWebParts = (isFirstBaseman: boolean) => {
+export const getGenuineWebParts = (state: GenuineState) => {
+  const { isFirstBaseman, isOutfielder } = positionChecker(state.baseModel.position)
   const findFirstBaseman = (p: Position) => p === 'firstBaseman'
   const switchWebParts = (p: WebParts) => (isFirstBaseman ? p.positions.some(findFirstBaseman) : !p.positions.every(findFirstBaseman))
-  const selectableWebParts = WEB_PARTS.filter(switchWebParts)
+  const switchWebParts2 = (p: WebParts) => (isOutfielder ? true : !['ladder', 'dragonfly', 'dragonfly2'].includes(p.value))
+  const selectableWebParts = WEB_PARTS.filter(switchWebParts).filter(switchWebParts2)
   return {
     selectableWebParts
   }

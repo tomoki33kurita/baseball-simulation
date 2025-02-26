@@ -14,6 +14,7 @@ export const positionChecker = (position: Position) => {
     isPitcher,
     isCatcher,
     isFirstBaseman,
+    isInfielder,
     isOutfielder,
     isGlove,
     isMitt

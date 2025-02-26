@@ -86,7 +86,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
   }
   const { isGlove, isMitt, isCatcher, isFirstBaseman } = positionChecker(position)
   const { isMesh, isFirstBackStyle, isUnselectedBackStyle } = getGenuineBackStyle(state)
-  const { selectableWebParts } = getGenuineWebParts(isFirstBaseman)
+  const { selectableWebParts } = getGenuineWebParts(state)
   const isSelectableWebLaceStyle = ['basket2', 'tNet3'].includes(state.webParts.value)
   const isLoopOfRingFinger = (isGlove && !isFirstBackStyle) || isFirstBaseman
   const isSelectableGenuineMark = !isFirstBaseman && !isFirstBackStyle && !isMesh
