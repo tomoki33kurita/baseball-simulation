@@ -12,10 +12,10 @@ const sportsKobayashi = { name: 'スポーツコバヤシ', email: 'spokoba@rm.r
 const baseballStudioTaguchi = { name: 'Baseball Studio Taguchi', email: 'taguchispnet@gmail.com', selectableBrands: [FIVE] }
 const ballPark = { name: 'BALLPARK', email: 'bkproshop@ballpark-bk.com', selectableBrands: [FIVE] }
 const nikyosha = { name: 'スポーツプラザ二協社', email: 'nikyosha@icloud.com', selectableBrands: [FIVE] }
-const marubishiSports = { name: 'マルビシスポーツ', email: 'info@marubishisports.com', selectableBrands: [FIVE] }
-const sports87_1 = { name: '野球専門店 87スポーツ_1', email: 'hanasukeco@icloud.com', selectableBrands: [FIVE] }
+const marubishiSports = { name: 'マルビシスポーツ', email: 'info@marubishisports.com', selectableBrands: [FIVE, GENUINE] }
+const sports87_1 = { name: '野球専門店 87スポーツ_1', email: 'hanasukeco@icloud.com', selectableBrands: [FIVE, GENUINE] }
 const sports87_2 = { name: '野球専門店 87スポーツ_2', email: 'suke.0824-f@docomo.ne.jp', selectableBrands: [FIVE] }
-const shunanSports = { name: '周南スポーツ', email: 'info@syunan-sports.co.jp', selectableBrands: [FIVE] }
+const shunanSports = { name: '周南スポーツ', email: 'info@syunan-sports.co.jp', selectableBrands: [FIVE, GENUINE] }
 const fullSwing = { name: '体育堂FULLSWING', email: 'shop-tsuboi@taikudo.co.jp', selectableBrands: [FIVE] }
 const chuoSports = { name: '中央スポーツ', email: 'info@chuohsports.com', selectableBrands: [FIVE] }
 const standInKoshien = { name: 'スタンドイン甲子園', email: 'koshien@standin.co.jp', selectableBrands: [FIVE] }
@@ -31,11 +31,56 @@ const fiveMain = { name: 'FIVE本社用', email: '20kaikai04@gmail.com', selecta
 const aobaya = { name: 'アオバヤスポーツ', email: 'front.aobaya@gmail.com', selectableBrands: [FIVE] }
 const ojivaInternational = { name: 'Ojiva international Ltd.', email: 'yoshio.ojiva@gmail.com', selectableBrands: [FIVE] } // 台湾
 const miuraMain = { name: 'Genuine 三浦知晃', email: 'genuine.japan.2023@gmail.com', selectableBrands: [GENUINE] }
+const terui = { name: 'テルイスポーツ', email: 'terui.sp@vesta.ocn.nd.jp', selectableBrands: [GENUINE] }
+const nara = { name: '奈良スポーツ', email: 'narasp@mwe.biglobe.ne.jp', selectableBrands: [GENUINE] }
+const nagamine = { name: '長嶺スポーツ', email: 'nagasupo@outlook.jp', selectableBrands: [GENUINE] }
+const tedori = { name: '手取スポーツ', email: 'tedorisport@arrow.ocn.ne.jp', selectableBrands: [GENUINE] }
+const lionBaseballProShop = { name: 'ライオンベースボールプロショップ', email: 'e-info@lion-basepro.com', selectableBrands: [GENUINE] }
+const baseballFactoryNine = { name: '野球工房9', email: 'info@toi-toi-toi.jp', selectableBrands: [GENUINE] }
+const montana = { name: 'モンタナスポーツ', email: 'atsushi@imontana.co.jp', selectableBrands: [GENUINE] }
+const rokuhachiBaseballFactory = { name: 'ロクハチ野球工房', email: 'usami@68-labo.jp', selectableBrands: [GENUINE] }
+const lucky = { name: 'ラッキースポーツ', email: 'info@lucky-sp.com', selectableBrands: [GENUINE] }
+const hotta = { name: 'ホッタスポーツ', email: 'hotta_sports@ybb.ne.jp', selectableBrands: [GENUINE] }
+const spotaka = { name: 'スポタカ', email: 'baseball@spotaka.com', selectableBrands: [GENUINE] }
+const gloveStudioKobeya = { name: 'GLOVE STUDIO by KOBEYA', email: 'yagi@kobeya-sp.co.jp', selectableBrands: [GENUINE] }
+const act = { name: 'スポーツアクト', email: 'tatsuya626954@gmail.com', selectableBrands: [GENUINE] }
+const mitsuuma = { name: 'ミツウマスポーツ', email: 'mitsuuma@mitsuuma.jp', selectableBrands: [FIVE] }
+const takagi = { name: 'タカギスポーツ', email: 'romanecrowe@yahoo.co.jp', selectableBrands: [FIVE] }
+const baseballFactoryM = { name: '野球工房M　福岡', email: 'y-koboM@global-sp.com', selectableBrands: [FIVE] }
+const kField = { name: 'K-FIELD', email: 'tarasports1@eos.ocn.ne.jp', selectableBrands: [FIVE] }
+const joy = { name: 'ジョイスポーツ', email: 'k11886819@gmail.com', selectableBrands: [FIVE] }
+const yoshii = { name: 'ヨシイスポーツ', email: 'yakyuya441@gmail.com', selectableBrands: [FIVE] }
+const sasaki = { name: '佐々木スポーツ', email: 'sp9k4vq9@diary.ocn.ne.jp', selectableBrands: [FIVE] }
+const tsujihara = { name: '辻原スポーツ', email: 'tsujihara-s@po4.synapse.ne.jp', selectableBrands: [FIVE] }
+const actTakeOne = { name: 'スポーツアクトテイクワン', email: 'sp_take_1@ybb.ne.jp', selectableBrands: [FIVE] }
+
 // const a = { name: '', email: '', selectableBrands: [FIVE] }
 
 export const retailShops: Retail[] = [
   demoKurita,
   yoshikawaDemoMain,
+  terui,
+  nara,
+  nagamine,
+  tedori,
+  lionBaseballProShop,
+  baseballFactoryNine,
+  montana,
+  rokuhachiBaseballFactory,
+  lucky,
+  hotta,
+  spotaka,
+  gloveStudioKobeya,
+  act,
+  mitsuuma,
+  takagi,
+  baseballFactoryM,
+  kField,
+  joy,
+  yoshii,
+  sasaki,
+  tsujihara,
+  actTakeOne,
   maeharaSports,
   baseballMario,
   kitanoya,
