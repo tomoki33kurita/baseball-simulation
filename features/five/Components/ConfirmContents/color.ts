@@ -73,6 +73,7 @@ export const getFiveColorCells = (state: FiveState) => {
         genGloveColorCell('薬指8', state.ringLittle, 'ringLittle'),
         genGloveColorCell('小指9', state.littleRing, 'littleRing'),
         genGloveColorCell('小指10', state.littleOut, 'littleOut'),
+        genGloveColorCell('ラベル台', state.labelStand, 'labelStand'),
         // genGloveColorCell('バンド', state.listBelt, 'listBelt'),
         genGloveColorCell('ハミダシ', state.welting, 'welting'),
         genGloveColorCell('ヘリ革', state.binding, 'binding'),
