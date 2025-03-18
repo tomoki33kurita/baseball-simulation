@@ -374,7 +374,7 @@ export const LEATHER_COLORS_BY_PARTS_FOR_CATCHER: LeatherColorsByPartsOfGenuine 
   meshColor: MESH_COLORS,
   stitch: STITCHES,
   welting: WELTINGS,
-  linings: LININGS,
+  linings: LEATHER_COLORS_FOR_CATCHER,
   loopOfRingFingerColor: LININGS, // 裏革と同じ
   genuineBrandMarkColor: STITCHES,
   all: LEATHER_COLORS_FOR_CATCHER,

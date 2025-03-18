@@ -190,7 +190,7 @@ export const reducer = (state: any, action: any) => {
         binding: action.all,
         fingerGuardColor: action.all,
         listBelt: action.all,
-        // 内野手用グラブ
+        linings: action.all,
         thumbOut: action.all,
         thumbWeb: action.all,
         indexWeb: action.all,

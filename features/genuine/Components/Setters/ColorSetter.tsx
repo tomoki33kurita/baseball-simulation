@@ -34,7 +34,7 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
   const { parts, lace, linings, binding, stitch, welting, mouton, genuineLabel, embroideries } = state
   const partsKey = parts.value
   const partsLabel = parts.label
-  const { isFirstBaseman } = positionChecker(state.baseModel.position)
+  const { isFirstBaseman, isCatcher } = positionChecker(state.baseModel.position)
   const { isTMBackStyle, isFirstBackStyle } = getBackStyle(state)
   const componentParts = getComponentParts(state)
   const selectedParts = componentParts[partsKey as keyof typeof componentParts]
@@ -49,7 +49,7 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
     parts: originDispatcher(DISPATCHER, 'parts', dispatch, PARTS),
     lace: handleGenuine(dispatch)('lace'),
     binding: handleGenuine(dispatch)('binding'),
-    linings: handleGenuine(dispatch)('linings'),
+    linings: originDispatcher(DISPATCHER, 'linings', dispatch, isCatcher ? colorsByParts : LININGS),
     stitch: handleGenuine(dispatch)('stitch'),
     welting: handleGenuine(dispatch)('welting'),
     mouton: handleGenuine(dispatch)('mouton'),
@@ -84,7 +84,7 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
         summary={'裏革'}
         selectedLabel={linings.label}
         selectedColor={linings.color}
-        objects={LININGS}
+        objects={isCatcher ? colorsByParts : LININGS}
         defaultExpanded={linings.value === 'unselected'}
         handleChange={handle.linings}
         isError={linings.value === 'unselected'}
