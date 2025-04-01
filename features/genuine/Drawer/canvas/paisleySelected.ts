@@ -8,7 +8,7 @@ const isColorItem = (item: any): item is ColorItem => {
 export const paisleySelected = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
   const colorCells = getGenuineColorCells(state)
   const partsColors = colorCells.filter(isColorItem)
-  const isExistPaisley = partsColors.some((item) => ['blackPaisley', 'dBrownPaisley'].includes(item.value))
+  const isExistPaisley = partsColors.some((item) => ['blackPaisley', 'dBrownPaisley', 'navyPaisley'].includes(item.value))
   ctx.beginPath()
   ctx.font = '18px serif'
   ctx.strokeStyle = 'blue'

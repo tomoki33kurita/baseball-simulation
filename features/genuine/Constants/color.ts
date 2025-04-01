@@ -24,7 +24,8 @@ export const LEATHER_COLORS: ColorItem[] = [
   { label: 'インペリアルブラック', value: 'imperialNavy', color: '#0d194a' },
   { label: 'アベンチュリンブラウン', value: 'aventurineBrown', color: '#731222' },
   { label: 'ブラックペイズリー', value: 'blackPaisley', color: '#1E1E1E' },
-  { label: 'Dブラウンペイズリー', value: 'dBrownPaisley', color: '#70352e' }
+  { label: 'Dブラウンペイズリー', value: 'dBrownPaisley', color: '#70352e' },
+  { label: 'ネイビーペイズリー', value: 'navyPaisley', color: '#0e1530' }
 ]
 export const LEATHER_COLORS_FOR_CATCHER: ColorItem[] = [
   { label: 'ブラック(和牛)', value: 'black', color: '#1E1E1E' },
