@@ -30,7 +30,7 @@ import { SelectCardWithImage } from '@/components/Setters/SelectCardWithImage'
 import { TabPanel } from '@/components/TabPanel'
 import { handleGenuine } from './dispatcher'
 import { positionChecker } from '@/util/logic'
-import { getBackStyleOptions, getFingerGuardOptions, getGenuineBackStyle, getGenuineWebParts } from './logic'
+import { getBackStyleOptions, getFingerGuardOptions, getGenuineBackStyle, getGenuineWebParts, getLeatherThicknessDescription } from './logic'
 import { STITCHES } from '../../Constants/color'
 import { JUNIOR_LIST } from '../../Constants/model'
 
@@ -98,6 +98,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
   const isSpecifiedLittleFingerSideLabel = ['littleFingerSideEmbroidery', 'littleFingerSideNormal'].includes(state.genuineLabel.value)
   const fingerGuardOptions = getFingerGuardOptions(state)
   const isChildFingerEmbroidery = state.embroideries.some((e) => e.position.value === 'childFinger')
+  const { description } = getLeatherThicknessDescription(state)
 
   return (
     <TabPanel selectedIndex={selectedIndex} index={0} isDark>
@@ -146,7 +147,7 @@ export const BaseSetter: React.FC<Props> = ({ state, selectedIndex, position, di
         isError={leatherThickness.value === 'unselected'}
         defaultExpanded={leatherThickness.value === 'unselected'}
         handleChange={handle.leatherThickness}
-        description={"Genuineでは'薄く'を推奨しております。"}
+        description={description}
         isDark
       />
       <SelectCard

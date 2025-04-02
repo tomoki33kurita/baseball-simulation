@@ -550,3 +550,20 @@ export const getFingerGuardType = (state: GenuineState) => {
     isMiddleHole
   }
 }
+
+export const getLeatherThicknessDescription = (state: GenuineState) => {
+  const productNumber = state.baseModel.productNumber
+  if (['HM-37', 'TM-411'].includes(productNumber)) {
+    return { description: "Genuineでは'普通'を推奨しております。" }
+  }
+
+  if (['YT-22'].includes(productNumber)) {
+    return { description: "Genuineでは'厚く'を推奨しております。" }
+  }
+
+  // if (productNumber === '') {
+  //   return { description: '' }
+  // }
+
+  return { description: '' }
+}
