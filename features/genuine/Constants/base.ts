@@ -62,6 +62,7 @@ export const BACK_LACE_STYLES: BaseItem[] = [
 ]
 
 export const LEATHER_THICKNESS: BaseItem[] = [
+  { label: '厚く', value: 'thick' },
   { label: '普通', value: 'normal' },
   { label: '薄く', value: 'thin' },
   { label: '激薄', value: 'extremelyThin' }
