@@ -565,5 +565,5 @@ export const getLeatherThicknessDescription = (state: GenuineState) => {
   //   return { description: '' }
   // }
 
-  return { description: '' }
+  return { description: "Genuineでは'薄く'を推奨しております。" }
 }
