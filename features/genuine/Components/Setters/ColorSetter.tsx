@@ -123,7 +123,7 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
         defaultExpanded={palmWelting.value === 'unselected'}
         handleChange={handle.palmWelting}
         isError={palmWelting.value === 'unselected'}
-        isDisplay={isCatcher && welting.value === 'none'}
+        isDisplay={isCatcher && ((!isTMBackStyle && welting.value === 'none') || isTMBackStyle)}
         className={WELTING_COLOR_BUTTON_OPTION}
         isDark
       />
