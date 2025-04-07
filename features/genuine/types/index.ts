@@ -86,6 +86,7 @@ export type GenuineState = {
   binding: ColorItem
   stitch: ColorItem
   welting: ColorItem
+  palmWelting: ColorItem
   mouton: BaseItemWithPrice
   palm: ColorItem
   web: ColorItem

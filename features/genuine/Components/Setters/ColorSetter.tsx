@@ -31,7 +31,7 @@ type Props = {
 }
 
 export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch }) => {
-  const { parts, lace, linings, binding, stitch, welting, mouton, genuineLabel, embroideries } = state
+  const { parts, lace, linings, binding, stitch, welting, palmWelting, mouton, genuineLabel, embroideries } = state
   const partsKey = parts.value
   const partsLabel = parts.label
   const { isFirstBaseman, isCatcher } = positionChecker(state.baseModel.position)
@@ -52,6 +52,7 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
     linings: originDispatcher(DISPATCHER, 'linings', dispatch, isCatcher ? colorsByParts : LININGS),
     stitch: handleGenuine(dispatch)('stitch'),
     welting: handleGenuine(dispatch)('welting'),
+    palmWelting: handleGenuine(dispatch)('palmWelting'),
     mouton: handleGenuine(dispatch)('mouton'),
     genuineLabel: handleGenuine(dispatch)('genuineLabel')
   }
@@ -111,6 +112,18 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
         handleChange={handle.welting}
         isError={welting.value === 'unselected'}
         isDisplay={!isFirstBaseman && !isTMBackStyle}
+        className={WELTING_COLOR_BUTTON_OPTION}
+        isDark
+      />
+      <SelectCard
+        summary={'ハミダシ(捕球面)'}
+        selectedLabel={palmWelting.label}
+        selectedColor={palmWelting.color}
+        objects={WELTINGS}
+        defaultExpanded={palmWelting.value === 'unselected'}
+        handleChange={handle.palmWelting}
+        isError={palmWelting.value === 'unselected'}
+        isDisplay={isCatcher && welting.value === 'none'}
         className={WELTING_COLOR_BUTTON_OPTION}
         isDark
       />

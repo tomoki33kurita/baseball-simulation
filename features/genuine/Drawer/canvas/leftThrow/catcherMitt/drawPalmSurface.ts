@@ -12,6 +12,7 @@ import { stitch } from '../../rightThrow/catcherMitt/front/stitch'
 import { laceDrawer } from '../../rightThrow/catcherMitt/front/lace'
 import { paisleySelected } from '../../paisleySelected'
 import { genuineEngravedOfPalm } from '../../genuineMark'
+import { palmWelting } from '../../rightThrow/catcherMitt/front/welting'
 
 export const drawLeftThrowGenuineCatcherMittPalmSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState, width: number): void => {
   if (!ctx) return
@@ -35,6 +36,8 @@ export const drawLeftThrowGenuineCatcherMittPalmSurface = (ctx: CanvasRenderingC
   thumbMachi(ctx, state.thumbMachi.color)
   littleMachi(ctx, state.littleMachi.color)
 
+  const palmWeltingItem = state.welting.value === 'none' ? state.palmWelting : state.welting
+  palmWelting(ctx, palmWeltingItem)
   edgeDrawer(ctx, state)
   stitch(ctx, state.stitch.color)
   laceDrawer(ctx, state)

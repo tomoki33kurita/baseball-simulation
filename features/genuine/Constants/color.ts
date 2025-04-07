@@ -332,6 +332,7 @@ export const LEATHER_COLORS_BY_PARTS: LeatherColorsByPartsOfGenuine = {
   meshColor: MESH_COLORS,
   stitch: STITCHES,
   welting: WELTINGS,
+  palmWelting: WELTINGS,
   palm: LEATHER_COLORS,
   web: LEATHER_COLORS,
   web2: LEATHER_COLORS,
@@ -377,6 +378,7 @@ export const LEATHER_COLORS_BY_PARTS_FOR_CATCHER: LeatherColorsByPartsOfGenuine 
   meshColor: MESH_COLORS,
   stitch: STITCHES,
   welting: WELTINGS,
+  palmWelting: WELTINGS,
   linings: LEATHER_COLORS_FOR_CATCHER,
   loopOfRingFingerColor: LININGS, // 裏革と同じ
   genuineBrandMarkColor: STITCHES,

@@ -34,7 +34,8 @@ export const drawGenuineCatcherMittPalmSurface = (ctx: CanvasRenderingContext2D 
   thumbMachi(ctx, state.thumbMachi.color)
   littleMachi(ctx, state.littleMachi.color)
 
-  palmWelting(ctx, state.welting)
+  const palmWeltingItem = state.welting.value === 'none' ? state.palmWelting : state.welting
+  palmWelting(ctx, palmWeltingItem)
   edgeDrawer(ctx, state)
   stitch(ctx, state.stitch.color)
   laceDrawer(ctx, state)

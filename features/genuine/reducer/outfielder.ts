@@ -44,7 +44,8 @@ import {
   SET_GENUINE_BRAND_MARK,
   SET_GENUINE_BRAND_MARK_COLOR,
   SET_TWO_FINGER_IN_LITTLE_SLOT,
-  SET_BALL_TYPE
+  SET_BALL_TYPE,
+  SET_PALM_WELTING
 } from '@/features/genuine/Constants/action'
 import { ADD_EMBROIDERY, REMOVE_EMBROIDERY, SET_DRAWER_INDEX, SET_EMBROIDERIES, SET_PERSONAL } from '@/constants'
 import { GenuineState } from '../types'
@@ -122,6 +123,7 @@ export const initialState: GenuineState = {
   lace: unselectedColorState,
   linings: unselectedColorState,
   welting: unselectedColorState,
+  palmWelting: unselectedColorState,
   stitch: { label: '未選択', value: 'unselected', color: '#eee' },
   web: unselectedColorState,
   web2: unselectedColorState,
@@ -287,6 +289,8 @@ export const reducer = (state: any, action: any) => {
       return { ...state, linings: action.linings, drawerIndex: 0 }
     case SET_WELTING:
       return { ...state, welting: action.welting }
+    case SET_PALM_WELTING:
+      return { ...state, palmWelting: action.palmWelting }
     case SET_LACE_COLOR:
       return { ...state, lace: action.lace }
     case SET_STITCH_COLOR:

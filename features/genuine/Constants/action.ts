@@ -37,6 +37,7 @@ export const SET_LITTLE_HOOK = 'setLittleHook'
 export const SET_LIST_BELT_COLOR = 'setListBeltColor'
 export const SET_FINGER_GUARD_COLOR = 'setFingerGuardColor'
 export const SET_WELTING = 'setWelting'
+export const SET_PALM_WELTING = 'setPalmWelting'
 export const SET_GENUINE_LABEL = 'setGenuineLabel'
 
 export const SET_THUMB_OUT_COLOR = 'thumbOut'
@@ -91,6 +92,7 @@ export const DISPATCHER = {
   stitch: SET_STITCH_COLOR,
   linings: SET_LININGS,
   welting: SET_WELTING,
+  palmWelting: SET_PALM_WELTING,
   mouton: SET_MOUTON_COLOR,
   meshColor: SET_MESH_COLOR,
   size: SET_SIZE,

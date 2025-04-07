@@ -51,7 +51,8 @@ import {
   SET_GENUINE_BRAND_MARK_COLOR,
   SET_TWO_FINGER_IN_LITTLE_SLOT,
   SET_LININGS,
-  SET_BALL_TYPE
+  SET_BALL_TYPE,
+  SET_PALM_WELTING
 } from '@/features/genuine/Constants/action'
 import {
   BINDINGS,
@@ -93,6 +94,7 @@ const dispatchBaseStore = {
   binding: { objects: BINDINGS, actionType: SET_BINDING_COLOR },
   stitch: { objects: STITCHES, actionType: SET_STITCH_COLOR },
   welting: { objects: WELTINGS, actionType: SET_WELTING },
+  palmWelting: { objects: WELTINGS, actionType: SET_PALM_WELTING },
   mouton: { objects: MOUTON_COLORS, actionType: SET_MOUTON_COLOR },
   genuineLabel: { objects: [...GENUINE_LABELS, ...FIRST_BACK_GENUINE_LABELS], actionType: SET_GENUINE_LABEL }
 }

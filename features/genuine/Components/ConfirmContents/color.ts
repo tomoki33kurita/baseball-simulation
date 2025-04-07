@@ -129,6 +129,7 @@ export const getGenuineColorCells = (state: GenuineState) => {
   const isINet = state.webParts.value === 'iNet'
   const { isFirstBaseman } = positionChecker(state.baseModel.position)
   const { isTMBackStyle, isFirstBackStyle } = getBackStyle(state)
+  const isNoneWelting = state.welting.value === 'none'
 
   return [
     genGloveColorCell('捕球面', state.palm, 'palm'),
@@ -142,6 +143,7 @@ export const getGenuineColorCells = (state: GenuineState) => {
     isSideLabel ? dummy : genGloveColorCell('バンド', state.listBelt, 'listBelt'),
     isLoopOfRingFinger ? genGloveColorCell('薬指リング', state.loopOfRingFingerColor, 'loopOfRingFingerColor') : dummy,
     isFirstBaseman || isTMBackStyle ? dummy : genGloveColorCell('ハミダシ', state.welting, 'welting'),
+    isNoneWelting ? genGloveColorCell('ハミダシ(捕球面)', state.palmWelting, 'palmWelting') : dummy,
     genGloveColorCell('ヘリ革', state.binding, 'binding'),
     genGloveColorCell('ステッチ', state.stitch, 'stitch'),
     genGloveColorCell('革紐', state.lace, 'lace'),
