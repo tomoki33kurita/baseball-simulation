@@ -12,6 +12,7 @@ import { webDrawer } from './front/web'
 import { paisleySelected } from '../../paisleySelected'
 import { pseudoDrawingEngraved } from '@/util/canvas'
 import { genuineEngravedOfPalm } from '../../genuineMark'
+import { palmWelting } from './front/welting'
 
 export const drawGenuineCatcherMittPalmSurface = (ctx: CanvasRenderingContext2D | null, state: GenuineState): void => {
   if (!ctx) return
@@ -33,6 +34,7 @@ export const drawGenuineCatcherMittPalmSurface = (ctx: CanvasRenderingContext2D 
   thumbMachi(ctx, state.thumbMachi.color)
   littleMachi(ctx, state.littleMachi.color)
 
+  palmWelting(ctx, state.welting)
   edgeDrawer(ctx, state)
   stitch(ctx, state.stitch.color)
   laceDrawer(ctx, state)
