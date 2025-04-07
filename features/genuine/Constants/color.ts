@@ -103,6 +103,8 @@ export const BINDINGS: ColorItem[] = [
 ]
 
 export const WELTINGS: ColorItem[] = [
+  { label: 'ハミダシなし(ツマミ)', value: 'none', color: '#fff' },
+
   { label: 'キリハミ(ブラック)', value: 'cutWeltingBlack', color: '#1E1E1E' },
   { label: 'キリハミ(ホワイト)', value: 'cutWeltingWhite', color: '#fff' },
 

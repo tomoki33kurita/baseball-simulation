@@ -106,7 +106,7 @@ export const ColorSetter: React.FC<Props> = ({ state, selectedIndex, dispatch })
         summary={'ハミダシ'}
         selectedLabel={welting.label}
         selectedColor={welting.color}
-        objects={WELTINGS}
+        objects={isCatcher ? WELTINGS : WELTINGS.filter((w) => w.value !== 'none')}
         defaultExpanded={welting.value === 'unselected'}
         handleChange={handle.welting}
         isError={welting.value === 'unselected'}
