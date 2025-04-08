@@ -37,7 +37,7 @@ export const drawGenuineCatcherMittPalmSurface = (ctx: CanvasRenderingContext2D 
   const palmWeltingItem = state.welting.value === 'none' ? state.palmWelting : state.welting
   palmWelting(ctx, palmWeltingItem)
   edgeDrawer(ctx, state)
-  stitch(ctx, state.stitch.color)
+  stitch(ctx, state.stitch.color, palmWeltingItem)
   laceDrawer(ctx, state)
 
   genuineEngravedOfPalm(ctx, palmState, 0, 0) // メーカー捕球面の刻印
