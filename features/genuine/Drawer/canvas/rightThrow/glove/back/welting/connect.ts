@@ -1,5 +1,5 @@
 export const weltingForConnectBack = (ctx: CanvasRenderingContext2D, weltingColor: string, isIntegratedRing: boolean, leatherColor: string): void => {
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.lineWidth = 0.5
   ctx.fillStyle = weltingColor
   ctx.beginPath()

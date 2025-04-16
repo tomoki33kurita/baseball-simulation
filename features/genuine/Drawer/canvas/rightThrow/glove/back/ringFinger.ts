@@ -1,6 +1,6 @@
 export const ringFingerRight = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   ctx.moveTo(279, 90) // 左上
@@ -16,7 +16,7 @@ export const ringFingerRight = (ctx: CanvasRenderingContext2D, color: string): v
 
 export const ringFingerLeft = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   ctx.moveTo(277, 92) // 右上
@@ -31,7 +31,7 @@ export const ringFingerLeft = (ctx: CanvasRenderingContext2D, color: string): vo
 
 export const ringFingerIntegrated = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   ctx.moveTo(277, 92) // 右上

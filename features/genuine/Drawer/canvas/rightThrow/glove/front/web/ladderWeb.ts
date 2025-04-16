@@ -1,7 +1,7 @@
 import { middleSidePartOfWeb, topSidePartOfWeb } from './parts/sideParts'
 
 const verticalPartOfVWeb = (ctx: CanvasRenderingContext2D, webColor: string, stitchColor: string) => {
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = webColor
   // ウェブ_縦
   ctx.beginPath()
@@ -43,12 +43,12 @@ const verticalPartOfVWeb = (ctx: CanvasRenderingContext2D, webColor: string, sti
   ctx.stroke()
   ctx.setLineDash([])
   ctx.closePath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
 }
 
 export const ladderWeb = (ctx: CanvasRenderingContext2D, webColor: string, web2Color: string, laceColor: string, stitchColor: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // ウェブ_縦
   verticalPartOfVWeb(ctx, web2Color, stitchColor)
   // ウェブ先端

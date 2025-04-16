@@ -2,7 +2,7 @@ import { BaseModel } from '@/types'
 
 export const webTop = (ctx: CanvasRenderingContext2D, color: string, stitchColor: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
 
   ctx.beginPath()
@@ -55,7 +55,7 @@ export const webTop = (ctx: CanvasRenderingContext2D, color: string, stitchColor
 
 export const webTop2 = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchColor: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = leatherColor
 
   ctx.beginPath()
@@ -109,7 +109,7 @@ export const webTop2 = (ctx: CanvasRenderingContext2D, leatherColor: string, sti
 
 export const webTopJoint = (ctx: CanvasRenderingContext2D, webColor: string, web2Color: string, stitchColor: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = webColor
 
   // ウェブ本体_上
@@ -131,7 +131,7 @@ export const webTopJoint = (ctx: CanvasRenderingContext2D, webColor: string, web
 
   // ウェブ本体_下
   ctx.beginPath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = web2Color
   ctx.moveTo(535, 54) // 左上
   ctx.quadraticCurveTo(555, 75, 555, 75)
@@ -160,7 +160,7 @@ export const webTopJoint = (ctx: CanvasRenderingContext2D, webColor: string, web
   ctx.closePath()
 
   ctx.beginPath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.moveTo(535, 54) // 左上
   ctx.quadraticCurveTo(632, 144, 664, 264)
   ctx.stroke()
@@ -203,7 +203,7 @@ export const webTopJoint = (ctx: CanvasRenderingContext2D, webColor: string, web
 
 export const webBottom = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchColor: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = leatherColor
 
   // 手入れ口部分
@@ -269,7 +269,7 @@ export const webBottom = (ctx: CanvasRenderingContext2D, leatherColor: string, s
 
 export const webBottom2 = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchColor: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = leatherColor
 
   // 手入れ口部分

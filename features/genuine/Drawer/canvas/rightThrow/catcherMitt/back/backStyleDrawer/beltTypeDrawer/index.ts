@@ -50,13 +50,13 @@ const beltBand = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchCol
   ctx.stroke()
   ctx.setLineDash([])
   ctx.closePath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
 }
 
 const weltingOfMiddleFingerBeltBackStyle = (ctx: CanvasRenderingContext2D, hamidashi: ColorItem): void => {
   if (hamidashi?.value === 'none') return
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = hamidashi.color
 
   // 中指袋

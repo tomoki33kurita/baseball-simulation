@@ -1,6 +1,6 @@
 export const underLeft = (ctx: CanvasRenderingContext2D, color: string, locationX: number, locationY: number, numerator?: number): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // 長方形＿巻き込みパーツ＿
   ctx.beginPath()
@@ -27,7 +27,7 @@ export const underLeft = (ctx: CanvasRenderingContext2D, color: string, location
 
 export const underCenter = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   // 右から２番目
@@ -44,7 +44,7 @@ export const underCenter = (ctx: CanvasRenderingContext2D, color: string): void 
 
 export const underRight = (ctx: CanvasRenderingContext2D, color: string, locationX: number, locationY: number, numerator?: number): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // 長方形＿巻き込みパーツ＿
   ctx.beginPath()
@@ -71,7 +71,7 @@ export const underRight = (ctx: CanvasRenderingContext2D, color: string, locatio
 
 export const underWebRight = (ctx: CanvasRenderingContext2D, color: string, locationX: number, locationY: number, numerator?: number): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // 長方形＿巻き込みパーツ＿
   ctx.beginPath()
@@ -102,7 +102,7 @@ export const underWeb = (ctx: CanvasRenderingContext2D, color: string, x: number
   ctx.save()
   ctx.rotate((rotate * Math.PI) / 180)
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // 小指芯固定用の紐
   ctx.beginPath()

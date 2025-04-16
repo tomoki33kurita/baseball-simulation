@@ -7,7 +7,7 @@ export const webTop = (
   scaleSize?: number
 ): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
 
   ctx.beginPath()
@@ -35,7 +35,7 @@ export const webTop = (
 
 export const webTop0 = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
 
   ctx.beginPath()
@@ -69,7 +69,7 @@ const webTopCross = (ctx: CanvasRenderingContext2D, color: string, x: number, y:
   ctx.rotate((rotate * Math.PI) / 180)
   // 左上-右下
   ctx.fillStyle = color
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.beginPath()
   ctx.moveTo(590 + x, 62 + y) // 左下
   ctx.quadraticCurveTo(594 + x, 68 + y, 602 + x, 62 + y) // 右下

@@ -7,7 +7,7 @@ export const onBindingTojiThumb = (
   // scaleSize?: number,
 ): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   if (numerator !== undefined && numerator !== 0) {
@@ -38,7 +38,7 @@ export const onBindingTojiThumb1 = (
   scaleSize?: number
 ): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   if (numerator !== undefined && numerator !== 0) {
     ctx.save()
@@ -72,7 +72,7 @@ export const onBindingTojiCenter = (
   // scaleSize?: number,
 ): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   if (numerator !== undefined && numerator !== 0) {
@@ -103,7 +103,7 @@ export const onBindingTojiCenter2 = (
   // scaleSize?: number,
 ): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   if (numerator !== undefined && numerator !== 0) {
@@ -134,7 +134,7 @@ export const onBindingTojiLittle = (
   // scaleSize?: number,
 ): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   if (numerator !== undefined && numerator !== 0) {
@@ -158,7 +158,7 @@ export const onBindingTojiLittle = (
 
 export const onBindingTojiLittle2 = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   ctx.moveTo(634, 446) // 左上
@@ -173,7 +173,7 @@ export const onBindingTojiLittle2 = (ctx: CanvasRenderingContext2D, color: strin
 
 export const onBindingTojiLittle3 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number, numerator?: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   if (numerator !== undefined && numerator !== 0) {
     ctx.save()
@@ -197,7 +197,7 @@ export const onBindingTojiLittle3 = (ctx: CanvasRenderingContext2D, color: strin
 
 export const onBindingTojiLittle4 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number, numerator?: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   if (numerator !== undefined && numerator !== 0) {
     ctx.save()

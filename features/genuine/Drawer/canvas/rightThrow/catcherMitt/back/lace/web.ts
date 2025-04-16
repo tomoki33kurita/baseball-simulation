@@ -1,6 +1,6 @@
 export const webTop0 = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
 
   // 手入れ口部分
@@ -19,7 +19,7 @@ export const webTop0 = (ctx: CanvasRenderingContext2D, color: string): void => {
 
 export const webTop1 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number, numerator?: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
 
   ctx.beginPath()
@@ -45,7 +45,7 @@ export const webTop1 = (ctx: CanvasRenderingContext2D, color: string, x: number,
 
 export const webTop2 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
 
   ctx.beginPath()
@@ -64,7 +64,7 @@ export const webTop2 = (ctx: CanvasRenderingContext2D, color: string, x: number,
 
 export const webTop3 = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
 
   // 手入れ口部分
@@ -84,7 +84,7 @@ export const webTop3 = (ctx: CanvasRenderingContext2D, color: string): void => {
 
 export const webTopCrossLace = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number, rotate: number, scaleSize = 1): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
 
   // 左上_右下

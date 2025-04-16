@@ -1,6 +1,6 @@
 export const webTop = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchColor: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = leatherColor
 
   ctx.beginPath()
@@ -40,7 +40,7 @@ export const webTop = (ctx: CanvasRenderingContext2D, leatherColor: string, stit
 
 export const webTop2 = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchColor: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = leatherColor
 
   ctx.beginPath()
@@ -80,7 +80,7 @@ export const webTop2 = (ctx: CanvasRenderingContext2D, leatherColor: string, sti
 
 export const webTopJoint = (ctx: CanvasRenderingContext2D, webColor: string, web2Color: string, stitchColor: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = webColor
   ctx.beginPath()
   ctx.moveTo(187, 187) // 左上
@@ -151,7 +151,7 @@ export const webTopJoint = (ctx: CanvasRenderingContext2D, webColor: string, web
 
 export const webBottom = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchColor: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = leatherColor
 
   // ヘリ革
@@ -191,7 +191,7 @@ export const webBottom = (ctx: CanvasRenderingContext2D, leatherColor: string, s
 
 export const webBottom2 = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchColor: string, x: number, y: number): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = leatherColor
 
   ctx.beginPath()
@@ -227,7 +227,7 @@ export const webBottom2 = (ctx: CanvasRenderingContext2D, leatherColor: string, 
 
 export const webBottom3 = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchColor: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = leatherColor
 
   ctx.beginPath()

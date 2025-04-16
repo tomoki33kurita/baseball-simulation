@@ -1,6 +1,6 @@
 export const thumbBackOut = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
 
   // 輪郭
@@ -17,7 +17,7 @@ export const thumbBackOut = (ctx: CanvasRenderingContext2D, color: string): void
 
 export const thumbBackWebSide = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // 輪郭
   ctx.beginPath()

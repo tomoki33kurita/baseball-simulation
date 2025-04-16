@@ -3,7 +3,7 @@ import { verticalPartsOfWeb } from './parts/verticalParts'
 
 export const dragonfly2Web = (ctx: CanvasRenderingContext2D, webColor: string, web2Color: string, laceColor: string, stitchColor: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // ウェブ_縦
   verticalPartsOfWeb(ctx, web2Color, stitchColor) // ウェブ_縦
   // ウェブ先端

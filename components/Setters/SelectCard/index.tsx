@@ -44,7 +44,7 @@ export const SelectCard: React.FC<Props> = ({
 }) => {
   if (!isDisplay) return <></>
   return (
-    <Accordion style={isDark ? { marginBottom: '16px', background: '#383838' } : { marginBottom: '16px' }} defaultExpanded={defaultExpanded}>
+    <Accordion style={isDark ? { marginBottom: '16px', background: '#282828' } : { marginBottom: '16px' }} defaultExpanded={defaultExpanded}>
       <AccordionSummary
         expandIcon={
           <Fab
@@ -54,7 +54,7 @@ export const SelectCard: React.FC<Props> = ({
               isDark
                 ? {
                     boxShadow: 'unset',
-                    background: '#383838',
+                    background: '#282828',
                     color: 'white',
                     border: '1px solid white'
                   }

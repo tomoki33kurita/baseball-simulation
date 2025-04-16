@@ -1,6 +1,6 @@
 export const thumbEdge0 = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   ctx.moveTo(190, 201) // 左左
@@ -19,7 +19,7 @@ export const thumbEdge0 = (ctx: CanvasRenderingContext2D, color: string): void =
 
 export const thumbEdge1 = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   ctx.moveTo(215, 221) // 左上
@@ -37,7 +37,7 @@ export const thumbEdge1 = (ctx: CanvasRenderingContext2D, color: string): void =
 
 export const thumbEdge2 = (ctx: CanvasRenderingContext2D, color: string, locationX: number, locationY: number): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // 長方形＿巻き込みパーツ＿
   ctx.beginPath()
@@ -60,7 +60,7 @@ export const thumbEdge2 = (ctx: CanvasRenderingContext2D, color: string, locatio
 
 export const thumbEdge3 = (ctx: CanvasRenderingContext2D, color: string, locationX: number, locationY: number): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // 長方形＿巻き込みパーツ＿
   ctx.beginPath()
@@ -81,7 +81,7 @@ export const thumbEdge3 = (ctx: CanvasRenderingContext2D, color: string, locatio
 
 export const thumbEdge4 = (ctx: CanvasRenderingContext2D, color: string, locationX: number, locationY: number): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   ctx.moveTo(344 + locationX, 493 + locationY) // 左上

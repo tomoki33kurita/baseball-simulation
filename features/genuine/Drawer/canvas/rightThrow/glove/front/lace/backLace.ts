@@ -1,7 +1,7 @@
 import { GenuineState } from '@/features/genuine/types'
 
 const straightBackLaceOfFront = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number, numerator: number): void => {
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.lineWidth = 0.8
   ctx.fillStyle = laceColor
   // 人指し指 - 中指 上
@@ -38,7 +38,7 @@ const straightBackLaceOfFront = (ctx: CanvasRenderingContext2D, laceColor: strin
 }
 
 const crossBackLaceOfFront = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number, numerator: number): void => {
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.lineWidth = 0.8
   ctx.fillStyle = laceColor
   if (numerator !== undefined && numerator !== 0) {

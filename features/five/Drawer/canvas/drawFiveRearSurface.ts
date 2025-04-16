@@ -21,8 +21,8 @@ export const drawFiveRearSurface = (ctx: CanvasRenderingContext2D | null, state:
 
   canvasResetter(ctx) // リセット
   ctx.font = '40px serif'
-  ctx.strokeStyle = '#383838'
-  ctx.fillStyle = '#383838'
+  ctx.strokeStyle = '#282828'
+  ctx.fillStyle = '#282828'
   ctx.strokeText('型番：' + baseModel.productNumber, 50, 70)
 
   // Basicオーダーの場合、色の指定は不可

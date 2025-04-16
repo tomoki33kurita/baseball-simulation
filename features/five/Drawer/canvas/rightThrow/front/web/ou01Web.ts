@@ -2,7 +2,7 @@ import { topSidePartOfWeb } from './parts/sideParts'
 import { verticalPartsOfWebWithCenterStitch } from './parts/verticalParts'
 
 const laceOfVerticalPartsLeft = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   ctx.lineWidth = 0.8
   ctx.beginPath()
@@ -18,7 +18,7 @@ const laceOfVerticalPartsLeft = (ctx: CanvasRenderingContext2D, laceColor: strin
   ctx.closePath()
 }
 const laceOfNetWebDouble2 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   ctx.lineWidth = 0.8
   ctx.beginPath()
@@ -36,7 +36,7 @@ const laceOfNetWebDouble2 = (ctx: CanvasRenderingContext2D, laceColor: string, x
 }
 
 const laceOfNetWebDouble3 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   ctx.lineWidth = 0.8
   ctx.beginPath()
@@ -57,7 +57,7 @@ const laceOfNetWebDouble3 = (ctx: CanvasRenderingContext2D, laceColor: string, x
 }
 
 const laceOfNetWebDouble4 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   ctx.lineWidth = 0.8
   ctx.beginPath()
@@ -75,7 +75,7 @@ const laceOfNetWebDouble4 = (ctx: CanvasRenderingContext2D, laceColor: string, x
 }
 
 const laceOfNetWebDouble5 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   ctx.lineWidth = 0.8
   ctx.beginPath()
@@ -93,7 +93,7 @@ const laceOfNetWebDouble5 = (ctx: CanvasRenderingContext2D, laceColor: string, x
 }
 
 const laceOfVerticalPartsRight = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   ctx.lineWidth = 0.8
   ctx.beginPath()
@@ -115,7 +115,7 @@ const laceOfVerticalPartsRight = (ctx: CanvasRenderingContext2D, laceColor: stri
 
 export const ou01Web = (ctx: CanvasRenderingContext2D, laceColor: string, stitchColor: string, webColor: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // ウェブ_縦
   verticalPartsOfWebWithCenterStitch(ctx, webColor, stitchColor) // ウェブ_縦
   // ウェブ先端

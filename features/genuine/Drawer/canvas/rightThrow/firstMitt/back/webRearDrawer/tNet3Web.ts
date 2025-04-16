@@ -6,7 +6,7 @@ import { topCrossLaces, topLaces } from '../lace/webTop'
 
 const laceOfLoopOfNet1 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   ctx.beginPath()
   ctx.moveTo(625 + x, 240 + y) // 左＿左
@@ -22,7 +22,7 @@ const laceOfLoopOfNet1 = (ctx: CanvasRenderingContext2D, laceColor: string, x: n
 
 const laceOfLoopOfNet2 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   ctx.beginPath()
   ctx.moveTo(618 + x, 249 + y) // 左＿左
@@ -39,7 +39,7 @@ const laceOfLoopOfNet2 = (ctx: CanvasRenderingContext2D, laceColor: string, x: n
 
 const netLace1 = (ctx: CanvasRenderingContext2D, laceColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   // 左側
   ctx.beginPath()
@@ -70,7 +70,7 @@ const netLace1 = (ctx: CanvasRenderingContext2D, laceColor: string): void => {
 
 const netLaceLeft1 = (ctx: CanvasRenderingContext2D, laceColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   // 左a_1
   ctx.beginPath()
@@ -145,7 +145,7 @@ const netLaceLeft1 = (ctx: CanvasRenderingContext2D, laceColor: string): void =>
 
 const netLaceLeft2 = (ctx: CanvasRenderingContext2D, laceColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   // 左b_1
   ctx.beginPath()
@@ -206,7 +206,7 @@ const netLaceLeft2 = (ctx: CanvasRenderingContext2D, laceColor: string): void =>
 
 const netLaceRight1 = (ctx: CanvasRenderingContext2D, laceColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   // 右a_1
   ctx.beginPath()
@@ -264,7 +264,7 @@ const netLaceRight1 = (ctx: CanvasRenderingContext2D, laceColor: string): void =
 
 const netLaceRight2 = (ctx: CanvasRenderingContext2D, laceColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   // 右b_1
   ctx.beginPath()

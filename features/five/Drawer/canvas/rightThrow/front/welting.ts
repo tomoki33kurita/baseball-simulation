@@ -1,6 +1,6 @@
 export const welting = (ctx: CanvasRenderingContext2D, weltingColor: string, isFingerCrotch: boolean, leatherColor: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = weltingColor
 
   // 親指＿横方向

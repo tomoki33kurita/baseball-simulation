@@ -9,7 +9,7 @@ export const basket2Web = (
   stitchColor: string
 ): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   topSidePartOfWebWithJoint(ctx, webColorFirst, webColorSecond, laceColor, stitchColor)
 
   // ウェブ-人差し指のジョイントパーツ
@@ -102,7 +102,7 @@ const basketCheckCellSecond = (ctx: CanvasRenderingContext2D, webColorSecond: st
     ctx.save()
     ctx.rotate((numerator * Math.PI) / 180)
   }
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = webColorSecond
   ctx.moveTo(563 + x, 120 + y)
   ctx.quadraticCurveTo(552 + x, 139 + y, 552 + x, 139 + y)
@@ -123,7 +123,7 @@ const jointOfIndexFinger = (ctx: CanvasRenderingContext2D, webColorFirst: string
   // 指袋とウェブのジョイント
   ctx.beginPath()
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = webColorFirst
   ctx.moveTo(510 + x, 86 + y) // 左下_1
   ctx.quadraticCurveTo(512 + x, 90 + y, 514 + x, 84 + y) // 左下内
@@ -149,7 +149,7 @@ const jointOfIndexFinger = (ctx: CanvasRenderingContext2D, webColorFirst: string
   // lace ここから
   ctx.beginPath()
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   ctx.moveTo(513 + x, 88 + y) // 左下
   ctx.quadraticCurveTo(517 + x, 92 + y, 523 + x, 91 + y) // 右下
@@ -162,7 +162,7 @@ const jointOfIndexFinger = (ctx: CanvasRenderingContext2D, webColorFirst: string
   // 側面ライン
   ctx.beginPath()
   ctx.lineWidth = 1.1
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.moveTo(521 + x, 90 + y) // 下
   ctx.quadraticCurveTo(522 + x, 82 + y, 524 + x, 84 + y) // 上
   ctx.stroke()
@@ -174,7 +174,7 @@ const jointOfCatchFace = (ctx: CanvasRenderingContext2D, webColorFirst: string, 
   // 指袋とウェブのジョイント
   ctx.beginPath()
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = webColorFirst
   ctx.moveTo(486 + x, 281 + y) // 左下
   ctx.quadraticCurveTo(515 + x, 315 + y, 515 + x, 315 + y) // 右下
@@ -187,7 +187,7 @@ const jointOfCatchFace = (ctx: CanvasRenderingContext2D, webColorFirst: string, 
   // laceここから
   ctx.beginPath()
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   ctx.moveTo(485 + x, 279 + y) // 左下
   ctx.quadraticCurveTo(491 + x, 279 + y, 495 + x, 272 + y) // 右下
@@ -202,7 +202,7 @@ const jointOfThumbFinger2 = (ctx: CanvasRenderingContext2D, webColorFirst: strin
   // 指袋とウェブのジョイント
   ctx.beginPath()
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = webColorFirst
   ctx.moveTo(609 + x, 370 + y) // 左下
   ctx.quadraticCurveTo(628 + x, 370 + y, 638 + x, 353 + y) // 右下
@@ -219,12 +219,12 @@ const jointOfThumbFinger2 = (ctx: CanvasRenderingContext2D, webColorFirst: strin
   ctx.moveTo(612 + x, 358 + y) // 左
   ctx.quadraticCurveTo(615 + x, 355 + y, 612 + x, 368 + y) // 右下
   ctx.stroke()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.closePath()
   // laceここから
   ctx.beginPath()
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   ctx.moveTo(598 + x, 366 + y) //左下
   ctx.quadraticCurveTo(607 + x, 369 + y, 611 + x, 365 + y) // 右下

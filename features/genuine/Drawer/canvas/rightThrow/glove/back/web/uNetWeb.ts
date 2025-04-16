@@ -10,7 +10,7 @@ export const uNetWeb = (ctx: CanvasRenderingContext2D, state: GenuineState): voi
   const webColor = state.web.color
   const web2Color = state.web2.color
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   const webColorSecond = web2Color || webColor
   // ウェブ-人差し指のジョイントパーツ
   jointOfIndexFinger(ctx, webColorSecond, laceColor, 3, 30)

@@ -3,7 +3,7 @@ import { allowLace } from '../../../../glove/back/lace/allowCenterOfCrossWeb'
 
 export const verticalParts = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchColor: string) => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = leatherColor
   ctx.beginPath()
   ctx.moveTo(615, 98)
@@ -58,7 +58,7 @@ export const verticalParts = (ctx: CanvasRenderingContext2D, leatherColor: strin
 
 export const verticalParts2 = (ctx: CanvasRenderingContext2D, state: GenuineState) => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = state.web2.color
   ctx.beginPath()
   ctx.moveTo(615, 98) // 左上
@@ -121,7 +121,7 @@ export const verticalParts2 = (ctx: CanvasRenderingContext2D, state: GenuineStat
 
 export const verticalParts3 = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchColor: string, laceColor: string) => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = leatherColor
   ctx.beginPath()
   ctx.moveTo(615, 98) // 左上
@@ -194,7 +194,7 @@ export const verticalParts3 = (ctx: CanvasRenderingContext2D, leatherColor: stri
 
 export const verticalParts4 = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchColor: string, laceColor: string) => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = leatherColor
   ctx.beginPath()
   ctx.moveTo(587, 135) // 左上

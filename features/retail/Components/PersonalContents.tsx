@@ -3,7 +3,7 @@ import { Box, InputLabel, OutlinedInput } from '@mui/material'
 import { UseFormRegister } from 'react-hook-form'
 import { Personal } from '@/types'
 
-const fontColor = '#383838'
+const fontColor = '#282828'
 
 type Props = {
   personal: Personal

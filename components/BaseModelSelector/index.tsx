@@ -31,7 +31,7 @@ export const BaseModelSelector: React.FC<Props> = ({ models, position, isDark, d
   return (
     <Box>
       <Dialog open={isDialogOpen} maxWidth={'lg'}>
-        <DialogContent style={isDark ? { backgroundColor: '#383838' } : {}}>
+        <DialogContent style={isDark ? { backgroundColor: '#282828' } : {}}>
           <Box position={'sticky'} left={0} color={isDark ? '#fff' : 'inherit'} fontWeight={isDark ? 'bold' : 'inherit'}>
             基本モデルを選択してください
           </Box>
@@ -41,7 +41,7 @@ export const BaseModelSelector: React.FC<Props> = ({ models, position, isDark, d
             ))}
           </Box>
         </DialogContent>
-        <DialogActions style={isDark ? { backgroundColor: '#383838' } : {}}>
+        <DialogActions style={isDark ? { backgroundColor: '#282828' } : {}}>
           <ConfirmDialog
             isConfirmOpen={isConfirmOpen}
             openButtonLabel={'シミュレーションを開始'}

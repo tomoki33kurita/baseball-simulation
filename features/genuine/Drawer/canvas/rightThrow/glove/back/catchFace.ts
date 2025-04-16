@@ -1,7 +1,7 @@
 export const palm = (ctx: CanvasRenderingContext2D, palmColor: string, stitchColor: string, needPalmWrap: boolean): void => {
   if (!needPalmWrap) return
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = palmColor
   ctx.beginPath()
   ctx.moveTo(436, 361) // 左下_ヘリ革接着点
@@ -40,5 +40,5 @@ export const palm = (ctx: CanvasRenderingContext2D, palmColor: string, stitchCol
   ctx.setLineDash([])
   ctx.closePath()
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
 }

@@ -38,7 +38,7 @@ export const GenuineConfirmContents: React.FC<Props> = ({ state, position }) => 
 
   const props = { state, position }
   return (
-    <Box bgcolor={'#383838'}>
+    <Box bgcolor={'#282828'}>
       <Box display={'flex'}>
         <RearSurface rearSurfaceId={rearSurfaceId} maxWidth={'50%'} />
         <PalmSurface palmSurfaceId={palmSurfaceId} maxWidth={'50%'} />

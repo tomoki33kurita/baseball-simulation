@@ -3,7 +3,7 @@ import { FiveEmbroideries } from './Embroideries'
 import { ItemCell } from '@/components/ItemCell'
 import { FiveState } from '../../types'
 
-export const cellColor = (cellValue: string) => (cellValue === 'unselected' ? 'red' : '#383838')
+export const cellColor = (cellValue: string) => (cellValue === 'unselected' ? 'red' : '#282828')
 
 type Props = {
   state: FiveState
@@ -28,7 +28,7 @@ export const SimulationContent: React.FC<Props> = ({ state, baseCells, colorCell
     <Grid container>
       <Grid item xs={12} sm={4}>
         <Box pt={2}>
-          <Box fontWeight="bold" fontSize="16px" color={'#383838'}>
+          <Box fontWeight="bold" fontSize="16px" color={'#282828'}>
             基本項目
           </Box>
           {baseCells?.map((cell, i) => (
@@ -38,7 +38,7 @@ export const SimulationContent: React.FC<Props> = ({ state, baseCells, colorCell
       </Grid>
       <Grid item xs={12} sm={4}>
         <Box pt={2}>
-          <Box fontWeight="bold" fontSize="16px" color={'#383838'}>
+          <Box fontWeight="bold" fontSize="16px" color={'#282828'}>
             カラー項目
           </Box>
           {colorCells?.map((cell, i) => (

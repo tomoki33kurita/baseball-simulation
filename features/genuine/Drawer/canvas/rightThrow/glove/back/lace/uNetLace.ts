@@ -7,7 +7,7 @@ export const laceOfLacingWebRight1 = (
   scaleSize: number
 ): void => {
   ctx.fillStyle = laceColor
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.save()
   ctx.rotate((numerator * Math.PI) / 180)
   ctx.scale(scaleSize, 1)
@@ -33,7 +33,7 @@ export const laceOfLacingWebRight2 = (
   scaleSize: number
 ): void => {
   ctx.fillStyle = laceColor
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // ctx.strokeStyle = 'red'
   ctx.save()
   ctx.rotate((numerator * Math.PI) / 180)
@@ -60,7 +60,7 @@ export const laceOfLacingWebLeft1 = (
   scaleSize: number
 ): void => {
   ctx.fillStyle = laceColor
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.save()
   ctx.rotate((numerator * Math.PI) / 180)
   ctx.scale(scaleSize, 1)
@@ -87,7 +87,7 @@ export const laceOfLacingWebLeft2 = (
   scaleSize: number
 ): void => {
   ctx.fillStyle = laceColor
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // ctx.strokeStyle = 'red'
   ctx.save()
   ctx.rotate((numerator * Math.PI) / 180)

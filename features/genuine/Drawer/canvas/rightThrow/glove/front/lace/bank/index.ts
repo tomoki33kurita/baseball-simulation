@@ -93,7 +93,7 @@ const sideMaterialPack = (ctx: CanvasRenderingContext2D, color: string, material
 const verticalMaterialPack = (ctx: CanvasRenderingContext2D, color: string, materialPack: BaseItem): void => {
   if (materialPack?.value === 'vertical') {
     ctx.lineWidth = 0.8
-    ctx.strokeStyle = '#383838'
+    ctx.strokeStyle = '#282828'
     ctx.fillStyle = color
     // 左1
     ctx.beginPath()

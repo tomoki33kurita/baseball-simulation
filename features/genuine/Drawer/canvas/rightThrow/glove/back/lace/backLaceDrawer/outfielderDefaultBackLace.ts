@@ -1,7 +1,7 @@
 import { webKnots } from '@/util/canvas/lace/webKnots'
 
 export const outfielderDefaultBackLace = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.lineWidth = 0.8
   ctx.fillStyle = laceColor
   // 人指し指＿縦(紐の折り返し部分)

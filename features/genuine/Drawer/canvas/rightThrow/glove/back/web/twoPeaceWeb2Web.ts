@@ -5,7 +5,7 @@ import { connectWebToIndex, connectWebToIndexTop, connectWebToThumb, connectWebT
 
 export const twoPeaceWeb2Web = (ctx: CanvasRenderingContext2D, webColor: string, laceColor: string, stitchColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
 
   topSidePartOfWebForPitcher(ctx, webColor, laceColor, stitchColor) // ウェブ先端
   ctx.fillStyle = webColor
@@ -101,7 +101,7 @@ export const twoPeaceWeb2Web = (ctx: CanvasRenderingContext2D, webColor: string,
   ctx.stroke()
 
   ctx.setLineDash([])
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.closePath()
   // stitchここまで
 
@@ -155,7 +155,7 @@ export const twoPeaceWeb2Web = (ctx: CanvasRenderingContext2D, webColor: string,
 }
 const allowLaneCenter = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number) => {
   ctx.fillStyle = laceColor
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // 左
   ctx.beginPath()
   ctx.moveTo(577 + x, 204 + y) //左上
@@ -184,7 +184,7 @@ const allowLaneCenter = (ctx: CanvasRenderingContext2D, laceColor: string, x: nu
 
 const allowLaneRight = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number) => {
   ctx.fillStyle = laceColor
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.beginPath()
   ctx.moveTo(663 + x, 198 + y) //左上
   ctx.quadraticCurveTo(658 + x, 195 + y, 658 + x, 202 + y) //左下
@@ -200,7 +200,7 @@ const allowLaneRight = (ctx: CanvasRenderingContext2D, laceColor: string, x: num
 
 const allowLaneLeft = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number) => {
   ctx.fillStyle = laceColor
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.beginPath()
   ctx.moveTo(584 + x, 101 + y) //左上
   ctx.quadraticCurveTo(580 + x, 105 + y, 582 + x, 110 + y) //左下

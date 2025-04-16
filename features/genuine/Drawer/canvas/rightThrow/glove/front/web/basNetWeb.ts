@@ -4,7 +4,7 @@ import { verticalPartsForBasNet } from './parts/verticalParts'
 
 export const basNetWeb = (ctx: CanvasRenderingContext2D, webColor: string, web2Color: string, laceColor: string, stitchColor: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   laceParts4(ctx, laceColor, 13, -40) // 上0
   laceParts4(ctx, laceColor, 13, -15) // 上0
   laceParts4(ctx, laceColor, 13, 12) // 上0

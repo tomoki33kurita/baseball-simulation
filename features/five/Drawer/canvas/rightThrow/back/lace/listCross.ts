@@ -1,6 +1,6 @@
 export const listCross = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // 左上右下方向の革紐
   ctx.beginPath()
@@ -40,7 +40,7 @@ export const listCross = (ctx: CanvasRenderingContext2D, color: string): void =>
 
 export const listStraight = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // 左上右下方向の革紐
   ctx.beginPath()
@@ -67,7 +67,7 @@ export const listStraight = (ctx: CanvasRenderingContext2D, color: string, x: nu
 }
 export const listStraightLittle = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // 左上右下方向の革紐
   ctx.beginPath()
@@ -83,7 +83,7 @@ export const listStraightLittle = (ctx: CanvasRenderingContext2D, color: string,
 
 export const listStraightThumb = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // 左上右下方向の革紐
   ctx.beginPath()

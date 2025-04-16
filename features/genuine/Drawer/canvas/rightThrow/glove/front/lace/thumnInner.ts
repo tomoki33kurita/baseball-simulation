@@ -1,6 +1,6 @@
 export const thumbInner = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // 親指芯固定用の紐
   ctx.beginPath()
@@ -19,7 +19,7 @@ export const thumbInner = (ctx: CanvasRenderingContext2D, color: string, x: numb
 
 export const thumbInner2 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // 親指芯固定用の紐
   ctx.beginPath()

@@ -1,6 +1,6 @@
 export const indexFingerCover = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = leatherColor
 
   // 手入れ口部分
@@ -25,5 +25,5 @@ export const indexFingerCover = (ctx: CanvasRenderingContext2D, leatherColor: st
   ctx.stroke()
   ctx.setLineDash([])
   ctx.closePath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
 }

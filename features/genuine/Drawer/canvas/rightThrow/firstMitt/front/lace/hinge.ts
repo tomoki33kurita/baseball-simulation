@@ -1,6 +1,6 @@
 export const hingeUpper = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   ctx.moveTo(583, 427) // 1_左上
@@ -31,7 +31,7 @@ export const hingeUpper = (ctx: CanvasRenderingContext2D, color: string): void =
 
 export const hingeUpper2 = (ctx: CanvasRenderingContext2D, color: string, locationX: number, locationY: number, numerator?: number): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // 長方形＿巻き込みパーツ＿
   ctx.beginPath()
@@ -58,7 +58,7 @@ export const hingeUpper2 = (ctx: CanvasRenderingContext2D, color: string, locati
 
 export const hingeLower2 = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   ctx.moveTo(448, 482) // 1_左上
@@ -76,7 +76,7 @@ export const hingeLower2 = (ctx: CanvasRenderingContext2D, color: string): void 
 
 export const hingeLower3 = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   ctx.moveTo(395, 465) // _左上
@@ -93,7 +93,7 @@ export const hingeLower3 = (ctx: CanvasRenderingContext2D, color: string): void 
 
 export const hingeLower = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   // 右から２番目

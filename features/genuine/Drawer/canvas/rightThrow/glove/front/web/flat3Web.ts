@@ -2,7 +2,7 @@ import { topSidePartOfWeb } from './parts/sideParts'
 
 export const flat3Web = (ctx: CanvasRenderingContext2D, webColor: string, laceColor: string, stitchColor: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = webColor
   // ウェブ本体
   ctx.beginPath()
@@ -50,7 +50,7 @@ export const flat3Web = (ctx: CanvasRenderingContext2D, webColor: string, laceCo
 }
 
 const laceOfDesign = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number) => {
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   // 上ー下
   ctx.beginPath()

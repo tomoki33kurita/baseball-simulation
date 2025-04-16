@@ -1,5 +1,5 @@
 export const webKnots = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number, numerator?: number, scaleSize?: number): void => {
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.lineWidth = 0.8
   ctx.fillStyle = color
   // ウェブ先端側の結び目
@@ -123,7 +123,7 @@ export const webKnots = (ctx: CanvasRenderingContext2D, color: string, x: number
 
 export const verticalKnotForCatcher = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number, scaleSize: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
 
   //  先端上向き

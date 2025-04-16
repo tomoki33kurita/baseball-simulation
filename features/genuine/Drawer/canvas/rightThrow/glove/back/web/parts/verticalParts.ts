@@ -391,7 +391,7 @@ export const verticalPartsOfWebCircleEndWithEdge = (
 
   ctx.stroke()
   ctx.setLineDash([])
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.closePath()
   // stitchここまで
   ctx.restore()
@@ -406,7 +406,7 @@ export const verticalPartForBasNet = (
   stitchColor: string
 ): void => {
   const web2Parts = (ctx: CanvasRenderingContext2D, web2Color: string, x: number, y: number) => {
-    ctx.strokeStyle = '#383838'
+    ctx.strokeStyle = '#282828'
     ctx.fillStyle = web2Color
     ctx.beginPath()
     ctx.moveTo(601 + x, 151 + y) // 左上
@@ -422,7 +422,7 @@ export const verticalPartForBasNet = (
   }
 
   const web2EndParts = (ctx: CanvasRenderingContext2D, web2Color: string, x: number, y: number) => {
-    ctx.strokeStyle = '#383838'
+    ctx.strokeStyle = '#282828'
     ctx.fillStyle = web2Color
     ctx.beginPath()
     ctx.moveTo(512 + x, 277 + y) // 左上
@@ -438,7 +438,7 @@ export const verticalPartForBasNet = (
   }
 
   ctx.fillStyle = webColor
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // 縦パーツ_土台
   ctx.beginPath()
   ctx.moveTo(617, 93) //左上
@@ -462,11 +462,11 @@ export const verticalPartForBasNet = (
   // ctx.quadraticCurveTo()
   // ctx.fill()
   ctx.stroke()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.closePath()
   // ctx.fill()
   ctx.stroke()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.closePath()
 
   web2Parts(ctx, web2Color, 22, -30) // 左_1

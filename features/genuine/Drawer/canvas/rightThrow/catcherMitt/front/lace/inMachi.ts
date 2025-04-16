@@ -1,6 +1,6 @@
 export const inMachiOfCommon = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 0.5
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
 
   // 親指
@@ -55,7 +55,7 @@ export const inMachiOfCommon = (ctx: CanvasRenderingContext2D, color: string): v
 
 export const inMachiOfNormalPocket = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 0.5
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // 小指
   // 横方向
@@ -98,7 +98,7 @@ export const inMachiOfNormalPocket = (ctx: CanvasRenderingContext2D, color: stri
 
 export const inMachiOfShallowPocket = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 0.5
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
 
   // 小指

@@ -1,7 +1,7 @@
 import { webKnots } from '@/util/canvas/lace/webKnots'
 
 export const crossBackLace = (ctx: CanvasRenderingContext2D, laceColor: string): void => {
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.lineWidth = 0.8
   ctx.fillStyle = laceColor
   // 人指し指ー中指繋ぎ

@@ -1,6 +1,6 @@
 export const toji = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number, numerator?: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   if (numerator !== undefined && numerator !== 0) {

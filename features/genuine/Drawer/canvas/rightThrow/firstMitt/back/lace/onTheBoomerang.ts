@@ -1,6 +1,6 @@
 export const onTheBoomerang = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
 
   // 左上＿右下
@@ -27,7 +27,7 @@ export const onTheBoomerang2 = (
   scaleSize?: number
 ): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
 
   // 左上＿右下
@@ -55,7 +55,7 @@ export const onTheBoomerang2 = (
 
 export const onTheBoomerang3 = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
 
   // 革紐先端

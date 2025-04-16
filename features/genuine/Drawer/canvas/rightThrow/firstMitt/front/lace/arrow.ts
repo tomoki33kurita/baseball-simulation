@@ -1,5 +1,5 @@
 export const laceOfLiningAllow = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   ctx.lineWidth = 0.8
   // 右

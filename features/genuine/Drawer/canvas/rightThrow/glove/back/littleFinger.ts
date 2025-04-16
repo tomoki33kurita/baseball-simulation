@@ -1,6 +1,6 @@
 export const littleFingerRight = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   ctx.moveTo(218, 150) // 左上
@@ -17,7 +17,7 @@ export const littleFingerRight = (ctx: CanvasRenderingContext2D, color: string):
 
 export const littleFingerLeft = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   ctx.moveTo(218, 150) // 上
@@ -31,7 +31,7 @@ export const littleFingerLeft = (ctx: CanvasRenderingContext2D, color: string): 
 
 export const littleFingerRightForConnectBack = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   ctx.moveTo(218, 150) // 左上
@@ -48,7 +48,7 @@ export const littleFingerRightForConnectBack = (ctx: CanvasRenderingContext2D, c
 
 export const littleFingerLeftForConnectBack = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   ctx.moveTo(218, 150) // 上

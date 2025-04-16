@@ -3,7 +3,7 @@ import { middleSidePartOfWeb, topSidePartOfWeb } from './parts/sideParts'
 
 export const in03Web = (ctx: CanvasRenderingContext2D, webColor: string, laceColor: string, stitchColor: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // 捕球面とウェブ横2を繋ぐ革紐
   hWebCrossUpperLeft(ctx, laceColor, 0, 0) // クロス部分の右
   hWebCrossUpperLeft(ctx, laceColor, -3, 3) // クロス部分の右

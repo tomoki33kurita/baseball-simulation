@@ -15,7 +15,7 @@ const jointParts = (ctx: CanvasRenderingContext2D, webColor: string, x: number, 
   ctx.quadraticCurveTo(281 + x, 151 + y, 281 + x, 151 + y)
   ctx.stroke()
   ctx.fill()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   if (numerator !== undefined) {
     ctx.restore()
   }
@@ -23,7 +23,7 @@ const jointParts = (ctx: CanvasRenderingContext2D, webColor: string, x: number, 
 }
 
 export const topSidePartOfWeb = (ctx: CanvasRenderingContext2D, webColor: string, laceColor: string, stitchColor: string): void => {
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = webColor
   // ウェブ先端
   ctx.beginPath()
@@ -51,7 +51,7 @@ export const topSidePartOfWeb = (ctx: CanvasRenderingContext2D, webColor: string
   ctx.stroke()
   ctx.setLineDash([])
   ctx.closePath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // stitchここまで
 }
 
@@ -62,7 +62,7 @@ export const topSidePartOfWebWithJoint2 = (
   laceColor: string,
   stitchColor: string
 ): void => {
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = webColorFirst
 
   // ウェブ先端＿ジョイント上
@@ -103,7 +103,7 @@ export const topSidePartOfWebWithJoint2 = (
   ctx.stroke()
   ctx.setLineDash([])
   ctx.closePath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // stitchここまで
 }
 
@@ -133,7 +133,7 @@ export const middleSidePartOfWeb = (ctx: CanvasRenderingContext2D, webColor: str
   ctx.stroke()
   ctx.setLineDash([])
   ctx.closePath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // stitchここまで
 }
 
@@ -180,7 +180,7 @@ export const middleSidePartOfDoubleWeb = (ctx: CanvasRenderingContext2D, webColo
   ctx.stroke()
   ctx.setLineDash([])
   ctx.closePath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // stitchここまで
 }
 

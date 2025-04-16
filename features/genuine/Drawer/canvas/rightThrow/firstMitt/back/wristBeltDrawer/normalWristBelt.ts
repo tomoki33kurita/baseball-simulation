@@ -1,6 +1,6 @@
 export const normalWristBelt = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = leatherColor
 
   ctx.beginPath()
@@ -32,5 +32,5 @@ export const normalWristBelt = (ctx: CanvasRenderingContext2D, leatherColor: str
   ctx.setLineDash([])
   ctx.closePath()
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
 }

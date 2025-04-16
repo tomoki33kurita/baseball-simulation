@@ -3,7 +3,7 @@ import { webDrawUtil } from '@/util/canvas'
 
 export const palm = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = state.palm.color
   const { webMatcher } = webDrawUtil(state)
   const isOmission = webMatcher(['crossV2', 'tNet2', 'tNet3']) // このウェブの場合、捕球面を狭くする

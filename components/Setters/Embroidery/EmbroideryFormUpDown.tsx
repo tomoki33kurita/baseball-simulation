@@ -37,7 +37,7 @@ export const EmbroideryFormUpDown: React.FC<Props> = ({ embroideries, isDark, di
   return (
     <Box mb={2}>
       <Card style={{ backgroundColor: isDark ? 'black' : '#eee' }}>
-        <Box display="flex" justifyContent="center" my={1} py={1} border={isDark ? '1px solid #383838' : 'unset'}>
+        <Box display="flex" justifyContent="center" my={1} py={1} border={isDark ? '1px solid #282828' : 'unset'}>
           <Button
             onClick={handleAddForm}
             disabled={!canIncrease || existEmptyContentsEmbroidery}

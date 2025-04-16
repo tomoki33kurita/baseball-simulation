@@ -1,6 +1,6 @@
 export const tiedLittleMachiMaterialSide = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   ctx.moveTo(273 + x, 98 + y) // 左左
@@ -25,7 +25,7 @@ export const tiedLittleMachiMaterialDiagonal = (
   scaleSize?: number
 ): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
 
   //  人差し指袋真上

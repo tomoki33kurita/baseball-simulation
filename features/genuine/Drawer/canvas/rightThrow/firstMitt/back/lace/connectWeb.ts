@@ -1,6 +1,6 @@
 export const connectWeb = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   ctx.moveTo(485, 86) // 左上
@@ -17,7 +17,7 @@ export const connectWeb = (ctx: CanvasRenderingContext2D, color: string): void =
 
 export const connectWeb2 = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   ctx.moveTo(453, 111) // 左上
@@ -35,7 +35,7 @@ export const connectWeb2 = (ctx: CanvasRenderingContext2D, color: string): void 
 
 export const connectWeb3 = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   ctx.moveTo(449, 150) // 左上
@@ -52,7 +52,7 @@ export const connectWeb3 = (ctx: CanvasRenderingContext2D, color: string): void 
 
 export const connectWeb4 = (ctx: CanvasRenderingContext2D, color: string, locationX: number, locationY: number): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   ctx.moveTo(606 + locationX, 338 + locationY) // 左上

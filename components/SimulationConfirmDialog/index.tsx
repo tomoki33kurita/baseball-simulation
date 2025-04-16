@@ -56,11 +56,11 @@ export const SimulationConfirmDialog: React.FC<Props> = ({ state, position, isDi
         }
       }}
     >
-      <DialogContent style={{ padding: '16px 16px', backgroundColor: isDark ? '#383838' : '' }}>
+      <DialogContent style={{ padding: '16px 16px', backgroundColor: isDark ? '#282828' : '' }}>
         {children}
         <ConsumerForm {...{ position, dispatch, register, isDark }} isDisabled={!canInputConsumer} />
       </DialogContent>
-      <DialogActions style={{ flex: 'unset', display: 'unset', backgroundColor: isDark ? '#383838' : '' }}>
+      <DialogActions style={{ flex: 'unset', display: 'unset', backgroundColor: isDark ? '#282828' : '' }}>
         <SavedIdDisplay savedId={savedId} isCopied={isCopied} isDark={isDark} setCopied={setCopied} />
         <Box display={'flex'} justifyContent={'space-around'}>
           <ConfirmDialog

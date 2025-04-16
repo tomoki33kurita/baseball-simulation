@@ -1,6 +1,6 @@
 export const underWeb = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // 小指芯固定用の紐
   ctx.beginPath()
@@ -18,7 +18,7 @@ export const underWeb = (ctx: CanvasRenderingContext2D, color: string, x: number
 
 export const underWebForNetWeb1 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // 小指芯固定用の紐
   ctx.beginPath()
@@ -35,7 +35,7 @@ export const underWebForNetWeb1 = (ctx: CanvasRenderingContext2D, color: string,
 
 export const underWebForNetWeb2 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number, numerator: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.save()
   ctx.rotate((numerator * Math.PI) / 180)

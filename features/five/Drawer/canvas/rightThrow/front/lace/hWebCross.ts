@@ -1,6 +1,6 @@
 export const hWebCrossUpperLeft = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // 長方形＿巻き込みパーツ＿
   ctx.beginPath()
@@ -17,7 +17,7 @@ export const hWebCrossUpperLeft = (ctx: CanvasRenderingContext2D, color: string,
 
 export const hWebCrossUpperRight = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // 長方形＿巻き込みパーツ＿
   ctx.beginPath()
@@ -34,7 +34,7 @@ export const hWebCrossUpperRight = (ctx: CanvasRenderingContext2D, color: string
 
 export const hWebCrossUpperLeft2 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // 長方形＿巻き込みパーツ＿
   ctx.beginPath()

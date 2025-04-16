@@ -7,7 +7,7 @@ export const lacePartsOfWeb1 = (
   scaleSize: number
 ): void => {
   ctx.fillStyle = laceColor
-  ctx.strokeStyle = '#383838' // 'red'
+  ctx.strokeStyle = '#282828' // 'red'
   // 左下→右上
   ctx.beginPath()
   if (numerator !== undefined && numerator !== 0) {
@@ -63,7 +63,7 @@ export const lacePartsOfWeb2 = (
   scaleSize: number
 ): void => {
   ctx.fillStyle = laceColor
-  ctx.strokeStyle = '#383838' //
+  ctx.strokeStyle = '#282828' //
   ctx.beginPath()
   if (numerator !== undefined && numerator !== 0) {
     ctx.save()
@@ -117,7 +117,7 @@ export const lacePartsOfWeb3 = (
   scaleSize: number
 ): void => {
   ctx.fillStyle = laceColor
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // 左下→右上
   ctx.beginPath()
   ctx.save()
@@ -146,7 +146,7 @@ export const lacePartsOfWeb4 = (
   scaleSize: number
 ): void => {
   ctx.fillStyle = laceColor
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // 左下→右上
   ctx.beginPath()
   ctx.save()
@@ -178,7 +178,7 @@ export const lacePartsOfWeb5 = (
   scaleSize: number
 ): void => {
   ctx.fillStyle = laceColor
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // 左下→右上
   ctx.beginPath()
   ctx.save()
@@ -209,7 +209,7 @@ export const lacePartsOfWeb6 = (
   scaleSize: number
 ): void => {
   ctx.fillStyle = laceColor
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // 左下→右上
   ctx.beginPath()
   ctx.save()
@@ -235,7 +235,7 @@ export const lacePartsOfWeb6 = (
 
 export const lacePartsOfWeb7 = (ctx: CanvasRenderingContext2D, laceColor: string): void => {
   ctx.fillStyle = laceColor
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // 左下→右上
   ctx.beginPath()
   ctx.moveTo(587, 120) // 左上＿左
@@ -255,7 +255,7 @@ export const lacePartsOfWeb7 = (ctx: CanvasRenderingContext2D, laceColor: string
 
 export const lacePartsOfWeb8 = (ctx: CanvasRenderingContext2D, laceColor: string): void => {
   ctx.fillStyle = laceColor
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // 左下→右上
   ctx.beginPath()
   ctx.save()
@@ -283,7 +283,7 @@ export const lacePartsOfWeb9 = (
   scaleSize: number
 ): void => {
   ctx.fillStyle = laceColor
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // ctx.strokeStyle = 'red'
   // 左下→右上
   ctx.beginPath()
@@ -315,7 +315,7 @@ export const lacePartsOfWeb10 = (
   scaleSize: number
 ): void => {
   ctx.fillStyle = laceColor
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // 左下→右上
   ctx.beginPath()
   ctx.save()
@@ -338,7 +338,7 @@ export const lacePartsOfWeb10 = (
 
 export const lacePartsOfWeb11 = (ctx: CanvasRenderingContext2D, laceColor: string): void => {
   ctx.fillStyle = laceColor
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // 左下→右上
   ctx.beginPath()
   ctx.moveTo(653, 208) // 左_上
@@ -357,7 +357,7 @@ export const lacePartsOfWeb11 = (ctx: CanvasRenderingContext2D, laceColor: strin
 }
 export const lacePartsOfWeb12 = (ctx: CanvasRenderingContext2D, laceColor: string): void => {
   ctx.fillStyle = laceColor
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // 左下→右上
   ctx.beginPath()
   ctx.moveTo(563, 338) // 上_左
@@ -383,7 +383,7 @@ export const lacePartsOfWeb12 = (ctx: CanvasRenderingContext2D, laceColor: strin
 //   scaleSize: number
 // ): void => {
 //   ctx.fillStyle = laceColor
-//   ctx.strokeStyle = '#383838'
+//   ctx.strokeStyle = '#282828'
 // ctx.strokeStyle = 'red'
 //   // 左下→右上
 //   ctx.beginPath()
@@ -406,7 +406,7 @@ export const lacePartsOfWeb12 = (ctx: CanvasRenderingContext2D, laceColor: strin
 export const upLeftDownRight = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
   ctx.lineWidth = 0.8
   ctx.fillStyle = laceColor
-  ctx.strokeStyle = '#383838' //
+  ctx.strokeStyle = '#282828' //
   // 左上→右上
   ctx.beginPath()
   ctx.moveTo(579 + x, 131 + y) //左上＿左
@@ -439,7 +439,7 @@ export const upRightDownLeft = (ctx: CanvasRenderingContext2D, laceColor: string
 
 export const upRightDownLeft2 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
   ctx.fillStyle = laceColor
-  ctx.strokeStyle = '#383838' //
+  ctx.strokeStyle = '#282828' //
   // 左上→右上
   ctx.beginPath()
   ctx.moveTo(625 + x, 203 + y) //左上
@@ -474,7 +474,7 @@ export const upRightDownLeft2 = (ctx: CanvasRenderingContext2D, laceColor: strin
 
 export const upRightDownLeft3 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
   ctx.fillStyle = laceColor
-  ctx.strokeStyle = '#383838' //
+  ctx.strokeStyle = '#282828' //
   // 左上→右下
   ctx.beginPath()
   ctx.moveTo(650 + x, 230 + y) //左上＿左奥
@@ -496,7 +496,7 @@ export const upRightDownLeft3 = (ctx: CanvasRenderingContext2D, laceColor: strin
 
 export const upLeftDownRight2 = (ctx: CanvasRenderingContext2D, laceColor: string): void => {
   ctx.fillStyle = laceColor
-  ctx.strokeStyle = '#383838' //
+  ctx.strokeStyle = '#282828' //
   // 左下→右上
   ctx.beginPath()
   ctx.moveTo(555, 298) //左上
@@ -528,7 +528,7 @@ export const upLeftDownRight2 = (ctx: CanvasRenderingContext2D, laceColor: strin
 
 export const upLeftDownRight3 = (ctx: CanvasRenderingContext2D, laceColor: string): void => {
   ctx.fillStyle = laceColor
-  ctx.strokeStyle = '#383838' //
+  ctx.strokeStyle = '#282828' //
   // 左下→右上
   ctx.beginPath()
   ctx.moveTo(555, 298) //左上
@@ -560,7 +560,7 @@ export const upLeftDownRight3 = (ctx: CanvasRenderingContext2D, laceColor: strin
 
 export const iNetTopLace = (ctx: CanvasRenderingContext2D, laceColor: string): void => {
   ctx.fillStyle = laceColor
-  ctx.strokeStyle = '#383838' //
+  ctx.strokeStyle = '#282828' //
   // 中央
   ctx.beginPath()
   ctx.moveTo(657, 129) //左上
@@ -607,7 +607,7 @@ export const iNetTopLace = (ctx: CanvasRenderingContext2D, laceColor: string): v
 
 export const iNetTopRollLace = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
   ctx.fillStyle = laceColor
-  ctx.strokeStyle = '#383838' //
+  ctx.strokeStyle = '#282828' //
   // 右
   ctx.beginPath()
   ctx.moveTo(644 + x, 93 + y) //左上

@@ -2,7 +2,7 @@ import { topSidePartOfWeb } from './parts/sideParts'
 
 export const p06Web = (ctx: CanvasRenderingContext2D, webColor: string, laceColor: string, stitchColor: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = webColor
   // ウェブ本体
   ctx.beginPath()
@@ -52,5 +52,5 @@ export const p06Web = (ctx: CanvasRenderingContext2D, webColor: string, laceColo
   ctx.stroke()
   ctx.setLineDash([])
   ctx.closePath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
 }

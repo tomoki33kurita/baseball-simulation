@@ -1,6 +1,6 @@
 export const connectIndexToMiddle = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // 左上＿右下部分
   ctx.beginPath()
@@ -33,7 +33,7 @@ export const connectIndexToMiddle = (ctx: CanvasRenderingContext2D, color: strin
 
 export const connectMiddleToRing = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // 左上＿右下部分
   ctx.beginPath()
@@ -72,7 +72,7 @@ export const connectMiddleToRing = (ctx: CanvasRenderingContext2D, color: string
 
 export const connectRingToLittle = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // 左上＿右下部分
   ctx.beginPath()

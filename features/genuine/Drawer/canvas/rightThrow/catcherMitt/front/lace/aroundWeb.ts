@@ -222,7 +222,7 @@ const laceOfUnderShallowWeb = (ctx: CanvasRenderingContext2D, x: number, y: numb
 
 const laceOfUnderShallowWeb2 = (ctx: CanvasRenderingContext2D, x: number, y: number) => {
   // ウェブと捕球面を繋ぐところ左
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.beginPath()
   ctx.moveTo(303 + x, 220 + y) // 左上
   ctx.quadraticCurveTo(325 + x, 245 + y, 325 + x, 245 + y) // 左下
@@ -241,7 +241,7 @@ export const laceOfBackOfAroundWebDrawer = (ctx: CanvasRenderingContext2D, state
   const isStraightLace = state.palmToWebConnectLaceStyle.value === 'straight'
 
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = state.lace.color
 
   commonLace(ctx)

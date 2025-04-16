@@ -1,6 +1,6 @@
 export const indexFingerRight = (ctx: CanvasRenderingContext2D, leatherColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = leatherColor
   // 捕球面折り返しが必要なケース
   ctx.beginPath()
@@ -17,7 +17,7 @@ export const indexFingerRight = (ctx: CanvasRenderingContext2D, leatherColor: st
 
 export const indexFingerLeft = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   ctx.moveTo(513, 20) // 右上

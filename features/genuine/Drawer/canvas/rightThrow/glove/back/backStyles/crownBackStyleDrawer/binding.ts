@@ -1,6 +1,6 @@
 export const binding = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = leatherColor
 
   // 指根元
@@ -46,7 +46,7 @@ export const binding = (ctx: CanvasRenderingContext2D, leatherColor: string, sti
 
 export const bindingOfWrist = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = leatherColor
 
   // 手口

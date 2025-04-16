@@ -1,6 +1,6 @@
 export const webOfNormalPocket = (ctx: CanvasRenderingContext2D, color: string, stitchColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
 
   ctx.beginPath()
@@ -38,7 +38,7 @@ export const webOfNormalPocket = (ctx: CanvasRenderingContext2D, color: string, 
 
 export const webOfShallowPocket = (ctx: CanvasRenderingContext2D, color: string, stitchColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
 
   ctx.beginPath()
@@ -72,7 +72,7 @@ export const webOfShallowPocket = (ctx: CanvasRenderingContext2D, color: string,
 
 export const webTop = (ctx: CanvasRenderingContext2D, color: string, stitchColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
 
   ctx.beginPath()

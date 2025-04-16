@@ -2,7 +2,7 @@ import { connectWebToIndex, connectWebToIndexTop, connectWebToThumb, connectWebT
 import { webTops } from '../../lace/webTop'
 
 export const topSidePartOfWeb = (ctx: CanvasRenderingContext2D, webColor: string, laceColor: string, stitchColor: string): void => {
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = webColor
   // 横上パーツ
   ctx.beginPath()
@@ -67,7 +67,7 @@ export const topSidePartOfWeb = (ctx: CanvasRenderingContext2D, webColor: string
 }
 
 export const topSidePartOfWeb2 = (ctx: CanvasRenderingContext2D, webColor: string, laceColor: string, stitchColor: string): void => {
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = webColor
   // 横上パーツ
   ctx.beginPath()
@@ -127,7 +127,7 @@ export const topSidePartOfWeb2 = (ctx: CanvasRenderingContext2D, webColor: strin
 }
 
 export const topSidePartOfWebForPitcher = (ctx: CanvasRenderingContext2D, webColor: string, laceColor: string, stitchColor: string): void => {
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = webColor
   // 横上パーツ
   ctx.beginPath()

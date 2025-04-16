@@ -1,6 +1,6 @@
 export const regularBackStyleWristBelt = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
 
   // 薬指
@@ -79,7 +79,7 @@ export const regularBackStyleWristBelt = (ctx: CanvasRenderingContext2D, color: 
 
 const metalParts = (ctx: CanvasRenderingContext2D, x: number, y: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = 'silver'
   // 右部分
   ctx.beginPath()

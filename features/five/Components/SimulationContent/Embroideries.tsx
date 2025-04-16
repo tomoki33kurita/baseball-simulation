@@ -5,7 +5,7 @@ import { getOrderType } from '@/features/five/Components/Setters/logic'
 import { FiveState } from '../../types'
 import { ItemCell } from '@/components/ItemCell'
 
-const cellColor = (cellValue: string) => (cellValue === 'unselected' ? 'red' : '#383838')
+const cellColor = (cellValue: string) => (cellValue === 'unselected' ? 'red' : '#282828')
 
 type Props = {
   state: FiveState
@@ -18,11 +18,11 @@ export const FiveEmbroideries: React.FC<Props> = ({ state, previousIndex }) => {
   const { isCustomOrder } = getOrderType(state.orderType)
   return (
     <>
-      <Box fontWeight="bold" fontSize="16px" color={'#383838'}>
+      <Box fontWeight="bold" fontSize="16px" color={'#282828'}>
         刺繍項目
       </Box>
       {state.baseModel.brand === 'five' && state.orderType.value === 'custom' && (
-        <Box fontSize="16px" color={'#383838'}>
+        <Box fontSize="16px" color={'#282828'}>
           <ItemCell
             itemIndex={0}
             cell={{
@@ -34,7 +34,7 @@ export const FiveEmbroideries: React.FC<Props> = ({ state, previousIndex }) => {
         </Box>
       )}
       {embroideries.every((e) => e.content.length === 0) ? (
-        <Box ml={1} fontWeight="bold" fontSize="16px" color={'#383838'}>
+        <Box ml={1} fontWeight="bold" fontSize="16px" color={'#282828'}>
           (0) 通常刺繍なし
         </Box>
       ) : (
@@ -46,7 +46,7 @@ export const FiveEmbroideries: React.FC<Props> = ({ state, previousIndex }) => {
               return (
                 <React.Fragment key={`${e.content}_${index}`}>
                   <Box mb={2}>
-                    <Box fontWeight="bold" fontSize="16px" color={'#383838'}>
+                    <Box fontWeight="bold" fontSize="16px" color={'#282828'}>
                       刺繍項目{index + 1}
                     </Box>
                     {embroideryCells.map((cell, i) => (

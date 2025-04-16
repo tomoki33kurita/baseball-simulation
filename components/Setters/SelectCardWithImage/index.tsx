@@ -54,7 +54,7 @@ export const SelectCardWithImage: React.FC<Props> = ({
   return (
     <Accordion
       disabled={disabled}
-      style={isDark ? { marginBottom: '16px', background: '#383838' } : { marginBottom: '16px' }}
+      style={isDark ? { marginBottom: '16px', background: '#282828' } : { marginBottom: '16px' }}
       defaultExpanded={defaultExpanded}
     >
       <AccordionSummary
@@ -66,7 +66,7 @@ export const SelectCardWithImage: React.FC<Props> = ({
               isDark
                 ? {
                     boxShadow: 'unset',
-                    background: '#383838',
+                    background: '#282828',
                     color: 'white',
                     border: '1px solid white'
                   }
@@ -78,13 +78,13 @@ export const SelectCardWithImage: React.FC<Props> = ({
         }
       >
         <Box display="flex">
-          <Box fontSize={14} fontWeight="bold" color={isDark ? '#fff' : '#383838'}>
+          <Box fontSize={14} fontWeight="bold" color={isDark ? '#fff' : '#282828'}>
             {summary}
           </Box>
           <Box
             component="span"
             display="inherit"
-            color={isError ? (isDark ? 'orange' : 'red') : isDark ? '#fff' : '#383838'}
+            color={isError ? (isDark ? 'orange' : 'red') : isDark ? '#fff' : '#282828'}
             fontWeight={isDark ? 'bold' : 'normal'}
             fontSize={15}
             alignItems="center"

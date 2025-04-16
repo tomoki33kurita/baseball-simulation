@@ -11,7 +11,7 @@ export const EmbroideryAccordionSummary: React.FC<{ embroideryIndex: number; isD
           tabIndex={-1}
           style={{
             boxShadow: 'unset',
-            background: isDark ? '#383838' : 'unset',
+            background: isDark ? '#282828' : 'unset',
             color: isDark ? 'white' : 'black',
             border: isDark ? '1px solid white' : '1px solid black'
           }}
@@ -19,7 +19,7 @@ export const EmbroideryAccordionSummary: React.FC<{ embroideryIndex: number; isD
           <ExpandLessIcon />
         </Fab>
       }
-      style={{ background: isDark ? '#383838' : 'unset', color: isDark ? 'white' : 'black' }}
+      style={{ background: isDark ? '#282828' : 'unset', color: isDark ? 'white' : 'black' }}
     >
       {`刺繍設定 ${embroideryIndex + 1}`}
     </AccordionSummary>

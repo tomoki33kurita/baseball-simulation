@@ -23,7 +23,7 @@ export const EmbroideryContent: React.FC<Props> = ({
   handleContent
 }) => {
   return (
-    <Card style={{ background: isDark ? '#383838' : 'unset' }}>
+    <Card style={{ background: isDark ? '#282828' : 'unset' }}>
       <Box fontSize={14} textAlign={'left'} pl={2} py={1} fontWeight={'bold'} color={isDark ? 'white' : 'black'}>
         刺繍内容
       </Box>

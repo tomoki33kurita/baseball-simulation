@@ -4,7 +4,7 @@ import { jointOfCatchFace, jointOfIndexFinger, jointOfThumbFinger2 } from './par
 
 export const flat5Web = (ctx: CanvasRenderingContext2D, webColor: string, laceColor: string, stitchColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // web先端の革パーツ
   topSidePartOfWebForPitcher(ctx, webColor, laceColor, stitchColor)
   // ウェブ-人差し指のジョイントパーツ
@@ -42,7 +42,7 @@ export const flat5Web = (ctx: CanvasRenderingContext2D, webColor: string, laceCo
   ctx.fill()
   ctx.stroke()
   ctx.closePath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
 
   // stitchここから
   ctx.beginPath()

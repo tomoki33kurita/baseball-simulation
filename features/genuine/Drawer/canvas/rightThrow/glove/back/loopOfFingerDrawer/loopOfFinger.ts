@@ -2,7 +2,7 @@ import { generateLiningsGradient } from '@/util/canvas'
 
 export const loopOfRingFinger = (ctx: CanvasRenderingContext2D, loopOfRingColor: string, stitchColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = loopOfRingColor
   ctx.beginPath()
   ctx.moveTo(277, 424) // 左上

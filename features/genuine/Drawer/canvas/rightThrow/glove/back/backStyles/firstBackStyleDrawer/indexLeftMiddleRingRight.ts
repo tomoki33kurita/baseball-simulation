@@ -1,6 +1,6 @@
 export const indexLeftMiddleRingRightFinger = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   ctx.moveTo(279, 90) // 薬指右＿左上

@@ -52,7 +52,7 @@ export const webOfGloveFrontDrawer = (
 }
 
 const laceOfNetWebDouble3 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   ctx.lineWidth = 0.8
   ctx.beginPath()
@@ -73,7 +73,7 @@ const laceOfNetWebDouble3 = (ctx: CanvasRenderingContext2D, laceColor: string, x
 }
 
 const laceOfNetWebDouble4 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   ctx.lineWidth = 0.8
   ctx.beginPath()
@@ -139,7 +139,7 @@ const laceOfNetWebDouble = (ctx: CanvasRenderingContext2D, webColor: string, lac
 
 const underWebForNetWeb1 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // 小指芯固定用の紐
   ctx.beginPath()
@@ -156,7 +156,7 @@ const underWebForNetWeb1 = (ctx: CanvasRenderingContext2D, color: string, x: num
 
 const underWebForNetWeb2 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number, numerator: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.save()
   ctx.rotate((numerator * Math.PI) / 180)
@@ -227,7 +227,7 @@ export const rightLaceOfNetWebDrawer = (ctx: CanvasRenderingContext2D, state: Fi
 //   ctx.quadraticCurveTo(339, 311, 339, 311)
 
 //   ctx.stroke()
-//   ctx.strokeStyle = '#383838'
+//   ctx.strokeStyle = '#282828'
 //   ctx.closePath()
 // }
 
@@ -246,4 +246,4 @@ export const rightLaceOfNetWebDrawer = (ctx: CanvasRenderingContext2D, state: Fi
 // ctx.stroke()
 // ctx.setLineDash([])
 // ctx.closePath()
-// ctx.strokeStyle = '#383838'
+// ctx.strokeStyle = '#282828'

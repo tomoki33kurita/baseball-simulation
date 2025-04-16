@@ -1,6 +1,6 @@
 export const indexFingerPadOfFType = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = leatherColor
   ctx.beginPath()
   ctx.moveTo(329, 433) // 左下
@@ -35,12 +35,12 @@ export const indexFingerPadOfFType = (ctx: CanvasRenderingContext2D, leatherColo
   ctx.stroke()
   ctx.setLineDash([])
   ctx.closePath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
 }
 
 export const indexFingerPad = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = leatherColor
   ctx.beginPath()
   ctx.moveTo(318, 435) // 左下
@@ -75,5 +75,5 @@ export const indexFingerPad = (ctx: CanvasRenderingContext2D, leatherColor: stri
   ctx.stroke()
   ctx.setLineDash([])
   ctx.closePath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
 }

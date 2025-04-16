@@ -1,6 +1,6 @@
 export const bindingOfRegularBackStyle = (ctx: CanvasRenderingContext2D, color: string, fingerType: string, liningLeatherColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // メイン
   ctx.beginPath()
@@ -59,7 +59,7 @@ export const bindingOfRegularBackStyle = (ctx: CanvasRenderingContext2D, color: 
 
 export const bindingOfBeltBackStyle = (ctx: CanvasRenderingContext2D, color: string, stitchColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
 
   // 手入れ口部分
@@ -154,12 +154,12 @@ export const bindingOfBeltBackStyle = (ctx: CanvasRenderingContext2D, color: str
   ctx.stroke()
   ctx.setLineDash([])
   ctx.closePath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
 }
 
 export const bindingOfTMBackStyle = (ctx: CanvasRenderingContext2D, color: string, stitchColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
 
   // 手入れ口部分
@@ -253,12 +253,12 @@ export const bindingOfTMBackStyle = (ctx: CanvasRenderingContext2D, color: strin
   ctx.stroke()
   ctx.setLineDash([])
   ctx.closePath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
 }
 
 export const bindingOfCommon = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
 
   // ウェブ周り奥＿人差し指側

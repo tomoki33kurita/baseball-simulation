@@ -5,7 +5,7 @@ import { aroundEdge1, aroundEdge10, aroundEdge11, aroundEdge12, aroundEdge13, ar
 
 export const laceDrawer = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
 
   webKnotDownward(ctx, color, -560, 211, 0, 0.8) // 小指掛け紐の右下

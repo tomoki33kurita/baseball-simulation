@@ -3,7 +3,7 @@ import { middleSidePartOfWeb3, topSidePartOfWeb2 } from './parts/sideParts'
 
 export const ou03Web = (ctx: CanvasRenderingContext2D, webColor: string, laceColor: string, stitchColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = webColor
 
   // 横上パーツ
@@ -71,7 +71,7 @@ const verticalPartOfFenceWeb = (ctx: CanvasRenderingContext2D, webColor: string,
 
 const onCatchFaceParts = (ctx: CanvasRenderingContext2D, webColor: string, stitchColor: string) => {
   ctx.fillStyle = webColor
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.beginPath()
   ctx.moveTo(482, 260) //左上
   ctx.quadraticCurveTo(466, 269, 460, 293) //左下
@@ -98,7 +98,7 @@ const onCatchFaceParts = (ctx: CanvasRenderingContext2D, webColor: string, stitc
   ctx.quadraticCurveTo(505, 336, 557, 380) // 左下
   ctx.stroke()
   ctx.setLineDash([])
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.closePath()
   // stitchここまで
 }

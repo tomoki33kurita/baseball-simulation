@@ -3,7 +3,7 @@ import { indexFingerCover } from '../indexFinger'
 
 const indexFingerPadOfFTypeOnStand = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = leatherColor
   ctx.beginPath()
   ctx.moveTo(329, 433) // 左下
@@ -38,12 +38,12 @@ const indexFingerPadOfFTypeOnStand = (ctx: CanvasRenderingContext2D, leatherColo
   ctx.stroke()
   ctx.setLineDash([])
   ctx.closePath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
 }
 
 const indexFingerPadOfFTypeOnIndexFinger = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = leatherColor
   ctx.beginPath()
   ctx.moveTo(329, 433) // 左下
@@ -80,12 +80,12 @@ const indexFingerPadOfFTypeOnIndexFinger = (ctx: CanvasRenderingContext2D, leath
   ctx.stroke()
   ctx.setLineDash([])
   ctx.closePath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
 }
 
 const specialIndexFingerPadOfFTypeOnIndexFinger = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = leatherColor
   ctx.beginPath()
   ctx.moveTo(336, 516) // 左下
@@ -125,7 +125,7 @@ const specialIndexFingerPadOfFTypeOnIndexFinger = (ctx: CanvasRenderingContext2D
   ctx.stroke()
   ctx.setLineDash([])
   ctx.closePath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
 }
 
 export const fingerGuardDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {

@@ -1,6 +1,6 @@
 export const boomerang = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   // 右から２番目
@@ -19,7 +19,7 @@ export const boomerang = (ctx: CanvasRenderingContext2D, color: string): void =>
 
 export const boomerang2 = (ctx: CanvasRenderingContext2D, color: string, locationX: number, locationY: number, numerator?: number): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // 長方形＿巻き込みパーツ＿
   ctx.beginPath()

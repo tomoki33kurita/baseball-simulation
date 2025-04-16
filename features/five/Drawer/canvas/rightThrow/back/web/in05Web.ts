@@ -6,7 +6,7 @@ import { connectWebToIndex, connectWebToIndexTop, connectWebToThumb, connectWebT
 export const in05Web = (ctx: CanvasRenderingContext2D, webColor: string, laceColor: string, stitchColor: string): void => {
   ctx.lineWidth = 0.8
   ctx.fillStyle = webColor
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // ウェブパーツ
   ctx.beginPath()
   ctx.moveTo(576, 44) // 左上
@@ -78,7 +78,7 @@ export const in05Web = (ctx: CanvasRenderingContext2D, webColor: string, laceCol
   ctx.quadraticCurveTo(602, 235, 646, 326) // 右下
   ctx.stroke()
   ctx.setLineDash([])
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.closePath()
   // stitchここまで
 

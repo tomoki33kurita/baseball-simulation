@@ -4,7 +4,7 @@ import { verticalPartOfWebWithLaceOfOutfielder } from './parts/verticalParts'
 
 export const dragonfly2Web = (ctx: CanvasRenderingContext2D, webColor: string, web2Color: string, laceColor: string, stitchColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = webColor
   // 横上パーツ
   topSidePartOfWeb2(ctx, webColor, laceColor, stitchColor)

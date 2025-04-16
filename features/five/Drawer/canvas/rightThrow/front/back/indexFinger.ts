@@ -1,6 +1,6 @@
 export const indexBackWebSide = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
 
   // 輪郭
@@ -18,7 +18,7 @@ export const indexBackWebSide = (ctx: CanvasRenderingContext2D, color: string): 
 
 export const indexBackMiddleSide = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
 
   // 輪郭

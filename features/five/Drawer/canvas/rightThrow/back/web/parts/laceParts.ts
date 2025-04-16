@@ -7,7 +7,7 @@ export const lacePartsOfWeb1 = (
   scaleSize: number
 ): void => {
   ctx.fillStyle = laceColor
-  ctx.strokeStyle = '#383838' // 'red'
+  ctx.strokeStyle = '#282828' // 'red'
   // 左下→右上
   ctx.beginPath()
   if (numerator !== undefined && numerator !== 0) {
@@ -56,7 +56,7 @@ export const lacePartsOfWeb1 = (
 
 export const upLeftDownRight = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
   ctx.fillStyle = laceColor
-  ctx.strokeStyle = '#383838' //
+  ctx.strokeStyle = '#282828' //
   // 左上→右上
   ctx.beginPath()
   ctx.moveTo(579 + x, 131 + y) //左上＿左
@@ -96,7 +96,7 @@ export const lacePartsOfWeb2 = (
   scaleSize: number
 ): void => {
   ctx.fillStyle = laceColor
-  ctx.strokeStyle = '#383838' //
+  ctx.strokeStyle = '#282828' //
   ctx.beginPath()
   if (numerator !== undefined && numerator !== 0) {
     ctx.save()
@@ -143,7 +143,7 @@ export const lacePartsOfWeb2 = (
 
 export const upRightDownLeft2 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
   ctx.fillStyle = laceColor
-  ctx.strokeStyle = '#383838' //
+  ctx.strokeStyle = '#282828' //
   // 左上→右上
   ctx.beginPath()
   ctx.moveTo(625 + x, 203 + y) //左上
@@ -178,7 +178,7 @@ export const upRightDownLeft2 = (ctx: CanvasRenderingContext2D, laceColor: strin
 
 export const upLeftDownRight2 = (ctx: CanvasRenderingContext2D, laceColor: string): void => {
   ctx.fillStyle = laceColor
-  ctx.strokeStyle = '#383838' //
+  ctx.strokeStyle = '#282828' //
   // 左下→右上
   ctx.beginPath()
   ctx.moveTo(555, 298) //左上

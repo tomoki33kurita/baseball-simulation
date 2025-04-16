@@ -4,7 +4,7 @@ import { underCenter, underLeft, underRight, underWeb } from './lace/underWeb'
 
 export const palm = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = state.palm.color
 
   const { webMatcher } = webDrawUtil(state)

@@ -18,7 +18,7 @@ const heartDesign = (ctx: CanvasRenderingContext2D, webColor: string, x: number,
 
 export const flat6Web = (ctx: CanvasRenderingContext2D, webColor: string, laceColor: string, stitchColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = webColor
 
   // ウェブ本体
@@ -62,5 +62,5 @@ export const flat6Web = (ctx: CanvasRenderingContext2D, webColor: string, laceCo
   ctx.stroke()
   ctx.closePath()
 
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
 }

@@ -21,8 +21,8 @@ export const drawLeftThrowGenuineCatcherMittPalmSurface = (ctx: CanvasRenderingC
   const baseModel = state.baseModel
   canvasResetter(ctx) // リセット
   ctx.font = '24px serif'
-  ctx.strokeStyle = '#383838'
-  ctx.fillStyle = '#383838'
+  ctx.strokeStyle = '#282828'
+  ctx.fillStyle = '#282828'
   ctx.strokeText('型番：' + baseModel.productNumber, 50, 70)
 
   const palmState = state.palm

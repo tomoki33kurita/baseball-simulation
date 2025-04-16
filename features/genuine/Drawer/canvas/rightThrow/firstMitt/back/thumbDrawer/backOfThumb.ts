@@ -1,6 +1,6 @@
 export const backOfThumb = (ctx: CanvasRenderingContext2D, thumbColor: string, stitchColor: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = thumbColor
 
   // ヘリ革
@@ -35,5 +35,5 @@ export const backOfThumb = (ctx: CanvasRenderingContext2D, thumbColor: string, s
   ctx.setLineDash([])
   ctx.closePath()
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
 }

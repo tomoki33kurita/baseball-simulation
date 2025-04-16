@@ -1,6 +1,6 @@
 export const palm2 = (ctx: CanvasRenderingContext2D, catchFaceColor: string, stitchColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = catchFaceColor
   ctx.beginPath()
   ctx.moveTo(436, 361) // 左下_ヘリ革接着点
@@ -39,5 +39,5 @@ export const palm2 = (ctx: CanvasRenderingContext2D, catchFaceColor: string, sti
   ctx.setLineDash([])
   ctx.closePath()
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
 }

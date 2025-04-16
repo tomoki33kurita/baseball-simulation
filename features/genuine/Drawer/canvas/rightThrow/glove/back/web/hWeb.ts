@@ -4,7 +4,7 @@ import { webToCatchFaceConnect } from '../lace/webToCatchFaceConnect'
 
 export const hWeb = (ctx: CanvasRenderingContext2D, webColor: string, web2Color: string, laceColor: string, stitchColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // 横上パーツ
   topSidePartOfWeb2(ctx, webColor, laceColor, stitchColor)
   // 横下パーツ

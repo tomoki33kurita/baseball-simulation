@@ -21,7 +21,7 @@ const upRightDownLeft = (ctx: CanvasRenderingContext2D, laceColor: string, x: nu
 
 export const tNet2Web = (ctx: CanvasRenderingContext2D, webColor: string, web2Color: string, laceColor: string, stitchColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = webColor
   // 横上パーツ
   topSidePartOfWeb(ctx, webColor, laceColor, stitchColor)
@@ -47,5 +47,5 @@ export const tNet2Web = (ctx: CanvasRenderingContext2D, webColor: string, web2Co
   webKnots(ctx, laceColor, 25, -60) // ウェブ先端
   webKnots(ctx, laceColor, -85, 95) //
   webKnots(ctx, laceColor, -105, 115) // 捕球面折り返し上
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
 }

@@ -1,6 +1,6 @@
 export const knotUpward = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 0.8 // 太さを揃えるために意図的に太め
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   // 先端紐
@@ -36,7 +36,7 @@ export const knotUpward = (ctx: CanvasRenderingContext2D, color: string): void =
 
 export const knotDownward = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // 紐部分
   ctx.beginPath()

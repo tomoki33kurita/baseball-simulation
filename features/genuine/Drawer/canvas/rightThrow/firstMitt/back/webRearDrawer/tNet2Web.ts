@@ -60,7 +60,7 @@ const stitchOfTNet2Web = (ctx: CanvasRenderingContext2D, color: string) => {
 
 const netLace1 = (ctx: CanvasRenderingContext2D, laceColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   // 左側
   ctx.beginPath()
@@ -106,12 +106,12 @@ const netLace1 = (ctx: CanvasRenderingContext2D, laceColor: string): void => {
 
 const netLaceLeft1 = (ctx: CanvasRenderingContext2D, laceColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
 
   // 左a_0
   ctx.strokeStyle = 'red'
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.beginPath()
   ctx.moveTo(501, 58) // 左＿上
   ctx.quadraticCurveTo(483, 62, 492, 71) // 左＿下
@@ -124,7 +124,7 @@ const netLaceLeft1 = (ctx: CanvasRenderingContext2D, laceColor: string): void =>
   ctx.quadraticCurveTo(513, 69, 604, 144) //右＿右
   ctx.stroke()
   ctx.closePath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
 
   // 左a_1
   ctx.beginPath()
@@ -199,7 +199,7 @@ const netLaceLeft1 = (ctx: CanvasRenderingContext2D, laceColor: string): void =>
 
 const netLaceLeft2 = (ctx: CanvasRenderingContext2D, laceColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   // 左b_0
   ctx.beginPath()
@@ -274,7 +274,7 @@ const netLaceLeft2 = (ctx: CanvasRenderingContext2D, laceColor: string): void =>
 
 const netLaceRight1 = (ctx: CanvasRenderingContext2D, laceColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   // 右a_1
   ctx.beginPath()
@@ -332,7 +332,7 @@ const netLaceRight1 = (ctx: CanvasRenderingContext2D, laceColor: string): void =
 
 const netLaceRight2 = (ctx: CanvasRenderingContext2D, laceColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   // 右b_0
   ctx.beginPath()

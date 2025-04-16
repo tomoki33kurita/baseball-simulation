@@ -1,6 +1,6 @@
 export const allowLace = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number, numerator?: number, scaleSize?: number): void => {
   ctx.lineWidth = 0.5
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   if (numerator !== undefined && numerator !== 0) {
     ctx.save()
@@ -25,7 +25,7 @@ export const allowLace = (ctx: CanvasRenderingContext2D, color: string, x: numbe
 
   // 右側
   ctx.beginPath()
-  // ctx.strokeStyle = 'blue' // '#383838'
+  // ctx.strokeStyle = 'blue' // '#282828'
   ctx.moveTo(638 + x, 164 + y) // 左上
   ctx.quadraticCurveTo(638 + x, 173 + y, 638 + x, 173 + y) // 左下
   ctx.quadraticCurveTo(645 + x, 171 + y, 653 + x, 172 + y) // 右下

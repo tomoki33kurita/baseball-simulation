@@ -2,7 +2,7 @@ import { generateLiningsGradient } from '@/util/canvas'
 
 export const meshDrawer = (ctx: CanvasRenderingContext2D, meshColor: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = 'red' //'#383838'
+  ctx.strokeStyle = 'red' //'#282828'
   ctx.fillStyle = meshColor
   //   ctx.beginPath()
   //   ctx.moveTo(0, 110)

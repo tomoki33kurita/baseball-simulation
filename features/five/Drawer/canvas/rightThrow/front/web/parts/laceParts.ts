@@ -1,5 +1,5 @@
 export const laceParts1 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   ctx.lineWidth = 0.8
   ctx.beginPath()
@@ -17,7 +17,7 @@ export const laceParts1 = (ctx: CanvasRenderingContext2D, laceColor: string, x: 
 }
 
 export const laceParts6 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   ctx.lineWidth = 0.8
   ctx.beginPath()
@@ -36,7 +36,7 @@ export const laceParts6 = (ctx: CanvasRenderingContext2D, laceColor: string, x: 
 }
 
 export const laceParts7 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   ctx.lineWidth = 0.8
   ctx.beginPath()
@@ -54,7 +54,7 @@ export const laceParts7 = (ctx: CanvasRenderingContext2D, laceColor: string, x: 
 }
 
 export const laceOfVerticalPartsRight = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   ctx.lineWidth = 0.8
   ctx.beginPath()

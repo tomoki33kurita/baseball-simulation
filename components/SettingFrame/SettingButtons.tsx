@@ -38,8 +38,8 @@ export const SettingButtons: React.FC<Props> = ({ toTopPath, isDark, handleDialo
       display="flex"
       justifyContent="space-around"
       py={2}
-      bgcolor={isDark ? '#383838' : 'white'}
-      border={isDark ? '1px solid #383838' : '1px solid #e0e0e0'}
+      bgcolor={isDark ? '#282828' : 'white'}
+      border={isDark ? '1px solid #282828' : '1px solid #e0e0e0'}
     >
       <ConfirmDialog
         key={'confirm-dialog-to-top'}

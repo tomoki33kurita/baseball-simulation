@@ -4,7 +4,7 @@ import { topSidePartOfWeb } from './parts/sideParts'
 
 export const in05Web = (ctx: CanvasRenderingContext2D, webColor: string, laceColor: string, stitchColor: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = webColor
   // ウェブ先端
   ctx.beginPath()

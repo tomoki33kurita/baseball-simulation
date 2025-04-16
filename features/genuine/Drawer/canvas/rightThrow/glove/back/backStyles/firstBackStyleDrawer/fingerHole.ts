@@ -1,6 +1,6 @@
 export const indexFingerHole = (ctx: CanvasRenderingContext2D, liningsColor: string, edgeColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = liningsColor
 
   // 手口
@@ -36,7 +36,7 @@ export const indexFingerHole = (ctx: CanvasRenderingContext2D, liningsColor: str
 
 export const middleFingerHole = (ctx: CanvasRenderingContext2D, liningsColor: string, bindingColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
 
   ctx.save()
   ctx.rotate((-5 * Math.PI) / 180)
@@ -74,7 +74,7 @@ export const middleFingerHole = (ctx: CanvasRenderingContext2D, liningsColor: st
 
 const laceOfAroundFingerHole1 = (ctx: CanvasRenderingContext2D, edgeColor: string, x: number, y: number, numerator: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = edgeColor
   ctx.save()
   ctx.rotate((numerator * Math.PI) / 180)
@@ -95,7 +95,7 @@ const laceOfAroundFingerHole1 = (ctx: CanvasRenderingContext2D, edgeColor: strin
 
 const laceOfAroundFingerHoleWide1 = (ctx: CanvasRenderingContext2D, edgeColor: string, x: number, y: number, numerator: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = edgeColor
   ctx.save()
   ctx.rotate((numerator * Math.PI) / 180)

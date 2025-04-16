@@ -11,7 +11,7 @@ export const uNet2Web = (ctx: CanvasRenderingContext2D, state: GenuineState): vo
   const web2Color = state.web2.color
 
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // web先端の革パーツ
   topSidePartOfWeb2(ctx, web2Color, laceColor, stitchColor)
   // ウェブ-人差し指のジョイントパーツ

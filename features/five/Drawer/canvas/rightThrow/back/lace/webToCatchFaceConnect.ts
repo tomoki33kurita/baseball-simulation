@@ -1,7 +1,7 @@
 // ウェブ＿捕球面間のクロス
 export const webToCatchFaceConnect = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number, scale?: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   ctx.save()
@@ -71,7 +71,7 @@ export const webToCatchFaceConnect = (ctx: CanvasRenderingContext2D, color: stri
 
 export const webToCatchFaceConnect2 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   // ウェブ＿捕球面間のクロス左＿左上

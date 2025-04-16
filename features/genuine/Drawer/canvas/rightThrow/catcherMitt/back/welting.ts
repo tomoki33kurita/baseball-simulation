@@ -3,7 +3,7 @@ import { ColorItem } from '@/types'
 export const weltingOfMiddleFingerRegularBackStyle = (ctx: CanvasRenderingContext2D, welting: ColorItem): void => {
   if (welting.value === 'none') return
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = welting.color
 
   // 中指袋のハミダシ
@@ -35,7 +35,7 @@ export const weltingOfMiddleFingerRegularBackStyle = (ctx: CanvasRenderingContex
 export const weltingOfMiddleFingerBeltBackStyle = (ctx: CanvasRenderingContext2D, welting: ColorItem): void => {
   if (welting.value === 'none') return
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = welting.color
   // 中指袋の中
   ctx.beginPath()

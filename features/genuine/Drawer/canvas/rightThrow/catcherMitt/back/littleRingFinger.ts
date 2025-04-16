@@ -3,7 +3,7 @@ import { GenuineState } from '@/features/genuine/types'
 export const littleRingMergedFingerOfBeltBackStyle = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
   const middleLeftRingLittleColor = state.middleLeftRingLittle.color
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = middleLeftRingLittleColor
   ctx.beginPath()
   ctx.moveTo(195, 175) // 上
@@ -117,14 +117,14 @@ export const littleRingMergedFingerOfBeltBackStyle = (ctx: CanvasRenderingContex
   ctx.stroke()
   ctx.setLineDash([])
   ctx.closePath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
 }
 
 export const otherThanThumbFingerOfTMBackStyle = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
   const color = state.indexMiddleRingLittle.color
   const stitchColor = state.stitch.color
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   ctx.moveTo(195, 175) // 小指袋頂点
@@ -231,13 +231,13 @@ export const otherThanThumbFingerOfTMBackStyle = (ctx: CanvasRenderingContext2D,
   ctx.stroke()
   ctx.setLineDash([])
   ctx.closePath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
 }
 
 // 小指袋にハミダシが必要な時は以下を使う
 export const littleOutFinger = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   ctx.moveTo(195, 175) // 上
@@ -260,7 +260,7 @@ export const littleOutFinger = (ctx: CanvasRenderingContext2D, color: string): v
 // 小指袋にハミダシが必要な時は以下を使う
 export const ringFinger = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   ctx.moveTo(226, 546) // 左下

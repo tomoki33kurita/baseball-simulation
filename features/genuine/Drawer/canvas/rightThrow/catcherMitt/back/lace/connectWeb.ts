@@ -1,6 +1,6 @@
 export const webToCatchFace = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // 右側
   ctx.beginPath()
@@ -35,7 +35,7 @@ export const webToCatchFace = (ctx: CanvasRenderingContext2D, color: string, x: 
 
 export const laceOfWebTopToIndexFinger = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // 人差し指右上からweb先端への繋ぎ部分奥1
   ctx.beginPath()
@@ -78,7 +78,7 @@ export const laceOfWebTopToIndexFinger = (ctx: CanvasRenderingContext2D, color: 
 
 export const webToIndexFinger = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // 上1
   ctx.beginPath()
@@ -136,7 +136,7 @@ export const webToIndexFinger = (ctx: CanvasRenderingContext2D, color: string): 
 
 export const laceOfWebTopToThumbFinger = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // 奥1
   ctx.beginPath()
@@ -179,7 +179,7 @@ export const laceOfWebTopToThumbFinger = (ctx: CanvasRenderingContext2D, color: 
 
 export const webToThumbFinger = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // // 上1
   ctx.beginPath()
@@ -234,7 +234,7 @@ export const webToThumbFinger = (ctx: CanvasRenderingContext2D, color: string): 
 
 export const laceOfConnectWebToCatchFace = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number): void => {
   ctx.lineWidth = 0.8
-  // ctx.strokeStyle = '#383838'
+  // ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
 
   // 右上
@@ -251,7 +251,7 @@ export const laceOfConnectWebToCatchFace = (ctx: CanvasRenderingContext2D, color
   ctx.quadraticCurveTo(492 + x, 219 + y, 505 + x, 213 + y) //
   ctx.stroke()
   ctx.closePath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
 
   // 左上
   ctx.beginPath()
@@ -272,7 +272,7 @@ export const laceOfConnectWebToCatchFace = (ctx: CanvasRenderingContext2D, color
 
 export const laceOfConnectWebToCatchFace2 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
 
   // 左上
@@ -293,7 +293,7 @@ export const laceOfConnectWebToCatchFace2 = (ctx: CanvasRenderingContext2D, colo
 
 export const laceOfLeftConnectWebToCatchFace = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
 
   // 右上
@@ -325,7 +325,7 @@ export const laceOfLeftConnectWebToCatchFace = (ctx: CanvasRenderingContext2D, c
 
 export const laceOfRightConnectWebToCatchFace = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
 
   // 右上
@@ -353,5 +353,5 @@ export const laceOfRightConnectWebToCatchFace = (ctx: CanvasRenderingContext2D, 
   ctx.quadraticCurveTo(648, 352, 629, 400) // 右下
   ctx.stroke()
   ctx.closePath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
 }

@@ -1,7 +1,7 @@
 import { webTop, webTop2 } from '../../lace/webTop'
 
 export const topSidePartOfWeb = (ctx: CanvasRenderingContext2D, webColor: string, laceColor: string, stitchColor: string): void => {
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = webColor
   // ウェブ先端
   ctx.beginPath()
@@ -29,7 +29,7 @@ export const topSidePartOfWeb = (ctx: CanvasRenderingContext2D, webColor: string
   ctx.stroke()
   ctx.setLineDash([])
   ctx.closePath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // stitchここまで
 
   // laceここから
@@ -72,7 +72,7 @@ export const middleSidePartOfWeb = (ctx: CanvasRenderingContext2D, webColor: str
   ctx.stroke()
   ctx.setLineDash([])
   ctx.closePath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // stitchここまで
 }
 
@@ -119,6 +119,6 @@ export const middleSidePartOfDoubleWeb = (ctx: CanvasRenderingContext2D, webColo
   ctx.stroke()
   ctx.setLineDash([])
   ctx.closePath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // stitchここまで
 }

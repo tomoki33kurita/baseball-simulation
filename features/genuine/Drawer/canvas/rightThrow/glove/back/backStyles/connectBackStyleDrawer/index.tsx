@@ -15,7 +15,7 @@ import { weltingForConnectBack } from '../../welting/connect'
 import { crossLaceForBackOfHand1, crossLaceForBackOfHand2, crossLaceForThumb } from '../crownBackStyleDrawer/connectLace'
 
 const connectBackBandParts = (ctx: CanvasRenderingContext2D, color: string, stitchColor: string): void => {
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   ctx.moveTo(247, 486) // 左上
@@ -50,7 +50,7 @@ const connectBackBandParts = (ctx: CanvasRenderingContext2D, color: string, stit
   ctx.setLineDash([])
   ctx.closePath()
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
 }
 
 export const connectBackStyleDrawer = (ctx: CanvasRenderingContext2D, state: GenuineState, needPalmWrap: boolean): void => {

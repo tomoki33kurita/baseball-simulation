@@ -1,6 +1,6 @@
 export const connectWebToIndexTop = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   ctx.moveTo(539 + x, 31 + y) // 左上
@@ -20,7 +20,7 @@ export const connectWebToIndexTop = (ctx: CanvasRenderingContext2D, color: strin
 
 export const connectWebToIndex = (ctx: CanvasRenderingContext2D, color: string, locationX: number, locationY: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // 左上右下方向の革紐
   ctx.beginPath()
@@ -41,7 +41,7 @@ export const connectWebToIndex = (ctx: CanvasRenderingContext2D, color: string, 
 
 export const connectWebToThumbTop = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   ctx.moveTo(709 + x, 254 + y) // 左上
@@ -58,7 +58,7 @@ export const connectWebToThumbTop = (ctx: CanvasRenderingContext2D, color: strin
 
 export const connectWebToThumb = (ctx: CanvasRenderingContext2D, color: string, locationX: number, locationY: number, numerator?: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   if (numerator !== undefined && numerator !== 0) {

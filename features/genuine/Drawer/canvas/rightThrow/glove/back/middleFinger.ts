@@ -1,6 +1,6 @@
 export const middleFingerRight = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   ctx.moveTo(375, 37) // 中指先端
@@ -16,7 +16,7 @@ export const middleFingerRight = (ctx: CanvasRenderingContext2D, color: string):
 
 export const middleFingerLeft = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   ctx.moveTo(373, 37) // 右上

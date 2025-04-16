@@ -4,7 +4,7 @@ import { verticalPartOfOutfielderWeb } from './parts/verticalParts'
 
 const laceOfLoopOfNet3 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   ctx.beginPath()
   ctx.moveTo(625 + x, 240 + y) // 左＿左
@@ -26,7 +26,7 @@ const laceOfLoopOfNet3 = (ctx: CanvasRenderingContext2D, laceColor: string, x: n
 
 const laceOfLoopOfNet4 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   ctx.beginPath()
   ctx.moveTo(618 + x, 249 + y) // 左＿左
@@ -47,7 +47,7 @@ const laceOfLoopOfNet4 = (ctx: CanvasRenderingContext2D, laceColor: string, x: n
 
 const laceOfAroundThumbFinger = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   ctx.beginPath()
   ctx.moveTo(672 + x, 280 + y) // 左上
@@ -63,7 +63,7 @@ const laceOfAroundThumbFinger = (ctx: CanvasRenderingContext2D, laceColor: strin
 
 const laceOfVerticalWebPartsRight = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   ctx.beginPath()
   ctx.moveTo(644 + x, 186 + y) // 左上
@@ -95,7 +95,7 @@ const upRightDownLeft = (ctx: CanvasRenderingContext2D, laceColor: string, x: nu
 
 const laceOfLoopOfNet1 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   ctx.beginPath()
   ctx.moveTo(525 + x, 139 + y) // 左＿左
@@ -116,7 +116,7 @@ const laceOfLoopOfNet1 = (ctx: CanvasRenderingContext2D, laceColor: string, x: n
 
 const laceOfLoopOfNet2 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   ctx.beginPath()
   ctx.moveTo(523 + x, 128 + y) // 左＿左
@@ -141,7 +141,7 @@ const laceOfLoopOfNet2 = (ctx: CanvasRenderingContext2D, laceColor: string, x: n
 
 const laceOfAroundIndexFinger = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   ctx.beginPath()
   ctx.moveTo(527 + x, 105 + y) // 左上
@@ -157,7 +157,7 @@ const laceOfAroundIndexFinger = (ctx: CanvasRenderingContext2D, laceColor: strin
 
 const laceOfVerticalWebPartsLeft = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   ctx.beginPath()
   ctx.moveTo(611 + x, 145 + y) // 左上
@@ -173,7 +173,7 @@ const laceOfVerticalWebPartsLeft = (ctx: CanvasRenderingContext2D, laceColor: st
 
 export const ou01Web = (ctx: CanvasRenderingContext2D, webColor: string, laceColor: string, stitchColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = webColor
   // 横上パーツ
   topSidePartOfWeb2(ctx, webColor, laceColor, stitchColor)

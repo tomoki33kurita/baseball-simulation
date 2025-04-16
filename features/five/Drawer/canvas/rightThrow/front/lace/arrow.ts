@@ -1,6 +1,6 @@
 export const arrow1 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   // 左下
   ctx.beginPath()
@@ -31,7 +31,7 @@ export const arrow1 = (ctx: CanvasRenderingContext2D, laceColor: string, x: numb
 
 export const arrow2 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
 
   // 上

@@ -1,6 +1,6 @@
 export const catchFaceOfThumbParts = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
 
   // 親指芯部分＿捕球面

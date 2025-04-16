@@ -1,6 +1,6 @@
 export const webTop1 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number, numerator?: number): void => {
   ctx.lineWidth = 0.5
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   if (numerator !== undefined && numerator !== 0) {
     ctx.save()
@@ -26,7 +26,7 @@ export const webTop1 = (ctx: CanvasRenderingContext2D, color: string, x: number,
 
 export const webTop2 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number, numerator?: number): void => {
   ctx.lineWidth = 0.5
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   if (numerator !== undefined && numerator !== 0) {
     ctx.save()
@@ -54,7 +54,7 @@ export const webTop2 = (ctx: CanvasRenderingContext2D, color: string, x: number,
 
 export const webTop3 = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 0.5
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // 親指
   ctx.beginPath()
@@ -70,7 +70,7 @@ export const webTop3 = (ctx: CanvasRenderingContext2D, color: string): void => {
 
 export const webTopCrossLace = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number, rotate: number): void => {
   ctx.lineWidth = 0.5
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
 
   ctx.save()

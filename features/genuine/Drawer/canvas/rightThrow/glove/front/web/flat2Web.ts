@@ -2,7 +2,7 @@ import { topSidePartOfWeb } from './parts/sideParts'
 
 const horizontalLace = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
   // laceここから
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   ctx.beginPath()
   ctx.lineWidth = 1.0
@@ -22,7 +22,7 @@ const horizontalLace = (ctx: CanvasRenderingContext2D, laceColor: string, x: num
 
 const horizontalLace2 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
   // laceここから
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   ctx.beginPath()
   ctx.lineWidth = 1.0
@@ -41,7 +41,7 @@ const horizontalLace2 = (ctx: CanvasRenderingContext2D, laceColor: string, x: nu
 
 const horizontalLace3 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
   // laceここから
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   ctx.beginPath()
   ctx.lineWidth = 1.0
@@ -60,7 +60,7 @@ const horizontalLace3 = (ctx: CanvasRenderingContext2D, laceColor: string, x: nu
 
 const verticalLace = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
   // laceここから
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   ctx.beginPath()
   ctx.lineWidth = 1.0
@@ -79,7 +79,7 @@ const verticalLace = (ctx: CanvasRenderingContext2D, laceColor: string, x: numbe
 
 const verticalLace2 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
   // laceここから
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   ctx.beginPath()
   ctx.lineWidth = 1.0
@@ -98,7 +98,7 @@ const verticalLace2 = (ctx: CanvasRenderingContext2D, laceColor: string, x: numb
 
 export const flat2Web = (ctx: CanvasRenderingContext2D, webColor: string, laceColor: string, stitchColor: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = webColor
   // ウェブ本体
   ctx.beginPath()

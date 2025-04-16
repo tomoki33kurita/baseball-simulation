@@ -1,6 +1,6 @@
 export const thumbTopOver = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // 小指芯固定用の紐
   ctx.beginPath()
@@ -19,7 +19,7 @@ export const thumbTopOver = (ctx: CanvasRenderingContext2D, color: string): void
 
 export const thumbTop = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   ctx.moveTo(214, 250) // 左上
@@ -38,7 +38,7 @@ export const thumbTop = (ctx: CanvasRenderingContext2D, color: string): void => 
 // 折り返し部分
 export const thumbWrapBack = (ctx: CanvasRenderingContext2D, color: string, locationX: number, locationY: number, numerator?: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   if (numerator !== undefined && numerator !== 0) {

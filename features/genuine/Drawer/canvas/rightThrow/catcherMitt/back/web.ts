@@ -1,6 +1,6 @@
 export const webTop = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = leatherColor
 
   // 手入れ口部分
@@ -33,13 +33,13 @@ export const webTop = (ctx: CanvasRenderingContext2D, leatherColor: string, stit
   ctx.quadraticCurveTo(722, 240, 722, 240) //
   ctx.stroke()
   ctx.setLineDash([])
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.closePath()
 }
 
 export const web = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = leatherColor
 
   // 手入れ口部分
@@ -78,13 +78,13 @@ export const web = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchC
   ctx.quadraticCurveTo(588, 194, 515, 144) //左上
   ctx.stroke()
   ctx.setLineDash([])
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.closePath()
 }
 
 export const webOfShallowPocket = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = leatherColor
 
   ctx.beginPath()
@@ -118,6 +118,6 @@ export const webOfShallowPocket = (ctx: CanvasRenderingContext2D, leatherColor: 
 
   ctx.stroke()
   ctx.setLineDash([])
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.closePath()
 }

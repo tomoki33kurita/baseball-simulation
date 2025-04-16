@@ -6,7 +6,7 @@ export const tmBackTypeDrawer = (ctx: CanvasRenderingContext2D, state: GenuineSt
   // レザー
   ctx.beginPath()
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = state.listBelt.color
   ctx.moveTo(198, 517) // 左上
   ctx.quadraticCurveTo(232, 543, 241, 598) // 左下1
@@ -23,7 +23,7 @@ export const tmBackTypeDrawer = (ctx: CanvasRenderingContext2D, state: GenuineSt
   // ヘリ革
   ctx.beginPath()
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = state.binding.color
   ctx.moveTo(322, 447) // 左上
   ctx.quadraticCurveTo(300, 551, 454, 527) // 右上

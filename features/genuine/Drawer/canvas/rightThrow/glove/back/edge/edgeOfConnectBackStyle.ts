@@ -2,7 +2,7 @@ export const bindingOfConnectBackStyle = (ctx: CanvasRenderingContext2D, leather
   ctx.lineWidth = 0.8
   ctx.fillStyle = leatherColor
 
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.beginPath()
   ctx.moveTo(251, 490) //
   ctx.quadraticCurveTo(286, 429, 307, 413)

@@ -1,6 +1,6 @@
 export const thumbAndWristBelt = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = leatherColor
   ctx.beginPath()
   ctx.moveTo(291, 490) // ベルト左上
@@ -27,14 +27,14 @@ export const thumbAndWristBelt = (ctx: CanvasRenderingContext2D, leatherColor: s
   ctx.stroke()
   ctx.setLineDash([])
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.closePath()
   // stitch
 }
 
 export const thumbOut = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   ctx.moveTo(739, 283) // 左上

@@ -1,6 +1,6 @@
 export const bankEdge1 = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.moveTo(383, 587) // 左上
   ctx.quadraticCurveTo(382, 599, 389, 602) // 左下
@@ -24,7 +24,7 @@ export const bankEdge2 = (
   scaleSize?: number
 ): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // 長方形＿巻き込みパーツ＿
   ctx.beginPath()

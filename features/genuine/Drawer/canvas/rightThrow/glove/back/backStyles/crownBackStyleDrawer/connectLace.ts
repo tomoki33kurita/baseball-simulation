@@ -2,7 +2,7 @@ import { webKnots } from '@/util/canvas/lace/webKnots'
 
 export const crossLaceForBackOfHand1 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number): void => {
   ctx.beginPath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.moveTo(235, 464) // 左下
   ctx.quadraticCurveTo(252, 474, 272, 474) // 右下
@@ -18,7 +18,7 @@ export const crossLaceForBackOfHand1 = (ctx: CanvasRenderingContext2D, color: st
   ctx.closePath()
 
   ctx.beginPath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.moveTo(251, 440) // 左上
   ctx.quadraticCurveTo(246, 466, 258, 484) // 左下
@@ -36,7 +36,7 @@ export const crossLaceForBackOfHand1 = (ctx: CanvasRenderingContext2D, color: st
 
 export const crossLaceForBackOfHand2 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number): void => {
   ctx.beginPath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.moveTo(251 + x, 440 + y) // 左上
   ctx.quadraticCurveTo(246 + x, 466 + y, 258 + x, 484 + y) // 左下
@@ -50,7 +50,7 @@ export const crossLaceForBackOfHand2 = (ctx: CanvasRenderingContext2D, color: st
   ctx.closePath()
 
   ctx.beginPath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.moveTo(235 + x, 464 + y) // 左下
   ctx.quadraticCurveTo(252 + x, 474 + y, 272 + x, 474 + y) // 右下
@@ -68,7 +68,7 @@ export const crossLaceForThumb = (ctx: CanvasRenderingContext2D, color: string, 
   ctx.save()
   ctx.rotate((rotate * Math.PI) / 180)
   ctx.beginPath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.moveTo(248 + x, 437 + y) // 左上
   ctx.quadraticCurveTo(246 + x, 466 + y, 258 + x, 484 + y) // 左下
@@ -82,7 +82,7 @@ export const crossLaceForThumb = (ctx: CanvasRenderingContext2D, color: string, 
   ctx.closePath()
 
   ctx.beginPath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.moveTo(232 + x, 460 + y) // 左下
   ctx.quadraticCurveTo(252 + x, 472 + y, 275 + x, 471 + y) // 右下

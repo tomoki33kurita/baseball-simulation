@@ -1,7 +1,7 @@
 import { laceOfLiningAllow } from '../../lace/arrow'
 
 export const verticalParts = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchColor: string): void => {
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.beginPath()
   ctx.moveTo(276, 187) // 左上
   ctx.quadraticCurveTo(345, 308, 345, 308) // 左下
@@ -35,7 +35,7 @@ export const verticalParts = (ctx: CanvasRenderingContext2D, leatherColor: strin
 }
 
 export const verticalParts2 = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchColor: string): void => {
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.beginPath()
   ctx.moveTo(276, 187) // 左上
   ctx.quadraticCurveTo(345, 308, 345, 308) // 左下
@@ -67,7 +67,7 @@ export const verticalParts2 = (ctx: CanvasRenderingContext2D, leatherColor: stri
 }
 
 export const verticalParts3 = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchColor: string): void => {
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
 
   // 親指寄り
   ctx.beginPath()
@@ -114,7 +114,7 @@ export const verticalParts3 = (ctx: CanvasRenderingContext2D, leatherColor: stri
 
 export const verticalParts4 = (ctx: CanvasRenderingContext2D, leatherColor: string, laceColor: string, stitchColor: string): void => {
   const leftAroundVerticalParts = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchColor: string, x: number, y: number): void => {
-    ctx.strokeStyle = '#383838'
+    ctx.strokeStyle = '#282828'
     ctx.beginPath()
     ctx.moveTo(282 + x, 200 + y) // 左上
     ctx.quadraticCurveTo(272 + x, 202 + y, 272 + x, 202 + y) // 左下
@@ -129,7 +129,7 @@ export const verticalParts4 = (ctx: CanvasRenderingContext2D, leatherColor: stri
   }
 
   const rightAroundVerticalParts = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchColor: string, x: number, y: number): void => {
-    ctx.strokeStyle = '#383838'
+    ctx.strokeStyle = '#282828'
     ctx.beginPath()
     ctx.moveTo(319 + x, 181 + y) // 左上
     ctx.quadraticCurveTo(323 + x, 188 + y, 323 + x, 188 + y) // 左下
@@ -143,7 +143,7 @@ export const verticalParts4 = (ctx: CanvasRenderingContext2D, leatherColor: stri
     ctx.closePath()
   }
 
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = leatherColor
   ctx.beginPath()
   ctx.moveTo(276, 187) // 左上

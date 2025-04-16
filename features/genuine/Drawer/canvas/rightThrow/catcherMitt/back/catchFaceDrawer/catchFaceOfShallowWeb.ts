@@ -1,6 +1,6 @@
 export const catchFaceOfShallowWeb = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = leatherColor
 
   ctx.beginPath()
@@ -28,5 +28,5 @@ export const catchFaceOfShallowWeb = (ctx: CanvasRenderingContext2D, leatherColo
   ctx.stroke()
   ctx.setLineDash([])
   ctx.closePath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
 }

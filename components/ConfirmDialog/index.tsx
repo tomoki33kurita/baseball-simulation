@@ -40,10 +40,10 @@ export const ConfirmDialog: React.FC<Props> = ({
         {openButtonLabel}
       </Button>
       <Dialog open={isConfirmOpen} onClose={handleCancelButton} aria-labelledby="alert-dialog-title" aria-describedby="alert-dialog-description">
-        <DialogTitle color={'primary'} id="alert-dialog-title" style={isDark ? { backgroundColor: '#383838', color: '#fff' } : {}}>
+        <DialogTitle color={'primary'} id="alert-dialog-title" style={isDark ? { backgroundColor: '#282828', color: '#fff' } : {}}>
           {dialogMessage}
         </DialogTitle>
-        <DialogActions style={{ backgroundColor: isDark ? '#383838' : 'unset', color: isDark ? '#fff' : 'unset' }}>
+        <DialogActions style={{ backgroundColor: isDark ? '#282828' : 'unset', color: isDark ? '#fff' : 'unset' }}>
           <Button variant={'outlined'} onClick={handleCancelButton} style={isDark ? { color: 'white', backgroundColor: '#737373' } : {}}>
             Cancel
           </Button>

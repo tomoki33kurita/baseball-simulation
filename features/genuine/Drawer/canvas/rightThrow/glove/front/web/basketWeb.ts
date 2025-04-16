@@ -14,7 +14,7 @@ const checkCellParts = (ctx: CanvasRenderingContext2D, webColor: string, x: numb
   ctx.quadraticCurveTo(320 + x, 170 + y, 313 + x, 175 + y)
   ctx.stroke()
   ctx.fill()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   if (numerator !== undefined) {
     ctx.restore()
   }
@@ -23,7 +23,7 @@ const checkCellParts = (ctx: CanvasRenderingContext2D, webColor: string, x: numb
 
 export const basketWeb = (ctx: CanvasRenderingContext2D, webColor: string, web2Color: string, laceColor: string, stitchColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = web2Color
   // ウェブ本体
   ctx.beginPath()

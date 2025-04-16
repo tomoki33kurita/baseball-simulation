@@ -32,7 +32,7 @@ export const verticalPartsOfWeb = (ctx: CanvasRenderingContext2D, webColor: stri
   ctx.stroke()
   ctx.setLineDash([])
   ctx.closePath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // stitchここまで
 }
 
@@ -68,7 +68,7 @@ export const verticalPartsOfWebWithCenterStitch = (ctx: CanvasRenderingContext2D
   ctx.stroke()
   ctx.setLineDash([])
   ctx.closePath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // stitchここまで
 }
 
@@ -142,7 +142,7 @@ export const verticalPartsForBasNet = (ctx: CanvasRenderingContext2D, webColor: 
   // ctx.closePath()
 
   // // 縦
-  // ctx.strokeStyle = '#383838'
+  // ctx.strokeStyle = '#282828'
   // ctx.beginPath()
   // ctx.moveTo(270, 188) // 左＿上
   // ctx.quadraticCurveTo(331, 324, 331, 324) // 下
@@ -169,7 +169,7 @@ export const verticalPartsForBasNet = (ctx: CanvasRenderingContext2D, webColor: 
   web2Parts(ctx, webColor, 68, 51) // 右4
   web2Parts(ctx, webColor, 78, 78) // 右5
 
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
 
   // stitchここから
   ctx.beginPath()
@@ -192,7 +192,7 @@ export const verticalPartsForBasNet = (ctx: CanvasRenderingContext2D, webColor: 
   ctx.stroke()
   ctx.setLineDash([])
   ctx.closePath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // stitchここまで
 }
 
@@ -203,7 +203,7 @@ export const verticalPartsOfWebWithCenterBinding = (
   stitchColor: string
 ): void => {
   ctx.fillStyle = bindingColor
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // 縦パーツ＿ヘリ革
   ctx.beginPath()
   ctx.moveTo(237, 175) // 左＿上
@@ -245,6 +245,6 @@ export const verticalPartsOfWebWithCenterBinding = (
   ctx.setLineDash([])
   ctx.closePath()
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // stitchここまで
 }

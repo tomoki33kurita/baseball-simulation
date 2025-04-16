@@ -8,7 +8,7 @@ export const basket2Web = (
   stitchColor: string
 ): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = webColorSecond
   // ウェブ本体
   ctx.beginPath()
@@ -90,7 +90,7 @@ const checkCellParts = (ctx: CanvasRenderingContext2D, webColor: string, x: numb
   ctx.quadraticCurveTo(320 + x, 170 + y, 313 + x, 175 + y)
   ctx.stroke()
   ctx.fill()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   if (numerator !== undefined) {
     ctx.restore()
   }

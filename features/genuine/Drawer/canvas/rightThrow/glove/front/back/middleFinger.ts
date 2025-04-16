@@ -1,7 +1,7 @@
 // 小指側
 export const middleBackRingSide = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // 輪郭
   ctx.beginPath()
@@ -20,7 +20,7 @@ export const middleBackRingSide = (ctx: CanvasRenderingContext2D, color: string)
 
 export const middleBackIndexSide = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // 輪郭
   ctx.beginPath()

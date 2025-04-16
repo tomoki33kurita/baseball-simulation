@@ -1,6 +1,6 @@
 export const aroundEdge1 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
 
   //  左上-右下
@@ -23,7 +23,7 @@ export const aroundEdge1 = (ctx: CanvasRenderingContext2D, color: string, x: num
 
 export const aroundEdge2 = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   //  左上-右下
   ctx.beginPath()
@@ -43,7 +43,7 @@ export const aroundEdge2 = (ctx: CanvasRenderingContext2D, color: string): void 
 
 export const aroundEdge3 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number, numerator: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
 
   //  左上-右下
@@ -70,7 +70,7 @@ export const aroundEdge3 = (ctx: CanvasRenderingContext2D, color: string, x: num
 
 export const aroundEdge4 = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
 
   //  左上-右下
@@ -89,7 +89,7 @@ export const aroundEdge4 = (ctx: CanvasRenderingContext2D, color: string): void 
 
 export const aroundEdge5 = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
 
   //  左上-右下
@@ -109,7 +109,7 @@ export const aroundEdge5 = (ctx: CanvasRenderingContext2D, color: string): void 
 }
 export const aroundEdge6 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
 
   //  左上-右下
@@ -133,7 +133,7 @@ export const aroundEdge6 = (ctx: CanvasRenderingContext2D, color: string, x: num
 
 export const aroundEdge7 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number, numerator: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   if (numerator !== undefined && numerator !== 0) {
     ctx.save()
@@ -158,7 +158,7 @@ export const aroundEdge7 = (ctx: CanvasRenderingContext2D, color: string, x: num
 
 export const aroundEdge8 = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   ctx.moveTo(401, 156) // 左上
@@ -203,7 +203,7 @@ export const aroundEdge8 = (ctx: CanvasRenderingContext2D, color: string): void 
 
 export const aroundEdge9 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
 
   ctx.beginPath()
@@ -222,7 +222,7 @@ export const aroundEdge9 = (ctx: CanvasRenderingContext2D, color: string, x: num
 
 export const aroundEdge10 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number, numerator: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   if (numerator !== undefined && numerator !== 0) {
@@ -249,7 +249,7 @@ export const aroundEdge10 = (ctx: CanvasRenderingContext2D, color: string, x: nu
 
 export const aroundEdge11 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number, numerator: number, scaleSize: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
 
   //
@@ -279,7 +279,7 @@ export const aroundEdge11 = (ctx: CanvasRenderingContext2D, color: string, x: nu
 
 export const aroundEdge12 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number, numerator: number, scaleSize: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   if (numerator !== undefined && numerator !== 0) {
@@ -308,7 +308,7 @@ export const aroundEdge12 = (ctx: CanvasRenderingContext2D, color: string, x: nu
 
 export const aroundEdge13 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
 
   //  左上-右下
@@ -327,7 +327,7 @@ export const aroundEdge13 = (ctx: CanvasRenderingContext2D, color: string, x: nu
 
 export const aroundEdge14 = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = 'red' // '#383838'
+  ctx.strokeStyle = 'red' // '#282828'
   ctx.fillStyle = color
 
   //  左上-右下

@@ -1,6 +1,6 @@
 export const connectCatchFace = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
 
   // 左_親指芯とウェブ下捕球面を繋ぐところ

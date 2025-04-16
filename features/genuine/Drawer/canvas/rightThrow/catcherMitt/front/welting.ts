@@ -3,7 +3,7 @@ import { ColorItem } from '@/types'
 export const palmWelting = (ctx: CanvasRenderingContext2D, welting: ColorItem): void => {
   if (welting.value === 'none') return
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // 親指マチ内
   ctx.fillStyle = welting.color
   // 親指
@@ -38,5 +38,5 @@ export const palmWelting = (ctx: CanvasRenderingContext2D, welting: ColorItem): 
   ctx.fill()
   ctx.stroke()
   ctx.closePath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
 }

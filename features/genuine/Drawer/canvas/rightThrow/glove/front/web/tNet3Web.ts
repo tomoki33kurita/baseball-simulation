@@ -3,7 +3,7 @@ import { laceOfVerticalPartsRight, laceParts1, laceParts7 } from './parts/lacePa
 import { topSidePartOfWebWithJoint2 } from './parts/sideParts'
 
 const laceOfVerticalPartsLeft = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   ctx.lineWidth = 0.8
   ctx.beginPath()
@@ -20,7 +20,7 @@ const laceOfVerticalPartsLeft = (ctx: CanvasRenderingContext2D, laceColor: strin
 }
 
 const laceOfNetWebDouble3 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   ctx.lineWidth = 0.8
   ctx.beginPath()
@@ -41,7 +41,7 @@ const laceOfNetWebDouble3 = (ctx: CanvasRenderingContext2D, laceColor: string, x
 }
 
 const laceOfNetWebDouble5 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   ctx.lineWidth = 0.8
   ctx.beginPath()
@@ -59,7 +59,7 @@ const laceOfNetWebDouble5 = (ctx: CanvasRenderingContext2D, laceColor: string, x
 }
 
 const laceOfNetWebDouble2 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   ctx.lineWidth = 0.8
   ctx.beginPath()
@@ -77,7 +77,7 @@ const laceOfNetWebDouble2 = (ctx: CanvasRenderingContext2D, laceColor: string, x
 }
 
 const laceOfNetWebDouble4 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   ctx.lineWidth = 0.8
   ctx.beginPath()
@@ -96,7 +96,7 @@ const laceOfNetWebDouble4 = (ctx: CanvasRenderingContext2D, laceColor: string, x
 
 export const tNet3Web = (ctx: CanvasRenderingContext2D, webColor: string, web2Color: string, laceColor: string, stitchColor: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // lace_1 ここから
   ctx.fillStyle = laceColor
 

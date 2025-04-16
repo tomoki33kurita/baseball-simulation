@@ -1,6 +1,6 @@
 export const littleInner = (ctx: CanvasRenderingContext2D, color: string, locationX: number, locationY: number): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // 小指芯固定用の紐
   ctx.beginPath()

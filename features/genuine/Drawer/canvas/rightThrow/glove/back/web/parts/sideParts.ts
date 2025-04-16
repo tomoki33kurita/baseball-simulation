@@ -2,7 +2,7 @@ import { connectWebToIndex, connectWebToIndexTop, connectWebToThumb, connectWebT
 import { webTopCross, webTopCrossSingleLeftDown, webTopCrossSingleLeftUp, webTops } from '../../lace/webTop'
 
 export const topSidePartOfWeb = (ctx: CanvasRenderingContext2D, webColor: string, laceColor: string, stitchColor: string): void => {
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = webColor
   // 横上パーツ
   ctx.beginPath()
@@ -55,7 +55,7 @@ export const topSidePartOfWeb = (ctx: CanvasRenderingContext2D, webColor: string
 }
 
 export const topSidePartOfWeb2 = (ctx: CanvasRenderingContext2D, webColor: string, laceColor: string, stitchColor: string): void => {
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = webColor
   // 横上パーツ
   ctx.beginPath()
@@ -115,7 +115,7 @@ export const topSidePartOfWeb2 = (ctx: CanvasRenderingContext2D, webColor: strin
 }
 
 export const topSidePartOfWebForPitcher = (ctx: CanvasRenderingContext2D, webColor: string, laceColor: string, stitchColor: string): void => {
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = webColor
   // 横上パーツ
   ctx.beginPath()
@@ -169,7 +169,7 @@ export const topSidePartOfWebForPitcher = (ctx: CanvasRenderingContext2D, webCol
 
 const jointParts = (ctx: CanvasRenderingContext2D, webColorSecond: string, x: number, y: number, numerator?: number): void => {
   ctx.beginPath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = webColorSecond
   if (numerator !== undefined && numerator !== 0) {
     ctx.save()
@@ -186,7 +186,7 @@ const jointParts = (ctx: CanvasRenderingContext2D, webColorSecond: string, x: nu
     ctx.restore()
   }
   ctx.closePath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
 }
 
 const sidePartsOfUnderJoinnt = (ctx: CanvasRenderingContext2D, webColorSecond: string): void => {
@@ -214,7 +214,7 @@ export const topSidePartOfWebWithJoint = (
   laceColor: string,
   stitchColor: string
 ): void => {
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // 親指への革紐
   connectWebToThumbTop(ctx, laceColor, 0, 0)
   connectWebToThumb(ctx, laceColor, 62, -63) //

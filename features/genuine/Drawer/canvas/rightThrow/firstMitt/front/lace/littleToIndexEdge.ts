@@ -1,6 +1,6 @@
 export const littleEdge = (ctx: CanvasRenderingContext2D, color: string, locationX: number, locationY: number, numerator?: number): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // 長方形＿巻き込みパーツ＿
   ctx.beginPath()
@@ -29,7 +29,7 @@ export const littleEdge = (ctx: CanvasRenderingContext2D, color: string, locatio
 
 export const littleEdge2 = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   ctx.moveTo(656, 472) // 左上左
@@ -47,7 +47,7 @@ export const littleEdge2 = (ctx: CanvasRenderingContext2D, color: string): void 
 
 export const littleEdge3 = (ctx: CanvasRenderingContext2D, color: string, locationX: number, locationY: number, numerator?: number): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // 長方形＿巻き込みパーツ＿
   ctx.beginPath()
@@ -76,7 +76,7 @@ export const littleEdge3 = (ctx: CanvasRenderingContext2D, color: string, locati
 
 export const littleEdge4 = (ctx: CanvasRenderingContext2D, color: string, locationX: number, locationY: number, numerator?: number): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // 長方形＿巻き込みパーツ＿
   ctx.beginPath()
@@ -104,7 +104,7 @@ export const littleEdge4 = (ctx: CanvasRenderingContext2D, color: string, locati
 
 export const littleEdge4_1 = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.moveTo(559, 51) // 左上左
   ctx.quadraticCurveTo(555, 81, 575, 97) // 左下
@@ -121,7 +121,7 @@ export const littleEdge4_1 = (ctx: CanvasRenderingContext2D, color: string): voi
 
 export const littleEdge5 = (ctx: CanvasRenderingContext2D, color: string, locationX: number, locationY: number, numerator?: number): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // 長方形＿巻き込みパーツ＿
   ctx.beginPath()
@@ -148,7 +148,7 @@ export const littleEdge5 = (ctx: CanvasRenderingContext2D, color: string, locati
 
 export const littleEdge6 = (ctx: CanvasRenderingContext2D, color: string, locationX: number, locationY: number, numerator?: number): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // 長方形＿巻き込みパーツ＿
   ctx.beginPath()

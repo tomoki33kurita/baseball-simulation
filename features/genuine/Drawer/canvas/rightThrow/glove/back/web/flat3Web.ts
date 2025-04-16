@@ -4,7 +4,7 @@ import { jointOfCatchFace, jointOfIndexFinger, jointOfThumbFinger2 } from './par
 
 export const flat3Web = (ctx: CanvasRenderingContext2D, webColor: string, laceColor: string, stitchColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // web先端の革パーツ
   topSidePartOfWebForPitcher(ctx, webColor, laceColor, stitchColor)
   // ウェブ-人差し指のジョイントパーツ
@@ -29,7 +29,7 @@ export const flat3Web = (ctx: CanvasRenderingContext2D, webColor: string, laceCo
 
   // 表面のデザイン
   ctx.beginPath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.moveTo(675, 227) // 左上
   ctx.quadraticCurveTo(649, 205, 616, 211)
   ctx.quadraticCurveTo(655, 236, 671, 279)
@@ -47,7 +47,7 @@ export const flat3Web = (ctx: CanvasRenderingContext2D, webColor: string, laceCo
 
   // 表面のデザイン2
   ctx.beginPath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.moveTo(647, 293) // 左上
   ctx.quadraticCurveTo(609, 249, 553, 231)
   ctx.quadraticCurveTo(602, 266, 624, 308)
@@ -117,7 +117,7 @@ export const flat3Web = (ctx: CanvasRenderingContext2D, webColor: string, laceCo
 
 const laceOfThmbJointBase = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number) => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   ctx.beginPath()
   ctx.moveTo(648 + x, 271 + y) // 左上
@@ -138,7 +138,7 @@ const laceOfThmbJointBase = (ctx: CanvasRenderingContext2D, laceColor: string, x
 
 const laceOfThmbJointHook = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number) => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   ctx.beginPath()
   ctx.moveTo(667 + x, 284 + y) // 左上

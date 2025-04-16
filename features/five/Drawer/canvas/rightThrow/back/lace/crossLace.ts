@@ -7,7 +7,7 @@ export const reinforcementCrossLace = (
   scaleSize?: number
 ): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   if (numerator !== undefined && numerator !== 0) {
     ctx.save()

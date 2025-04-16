@@ -8,7 +8,7 @@ const basketCheckCellSecond = (ctx: CanvasRenderingContext2D, webColorSecond: st
     ctx.save()
     ctx.rotate((numerator * Math.PI) / 180)
   }
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = webColorSecond
   ctx.moveTo(563 + x, 120 + y)
   ctx.quadraticCurveTo(552 + x, 139 + y, 552 + x, 139 + y)
@@ -26,9 +26,9 @@ const basketCheckCellSecond = (ctx: CanvasRenderingContext2D, webColorSecond: st
 
 export const in06Web = (ctx: CanvasRenderingContext2D, laceColor: string, stitchColor: string, webColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // web先端の革パーツ
   topSidePartOfWebForPitcher(ctx, webColor, laceColor, stitchColor)
   // ウェブ-人差し指のジョイントパーツ

@@ -5,7 +5,7 @@ import { connectWebToIndex, connectWebToIndexTop, connectWebToThumb, connectWebT
 export const twoPeaceWeb = (ctx: CanvasRenderingContext2D, webColor: string, laceColor: string, stitchColor: string): void => {
   ctx.lineWidth = 0.8
   ctx.fillStyle = webColor
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // ウェブパーツ // 先端側
   topSidePartOfWebForPitcher(ctx, webColor, laceColor, stitchColor) // ウェブ先端
   ctx.fillStyle = webColor
@@ -86,7 +86,7 @@ export const twoPeaceWeb = (ctx: CanvasRenderingContext2D, webColor: string, lac
   ctx.stroke()
 
   ctx.setLineDash([])
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.closePath()
   // stitchここまで
 

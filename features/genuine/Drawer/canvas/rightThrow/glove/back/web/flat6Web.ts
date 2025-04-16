@@ -5,7 +5,7 @@ import { generateLiningsGradient } from '@/util/canvas'
 
 export const cloverLeaf = (ctx: CanvasRenderingContext2D, webColor: string, stitchColor: string, x: number, y: number, rotate: number): void => {
   // クローバーの葉っぱ
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = webColor
   ctx.lineWidth = 0.8
   ctx.save()
@@ -39,14 +39,14 @@ export const cloverLeaf = (ctx: CanvasRenderingContext2D, webColor: string, stit
   //   ctx.quadraticCurveTo() //
   ctx.stroke()
   ctx.setLineDash([])
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.closePath()
   // stitchここまで
   ctx.restore()
 }
 export const flat6Web = (ctx: CanvasRenderingContext2D, webColor: string, laceColor: string, stitchColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // web先端の革パーツ
   topSidePartOfWebForPitcher(ctx, webColor, laceColor, stitchColor)
   // ウェブ-人差し指のジョイントパーツ

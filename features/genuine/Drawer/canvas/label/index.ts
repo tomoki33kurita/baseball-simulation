@@ -3,7 +3,7 @@ import { GenuineState } from '@/features/genuine/types'
 export const genuineEngraved = (ctx: CanvasRenderingContext2D, x: number, y: number, scaleSize: number, strokeColor: string): void => {
   ctx.save()
   ctx.scale(scaleSize, scaleSize)
-  // stand(ctx, '#383838', x, y)
+  // stand(ctx, '#282828', x, y)
   parts8(ctx, 'gold', x, y, strokeColor, false)
   parts7(ctx, 'gold', x, y, strokeColor, false)
   parts6(ctx, 'gold', x, y, strokeColor, false)
@@ -20,15 +20,15 @@ export const genuineLabel = (ctx: CanvasRenderingContext2D, state: GenuineState,
   ctx.rotate((rotate * Math.PI) / 180)
   ctx.scale(scaleSize, scaleSize)
 
-  stand(ctx, '#383838', x, y)
-  parts8(ctx, 'gold', x, y, '#383838')
-  parts7(ctx, 'gold', x, y, '#383838')
-  parts6(ctx, 'gold', x, y, '#383838')
-  parts5(ctx, 'gold', x, y, '#383838')
-  parts4(ctx, 'gold', x, y, '#383838')
-  parts3(ctx, 'gold', x, y, '#383838')
-  parts2(ctx, 'gold', x, y, '#383838')
-  parts1(ctx, 'gold', x, y, '#383838')
+  stand(ctx, '#282828', x, y)
+  parts8(ctx, 'gold', x, y, '#282828')
+  parts7(ctx, 'gold', x, y, '#282828')
+  parts6(ctx, 'gold', x, y, '#282828')
+  parts5(ctx, 'gold', x, y, '#282828')
+  parts4(ctx, 'gold', x, y, '#282828')
+  parts3(ctx, 'gold', x, y, '#282828')
+  parts2(ctx, 'gold', x, y, '#282828')
+  parts1(ctx, 'gold', x, y, '#282828')
   ctx.restore()
 }
 // const parts = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number , strokeStyle: string, isFill = true): void => {
@@ -81,7 +81,7 @@ const parts1 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: numb
 
   ctx.beginPath()
   ctx.strokeStyle = strokeStyle
-  ctx.fillStyle = '#383838'
+  ctx.fillStyle = '#282828'
   ctx.lineWidth = 1.0
   ctx.moveTo(346 + x, 537 + y)
   ctx.quadraticCurveTo(351 + x, 536 + y, 354 + x, 532 + y)
@@ -248,7 +248,7 @@ const parts8 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: numb
 
 const stand = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number): void => {
   ctx.beginPath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.lineWidth = 1.0
   ctx.moveTo(382 + x, 487 + y)

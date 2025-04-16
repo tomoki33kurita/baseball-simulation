@@ -2,7 +2,7 @@ export const indexFingerTipOutDrawer = (ctx: CanvasRenderingContext2D, tipOutCol
   // 裏革
   ctx.fillStyle = liningLeatherColor
   ctx.beginPath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.moveTo(312, 452) //左
   ctx.quadraticCurveTo(313, 455, 313, 455) // 左下
   ctx.quadraticCurveTo(428, 450, 428, 450) // 右下
@@ -16,7 +16,7 @@ export const indexFingerTipOutDrawer = (ctx: CanvasRenderingContext2D, tipOutCol
   ctx.fillStyle = tipOutColor
   if (fingerType !== 'indexPad') {
     ctx.beginPath()
-    ctx.strokeStyle = '#383838'
+    ctx.strokeStyle = '#282828'
     ctx.moveTo(310, 435) //左上
     ctx.quadraticCurveTo(312, 450, 312, 454) // 左下
     ctx.quadraticCurveTo(356, 446, 427, 448) // 右下

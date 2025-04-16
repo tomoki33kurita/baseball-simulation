@@ -1,6 +1,6 @@
 export const sewingLeather = (ctx: CanvasRenderingContext2D): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = '#eee'
 
   // 中指

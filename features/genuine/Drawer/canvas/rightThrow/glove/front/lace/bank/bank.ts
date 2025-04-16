@@ -1,6 +1,6 @@
 export const sideBank = (ctx: CanvasRenderingContext2D, color: string, locationX: number, locationY: number): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // 小指芯固定用の紐
   ctx.beginPath()
@@ -19,7 +19,7 @@ export const sideBank = (ctx: CanvasRenderingContext2D, color: string, locationX
 
 export const sideBank2 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // 小指芯固定用の紐
   ctx.beginPath()

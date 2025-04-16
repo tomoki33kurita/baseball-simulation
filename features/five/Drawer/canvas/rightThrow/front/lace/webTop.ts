@@ -1,6 +1,6 @@
 export const webTop = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number, numerator?: number, scaleSize?: number): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // 長方形＿巻き込みパーツ＿
   ctx.beginPath()
@@ -30,7 +30,7 @@ export const webTop = (ctx: CanvasRenderingContext2D, color: string, x: number, 
 
 export const webTop2 = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number, numerator?: number, scaleSize?: number): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // 長方形＿巻き込みパーツ＿
   ctx.beginPath()
@@ -68,7 +68,7 @@ export const webTopCrossLeftDown = (
   scaleSize?: number
 ): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   // 長方形＿巻き込みパーツ＿
   if (numerator !== undefined && numerator !== 0) {
@@ -105,7 +105,7 @@ export const webTopCrossLeftUp = (
   scaleSize?: number
 ): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   // 長方形＿巻き込みパーツ＿
   if (numerator !== undefined && numerator !== 0) {

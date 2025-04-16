@@ -4,7 +4,7 @@ import { topSidePartOfWebForPitcher } from './parts/sideParts'
 
 const leftLace1 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
   // laceここから
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   ctx.beginPath()
   ctx.lineWidth = 0.8
@@ -24,7 +24,7 @@ const leftLace1 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, 
 
 const leftLace2 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number, numerator: number, scaleSize: number): void => {
   // laceここから
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   ctx.lineWidth = 0.8
   if (numerator !== undefined && numerator !== 0) {
@@ -76,7 +76,7 @@ const leftLace2 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, 
 
 const rightLace1 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number): void => {
   // laceここから
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   ctx.beginPath()
   ctx.lineWidth = 0.8
@@ -96,7 +96,7 @@ const rightLace1 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number,
 
 const rightLace2 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number, numerator: number, scaleSize: number): void => {
   // laceここから
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = laceColor
   ctx.lineWidth = 0.8
   if (numerator !== undefined && numerator !== 0) {
@@ -148,7 +148,7 @@ const rightLace2 = (ctx: CanvasRenderingContext2D, laceColor: string, x: number,
 
 export const flat2Web = (ctx: CanvasRenderingContext2D, webColor: string, laceColor: string, stitchColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // web先端の革パーツ
   topSidePartOfWebForPitcher(ctx, webColor, laceColor, stitchColor)
   // ウェブ-人差し指のジョイントパーツ

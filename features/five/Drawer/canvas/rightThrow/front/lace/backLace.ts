@@ -1,7 +1,7 @@
 import { Position } from '@/types'
 
 export const straightBackLace = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number, numerator: number): void => {
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.lineWidth = 0.8
   ctx.fillStyle = laceColor
   // 人指し指 - 中指 上
@@ -38,7 +38,7 @@ export const straightBackLace = (ctx: CanvasRenderingContext2D, laceColor: strin
 }
 
 export const crossBackLace = (ctx: CanvasRenderingContext2D, laceColor: string, x: number, y: number, numerator: number): void => {
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.lineWidth = 0.8
   ctx.fillStyle = laceColor
   if (numerator !== undefined && numerator !== 0) {

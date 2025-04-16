@@ -3,7 +3,7 @@ import { GenuineState } from '@/features/genuine/types'
 export const littleFingerOfRegularBackStyle = (ctx: CanvasRenderingContext2D, state: GenuineState): void => {
   const color = state.littleOut.color
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   ctx.moveTo(195, 175) // 上
@@ -66,5 +66,5 @@ export const littleFingerOfRegularBackStyle = (ctx: CanvasRenderingContext2D, st
   ctx.stroke()
   ctx.setLineDash([])
   ctx.closePath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
 }

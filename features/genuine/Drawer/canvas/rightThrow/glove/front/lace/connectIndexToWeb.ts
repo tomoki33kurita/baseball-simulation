@@ -1,6 +1,6 @@
 export const indexTopOver = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   ctx.moveTo(347, 53) // 左上
@@ -15,7 +15,7 @@ export const indexTopOver = (ctx: CanvasRenderingContext2D, color: string): void
 
 export const indexTop = (ctx: CanvasRenderingContext2D, color: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   ctx.beginPath()
   ctx.moveTo(352, 68) // 左上
@@ -34,7 +34,7 @@ export const indexTop = (ctx: CanvasRenderingContext2D, color: string): void => 
 // 折り返し部分
 export const indexWrapBack = (ctx: CanvasRenderingContext2D, color: string, x: number, y: number): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = color
   // 小指芯固定用の紐
   ctx.beginPath()

@@ -4,7 +4,7 @@ import { webTopCrossLaces, webTopLaces } from '../lace/webTop'
 import { verticalParts4 } from './parts/vertical'
 
 const leftRearParts = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchColor: string, x: number, y: number): void => {
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = leatherColor
   ctx.beginPath()
   ctx.moveTo(253 + x, 228 + y) // 左上
@@ -19,7 +19,7 @@ const leftRearParts = (ctx: CanvasRenderingContext2D, leatherColor: string, stit
   ctx.closePath()
 }
 const rightRearParts = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchColor: string, x: number, y: number): void => {
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // ctx.strokeStyle = 'red'
   ctx.beginPath()
   ctx.moveTo(350 + x, 164 + y) // 左_右
@@ -37,7 +37,7 @@ const rightRearParts = (ctx: CanvasRenderingContext2D, leatherColor: string, sti
   ctx.closePath()
 }
 const rightRearParts2 = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchColor: string, x: number, y: number): void => {
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.beginPath()
   ctx.moveTo(353 + x, 162 + y) // 左_右
   ctx.quadraticCurveTo(341 + x, 173 + y, 341 + x, 173 + y) // 左_左

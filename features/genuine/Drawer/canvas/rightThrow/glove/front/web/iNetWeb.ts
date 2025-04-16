@@ -3,7 +3,7 @@ import { verticalPartsOfWebWithCenterBinding } from './parts/verticalParts'
 
 const thumbSideLaceTop = (ctx: CanvasRenderingContext2D, laceColor: string): void => {
   //   ctx.fillStyle = laceColor
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.beginPath()
   ctx.moveTo(203, 251) // 左上
   ctx.quadraticCurveTo(215, 257, 215, 257) // 左上
@@ -39,7 +39,7 @@ const thumbSideLaceTop = (ctx: CanvasRenderingContext2D, laceColor: string): voi
 const indexSideLaceTop = (ctx: CanvasRenderingContext2D, laceColor: string): void => {
   //   ctx.fillStyle = laceColor
   ctx.strokeStyle = 'red'
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.beginPath()
   ctx.moveTo(270, 121) // 左上
   ctx.quadraticCurveTo(281, 121, 284, 137) // 左下

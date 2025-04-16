@@ -32,7 +32,7 @@ export const verticalPartsOfWeb = (ctx: CanvasRenderingContext2D, webColor: stri
   ctx.stroke()
   ctx.setLineDash([])
   ctx.closePath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // stitchここまで
 }
 
@@ -75,6 +75,6 @@ export const verticalPartsOfWebWithCenterStitch = (ctx: CanvasRenderingContext2D
   ctx.stroke()
   ctx.setLineDash([])
   ctx.closePath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // stitchここまで
 }

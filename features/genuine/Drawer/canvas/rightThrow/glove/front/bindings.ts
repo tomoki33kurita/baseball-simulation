@@ -18,7 +18,7 @@ export const bindings = (
   bankLaceDirection: BankLaceDirection
 ): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = bindingColor
 
   // ヘリ革

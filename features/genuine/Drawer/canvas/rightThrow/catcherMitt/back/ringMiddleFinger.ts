@@ -1,6 +1,6 @@
 export const ringRightMiddleLeftFingerOfRegularBackStyle = (ctx: CanvasRenderingContext2D, leatherColor: string, stitchColor: string): void => {
   ctx.lineWidth = 0.8
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = leatherColor
   ctx.beginPath()
   ctx.moveTo(195, 175) // 上
@@ -75,5 +75,5 @@ export const ringRightMiddleLeftFingerOfRegularBackStyle = (ctx: CanvasRendering
   ctx.stroke()
   ctx.setLineDash([])
   ctx.closePath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
 }

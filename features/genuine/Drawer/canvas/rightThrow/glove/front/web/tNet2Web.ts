@@ -4,7 +4,7 @@ import { topSidePartOfWeb } from './parts/sideParts'
 
 export const tNet2Web = (ctx: CanvasRenderingContext2D, webColor: string, web2Color: string, laceColor: string, stitchColor: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // ウェブ_縦
   ctx.fillStyle = web2Color
   ctx.beginPath()

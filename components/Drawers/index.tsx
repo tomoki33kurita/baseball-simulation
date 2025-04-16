@@ -20,7 +20,7 @@ export const SurfaceDrawers: FC<Props> = ({ rearSurfaceId, palmSurfaceId, drawer
     <Box
       position={'sticky'}
       top={0}
-      bgcolor={isDark ? '#383838' : '#fff'}
+      bgcolor={isDark ? '#282828' : '#fff'}
       sx={{
         height: { xs: 'unset', md: '100vh' }
       }}

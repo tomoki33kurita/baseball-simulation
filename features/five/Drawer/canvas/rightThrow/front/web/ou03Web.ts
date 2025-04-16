@@ -47,13 +47,13 @@ const verticalPartsOfWebWithBinding = (ctx: CanvasRenderingContext2D, webColor: 
   ctx.quadraticCurveTo(304, 243, 334, 314) // 左下
   ctx.stroke()
   ctx.setLineDash([])
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.closePath()
 }
 
 const onCatchFaceParts = (ctx: CanvasRenderingContext2D, webColor: string) => {
   ctx.fillStyle = webColor
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // 縦パーツ_左
   ctx.beginPath()
   ctx.moveTo(293, 360) //左上
@@ -67,7 +67,7 @@ const onCatchFaceParts = (ctx: CanvasRenderingContext2D, webColor: string) => {
 }
 
 const verticalPartOfVWeb = (ctx: CanvasRenderingContext2D, webColor: string, stitchColor: string) => {
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = webColor
   // ウェブ_縦
   ctx.beginPath()
@@ -108,12 +108,12 @@ const verticalPartOfVWeb = (ctx: CanvasRenderingContext2D, webColor: string, sti
   ctx.stroke()
   ctx.setLineDash([])
   ctx.closePath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
 }
 
 export const ou03Web = (ctx: CanvasRenderingContext2D, webColor: string, laceColor: string, stitchColor: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // ウェブ_縦
   verticalPartOfVWeb(ctx, webColor, stitchColor)
   // ウェブ先端

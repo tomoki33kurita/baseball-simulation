@@ -2,7 +2,7 @@ import { topSidePartOfWeb } from './parts/sideParts'
 
 export const fireWeb = (ctx: CanvasRenderingContext2D, webColor: string, laceColor: string, stitchColor: string): void => {
   ctx.lineWidth = 1.0
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   ctx.fillStyle = webColor
 
   // ウェブ本体
@@ -65,7 +65,7 @@ export const fireWeb = (ctx: CanvasRenderingContext2D, webColor: string, laceCol
   ctx.stroke()
   ctx.setLineDash([])
   ctx.closePath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
   // stitchここまで
 
   ctx.strokeStyle = 'brue'
@@ -80,5 +80,5 @@ export const fireWeb = (ctx: CanvasRenderingContext2D, webColor: string, laceCol
   // ctx.quadraticCurveTo(304, 236, 361, 184) //
   // ctx.stroke()
   // ctx.closePath()
-  ctx.strokeStyle = '#383838'
+  ctx.strokeStyle = '#282828'
 }
